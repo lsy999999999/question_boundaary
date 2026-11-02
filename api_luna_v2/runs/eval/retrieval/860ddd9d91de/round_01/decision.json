@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793431660533976637,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "alternating",
+    "reason": "Memory_slow has the lowest trajectory-level CV NMSE (0.00390), substantially below the current memory_clock (0.00727). Long post-pulse tails support slow history dependence; alternating probes remaining model disagreement.",
+    "prediction": "After an input switch, output will retain a history-dependent response that decays over seconds, including when current input is zero.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest trajectory-level CV NMSE (0.00390), substantially below the current memory_clock (0.00727). Long post-pulse tails support slow history dependence; alternating probes remaining model disagreement.\",\"prediction\":\"After an input switch, output will retain a history-dependent response that decays over seconds, including when current input is zero.\",\"accept\":false}",
+    "input_tokens": 2955,
+    "output_tokens": 239,
+    "batch_elapsed_seconds": 5.6914498917758465,
+    "amortized_seconds": 5.6914498917758465,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2955,
+      "completion_tokens": 239,
+      "total_tokens": 3194,
+      "completion_tokens_details": {
+        "reasoning_tokens": 143
+      }
+    },
+    "api_response_id": "resp_0dbe45793a7f1ff6016ae5986a1a008190a8a802812a7d3327",
+    "wire_record": "wire/eval/0233_b58a343d480e487da674ca427cf51443"
+  }
+}

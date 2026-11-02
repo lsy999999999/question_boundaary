@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429741870465340,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0d5e5c5bf4fc52e8016ae590eb3e008196bb1abb3e4c8619a8",
+    "object": "chat.completion",
+    "created": 1793429741,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"prbs\",\"reason\":\"State_cubic has the lowest trajectory-level CV error by a substantial margin; memory and delay candidates validate worse. Residual lag and disagreement on irregular inputs leave adequacy uncertain.\",\"prediction\":\"After PRBS input switches, state_cubic will predict responses from current state and input, without a persistent extra history-dependent offset.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is sufficiently supported by these observations.\",\"condition_to_check\":\"Check whether PRBS responses show systematic history-dependent residuals beyond state_cubic predictions.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3461,
+      "completion_tokens": 272,
+      "total_tokens": 3733,
+      "completion_tokens_details": {
+        "reasoning_tokens": 142
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.3809121921658516
+}

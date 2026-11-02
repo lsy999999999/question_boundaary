@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430494582021869,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0930edc6eb808a43016ae593daed048195a9cfa98cec20c99d",
+    "object": "chat.completion",
+    "created": 1793430494,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest trajectory-held-out NMSE (0.00097), far below state (0.0190); PRBS has the greatest disagreement among plausible models.\",\"prediction\":\"After input switches, memory_slow predicts smoother lingering effects than a fast-memory model, with residual influence persisting after input returns to zero.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Accumulated-history terms improve prediction, but these observations do not justify a specific cross-domain mechanism.\",\"condition_to_check\":\"Test whether lingering effects after matched input histories differ across PRBS and pulse trajectories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2807,
+      "completion_tokens": 343,
+      "total_tokens": 3150,
+      "completion_tokens_details": {
+        "reasoning_tokens": 203
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.301193338818848
+}

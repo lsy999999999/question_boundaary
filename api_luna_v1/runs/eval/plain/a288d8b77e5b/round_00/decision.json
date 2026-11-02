@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793429888080393674,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "alternating",
+    "reason": "State_cubic has the lowest trajectory-level CV NMSE (0.00213), while memory candidates do not improve it. Residual autocorrelation and disagreement on alternating inputs leave unseen interventions uncertain.",
+    "prediction": "Alternating input will produce trajectory deviations from the state_cubic prediction if unmodeled history effects matter.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state_cubic\",\"experiment\":\"alternating\",\"reason\":\"State_cubic has the lowest trajectory-level CV NMSE (0.00213), while memory candidates do not improve it. Residual autocorrelation and disagreement on alternating inputs leave unseen interventions uncertain.\",\"prediction\":\"Alternating input will produce trajectory deviations from the state_cubic prediction if unmodeled history effects matter.\",\"accept\":false}",
+    "input_tokens": 2251,
+    "output_tokens": 201,
+    "batch_elapsed_seconds": 3.8655346874147654,
+    "amortized_seconds": 3.8655346874147654,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2251,
+      "completion_tokens": 201,
+      "total_tokens": 2452,
+      "completion_tokens_details": {
+        "reasoning_tokens": 115
+      }
+    },
+    "api_response_id": "resp_0e3488bafc9314e5016ae5917d4f40819486b854c790feffe1",
+    "wire_record": "wire/eval/0092_73655270b3034dbe96dffcd148105336"
+  }
+}

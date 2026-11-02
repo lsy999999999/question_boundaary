@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432292774816906,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0813bead2998acf0016ae59ae1cb48819487a6f6c03d683378",
+    "object": "chat.completion",
+    "created": 1793432292,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest leave-trajectory-out NMSE (0.00209), outperforming simpler memory and instantaneous models across the observed interventions. Residual autocorrelation and unseen-intervention performance leave adequacy uncertain.\",\"prediction\":\"After rapid input reversals, responses will depend on accumulated history and flatten differently at larger amplitudes.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence predicts later output beyond current input and visible state.\",\"condition_to_check\":\"Falsified if alternating responses show no history-dependent effect after controlling current input and state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3736,
+      "completion_tokens": 244,
+      "total_tokens": 3980,
+      "completion_tokens_details": {
+        "reasoning_tokens": 108
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.593060767278075
+}

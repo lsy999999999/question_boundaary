@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793431330699487600,
+  "decision": {
+    "representation": "clock",
+    "experiment": "alternating",
+    "reason": "Clock has the lowest trajectory-held-out NMSE by a wide margin and fits varied input trajectories well. Residual lag correlation leaves some uncertainty, so adequacy for unseen interventions is not established.",
+    "prediction": "At matched elapsed times, alternating input will show a similar late negative drift to other interventions.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Elapsed-time features predict shared output variation, but the evidence does not establish an independent driver.",
+      "condition_to_check": "Substantially different late drift at matched elapsed times would weaken the shared-time relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest trajectory-held-out NMSE by a wide margin and fits varied input trajectories well. Residual lag correlation leaves some uncertainty, so adequacy for unseen interventions is not established.\",\"prediction\":\"At matched elapsed times, alternating input will show a similar late negative drift to other interventions.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Elapsed-time features predict shared output variation, but the evidence does not establish an independent driver.\",\"condition_to_check\":\"Substantially different late drift at matched elapsed times would weaken the shared-time relation.\"}}",
+    "input_tokens": 3678,
+    "output_tokens": 128,
+    "batch_elapsed_seconds": 2.3901794059202075,
+    "amortized_seconds": 2.3901794059202075,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3678,
+      "completion_tokens": 128,
+      "total_tokens": 3806
+    },
+    "api_response_id": "resp_08cedb1f8392c0c5016ae59720ad548193a4dced318747ddb8",
+    "wire_record": "wire/dev/0077_7d18ea5bafb8489887805b850beed2f4"
+  }
+}

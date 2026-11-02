@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793430384777153773,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "slow_wave",
+    "reason": "Memory_slow has the lowest trajectory-level CV error, narrowly outperforming multiscale. Persistent pulse tails and PRBS fit support history dependence; the remaining lag correlation cautions that adequacy is not certain.",
+    "prediction": "After input returns to zero, output will relax gradually, with its tail depending on prior input rather than elapsed time alone.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Finite-relaxation accumulated history predicts output dependence on past input beyond current input.",
+      "condition_to_check": "Weaken this relation if past input adds no predictive value after controlling current input and visible state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"slow_wave\",\"reason\":\"Memory_slow has the lowest trajectory-level CV error, narrowly outperforming multiscale. Persistent pulse tails and PRBS fit support history dependence; the remaining lag correlation cautions that adequacy is not certain.\",\"prediction\":\"After input returns to zero, output will relax gradually, with its tail depending on prior input rather than elapsed time alone.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Finite-relaxation accumulated history predicts output dependence on past input beyond current input.\",\"condition_to_check\":\"Weaken this relation if past input adds no predictive value after controlling current input and visible state.\"}}",
+    "input_tokens": 3666,
+    "output_tokens": 140,
+    "batch_elapsed_seconds": 4.085605768486857,
+    "amortized_seconds": 4.085605768486857,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3666,
+      "completion_tokens": 140,
+      "total_tokens": 3806
+    },
+    "api_response_id": "resp_075d04d17ea56343016ae5936d3f108196aa5a65ee1c9a27e1",
+    "wire_record": "wire/eval/0356_c8c56db8499a4ace8ce37b12678b72f3"
+  }
+}

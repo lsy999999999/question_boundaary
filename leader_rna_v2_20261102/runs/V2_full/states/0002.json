@@ -1,0 +1,416 @@
+{
+  "version": 2,
+  "candidates": {
+    "C1": {
+      "id": "C1",
+      "version": 2,
+      "target": "Delayed emergence and persistence of segmented internal RNA-poor cavities in transcribing RNA droplets, particularly B versus A.",
+      "known_relations": [
+        "E0: t=0 A=0.01487 and B=0.01381; t=24 h A=0.00446 and B=0.08918 mean segmented empty-area fraction.",
+        "E0 is an image area fraction and does not measure RNA concentration, free energy, phase composition, network relaxation, or cavity motion.",
+        "Seven fields are pooled across two independent preparations; fields, objects, and SEMs do not establish preparation-level replication.",
+        "Amplification effects on template/product populations, carryover, and imaging are unresolved.",
+        "No broker search or evidence return is present in this input."
+      ],
+      "hypotheses": [
+        "H1 (new, explicit, unconfirmed): transcription-driven accumulation of load-bearing RNA junctions can outrun network relaxation, cross a threshold, generate internal solvent-rich domains, and kinetically trap their area.",
+        "H2 (alternative): amplification-linked composition or product heterogeneity changes equilibrium phase coexistence; at matched composition after equilibration cavity fraction is schedule-independent.",
+        "H3 (alternative): reaction carryover or imaging/segmentation changes explain some or all of the contrast."
+      ],
+      "gaps": [
+        {
+          "id": "G1",
+          "status": "open",
+          "description": "Whether production-driven accumulation can outrun relaxation in an associating RNA network and generate then arrest internal solvent-rich domains, under what material and timescale conditions, and with what rate-history dependence. No returned source addresses it yet."
+        },
+        {
+          "id": "G2",
+          "status": "open",
+          "description": "A/B causal attribution among template/product heterogeneity, carryover, and measurement differences is unresolved."
+        },
+        {
+          "id": "G3",
+          "status": "open",
+          "description": "No direct junction-state, relaxation-time, phase-composition, or cavity-trajectory measurement is supplied; observation map is uncalibrated."
+        }
+      ],
+      "variables_units": {
+        "t": "time (h)",
+        "r": "effective production rate, reduced units (h^-1)",
+        "x": "dimensionless effective load-bearing junction fraction",
+        "tau": "relaxation time (h)",
+        "alpha": "dimensionless conversion",
+        "x_c": "dimensionless threshold",
+        "q": "model cavity area fraction, dimensionless [0,1], provisional map",
+        "k_n": "generation coefficient (h^-1)",
+        "k_d": "pre-arrest loss coefficient (h^-1)",
+        "y_area": "segmented internal dark area / filled droplet area, dimensionless"
+      },
+      "equations": [
+        "xdot=alpha*r(t)-x/tau",
+        "Before arrest: qdot=k_n*max(x-x_c,0)-k_d*q",
+        "At first upward crossing x>=x_c impose qdot=0 thereafter; hypothesized arrest rule, not established constitutive physics.",
+        "Observation y_area=q+epsilon only under an uncalibrated segmentation-to-state map."
+      ],
+      "parameters_ranges": {
+        "alpha": "positive; exploratory 0.1 to 10, not estimated",
+        "tau": "positive; exploratory 0.1 to 100 h, not measured",
+        "x_c": "0 to 1 normalized x, not estimated",
+        "k_n": "positive; exploratory 0.001 to 1 h^-1, not estimated",
+        "k_d": "nonnegative; exploratory 0 to 1 h^-1, not estimated"
+      },
+      "initial_boundary_conditions": "x(0)=x0 in [0,1]; q(0) may equal observed area fraction only if the unvalidated mapping holds; r(t)>=0. No spatial boundary, geometry, or total RNA/solvent balance is specified.",
+      "observation_mapping": "Only segmented internal dark area divided by filled droplet area is measured. It is not concentration and need not equal material volume fraction. No fit is claimed. Fields do not provide independent preparation-level inference.",
+      "alternatives": [
+        "Equilibrium composition-driven demixing predicts schedule-independent cavity fraction after equilibration at matched composition.",
+        "Amplification-related carryover changes transcription or imaging without junction-mediated arrest.",
+        "Segmentation or denominator changes alter y_area without equivalent changes in cavity volume."
+      ],
+      "predictions": [
+        "At equal integrated production and matched final composition, a pulse crossing x_c predicts trapped q while a slower schedule staying below x_c predicts no new threshold-generated q; the equilibrium alternative predicts convergence after equilibration.",
+        "After crossing, reduced r does not promptly erase q under the imposed arrest rule; below threshold q may decay on timescale 1/k_d.",
+        "For constant r, x approaches alpha*r*tau; from below threshold crossing requires alpha*r*tau>x_c. Conditional consequence, not an estimate for A or B."
+      ],
+      "checks": [
+        "Dimensional: alpha*r and x/tau have units h^-1; qdot terms have units h^-1 since q and x are dimensionless.",
+        "Limit: r=0 gives x(t)=x(0)exp(-t/tau); if x(0)<x_c and alpha*r*tau<=x_c at constant rate, there is no upward crossing.",
+        "Persistence follows from the imposed post-crossing freeze and is an assumption to test.",
+        "No conservation or geometry maps area to volume; compatibility remains unresolved.",
+        "E0 is directionally compatible with delayed B area growth but does not measure x or test arrest or schedule dependence."
+      ],
+      "evidence_conflicts": [
+        "Initial similarity and later contrast are compatible with H1, H2, H3, or measurement effects; current data cannot distinguish them.",
+        "No returned literature or direct state/phase/motion evidence is available in this input."
+      ],
+      "untested": [
+        "Whether production/relaxation competition and threshold arrest exist in this material.",
+        "Whether amplification changes sequence/product population, carryover, or both.",
+        "Whether dark regions are solvent-rich cavities and persist after production stops.",
+        "Whether q maps consistently to y_area across conditions and time."
+      ],
+      "dissent": "No executor-leader disagreement can be assessed from this input. Preserve C1 only as a hypothesis; absent actual returns I neither adopt literature support nor close G1.",
+      "next_task": "T1: interpret broker returns from search and cavity tracking; state support level and transfer limits, then retain or weaken H1 without treating related literature as target confirmation.",
+      "author": "executor",
+      "reply": "R1"
+    }
+  },
+  "tasks": {
+    "T1": {
+      "id": "T1",
+      "candidate_id": "C1",
+      "gap_id": "G1",
+      "kind": "mechanism",
+      "status": "in_progress",
+      "deliverable": "Interpret actual returned background evidence on production/relaxation and arrest, assess transfer to transcribing associative RNA droplets, and compare schedule-history prediction with equilibrium demixing.",
+      "acceptance": "Identify source/support level, extract relation and conditions from actual returns, state transfer limits, preserve alternatives, and do not close G1 from related literature alone.",
+      "evidence_refs": [
+        "E0"
+      ],
+      "reason": "No actual tool returns are present; requests address the missing mechanism bridge and discrimination."
+    }
+  },
+  "actor_events": [
+    {
+      "label": "L1",
+      "role": "leader",
+      "reply": {
+        "recognition": "uncertain; no specific study is identified from the supplied input",
+        "summary": "E0 (initial_measurements.json) shows similar t=0 segmented empty-area fractions in A and B, followed by lower values in A (~0.0044 at 24 h) and increasing B values (~0.0892 at 24 h). These are image area fractions, not concentrations or free energies; seven fields are nested within two preparations. Candidate C1 proposes that B develops internal RNA-poor cavities when transcription-driven junction accumulation outruns network relaxation, trapping solvent-rich regions that then become mechanically arrested. This is an explicitly new, unconfirmed mechanism hypothesis, not an inference from the area-fraction curve. Reduced state x is load-bearing junction density (dimensionless effective fraction); r(t) is transcriptional production flux per droplet volume (h^-1 in this reduced model); tau is network relaxation time (h). Adopt xdot = alpha r(t) - x/tau, with alpha dimensionless. Define arrest threshold x_c and cavity state q: qdot = k_n max(x-x_c,0) - k_d q while x < x_c, and qdot = 0 after x first reaches x_c (arrest). Here q is cavity area fraction, k_n and k_d have units h^-1, and the post-threshold freeze is a proposed reduced rule, not established physics. It predicts a rate/history effect: at equal integrated production, a sufficiently fast pulse can cross x_c while a slow schedule does not; after arrest, q persists when production falls. Meaningful alternative C_alt is equilibrium composition-driven demixing: after matching final composition and allowing equilibration, cavity fraction should not depend on production schedule. E0 alone cannot distinguish these, identify x, show arrest, or establish amplification as causal.",
+        "candidates": [
+          {
+            "id": "C1",
+            "version": 1,
+            "target": "Delayed emergence and persistence of segmented internal RNA-poor cavities in transcribing RNA droplets, particularly the B versus A contrast.",
+            "known_relations": [
+              "E0: at t=0 A=0.01487 and B=0.01381; by 24 h A=0.00446 and B=0.08918 in mean segmented empty-area fraction.",
+              "E0 measures area fractions. It does not measure RNA concentration, composition, free energy, network relaxation, or cavity motion.",
+              "A/B differ by amplification treatment, whose effects on template sequence, purity, and carryover are not identified."
+            ],
+            "hypotheses": [
+              "H1 (new, unconfirmed): B enters a kinetic-arrest regime because transcription-driven accumulation of load-bearing RNA junctions exceeds network relaxation; solvent-rich cavities form above a threshold and become trapped when the network arrests.",
+              "H2 (alternative): amplification-linked composition or product heterogeneity changes equilibrium phase coexistence, producing cavities without a production-rate-dependent arrest threshold.",
+              "H3 (alternative causal path): reaction carryover or imaging/segmentation changes associated with preparation account for some or all of the difference."
+            ],
+            "gaps": [
+              {
+                "id": "G1",
+                "status": "open",
+                "description": "Missing relation: under what conditions can ongoing production and slow relaxation of an associating RNA network generate internal solvent-rich domains and arrest their coarsening, and what rate/history dependence follows? A result supporting a threshold or arrest under compatible conditions would motivate H1; evidence that such conditions are incompatible would weaken it."
+              },
+              {
+                "id": "G2",
+                "status": "open",
+                "description": "A/B causal attribution is unresolved among altered template/product populations, carryover, and measurement differences."
+              },
+              {
+                "id": "G3",
+                "status": "open",
+                "description": "No direct measurements of junction density, relaxation time, phase composition, or cavity trajectories are supplied."
+              }
+            ],
+            "variables_units": {
+              "t": "time (h)",
+              "r": "effective transcriptional production rate per droplet volume, reduced units h^-1",
+              "x": "dimensionless effective load-bearing junction fraction",
+              "tau": "network relaxation time (h)",
+              "alpha": "dimensionless conversion from integrated production to x",
+              "x_c": "dimensionless arrest threshold",
+              "q": "segmented cavity area fraction, dimensionless, 0<=q<=1; model state is only provisionally mapped to the measured observable",
+              "k_n": "cavity-generation coefficient (h^-1)",
+              "k_d": "pre-arrest cavity-loss coefficient (h^-1)"
+            },
+            "equations": [
+              "xdot = alpha*r(t) - x/tau",
+              "Before arrest: qdot = k_n*max(x-x_c,0) - k_d*q",
+              "At the first upward crossing x>=x_c, set qdot=0 as the minimal trapping rule; this is a hypothesis, not a known constitutive law.",
+              "Observation: y_area(t)=q(t)+epsilon only if segmentation faithfully reports the model cavity area fraction; this mapping is uncalibrated."
+            ],
+            "parameters_ranges": {
+              "alpha": "positive; exploratory dimensionless range 0.1 to 10, not estimated",
+              "tau": "positive; exploratory 0.1 to 100 h, not measured",
+              "x_c": "0 to 1 in the normalized x convention, not estimated",
+              "k_n": "positive; exploratory 0.001 to 1 h^-1, not estimated",
+              "k_d": "nonnegative; exploratory 0 to 1 h^-1, not estimated"
+            },
+            "initial_boundary_conditions": "x(0)=x0 in [0,1], q(0)=observed initial area fraction only under the unvalidated mapping; r(t)>=0. No spatial boundary or droplet geometry is supplied. This reduced model has no conservation claim for total RNA or solvent.",
+            "observation_mapping": "Only y_area, the segmented internal dark area divided by filled droplet area, is currently measured. It is not RNA concentration and need not equal a material volume fraction. SEM and object counts do not provide preparation-level replication. No fit is claimed.",
+            "alternatives": [
+              "C_alt equilibrium composition-driven phase separation: at matched final composition after equilibration, predicted cavity fraction is schedule-independent.",
+              "C_alt2 amplification-related reaction carryover can alter transcription or imaging independently of sequence/network arrest.",
+              "C_alt3 segmentation or denominator changes can alter y_area without equivalent changes in physical cavity volume."
+            ],
+            "predictions": [
+              "For a production pulse and a slower schedule with equal integrated production and matched final composition, H1 predicts cavity formation only in the schedule whose x(t) crosses x_c; C_alt predicts convergence after equilibration.",
+              "If H1 arrest has occurred, decreasing production after threshold crossing does not promptly erase q; before threshold crossing, q decays with timescale 1/k_d when x<=x_c.",
+              "Under a constant rate r, x approaches alpha*r*tau from below; threshold crossing is possible only if alpha*r*tau>x_c. This is a conditional consequence, not an estimated property of A or B."
+            ],
+            "checks": [
+              "Dimensional check: alpha*r and x/tau both have units h^-1; each term in qdot has units h^-1 because q and x are dimensionless.",
+              "Threshold limit: if alpha*r*tau<=x_c from x0 below threshold, the model predicts no newly generated cavities; if r=0, x decays exponentially with time constant tau.",
+              "Persistence is produced by the stated post-threshold arrest rule, so it is a distinct testable assumption, not a derivation from known RNA physics.",
+              "Measurement compatibility is unresolved: q is provisionally equated to an area fraction, not a concentration or volume fraction.",
+              "E0 trend is directionally compatible with delayed cavity growth in B but does not test x, threshold crossing, persistence after production stops, or schedule dependence."
+            ],
+            "evidence_conflicts": [
+              "The small initial difference and later B increase are compatible with delayed emergence, but field-pooled SEMs cannot establish preparation-level significance or causal mechanism.",
+              "No supplied evidence measures production rate, sequence heterogeneity, phase composition, or motion; alternatives remain live."
+            ],
+            "untested": [
+              "Whether this production/relaxation/arrest connection exists in the target material.",
+              "Whether amplification changes sequence/product composition, reaction carryover, or both.",
+              "Whether internal dark regions are solvent-rich cavities and whether they persist after production ceases.",
+              "Whether area fraction tracks physical cavity fraction consistently across time and conditions."
+            ],
+            "dissent": "No executor input or independent role judgment is present yet; preserve disagreement when returned.",
+            "next_task": "T1: retrieve background evidence on production-driven phase separation/gelation and kinetic arrest in associating polymer or RNA networks, then state whether conditions and predicted schedule dependence transfer. Preserve C1 as a hypothesis unless the relation and applicability are supported."
+          }
+        ],
+        "tasks": [
+          {
+            "id": "T1",
+            "candidate_id": "C1",
+            "gap_id": "G1",
+            "kind": "mechanism",
+            "status": "proposed",
+            "deliverable": "Executor: adopt/reissue the relation-oriented search request R1, extract the relevant result and conditions from returned abstract/metadata, and report whether it supports, weakens, or fails to bear on the production-versus-relaxation threshold and arrest link. Then propose one discriminating schedule-history prediction without claiming empirical confirmation.",
+            "acceptance": "Identify the source and its support level; extract the actual relation and conditions; explicitly assess transfer to transcribing associative RNA droplets; retain uncertainties and alternatives. Do not close G1 merely because related literature exists.",
+            "evidence_refs": [
+              "E0"
+            ],
+            "reason": "This is the missing mechanism bridge. The initial curve is insufficient to establish it."
+          }
+        ],
+        "requests": [
+          {
+            "type": "search",
+            "id": "R1",
+            "candidate_id": "C1",
+            "gap_id": "G1",
+            "missing_relation": "Whether production-driven accumulation in an associating polymer/RNA network can outpace relaxation to create and then kinetically arrest internal solvent-rich domains, including the conditions and rate-history dependence.",
+            "variables": [
+              "production rate r (h^-1 reduced units)",
+              "junction/network state x (dimensionless)",
+              "relaxation time tau (h)",
+              "cavity area fraction q (dimensionless observable proxy)"
+            ],
+            "conditions": "Background published by 2025-05-12; theory or experiments on associative polymer/RNA condensates, reaction-driven phase separation, gelation, or kinetic arrest. No target identity query.",
+            "query": "(RNA condensate OR RNA droplet OR associative polymer network) AND (transcription-driven OR reaction-driven OR production-driven) AND (kinetic arrest OR gelation OR viscoelastic relaxation OR solvent-rich domains OR pores)",
+            "change_if_found": "If a dated source supports production-rate competition with relaxation and arrested solvent-rich domain growth under conditions plausibly compatible with reversible RNA junctions, retain H1 as a motivated hypothesis and sharpen its applicability conditions. If sources show incompatible timescales/material requirements or only equilibrium demixing, weaken H1 and prioritize composition-driven C_alt. Abstract-level evidence alone cannot establish target applicability."
+          },
+          {
+            "type": "evidence",
+            "id": "E1",
+            "category": "motion",
+            "reason": "Preparation-1 cavity tracking could establish whether cavities persist, coarsen, merge, or move relative to droplets. Arrest predicts a plateau in cavity motion/coarsening after a threshold; continued coarsening favors an unfrozen demixing model. Availability is not support, and one preparation is not independent replication."
+          }
+        ],
+        "literature_use": [],
+        "adjudication": null,
+        "final": null
+      },
+      "protocol_errors": [],
+      "input_sha256": "a698e5b0f4305e24a6f6f8a4113d393a89e6e2efe4bd6f2687773b70c7e6764b",
+      "reply_sha256": "9b706bdc8428730a364b3a3f59c1a737ea24bfa88b07a02f62bd2fae7d9f1d3d"
+    },
+    {
+      "label": "R1",
+      "role": "executor",
+      "reply": {
+        "recognition": "uncertain; no specific study recognized",
+        "summary": "I adopt T1 by reissuing the relation search. The supplied tool ledger is empty, so there are no actual literature returns to interpret and no support for the missing production-relaxation/arrest relation can yet be claimed. E0 reports segmented empty-area fraction, B rising from 0.01381 at 0 h to 0.08918 at 24 h while A is 0.00446 at 24 h. These are image area fractions, not RNA concentrations or direct phase composition; fields are nested within two preparations. Preserve C1 hypothesis H1: xdot=alpha*r(t)-x/tau, where x is an effective dimensionless junction state, r is a reduced production rate (h^-1), tau is relaxation time (h), alpha is dimensionless. Before threshold crossing x>=x_c, qdot=k_n*max(x-x_c,0)-k_d*q; after the first crossing impose qdot=0 as a phenomenological trapping rule. q is only provisionally mapped to segmented area fraction y_area=q+epsilon. At equal integrated production and matched final composition, a pulse may cross x_c and trap q while a slower schedule may not; equilibrated composition-driven demixing predicts schedule-independent convergence. This is conditional on H1 and the uncalibrated observation map.",
+        "candidates": [
+          {
+            "id": "C1",
+            "version": 2,
+            "target": "Delayed emergence and persistence of segmented internal RNA-poor cavities in transcribing RNA droplets, particularly B versus A.",
+            "known_relations": [
+              "E0: t=0 A=0.01487 and B=0.01381; t=24 h A=0.00446 and B=0.08918 mean segmented empty-area fraction.",
+              "E0 is an image area fraction and does not measure RNA concentration, free energy, phase composition, network relaxation, or cavity motion.",
+              "Seven fields are pooled across two independent preparations; fields, objects, and SEMs do not establish preparation-level replication.",
+              "Amplification effects on template/product populations, carryover, and imaging are unresolved.",
+              "No broker search or evidence return is present in this input."
+            ],
+            "hypotheses": [
+              "H1 (new, explicit, unconfirmed): transcription-driven accumulation of load-bearing RNA junctions can outrun network relaxation, cross a threshold, generate internal solvent-rich domains, and kinetically trap their area.",
+              "H2 (alternative): amplification-linked composition or product heterogeneity changes equilibrium phase coexistence; at matched composition after equilibration cavity fraction is schedule-independent.",
+              "H3 (alternative): reaction carryover or imaging/segmentation changes explain some or all of the contrast."
+            ],
+            "gaps": [
+              {
+                "id": "G1",
+                "status": "open",
+                "description": "Whether production-driven accumulation can outrun relaxation in an associating RNA network and generate then arrest internal solvent-rich domains, under what material and timescale conditions, and with what rate-history dependence. No returned source addresses it yet."
+              },
+              {
+                "id": "G2",
+                "status": "open",
+                "description": "A/B causal attribution among template/product heterogeneity, carryover, and measurement differences is unresolved."
+              },
+              {
+                "id": "G3",
+                "status": "open",
+                "description": "No direct junction-state, relaxation-time, phase-composition, or cavity-trajectory measurement is supplied; observation map is uncalibrated."
+              }
+            ],
+            "variables_units": {
+              "t": "time (h)",
+              "r": "effective production rate, reduced units (h^-1)",
+              "x": "dimensionless effective load-bearing junction fraction",
+              "tau": "relaxation time (h)",
+              "alpha": "dimensionless conversion",
+              "x_c": "dimensionless threshold",
+              "q": "model cavity area fraction, dimensionless [0,1], provisional map",
+              "k_n": "generation coefficient (h^-1)",
+              "k_d": "pre-arrest loss coefficient (h^-1)",
+              "y_area": "segmented internal dark area / filled droplet area, dimensionless"
+            },
+            "equations": [
+              "xdot=alpha*r(t)-x/tau",
+              "Before arrest: qdot=k_n*max(x-x_c,0)-k_d*q",
+              "At first upward crossing x>=x_c impose qdot=0 thereafter; hypothesized arrest rule, not established constitutive physics.",
+              "Observation y_area=q+epsilon only under an uncalibrated segmentation-to-state map."
+            ],
+            "parameters_ranges": {
+              "alpha": "positive; exploratory 0.1 to 10, not estimated",
+              "tau": "positive; exploratory 0.1 to 100 h, not measured",
+              "x_c": "0 to 1 normalized x, not estimated",
+              "k_n": "positive; exploratory 0.001 to 1 h^-1, not estimated",
+              "k_d": "nonnegative; exploratory 0 to 1 h^-1, not estimated"
+            },
+            "initial_boundary_conditions": "x(0)=x0 in [0,1]; q(0) may equal observed area fraction only if the unvalidated mapping holds; r(t)>=0. No spatial boundary, geometry, or total RNA/solvent balance is specified.",
+            "observation_mapping": "Only segmented internal dark area divided by filled droplet area is measured. It is not concentration and need not equal material volume fraction. No fit is claimed. Fields do not provide independent preparation-level inference.",
+            "alternatives": [
+              "Equilibrium composition-driven demixing predicts schedule-independent cavity fraction after equilibration at matched composition.",
+              "Amplification-related carryover changes transcription or imaging without junction-mediated arrest.",
+              "Segmentation or denominator changes alter y_area without equivalent changes in cavity volume."
+            ],
+            "predictions": [
+              "At equal integrated production and matched final composition, a pulse crossing x_c predicts trapped q while a slower schedule staying below x_c predicts no new threshold-generated q; the equilibrium alternative predicts convergence after equilibration.",
+              "After crossing, reduced r does not promptly erase q under the imposed arrest rule; below threshold q may decay on timescale 1/k_d.",
+              "For constant r, x approaches alpha*r*tau; from below threshold crossing requires alpha*r*tau>x_c. Conditional consequence, not an estimate for A or B."
+            ],
+            "checks": [
+              "Dimensional: alpha*r and x/tau have units h^-1; qdot terms have units h^-1 since q and x are dimensionless.",
+              "Limit: r=0 gives x(t)=x(0)exp(-t/tau); if x(0)<x_c and alpha*r*tau<=x_c at constant rate, there is no upward crossing.",
+              "Persistence follows from the imposed post-crossing freeze and is an assumption to test.",
+              "No conservation or geometry maps area to volume; compatibility remains unresolved.",
+              "E0 is directionally compatible with delayed B area growth but does not measure x or test arrest or schedule dependence."
+            ],
+            "evidence_conflicts": [
+              "Initial similarity and later contrast are compatible with H1, H2, H3, or measurement effects; current data cannot distinguish them.",
+              "No returned literature or direct state/phase/motion evidence is available in this input."
+            ],
+            "untested": [
+              "Whether production/relaxation competition and threshold arrest exist in this material.",
+              "Whether amplification changes sequence/product population, carryover, or both.",
+              "Whether dark regions are solvent-rich cavities and persist after production stops.",
+              "Whether q maps consistently to y_area across conditions and time."
+            ],
+            "dissent": "No executor-leader disagreement can be assessed from this input. Preserve C1 only as a hypothesis; absent actual returns I neither adopt literature support nor close G1.",
+            "next_task": "T1: interpret broker returns from search and cavity tracking; state support level and transfer limits, then retain or weaken H1 without treating related literature as target confirmation."
+          }
+        ],
+        "tasks": [
+          {
+            "id": "T1",
+            "candidate_id": "C1",
+            "gap_id": "G1",
+            "kind": "mechanism",
+            "status": "in_progress",
+            "deliverable": "Interpret actual returned background evidence on production/relaxation and arrest, assess transfer to transcribing associative RNA droplets, and compare schedule-history prediction with equilibrium demixing.",
+            "acceptance": "Identify source/support level, extract relation and conditions from actual returns, state transfer limits, preserve alternatives, and do not close G1 from related literature alone.",
+            "evidence_refs": [
+              "E0"
+            ],
+            "reason": "No actual tool returns are present; requests address the missing mechanism bridge and discrimination."
+          }
+        ],
+        "requests": [
+          {
+            "type": "search",
+            "id": "R1",
+            "candidate_id": "C1",
+            "gap_id": "G1",
+            "missing_relation": "Whether production-driven accumulation in an associative polymer/RNA network can outpace relaxation to create and kinetically arrest internal solvent-rich domains, including material conditions and rate/history dependence.",
+            "variables": [
+              "production rate r (reduced h^-1)",
+              "junction state x (dimensionless)",
+              "relaxation time tau (h)",
+              "cavity area fraction q (dimensionless proxy)"
+            ],
+            "conditions": "Background published by 2025-05-12; associative polymer/RNA condensates, reaction-driven phase separation, gelation, or kinetic arrest. No target identity query.",
+            "query": "(RNA condensate OR RNA droplet OR associative polymer network) AND (transcription-driven OR reaction-driven OR production-driven) AND (kinetic arrest OR gelation OR viscoelastic relaxation OR solvent-rich domains OR pores)",
+            "change_if_found": "Compatible evidence for production-rate competition and arrest motivates H1 but does not establish transfer; incompatible material/timescale requirements or only equilibrium demixing weaken H1 and prioritize H2. Abstract evidence alone cannot establish target applicability."
+          },
+          {
+            "type": "evidence",
+            "id": "E1",
+            "category": "motion",
+            "reason": "Request preparation-1 tracking of cavity persistence, coarsening, merging, and motion relative to droplets. A motion/coarsening plateau is consistent with the imposed arrest rule; continued coarsening challenges it. One preparation is not independent replication; availability is not support."
+          }
+        ],
+        "literature_use": [],
+        "adjudication": null,
+        "final": null
+      },
+      "protocol_errors": [],
+      "input_sha256": "0f04f143a381e8f81d4801ea5d83e193fdee62aaf1016d3f5215454adfac2411",
+      "reply_sha256": "110531aab66dcae105d0a7712b2444d2e33ca75506bf8aebb17d6e98c4b96884"
+    }
+  ],
+  "tools": [],
+  "literature_use": [],
+  "adjudications": [],
+  "opened": [
+    "case_brief.md",
+    "initial_measurements.json"
+  ],
+  "counters": {
+    "replies": 2,
+    "search": 0,
+    "compute": 0,
+    "evidence": 0
+  },
+  "finals": [],
+  "reason": "actor reply R1"
+}

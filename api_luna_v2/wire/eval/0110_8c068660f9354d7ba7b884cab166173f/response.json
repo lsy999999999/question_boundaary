@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431490556736626,
+  "http_status": 200,
+  "body": {
+    "id": "resp_08115115d6a84cbd016ae597c098148196a70c881898b9c87b",
+    "object": "chat.completion",
+    "created": 1793431490,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory models sharply outperform the state-only model; memory_slow has the lowest trajectory-level CV error. Alternating has the greatest predicted disagreement among available experiments.\",\"prediction\":\"Alternating inputs will reveal history-dependent response: output will lag switches and differ from a state-only prediction.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2260,
+      "completion_tokens": 160,
+      "total_tokens": 2420,
+      "completion_tokens_details": {
+        "reasoning_tokens": 82
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.9902208959683776
+}

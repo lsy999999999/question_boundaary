@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793429914704689948,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Slow-memory CV error is lowest, far below the current state model, and the residuals show strong temporal dependence. PRBS best separates plausible history representations by varying inputs irregularly.",
+    "prediction": "After PRBS input switches, the output will retain input-history-dependent effects even when current input and visible state are similar.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow-memory CV error is lowest, far below the current state model, and the residuals show strong temporal dependence. PRBS best separates plausible history representations by varying inputs irregularly.\",\"prediction\":\"After PRBS input switches, the output will retain input-history-dependent effects even when current input and visible state are similar.\",\"accept\":false}",
+    "input_tokens": 2564,
+    "output_tokens": 84,
+    "batch_elapsed_seconds": 2.1154686715453863,
+    "amortized_seconds": 2.1154686715453863,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2564,
+      "completion_tokens": 84,
+      "total_tokens": 2648
+    },
+    "api_response_id": "resp_02bf58b81f0abcd3016ae591994c648190b9b21d1d24e11309",
+    "wire_record": "wire/eval/0110_d3f79ca32d144a4a8bc6b505e8dfe8f9"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793409005078349796,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "positive_pulse",
+    "reason": "Cubic terms already improved fit; further test with positive pulse.",
+    "prediction": "Positive pulse will show higher nonlinearity than previous tests.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Higher NMSE indicates stronger nonlinearity.",
+      "condition_to_check": "NMSE for positive_pulse exceeds previous max."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"state_cubic\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Cubic terms already improved fit; further test with positive pulse.\",\n  \"prediction\": \"Positive pulse will show higher nonlinearity than previous tests.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"none\",\n    \"target_relation\": \"Higher NMSE indicates stronger nonlinearity.\",\n    \"condition_to_check\": \"NMSE for positive_pulse exceeds previous max.\"\n  }\n}",
+    "input_tokens": 2524,
+    "output_tokens": 107,
+    "batch_elapsed_seconds": 325.5412763329223,
+    "amortized_seconds": 81.38531908323057,
+    "peak_gpu_allocated_gb": 0.0,
+    "backend": "cpu-fp32",
+    "peak_process_ram_gb": 34.3332405090332,
+    "model_path": "/home/lsy/theory_discovery_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

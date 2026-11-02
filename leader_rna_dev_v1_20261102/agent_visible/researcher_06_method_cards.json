@@ -1,0 +1,81 @@
+[
+  {
+    "id": "M31",
+    "group": "F 模型批评与区分实验",
+    "name": "残差结构与后验预测检查",
+    "tags": [
+      "residual",
+      "mismatch",
+      "model_criticism"
+    ],
+    "trigger": "总体误差可接受，但局部条件或分布特征不对。",
+    "required_inputs": "实际拟合与观测、分组及模型预测样本/区间。",
+    "steps": [
+      "按时间、位置、输入和批次检查残差",
+      "对比模型预测的分布与目标统计",
+      "指明哪一类依赖仍未解释"
+    ],
+    "deliverable": "具体可定位的失败模式与候选修订。",
+    "failure_or_limit": "只有概率模型及推断样本才称后验预测检查；残差模式也可能来自观测误差。",
+    "if_blocked": "M36排测量问题，随后M32修订。",
+    "source_ids": [
+      "P12"
+    ],
+    "basis": "direct_method_adaptation",
+    "evidence_note": "来源支持基础方法；本卡的触发条件、交付约定和方法衔接为本项目整理，未验证其在新案例上的收益。"
+  },
+  {
+    "id": "M38",
+    "group": "G 修订与证据管理",
+    "name": "证据强弱、反证与停止",
+    "tags": [
+      "evidence",
+      "overconfidence",
+      "sequential_testing"
+    ],
+    "trigger": "证据越来越多，但混入重复信息或反复挑选检验。",
+    "required_inputs": "数据独立性、事前预测、检验过程与停止规则。",
+    "steps": [
+      "区分独立重复、同一数据重分析和来源复述",
+      "分开方向预测、数值预测和机制识别",
+      "只在假设满足时使用统计证据累积"
+    ],
+    "deliverable": "证据账本与目前可支持的认识层级。",
+    "failure_or_limit": "反复选择性检验会夸大证据；不能把同一数据多种指标当独立确认。",
+    "if_blocked": "封存新预测并申请真正独立数据。",
+    "source_ids": [
+      "P01",
+      "P09",
+      "P12"
+    ],
+    "basis": "engineering_synthesis",
+    "evidence_note": "来源支持基础方法；本卡的触发条件、交付约定和方法衔接为本项目整理，未验证其在新案例上的收益。"
+  },
+  {
+    "id": "M44",
+    "group": "H 研究调度与交付",
+    "name": "最小交付与预算停止",
+    "tags": [
+      "planning",
+      "repeated_failure",
+      "budget"
+    ],
+    "trigger": "工作不断扩展，始终没有可审查结果。",
+    "required_inputs": "剩余预算、已完成产物、阻塞任务。",
+    "steps": [
+      "明确当前能交付的解释和计算层级",
+      "优先完成一条可检验关系",
+      "预算耗尽时列关键阻塞，不补造完成状态"
+    ],
+    "deliverable": "部分/完整模型、预测、认识变化和精确缺口。",
+    "failure_or_limit": "预算停止不是科学否定；长提示词和更多轮次的收益需由实际结果判断。",
+    "if_blocked": "按新的授权和独立版本继续，保留本次终点。",
+    "source_ids": [
+      "P09",
+      "P12",
+      "P14"
+    ],
+    "basis": "engineering_synthesis",
+    "evidence_note": "来源支持基础方法；本卡的触发条件、交付约定和方法衔接为本项目整理，未验证其在新案例上的收益。"
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432317107755019,
+  "http_status": 200,
+  "body": {
+    "id": "resp_06ffa0c851e69ebb016ae59af98fa88190b8b7c3b7de137d75",
+    "object": "chat.completion",
+    "created": 1793432317,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"slow_wave\",\"reason\":\"It has the lowest trajectory-level CV error (0.00183), improving on memory_slow (0.00235); the persistent post-input response supports history dependence, though residual lag-1 correlation remains.\",\"prediction\":\"After comparable input histories, larger accumulated histories will produce a weaker incremental response than the unsaturated memory model predicts.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Finite-timescale accumulated input history can influence post-input response.\",\"condition_to_check\":\"The history-dependent carryover should predict trajectories across input shapes after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3632,
+      "completion_tokens": 326,
+      "total_tokens": 3958,
+      "completion_tokens_details": {
+        "reasoning_tokens": 190
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 7.265829619951546
+}

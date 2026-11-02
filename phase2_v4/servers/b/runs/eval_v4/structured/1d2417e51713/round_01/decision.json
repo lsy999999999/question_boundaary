@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423870914236540,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "negative_pulse",
+    "reason": "Multiscale memory shows lower NMSE than state and clock.",
+    "prediction": "Negative pulse will show less variance compared to positive pulse.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Storage should show consistent behavior across actions.",
+      "condition_to_check": "Consistent response to negative pulse vs positive pulse."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_multiscale\",\n  \"experiment\": \"negative_pulse\",\n  \"reason\": \"Multiscale memory shows lower NMSE than state and clock.\",\n  \"prediction\": \"Negative pulse will show less variance compared to positive pulse.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Storage should show consistent behavior across actions.\",\n    \"condition_to_check\": \"Consistent response to negative pulse vs positive pulse.\"\n  }\n}",
+    "input_tokens": 3580,
+    "output_tokens": 107,
+    "batch_elapsed_seconds": 2.568866679444909,
+    "amortized_seconds": 2.568866679444909,
+    "peak_gpu_allocated_gb": 14.917911529541016,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

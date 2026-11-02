@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793423441542258617,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "negative_pulse",
+    "reason": "Memory_multiscale has lower CV NMSE than memory_clock.",
+    "prediction": "Negative pulse will show a distinct phase shift and decay rate difference compared to memory_clock.",
+    "accept": false,
+    "mapping": {
+      "source_id": "memory_multiscale",
+      "target_relation": "Distinct phase shift and decay rate under negative pulse input.",
+      "condition_to_check": "Consistent phase shift and decay rate regardless of pulse polarity."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_multiscale\",\n  \"experiment\": \"negative_pulse\",\n  \"reason\": \"Memory_multiscale has lower CV NMSE than memory_clock.\",\n  \"prediction\": \"Negative pulse will show a distinct phase shift and decay rate difference compared to memory_clock.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"memory_multiscale\",\n    \"target_relation\": \"Distinct phase shift and decay rate under negative pulse input.\",\n    \"condition_to_check\": \"Consistent phase shift and decay rate regardless of pulse polarity.\"\n  }\n}",
+    "input_tokens": 3438,
+    "output_tokens": 121,
+    "batch_elapsed_seconds": 2.819059619680047,
+    "amortized_seconds": 2.819059619680047,
+    "peak_gpu_allocated_gb": 14.893336296081543,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024242401123047,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430594702058250,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "alternating",
+    "reason": "It has the strongest trajectory-held-out performance by a wide margin, though residual lag correlation leaves room for missing dynamics.",
+    "prediction": "Under alternating input, matched current inputs can produce different outputs depending on accumulated history and elapsed-time phase.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated-history features improve prediction over instantaneous state and input; this supports a predictive storage relation, not a physical mechanism claim.",
+      "condition_to_check": "Test whether history predicts output after controlling current state and input; disappearance of that effect weakens the relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"It has the strongest trajectory-held-out performance by a wide margin, though residual lag correlation leaves room for missing dynamics.\",\"prediction\":\"Under alternating input, matched current inputs can produce different outputs depending on accumulated history and elapsed-time phase.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated-history features improve prediction over instantaneous state and input; this supports a predictive storage relation, not a physical mechanism claim.\",\"condition_to_check\":\"Test whether history predicts output after controlling current state and input; disappearance of that effect weakens the relation.\"}}",
+    "input_tokens": 3262,
+    "output_tokens": 356,
+    "batch_elapsed_seconds": 4.684690344147384,
+    "amortized_seconds": 4.684690344147384,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3262,
+      "completion_tokens": 356,
+      "total_tokens": 3618,
+      "completion_tokens_details": {
+        "reasoning_tokens": 227
+      }
+    },
+    "api_response_id": "resp_0160b147f7086341016ae5943ed4d881979023c1d485d8702f",
+    "wire_record": "wire/eval/0447_0650ba599f71461e9650cc87045b208a"
+  }
+}

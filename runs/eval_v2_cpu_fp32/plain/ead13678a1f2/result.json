@@ -1,0 +1,100 @@
+{
+  "task_id": "ead13678a1f2",
+  "split": "eval",
+  "family": "memory_clock",
+  "seed": 1,
+  "method": "plain",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "nonlinear_delay",
+    "ridge": 1e-05,
+    "cv_nmse": 1.171827784077976,
+    "coefficients": [
+      -0.0336327,
+      3.9242499,
+      0.5450354,
+      -0.003126,
+      0.0043206,
+      -6.5441443,
+      -1.8252321,
+      0.7000066,
+      0.113771,
+      -0.5042488,
+      -0.3072544,
+      -0.6335299,
+      -1.1213063,
+      1.0837345,
+      -0.6657599,
+      -1.2052516,
+      3.5480593,
+      2.6268709,
+      0.7516116,
+      0.3141913,
+      0.0090365,
+      0.5450354,
+      -0.0003587,
+      0.0617446,
+      0.0150996
+    ]
+  },
+  "test": {
+    "test_nmse": 1.3848535098871977,
+    "test_mse": 0.24215294297330694,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 0.15943211773697405,
+        "nmse": 1.5319247635745867
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.7589386568772377,
+        "nmse": 2.3750002313079324
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 0.07045042551101525,
+        "nmse": 0.8046483011322241
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 0.21210347820496003,
+        "nmse": 0.987177235690807
+      },
+      {
+        "action": "test_prbs",
+        "mse": 0.11617826814259143,
+        "nmse": 2.0874093134182172
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 0.13581471136706336,
+        "nmse": 0.5229612141994172
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": false,
+  "self_accept": true,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 8277,
+  "output_tokens": 224,
+  "generation_seconds_amortized": 201.50343216955662,
+  "elapsed_wall_seconds": 4877.294798851013,
+  "selected_actions": [
+    "positive_pulse",
+    "negative_pulse",
+    "step_rest"
+  ],
+  "selected_representations": [
+    "nonlinear_delay",
+    "nonlinear_delay",
+    "nonlinear_delay",
+    "nonlinear_delay"
+  ],
+  "peak_gpu_allocated_gb": 0.0,
+  "peak_process_ram_gb": 32.91365432739258,
+  "inference_backend": "cpu-fp32",
+  "evaluation_after_commit_ns": 1793392447352567465
+}

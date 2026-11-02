@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793423937094766369,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "negative_pulse",
+    "reason": "Negative pulse has lower prediction variance compared to other actions.",
+    "prediction": "Negative pulse will cause a delayed and attenuated response, consistent with memory and clock effects.",
+    "accept": true,
+    "mapping": {
+      "source_id": "memory_clock",
+      "target_relation": "System responds with delayed and attenuated oscillations to negative pulses.",
+      "condition_to_check": "Verify if response amplitude decreases over cycles post-pulse."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_clock\",\n  \"experiment\": \"negative_pulse\",\n  \"reason\": \"Negative pulse has lower prediction variance compared to other actions.\",\n  \"prediction\": \"Negative pulse will cause a delayed and attenuated response, consistent with memory and clock effects.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"memory_clock\",\n    \"target_relation\": \"System responds with delayed and attenuated oscillations to negative pulses.\",\n    \"condition_to_check\": \"Verify if response amplitude decreases over cycles post-pulse.\"\n  }\n}",
+    "input_tokens": 3564,
+    "output_tokens": 117,
+    "batch_elapsed_seconds": 2.776061363518238,
+    "amortized_seconds": 2.776061363518238,
+    "peak_gpu_allocated_gb": 14.918898582458496,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024013519287109,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "actions": [
+    {
+      "points": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.5,
+          -1.5
+        ],
+        [
+          3.5,
+          1.5
+        ],
+        [
+          5.5,
+          0.0
+        ]
+      ]
+    },
+    {
+      "points": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.5,
+          -1.5
+        ],
+        [
+          3.5,
+          0.0
+        ],
+        [
+          4.5,
+          1.5
+        ],
+        [
+          6.5,
+          0.0
+        ]
+      ]
+    }
+  ],
+  "old_features": [
+    {
+      "peak_abs": 1.5,
+      "reversal_count": 1,
+      "max_reversal_jump": 3.0,
+      "absolute_area": 7.5,
+      "signed_area": -1.5,
+      "longest_sign_duration": 3.0,
+      "total_variation": 6.0
+    },
+    {
+      "peak_abs": 1.5,
+      "reversal_count": 1,
+      "max_reversal_jump": 3.0,
+      "absolute_area": 7.5,
+      "signed_area": -1.5,
+      "longest_sign_duration": 3.0,
+      "total_variation": 6.0
+    }
+  ],
+  "generic_temporal_scope": {
+    "expression": {
+      "op": "gt",
+      "args": [
+        {
+          "op": "duration",
+          "args": [
+            {
+              "op": "and",
+              "args": [
+                {
+                  "op": "le",
+                  "args": [
+                    {
+                      "op": "abs",
+                      "args": [
+                        {
+                          "signal": "u"
+                        }
+                      ]
+                    },
+                    0.1
+                  ]
+                },
+                {
+                  "op": "and",
+                  "args": [
+                    {
+                      "op": "ge",
+                      "args": [
+                        {
+                          "signal": "t"
+                        },
+                        3.5
+                      ]
+                    },
+                    {
+                      "op": "lt",
+                      "args": [
+                        {
+                          "signal": "t"
+                        },
+                        4.5
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        0.5
+      ]
+    },
+    "reduce": "last"
+  },
+  "new_labels": [
+    false,
+    true
+  ],
+  "purpose": "Expressibility test only; does not establish a correct error boundary"
+}

@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "zero_model_calls": true,
+  "checks": [
+    "live historical retrieval with original abstract/date/raw hash",
+    "original public C04 calculation exact match, all six rows",
+    "both roles receive identical complete tool state",
+    "missing model returns clarification",
+    "runtime failure retained",
+    "tool completion never closes task",
+    "freeze verifies; byte tamper changes hash",
+    "input allowlist excludes withheld data"
+  ],
+  "retrieval_sources": 5,
+  "frozen_sha256": "2c063dd0f331c3826e129ad06882a56160ca62f7ae5bdf063cc72b3ed0d99a80",
+  "limitations": [
+    "metadata dates, no independent historical abstract archive",
+    "application-level isolation",
+    "no scientific validation from fixtures"
+  ]
+}

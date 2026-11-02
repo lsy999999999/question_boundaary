@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430162880278311,
+  "http_status": 200,
+  "body": {
+    "id": "resp_05e317b15f7b7705016ae5928ffbc4819587acb844156bd90f",
+    "object": "chat.completion",
+    "created": 1793430162,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"ramp_reverse\",\"reason\":\"State remains best on trajectory-level validation and prior PRBS forecasts were accurate. Residual correlation leaves some uncertainty, so a reversed ramp probes history effects without prematurely adding memory.\",\"prediction\":\"At matched current state and input during the ramp and reversal, next-step responses should not systematically depend on the preceding input path.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is supported by the validated state model.\",\"condition_to_check\":\"Reject if ramp and reversal show reproducible history-dependent residuals after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3430,
+      "completion_tokens": 258,
+      "total_tokens": 3688,
+      "completion_tokens_details": {
+        "reasoning_tokens": 128
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.6563480477780104
+}

@@ -1,0 +1,239 @@
+{
+  "relations": [
+    {
+      "id": "local_relation_0",
+      "kind": "observed_local_relation",
+      "observations": [
+        "v3_r0_experiment_0",
+        "v3_r0_experiment_1"
+      ],
+      "actions": [
+        {
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              0.5,
+              1.2
+            ],
+            [
+              4.5,
+              0
+            ]
+          ]
+        },
+        {
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              0.5,
+              -1.2
+            ],
+            [
+              4.5,
+              0
+            ]
+          ]
+        }
+      ],
+      "factor": -1.0,
+      "metric": "relation_rms",
+      "phase": "observed_property",
+      "time_window": [
+        0.0,
+        12.0
+      ],
+      "value": 0.007766659026699184,
+      "noise_rms": 0.007071067811865475,
+      "property": "near_mirror",
+      "scope": "Only these recorded inputs and reset initial conditions; not a universal law"
+    },
+    {
+      "id": "local_relation_1",
+      "kind": "observed_local_relation",
+      "observations": [
+        "v3_r1_experiment_0",
+        "v3_r1_experiment_1"
+      ],
+      "actions": [
+        {
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              0.5,
+              1.2
+            ],
+            [
+              3.5,
+              0
+            ]
+          ]
+        },
+        {
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              0.5,
+              -1.2
+            ],
+            [
+              3.5,
+              0
+            ]
+          ]
+        }
+      ],
+      "factor": -1.0,
+      "metric": "relation_rms",
+      "phase": "observed_property",
+      "time_window": [
+        0.0,
+        12.0
+      ],
+      "value": 0.006928051083954317,
+      "noise_rms": 0.007071067811865475,
+      "property": "near_mirror",
+      "scope": "Only these recorded inputs and reset initial conditions; not a universal law"
+    },
+    {
+      "id": "local_relation_2",
+      "kind": "observed_local_relation",
+      "observations": [
+        "v3_r2_experiment_0",
+        "v3_r2_experiment_1"
+      ],
+      "actions": [
+        {
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              0.5,
+              0.9
+            ],
+            [
+              4.5,
+              0
+            ]
+          ]
+        },
+        {
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              0.5,
+              1.35
+            ],
+            [
+              4.5,
+              0
+            ]
+          ]
+        }
+      ],
+      "factor": 1.5,
+      "metric": "relation_rms",
+      "phase": "observed_property",
+      "time_window": [
+        0.0,
+        12.0
+      ],
+      "value": 0.25962673872875874,
+      "noise_rms": 0.009013878188659973,
+      "property": "nonproportional_response",
+      "scope": "Only these recorded inputs and reset initial conditions; not a universal law"
+    }
+  ],
+  "historical_refutation": {
+    "id": "legacy_v4_boundary_refuted",
+    "kind": "historical_model_specific_refutation",
+    "owner_model_id": "archived_v4:b4_r1",
+    "fit_version": "7bf379dbc522709cc1ee8d3e4375a5ba643e027c87082ce0d68f1837e513abcd",
+    "boundary": {
+      "model_id": "b4_r1",
+      "feature": "max_reversal_jump",
+      "operator": "gt",
+      "threshold": 2.5,
+      "error_threshold": 0.05,
+      "reason": "b4_r1 自身证据中，max_reversal_jump 为 0 的多条行及新干预 jump=1.7、2.1 的行均低于 0.05；jump=3.0 的两条新干预行均高于 0.05（NMSE 0.158、0.069）。故暂以 2.5 作前瞻性分界，测试高反转跳变时该模型是否更易失败；样本有限，不能视为普遍规律。证据：scope:b4_r1:7bf379dbc522。"
+    },
+    "actions": [
+      {
+        "points": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.5,
+            1.2
+          ],
+          [
+            3.5,
+            -1.1
+          ],
+          [
+            6.5,
+            0.0
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.5,
+            1.2
+          ],
+          [
+            3.5,
+            -1.5
+          ],
+          [
+            6.5,
+            0.0
+          ]
+        ]
+      }
+    ],
+    "metric": "trajectory_nmse",
+    "phase": "observed_error_of_precommitted_prediction",
+    "time_window": [
+      0,
+      12
+    ],
+    "values": [
+      0.20123968180069857,
+      0.036593157152430354
+    ],
+    "predicted_labels": [
+      false,
+      true
+    ],
+    "observed_labels": [
+      true,
+      false
+    ],
+    "status": "violated_on_pair",
+    "scope": "This parameter version on these two inputs; not a universal no-boundary result"
+  }
+}

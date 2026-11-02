@@ -1,0 +1,46 @@
+{
+  "recognition": "uncertain; no specific study recognized from the supplied material or the returned search",
+  "summary": "The requested Europe PMC search S_mix_partition_internal_domains returned hit_count=0 and sources=[]. It supplies no literature relation connecting RNA mixture composition or selective partitioning to internal dilute-domain nucleation or persistence. This is a search failure to retrieve evidence, not evidence against the mechanism. Retain the provisional mixture/partitioning hypothesis and open gap G_mix_to_internal_domain. Do not infer RNA abundance from DNA read frequencies or infer cavity thermodynamics from endpoint phase concentrations. No computation or new physical measurement was performed.",
+  "candidates": [],
+  "tasks": [
+    {
+      "id": "T_mix_internal_domain_literature",
+      "candidate_id": "RNA_mix_partition_cavity_v1",
+      "gap_id": "G_mix_to_internal_domain",
+      "kind": "mechanism",
+      "status": "open",
+      "deliverable": "Evaluate background literature for a relation connecting mixture-dependent partitioning and internal dilute-domain formation or persistence; map assumptions and transfer limits.",
+      "acceptance": "Identify source IDs if any; distinguish abstract-only from full-text support; state variables, units and conditions; explain whether a source changes the candidate; retain alternatives.",
+      "evidence_refs": [
+        "C01",
+        "C03",
+        "C04",
+        "E02",
+        "initial_measurements.json"
+      ],
+      "reason": "Search S_mix_partition_internal_domains returned no sources; the mechanism link remains unsupported."
+    }
+  ],
+  "requests": [
+    {
+      "type": "search",
+      "id": "S_multiphase_wetting_domains",
+      "candidate_id": "RNA_mix_partition_cavity_v1",
+      "gap_id": "G_mix_to_internal_domain",
+      "missing_relation": "Whether interfacial tensions/wetting conditions in multicomponent biomolecular condensates permit a second, dilute internal domain inside a dense condensate, and what conditions control nucleation or persistence; seek direct RNA examples separately from transferable general condensate physics.",
+      "variables": [
+        "phase identity/composition, dimensionless or concentration units as reported",
+        "interfacial tensions, energy per area as reported",
+        "domain radius, length units as reported",
+        "time or exchange rate as reported",
+        "observed internal-domain morphology, categorical or measured geometry as reported"
+      ],
+      "conditions": "Background first published on or before 2025-05-12; exclude target identity and later accounts; distinguish direct RNA evidence from other biomolecular condensates and abstract-only from full text.",
+      "query": "multiphase biomolecular condensates internal domains wetting interfacial tension nucleation RNA",
+      "change_if_found": "Adopt or modify only a relation and its stated conditions that bear on formation or persistence of an internal domain; treat other-system results as hypotheses with explicit transfer limits. If no such relation is found, retain the current hypothesis and open gap."
+    }
+  ],
+  "literature_use": [],
+  "adjudication": null,
+  "final": null
+}

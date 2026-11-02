@@ -1,0 +1,96 @@
+{
+  "question": {
+    "family": "reversal_depth",
+    "purpose": "discriminate",
+    "target_ids": [
+      "v3_r1",
+      "v3_r2",
+      "b4_r0"
+    ],
+    "amplitude_range": [
+      1.2,
+      1.5
+    ],
+    "value_range": [
+      0.2,
+      1.5
+    ],
+    "evidence_ids": [
+      "aggregate:v3_r1:520c3ec27e67",
+      "aggregate:v3_r2:89beda8821af",
+      "aggregate:b4_r0:fb2cbd3bdda7",
+      "local_relation_2",
+      "legacy_v4_boundary_refuted"
+    ],
+    "rationale": "三模型整体拟合相近，但反转干预诊断曾出现分歧；改变反转深度可检验其预测差异，且不把历史边界当作当前模型规律。"
+  },
+  "result": {
+    "passed": true,
+    "actions": [
+      {
+        "points": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.5,
+            -1.5
+          ],
+          [
+            3.5,
+            0.2
+          ],
+          [
+            6.5,
+            0.0
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.5,
+            -1.5
+          ],
+          [
+            3.5,
+            1.1
+          ],
+          [
+            6.5,
+            0.0
+          ]
+        ]
+      }
+    ],
+    "descriptor": {
+      "family": "reversal_depth",
+      "amplitude": 1.5,
+      "sign": -1,
+      "values": [
+        0.2,
+        1.1
+      ]
+    },
+    "guard": {
+      "passed": true,
+      "contrast_rms": 0.03276737643989887,
+      "boundary_labels": [
+        null,
+        null
+      ],
+      "straddles": false
+    },
+    "considered": 36,
+    "rejected_count": 17,
+    "reasons": {
+      "input already observed": 10,
+      "insufficient predicted separation": 7
+    }
+  }
+}

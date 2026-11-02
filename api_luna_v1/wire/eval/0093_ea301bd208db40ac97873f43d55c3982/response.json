@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429888586428888,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0f644ad6b6e625f0016ae5917d197c819783c65469742c619a",
+    "object": "chat.completion",
+    "created": 1793429888,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"State has the lowest trajectory-held-out error; memory_fast is marginally worse. Correlated residuals leave adequacy uncertain, and alternating input maximizes disagreement among plausible models.\",\"prediction\":\"If accumulated history matters, the response to rapid switches will differ from the state model, showing smoother transitions or reduced amplitude.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No mechanism relation is established by the present trajectories.\",\"condition_to_check\":\"Support storage only if input history predicts output after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2798,
+      "completion_tokens": 356,
+      "total_tokens": 3154,
+      "completion_tokens_details": {
+        "reasoning_tokens": 232
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.288594911806285
+}

@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793407402522685868,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "positive_pulse",
+    "reason": "Current NMSE suggests underfitting; multiscale memory improves fit.",
+    "prediction": "Positive pulse should show slower rise and longer decay compared to state-only model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Persistent response to input persists beyond immediate effect.",
+      "condition_to_check": "Compare rise and decay times for positive and negative pulses."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_multiscale\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Current NMSE suggests underfitting; multiscale memory improves fit.\",\n  \"prediction\": \"Positive pulse should show slower rise and longer decay compared to state-only model.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Persistent response to input persists beyond immediate effect.\",\n    \"condition_to_check\": \"Compare rise and decay times for positive and negative pulses.\"\n  }\n}",
+    "input_tokens": 2059,
+    "output_tokens": 114,
+    "batch_elapsed_seconds": 271.11352147720754,
+    "amortized_seconds": 67.77838036930189,
+    "peak_gpu_allocated_gb": 0.0,
+    "backend": "cpu-fp32",
+    "peak_process_ram_gb": 34.3332405090332,
+    "model_path": "/home/lsy/theory_discovery_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

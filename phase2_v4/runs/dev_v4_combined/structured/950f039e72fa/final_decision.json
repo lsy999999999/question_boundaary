@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793423758274740151,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "step_rest",
+    "reason": "Memory_multiscale best fits data with low CV NMSE.",
+    "prediction": "Step rest will show gradual decay with distinct fast and slow components.",
+    "accept": true,
+    "mapping": {
+      "source_id": "memory_multiscale",
+      "target_relation": "System exhibits both fast and slow memory effects.",
+      "condition_to_check": "Distinct decay rates for fast and slow components."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_multiscale\",\n  \"experiment\": \"step_rest\",\n  \"reason\": \"Memory_multiscale best fits data with low CV NMSE.\",\n  \"prediction\": \"Step rest will show gradual decay with distinct fast and slow components.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"memory_multiscale\",\n    \"target_relation\": \"System exhibits both fast and slow memory effects.\",\n    \"condition_to_check\": \"Distinct decay rates for fast and slow components.\"\n  }\n}",
+    "input_tokens": 3934,
+    "output_tokens": 112,
+    "batch_elapsed_seconds": 2.7597031770274043,
+    "amortized_seconds": 2.7597031770274043,
+    "peak_gpu_allocated_gb": 14.990030288696289,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.0277862548828125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

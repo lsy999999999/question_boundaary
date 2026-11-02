@@ -1,0 +1,42 @@
+{
+  "time_ns": 1793431522394013122,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "alternating",
+    "reason": "Memory multiscale has the lowest leave-trajectory-out error and substantially improves on the state model; persistent post-input responses support history dependence, though competing memory forms remain uncertain.",
+    "prediction": "After rapid input reversals, output will retain a history-dependent lag that a model using only current state and input misses.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated input history predicts lingering output after the input returns to zero, consistent with finite relaxation.",
+      "condition_to_check": "At matched current input and visible state, test whether differing prior inputs predict different subsequent outputs."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"alternating\",\"reason\":\"Memory multiscale has the lowest leave-trajectory-out error and substantially improves on the state model; persistent post-input responses support history dependence, though competing memory forms remain uncertain.\",\"prediction\":\"After rapid input reversals, output will retain a history-dependent lag that a model using only current state and input misses.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts lingering output after the input returns to zero, consistent with finite relaxation.\",\"condition_to_check\":\"At matched current input and visible state, test whether differing prior inputs predict different subsequent outputs.\"}}",
+    "input_tokens": 2808,
+    "output_tokens": 258,
+    "batch_elapsed_seconds": 5.646693262271583,
+    "amortized_seconds": 5.646693262271583,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2808,
+      "completion_tokens": 258,
+      "total_tokens": 3066,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 120
+      }
+    },
+    "api_response_id": "resp_041681ceeca73992016ae597df43ec8197be77be044306d827",
+    "wire_record": "wire/eval/0135_7df0c690f1ff4ea08a53f9288fae79b5"
+  }
+}

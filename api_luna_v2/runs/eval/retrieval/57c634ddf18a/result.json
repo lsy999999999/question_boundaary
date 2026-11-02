@@ -1,0 +1,96 @@
+{
+  "task_id": "57c634ddf18a",
+  "split": "eval",
+  "family": "memory_clock",
+  "seed": 31,
+  "method": "retrieval",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_clock",
+    "ridge": 1e-05,
+    "cv_nmse": 0.002322305012276616,
+    "coefficients": [
+      -0.1060193,
+      1.9674057,
+      0.9890132,
+      -5.5275403,
+      1.81019,
+      1.1162941,
+      0.6486535,
+      -1.4991983,
+      -1.3079587,
+      -2.1628142,
+      2.9183022,
+      -0.3094348,
+      -1.9933323,
+      -0.0167935,
+      5.1069423,
+      0.020254,
+      0.0007866,
+      -0.0008196,
+      0.268984,
+      0.0036126,
+      -0.0021744
+    ]
+  },
+  "test": {
+    "test_nmse": 0.0008141741282661823,
+    "test_mse": 8.39439905163405e-05,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 9.280221832027337e-05,
+        "nmse": 0.0007804284505957342
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.00013456824212464198,
+        "nmse": 0.0003168168123185139
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 5.6022163190373466e-05,
+        "nmse": 0.0014270551364925252
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 8.692058368158539e-05,
+        "nmse": 0.0008972717162468631
+      },
+      {
+        "action": "test_prbs",
+        "mse": 7.519482480447966e-05,
+        "nmse": 0.0006532988916721431
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 5.815591097668913e-05,
+        "nmse": 0.000810173762271314
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": true,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 11887,
+  "output_tokens": 834,
+  "generation_seconds_amortized": 14.950419497676194,
+  "elapsed_wall_seconds": 809.3608174324036,
+  "selected_actions": [
+    "prbs",
+    "alternating",
+    "double_pulse"
+  ],
+  "selected_representations": [
+    "memory_clock",
+    "memory_clock",
+    "memory_clock",
+    "memory_clock"
+  ],
+  "peak_gpu_allocated_gb": 0.0,
+  "peak_process_ram_gb": 0.08777236938476562,
+  "inference_backend": "third_party_api",
+  "evaluation_after_commit_ns": 1793432247525262676
+}

@@ -1,0 +1,65 @@
+{
+  "checks": [
+    {
+      "relation_id": "local_relation_0",
+      "property": "near_mirror",
+      "fit_version": "89beda8821af54b1fe2e855fa7771d74ddedd22d5d3b19defd92e39487c8d9b7",
+      "metric": "predicted_relation_rms",
+      "time_window": [
+        0.0,
+        12.0
+      ],
+      "value": 0.0,
+      "status": "compatible",
+      "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+    },
+    {
+      "relation_id": "local_relation_1",
+      "property": "near_mirror",
+      "fit_version": "89beda8821af54b1fe2e855fa7771d74ddedd22d5d3b19defd92e39487c8d9b7",
+      "metric": "predicted_relation_rms",
+      "time_window": [
+        0.0,
+        12.0
+      ],
+      "value": 0.0,
+      "status": "compatible",
+      "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+    },
+    {
+      "relation_id": "local_relation_2",
+      "property": "nonproportional_response",
+      "fit_version": "89beda8821af54b1fe2e855fa7771d74ddedd22d5d3b19defd92e39487c8d9b7",
+      "metric": "predicted_relation_rms",
+      "time_window": [
+        0.0,
+        12.0
+      ],
+      "value": 0.1983258927521005,
+      "status": "compatible",
+      "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+    }
+  ],
+  "review": {
+    "model_id": "v3_r2",
+    "disposition": "keep_for_test",
+    "relations": [
+      {
+        "relation_id": "local_relation_0",
+        "computed_status": "compatible",
+        "response": "retain_local_fact"
+      },
+      {
+        "relation_id": "local_relation_1",
+        "computed_status": "compatible",
+        "response": "retain_local_fact"
+      },
+      {
+        "relation_id": "local_relation_2",
+        "computed_status": "compatible",
+        "response": "retain_local_fact"
+      }
+    ],
+    "comment": "三项局部关系检查均兼容；保留其原始观测，不视作普遍规律。候选仍需前瞻测试。"
+  }
+}

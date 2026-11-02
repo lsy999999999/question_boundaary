@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430568760105725,
+  "http_status": 200,
+  "body": {
+    "id": "resp_06a8147ba03b740d016ae594262fc0819096346f1833630982",
+    "object": "chat.completion",
+    "created": 1793430568,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"prbs\",\"reason\":\"State_cubic has the lowest trajectory-level CV error, but residual lag-1 correlation remains and PRBS has the greatest disagreement among plausible models.\",\"prediction\":\"At matched current state and input, predictions should not depend on earlier PRBS history; persistent differences would challenge the instantaneous model.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No mechanism card relation is established by the current observations.\",\"condition_to_check\":\"Test whether earlier PRBS input predicts output after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3262,
+      "completion_tokens": 268,
+      "total_tokens": 3530,
+      "completion_tokens_details": {
+        "reasoning_tokens": 147
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.26513877697289
+}

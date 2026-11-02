@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793431583151734466,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "alternating",
+    "reason": "Memory_clock has the strongest trajectory-level cross-validation (NMSE 0.0031), far below history_all at 0.0451; the high residual correlation under the current state model supports adding history. Alternating has the largest predicted disagreement among available experiments.",
+    "prediction": "Under rapid input switches, memory_clock should predict held-out trajectories better than history_all, with smaller systematic residuals during and after reversals.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"Memory_clock has the strongest trajectory-level cross-validation (NMSE 0.0031), far below history_all at 0.0451; the high residual correlation under the current state model supports adding history. Alternating has the largest predicted disagreement among available experiments.\",\"prediction\":\"Under rapid input switches, memory_clock should predict held-out trajectories better than history_all, with smaller systematic residuals during and after reversals.\",\"accept\":false}",
+    "input_tokens": 2236,
+    "output_tokens": 104,
+    "batch_elapsed_seconds": 4.02436984423548,
+    "amortized_seconds": 4.02436984423548,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2236,
+      "completion_tokens": 104,
+      "total_tokens": 2340
+    },
+    "api_response_id": "resp_0a924860e69bb209016ae5981db6148193803aae343614a13e",
+    "wire_record": "wire/eval/0183_2373a5b1ee7b440880c1e437cdf93271"
+  }
+}

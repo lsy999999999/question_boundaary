@@ -1,0 +1,42 @@
+{
+  "time_ns": 1793431632925801887,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "alternating",
+    "reason": "memory_clock has the lowest leave-trajectory-out error (0.0031), while residual autocorrelation and the gap to the current model argue against retaining state-only. Alternating input best probes model disagreement.",
+    "prediction": "Under alternating input, memory_clock will predict the trajectory more accurately than state-only, including after switches; large systematic deviations would challenge it.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No cross-domain relation is established by these fits; elapsed-time features do not prove an independent clock.",
+      "condition_to_check": "Compare predictions across reset trajectories with different inputs at the same elapsed times."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"memory_clock has the lowest leave-trajectory-out error (0.0031), while residual autocorrelation and the gap to the current model argue against retaining state-only. Alternating input best probes model disagreement.\",\"prediction\":\"Under alternating input, memory_clock will predict the trajectory more accurately than state-only, including after switches; large systematic deviations would challenge it.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is established by these fits; elapsed-time features do not prove an independent clock.\",\"condition_to_check\":\"Compare predictions across reset trajectories with different inputs at the same elapsed times.\"}}",
+    "input_tokens": 2785,
+    "output_tokens": 282,
+    "batch_elapsed_seconds": 3.6265929779037833,
+    "amortized_seconds": 3.6265929779037833,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2785,
+      "completion_tokens": 282,
+      "total_tokens": 3067,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 140
+      }
+    },
+    "api_response_id": "resp_0406451b352c3c53016ae5984dec4c81948aba03d9ed6320d3",
+    "wire_record": "wire/eval/0216_8129a1bed263404fadd3da3710993a94"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793432208493971855,
+  "decision": {
+    "representation": "state",
+    "experiment": "double_pulse",
+    "reason": "State has the lowest leave-trajectory-out NMSE; richer models validate worse, and prior experiments did not establish repeatable clock or memory effects. Residual lag leaves some uncertainty.",
+    "prediction": "For double_pulse, the state model will predict the response without systematic residuals that repeat at matched elapsed times across interventions.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No independent storage, delay, saturation, or elapsed-time relation is established by validation.",
+      "condition_to_check": "Consistent residual structure across matched states and inputs in held-out interventions would challenge the state representation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"double_pulse\",\"reason\":\"State has the lowest leave-trajectory-out NMSE; richer models validate worse, and prior experiments did not establish repeatable clock or memory effects. Residual lag leaves some uncertainty.\",\"prediction\":\"For double_pulse, the state model will predict the response without systematic residuals that repeat at matched elapsed times across interventions.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No independent storage, delay, saturation, or elapsed-time relation is established by validation.\",\"condition_to_check\":\"Consistent residual structure across matched states and inputs in held-out interventions would challenge the state representation.\"}}",
+    "input_tokens": 3690,
+    "output_tokens": 135,
+    "batch_elapsed_seconds": 2.78665260784328,
+    "amortized_seconds": 2.78665260784328,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3690,
+      "completion_tokens": 135,
+      "total_tokens": 3825
+    },
+    "api_response_id": "resp_0fdf8c674b41a32d016ae59a8e6dbc81978b80c551f0d74cd7",
+    "wire_record": "wire/eval/0503_22d1d5726e6a42ed9b64778e3ad39a19"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793430446188952062,
+  "http_status": 200,
+  "body": {
+    "id": "resp_05618ed168ac6f80016ae593ac93c88196be75c01675795d2b",
+    "object": "chat.completion",
+    "created": 1793430446,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"ramp_reverse\",\"reason\":\"Memory_slow has the best trajectory-held-out error (0.00217), outperforming saturating_memory (0.00333). Prior pulse and switching tests support history dependence, but do not establish saturation; residual correlation warrants caution.\",\"prediction\":\"After input returns to zero, output will relax gradually, with its trajectory depending on prior input history.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history may persist in output and relax over finite timescales.\",\"condition_to_check\":\"History should predict future output after controlling for current input and visible output; failure weakens this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3692,
+      "completion_tokens": 143,
+      "total_tokens": 3835
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.4602931030094624
+}

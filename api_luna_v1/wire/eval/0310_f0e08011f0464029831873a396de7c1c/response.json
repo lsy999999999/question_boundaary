@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430288365806776,
+  "http_status": 200,
+  "body": {
+    "id": "resp_05debf765ca82fbf016ae5930d81e08193a89ad05d9854b483",
+    "object": "chat.completion",
+    "created": 1793430288,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"prbs\",\"reason\":\"Saturating_memory has the lowest trajectory-level CV error, slightly better than memory_slow. Persistent post-input decay supports history dependence, but residual lag-1 correlation of 0.50 leaves adequacy unverified.\",\"prediction\":\"Under PRBS input, accumulated-history effects will produce different responses after distinct input sequences, even at matched current input and state.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts lingering response after the input returns to zero.\",\"condition_to_check\":\"Compare subsequent outputs at matched current input and visible state after different input histories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3470,
+      "completion_tokens": 296,
+      "total_tokens": 3766,
+      "completion_tokens_details": {
+        "reasoning_tokens": 156
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.5705516701564193
+}

@@ -1,0 +1,1434 @@
+
+
+MOOSE-Chem: Large Language Models for Rediscovering Unseen Chemistry Scientific Hypotheses
+
+Skip to main content
+
+ Report GitHub Issue
+ ×
+
+ Title:
+
+Content selection saved. Describe the issue below:
+
+ Description:
+
+ Submit without GitHub
+ Submit in GitHub
+
+ Why HTML?
+
+ Report Issue
+
+ Back to Abstract
+
+ Download PDF
+
+ Contents
+
+ Reading mode
+
+ Colour theme
+
+Abstract
+
+1 Introduction
+
+2 Related Work
+
+3 Benchmark Construction
+
+4 Methodology
+
+4.1 Fundamental Assumption and Following Decomposition
+
+4.2 The Framework Developed Based on the Assumption
+
+4.2.1 The General Picture
+
+4.2.2 Design Details of P⁡(ij|b,hj−1,I)P(i_{j}|b,h_{j-1},I) And Its Motivation
+
+4.2.3 Design Details of P⁡(hj|b,ij,hj−1)P(h_{j}|b,i_{j},h_{j-1}) And Its Motivation
+
+4.2.4 Design Details of R⁡(h)R(h) And Its Motivation
+
+5 Investigation on Fundamental Questions
+
+5.1 How Well can LLMs perform P⁡(ij|b,hj−1,I)P(i_{j}|b,h_{j-1},I)?
+
+5.2 How Well can LLMs perform P⁡(hj|b,ij,hj−1)P(h_{j}|b,i_{j},h_{j-1})?
+
+5.3 How Well can LLMs perform R⁡(h)R(h)?
+
+6 Experiment and Ablation Study
+
+6.1 Baselines
+
+MOOSE
+
+SciMON
+
+Qi et al. (2024) ‣ 6.1 Baselines
+
+6.2 Results
+
+7 Case Study
+
+8 Conclusion
+
+References
+
+A Appendix
+
+A.1 Full Proof / Derivation for the Fundamental Assumption
+
+A.2 The Full Instruction for Benchmark Checking
+
+A.3 Prompt to obtain R⁡(h)R(h)
+
+A.4 Related Works on Reasoning
+
+A.5 Prompt to GPT-4o for Matched Score
+
+A.6 Generated Hypotheses With Low Matched Score Are Not Necessarily Bad
+
+A.7 Agreement Between Expert Evaluation and GPT-4o Evaluation
+
+A.8 More Case Study
+
+A.8.1 Case 1 (MS by Expert: 4)
+
+A.8.2 Case 2 (MS by Expert: 3)
+
+A.8.3 Case 3 (MS by Expert: 3)
+
+ License: CC BY 4.0
+
+arXiv:2410.07076v1 [cs.CL] 09 Oct 2024
+
+MOOSE-Chem: Large Language Models for Rediscovering Unseen Chemistry Scientific Hypotheses
+
+Zonglin Yang
+
+Affiliation:  Nanyang Technological University
+
+Affiliation:  Shanghai Artificial Intelligence Laboratory
+
+Wanhao Liu
+
+Affiliation:  Shanghai Artificial Intelligence Laboratory
+
+Affiliation:  University of Science and Technology of China
+
+Ben Gao
+
+Affiliation:  Wuhan University
+
+Tong Xie
+
+Affiliation:  University of New South Wales
+
+Yuqiang Li
+
+Affiliation:  Shanghai Artificial Intelligence Laboratory
+
+Wanli Ouyang
+
+Affiliation:  Shanghai Artificial Intelligence Laboratory
+
+Soujanya Poria
+
+Affiliation:  Singapore University of Technology and Design{zonglin001,cambria}@ntu.edu.sg, zhoudongzhan@pjlab.org.cn
+
+Erik Cambria†
+
+Affiliation:  Nanyang Technological University
+
+Dongzhan Zhou†
+
+Affiliation:  Shanghai Artificial Intelligence Laboratory
+
+Abstract
+
+Scientific discovery contributes largely to human society’s prosperity, and recent progress shows that LLMs could potentially catalyze this process. However, it is still unclear whether LLMs can discover novel and valid hypotheses in chemistry.
+In this work, we investigate this central research question: Can LLMs automatically discover novel and valid chemistry research hypotheses given only a chemistry research background (consisting of a research question and/or a background survey), without limitation on the domain of the research question?
+After extensive discussions with chemistry experts, we propose an assumption that a majority of chemistry hypotheses can be resulted from a research background and several inspirations.
+With this key insight, we break the central question into three smaller fundamental questions.
+In brief, they are:
+(1) given a background question, whether LLMs can retrieve good inspirations;
+(2) with background and inspirations, whether LLMs can lead to hypothesis; and
+(3) whether LLMs can identify good hypotheses to rank them higher.
+To investigate these questions, we construct a benchmark consisting of 51 chemistry papers published in Nature, Science, or a similar level in 2024 (all papers are only available online since 2024).
+Every paper is divided by chemistry PhD students into three components: background, inspirations, and hypothesis.
+The goal is to rediscover the hypothesis, given only the background and a large randomly selected chemistry literature corpus consisting the ground truth inspiration papers, with LLMs trained with data up to 2023.
+We also develop an LLM-based multi-agent framework 11
+ 1
+
+ Code and Benchmark are available at https://github.com/ZonglinY/MOOSE-Chem.git that leverages the assumption, consisting of three stages reflecting the three smaller questions.
+The proposed method can rediscover many hypotheses with very high similarity with the ground truth ones, covering the main innovations.
+††
+
+ †: Corresponding author
+
+1 Introduction
+
+Discovering new science has long been one of the deepest desires of humanity, which can not only satisfy our curiosity to understand the universe, but also contribute largely to the prosperity of human society (Coccia, 2019).
+Recently, there are some breakthroughs indicating that LLMs have the potential to assist scientists in accelerating the discovery process.
+
+Yang et al. (2024b) first find that LLMs can generate novel and valid enough hypotheses evaluated by experts. They focus on the social science domain and make discoveries by developing a multi-agent system, leveraging an assumption that a majority of social science hypotheses can be divided into a research background concept and an inspiration concept.
+This assumption is largely valid, because social science hypothesis is about how an independent variable can influence another dependent variable (Hair et al., 2007).
+Si et al. (2024) further validate this finding by employing a large group of scientists to evaluate LLMs’ generated hypotheses in the NLP domain, and show that LLM can generate more novel but slightly less valid research hypotheses than human researchers.
+However, it is still unclear LLMs’ scientific discovery ability in natural science such as the chemistry domain.
+
+Sprueill et al. (2023); Sprueill et al. (2024) adopt LLMs to conduct a search process for catalyst discovery.
+However, their method is limited in the catalyst discovery domain, and their evaluation relies on whether LLMs can rediscover existing commercially used catalysts, potentially influenced by a data contamination problem.
+As a result, it is still unclear how good LLMs are for chemistry scientific discovery.
+
+In this paper, we investigate this central research question:
+Can LLMs automatically discover novel and valid chemistry research hypotheses (even in the Nature level) given only a chemistry research background (consisting of a research question and/or a background survey), without limitation on the domain of the research question?
+With extensive discussions with chemistry experts, we find that the assumption used in social science, that a hypothesis can be divided into background and inspiration, can also apply to a majority of chemistry hypotheses.
+It is not too surprising, since cognitive science research has shown that creative ideas often result from the cohesive association of two seemingly unrelated pieces of knowledge (Koestler, 1964; Benedek et al., 2012; Lee & Chung, 2024).
+A main difference is that chemistry might need more than one inspiration (e.g., adding several components to compose a novel chemistry system).
+With this key insight, we break the seemingly-impossible-to-solve central question into three smaller, more practical and executable fundamental questions that, when summed up, should be very close to a set of sufficient conditions for the central question.
+Specifically, the smaller questions are
+(1) whether LLM can identify inspiration papers that have the potential to help with the given research question;
+(2) given only known knowledge (from background and inspirations), whether LLMs can infer unknown knowledge that is highly likely to be valid; and
+(3) whether LLM can identify good hypotheses and rank them higher.
+
+To investigate these three questions, we build a benchmark consisting of 51 chemistry papers annotated by chemistry PhD students, breaking every paper into a background, several inspirations, and a hypothesis.
+The goal is to rediscover the hypothesis with only the background by using LLMs trained with data up to December 2023.
+The papers are all published in Nature, Science, or a similar level in 2024, and they are only made public on internet in 2024.
+The benchmark is designed to be similar to the Mathematical Olympiad Competition (Trinh et al., 2024), to provide several dozens of very difficult and meaningful questions to solve.
+Along with the benchmark, we propose a ranking task for scientific discovery (along with evaluation criteria), which has been largely overlooked in previous works (Yang et al., 2024a; Wang et al., 2024).
+Ranking is important because although AI systems can generate a large number of hypotheses in a relatively short time, verifying them one by one requires a lot of experimental costs.
+
+Motivated by this breakup into three smaller questions, we design a multi-agent framework named MOOSE-Chem for chemistry scientific discovery.
+It in general includes three stages:
+(1) searching through chemistry literature to find inspiration papers,
+(2) leveraging the inspirations to propose hypotheses for the background research question, and
+(3) identifying high-quality hypotheses to give them a higher rank.
+Compared with Yang et al. (2024b)’s method in social science that assumes a similar separation between background and inspiration for hypothesis formulation, MOOSE-Chem adopts an evolutionary algorithm to foster a broader diversity of approaches in using inspiration for background, thereby capitalizing on the benefits derived from varied mutations.
+In addition, MOOSE-Chem also adopts a multi-step design to collect more than one inspirations for chemistry discovery.
+Finally, it uses an efficient ranking method for better reference for scientists.
+
+We design experiments with the benchmark to test the three fundamental questions, and find that LLMs are highly capable.
+We also test MOOSE-Chem with the benchmark, mimicking the setting to run it in the wild by only giving the background and a corpus of up to 3000 chemistry papers to select inspiration.
+Even in this challenging setting, MOOSE-Chem can still rediscover many hypotheses with very high similarity with the ground truth ones, covering the main innovations.
+
+2 Related Work
+
+Zhong et al. (2023) work on finding the difference between two corpora to propose hypotheses, but their evaluation is based on selecting hypotheses that do not require expert knowledge for Turkers to judge, thus cannot lead to a novel discovery.
+Wang et al. (2024) try to utilize LLMs to discover novel NLP hypotheses, and find the hypotheses still fall far
+behind scientific papers in terms of novelty, depth, and utility.
+Yang et al. (2024b) show that LLMs can generate novel and valid enough hypotheses evaluated by PhD students, but they only focus on social science.
+FunSearch (Romera-Paredes et al., 2024) can discover specific solutions for mathematical conjecture but can’t discover new math theorems.
+Qi et al. (2024) analyzes LLM’s ability for scientific discovery in the biomedical domain by directly generating hypotheses with only the research background.
+Boiko et al. (2023); Baek et al. (2024); Li et al. (2024); Lu et al. (2024) focus on subsequent steps for scientific discovery, mainly developing and conducting experiments.
+Sprueill et al. (2023); Sprueill et al. (2024) focus on catalyst discovery, but their evaluation relies on whether can rediscover existing commercially used catalysts, which might cause data contamination problem.
+Tshitoyan et al. (2019) show that word embedding obtained from large-scale chemistry literature can recommend materials for functional applications years before their discovery by controlling the date of the training corpus.
+(Xie et al., 2024) predict emerging thermoelectric materials by summarizing the sentiment in the existing literature.
+
+3 Benchmark Construction
+
+The goal of the benchmark is two-fold.
+Firstly, it is used to analyze LLM’s ability in terms of the three smaller questions.
+Secondly, it serves as a challenge to rediscover nature-level chemistry hypotheses with only a research background.
+The setting of the challenge is very similar to a real copilot setting, where scientists tell the copilot about the specific research question they are interested in, and optionally a small survey consisting of several paragraphs summarizing the existing best-performing methods for the research question.
+
+To achieve the goals, we split each collected paper into the following components:
+<<background question, background question (strict), background survey, background survey (strict), one to three inspiration paper titles and their reason to serve as an inspiration, research hypothesis, experiments, reasoning process, summarization of inspirations>>.
+Every component is described by text.
+
+The reason we add a strict version for background question and background survey is that many hypotheses are making relatively minor modifications based on existing methods covered by the survey, and the question can be very insightful to provide a hint on the general direction of the hypothesis.
+In practice, these situations are entirely possible, especially when the scientist users can provide a more comprehensive survey on existing methods, or contain deep insights in their question.
+Here we also keep the strict version to make the task more challenging, and encourage developing methods to better assist scientists even when they are also new to their research topic.
+
+The reasoning process indicates the relation between the components of background, inspirations, and hypothesis.
+For example, the reasoning process can be “background + inspiration 1 + inspiration 2 = hypothesis”, or “background + inspiration 1/inspiration 2 + inspiration 3 = hypothesis”.
+
+The benchmark consists of 51 chemistry and material science papers, and is constructed by multiple chemistry PhD students.
+We only select those papers published on top chemistry venues and be public on the internet after January 2024.
+After constructing, the experts check again on
+(1) whether the identification of the inspirations is correct and whether more inspirations are needed;
+(2) whether the background does not contain any information in inspirations or hypothesis; and
+(3) whether the background and the identified inspirations can roughly logically lead to the hypothesis.
+The complete instruction on the check process is shown in § A.2.
+
+Table 2 and Table 2 shows the statistics of the benchmark in terms of chemistry category and publication venue.
+Many collected benchmark papers are related to material science (around 13 papers).
+Material science is a sub-category of chemistry and can belong to the categories in Table 2, such as polymer material and organic material.
+
+Category
+Count
+
+Polymer Chemistry
+21
+
+Organic Chemistry
+22
+
+Inorganic Chemistry
+3
+
+Analytical Chemistry
+5
+
+Total
+51
+
+Table 1: Distribution of categories.
+
+Publication Venue
+Count
+
+Nature / Science
+27
+
+Nature Subjournals
+20
+
+Other Top Journals
+4
+
+Total
+51
+
+Table 2: Distribution of publication venues.
+
+4 Methodology
+
+4.1 Fundamental Assumption and Following Decomposition
+
+We propose an assumption that a majority of chemistry hypotheses can originate from a research background and several inspirations.
+This assumption is not only supported by many chemistry researchers whom we have extensive discussions with but also by the cognitive science finding that “creative ideas often result from the cohesive association of two (or more) seemingly unrelated pieces of knowledge” (Koestler, 1964; Benedek et al., 2012; Lee & Chung, 2024).
+We design our method based on this fundamental assumption.
+
+Denoting background knowledge as bb, inspiration knowledge as ii, and hypothesis as hh, we translate this assumption as:
+
+h=f⁡(b,i1,…,ik)h=f(b,i_{1},\ldots,i_{k})
+
+(1)
+
+Here k∈ℤk\in\mathbb{Z} represents the number of inspirations needed for a particular hh. Typically in chemistry, k∈[1,3]k\in[1,3].
+
+In other words, given existing knowledge in the background, a majority of chemistry research is about searching knowledge that previously not known to be related to the background but in fact can assist the background, then associate the searched knowledge and the background knowledge in a reasonable way to compose a hypothesis.
+For example, the proposal of backpropagation can be seen as a hypothesis.
+In this case, the background knowledge is multi-layer logistic regression, and the searched knowledge is the “chain-rule” in mathematics.
+
+Here, we call the searched knowledge as “inspiration”.
+It is vital that the inspiration should not be known to be related to the background before, or at least should not be used to associate with the background in a known way.
+Otherwise the hypothesis would not be novel.
+
+Based on this assumption, we can decompose the process of obtaining hypothesis from only the research background as:
+
+P⁡(h|b)={P⁡(h|b,i1)⋅P⁡(i1|b,I)if ​k=1P⁡(h|b,i1,…,ik)⋅∏j=2kP⁡(ij|b,i1,…,ij−1,I)⋅P⁡(i1|b,I)if ​k>1P(h|b)=\begin{cases}P(h|b,i_{1})\cdot P(i_{1}|b,I)&\text{if }k=1\\
+P(h|b,i_{1},\ldots,i_{k})\cdot\prod_{j=2}^{k}P(i_{j}|b,i_{1},\ldots,i_{j-1},I)\cdot P(i_{1}|b,I)&\text{if }k>1\end{cases}
+
+(2)
+
+Here II is the full inspiration space to search for every single ii (here we use the existing chemistry literature, containing up to 3000 papers as II).
+The order of iji_{j} is exchangeable.
+
+Equation 2 describes the process of P⁡(h|b)P(h|b) in terms of the knowledge-searching perspective.
+However, finding a new ii only based on bb and previous ii might not be practicable, and does not precisely reflect how chemistry researchers find a new ii.
+One of the main reasons is that researchers tend to think small step by small step.
+It would be very challenging to think in terms of a big step without breaking it into several small steps.
+As a result, they do it similarly but propose a new updated hh every time they find a new ii.
+A newer ii is searched by the updated hh, which could contain the key information of all previous ii, together with bb.
+So we can rewrite Equation 2 as (k>=1k>=1):
+
+P⁡(h|b)≈∏j=1kP⁡(ij|b,hj−1,I)⋅P⁡(hj|b,ij,hj−1), where ​h0=∅\displaystyle P(h|b)\approx\prod_{j=1}^{k}P(i_{j}|b,h_{j-1},I)\cdot P(h_{j}|b,i_{j},h_{j-1}),\text{ where }h_{0}=\emptyset
+
+(3)
+
+The full derivation is shown in § A.1.
+Equation 3 is meaningful in that it successfully breaks up the seemingly impossible question P⁡(h|b)P(h|b) into many practical and executable smaller questions.
+
+Now it is clear on the steps to obtain hh from bb.
+But it still might not be enough helpful in practice, since II can be on a large scale, and the search process might find lots of ii, and finally lead to lots of hh.
+Moreover, it is very time-consuming for scientists to conduct experiments to verify every single hh.
+Therefore, it would be very helpful if the generated hh could be ranked based on quality.
+
+Here we adopt a straightforward and efficient way for ranking. Specifically, we design a rating function R⁡(h)R(h), such that R⁡(h)→ℝR(h)\rightarrow\mathbb{R}.
+Denoting the full set of generated hh as HH, we can obtain
+
+P(Hranked)=P(H,R), where Hranked={h1,h2,…,hn∣R(hi)≥R(hi+1) for all i}P(H_{\text{ranked}})=P(H,R),\text{ where }H_{\text{ranked}}=\{h_{1},h_{2},\ldots,h_{n}\mid R(h_{i})\geq R(h_{i+1})\text{ for all }i\}
+
+(4)
+
+4.2 The Framework Developed Based on the Assumption
+
+4.2.1 The General Picture
+
+Our methodology is developed based on the fundamental assumption discussed in § 4.1.
+Specifically, we use LLMs to perform P⁡(ij|b,hj−1,I)P(i_{j}|b,h_{j-1},I), P⁡(hj|b,ij,hj−1)P(h_{j}|b,i_{j},h_{j-1}), and R⁡(h)R(h), and organize them into a multi-agent LLM-based framework.
+The input to the framework is only a background question and/or background survey, together with a (large) chemistry literature corpus to search for inspiration.
+The output of the framework is a list of ranked research hypothesis.
+
+Figure 1: The MOOSE-Chem framework.
+It receives bb and II as input, and outputs a list of ranked hh.
+The bottom-right legend describes the symbols in the figure.
+
+The MOOSE-Chem framework is shown in Figure 1.
+It is a direct implementation of Equation 3 and 4.
+We try to develop it as simply as possible, only keeping the necessary parts.
+
+In the general picture, given a research background bb (research question and/or research survey), the framework first performs P⁡(i1|b,h0=∅,I)P(i_{1}|b,h_{0}=\emptyset,I) by screening through the literature corpus II to select many papers ii, where each of them has the potential to serve as an inspiration.
+Then the framework performs P⁡(h1|b,i1,h0=∅)P(h_{1}|b,i_{1},h_{0}=\emptyset), associating bb and each ii together to compose hh.
+Then, it ranks hh by assigning an evaluation score rr on each of h1h_{1} by R⁡(h1)R(h_{1}).
+We call these three steps as one round.
+Another round means going through the three steps again, based on the previous round’s results.
+
+Since normally in chemistry, no more than three inspirations are needed for one hypothesis (k∈[1,3]k\in[1,3]), the default setting for MOOSE-Chem is to perform three rounds for each bb.
+In every other round, the number of ii and hh can expand exponentially. Here, we adopt beam search to select a fixed size of the top-ranked hh to enter the next round.
+The default beam size is 15.
+
+4.2.2 Design Details of P⁡(ij|b,hj−1,I)P(i_{j}|b,h_{j-1},I) And Its Motivation
+
+We use LLMs to conduct a screening process for P⁡(ij|b,hj−1,I)P(i_{j}|b,h_{j-1},I).
+Specifically, for each inference, we
+(1) sequentially select a fixed number of papers from II, where the fixed number is called the screening window size (default is 15);
+(2) set up a prompt consisting of bb, the title and abstract of the selected papers from II, and the previous hh (if it is not ∅\emptyset); and
+(3) instruct the LLM to generate three titles from the input that can best serve as ii for bb (and optionally previous hh), and give reasons.
+
+Here we use LLMs to choose potential inspiration ii, but not choose ii from citation nor semantic neighbors because ii is supposed to be previously not known to be related to bb (we have discussed it in § 4.1).
+If the chosen ii is already known to be related to bb, then the composed hh probably would not be novel.
+If the chosen ii contains similar semantic information with bb, then probably it is not necessary to add ii at all, since it does not introduce much (any) extra information.
+
+Here we have a bold assumption that the most advanced LLMs, after training on hundreds of millions of scientific literature, might already know many knowledge pairs that can be associated to create novel knowledge, where the knowledge pairs are not known by any scientist to be related.
+It might not be too bold, since Tshitoyan et al. (2019) have shown that word embedding obtained from unsupervised learning on 3.3 million material science publication abstracts can recommend materials for functional applications several years before their discovery.
+Here, the functional applications can be seen as bb, and the recommended materials can be seen as ii, or even directly as hh if it is enough similar.
+It probably indicates that LLMs trained with significantly more literature tokens and significantly more parameters might already be able to identify the relation between many knowledge pairs that are unknown to be related by any scientist.
+We analyze this assumption in § 5.1.
+
+4.2.3 Design Details of P⁡(hj|b,ij,hj−1)P(h_{j}|b,i_{j},h_{j-1}) And Its Motivation
+
+The retrieved ii is expected to be not known to be related to bb; therefore, it might be difficult to figure out an effective way to associate bb and ii together to compose hh.
+Think of the time when backpropagation is about to be invented. Even if we are very familiar with bb (multi-layer logistic regression) and have successfully retrieved ii (chain rule in mathematics), can we invent backpropagation?
+
+Our answer is, at least we might need to try multiple times and various ways to leverage the chain rule for multi-layer logistic regression.
+With this motivation, we develop a simple Evolutionary Algorithm (EA) based method, shown in Figure 1.
+
+Specifically, given bb and ii, the framework will try multiple hypothesis “mutations” mm, where each mm is a unique way to associate bb and ii together.
+Then we further develop each mm independently by providing feedback to each mm in terms of validness, novelty, clarity, and significance, and then refine them based on the feedback.
+Yang et al. (2024b) first propose to provide feedback in terms of validness, novelty, and clarity to refine hypotheses.
+Here we add an additional aspect, significance, since significance is an important evaluation criterion in chemistry.
+We assume the refined hypothesis should be in better quality, so that the refined hypothesis is “selected”, while the previous hypothesis is “eliminated” by the “environment”.
+Finally the framework “recombine” the remaining selected mm, leveraging the advantages from every mm to propose hh to better associate bb and ii.
+
+4.2.4 Design Details of R⁡(h)R(h) And Its Motivation
+
+We adopt a simple and efficient way for R⁡(h)R(h), which is to prompt an LLM to output evaluation scores for an input hh in terms of validness, novelty, significance, and potential.
+Validness and novelty are two fundamental requirements for such an inductive reasoning process as scientific discovery (Yang et al., 2024a; Yang et al., 2024b).
+Significance is added because it is important for chemistry.
+We additionally add potential, because the generated hh are about to be further developed by scientists, so we might want to pick those hh not only is currently in high quality, but also have good potential to be further developed.
+We didn’t design R⁡(h)R(h) in a more complicated way, since there are lots of hh to rank, and we might want to save more inference time.
+
+Yang et al. (2024b) use the scores as automatic evaluation for generated social science hypotheses and have shown a high consistency score between automatic evaluation and expert evaluation.
+However, in the chemistry domain, LLMs might not be reliable enough to directly evaluate the generated hh (Sprueill et al., 2024).
+But it might still be able to provide a preliminary quality identifier to hh: the ranking of the average score between the four aspects of an hh determines whether it will enter the next round of MOOSE-Chem by beam search.
+To understand how well LLMs can perform R⁡(h)R(h), we analyze “how well LLMs can rank chemistry hypotheses” in § 5.3.
+
+5 Investigation on Fundamental Questions
+
+P⁡(h|b)P(h|b) can be understood as the task to discover high-quality chemistry research hypothesis, given only a background question and/or background survey.
+Our central question to investigate is how well LLMs can perform P⁡(h|b)P(h|b).
+Supported by Equation 3 and 4, we break up this main question into three smaller questions:
+how well can LLMs perform (1) P⁡(ij|b,hj−1,I)P(i_{j}|b,h_{j-1},I), (2) P⁡(hj|b,ij,hj−1)P(h_{j}|b,i_{j},h_{j-1}), and (3) R⁡(h)R(h)?
+All experiments are performed by GPT-4o (its training data is up to October 2023).
+
+5.1 How Well can LLMs perform P⁡(ij|b,hj−1,I)P(i_{j}|b,h_{j-1},I)?
+
+Here we investigate the question (denoted as Q​1Q1): “whether LLM can identify inspiration papers which is unknown to be able to associate with the background (or at least unknown to associate in a certain way) but in fact have the potential to help with the background question?”.
+
+We first find 3000 most cited chemistry papers published in Nature, and construct a series of II in size of 150, 300, 1000, and 3000.
+II is constructed by first adding the ground truth inspiration papers (around 120), then randomly selecting the remaining needed papers from the 3000 papers, and finally randomizing the order of all the collected papers.
+Only title and abstract are needed for each paper in II.
+The default setting is that each inference of LLMs will screen 15 papers from II, and generate three titles that LLMs think can best assist bb (and/or previous hh).
+Screening through II for one round, only 20% of II will be selected. Screening another round will only left 4%, and so on.
+
+We use Hit Ratio as evaluation metric, which is calculated by the number of selected ground truth inspiration papers divided by the number of all ground truth inspirations papers.
+All the Hit Ratio numbers shown in the tables are averaged across the 51 papers in the benchmark.
+
+Table 3 shows the main experiment results for Q​1Q1. The Hit Ratio is surprisingly high. Particularly, more than 75% of ground truth inspirations are selected even only to select 4% papers from the chemistry literature corpus.
+It seems that LLMs are quite capable of finding inspiration papers that are unknown to be able to associate with the background but, in fact, have the potential to help with the background question.
+It means our bold assumption in § 4.2.2 that “the most advanced LLMs might already know lots of knowledge pairs that are able to associate to create novel knowledge, where the knowledge pairs are not known by any scientist to be related” is possible to be true.
+
+Corpus Size
+Hit Ratio (top 0.016%)
+Hit Ratio (top 0.8%)
+Hit Ratio (top 4%)
+Hit Ratio (top 20%)
+
+150
+NA
+61.4%
+76.8%
+92.8%
+
+300
+NA
+60.8%
+83.7%
+96.7%
+
+1000
+46.7%
+69.0%
+88.9%
+96.4%
+
+3000
+52.0%
+70.6%
+86.9%
+95.8%
+
+Table 3: Main table for Q​1Q1. For each screen window of 15 papers, 3 papers are selected.
+
+Screen window size
+Hit Ratio (4 round)
+Hit Ratio (3 round)
+Hit Ratio (2 round)
+Hit Ratio (1 round)
+
+10
+56.5%
+79.4%
+88.9%
+98.0%
+
+15
+NA
+60.8%
+83.7%
+96.7%
+
+20
+NA
+58.8%
+76.8%
+91.2%
+
+40
+NA
+NA
+54.9%
+88.9%
+
+60
+NA
+NA
+53.9%
+71.6%
+
+Table 4: Ablation table on screen window size for Q​1Q1. The corpus size is 300. For each screen window no matter its size, 3 papers are selected to remain for the next round of screening.
+
+Strict Background
+Background Survey
+Hit Ratio (top 0.8%)
+Hit Ratio (top 4%)
+Hit Ratio (top 20%)
+
+✓
+✓
+60.8%
+83.7%
+96.7%
+
+✓
+✗
+54.2%
+77.8%
+95.1%
+
+✗
+✓
+57.8%
+80.1%
+96.7%
+
+Table 5: Ablation table on background options for Q​1Q1. The corpus size is 300. For each screen window of 15 papers, 3 papers are selected.
+
+Table 4 shows the ablation study in terms of screen window size.
+It seems that smaller window size can lead to better performance: screen window size of 60 to keep 3 for one round will select 5% of the corpus, and the Hit Ratio is 71.6%; while screen window size of 15 to keep 3 for two rounds will select only 4% of the corpus, but the Hit Ratio is as high as 83.7%.
+
+Table 5 shows the ablation study in terms of whether to use strict background (discussed in § 3) or survey or not.
+It indicates that a survey can largely help with the inspiration retrieval process.
+Surprisingly, without a strict background, the Hit Ratio goes down a bit.
+We attribute it to the reason that mentioning information related to the inspiration will discourage retrieving that inspiration, since in the prompt, we ask LLMs to search for inspirations, and the demonstration example indicates that inspirations should not be too similar to the background (to bring in additional information).
+
+5.2 How Well can LLMs perform P⁡(hj|b,ij,hj−1)P(h_{j}|b,i_{j},h_{j-1})?
+
+5 points
+
+Generated hypothesis covers all the key points and leverage them similarly
+
+as in the groundtruth hypothesis; Extra key points do not have apparent flaws.
+
+4 points
+
+Generated hypothesis covers all the key points (or at least three key points) and leverage
+
+them similarly as in the groundtruth hypothesis; Extra key points have apparent flaws.
+
+3 points
+
+Generated hypothesis covers at least two key point and leverage it similarly
+
+as in the groundtruth hypothesis, but does not cover all key points
+
+2 points
+
+Generated hypothesis covers at least one key point and leverage it similarly
+
+as in the groundtruth hypothesis, but does not cover all key points
+
+1 point
+
+Generated hypothesis covers at least one key point, but is used differently
+
+as in the groundtruth hypothesis
+
+0 point
+
+Generated hypothesis does not cover any key point
+
+Table 6: Description of the Matched Score.
+
+Here we investigate the question (denoted as Q​2Q2): “Given only known knowledge, whether LLM can reason to unknown knowledge that has high probability to be valid?”.
+
+The first challenge to answer Q​2Q2 is the evaluation method:
+The benchmark covers a large range of chemistry topics, and chemistry is a very complex discipline that a slight change of research topic would make a chemist unable to provide a reliable enough evaluation.
+In fact, a chemistry researcher might not be able to provide a reliable enough evaluation even if the hypothesis is in his domain.
+
+Therefore, we adopt a reference-based evaluation method called “Matched Score” (MS).
+The descriptions are shown in Table 6.
+It’s on a 6-point Likert scale, roughly containing four stages.
+Denoting generated hypothesis as g​hgh, and original hypothesis as o​hoh, the four stages are
+(1) g​h∩o​h=∅gh\cap oh=\emptyset (0 point);
+(2) g​h∩o​h≠∅gh\cap oh\neq\emptyset (1/2/3 points);
+(3) g​h⊇o​hgh\supseteq oh (4 points);
+(4) g​h≈o​hgh\approx oh (5 points).
+
+5
+4
+3
+2
+1
+0
+Total
+
+w/ background survey
+
+Average MS (GPT-4o)
+2
+9
+18
+17
+5
+0
+51
+
+Top MS (GPT-4o)
+28
+1
+19
+3
+0
+0
+51
+
+Top MS (Experts)
+9
+12
+22
+6
+2
+0
+51
+
+w/o background survey
+
+Average MS (GPT-4o)
+1
+7
+17
+19
+7
+0
+51
+
+Top MS (GPT-4o)
+25
+2
+19
+5
+0
+0
+51
+
+Table 7: Main table for Q​2Q2. Average/Top MS means the average/highest Matched Score of all generated hh from one bb. The numbers represent the statistics of Average/Top MS over the benchmark.
+
+We use MOOSE-Chem to investigate Q​2Q2.
+Specifically, we initialize II as only the ground truth inspiration papers and search ii for kk round, where kk is the number of ground truth ii needed for each bb.
+MOOSE-Chem will not retrieve the same ii already retrieved in previous rounds, guaranteeing that before generating the final hh, the framework has already seen all the ground truth inspirations.
+
+Table 7 shows the results.
+For each bb, the top two hh with the highest MS by GPT-4o are selected for expert evaluation (by two chemistry PhD students).
+It indicates that LLMs are quite capable to associate known knowledge into an unknown knowledge that has high probability to be valid (very close to o​hoh).
+In addition, providing a survey can assist the new knowledge discovering process.
+
+5.3 How Well can LLMs perform R⁡(h)R(h)?
+
+#Matched ii
+3
+2
+1
+0
+
+Average Rank Ratio
+NA
+0.411
+0.474
+0.521
+
+Size
+0
+302
+2458
+4899
+
+Table 8: Relation between the number of matched ground truth ii and the average ranking ratio (↓\downarrow).
+
+Here we investigate Q​3Q3: “whether LLMs can select high-quality hh to rank them higher?”.
+
+To investigate Q​3Q3, we run MOOSE-Chem with every bb from the benchmark; |I|=300|I|=300, containing all the ground truth ii.
+Every hh is given a rating r=R⁡(h)r=R(h), and is ranked based on rr.
+For every generated hh, we get the number of ground truth ii it leveraged (#Matched ii), and assign it with a GPT-4o evaluated MS (here MS is -1 means this hh has not used any ground truth ii).
+
+Table 8 shows the relation between the #Matched ii and average ranking ratio (the lower, the better).
+It shows a clear trend that the more ground truth ii is leveraged, the better ranking score hh can have.
+It indicates that that hh with a higher ranking ratio are more likely to be matched with better ii.
+
+Table 9 shows the relation between the GPT-4o evaluated MS and the average ranking ratio.
+For hh with a positive MS, there is a trend that the higher the MS, the better the average rank ratio (if MS ∈\in [2,4]).
+However, the disadvantage of those hh without a positive MS is not very significant.
+It seems that LLMs have a certain ability to rank good hh higher. But it is not very significant.
+A part of the reason might be that those hh generated without groundtruth ii are also in high quality.
+
+Matched Score
+5
+4
+3
+2
+1
+0
+-1
+
+Average Rank Ratio
+0.489
+0.439
+0.488
+0.501
+0.436
+0.501
+0.503
+
+Size
+210
+36
+404
+427
+29
+102
+6451
+
+Table 9: Relation between the GPT-4o labeled Matched Score and average ranking ratio (↓\downarrow).
+
+6 Experiment and Ablation Study
+
+Here, we perform experiments in a setting similar to the copilot in the wild setting.
+Specifically, only background question (strict), background survey (strict), and a chemistry corpus |I|=300|I|=300 are provided to the framework.
+Only the top 4% of II is selected and used to develop hh.
+The evaluation metrics are Top MS and Average MS (the highest/average Matched Score of all generated hh from one bb), averaging across the benchmark.
+All experiments are conducted by GPT-4o (its training data is up to October 2023).
+
+6.1 Baselines
+
+MOOSE
+
+is a hypothesis discovery framework for the social science domain.
+It leverages LLMs to retrieve inspirations and uses self-refine (Madaan et al., 2023) to improve the validness, novelty, and clarity aspects.
+The difference is that
+(1) it does not adopt the mutation and recombination step to better associate background and inspiration;
+(2) it only retrieves one step of inspiration.
+
+SciMON
+
+is a hypothesis discovery framework for the NLP domain.
+It relies on semantic and citation neighbors to retrieve information to assist the background.
+As a result, the retrieved information could be very related to the background that might not be able to serve as an inspiration.
+To make the generated hypothesis more novel, it adopts self-refine to focus on improving the novelty aspect of the generated hypothesis.
+Here we implement SciMON with LLM-based inspiration retrieval, the same as MOOSE-Chem.
+Table 3 shows that the recall rate of LLM-based retrieval is 83.7%.
+
+Qi et al. (2024)
+
+work on hypothesis discovery in Biomedical domain.
+It retrieves information pertinent to the keywords in the background to generate hypotheses.
+As a result, the retrieved information might compose of a background survey, but not as inspiration.
+Self-refine is also adopted.
+
+6.2 Results
+
+Table 10 shows the baseline results and the ablation study of MOOSE-Chem.
+It indicates that both mutation & recombination and the multi-step designs can significantly improve the best-performing hh.
+Mutation & recombination leads to a drop of Average MS; we attribute the reason to that the mutation step forces LLMs to generate hh different from previous hh mutations from the same bb and ii, and therefore might generate many hh that do not make lots of sense.
+The assigned MS to these mutation hh is low, and therefore lower down the Average MS.
+
+To better understand the performance of MOOSE-Chem in this real copilot setting, for each bb we select 4 generated hh with the highest MS by GPT-4o. Two experts evaluate these hh again in terms of MS.
+Table 11 shows the expert evaluation results.
+Here the top MS is the highest MS for each bb, out of the 4 expert evaluated hh for this bb.
+Note that MS rated as three is already very high.
+Illustrated in Table 6, it means the generated hh by MOOSE-Chem (that has not seen hh) in the real copilot setting covers two main innovations of the hypothesis published in Nature, Science or a similar level.
+
+Method
+Top MS
+Average MS
+
+SciMON (Wang et al., 2024)
+2.549
+2.281
+
+MOOSE (Yang et al., 2024a)
+2.882
+2.464
+
+Qi et al. (2024)
+2.686
+2.356
+
+MOOSE-Chem
+4.020
+2.564
+
+   w/o mutation & recombination
+3.765
+2.730
+
+   w/o multi-step
+3.588
+2.452
+
+Table 10: Experiments and ablation study. The Matched Score is evaluated by GPT-4o.
+
+5
+4
+3
+2
+1
+0
+Total
+
+Top MS (Expert)
+0
+2
+19
+16
+8
+6
+51
+
+Table 11: MOOSE-Chem runs with |I||I|=300, mimicking the copilot setting. This table shows the statistics of the top Matched Score across the benchmark. The evaluation is done by experts.
+
+7 Case Study
+
+Here, we show a case study of a generated hh (from MOOSE-Chem with |I||I|=300), corresponding ground truth hh, and an expert’s analysis (gives a MS as 3).
+More case studies can be seen in § A.8.
+
+Generated hh:
+A pioneering integrated electrocatalytic system leveraging ruthenium nanoparticles embedded in nitrogen-doped graphene, combined with a dual palladium-coated ion-exchange membrane reactor, will catalyze efficient, scalable, and site-selective reductive deuteration of aromatic hydrocarbons and heteroarenes. Utilizing deuterium sources from both D2D_{2} gas and 𝐃𝟐​𝐎\mathbf{D_{2}O}, this system will optimize parameters through real-time machine learning-driven dynamic adjustments. Specific configurations include ruthenium nanoparticle sizes (2-4 nm), nitrogen doping levels (12-14%), precisely engineered palladium membranes (5 micrometers, ensuring 98% deuterium-selective permeability), and advanced cyclic voltammetry protocols (1-5 Hz, -0.5V to -1.5V).
+
+Ground truth hh:
+The main hypothesis is that a nitrogen-doped ruthenium (Ru) electrode can effectively catalyze the reductive deuteration of (hetero)arenes in the presence of 𝐃𝟐​𝐎\mathbf{D_{2}O}, leading to high deuterium incorporation into the resulting saturated cyclic compounds. The findings validate this hypothesis by demonstrating that this electrocatalytic method is highly efficient, scalable, and versatile, suitable for a wide range of substrates.
+
+Expert’s analysis:
+The proposed hypothesis effectively covers two key points from the ground truth hypothesis: the incorporation of ruthenium (Ru) and the use of D2​O\mathbf{D_{2}O} as a deuterium source within the electrocatalytic system. However, the current content does not detail the mechanism by which Ru-D is produced, which is essential for explaining the process of reductive deuteration. Nevertheless, the results are still insightful. The specific level of nitrogen doping, for example, is highly suggestive and warrants further investigation. Overall, the match remains strong in its alignment with the original hypothesis while also presenting opportunities for deeper exploration.
+
+8 Conclusion
+
+We investigate this central question: ‘Can LLMs automatically discover novel and valid chemistry research hypotheses (even in the Nature level) given only a chemistry research background (consisting of a research question and/or a background survey), without limitation on the domain of the research question?”.
+We propose a fundamental assumption to break up the central question into three smaller ones and investigate LLM’s ability on each of them.
+To do it, we construct a benchmark consisting of chemistry papers published and only be public in 2024.
+We also develop a multi-agent framework consisting of three stages reflecting the three smaller questions.
+Experiments show that the framework (runs in a copilot in-the-wild setting) can rediscover many hypotheses with very high similarity with
+the ground truth ones, covering the main innovations.
+
+Acknowledgments
+
+This research/project is supported by the Ministry of Education, Singapore under its MOE Academic Research Fund Tier 2 (STEM RIE2025 Award MOE-T2EP20123-0005).
+
+We thank Mengsong Wu for his insightful discussions with us, and we thank Yuwei Wan for her efforts to support this research.
+
+References
+
+Baek et al. (2024)
+
+Jinheon Baek, Sujay Kumar Jauhar, Silviu Cucerzan, and Sung Ju Hwang.
+
+Researchagent: Iterative research idea generation over scientific literature with large language models.
+
+arXiv preprint arXiv:2404.07738, 2024.
+
+Benedek et al. (2012)
+
+Mathias Benedek, Tanja Könen, and Aljoscha C Neubauer.
+
+Associative abilities underlying creativity.
+
+Psychology of Aesthetics, Creativity, and the Arts, 6(3):273, 2012.
+
+Bhagavatula et al. (2020)
+
+Chandra Bhagavatula, Ronan Le Bras, Chaitanya Malaviya, Keisuke Sakaguchi, Ari Holtzman, Hannah Rashkin, Doug Downey, Wen-tau Yih, and Yejin Choi.
+
+Abductive commonsense reasoning.
+
+In 8th International Conference on Learning Representations, ICLR 2020, Addis Ababa, Ethiopia, April 26-30, 2020. OpenReview.net, 2020.
+
+URL https://openreview.net/forum?id=Byg1v1HKDB.
+
+Boiko et al. (2023)
+
+Daniil A. Boiko, Robert MacKnight, Ben Kline, and Gabe Gomes.
+
+Autonomous chemical research with large language models.
+
+Nat., 624(7992):570–578, 2023.
+
+doi: 10.1038/S41586-023-06792-0.
+
+URL https://doi.org/10.1038/s41586-023-06792-0.
+
+Clark et al. (2020)
+
+Peter Clark, Oyvind Tafjord, and Kyle Richardson.
+
+Transformers as soft reasoners over language.
+
+In Christian Bessiere (ed.), Proceedings of the Twenty-Ninth International Joint Conference on Artificial Intelligence, IJCAI 2020, pp. 3882–3890. ijcai.org, 2020.
+
+doi: 10.24963/ijcai.2020/537.
+
+URL https://doi.org/10.24963/ijcai.2020/537.
+
+Coccia (2019)
+
+Mario Coccia.
+
+Why do nations produce science advances and new technology?
+
+Technology in society, 59:101124, 2019.
+
+Hair et al. (2007)
+
+Joseph F Hair, Arthur H Money, Philip Samouel, and Mike Page.
+
+Research methods for business.
+
+Education+ Training, 49(4):336–337, 2007.
+
+Koestler (1964)
+
+Arthur Koestler.
+
+The act of creation.
+
+London: Hutchinson, 1964.
+
+Lee & Chung (2024)
+
+Byung Cheol Lee and Jaeyeon Chung.
+
+An empirical investigation of the impact of chatgpt on creativity.
+
+Nature Human Behaviour, pp. 1–9, 2024.
+
+Li et al. (2024)
+
+Ruochen Li, Teerth Patel, Qingyun Wang, and Xinya Du.
+
+Mlr-copilot: Autonomous machine learning research based on large language models agents.
+
+arXiv preprint arXiv:2408.14033, 2024.
+
+Lu et al. (2024)
+
+Chris Lu, Cong Lu, Robert Tjarko Lange, Jakob Foerster, Jeff Clune, and David Ha.
+
+The AI scientist: Towards fully automated open-ended scientific discovery.
+
+CoRR, abs/2408.06292, 2024.
+
+doi: 10.48550/ARXIV.2408.06292.
+
+URL https://doi.org/10.48550/arXiv.2408.06292.
+
+Madaan et al. (2023)
+
+Aman Madaan, Niket Tandon, Prakhar Gupta, Skyler Hallinan, Luyu Gao, Sarah Wiegreffe, Uri Alon, Nouha Dziri, Shrimai Prabhumoye, Yiming Yang, Shashank Gupta, Bodhisattwa Prasad Majumder, Katherine Hermann, Sean Welleck, Amir Yazdanbakhsh, and Peter Clark.
+
+Self-refine: Iterative refinement with self-feedback.
+
+In Alice Oh, Tristan Naumann, Amir Globerson, Kate Saenko, Moritz Hardt, and Sergey Levine (eds.), Advances in Neural Information Processing Systems 36: Annual Conference on Neural Information Processing Systems 2023, NeurIPS 2023, New Orleans, LA, USA, December 10 - 16, 2023, 2023.
+
+URL http://papers.nips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html.
+
+Qi et al. (2024)
+
+Biqing Qi, Kaiyan Zhang, Haoxiang Li, Kai Tian, Sihang Zeng, Zhang-Ren Chen, and Bowen Zhou.
+
+Large language models are zero shot hypothesis proposers.
+
+CoLM, abs/2311.05965, 2024.
+
+doi: 10.48550/ARXIV.2311.05965.
+
+URL https://doi.org/10.48550/arXiv.2311.05965.
+
+Romera-Paredes et al. (2024)
+
+Bernardino Romera-Paredes, Mohammadamin Barekatain, Alexander Novikov, Matej Balog, M. Pawan Kumar, Emilien Dupont, Francisco J. R. Ruiz, Jordan S. Ellenberg, Pengming Wang, Omar Fawzi, Pushmeet Kohli, and Alhussein Fawzi.
+
+Mathematical discoveries from program search with large language models.
+
+Nat., 625(7995):468–475, 2024.
+
+doi: 10.1038/S41586-023-06924-6.
+
+URL https://doi.org/10.1038/s41586-023-06924-6.
+
+Si et al. (2024)
+
+Chenglei Si, Diyi Yang, and Tatsunori Hashimoto.
+
+Can llms generate novel research ideas? a large-scale human study with 100+ nlp researchers.
+
+arXiv preprint arXiv:2409.04109, 2024.
+
+Sprueill et al. (2023)
+
+Henry Sprueill, Carl Edwards, Mariefel V. Olarte, Udishnu Sanyal, Heng Ji, and Sutanay Choudhury.
+
+Monte carlo thought search: Large language model querying for complex scientific reasoning in catalyst design.
+
+In Houda Bouamor, Juan Pino, and Kalika Bali (eds.), Findings of the Association for Computational Linguistics: EMNLP 2023, Singapore, December 6-10, 2023, pp. 8348–8365. Association for Computational Linguistics, 2023.
+
+doi: 10.18653/V1/2023.FINDINGS-EMNLP.560.
+
+URL https://doi.org/10.18653/v1/2023.findings-emnlp.560.
+
+Sprueill et al. (2024)
+
+Henry W. Sprueill, Carl Edwards, Khushbu Agarwal, Mariefel V. Olarte, Udishnu Sanyal, Conrad Johnston, Hongbin Liu, Heng Ji, and Sutanay Choudhury.
+
+CHEMREASONER: heuristic search over a large language model’s knowledge space using quantum-chemical feedback.
+
+In Forty-first International Conference on Machine Learning, ICML 2024, Vienna, Austria, July 21-27, 2024. OpenReview.net, 2024.
+
+URL https://openreview.net/forum?id=3tJDnEszco.
+
+Trinh et al. (2024)
+
+Trieu H. Trinh, Yuhuai Wu, Quoc V. Le, He He, and Thang Luong.
+
+Solving olympiad geometry without human demonstrations.
+
+Nat., 625(7995):476–482, 2024.
+
+doi: 10.1038/S41586-023-06747-5.
+
+URL https://doi.org/10.1038/s41586-023-06747-5.
+
+Tshitoyan et al. (2019)
+
+Vahe Tshitoyan, John Dagdelen, Leigh Weston, Alexander Dunn, Ziqin Rong, Olga Kononova, Kristin A. Persson, Gerbrand Ceder, and Anubhav Jain.
+
+Unsupervised word embeddings capture latent knowledge from materials science literature.
+
+Nat., 571(7763):95–98, 2019.
+
+doi: 10.1038/S41586-019-1335-8.
+
+URL https://doi.org/10.1038/s41586-019-1335-8.
+
+Wang et al. (2024)
+
+Qingyun Wang, Doug Downey, Heng Ji, and Tom Hope.
+
+Scimon: Scientific inspiration machines optimized for novelty.
+
+In Lun-Wei Ku, Andre Martins, and Vivek Srikumar (eds.), Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), ACL 2024, Bangkok, Thailand, August 11-16, 2024, pp. 279–299. Association for Computational Linguistics, 2024.
+
+doi: 10.18653/V1/2024.ACL-LONG.18.
+
+URL https://doi.org/10.18653/v1/2024.acl-long.18.
+
+Xie et al. (2024)
+
+Tong Xie, Yuwei Wan, Haoran Wang, Ina Østrøm, Shaozhou Wang, Mingrui He, Rong Deng, Xinyuan Wu, Clara Grazian, Chunyu Kit, and Bram Hoex.
+
+Opinion mining by convolutional neural networks for maximizing discoverability of nanomaterials.
+
+J. Chem. Inf. Model., 64(7):2746–2759, 2024.
+
+doi: 10.1021/ACS.JCIM.3C00746.
+
+URL https://doi.org/10.1021/acs.jcim.3c00746.
+
+Yang et al. (2020)
+
+Zonglin Yang, Xinya Du, Alexander M. Rush, and Claire Cardie.
+
+Improving event duration prediction via time-aware pre-training.
+
+In Trevor Cohn, Yulan He, and Yang Liu (eds.), Findings of the Association for Computational Linguistics: EMNLP 2020, Online Event, 16-20 November 2020, volume EMNLP 2020 of Findings of ACL, pp. 3370–3378. Association for Computational Linguistics, 2020.
+
+doi: 10.18653/v1/2020.findings-emnlp.302.
+
+URL https://doi.org/10.18653/v1/2020.findings-emnlp.302.
+
+Yang et al. (2023a)
+
+Zonglin Yang, Xinya Du, Erik Cambria, and Claire Cardie.
+
+End-to-end case-based reasoning for commonsense knowledge base completion.
+
+In Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics, pp. 3509–3522, Dubrovnik, Croatia, May 2023a. Association for Computational Linguistics.
+
+URL https://aclanthology.org/2023.eacl-main.255.
+
+Yang et al. (2023b)
+
+Zonglin Yang, Xinya Du, Rui Mao, Jinjie Ni, and Erik Cambria.
+
+Logical reasoning over natural language as knowledge representation: A survey.
+
+In 1st Workshop on Natural Language Reasoning and Structured Explanations (@ACL 2023), 2023b.
+
+Yang et al. (2024a)
+
+Zonglin Yang, Li Dong, Xinya Du, Hao Cheng, Erik Cambria, Xiaodong Liu, Jianfeng Gao, and Furu Wei.
+
+Language models as inductive reasoners.
+
+In Yvette Graham and Matthew Purver (eds.), Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics, EACL 2024 - Volume 1: Long Papers, St. Julian’s, Malta, March 17-22, 2024, pp. 209–225. Association for Computational Linguistics, 2024a.
+
+URL https://aclanthology.org/2024.eacl-long.13.
+
+Yang et al. (2024b)
+
+Zonglin Yang, Xinya Du, Junxian Li, Jie Zheng, Soujanya Poria, and Erik Cambria.
+
+Large language models for automated open-domain scientific hypotheses discovery.
+
+In Lun-Wei Ku, Andre Martins, and Vivek Srikumar (eds.), Findings of the Association for Computational Linguistics, ACL 2024, Bangkok, Thailand and virtual meeting, August 11-16, 2024, pp. 13545–13565. Association for Computational Linguistics, 2024b.
+
+doi: 10.18653/V1/2024.FINDINGS-ACL.804.
+
+URL https://doi.org/10.18653/v1/2024.findings-acl.804.
+
+Zhong et al. (2023)
+
+Ruiqi Zhong, Peter Zhang, Steve Li, Jinwoo Ahn, Dan Klein, and Jacob Steinhardt.
+
+Goal driven discovery of distributional differences via language descriptions.
+
+In Alice Oh, Tristan Naumann, Amir Globerson, Kate Saenko, Moritz Hardt, and Sergey Levine (eds.), Advances in Neural Information Processing Systems 36: Annual Conference on Neural Information Processing Systems 2023, NeurIPS 2023, New Orleans, LA, USA, December 10 - 16, 2023, 2023.
+
+URL http://papers.nips.cc/paper_files/paper/2023/hash/7e810b2c75d69be186cadd2fe3febeab-Abstract-Conference.html.
+
+Appendix A Appendix
+
+A.1 Full Proof / Derivation for the Fundamental Assumption
+
+First, we propose a fundamental assumption that a majority of chemistry hypotheses can originate from a research background and several inspirations.
+This assumption is not only supported by many chemistry researchers whom we have extensive discussions with, but also by the cognitive science finding that “creative ideas often result from the cohesive association of two (or more) seemingly unrelated pieces of knowledge” (Koestler, 1964; Benedek et al., 2012; Lee & Chung, 2024).
+
+Denoting background knowledge as bb, inspiration knowledge as ii, and hypothesis as hh, we translate this assumption as:
+
+h=f⁡(b,i1,…,ik)h=f(b,i_{1},\ldots,i_{k})
+
+(5)
+
+Here k∈ℤk\in\mathbb{Z} represents the number of inspirations needed for a particular hh. Normally in chemistry, k∈[1,3]k\in[1,3].
+
+We denote the full (chemistry) literature as II, such that P⁡(I)=1P(I)=1. Then we can have:
+
+P⁡(h|b)\displaystyle P(h|b)
+=P⁡(h,i1,…,ik|b)\displaystyle=P(h,i_{1},\ldots,i_{k}|b)
+
+(6)
+
+={P⁡(h,b,i1)P⁡(b,i1)⋅P⁡(b,i1)⋅P⁡(I)P⁡(b)⋅P⁡(I)if ​k=1P⁡(h,b,i1,…,ik)P⁡(b,i1,…,ik)⋅P⁡(b,i1,…,ik)⋅P⁡(I)P⁡(b,i1,…,ik−1)⋅P⁡(I)⋅…⋅P⁡(b,i1)⋅P⁡(I)P⁡(b)⋅P⁡(I)if ​k>1\displaystyle=\begin{cases}\frac{P(h,b,i_{1})}{P(b,i_{1})}\cdot\frac{P(b,i_{1})\cdot P(I)}{P(b)\cdot P(I)}&\text{if }k=1\\
+\frac{P(h,b,i_{1},\ldots,i_{k})}{P(b,i_{1},\ldots,i_{k})}\cdot\frac{P(b,i_{1},\ldots,i_{k})\cdot P(I)}{P(b,i_{1},\ldots,i_{k-1})\cdot P(I)}\cdot\ldots\cdot\frac{P(b,i_{1})\cdot P(I)}{P(b)\cdot P(I)}&\text{if }k>1\\
+\end{cases}
+
+(7)
+
+={P⁡(h|b,i1)⋅P⁡(i1|b,I)if ​k=1P⁡(h|b,i1,…,ik)⋅∏j=2kP⁡(ij|b,i1,…,ij−1,I)⋅P⁡(i1|b,I)if ​k>1\displaystyle=\begin{cases}P(h|b,i_{1})\cdot P(i_{1}|b,I)&\text{if }k=1\\
+P(h|b,i_{1},\ldots,i_{k})\cdot\prod_{j=2}^{k}P(i_{j}|b,i_{1},\ldots,i_{j-1},I)\cdot P(i_{1}|b,I)&\text{if }k>1\end{cases}
+
+(8)
+
+Here, P⁡(h|b,i1,…,ik)P(h|b,i_{1},\ldots,i_{k}) is used to obtain hh, and P⁡(ij+1|b,i1,…,ij,I)P(i_{j+1}|b,i_{1},\ldots,i_{j},I) is used to obtain each ii.
+However, they do not precisely reflect how chemistry researchers do, and might not be practicable.
+One of the main reasons is that researchers tend to think small step by small step.
+It would be very challenging to think in terms of a big step without breaking it into several small steps.
+
+To mimic how chemistry researchers conduct research and make it more practicable, we break P⁡(h|b,i1,…,ik)P(h|b,i_{1},\ldots,i_{k}) into a series of recursive smaller steps as
+
+P⁡(hk|b,i1,…,ik)\displaystyle P(h_{k}|b,i_{1},\ldots,i_{k})
+≈P⁡(hk|b,f⁡(b,i1,…,ik−1),ik)\displaystyle\approx P(h_{k}|b,f(b,i_{1},\ldots,i_{k-1}),i_{k})
+if ​k>1\displaystyle\text{if }k>1
+
+(9)
+
+=P⁡(hk|b,hk−1,ik)\displaystyle=P(h_{k}|b,h_{k-1},i_{k})
+if ​k>1\displaystyle\text{if }k>1
+
+(10)
+
+Similarly, we can break P⁡(ij+1|b,i1,…,ij,I)P(i_{j+1}|b,i_{1},\ldots,i_{j},I) as
+
+P⁡(ik+1|b,i1,…,ik,I)\displaystyle P(i_{k+1}|b,i_{1},\ldots,i_{k},I)
+≈P⁡(ik+1|b,f⁡(b,i1,…,ik),I)\displaystyle\approx P(i_{k+1}|b,f(b,i_{1},\ldots,i_{k}),I)
+if ​k>1\displaystyle\text{if }k>1
+
+(11)
+
+=P⁡(ik+1|b,hk,I)\displaystyle=P(i_{k+1}|b,h_{k},I)
+if ​k>1\displaystyle\text{if }k>1
+
+(12)
+
+As a result, to achieve the final hkh_{k}, we need to obtain h1,…,hk−1h_{1},\ldots,h_{k-1} first (if k>1k>1).
+In addition, seeing hh as a “state”, and ii as an “action”, obtaining hh and ii through P⁡(hk|b,hk−1,ik)P(h_{k}|b,h_{k-1},i_{k}) and P⁡(ik+1|b,hk,I)P(i_{k+1}|b,h_{k},I) correspondingly indicates a property very similar to the Markov property:
+(1) a new hh only depends on bb, its previous hh, and the current ii; and
+(2) an ii only depends on bb, II, and the current hh.
+
+Therefore, if k>1k>1,
+
+P⁡(h|b)\displaystyle P(h|b)
+=P⁡(i1,…,ik,h1,…,hk|b)\displaystyle=P(i_{1},\ldots,i_{k},h_{1},\ldots,h_{k}|b)
+
+(13)
+
+=P(i1,h1|b)⋅P(i2,h2|b,i1,h1)⋅…⋅P(ik,hk|b,i1,…,ik−1,h1,…,hk−1)\displaystyle=P(i_{1},h_{1}|b)\cdot P(i_{2},h_{2}|b,i_{1},h_{1})\cdot\ldots\cdot P(i_{k},h_{k}|b,i_{1},\ldots,i_{k-1},h_{1},\ldots,h_{k-1})
+
+(14)
+
+≈P(i1,h1|b)⋅P(i2,h2|b,h1)⋅…⋅P(ik,hk|b,hk−1)\displaystyle\approx P(i_{1},h_{1}|b)\cdot P(i_{2},h_{2}|b,h_{1})\cdot\ldots\cdot P(i_{k},h_{k}|b,h_{k-1})
+
+(15)
+
+=P⁡(b,i1,I)P⁡(b,I)⋅P⁡(b,i1,h1)P⁡(b,i1)⋅…⋅P⁡(b,ik,hk−1,I)P⁡(b,hk−1,I)⋅P⁡(b,ik,hk−1,hk)P⁡(b,ik,hk−1)\displaystyle=\frac{P(b,i_{1},I)}{P(b,I)}\cdot\frac{P(b,i_{1},h_{1})}{P(b,i_{1})}\cdot\ldots\cdot\frac{P(b,i_{k},h_{k-1},I)}{P(b,h_{k-1},I)}\cdot\frac{P(b,i_{k},h_{k-1},h_{k})}{P(b,i_{k},h_{k-1})}
+
+(16)
+
+=P⁡(i1|b,I)⋅P⁡(h1|b,i1)⋅∏j=1k−1P⁡(ij+1|b,hj,I)⋅P⁡(hj+1|b,ij+1,hj)\displaystyle=P(i_{1}|b,I)\cdot P(h_{1}|b,i_{1})\cdot\prod_{j=1}^{k-1}P(i_{j+1}|b,h_{j},I)\cdot P(h_{j+1}|b,i_{j+1},h_{j})
+
+(17)
+
+=∏j=1kP⁡(ij|b,hj−1,I)⋅P⁡(hj|b,ij,hj−1), where ​h0=∅\displaystyle=\prod_{j=1}^{k}P(i_{j}|b,h_{j-1},I)\cdot P(h_{j}|b,i_{j},h_{j-1}),\text{ where }h_{0}=\emptyset
+
+(18)
+
+Although starting from k>1k>1, Derivation 18 covers the situation when k=1k=1 in Equation 8.
+
+Therefore, in sum, we break up the seemingly impossible question P⁡(h|b)P(h|b) into many practical and executable smaller questions as:
+
+P⁡(h|b)≈∏j=1kP⁡(ij|b,hj−1,I)⋅P⁡(hj|b,ij,hj−1), where ​h0=∅​ and ​k>=1\displaystyle P(h|b)\approx\prod_{j=1}^{k}P(i_{j}|b,h_{j-1},I)\cdot P(h_{j}|b,i_{j},h_{j-1}),\text{ where }h_{0}=\emptyset\text{ and }k>=1
+
+(19)
+
+A.2 The Full Instruction for Benchmark Checking
+
+Please help us check again before finalizing the decomposition of each paper in the benchmark:
+
+1. Whether the background question is correct.
+
+2. Background survey shouldn’t contain any information/method in inspiration or hypothesis (except if this information/method has been used for this particular background question before). It is encouraged to include the most similar existing method to the proposed method. For example, the proposal is to change BaCl2 to BaSO4. It is encouraged to include BaCl2 in the survey, but SO4 must not be included in the survey (since SO4 belongs to the inspiration).
+
+3. Background question cannot contain any information in inspiration or hypothesis as well: It should be a little bit general question, instead of a specific question asking about how the inspiration can be leveraged to help with the question. It also shouldn’t be too general that we can’t understand which specific research domain it works on.
+
+3. Whether the identification of inspirations really the main inspirations for this paper, and whether we need more main inspiration(s).
+
+4. Whether the main hypothesis is correct and covers the main key points.
+
+5. Whether the background survey + background question + identified inspirations can logically lead to the hypothesis (if not, we might need to identify more inspirations).
+
+Thank you for the efforts! Your contribution is indispensable for the success of this research. Please let me know if you have any questions.
+
+A.3 Prompt to obtain R⁡(h)R(h)
+
+You are known as a diligent and harsh reviewer in Chemistry and Material Science that will spend much time to find flaws when reviewing and therefore usually gives a relatively much lower score than other reviewers. But when you meet with a hypothesis you truly appreciate, you don’t mind to give it good scores. Given a not yet peer reviewed research hypothesis in Chemistry or Material Science domain, try to evaluate the research hypothesis from four research aspects and give score according to evaluation guidelines provided below. All four aspects should be evaluated in a 5 point scale.
+
+Aspect 1: Validness.
+
+5 points: The hypothesis is a logical next step from current research, strongly supported by theory, perhaps with some indirect experimental evidence or highly predictive computational results. The experimental verification seems straightforward with a high probability of confirming the hypothesis; 4 points: Here, the hypothesis is well-rooted in existing theory with some preliminary data or computational models supporting it. It extends known science into new but logically consistent areas, where experiments are feasible with current technology, and there’s a reasonable expectation of positive results; 3 points: This hypothesis is within the realm of theoretical possibility but stretches the boundaries of what’s known. It might combine existing knowledge in very novel ways or predict outcomes for which there’s no direct evidence yet. There’s a conceptual framework for testing, but success is uncertain; 2 points: While the hypothesis might be grounded in some theoretical aspects, it significantly deviates from current understanding or requires conditions or materials that are currently impossible or highly improbable to achieve or synthesize; 1 point: The hypothesis proposes concepts or outcomes that are not only unsupported by current theory but also contradict well-established principles or data. There’s no clear path to experimental testing due to fundamental theoretical or practical barriers.
+
+Aspect 2: Novelty. 
+
+5 points: This level of novelty could fundamentally alter our understanding of chemistry or create entirely new fields. It often involves predictions or discoveries that, if proven, would require a significant overhaul of existing chemical theories; 4 points: The hypothesis significantly departs from established norms, potentially redefining how certain chemical phenomena are understood or applied. It might involve entirely new materials or theoretical frameworks; 3 points: This level involves a hypothesis that could potentially lead to new insights or applications. It might challenge minor aspects of current theories or introduce new methodologies or materials; 2 points: The hypothesis introduces a new angle or method within an established framework. It might involve known compounds or reactions but in contexts or combinations not previously explored; 1 point: The hypothesis involves minor tweaks or applications of well-known principles or techniques. It might slightly extend existing knowledge but doesn’t introduce fundamentally new concepts. 
+
+Aspect 3: Significance. 
+
+5 points: This hypothesis could fundamentally change one or more branches of chemistry. It might introduce entirely new principles, theories, or methodologies that redefine the boundaries of chemical science; 4 points: This hypothesis challenges current understanding or introduces a concept that could lead to substantial changes in how a particular area of chemistry is viewed or applied. It might lead to new technologies or significant theoretical advancements; 3 points: this hypothesis proposes something new or an innovative approach that could lead to noticeable advancements in a specific area of chemistry. It might open new avenues for research or application but doesn’t revolutionize the field; 2 points: This hypothesis might offer a small variation or incremental improvement on existing knowledge. It could potentially refine a known concept but doesn’t significantly alter the field; 1 point: The hypothesis addresses a very narrow or already well-established aspect of chemistry. It might confirm what is already known without adding much new insight.
+
+Aspect 4: Potential. 
+
+5 points: The hypothesis, while potentially intriguing now, holds the promise of being revolutionary with the addition of a key methodological component. This could introduce entirely new concepts or fields, fundamentally changing our understanding or capabilities in chemistry; 4 points: The hypothesis, though promising, could be transformative with the right methodological enhancement. This enhancement might lead to groundbreaking discoveries or applications, significantly advancing the field; 3 points: The hypothesis, while interesting in its current form, could be significantly elevated with the right methodological addition. This might lead to new insights or applications that go beyond the initial scope; 2 points: The hypothesis currently offers some value but has the potential for more substantial contributions if enhanced with a new methodological approach. This could lead to incremental advancements in understanding or application; 1 point: The hypothesis, as it stands, might be straightforward or well-trodden. Even with methodological enhancements, it’s unlikely to significantly expand current knowledge or applications beyond minor improvements.
+
+The hypothesis is:
+
+Please give a response to the initial question on scoring the hypothesis from four aspects. Remember that you are a diligent and harsh reviewer.
+
+A.4 Related Works on Reasoning
+
+Scientific discovery is highly related to reasoning, since it requires a set of very complex reasoning processes to lead to new discovery.
+
+Inductive reasoning (Yang et al., 2024a) is the most relevant reasoning type.
+It is about finding rules or hypotheses from observations.
+Scientific discovery is naturally an ultimate goal of inductive reasoning.
+
+Inductive reasoning is a sub-reasoning type of logical reasoning. The other two sub-reasoning types are deductive reasoning (Clark et al., 2020) and abductive reasoning (Bhagavatula et al., 2020).
+Yang et al. (2023b) discuss their definitions and differences in detail.
+
+Another relevant reasoning type is commonsense reasoning (Yang et al., 2020; Yang et al., 2023a).
+Scientific discovery can be seen as an opposite task, which is to reason far outside of commonsense, even to discover the unknown knowledge.
+
+A.5 Prompt to GPT-4o for Matched Score
+
+You are helping to evaluate the quality of a proposed research hypothesis in Chemistry by a phd student. The groundtruth hypothesis will also be provided to compare. Here we mainly focus on whether the proposed hypothesis has covered the key points in terms of the methodology in the groundtruth hypothesis. You will also be given a summary of the key points in the methodology of the groundtruth hypothesis for reference. Please note that for the proposed hypothesis to cover one key point, it is not necessary to explicitly mention the name of the key point, but might also can integrate the key point implicitly in the proposed method. The evaluation criteria is called ’Matched score’, which is in a 6-point Likert scale (from 5 to 0). Particularly, 5 points mean that the proposed hypothesis (1) covers all the key points and leverage them similarly as in the methodology of the groundtruth hypothesis, and (2) does not contain any extra key point that has apparent flaws; 4 points mean that the proposed hypothesis (1) covers all the key points (or at least three key points) and leverage them similarly as in the methodology of the groundtruth hypothesis, (2) but also with extra key points that have apparent flaws; 3 points mean that the proposed hypothesis (1) covers at least two key points and leverage them similarly as in the methodology of the groundtruth hypothesis, (2) but does not cover all key points in the groundtruth hypothesis, (3) might or might not contain extra key points; 2 points mean that the proposed hypothesis (1) covers at least one key point in the methodology of the groundtruth hypothesis, and leverage it similarly as in the methodology of groundtruth hypothesis, (2) but does not cover all key points in the groundtruth hypothesis, and (3) might or might not contain extra key points; 1 point means that the proposed hypothesis (1) covers at least one key point in the methodology of the groundtruth hypothesis, (2) but is used differently as in the methodology of groundtruth hypothesis, and (3) might or might not contain extra key points; 0 point means that the proposed hypothesis does not cover any key point in the methodology of the groundtruth hypothesis at all. Please note that the total number of key points in the groundtruth hypothesis might be less than three, so that multiple points can be given. E.g., there’s only one key point in the groundtruth hypothesis, and the proposed hypothesis covers the one key point, it’s possible to give 2 points, 4 points, and 5 points. In this case, we should choose score from 4 points and 5 points, depending on the existence and quality of extra key points. ’Leveraging a key point similarly as in the methodology of the groundtruth hypothesis’ means that in the proposed hypothesis, the same (or very related) concept (key point) is used in a similar way with a similar goal compared to the groundtruth hypothesis (not necessarily for the proposed hypothesis to be exactly the same with the groudtruth hypothesis to be classified as ’similar’). When judging whether an extra key point has apparent flaws, you should use your own knowledge to judge, but rather than to rely on the count number of pieces of extra key point to judge. 
+
+Please evaluate the proposed hypothesis based on the groundtruth hypothesis. 
+
+The proposed hypothesis is: 
+
+The groundtruth hypothesis is: 
+
+The key points in the groundtruth hypothesis are: 
+
+Please evaluate the proposed hypothesis based on the groundtruth hypothesis, and give a score.
+
+A.6 Generated Hypotheses With Low Matched Score Are Not Necessarily Bad
+
+MS only measures the similarity between the generated hh and the ground truth hh.
+Receiving a MS as 0 or 1 does not mean the generated hh is in bad.
+Only real lab experiments can check each hh.
+
+A.7 Agreement Between Expert Evaluation and GPT-4o Evaluation
+
+#Comparison Examples
+Hard Consistency Score
+Soft Consistency Score
+
+392
+0.345
+0.542
+
+Table 12: Consistency score between expert evaluation and GPT-4o evaluation.
+
+Table 12 shows the agreement between expert evaluation and automatic evaluation (by GPT-4o) on MS.
+Hard consistency is assigned to 1 only if the two scores are exact the same, else is assigned to 0.
+Soft consistency is assigned to 1 only if the absolute difference between the two scores is less than 2, else is assigned to 0.
+
+The results show a medium to high consistency between expert evaluation and automatic evaluation.
+The main reason is that, in practice, the automatic evaluation is usually 1 to 2 points higher than expert evaluation, since GPT-4o can usually find a way to explain how the generated hypothesis is related to the ground truth hypothesis in terms of the main innovations.
+While this explanation usually is not wrong, the experts might find that compared to the MS given by GPT-4o, the generated hypotheses might not be clear enough to deliver the new innovation information to scientists when using it as a copilot advice.
+
+A.8 More Case Study
+
+A.8.1 Case 1 (MS by Expert: 4)
+
+Generated hh:
+Leveraging an integrated multi-layer hydrogel-ion assembly, constructed through advanced freeze-casting, salting-out processes, and bioinformatics-driven macromolecular design, will enhance the Carnot-relative efficiency and mechanical robustness of flexible thermogalvanic devices. This approach reimagines the use of poly(vinyl alcohol) hydrogels and incorporates novel ion-specific interactions informed by the Hofmeister series with uniquely potent ions like magnesium and lithium. Precision ion concentrations (0.15 to 0.45 M) are optimized to amplify thermoelectric responses and ionic conductance. Molecular dynamics simulations, employing detailed quantum chemistry models, will validate the enhanced ionic interactions and entropy modulation. Comprehensive characterization through nanoindentation, electron microscopy, and advanced computational platforms will verify crystalline polymer structures and stratified ionic gel configurations. By setting new benchmarks in efficiency and flexibility, this innovation is poised to revolutionize energy solutions in wearable technologies, outperforming current models in both scalability and application feasibility.
+
+Groundtruth hh:
+By integrating guanidine sulfate (G​d​m)2​S​O4(Gdm)_{2}SO_{4} into a poly vinyl alcohol (PVA) hydrogel and employing directional freezing to create aligned channels, it is possible to achieve a flexible thermogalvanic armor (FTGA) with a Carnot-relative efficiency exceeding 8% while maintaining high mechanical strength. This integration allows for enhanced thermopower and mechanical robustness, exceeding the performance of traditional quasi-solid thermocells.
+
+Expert’s Analysis:
+
+The proposed hypothesis effectively covers key points, mirroring the ground truth hypothesis. It incorporates the Hofmeister series by mentioning ”ion-specific interactions informed by the Hofmeister series,” which aligns with the ground truth’s reference to ”guanidine sulfate (G​d​m)2​S​O4(Gdm)_{2}SO_{4}” in the hydrogel integration, acknowledging that sulfate ions are a significant component of the Hofmeister series. Additionally, the proposed hypothesis employs ”freeze-casting,” which reflects the ground truth’s ”directional freezing” to create structured channels within the hydrogel. This approach enhances both mechanical strength and thermopower—objectives that are consistent with those of the ground truth hypothesis.
+
+Moreover, the inclusion of salting-out processes in the proposed hypothesis does indeed contribute to improving the mechanical properties of thermoelectric materials. However, the selection of magnesium and lithium as specific examples is problematic. Overall, the proposed hypothesis provides valuable insights and serves as a source of inspiration for further exploration within this domain.
+
+A.8.2 Case 2 (MS by Expert: 3)
+
+Generated hh:
+An enantioselective [2+2+1] cycloaddition involving cycloalkenes, acetylenecarboxylates, and terminal alkynes can be achieved using a dynamically tunable Rh(I) pincer complex system, specifically incorporating PNP and PONOP ligands, to control the alkyne-to-vinylidene transformation and enhance selectivity towards chiral 3-methylenecyclopent-1-ene derivatives. By adjusting the P–Rh–P bite angle with novel ligand modifications and utilizing a blended solvent system containing toluene and dichloromethane at controlled temperatures (25°C to 80°C), reaction conditions can be fine-tuned to suppress side reactions. Computational methods (DFT, QTAIM, and NBO) will guide the optimization process, supported by real-time monitoring using FTIR and NMR. Exploring dual-ligand strategies, including phosphine/phosphinite combinations, will offer insights into previously unreported mechanistic pathways, ensuring a reproducible and scalable synthesis method applicable to pharmaceuticals and advanced material synthesis.
+
+Groundtruth hh:
+Rh(I)-catalyzed vinylidene formation and enantioselective control via chiral diphosphine ligands can work together to enable a selective [2+2+1] cycloaddition reaction using three different 2π\pi-components. The formation of the vinylidene intermediate ensures reaction selectivity, while the chiral ligands, through their dihedral angles, control the enantiomeric outcome. Together, these factors will result in the highly enantioselective synthesis of chiral 3-methylenecyclopent-1-ene derivatives.
+
+Expert’s Analysis:
+The hypothesis generated in Case 2 receives a score of 3, reflecting its accurate identification of the metal and ligand necessary for the catalytic process, as well as its articulation of the mechanism underlying chiral control via ligand geometry. However, the inclusion of mixed solvents, which were not utilized in the actual study, prevents a higher rating. This prediction successfully asserts the necessity of rhodium metal and a phosphine ligand, while also proposing the significance of the chelating angle between the phosphine ligand and rhodium, in alignment with the hypothesis presented in the referenced article. Furthermore, although the DFT calculations mentioned in the hypothesis are not addressed in the article, they represent a promising avenue for future research in organic chemistry.
+
+A.8.3 Case 3 (MS by Expert: 3)
+
+Generated hh:
+A sophisticated dual-modal photoredox strategy synergistically integrates phosphorus ylides with a synchronized dual-wavelength excitation (450 nm and 520 nm) system to incite a regioselective three-component cycloaddition. This method exploits both net-neutral radical/polar crossover pathways and metal-free carbyne generation to convert inert C–H and C=P bonds into C–C and C=C bonds efficiently. Implemented within an optimized mixed solvent system (acetone/acetonitrile) under an ambient nitrogen atmosphere, the approach utilizes precise kinetic modulation and catalytic control, with computational validation (employing DFT models) underpinning mechanistic insights and regioselectivity. Experimental verification through in situ spectroscopic techniques (e.g., UV-Vis and NMR) enhances synchronization precision, curtailing side reactions. This methodology pledges substantial advancements in sustainable pharmaceutical synthesis and innovative polymer architecture formation, specifically by improving production efficiency for complex molecules and novel materials.
+
+Groundtruth hh:
+The hypothesis is that phosphorus ylides, when exposed to photoredox catalysis, can undergo single-electron oxidation to generate radical cations, which engage in radical-polar crossover reactions. These intermediates can then sequentially form C–C and C=C bonds through a formal cycloaddition process, offering a powerful method for constructing six-membered carbocycles from simple substrates.
+
+Expert’s Analysis:
+The generated hypothesis also merits a score of 3, as it correctly anticipates the use of photocatalysis and highlights the significant influence of solvent on the reaction. However, since dual wavelength catalysis and solvent mixing were not employed in the actual experiment, a higher score is not warranted. Notably, despite the proposed mixed solvents not being used in the study, their composition comprises the two best-performing single solvents from the actual research, thus providing valuable insights that remain relevant to the ongoing investigation.
+
+ Experimental support, please
+ view the build logs
+ for errors. Generated by
+
+ L
+ A
+ T
+ E
+
+ xml
+
+ .
+
+Instructions for reporting errors
+
+We are continuing to improve HTML versions of papers, and your feedback helps enhance accessibility and mobile
+ support. To report errors in the HTML that will help us improve conversion and rendering, choose any of the
+ methods listed below:
+
+Click the "Report Issue" (
+
+ ) button, located in the page header.
+
+Tip: You can select the relevant text first, to include it in your report.
+
+Our team has already identified the following issues. We appreciate your time reviewing and reporting rendering errors we
+ may not have found yet. Your efforts will help us improve the HTML versions for all readers, because disability
+ should not be a barrier to accessing research. Thank you for your continued support in championing open access for
+ all.
+
+Have a free development cycle? Help support accessibility at arXiv! Our collaborators at LaTeXML maintain a list of packages that need conversion, and welcome developer contributions.
+
+ We gratefully acknowledge support from our major funders,
+ member institutions, ,
+ and all contributors.
+
+ About ·
+ Help ·
+ Contact ·
+ Subscribe ·
+ Copyright ·
+ Privacy ·
+ Accessibility ·
+ Operational Status (opens in new tab)
+

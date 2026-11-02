@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430662497707022,
+  "http_status": 200,
+  "body": {
+    "id": "resp_09f088c8b58775a7016ae59483a79881958ad6e17cd16723c2",
+    "object": "chat.completion",
+    "created": 1793430662,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest trajectory-held-out error (0.00111); alternatives perform worse, though residual lag correlation and forecast failures leave some uncertainty about adequacy.\",\"prediction\":\"After rapid input reversals, the post-input response will retain history dependence and decay gradually rather than immediately returning to baseline.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history predict a measurable, finite relaxation after input returns to zero.\",\"condition_to_check\":\"Compare post-input responses across histories at matched current input and visible state; no remaining history dependence would falsify this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3497,
+      "completion_tokens": 247,
+      "total_tokens": 3744,
+      "completion_tokens_details": {
+        "reasoning_tokens": 106
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 8.540607035160065
+}

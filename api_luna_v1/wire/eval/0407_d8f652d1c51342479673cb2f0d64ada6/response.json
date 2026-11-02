@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430488416575571,
+  "http_status": 200,
+  "body": {
+    "id": "resp_06a68f0546770f23016ae593d545fc8197af1ef2c7bc450b56",
+    "object": "chat.completion",
+    "created": 1793430488,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest trajectory-level CV error (0.0019), far below the current state model, while PRBS maximizes disagreement among plausible history-based alternatives.\",\"prediction\":\"After input switches to zero, the output will retain a history-dependent response; PRBS trajectories should distinguish slow accumulation from saturation or clock effects.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is sufficiently supported by these observations.\",\"condition_to_check\":\"Compare PRBS responses at matched elapsed times and current input; systematic clock-aligned differences would challenge a history-only account.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2806,
+      "completion_tokens": 292,
+      "total_tokens": 3098,
+      "completion_tokens_details": {
+        "reasoning_tokens": 153
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 9.489468320272863
+}

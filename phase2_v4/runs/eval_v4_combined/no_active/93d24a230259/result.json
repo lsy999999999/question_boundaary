@@ -1,0 +1,84 @@
+{
+  "task_id": "93d24a230259",
+  "split": "eval",
+  "family": "linear",
+  "seed": 31,
+  "method": "no_active",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_slow",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0012323916700287567,
+    "coefficients": [
+      -0.0016442,
+      -0.7640025,
+      1.003755,
+      0.7120213,
+      -0.8180218,
+      -1.5120058,
+      -1.350352,
+      0.865429,
+      2.0094498
+    ]
+  },
+  "test": {
+    "test_nmse": 0.0003548614221127082,
+    "test_mse": 4.053099162408765e-05,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 3.229082933089145e-05,
+        "nmse": 0.0003968586369087948
+      },
+      {
+        "action": "test_three_step",
+        "mse": 8.575891224145127e-05,
+        "nmse": 0.00023588516264338554
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 1.6550122326877305e-05,
+        "nmse": 0.00047847685701754263
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 3.324920735535991e-05,
+        "nmse": 0.00032784771407273387
+      },
+      {
+        "action": "test_prbs",
+        "mse": 3.599921056846124e-05,
+        "nmse": 0.0003955606958396405
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 3.9337667921484776e-05,
+        "nmse": 0.00029453946619415155
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": true,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 14712,
+  "output_tokens": 423,
+  "generation_seconds_amortized": 10.623726666904986,
+  "elapsed_wall_seconds": 247.74511218070984,
+  "selected_actions": [
+    "prbs",
+    "ramp_reverse",
+    "double_pulse"
+  ],
+  "selected_representations": [
+    "memory_multiscale",
+    "memory_slow",
+    "memory_slow",
+    "memory_slow"
+  ],
+  "peak_gpu_allocated_gb": 14.990333557128906,
+  "peak_process_ram_gb": 5.02374267578125,
+  "inference_backend": "cuda",
+  "evaluation_after_commit_ns": 1793424031773803439
+}

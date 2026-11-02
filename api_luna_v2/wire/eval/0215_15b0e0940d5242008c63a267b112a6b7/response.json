@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431635993513571,
+  "http_status": 200,
+  "body": {
+    "id": "resp_03e79859435d32b1016ae59850e16c81958f6a58cb547a0c9b",
+    "object": "chat.completion",
+    "created": 1793431635,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"slow_wave\",\"reason\":\"State has the lowest trajectory-held-out error; added memory and clock features do not improve validation, and the alternating forecast error was low.\",\"prediction\":\"During slow_wave, residuals should show no systematic dependence on elapsed time or prior inputs after conditioning on current state and input.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No additional history-dependent or elapsed-time relation is established beyond the current-state representation.\",\"condition_to_check\":\"Reject this account if slow_wave residuals systematically depend on elapsed time or prior inputs after conditioning on current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3256,
+      "completion_tokens": 352,
+      "total_tokens": 3608,
+      "completion_tokens_details": {
+        "reasoning_tokens": 221
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 7.544930109754205
+}

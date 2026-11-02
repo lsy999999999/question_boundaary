@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423754492065190,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "positive_pulse",
+    "reason": "Memory_slow fits well and shows persistent response; positive_pulse tests initial accumulation.",
+    "prediction": "Response will show a gradual increase during the pulse, indicating persistent memory.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Response persists after input ends due to stored state.",
+      "condition_to_check": "Persistent response after positive pulse."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Memory_slow fits well and shows persistent response; positive_pulse tests initial accumulation.\",\n  \"prediction\": \"Response will show a gradual increase during the pulse, indicating persistent memory.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Response persists after input ends due to stored state.\",\n    \"condition_to_check\": \"Persistent response after positive pulse.\"\n  }\n}",
+    "input_tokens": 4021,
+    "output_tokens": 108,
+    "batch_elapsed_seconds": 2.681837698444724,
+    "amortized_seconds": 2.681837698444724,
+    "peak_gpu_allocated_gb": 14.990030288696289,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.0277862548828125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

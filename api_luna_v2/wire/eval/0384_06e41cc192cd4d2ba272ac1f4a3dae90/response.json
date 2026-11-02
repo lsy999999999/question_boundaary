@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431934768030788,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0cd48494936db2e8016ae5997bd088819386b2636b7d0d4d02",
+    "object": "chat.completion",
+    "created": 1793431934,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"double_pulse\",\"reason\":\"Memory_multiscale has the lowest trajectory-level validation error and has forecast the tested PRBS trajectory well. Residual lag correlation leaves adequacy on unseen interventions uncertain.\",\"prediction\":\"The second pulse will produce a different response from the first because residual history from the first pulse persists into the second.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Persistent post-input responses are consistent with accumulated input history relaxing over multiple timescales.\",\"condition_to_check\":\"Compare the two pulse responses and test whether their difference is predicted by the history remaining before the second pulse.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3486,
+      "completion_tokens": 303,
+      "total_tokens": 3789,
+      "completion_tokens_details": {
+        "reasoning_tokens": 166
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.6805171966552734
+}

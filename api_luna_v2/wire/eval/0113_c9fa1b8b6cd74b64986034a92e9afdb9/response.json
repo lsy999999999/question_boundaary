@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431497381254520,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0a8d4d07fb59504e016ae597c63bd081908df18b77605d1769",
+    "object": "chat.completion",
+    "created": 1793431497,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"alternating\",\"reason\":\"Saturating memory has the lowest trajectory-level CV error, narrowly beating state_cubic and improving on state; high residual autocorrelation means adequacy remains uncertain.\",\"prediction\":\"Under rapid input reversals, the response will depend on accumulated history and differ from an instantaneous state_cubic prediction.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is established by the predictive fit alone.\",\"condition_to_check\":\"Compare alternating responses with predictions from instantaneous curvature and history-dependent models.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2804,
+      "completion_tokens": 308,
+      "total_tokens": 3112,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 186
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.7901646457612514
+}

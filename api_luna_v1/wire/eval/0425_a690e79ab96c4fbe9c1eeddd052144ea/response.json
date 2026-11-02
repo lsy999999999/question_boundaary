@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430533850382798,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0989574941a6e683016ae59401547c8194949f987c0f992365",
+    "object": "chat.completion",
+    "created": 1793430533,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"memory_clock has the lowest leave-trajectory-out error (0.0017), far below the current state model (0.4663); the large residual lag also argues against the state-only representation.\",\"prediction\":\"Under alternating input, a periodic component will remain in the response after accounting for accumulated input history; its absence would challenge the clock terms.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The predictive fit favors history and elapsed-time features, but does not establish a distinct physical mechanism.\",\"condition_to_check\":\"Compare responses at matched input and visible state across elapsed times; no reproducible time dependence would weaken the clock component.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2782,
+      "completion_tokens": 398,
+      "total_tokens": 3180,
+      "completion_tokens_details": {
+        "reasoning_tokens": 249
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.189346895553172
+}

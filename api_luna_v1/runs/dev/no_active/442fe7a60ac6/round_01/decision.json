@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793429703014572833,
+  "decision": {
+    "representation": "state",
+    "experiment": "ramp_reverse",
+    "reason": "State has the lowest trajectory-held-out error; cubic, memory, and clock alternatives validate worse. Residual correlation is modest, but current evidence does not establish adequacy for unseen interventions.",
+    "prediction": "After the ramp returns input to zero, output will decay toward baseline without a persistent offset or elapsed-time oscillation.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No independent storage, transport, saturation, or clock relation is justified by the comparative validation evidence.",
+      "condition_to_check": "A repeatable ramp-reversal residual after accounting for current input and output state would challenge the state representation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"ramp_reverse\",\"reason\":\"State has the lowest trajectory-held-out error; cubic, memory, and clock alternatives validate worse. Residual correlation is modest, but current evidence does not establish adequacy for unseen interventions.\",\"prediction\":\"After the ramp returns input to zero, output will decay toward baseline without a persistent offset or elapsed-time oscillation.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No independent storage, transport, saturation, or clock relation is justified by the comparative validation evidence.\",\"condition_to_check\":\"A repeatable ramp-reversal residual after accounting for current input and output state would challenge the state representation.\"}}",
+    "input_tokens": 3275,
+    "output_tokens": 138,
+    "batch_elapsed_seconds": 2.368429378606379,
+    "amortized_seconds": 2.368429378606379,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3275,
+      "completion_tokens": 138,
+      "total_tokens": 3413
+    },
+    "api_response_id": "resp_079f3689e8c0f4e2016ae590c58e488194b699d8d8f7721116",
+    "wire_record": "wire/dev/0056_ac7228bfb82647aebfb1d89bbe702c91"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "time_ns": 1793431627426558813,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "alternating",
+    "reason": "memory_clock has the lowest trajectory-held-out error (0.0031), far below the state model (0.4335); strong residual autocorrelation also contradicts an instantaneous representation.",
+    "prediction": "After input switches, output will retain history-dependent oscillations; the alternating trajectory should expose deviations from the memory_clock forecast.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated input and output history improves held-out predictions, consistent with a predictive storage-like component.",
+      "condition_to_check": "Compare trajectories at matched current input and visible output but different prior histories; no residual difference would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"memory_clock has the lowest trajectory-held-out error (0.0031), far below the state model (0.4335); strong residual autocorrelation also contradicts an instantaneous representation.\",\"prediction\":\"After input switches, output will retain history-dependent oscillations; the alternating trajectory should expose deviations from the memory_clock forecast.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history improves held-out predictions, consistent with a predictive storage-like component.\",\"condition_to_check\":\"Compare trajectories at matched current input and visible output but different prior histories; no residual difference would weaken this relation.\"}}",
+    "input_tokens": 2785,
+    "output_tokens": 362,
+    "batch_elapsed_seconds": 9.705170553177595,
+    "amortized_seconds": 9.705170553177595,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2785,
+      "completion_tokens": 362,
+      "total_tokens": 3147,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 220
+      }
+    },
+    "api_response_id": "resp_0f42d16700709428016ae59846fc80819484ced7f171d2cb05",
+    "wire_record": "wire/eval/0207_a0a8b8079b9249f5b12e666ffdd6209a"
+  }
+}

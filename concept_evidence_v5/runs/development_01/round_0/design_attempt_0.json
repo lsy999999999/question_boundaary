@@ -1,0 +1,83 @@
+{
+  "question": {
+    "family": "polarity",
+    "purpose": "probe_relation",
+    "target_ids": [
+      "v3_r1",
+      "v3_r2"
+    ],
+    "amplitude_range": [
+      1.0,
+      1.5
+    ],
+    "value_range": [
+      1.0,
+      5.0
+    ],
+    "evidence_ids": [
+      "local_relation_0",
+      "local_relation_1",
+      "local_relation_2"
+    ],
+    "rationale": "检验已观测的近镜像关系能否跨脉冲时长与幅值保持；关系证据仅局部，且两模型在原镜像输入上兼容。"
+  },
+  "result": {
+    "passed": true,
+    "actions": [
+      {
+        "points": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.5,
+            1.5
+          ],
+          [
+            5.5,
+            0.0
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.5,
+            -1.5
+          ],
+          [
+            5.5,
+            0.0
+          ]
+        ]
+      }
+    ],
+    "descriptor": {
+      "family": "polarity",
+      "amplitude": 1.5,
+      "sign": 1,
+      "values": [
+        5.0
+      ]
+    },
+    "guard": {
+      "passed": true,
+      "contrast_rms": 0.41558956382047574,
+      "boundary_labels": [
+        null,
+        null
+      ],
+      "straddles": false
+    },
+    "considered": 12,
+    "rejected_count": 1,
+    "reasons": {
+      "input already observed": 1
+    }
+  }
+}

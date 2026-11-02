@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793429984731679084,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "alternating",
+    "reason": "memory_clock has the lowest leave-trajectory-out error by a wide margin. Late rebounds across different inputs are consistent with elapsed-time forcing, but need a discriminating intervention.",
+    "prediction": "A late oscillatory rebound will remain aligned to elapsed time despite rapid input switches.",
+    "accept": true,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Elapsed-time periodic features improve prediction beyond accumulated input and state history.",
+      "condition_to_check": "Compare late oscillation phase across input patterns; phase alignment supports a shared clock, while input-dependent timing weakens it."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"memory_clock has the lowest leave-trajectory-out error by a wide margin. Late rebounds across different inputs are consistent with elapsed-time forcing, but need a discriminating intervention.\",\"prediction\":\"A late oscillatory rebound will remain aligned to elapsed time despite rapid input switches.\",\"accept\":true,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time periodic features improve prediction beyond accumulated input and state history.\",\"condition_to_check\":\"Compare late oscillation phase across input patterns; phase alignment supports a shared clock, while input-dependent timing weakens it.\"}}",
+    "input_tokens": 2789,
+    "output_tokens": 361,
+    "batch_elapsed_seconds": 4.949531321413815,
+    "amortized_seconds": 4.949531321413815,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2789,
+      "completion_tokens": 361,
+      "total_tokens": 3150,
+      "completion_tokens_details": {
+        "reasoning_tokens": 233
+      }
+    },
+    "api_response_id": "resp_03bdb2a37a46e3a1016ae591dca650819792dd29cfdef7f672",
+    "wire_record": "wire/eval/0156_37f6c3d12d9a4e40933f2fe6846fb491"
+  }
+}

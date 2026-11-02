@@ -1,0 +1,87 @@
+{
+  "initial": {
+    "spec": {
+      "parameters": [],
+      "states": [],
+      "terms": [
+        "1",
+        "x",
+        "u"
+      ]
+    },
+    "fit": {
+      "parameters": [],
+      "coefficients": [
+        -0.006366287510791446,
+        -0.10947710602089386,
+        0.5935632023368826
+      ],
+      "solver": {
+        "success": true,
+        "nfev": 0,
+        "message": "No nonlinear parameters"
+      },
+      "derivative_mse": 0.006031355848398175
+    },
+    "trajectory_cv_nmse": 1.3320272807820341,
+    "fold_nmse": [
+      0.26295590331309565,
+      0.6267522208090598,
+      1.0065265484618213,
+      0.7318824441374647,
+      4.03201928718873
+    ],
+    "complexity": 8
+  },
+  "r0_b0": {
+    "spec": {
+      "parameters": [
+        {
+          "name": "p0",
+          "lower": 0.05,
+          "initial": 0.25,
+          "upper": 1.5
+        }
+      ],
+      "states": [
+        {
+          "name": "z0",
+          "meaning": "exponentially decaying trace of prior input, initialized to zero",
+          "rate": "u-p0*z0"
+        }
+      ],
+      "terms": [
+        "1",
+        "x",
+        "u",
+        "z0"
+      ]
+    },
+    "fit": {
+      "parameters": [
+        0.6942423217233288
+      ],
+      "coefficients": [
+        -0.006132735992683451,
+        0.005502109420584238,
+        0.8852831616627709,
+        -0.4461042987223986
+      ],
+      "solver": {
+        "success": true,
+        "nfev": 8,
+        "message": "`ftol` termination condition is satisfied."
+      },
+      "derivative_mse": 0.0009919913329080763
+    },
+    "trajectory_cv_nmse": 0.8768748354613644,
+    "fold_nmse": [
+      0.08788801670135354,
+      0.4742930066703103,
+      0.3673423687484303,
+      0.5778801356087839,
+      2.876970649577944
+    ],
+    "complexity": 22
+  }
+}

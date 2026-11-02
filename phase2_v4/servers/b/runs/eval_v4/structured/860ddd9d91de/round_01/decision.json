@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793423894586612532,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "negative_pulse",
+    "reason": "Memory_slow has competitive NMSE and shows high variance for negative_pulse.",
+    "prediction": "Negative pulse will exhibit delayed response and possible phase shift.",
+    "accept": false,
+    "mapping": {
+      "source_id": "memory_slow",
+      "target_relation": "Delayed response and phase shift suggest long-term memory rather than short-term effects.",
+      "condition_to_check": "Immediate response without delay rules out long-term memory."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"negative_pulse\",\n  \"reason\": \"Memory_slow has competitive NMSE and shows high variance for negative_pulse.\",\n  \"prediction\": \"Negative pulse will exhibit delayed response and possible phase shift.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"memory_slow\",\n    \"target_relation\": \"Delayed response and phase shift suggest long-term memory rather than short-term effects.\",\n    \"condition_to_check\": \"Immediate response without delay rules out long-term memory.\"\n  }\n}",
+    "input_tokens": 3582,
+    "output_tokens": 114,
+    "batch_elapsed_seconds": 2.7167929289862514,
+    "amortized_seconds": 2.7167929289862514,
+    "peak_gpu_allocated_gb": 14.917911529541016,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

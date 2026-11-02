@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793432318618504158,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0198ac018c649a07016ae59afd04548197925f15069dbb9895",
+    "object": "chat.completion",
+    "created": 1793432318,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest trajectory-held-out error (0.00298), outperforming history_all (0.00381) and all simpler candidates. Earlier held-out forecasts were accurate, though residual lag correlation leaves some uncertainty.\",\"prediction\":\"Under rapid alternating input, memory_clock predicts output will vary with both accumulated input history and elapsed-time phase.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history improves prediction beyond current input and elapsed-time features.\",\"condition_to_check\":\"Falsified if history adds no predictive value after controlling current input, visible state, and elapsed-time phase.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3687,
+      "completion_tokens": 139,
+      "total_tokens": 3826
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.4424540791660547
+}

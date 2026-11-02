@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432048096949694,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0e4c2dd0533f7e12016ae599ed701081909903e9d2f9345c22",
+    "object": "chat.completion",
+    "created": 1793432047,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the lowest trajectory-level CV error, but PRBS and alternating errors remain higher and residuals are autocorrelated; PRBS has the greatest disagreement among plausible models.\",\"prediction\":\"At matched current input and output, differing prior input histories will produce different subsequent outputs.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"History improves prediction, but these observations do not justify a specific cross-domain mechanism.\",\"condition_to_check\":\"Test whether prior inputs predict output after controlling current input and visible output.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3443,
+      "completion_tokens": 290,
+      "total_tokens": 3733,
+      "completion_tokens_details": {
+        "reasoning_tokens": 165
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.3663707952946424
+}

@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793431633448740843,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "prbs",
+    "reason": "Saturating memory has the lowest trajectory-level CV error, modestly improving on memory_slow; PRBS offers high disagreement among plausible memory models.",
+    "prediction": "Under irregular input switches, history-dependent response will persist, with saturation limiting the effect of accumulated history.",
+    "accept": true,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"prbs\",\"reason\":\"Saturating memory has the lowest trajectory-level CV error, modestly improving on memory_slow; PRBS offers high disagreement among plausible memory models.\",\"prediction\":\"Under irregular input switches, history-dependent response will persist, with saturation limiting the effect of accumulated history.\",\"accept\":true}",
+    "input_tokens": 2663,
+    "output_tokens": 232,
+    "batch_elapsed_seconds": 3.5187050234526396,
+    "amortized_seconds": 3.5187050234526396,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2663,
+      "completion_tokens": 232,
+      "total_tokens": 2895,
+      "completion_tokens_details": {
+        "reasoning_tokens": 155
+      }
+    },
+    "api_response_id": "resp_01d240bf94b81a94016ae5984ed454819692e8d8b7ccf0176f",
+    "wire_record": "wire/eval/0217_01428cae12654d1ba74bc67587bbf611"
+  }
+}

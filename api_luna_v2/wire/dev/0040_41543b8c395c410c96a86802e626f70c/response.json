@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431247179480336,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0b41d53e1e1364f0016ae596cc43048194be4b8271a4415eb1",
+    "object": "chat.completion",
+    "created": 1793431247,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest trajectory-level CV error and the PRBS forecast was accurate. Residual lag correlation remains, so alternating inputs can test whether its slow-history representation is adequate.\",\"prediction\":\"After rapid input reversals, trajectories will depend on accumulated prior inputs, including after input returns to zero.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts persistent output after current input returns to zero.\",\"condition_to_check\":\"At matched current input and visible output, different prior inputs should predict different subsequent trajectories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3251,
+      "completion_tokens": 263,
+      "total_tokens": 3514,
+      "completion_tokens_details": {
+        "reasoning_tokens": 133
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.8089745910838246
+}

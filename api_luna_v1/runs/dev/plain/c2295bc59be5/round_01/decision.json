@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793429629593603655,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "ramp_reverse",
+    "reason": "State_cubic has substantially lower trajectory-level validation error than alternatives, but residual lag correlation suggests possible missing temporal structure. Ramp_reverse has the greatest predicted disagreement among plausible models.",
+    "prediction": "During reversal, observations may show a lagged or hysteretic response that state_cubic cannot predict from current state and input alone.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state_cubic\",\"experiment\":\"ramp_reverse\",\"reason\":\"State_cubic has substantially lower trajectory-level validation error than alternatives, but residual lag correlation suggests possible missing temporal structure. Ramp_reverse has the greatest predicted disagreement among plausible models.\",\"prediction\":\"During reversal, observations may show a lagged or hysteretic response that state_cubic cannot predict from current state and input alone.\",\"accept\":false}",
+    "input_tokens": 2645,
+    "output_tokens": 165,
+    "batch_elapsed_seconds": 2.590799108147621,
+    "amortized_seconds": 2.590799108147621,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2645,
+      "completion_tokens": 165,
+      "total_tokens": 2810,
+      "completion_tokens_details": {
+        "reasoning_tokens": 78
+      }
+    },
+    "api_response_id": "resp_0c99cec4c1902d82016ae5907bb4f081969e4dccd1e64bee85",
+    "wire_record": "wire/dev/0017_529784163d584349919c40d7368e38c9"
+  }
+}

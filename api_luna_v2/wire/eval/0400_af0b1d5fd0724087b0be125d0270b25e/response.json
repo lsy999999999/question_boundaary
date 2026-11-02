@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431972685923081,
+  "http_status": 200,
+  "body": {
+    "id": "resp_056a3fc314ecb72b016ae599a1afd4819398a20b1bc4ec91fa",
+    "object": "chat.completion",
+    "created": 1793431972,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest leave-trajectory-out NMSE, but residual autocorrelation and its weaker PRBS fit leave adequacy uncertain; rapid switches can probe remaining history effects.\",\"prediction\":\"Following rapid input reversals, output will retain a decaying history-dependent tail rather than track only the current input.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated input history predicts persistent output after input switches, consistent with finite-relaxation storage.\",\"condition_to_check\":\"The relation is weakened if alternating responses are explained by current input and visible state without accumulated history.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3492,
+      "completion_tokens": 264,
+      "total_tokens": 3756,
+      "completion_tokens_details": {
+        "reasoning_tokens": 128
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.6860209768638015
+}

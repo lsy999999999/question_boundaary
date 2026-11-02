@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423847310407623,
+  "decision": {
+    "representation": "memory_fast",
+    "experiment": "double_pulse",
+    "reason": "Fast memory shows better fit for pulses; double pulse tests transient response.",
+    "prediction": "Response to double pulse will show faster rise than state-only model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Transient response should match input shape regardless of amplitude.",
+      "condition_to_check": "Consistent response for positive and negative pulses."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_fast\",\n  \"experiment\": \"double_pulse\",\n  \"reason\": \"Fast memory shows better fit for pulses; double pulse tests transient response.\",\n  \"prediction\": \"Response to double pulse will show faster rise than state-only model.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Transient response should match input shape regardless of amplitude.\",\n    \"condition_to_check\": \"Consistent response for positive and negative pulses.\"\n  }\n}",
+    "input_tokens": 3129,
+    "output_tokens": 109,
+    "batch_elapsed_seconds": 2.5047226091846824,
+    "amortized_seconds": 2.5047226091846824,
+    "peak_gpu_allocated_gb": 14.829248905181885,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024013519287109,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

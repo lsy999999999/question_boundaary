@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432339847764332,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0f76a6cca1567d71016ae59b1122fc819082b79f05dda9cdcb",
+    "object": "chat.completion",
+    "created": 1793432339,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"ramp_reverse\",\"reason\":\"Memory_clock has the best trajectory-level CV NMSE (0.00232), far below history_all (0.0294); recent forecast errors are also small despite prior flagged failures.\",\"prediction\":\"On unseen interventions, forecasts should remain accurate without repeatable residual oscillations at fixed elapsed times.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"History and clock features improve prediction, but the evidence does not establish a specific physical mechanism.\",\"condition_to_check\":\"Test whether residuals show repeatable elapsed-time structure across independently varied input trajectories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3673,
+      "completion_tokens": 210,
+      "total_tokens": 3883,
+      "completion_tokens_details": {
+        "reasoning_tokens": 79
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.405905727297068
+}

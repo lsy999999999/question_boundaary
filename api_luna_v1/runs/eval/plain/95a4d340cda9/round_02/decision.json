@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793430182259072172,
+  "decision": {
+    "representation": "history_all",
+    "experiment": "alternating",
+    "reason": "History_all has the lowest leave-trajectory-out error, narrowly beating saturating_memory; the improvement is modest, and residual lag correlation remains substantial.",
+    "prediction": "Rapid reversals will expose lag-related errors; history_all should better track their timing than a model using only saturating accumulated history.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"history_all\",\"experiment\":\"alternating\",\"reason\":\"History_all has the lowest leave-trajectory-out error, narrowly beating saturating_memory; the improvement is modest, and residual lag correlation remains substantial.\",\"prediction\":\"Rapid reversals will expose lag-related errors; history_all should better track their timing than a model using only saturating accumulated history.\",\"accept\":false}",
+    "input_tokens": 2828,
+    "output_tokens": 284,
+    "batch_elapsed_seconds": 3.9859224697574973,
+    "amortized_seconds": 3.9859224697574973,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2828,
+      "completion_tokens": 284,
+      "total_tokens": 3112,
+      "completion_tokens_details": {
+        "reasoning_tokens": 204
+      }
+    },
+    "api_response_id": "resp_05504a730a1c101a016ae592a2f2ec8193a5765842cba8a043",
+    "wire_record": "wire/eval/0260_029e1ef84ac940949a9946b204349e20"
+  }
+}

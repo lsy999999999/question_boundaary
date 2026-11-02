@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430162882097622,
+  "decision": {
+    "representation": "state",
+    "experiment": "ramp_reverse",
+    "reason": "State remains best on trajectory-level validation and prior PRBS forecasts were accurate. Residual correlation leaves some uncertainty, so a reversed ramp probes history effects without prematurely adding memory.",
+    "prediction": "At matched current state and input during the ramp and reversal, next-step responses should not systematically depend on the preceding input path.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No cross-domain relation is supported by the validated state model.",
+      "condition_to_check": "Reject if ramp and reversal show reproducible history-dependent residuals after controlling current state and input."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"ramp_reverse\",\"reason\":\"State remains best on trajectory-level validation and prior PRBS forecasts were accurate. Residual correlation leaves some uncertainty, so a reversed ramp probes history effects without prematurely adding memory.\",\"prediction\":\"At matched current state and input during the ramp and reversal, next-step responses should not systematically depend on the preceding input path.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is supported by the validated state model.\",\"condition_to_check\":\"Reject if ramp and reversal show reproducible history-dependent residuals after controlling current state and input.\"}}",
+    "input_tokens": 3430,
+    "output_tokens": 258,
+    "batch_elapsed_seconds": 3.6563480477780104,
+    "amortized_seconds": 3.6563480477780104,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3430,
+      "completion_tokens": 258,
+      "total_tokens": 3688,
+      "completion_tokens_details": {
+        "reasoning_tokens": 128
+      }
+    },
+    "api_response_id": "resp_05e317b15f7b7705016ae5928ffbc4819587acb844156bd90f",
+    "wire_record": "wire/eval/0250_35c0ed7ccb7a478e975f211bf6701670"
+  }
+}

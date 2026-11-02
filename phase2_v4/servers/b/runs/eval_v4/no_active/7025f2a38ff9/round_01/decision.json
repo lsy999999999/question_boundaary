@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423902281322601,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "double_pulse",
+    "reason": "Double pulse tests memory retention over longer intervals.",
+    "prediction": "Slower recovery between pulses indicates memory retention.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Storage should cause slower response recovery between pulses.",
+      "condition_to_check": "Recovery time constant should be longer than pulse interval."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"double_pulse\",\n  \"reason\": \"Double pulse tests memory retention over longer intervals.\",\n  \"prediction\": \"Slower recovery between pulses indicates memory retention.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Storage should cause slower response recovery between pulses.\",\n    \"condition_to_check\": \"Recovery time constant should be longer than pulse interval.\"\n  }\n}",
+    "input_tokens": 3634,
+    "output_tokens": 101,
+    "batch_elapsed_seconds": 2.4398729065433145,
+    "amortized_seconds": 2.4398729065433145,
+    "peak_gpu_allocated_gb": 14.9249587059021,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

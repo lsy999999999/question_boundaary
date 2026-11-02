@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793429684016807426,
+  "decision": {
+    "representation": "clock",
+    "experiment": "prbs",
+    "reason": "Clock has the lowest leave-trajectory-out error by a wide margin, and its forecasts remained accurate on alternating, PRBS, and double-pulse inputs. Residual correlation remains, but alternatives validate substantially worse.",
+    "prediction": "On a new input sequence, elapsed-time features should recur at similar times, while residual lag correlation may persist.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No independent external clock is established by predictive fit alone.",
+      "condition_to_check": "A clock relation would be weakened if matched-time features shift systematically with input history."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has the lowest leave-trajectory-out error by a wide margin, and its forecasts remained accurate on alternating, PRBS, and double-pulse inputs. Residual correlation remains, but alternatives validate substantially worse.\",\"prediction\":\"On a new input sequence, elapsed-time features should recur at similar times, while residual lag correlation may persist.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No independent external clock is established by predictive fit alone.\",\"condition_to_check\":\"A clock relation would be weakened if matched-time features shift systematically with input history.\"}}",
+    "input_tokens": 3646,
+    "output_tokens": 128,
+    "batch_elapsed_seconds": 2.487882124260068,
+    "amortized_seconds": 2.487882124260068,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3646,
+      "completion_tokens": 128,
+      "total_tokens": 3774
+    },
+    "api_response_id": "resp_04524da0b526f8a3016ae590b204d481978da9f37b945b92f5",
+    "wire_record": "wire/dev/0049_37e78c14a7944ac691bb34238beea66a"
+  }
+}

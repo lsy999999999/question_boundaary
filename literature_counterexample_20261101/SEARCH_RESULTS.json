@@ -1,0 +1,1944 @@
+[
+  {
+    "query": "BoxingGym",
+    "total": 32,
+    "results": [
+      {
+        "title": "BoxingGym: Benchmarking Progress in Automated Experimental Design and Model Discovery",
+        "year": 2025,
+        "doi": "https://doi.org/10.48550/arxiv.2501.01540",
+        "id": "https://openalex.org/W4406092746",
+        "locations": [
+          {
+            "url": "http://arxiv.org/abs/2501.01540",
+            "pdf": "https://arxiv.org/pdf/2501.01540",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2501.01540",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Understanding the world and explaining it with scientific theories is a central aspiration of artificial intelligence research. Proposing theories, designing experiments to test them, and then revising them based on data are fundamental to scientific discovery. Despite the significant promise of LLM-based scientific agents, no benchmarks systematically test LLM's ability to propose scientific models, collect experimental data, and revise them in light of new data. We introduce BoxingGym, a benchmark with 10 environments for systematically evaluating both experimental design (e.g. collecting data to test a scientific theory) and model discovery (e.g. proposing and revising scientific theories). To enable tractable and quantitative evaluation, we implement each environment as a generative probabilistic model with which a scientific agent can run interactive experiments. These probabilistic models are drawn from various real-world scientific domains ranging from psychology to ecology. To quantitatively evaluate a scientific agent's ability to collect informative experimental data, we compute the expected information gain (EIG), an information-theoretic quantity which measures how much an experiment reduces uncertainty about the parameters of a generative model. A good scientific theory is a concise and predictive explanation. Therefore, to quantitatively evaluate model discovery, we ask a scientific agent to explain their model and then assess whether this explanation enables another scientific agent to make reliable predictions about this environment. In addition to this explanation-based evaluation, we compute standard model evaluation metrics such as prediction errors. We find that current LLMs, such as GPT-4o, struggle with both experimental design and model discovery. We find that augmenting the LLM-based agent with an explicit statistical model does not reliably improve these results."
+      },
+      {
+        "title": "Model Discovery Agent: LLM-assisted Bayesian experiment design for data-efficient discovery of mechanistic world models",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2608.09696",
+        "id": "https://openalex.org/W7202183629",
+        "locations": [
+          {
+            "url": "https://arxiv.org/abs/2608.09696",
+            "pdf": "https://arxiv.org/pdf/2608.09696",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2608.09696",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "A primary goal of science is to learn mechanistic world models from limited experimental data, both to explain observations and to predict novel interventions. We introduce the Model Discovery Agent (MDA), which combines LLM proposals for $\\mathcal M$-open model discovery, experiment design based on Value of Information, and approximate Bayesian inference over model structures, parameters, and stochastic latent trajectories. We apply MDA to learn symbolic reaction rate laws for ChemBench \\citep{kabra2026autoscilab}, partially observed ODE models for GlucoseBench \\citep{xie2018simglucose,kovatchev2009insilico}, and partially observed SDE models for a new stochastic single-neuron simulator we create. In the appendix, we also show results on various other domains from BoxingGym \\citep{gandhi2025boxinggym}. We show that MDA has improved sample efficiency compared to various baseline methods, and the learned models are good predictors but also provide interpretable abstractions of each domain."
+      },
+      {
+        "title": "Bayesian Model Discovery with Language Models: Closing the Loop between Hypotheses and Experiments",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2610.25747",
+        "id": "https://openalex.org/W7222995582",
+        "locations": [
+          {
+            "url": "https://arxiv.org/abs/2610.25747",
+            "pdf": "https://arxiv.org/pdf/2610.25747",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2610.25747",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Scientific model discovery requires proposing candidate models of an unknown system and designing experiments that discriminate among them. However, LLM-based approaches typically rely on in-context learning to predict outcomes and select experiments, lacking explicit model evaluation to systematically guide hypothesis search, while Bayesian approaches enable principled model comparison but are confined to a predefined candidate set which results in limited search spaces. To this end, we introduce BMD, which closes the loop between LLM-driven hypothesis generation and Bayesian experimental design. Specifically, an LLM proposes model families, while a numerical engine fits their parameters, weighs them by model evidence, and averages their predictions. Then, BMD chooses the next experimental conditions by maximizing the joint expected information gain over families and their parameters, while feeding the updated beliefs and residual diagnostics back to the LLM to guide its next proposals. Across four scientific discovery benchmarks, BMD achieves lowest final prediction error than in-context learning and LLM-based scientific agents while recovering exact functional forms more often, with ablations supporting numerical feedback and the joint objective."
+      },
+      {
+        "title": "Science-Gym: a simple testbed for AI-driven scientific discovery",
+        "year": 2026,
+        "doi": "https://doi.org/10.1007/s10994-025-06914-x",
+        "id": "https://openalex.org/W7119102778",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1007/s10994-025-06914-x",
+            "pdf": "https://link.springer.com/content/pdf/10.1007/s10994-025-06914-x.pdf",
+            "venue": "Machine Learning"
+          }
+        ],
+        "abstract": "Abstract Automating scientific discovery has been one of the motivating tasks in the development of AI methods. The task of Equation Discovery (also called Symbolic Regression) is to learn a free-form symbolic equation from experimental data. Equation Discovery benchmarks, however, assume the experimental data as given. Recent successes in protein folding and material optimization, powered by advancements, amongst others, in reinforcement learning and deep learning, have renewed the broader community’s interest in applications of AI in science. Nonetheless, these successful applications do not necessarily lead to an improved understanding of the underlying phenomena, just as super-human chess engines do not necessarily lead to improved understanding of chess theory and practice. In this paper, we propose Science-Gym: a new testbed for basic physics understanding. To the best of our knowledge, Science-Gym is the first scientific discovery benchmark that requires agents to autonomously perform data collection, experimental design, and discover the underlying equations of phenomena. Science-Gym is a Python software library with Gym-compatible bindings. It offers seven scientific simulations, which reproduce basic physics and epidemiology principles: the law of the lever, projectile motion, the inclined plane, Lagrangian points in space, brachistochrones, the SIRV model, and the friction force of a droplet. In these environments, agents may be evaluated not only on their ability in e.g. balancing objects on the two beams of a lever, but more importantly on finding equations that describe the overall behavior of the dynamical system at hand."
+      },
+      {
+        "title": "Explore, Then Commit: Measurement-Efficient Scientific Law Discovery with Language Models",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2610.07620",
+        "id": "https://openalex.org/W7220974622",
+        "locations": [
+          {
+            "url": "https://arxiv.org/abs/2610.07620",
+            "pdf": "https://arxiv.org/pdf/2610.07620",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2610.07620",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Scientific law discovery requires selecting measurements and converting evidence into a governing equation. We evaluate an explore-then-commit protocol in which a large language model proposes hypotheses, a programmatic planner gathers measurements, and a fresh prompt synthesizes the final law from fixed observations. The protocol combines structured probes, automatic numerical diagnostics, restricted measurement batches, and optional interpreter access. Across 576 NewtonBench trials, we compare eight configurations on 12 physics modules using GPT-4.1-mini and a medium-difficulty GPT-4.1 replication. On medium tasks, interpreter-enabled planners use 8.6 versus 22.5 measurements per trial for GPT-4.1-mini and 8.9 versus 43.0 for GPT-4.1. Their mean magnitude-based root-mean-squared logarithmic error falls from 2.514 to 0.202 and from 0.626 to 0.149, respectively. An additional audit retains incomplete and invalid submissions in a coverage-sensitive analysis. Observed symbolic-accuracy gains are less consistent across modules, and random acquisition is competitive with disagreement scoring. Measurement savings occur in every module, but unequal batch constraints prevent attributing them solely to acquisition quality. These results support the complete protocol as a promising measurement-efficient configuration, while leaving its causal components and generalization beyond noiseless direct-equation tasks unresolved."
+      }
+    ]
+  },
+  {
+    "query": "Automated Hypothesis Validation with Agentic Sequential Falsification",
+    "total": 1401,
+    "results": [
+      {
+        "title": "Automated Hypothesis Validation with Agentic Sequential Falsifications",
+        "year": 2025,
+        "doi": "https://doi.org/10.48550/arxiv.2502.09858",
+        "id": "https://openalex.org/W4407632372",
+        "locations": [
+          {
+            "url": "http://arxiv.org/abs/2502.09858",
+            "pdf": "https://arxiv.org/pdf/2502.09858",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2502.09858",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Hypotheses are central to information acquisition, decision-making, and discovery. However, many real-world hypotheses are abstract, high-level statements that are difficult to validate directly. This challenge is further intensified by the rise of hypothesis generation from Large Language Models (LLMs), which are prone to hallucination and produce hypotheses in volumes that make manual validation impractical. Here we propose Popper, an agentic framework for rigorous automated validation of free-form hypotheses. Guided by Karl Popper's principle of falsification, Popper validates a hypothesis using LLM agents that design and execute falsification experiments targeting its measurable implications. A novel sequential testing framework ensures strict Type-I error control while actively gathering evidence from diverse observations, whether drawn from existing data or newly conducted procedures. We demonstrate Popper on six domains including biology, economics, and sociology. Popper delivers robust error control, high power, and scalability. Furthermore, compared to human scientists, Popper achieved comparable performance in validating complex biological hypotheses while reducing time by 10 folds, providing a scalable, rigorous solution for hypothesis validation."
+      },
+      {
+        "title": "\"Reviewing POPPER: The Theory Encoding Problem in Automated Hypothesis Falsification, with an Independent Falsification-Engine Implementation\"",
+        "year": 2026,
+        "doi": "https://doi.org/10.5281/zenodo.19057658",
+        "id": "https://openalex.org/W7137136610",
+        "locations": [
+          {
+            "url": "https://doi.org/10.5281/zenodo.19057658",
+            "pdf": null,
+            "venue": "Zenodo (CERN European Organization for Nuclear Research)"
+          },
+          {
+            "url": "https://doi.org/10.5281/zenodo.19057659",
+            "pdf": null,
+            "venue": "Zenodo (CERN European Organization for Nuclear Research)"
+          }
+        ],
+        "abstract": "This report is an independent analysis and critique of the POPPER framework (Huang et al., 2025, Stanford SNAP) and related representational-geometry methods (CKA, RSA). It is not an official POPPER document, and the author is not affiliated with the POPPER project or its developers. Where this report presents original material — the theory encoding problem (Section: \"The Theory Encoding Problem\"), the corrected robust_falsify implementation, and the associated critique of capacity-confounded falsification — this is clearly the author's own companion work, developed independently of and not endorsed by the POPPER team. Introduction The accelerating convergence of large language models and automated laboratory environments has opened new possibilities for scientific discovery. The generation of hypotheses has shifted from a bottleneck of human intuition to a surplus of machine-generated conjectures, many of which lack grounding in empirical reality. To navigate this, the scientific community has developed automated validation frameworks, most notably the POPPER system, which operationalizes Karl Popper's philosophy of falsification through an agentic, sequential testing architecture ."
+      },
+      {
+        "title": "E-valuator: Reliable Agent Verifiers with Sequential Hypothesis Testing",
+        "year": 2025,
+        "doi": "https://doi.org/10.48550/arxiv.2512.03109",
+        "id": "https://openalex.org/W4417025121",
+        "locations": [
+          {
+            "url": "https://arxiv.org/abs/2512.03109",
+            "pdf": "https://arxiv.org/pdf/2512.03109",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2512.03109",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Agentic AI systems execute a sequence of actions, such as reasoning steps or tool calls, in response to a user prompt. To evaluate the success of their trajectories, researchers have developed verifiers, such as LLM judges and process-reward models, to score the quality of each action in an agent's trajectory. Although these heuristic scores can be informative, there are no guarantees of correctness when used to decide whether an agent will yield a successful output. Here, we introduce e-valuator, a method to convert any black-box verifier score into a decision rule with provable control of false alarm rates. We frame the problem of distinguishing successful trajectories (that is, a sequence of actions that will lead to a correct response to the user's prompt) and unsuccessful trajectories as a sequential hypothesis testing problem. E-valuator builds on tools from e-processes to develop a sequential hypothesis test that remains statistically valid at every step of an agent's trajectory, enabling online monitoring of agents over arbitrarily long sequences of actions. Empirically, we demonstrate that e-valuator provides greater statistical power and better false alarm rate control than other strategies across six datasets and three agents. We additionally show that e-valuator can be used for to quickly terminate problematic trajectories and save tokens. Together, e-valuator provides a lightweight, model-agnostic framework that converts verifier heuristics into decisions rules with statistical guarantees, enabling the deployment of more reliable agentic systems."
+      },
+      {
+        "title": "A FRAMEWORK FOR AUTOMATED HYPOTHESIS TESTING",
+        "year": 2025,
+        "doi": "https://doi.org/10.20944/preprints202509.1105.v1",
+        "id": "https://openalex.org/W4412525859",
+        "locations": [
+          {
+            "url": "https://doi.org/10.20944/preprints202509.1105.v1",
+            "pdf": null,
+            "venue": "Preprints.org"
+          },
+          {
+            "url": "https://doi.org/10.31219/osf.io/sk7p4_v1",
+            "pdf": "https://osf.io/sk7p4_v1/download",
+            "venue": null
+          },
+          {
+            "url": "https://osf.io/mtcav",
+            "pdf": null,
+            "venue": "OSF Preprints (OSF Preprints)"
+          },
+          {
+            "url": "https://osf.io/sk7p4",
+            "pdf": null,
+            "venue": "OSF Preprints (OSF Preprints)"
+          }
+        ],
+        "abstract": "Hypothesis testing is a foundational process in scientific discovery and data driven decision making, yet it traditionally demands expert intervention and manual interpretation of both hypotheses and data. Tools like PSPP or IBM SPSS offer interfaces for analysis, but their integration requires analysts to translate natural language questions into formal statistical tests. On the other hand, recent advances in NLP and ML offer tools to automate elements of scientific analysis, but their integration for full-cycle hypothesis testing remains unsolved. This indicates that a significant gap exists in creating an integrated system that can automate this translation from human intent to statistical execution i.e. ability to interpret natural language hypotheses, align them with appropriate datasets, and execute relevant statistical or ML models without human input. Here I propose the development of a cognitive framework that synthesizes LLMs with a statistical decision engine to fully automate the hypothesis testing workflow. The system parses hypotheses into structured analytical intents using NLP Techniques, then maps them to structured data and accurately selects, executes the appropriate statistical test. The framework concludes by translating the technical results into a clear, human readable summary, replicating the outcome of a manual analysis. Using transformer-based models for semantic parsing and rule based statistical selection, we will demonstrate that our system can accurately validate causal and correlational hypotheses across benchmark datasets. This system's performance will be validated against benchmark datasets to ensure validity with expert-led analysis. This framework significantly reduces the cognitive load required for early-stage hypothesis evaluation, making exploratory research more scalable. The immediate implication is a significant acceleration of the research and discovery cycle across numerous fields."
+      },
+      {
+        "title": "From Retrieval to Reasoning: Advancing AI Agents for Knowledge Discovery and Collaboration",
+        "year": 2025,
+        "doi": "https://doi.org/10.1145/3696410.3714542",
+        "id": "https://openalex.org/W4409657287",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1145/3696410.3714542",
+            "pdf": "https://dl.acm.org/doi/pdf/10.1145/3696410.3714542",
+            "venue": "International World Wide Web Conference (WWW)"
+          }
+        ],
+        "abstract": "The web is the world's largest knowledge repository, yet as AI systems become increasingly integrated into our digital infrastructure, the ability to retrieve, reason, and collaborate effectively has become paramount. Large Language Models (LLMs) are evolving from passive responders to active knowledge agents that can retrieve complex information, validate hypotheses, and optimize interactions over multiple turns. In this talk, I will explore the frontiers of AI-driven knowledge retrieval and reasoning, drawing from recent research on knowledge graphs, semi-structured retrieval, adaptive tool use, and multi-turn AI collaboration. I will also discuss how agentic frameworks enable rigorous, automated hypothesis validation through sequential falsifications. Together, these advancements push beyond traditional search and QA systems, unlocking new capabilities for knowledge discovery, scientific research, and human-AI collaboration. Finally, I will highlight key challenges and opportunities in building AI systems that are not just accurate, but also interactive, explainable, and aligned with human needs."
+      }
+    ]
+  },
+  {
+    "query": "Hypothesis Generation with Large Language Models",
+    "total": 567747,
+    "results": [
+      {
+        "title": "Hypothesis Generation with Large Language Models",
+        "year": 2024,
+        "doi": "https://doi.org/10.18653/v1/2024.nlp4science-1.10",
+        "id": "https://openalex.org/W4404781796",
+        "locations": [
+          {
+            "url": "https://doi.org/10.18653/v1/2024.nlp4science-1.10",
+            "pdf": "https://aclanthology.org/2024.nlp4science-1.10.pdf",
+            "venue": "Workshop on NLP for Science (NLP4Science)"
+          },
+          {
+            "url": "http://arxiv.org/abs/2404.04326",
+            "pdf": "https://arxiv.org/pdf/2404.04326",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2404.04326",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Effective generation of novel hypotheses is instrumental to scientific progress.So far, researchers have been the main powerhouse behind hypothesis generation by painstaking data analysis and thinking (also known as the Eureka moment).In this paper, we examine the potential of large language models (LLMs) to generate hypotheses.We focus on hypothesis generation based on data (i.e., labeled examples).To enable LLMs to handle long contexts, we generate initial hypotheses from a small number of examples and then update them iteratively to improve the quality of hypotheses.Inspired by multi-armed bandits, we design a reward function to inform the exploitationexploration tradeoff in the update process.Our algorithm is able to generate hypotheses that enable much better predictive performance than few-shot prompting in classification tasks, improving accuracy by 31.7% on a synthetic dataset and by 13.9%, 3.3% and, 24.9% on three real-world datasets.We also outperform supervised learning by 12.1% and 11.6% on two challenging real-world datasets.Furthermore, we find that the generated hypotheses not only corroborate human-verified theories but also uncover new insights for the tasks."
+      },
+      {
+        "title": "Dataset for \"The Qualitative Laboratory: Theory Prototyping and Hypothesis Generation with Large Language Models\"",
+        "year": 2025,
+        "doi": "https://doi.org/10.5281/zenodo.17625231",
+        "id": "https://openalex.org/W7105825087",
+        "locations": [
+          {
+            "url": "https://doi.org/10.5281/zenodo.17625231",
+            "pdf": null,
+            "venue": "Zenodo (CERN European Organization for Nuclear Research)"
+          },
+          {
+            "url": "https://doi.org/10.5281/zenodo.17625232",
+            "pdf": null,
+            "venue": "Zenodo (CERN European Organization for Nuclear Research)"
+          }
+        ],
+        "abstract": "This dataset contains the 16 raw discursive outputs generated by a Large Language Model for a sociological persona simulation experiment. It serves as the supplementary data for the manuscript titled: \"The Qualitative Laboratory: Theory Prototyping and Hypothesis Generation with Large Language Models,\" which is currently under review. This Zenodo record will be updated with a link to the preprint and/or the final published article as soon as it becomes available. For full details on the study's methodology, personas, and stimuli, please refer to the corresponding manuscript."
+      },
+      {
+        "title": "Scientific hypothesis generation by large language models: laboratory validation in breast cancer treatment",
+        "year": 2025,
+        "doi": "https://doi.org/10.1098/rsif.2024.0674",
+        "id": "https://openalex.org/W4411037930",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1098/rsif.2024.0674",
+            "pdf": null,
+            "venue": "Journal of The Royal Society Interface"
+          },
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/12134935",
+            "pdf": null,
+            "venue": "Europe PMC (PubMed Central)"
+          },
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/12134935",
+            "pdf": null,
+            "venue": "PubMed Central"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40462712",
+            "pdf": null,
+            "venue": "PubMed"
+          },
+          {
+            "url": "https://orcid.org/0000-0003-0634-4384>;",
+            "pdf": "https://research.gold.ac.uk/id/eprint/39971/1/abdel-rehim-et-al-2025-scientific-hypothesis-generation-by-large-language-models-laboratory-validation-in-breast-cancer.pdf",
+            "venue": "Goldsmiths (University of London)"
+          }
+        ],
+        "abstract": "Large language models (LLMs) have transformed artificial intelligence (AI) and achieved breakthrough performance on a wide range of tasks. In science, the most interesting application of LLMs is for hypothesis formation. A feature of LLMs, which results from their probabilistic structure, is that the output text is not necessarily a valid inference from the training text. These are termed 'hallucinations', and are harmful in many applications. In science, some hallucinations may be useful: novel hypotheses whose validity may be tested by laboratory experiments. Here, we experimentally test the application of LLMs as a source of scientific hypotheses using the domain of breast cancer treatment. We applied the LLM GPT4 to hypothesize novel synergistic pairs of US Food and Drug Administration (FDA)-approved non-cancer drugs that target the MCF7 breast cancer cell line relative to the non-tumorigenic breast cell line MCF10A. In the first round of laboratory experiments, GPT4 succeeded in discovering three drug combinations (out of 12 tested) with synergy scores above the positive controls. GPT4 then generated new combinations based on its initial results, this generated three more combinations with positive synergy scores (out of four tested). We conclude that LLMs are a valuable source of scientific hypotheses."
+      },
+      {
+        "title": "The Qualitative Laboratory: Theory Prototyping and Hypothesis Generation with Large Language Models",
+        "year": 2025,
+        "doi": "https://doi.org/10.48550/arxiv.2601.00797",
+        "id": "https://openalex.org/W7118236668",
+        "locations": [
+          {
+            "url": "http://arxiv.org/abs/2601.00797",
+            "pdf": "https://arxiv.org/pdf/2601.00797",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "http://hdl.handle.net/2078.1/310036",
+            "pdf": null,
+            "venue": "DIAL (Catholic University of Leuven)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2601.00797",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "A central challenge in social science is to generate rich qualitative hypotheses about how diverse social groups might interpret new information. This article introduces and illustrates a novel methodological approach for this purpose: sociological persona simulation using Large Language Models (LLMs), which we frame as a \"qualitative laboratory\". We argue that for this specific task, persona simulation offers a distinct advantage over established methods. By generating naturalistic discourse, it overcomes the lack of discursive depth common in vignette surveys, and by operationalizing complex worldviews through natural language, it bypasses the formalization bottleneck of rule-based agent-based models (ABMs). To demonstrate this potential, we present a protocol where personas derived from a sociological theory of climate reception react to policy messages. The simulation produced nuanced and counter-intuitive hypotheses - such as a conservative persona's rejection of a national security frame - that challenge theoretical assumptions. We conclude that this method, used as part of a \"simulation then validation\" workflow, represents a superior tool for generating deeply textured hypotheses for subsequent empirical testing."
+      },
+      {
+        "title": "Designing Persuasive Messages Using Hypothesis Generation from Large Language Models",
+        "year": 2026,
+        "doi": "https://doi.org/10.1145/3742414.3794739",
+        "id": "https://openalex.org/W7134272293",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1145/3742414.3794739",
+            "pdf": null,
+            "venue": "ACM International Conference on Intelligent User Interfaces (IUI)"
+          }
+        ],
+        "abstract": "Designing persuasive messages is central to intelligent user interfaces such as mobile health apps and chatbots, yet predicting which features of language drive persuasiveness remains a challenge. This paper presents a data-driven framework that integrates human judgments, large language models (LLMs), and machine learning to generate hypotheses about persuasive message design. In a study with N = 1,348 participants evaluating 174 messages to reduce drinking behavior, message-level preference varied widely (19–74%), motivating the search for systematic drivers of persuasion. Using ChatGPT as a hypothesis generator, the prompting surfaced plausible features such as framing outcomes as personal benefits, highlighting positive consequences, emphasizing concrete facts, orienting toward the future, and invoking protective health. This hybrid approach demonstrates how interpretable machine learning can extend beyond prediction to discovery, enabling researchers and designers to iteratively uncover the mechanisms of persuasion. This work contributes a generalizable method for hypothesis generation in persuasive systems, with implications for adaptive message design, behavior change interventions, and human-centered AI."
+      }
+    ]
+  },
+  {
+    "query": "LLM scientific hypothesis refinement counterexamples",
+    "total": 348,
+    "results": [
+      {
+        "title": "SciR: A Controllable Benchmark for Scientific Reasoning in LLMs",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2606.13020",
+        "id": "https://openalex.org/W7164502235",
+        "locations": [
+          {
+            "url": "https://arxiv.org/abs/2606.13020",
+            "pdf": "https://arxiv.org/pdf/2606.13020",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2606.13020",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Three paradigmatic forms of inference recur across scientific reasoning: deduction, induction, and causal abduction. Reliably evaluating LLMs on these in scientific settings is currently out of reach: scientific benchmarks built on human annotations are costly and lack mechanistic ground truth, while synthetic logical-reasoning benchmarks do not resemble real scientific documents. We introduce SciR, a benchmark that combines multi-paradigm reasoning with controllable scientific rendering, anchored on three paradigmatic scientific problems. Tasks are generated from formal objects (deduction tree, inductive rule hypothesis, causal graph) to guarantee verifiable answers, then rendered into multi-document scientific discourse via per-track domain-tuned genres. The construction lets us independently vary two difficulty axes: how hard it is to extract the key information needed for inference, and how hard the principled inference itself is. We test six models. Both axes hurt every model, and their effects compound. The rendering even hurts neurosymbolic pipelines, which hand inference to a verified solver. The two axes yield a per-model extraction-vs-inference profile: for instance, reasoning models like deepseek-r1 mostly surpass non-reasoning instruct models on the inference axis. To our knowledge, SciR is the first multi-paradigm scientific-reasoning benchmark with parametric control on both extraction and inference difficulty."
+      },
+      {
+        "title": "One Example Shown, Many Concepts Known! Counterexample-Driven Conceptual Reasoning in Mathematical LLMs",
+        "year": 2025,
+        "doi": "https://doi.org/10.48550/arxiv.2502.10454",
+        "id": "https://openalex.org/W4407683636",
+        "locations": [
+          {
+            "url": "http://arxiv.org/abs/2502.10454",
+            "pdf": "https://arxiv.org/pdf/2502.10454",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2502.10454",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Leveraging mathematical Large Language Models (LLMs) for proof generation is a fundamental topic in LLMs research. We argue that the ability of current LLMs to prove statements largely depends on whether they have encountered the relevant proof process during training. This reliance limits their deeper understanding of mathematical theorems and related concepts. Inspired by the pedagogical method of \"proof by counterexamples\" commonly used in human mathematics education, our work aims to enhance LLMs' ability to conduct mathematical reasoning and proof through counterexamples. Specifically, we manually create a high-quality, university-level mathematical benchmark, CounterMATH, which requires LLMs to prove mathematical statements by providing counterexamples, thereby assessing their grasp of mathematical concepts. Additionally, we develop a data engineering framework to automatically obtain training data for further model improvement. Extensive experiments and detailed analyses demonstrate that CounterMATH is challenging, indicating that LLMs, such as OpenAI o1, have insufficient counterexample-driven proof capabilities. Moreover, our exploration into model training reveals that strengthening LLMs' counterexample-driven conceptual reasoning abilities is crucial for improving their overall mathematical capabilities. We believe that our work offers new perspectives on the community of mathematical LLMs."
+      },
+      {
+        "title": "Generate, Evaluate, Iterate: Synthetic Data for Human-in-the-Loop Refinement of LLM Judges",
+        "year": 2025,
+        "doi": "https://doi.org/10.48550/arxiv.2511.04478",
+        "id": "https://openalex.org/W4416026387",
+        "locations": [
+          {
+            "url": "http://arxiv.org/abs/2511.04478",
+            "pdf": "https://arxiv.org/pdf/2511.04478",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2511.04478",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "The LLM-as-a-judge paradigm enables flexible, user-defined evaluation, but its effectiveness is often limited by the scarcity of diverse, representative data for refining criteria. We present a tool that integrates synthetic data generation into the LLM-as-a-judge workflow, empowering users to create tailored and challenging test cases with configurable domains, personas, lengths, and desired outcomes, including borderline cases. The tool also supports AI-assisted inline editing of existing test cases. To enhance transparency and interpretability, it reveals the prompts and explanations behind each generation. In a user study (N=24), 83% of participants preferred the tool over manually creating or selecting test cases, as it allowed them to rapidly generate diverse synthetic data without additional workload. The generated synthetic data proved as effective as hand-crafted data for both refining evaluation criteria and aligning with human preferences. These findings highlight synthetic data as a promising alternative, particularly in contexts where efficiency and scalability are critical."
+      },
+      {
+        "title": "TraceFix: Repairing Agent Coordination Protocols with TLA+ Counterexamples",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2605.07935",
+        "id": "https://openalex.org/W7160839406",
+        "locations": [
+          {
+            "url": "https://arxiv.org/abs/2605.07935",
+            "pdf": "https://arxiv.org/pdf/2605.07935",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2605.07935",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "We present TraceFix, a verification-first pipeline for Large Language Model (LLM) multi-agent coordination. An agent synthesizes a protocol topology as a structured intermediate representation (IR) from a task description, generates PlusCal coordination logic, and iteratively repairs the protocol using counterexamples from the TLA+ model checker (TLC) until verification succeeds. Verified process bodies are compiled into per-agent system prompts and executed under a runtime monitor that rejects out-of-topology coordination operations. On 48 tasks spanning 16 scenario families, all tasks reach full TLC verification; 62.5% pass on the first attempt and none requires more than four repair iterations. State spaces span six orders of magnitude yet verification completes in under 60 s for every task. A 3,456-run runtime comparison shows that topology-monitored execution achieves the highest task completion (89.4% average, 81.5% full) and that runtimes using the verified protocol degrade at roughly half the rate of prompt-only and chat-only baselines when model capability is reduced. A paired ablation under a fixed runtime shows that TLC-verified protocols cut deadlock/livelock (DL/LL) from 31.1% to 14.1%, with the largest separation under fault injection."
+      },
+      {
+        "title": "LLM Consortium for Software Design Refinement: A Controlled Experiment on Multi-Agent Collaboration Topologies",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2606.01490",
+        "id": "https://openalex.org/W7163159946",
+        "locations": [
+          {
+            "url": "https://arxiv.org/abs/2606.01490",
+            "pdf": "https://arxiv.org/pdf/2606.01490",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2606.01490",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "We present a controlled experiment evaluating 12 multi-agent LLM collaboration topologies for software architecture design. Using a $2\\times2\\times2$ factorial design (Authority $\\times$ Roles $\\times$ Dynamics), we conducted 520 experimental runs across 8 design tasks of varying complexity, with 5 repetitions each. Designs were evaluated on a 12-dimensional rubric by three independent automated evaluators (GPT-OSS 120B, Claude Opus 4.6, Claude Sonnet 4.6). We report four core findings. First, structural adversarial (v4b) ranks #1 by ensemble -- a prompt-engineered adversarial variant that demands rewrite mandates rather than patches (weighted ensemble: 4.637/5.0). Second, cross-model review wins unanimously at #2 -- generate with one model, review with another -- ranking #2 by all three evaluators (weighted ensemble: 4.606). Third, evaluator diversity is itself a finding -- all three evaluators agree v4b is best and v3 is worst, but disagree sharply on v2b (Claude d=1.44 vs. GPT-OSS d=0.45), revealing how different model families weight design qualities. Fourth, parallel merge is fundamentally broken -- all three evaluators place merge variants in the bottom tier (3.65-3.79), due to token starvation and the Frankenstein effect. The weighted ensemble ($2\\times$Opus + $2\\times$Sonnet + $1\\times$GPT-OSS) provides robust rankings across 520 runs, confirmed through independent cross-validation."
+      }
+    ]
+  },
+  {
+    "query": "large language models scientific experiment design model discovery",
+    "total": 270468,
+    "results": [
+      {
+        "title": "Evaluating Large Language Models in Scientific Discovery",
+        "year": 2025,
+        "doi": "https://doi.org/10.48550/arxiv.2512.15567",
+        "id": "https://openalex.org/W7116045800",
+        "locations": [
+          {
+            "url": "https://arxiv.org/abs/2512.15567",
+            "pdf": "https://arxiv.org/pdf/2512.15567",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2512.15567",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Large language models (LLMs) are increasingly applied to scientific research, yet prevailing science benchmarks probe decontextualized knowledge and overlook the iterative reasoning, hypothesis generation, and observation interpretation that drive scientific discovery. We introduce a scenario-grounded benchmark that evaluates LLMs across biology, chemistry, materials, and physics, where domain experts define research projects of genuine interest and decompose them into modular research scenarios from which vetted questions are sampled. The framework assesses models at two levels: (i) question-level accuracy on scenario-tied items and (ii) project-level performance, where models must propose testable hypotheses, design simulations or experiments, and interpret results. Applying this two-phase scientific discovery evaluation (SDE) framework to state-of-the-art LLMs reveals a consistent performance gap relative to general science benchmarks, diminishing return of scaling up model sizes and reasoning, and systematic weaknesses shared across top-tier models from different providers. Large performance variation in research scenarios leads to changing choices of the best performing model on scientific discovery projects evaluated, suggesting all current LLMs are distant to general scientific \"superintelligence\". Nevertheless, LLMs already demonstrate promise in a great variety of scientific discovery projects, including cases where constituent scenario scores are low, highlighting the role of guided exploration and serendipity in discovery. This SDE framework offers a reproducible benchmark for discovery-relevant evaluation of LLMs and charts practical paths to advance their development toward scientific discovery."
+      },
+      {
+        "title": "Mathematical discoveries from program search with large language models",
+        "year": 2023,
+        "doi": "https://doi.org/10.1038/s41586-023-06924-6",
+        "id": "https://openalex.org/W4389727268",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1038/s41586-023-06924-6",
+            "pdf": "https://www.nature.com/articles/s41586-023-06924-6_reference.pdf",
+            "venue": "Nature"
+          },
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/10794145",
+            "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10794145/pdf/41586_2023_Article_6924.pdf",
+            "venue": "PubMed Central"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38096900",
+            "pdf": null,
+            "venue": "PubMed"
+          },
+          {
+            "url": "https://hal.science/hal-04682926/document",
+            "pdf": "https://hal.science/hal-04682926v1/document",
+            "venue": "HAL"
+          },
+          {
+            "url": "https://www.nature.com/articles/s41586-023-06924-6",
+            "pdf": null,
+            "venue": "RePEc: Research Papers in Economics"
+          }
+        ],
+        "abstract": "Abstract Large language models (LLMs) have demonstrated tremendous capabilities in solving complex tasks, from quantitative reasoning to understanding natural language. However, LLMs sometimes suffer from confabulations (or hallucinations), which can result in them making plausible but incorrect statements 1,2 . This hinders the use of current large models in scientific discovery. Here we introduce FunSearch (short for searching in the function space), an evolutionary procedure based on pairing a pretrained LLM with a systematic evaluator. We demonstrate the effectiveness of this approach to surpass the best-known results in important problems, pushing the boundary of existing LLM-based approaches 3 . Applying FunSearch to a central problem in extremal combinatorics—the cap set problem—we discover new constructions of large cap sets going beyond the best-known ones, both in finite dimensional and asymptotic cases. This shows that it is possible to make discoveries for established open problems using LLMs. We showcase the generality of FunSearch by applying it to an algorithmic problem, online bin packing, finding new heuristics that improve on widely used baselines. In contrast to most computer search approaches, FunSearch searches for programs that describe how to solve a problem, rather than what the solution is. Beyond being an effective and scalable strategy, discovered programs tend to be more interpretable than raw solutions, enabling feedback loops between domain experts and FunSearch, and the deployment of such programs in real-world applications."
+      },
+      {
+        "title": "A Comprehensive Survey of Scientific Large Language Models and Their Applications in Scientific Discovery",
+        "year": 2024,
+        "doi": "https://doi.org/10.18653/v1/2024.emnlp-main.498",
+        "id": "https://openalex.org/W4404782812",
+        "locations": [
+          {
+            "url": "https://doi.org/10.18653/v1/2024.emnlp-main.498",
+            "pdf": "https://aclanthology.org/2024.emnlp-main.498.pdf",
+            "venue": "Conference on Empirical Methods in Natural Language Processing (EMNLP)"
+          },
+          {
+            "url": "http://arxiv.org/abs/2406.10833",
+            "pdf": "https://arxiv.org/pdf/2406.10833",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2406.10833",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "In many scientific fields, large language models (LLMs) have revolutionized the way text and other modalities of data (e.g., molecules and proteins) are handled, achieving superior performance in various applications and augmenting the scientific discovery process.Nevertheless, previous surveys on scientific LLMs often concentrate on one or two fields or a single modality.In this paper, we aim to provide a more holistic view of the research landscape by unveiling cross-field and cross-modal connections between scientific LLMs regarding their architectures and pretraining techniques.To this end, we comprehensively survey over 260 scientific LLMs, discuss their commonalities and differences, as well as summarize pre-training datasets and evaluation tasks for each field and modality.Moreover, we investigate how LLMs have been deployed to benefit scientific discovery.Resources related to this survey are available at https://github.com/yuzhimanhua/ Awesome-Scientific-Language-Models."
+      },
+      {
+        "title": "ChatSR: Multimodal Large Language Models for Scientific Formula Discovery",
+        "year": 2024,
+        "doi": "https://doi.org/10.48550/arxiv.2406.05410",
+        "id": "https://openalex.org/W4399554763",
+        "locations": [
+          {
+            "url": "https://arxiv.org/abs/2406.05410",
+            "pdf": "https://arxiv.org/pdf/2406.05410",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2406.05410",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Current multimodal large language models (MLLMs) are mainly focused on the understanding and processing of perceptual modalities such as images and videos, while their capability for scientific data understanding remains insufficient. To this end, we propose ChatSR, a novel multimodal large language model tailored for scientific data understanding. ChatSR treats scientific data as a new modality analogous to visual content and, through carefully designed encoders and modality alignment mechanisms, maps scientific data into a representation space that can be processed by large language models, enabling the model to grasp the structural characteristics and underlying regularities of scientific data. Building on this foundation, ChatSR further exploits the rich domain knowledge and strong reasoning abilities of large language models to emulate a knowledgeable human scientist: based on user-specified prior constraints and preferences expressed (such as requirements on periodicity, symmetry, etc.), it automatically generates mathematical formulas that not only accurately fit the observed data but also conform to domain priors, thereby characterizing the latent laws embodied in scientific data and promoting the automation of scientific discovery. Experiments on 13 datasets show that ChatSR achieves state-of-the-art performance on traditional symbolic regression benchmarks. In addition, ChatSR exhibits a promising zero-shot ability to understand and utilize types of prior knowledge that are not present in its training data."
+      },
+      {
+        "title": "Exploring the role of large language models in the scientific method: from hypothesis to discovery",
+        "year": 2025,
+        "doi": "https://doi.org/10.1038/s44387-025-00019-5",
+        "id": "https://openalex.org/W4412954363",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1038/s44387-025-00019-5",
+            "pdf": "https://www.nature.com/articles/s44387-025-00019-5.pdf",
+            "venue": "npj Artificial Intelligence"
+          },
+          {
+            "url": "http://doi.org/10.1038/s44387-025-00019-5>).",
+            "pdf": null,
+            "venue": "ePrints Soton (University of Southampton)"
+          }
+        ],
+        "abstract": "Abstract We review how Large Language Models (LLMs) are redefining the scientific method and explore their potential applications across different stages of the scientific cycle, from hypothesis testing to discovery. We conclude that, for LLMs to serve as relevant and effective creative engines and productivity enhancers, their deep integration into all steps of the scientific process should be pursued in collaboration and alignment with human scientific goals, with clear evaluation metrics."
+      }
+    ]
+  },
+  {
+    "query": "AI Newton scientific discovery",
+    "total": 18744,
+    "results": [
+      {
+        "title": "From Kepler to Newton: Explainable AI for Science",
+        "year": 2021,
+        "doi": "https://doi.org/10.48550/arxiv.2111.12210",
+        "id": "https://openalex.org/W3215998283",
+        "locations": [
+          {
+            "url": "http://arxiv.org/abs/2111.12210",
+            "pdf": "https://arxiv.org/pdf/2111.12210",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2111.12210",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "The Observation--Hypothesis--Prediction--Experimentation loop paradigm for scientific research has been practiced by researchers for years towards scientific discoveries. However, with data explosion in both mega-scale and milli-scale scientific research, it has been sometimes very difficult to manually analyze the data and propose new hypotheses to drive the cycle for scientific discovery. In this paper, we discuss the role of Explainable AI in scientific discovery process by demonstrating an Explainable AI-based paradigm for science discovery. The key is to use Explainable AI to help derive data or model interpretations, hypotheses, as well as scientific discoveries or insights. We show how computational and data-intensive methodology -- together with experimental and theoretical methodology -- can be seamlessly integrated for scientific research. To demonstrate the AI-based science discovery process, and to pay our respect to some of the greatest minds in human history, we show how Kepler's laws of planetary motion and Newton's law of universal gravitation can be rediscovered by (Explainable) AI based on Tycho Brahe's astronomical observation data, whose works were leading the scientific revolution in the 16-17th century. This work also highlights the important role of Explainable AI (as compared to Blackbox AI) in science discovery to help humans prevent or better prepare for the possible technological singularity that may happen in the future, since science is not only about the know how, but also the know why. Presentation of the work is available at https://slideslive.com/38986142/from-kepler-to-newton-explainable-ai-for-science-discovery."
+      },
+      {
+        "title": "From Kepler to Newton: the Role of Explainable AI in Science Discovery",
+        "year": 2021,
+        "doi": null,
+        "id": "https://openalex.org/W3217167197",
+        "locations": [
+          {
+            "url": "http://export.arxiv.org/pdf/2111.12210",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "The research paradigm of the Observation--Hypothesis--Prediction--Experimentation loop has been practiced by researchers for years towards scientific discovery. However, with the data explosion in both mega-scale and milli-scale scientific research, it has been sometimes very difficult to manually analyze the data and propose new hypothesis to drive the cycle for scientific discovery. \r\nIn this paper, we introduce an Explainable AI-assisted paradigm for science discovery. The key is to use Explainable AI (XAI) to help derive data or model interpretations and science discoveries. We show how computational and data-intensive methodology -- together with experimental and theoretical methodology -- can be seamlessly integrated for scientific research. To demonstrate the AI-assisted science discovery process, and to pay our respect to some of the greatest minds in human history, we show how Kepler's laws of planetary motion and Newton's law of universal gravitation can be rediscovered by (explainable) AI based on Tycho Brahe's astronomical observation data, whose works were leading the scientific revolution in the 16-17th century. This work also highlights the importance of Explainable AI (as compared to black-box AI) in science discovery to help humans prevent or better prepare for the possible technological singularity which may happen in the future."
+      },
+      {
+        "title": "Combining data and theory for derivable scientific discovery with AI-Descartes",
+        "year": 2023,
+        "doi": "https://doi.org/10.1038/s41467-023-37236-y",
+        "id": "https://openalex.org/W4365145591",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1038/s41467-023-37236-y",
+            "pdf": "https://www.nature.com/articles/s41467-023-37236-y.pdf",
+            "venue": "Nature Communications"
+          },
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/10097814",
+            "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10097814/pdf/41467_2023_Article_37236.pdf",
+            "venue": "PubMed Central"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37045814",
+            "pdf": null,
+            "venue": "PubMed"
+          },
+          {
+            "url": "http://hdl.handle.net/11603/27910",
+            "pdf": "https://mdsoar.org/bitstreams/174ce0c9-0737-4d19-99fb-dace4fab4abf/download",
+            "venue": "Maryland Shared Open Access Repository (USMAI Consortium)"
+          },
+          {
+            "url": "https://www.nature.com/articles/s41467-023-37236-y",
+            "pdf": null,
+            "venue": "RePEc: Research Papers in Economics"
+          }
+        ],
+        "abstract": "Scientists aim to discover meaningful formulae that accurately describe experimental data. Mathematical models of natural phenomena can be manually created from domain knowledge and fitted to data, or, in contrast, created automatically from large datasets with machine-learning algorithms. The problem of incorporating prior knowledge expressed as constraints on the functional form of a learned model has been studied before, while finding models that are consistent with prior knowledge expressed via general logical axioms is an open problem. We develop a method to enable principled derivations of models of natural phenomena from axiomatic knowledge and experimental data by combining logical reasoning with symbolic regression. We demonstrate these concepts for Kepler's third law of planetary motion, Einstein's relativistic time-dilation law, and Langmuir's theory of adsorption. We show we can discover governing laws from few data points when logical reasoning is used to distinguish between candidate formulae having similar error on the data."
+      },
+      {
+        "title": "AI-Newton: A concept-driven physical law discovery system without prior physical knowledge",
+        "year": 2026,
+        "doi": "https://doi.org/10.1103/dvvc-4rsr",
+        "id": "https://openalex.org/W4417233420",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1103/dvvc-4rsr",
+            "pdf": null,
+            "venue": "Physical Review Research"
+          },
+          {
+            "url": "http://arxiv.org/abs/2504.01538",
+            "pdf": "https://arxiv.org/pdf/2504.01538",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2504.01538",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "While current AI-driven methods excel at deriving empirical models from individual experiments, a significant challenge remains in uncovering the common fundamental physics that underlie these models -- a task at which human physicists are adept. To bridge this gap, we introduce AI-Newton, a novel framework for concept-driven scientific discovery. Our system autonomously derives general physical laws directly from raw, multi-experiment data, operating without supervision or prior physical knowledge. Its core innovations are twofold: (1) proposing interpretable physical concepts to construct laws, and (2) progressively generalizing these laws to broader domains. Applied to a large, noisy dataset of mechanics experiments, AI-Newton successfully rediscovers foundational and universal laws, such as Newton's second law, the conservation of energy, and the universal gravitation. This work represents a significant advance toward autonomous, human-like scientific discovery."
+      },
+      {
+        "title": "AI for scientific discovery is a social problem",
+        "year": 2026,
+        "doi": "https://doi.org/10.1016/j.patter.2026.101497",
+        "id": "https://openalex.org/W4414757250",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1016/j.patter.2026.101497",
+            "pdf": null,
+            "venue": "Patterns"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42028402",
+            "pdf": null,
+            "venue": "PubMed"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42028402/",
+            "pdf": null,
+            "venue": "PubMed Central"
+          },
+          {
+            "url": "http://arxiv.org/abs/2509.06580",
+            "pdf": "https://arxiv.org/pdf/2509.06580",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2509.06580",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "AI is being increasingly applied to scientific research, but its benefits remain unevenly distributed across different communities and disciplines. While technical challenges such as limited data, fragmented standards, and unequal access to computational resources are already well known, social and institutional factors are often the primary constraints. Narratives emphasizing autonomous \"AI scientists,\" the underrecognition of data and infrastructure work, misaligned incentives, and gaps between domain experts and machine-learning researchers all limit the impact of AI on scientific discovery. Four interconnected challenges are highlighted in this paper: community coordination, the misalignment of research priorities with upstream needs, data fragmentation, and infrastructure inequities. We argue that addressing these challenges requires not only technical innovations but also intentional community-building efforts, cross-disciplinary education, shared benchmarks, and accessible infrastructure. We call for reframing AI for science as a collective social project, where sustainable collaboration and equitable participation are treated as prerequisites for achieving technical progress."
+      }
+    ]
+  },
+  {
+    "query": "DiscoveryWorld",
+    "total": 114,
+    "results": [
+      {
+        "title": "DiscoveryWorld: A Virtual Environment for Developing and Evaluating Automated Scientific Discovery Agents",
+        "year": 2024,
+        "doi": "https://doi.org/10.52202/079017-0324",
+        "id": "https://openalex.org/W4415798813",
+        "locations": [
+          {
+            "url": "https://doi.org/10.52202/079017-0324",
+            "pdf": null,
+            "venue": "neural information processing systems"
+          },
+          {
+            "url": "http://arxiv.org/abs/2406.06769",
+            "pdf": "https://arxiv.org/pdf/2406.06769",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2406.06769",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Automated scientific discovery promises to accelerate progress across scientific domains. However, developing and evaluating an AI agent's capacity for end-to-end scientific reasoning is challenging as running real-world experiments is often prohibitively expensive or infeasible. In this work we introduce DISCOVERYWORLD, the first virtual environment for developing and benchmarking an agent's ability to perform complete cycles of novel scientific discovery. DISCOVERYWORLD contains a variety of different challenges, covering topics as diverse as radioisotope dating, rocket science, and proteomics, to encourage development of general discovery skills rather than task-specific solutions. DISCOVERYWORLD itself is an inexpensive, simulated, text-based environment (with optional 2D visual overlay). It includes 120 different challenge tasks, spanning eight topics each with three levels of difficulty and several parametric variations. Each task requires an agent to form hypotheses, design and run experiments, analyze results, and act on conclusions. DISCOVERYWORLD further provides three automatic metrics for evaluating performance, based on (a) task completion, (b) task-relevant actions taken, and (c) the discovered explanatory knowledge. We find that strong baseline agents, that perform well in prior published environments, struggle on most DISCOVERYWORLD tasks, suggesting that DISCOVERYWORLD captures some of the novel challenges of discovery, and thus that DISCOVERYWORLD may help accelerate near-term development and assessment of scientific discovery competency in agents. Code available at: www.github.com/allenai/discoveryworld"
+      },
+      {
+        "title": "EvolvingBrain: An Adaptive Skill System for Multi-modal Agents Self-Evolution in Open Worlds",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2610.20786",
+        "id": "https://openalex.org/W7222566189",
+        "locations": [
+          {
+            "url": "https://arxiv.org/abs/2610.20786",
+            "pdf": "https://arxiv.org/pdf/2610.20786",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2610.20786",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Multi-modal agents have made significant progress in interacting with open worlds. However, their ability to self-evolve remains limited. Supervised fine-tuning enables imitation but not active experience organization, while outcome-based reinforcement learning promotes exploration yet underuses intermediate trajectory information. Therefore, we propose EvolvingBrain, which uses an adaptive skill system as the brain for agent self-evolution, consisting of two following components. Stratified Skill Self-Evolution: extracts Procedural Patterns and Problematic Patterns from model-specific trajectories, summarizes experience by generating skills, and evolves through multiple interactions with the open world, ultimately forming a Stratified Skill Architecture consisting of Domain, Plan, and Action/Trap Skills, which provides the agent with a multi-granularity knowledge repository and a novel evolution approach. State-Aware Adaptive Execution: summarizes long-horizon interactions into Structured Abstractive Memory and uses it to guide the State-Aware Skill Fusion Strategy, enabling the agent to utilize knowledge according to its current state. Experiments on VAB-Minecraft and DiscoveryWorld demonstrate that EvolvingBrain improves success rates on open-world tasks and exhibits generalization capabilities. Our code is provided in the supplementary materials and will be publicly released in the camera-ready version."
+      },
+      {
+        "title": "Safe, Persistent, and Evolving Agent Harness for Understanding Partially Observable Worlds",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2610.11552",
+        "id": "https://openalex.org/W7221124735",
+        "locations": [
+          {
+            "url": "https://arxiv.org/abs/2610.11552",
+            "pdf": "https://arxiv.org/pdf/2610.11552",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2610.11552",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Large language model agents can invoke tools fluently, but enterprise workflows demand more than selecting the right tools: actions must strictly comply with organizational policies, tool feedback often conceals hidden side effects under partial observability, and long-horizon tasks require persistent state tracking across multiple records. To address these challenges, we introduce E-Ledger, a multi-agent harness for safe and persistent execution. E-Ledger employs a code approval layer that checks every proposed action against policy before execution, and maintains a world ledger of verified hidden rules alongside evidence-backed dynamic state. Because hidden rules are typically unknown a priori, we further propose WorldAbduct, an abductive, world-model-driven harness evolution framework. WorldAbduct diagnoses execution trajectories across four complementary views (state consistency, world-observation gap, policy-gate correctness, and goal judgment) to hypothesize latent rules, and verifies them through targeted abductive interactions before integrating them into the ledger. On the enterprise benchmark World of Workflows, E-Ledger with WorldAbduct improves safe task completion across four LLM backbones, outperforming the strongest evolution baseline by 5--15 percentage points. Experiments in ScienceWorld and DiscoveryWorld further show that abductive harness evolution carries over to scientific environments. Our code is available at https://github.com/HKUST-KnowComp/E-LEDGER-WorldAbduct."
+      },
+      {
+        "title": "EvoBelief: Falsifiable World Models for Self-Improving LLM Agents",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2610.12789",
+        "id": "https://openalex.org/W7221518535",
+        "locations": [
+          {
+            "url": "https://arxiv.org/abs/2610.12789",
+            "pdf": "https://arxiv.org/pdf/2610.12789",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2610.12789",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Self-evolving LLM agents typically improve how they act through accumulated experience, reflection, or skills. Yet even procedurally capable agents can fail when their beliefs about environment dynamics are incomplete, incorrect, or outdated. We study a complementary axis of self-evolution: evolving those beliefs during deployment. Such beliefs can support multiple tasks, but incorrect ones can also propagate across them. We introduce EvoBelief, a self-evolving world model that represents environment knowledge as falsifiable hypotheses. Unexpected outcomes and decision-relevant unknowns trigger hypothesis formation. Later observations and controlled experiments provide independent validation before a rule can guide predictions or plans within its supported scope. Counterexamples narrow or retire rules as the environment changes. The language model remains frozen, and each rule remains linked to its evidence and the decisions it changes. Across four benchmarks spanning static dynamics, hidden drift, and scientific discovery, EvoBelief improves task performance and reuses learned rules across tasks. On ALFWorld without actor-side transition memory, it improves success over the matched Frozen World Model by 23.9% and 31.3% with Claude Haiku 4.5 and GPT-5.4, respectively. On MiniGrid, it revises stale rules and recovers after unannounced dynamics changes. In DiscoveryWorld's Reactor Lab, it discovers and validates quantitative laws, completing 83.3% of Normal-tier and 58.3% of Challenge-tier instances, versus 0% for each evaluated baseline. These results demonstrate self-improvement through testable, revisable environment knowledge rather than model-parameter updates."
+      },
+      {
+        "title": "Before Agents Decide: Epistemic Action in LLM-Based Systems",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2610.00511",
+        "id": "https://openalex.org/W7216102577",
+        "locations": [
+          {
+            "url": "https://arxiv.org/abs/2610.00511",
+            "pdf": "https://arxiv.org/pdf/2610.00511",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2610.00511",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Before a difficult decision, people often act simply to understand the situation better. We turn an object to see another side, place alternatives next to each other, or change one condition and observe what happens. These actions may not complete the task, but they improve the evidence needed for the next choice. LLM-based agents can search and explore, yet agent design gives less attention to an earlier question: is the available evidence ready for the decision? Sometimes necessary evidence is missing. In other cases, the evidence is present but its form hides what matters, or the comparison needed to judge it does not yet exist. Cognitive science calls actions that improve the basis for a later choice epistemic actions. We bring this idea to LLM-based agents and distinguish three modes: acquiring missing evidence, transforming available evidence, and probing a system to create a revealing response. We use the term epistemic scaffolding for the interfaces, tools, and environments that make these actions possible and auditable. This paper argues that agent design must address how decision-ready evidence is produced."
+      }
+    ]
+  },
+  {
+    "query": "DiscoveryBench",
+    "total": 182,
+    "results": [
+      {
+        "title": "DiscoveryBench: Towards Data-Driven Discovery with Large Language Models",
+        "year": 2024,
+        "doi": "https://doi.org/10.48550/arxiv.2407.01725",
+        "id": "https://openalex.org/W4400373784",
+        "locations": [
+          {
+            "url": "http://arxiv.org/abs/2407.01725",
+            "pdf": "https://arxiv.org/pdf/2407.01725",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2407.01725",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Can the rapid advances in code generation, function calling, and data analysis using large language models (LLMs) help automate the search and verification of hypotheses purely from a set of provided datasets? To evaluate this question, we present DiscoveryBench, the first comprehensive benchmark that formalizes the multi-step process of data-driven discovery. The benchmark is designed to systematically assess current model capabilities in discovery tasks and provide a useful resource for improving them. Our benchmark contains 264 tasks collected across 6 diverse domains, such as sociology and engineering, by manually deriving discovery workflows from published papers to approximate the real-world challenges faced by researchers, where each task is defined by a dataset, its metadata, and a discovery goal in natural language. We additionally provide 903 synthetic tasks to conduct controlled evaluations across task complexity. Furthermore, our structured formalism of data-driven discovery enables a facet-based evaluation that provides useful insights into different failure modes. We evaluate several popular LLM-based reasoning frameworks using both open and closed LLMs as baselines on DiscoveryBench and find that even the best system scores only 25%. Our benchmark, thus, illustrates the challenges in autonomous data-driven discovery and serves as a valuable resource for the community to make progress."
+      },
+      {
+        "title": "DiscoveryBench v1.1.0: A Field-Balanced OpenAlex Candidate Corpus for Empirical Validation of Discovery Plane Theory",
+        "year": 2026,
+        "doi": "https://doi.org/10.5281/zenodo.21723917",
+        "id": "https://openalex.org/W7171954956",
+        "locations": [
+          {
+            "url": "https://doi.org/10.5281/zenodo.21723917",
+            "pdf": null,
+            "venue": "Zenodo (CERN European Organization for Nuclear Research)"
+          },
+          {
+            "url": "https://doi.org/10.5281/zenodo.21723918",
+            "pdf": null,
+            "venue": "Zenodo (CERN European Organization for Nuclear Research)"
+          }
+        ],
+        "abstract": "## Overview DiscoveryBench v1.1.0 is a reproducibility dataset accompanying **Discovery Plane Theory**. The package provides a structured candidate corpus, coding framework, validation reports, reproducibility scripts, and supporting documentation for empirical investigations of Discovery Complexity (DC), Question Compression (QC), Discovery Frontiers, and Discovery Scarcity. The dataset contains **1,500 OpenAlex candidate publication records**, equally distributed across five scientific domains: - Physics and Astronomy (300)- Chemistry (300)- Medicine (300)- Computer Science (300)- Mathematics (300) Each domain has been structurally validated against the corresponding OpenAlex field identifier, resulting in **1,500 unique OpenAlex identifiers**, no duplicate records, and complete field-validation consistency. ## Purpose DiscoveryBench was developed to support transparent and reproducible evaluation of Discovery Plane Theory. Rather than treating citation counts as evidence of scientific discovery, the package provides a candidate corpus from which scientific-question episodes can be independently reconstructed, coded, and analysed. The included records are **candidate publications only**. Discovery status, historical priority, Discovery Complexity, Question Compression, and scientific significance are **not** inferred from bibliographic metadata. ## Package contents The archive includes: - validated OpenAlex candidate records;- preserved raw API responses;- structured coding templates;- DiscoveryBench workbook;- codebook;- data dictionary;- sampling protocol;- validation reports;- reproducibility scripts;- coordinate, frontier, reliability, and validation utilities. ## Structural validation Structural validation confirms: - 1,500 candidate records;- 1,500 unique OpenAlex identifiers;- five validated scientific domains;- correct OpenAlex field assignments;- no duplicate identifiers. These structural checks verify dataset integrity only and should not be interpreted as empirical validation of Discovery Plane Theory. ## Acquisition For each scientific field, the preserved OpenAlex API responses contain **200 records from page 1** and **100 records from page 3**. The archived request URLs document the original acquisition procedure preserved in this package. Because the stored requests do not explicitly record citation-based sorting, DiscoveryBench is described as a **field-filtered candidate corpus** rather than a verified ranking of the most-cited publications. ## Citation **Dataset DOI** https://doi.org/10.5281/zenodo.21723918 If you use DiscoveryBench, please cite both this dataset and the accompanying Discovery Plane Theory manuscript. Users should also acknowledge OpenAlex as the source of the underlying bibliographic metadata. ## Licensing OpenAlex-derived metadata are distributed under **CC0 1.0 Universal**. Original documentation, codebook, workbook, coding framework, and dataset organisation are released under **CC BY 4.0**. Analysis scripts are released under the **MIT License**."
+      },
+      {
+        "title": "AutoSDT: Scaling Data-Driven Discovery Tasks Toward Open Co-Scientists",
+        "year": 2025,
+        "doi": "https://doi.org/10.48550/arxiv.2506.08140",
+        "id": "https://openalex.org/W4417255553",
+        "locations": [
+          {
+            "url": "https://arxiv.org/abs/2506.08140",
+            "pdf": "https://arxiv.org/pdf/2506.08140",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2506.08140",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Despite long-standing efforts in accelerating scientific discovery with AI, building AI co-scientists remains challenging due to limited high-quality data for training and evaluation. To tackle this data scarcity issue, we present AutoSDT, an automatic pipeline that collects high-quality coding tasks in real-world data-driven discovery workflows. AutoSDT leverages the coding capabilities and parametric knowledge of LLMs to search for diverse sources, select ecologically valid tasks, and synthesize accurate task instructions and code solutions. Using our pipeline, we construct AutoSDT-5K, a dataset of 5,404 coding tasks for data-driven discovery that covers four scientific disciplines and 756 unique Python packages. To the best of our knowledge, AutoSDT-5K is the only automatically collected and the largest open dataset for data-driven scientific discovery. Expert feedback on a subset of 256 tasks shows the effectiveness of AutoSDT: 93% of the collected tasks are ecologically valid, and 92.2% of the synthesized programs are functionally correct. Trained on AutoSDT-5K, the Qwen2.5-Coder-Instruct LLM series, dubbed AutoSDT-Coder, show substantial improvement on two challenging data-driven discovery benchmarks, ScienceAgentBench and DiscoveryBench. Most notably, AutoSDT-Coder-32B reaches the same level of performance as GPT-4o on ScienceAgentBench with a success rate of 7.8%, doubling the performance of its base model. On DiscoveryBench, it lifts the hypothesis matching score to 8.1, bringing a 17.4% relative improvement and closing the gap between open-weight models and GPT-4o."
+      },
+      {
+        "title": "Searching for Synergy in Shared Workspace Human-AI Collaboration",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2606.18413",
+        "id": "https://openalex.org/W7165143519",
+        "locations": [
+          {
+            "url": "https://arxiv.org/abs/2606.18413",
+            "pdf": "https://arxiv.org/pdf/2606.18413",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2606.18413",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Automated AI agents are increasingly capable, yet many scientific and professional tasks require human judgment and contextual expertise. We use simulated shared-workspace human-AI teams as a controlled testbed for studying how collaboration structure shapes team behavior. Using the Collaborative Gym environment with tasks from DiscoveryBench, we vary team compositions and collaboration structures across 1,482 sessions. We find that adding additional collaborators can lower performance when coordination structure is absent. We then evaluate collaboration scaffolding that combines shared group memory with simulated human-in-the-loop (HITL) gates, where selected actions require approval from a designated simulated participant. This scaffolding improves performance, most clearly in three-person teams, with clearer responsibility signals and stronger routing of expertise to team actions. Overall, our results suggest that coordination structure is central to whether available capability improves team outcomes."
+      },
+      {
+        "title": "Evaluating Memory Condensation Strategies for Coding Agents in Data-Driven Scientific Discovery",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2605.18854",
+        "id": "https://openalex.org/W7161852314",
+        "locations": [
+          {
+            "url": "https://arxiv.org/abs/2605.18854",
+            "pdf": "https://arxiv.org/pdf/2605.18854",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2605.18854",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Coding agents accumulate extensive context during long-running tasks, yet fixed context windows force practitioners to choose between truncation and task failure. While numerous memory condensation strategies have been proposed, from simple sliding windows to LLM-generated summaries, no systematic comparison exists to guide strategy selection, especially in scientific discovery tasks. We evaluate eight memory condensation strategies using GPT-4o on sixty DiscoveryBench tasks spanning six scientific domains (480 total evaluations). We find that no condenser significantly alters hypothesis quality, while LLM-based condensers increase token costs by 24-94 percent, and masking tool-call outputs achieves an 8.6 percent net savings. We also observe that the optimal condenser for data-driven scientific discovery varies by scientific domain and task length."
+      }
+    ]
+  },
+  {
+    "query": "Learning programs by learning from failures",
+    "total": 1501968,
+    "results": [
+      {
+        "title": "Learning programs by learning from failures",
+        "year": 2021,
+        "doi": "https://doi.org/10.1007/s10994-020-05934-z",
+        "id": "https://openalex.org/W3022490130",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1007/s10994-020-05934-z",
+            "pdf": "https://link.springer.com/content/pdf/10.1007/s10994-020-05934-z.pdf",
+            "venue": "Machine Learning"
+          },
+          {
+            "url": "http://arxiv.org/abs/2005.02259",
+            "pdf": "https://arxiv.org/pdf/2005.02259",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://arxiv.org/pdf/2005.02259.pdf",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2005.02259",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Abstract We describe an inductive logic programming (ILP) approach calledlearning from failures. In this approach, an ILP system (the learner) decomposes the learning problem into three separate stages:generate,test, andconstrain. In the generate stage, the learner generates a hypothesis (a logic program) that satisfies a set ofhypothesis constraints(constraints on the syntactic form of hypotheses). In the test stage, the learner tests the hypothesis against training examples. A hypothesisfailswhen it does not entail all the positive examples or entails a negative example. If a hypothesis fails, then, in the constrain stage, the learner learns constraints from the failed hypothesis to prune the hypothesis space, i.e. to constrain subsequent hypothesis generation. For instance, if a hypothesis is too general (entails a negative example), the constraints prune generalisations of the hypothesis. If a hypothesis is too specific (does not entail all the positive examples), the constraints prune specialisations of the hypothesis. This loop repeats until either (i) the learner finds a hypothesis that entails all the positive and none of the negative examples, or (ii) there are no more hypotheses to test. We introduce Popper, an ILP system that implements this approach by combining answer set programming and Prolog. Popper supports infinite problem domains, reasoning about lists and numbers, learning textually minimal programs, and learning recursive programs. Our experimental results on three domains (toy game problems, robot strategies, and list transformations) show that (i) constraints drastically improve learning performance, and (ii) Popper can outperform existing ILP systems, both in terms of predictive accuracies and learning times."
+      },
+      {
+        "title": "Learning Higher-Order Logic Programs From Failures",
+        "year": 2022,
+        "doi": "https://doi.org/10.24963/ijcai.2022/378",
+        "id": "https://openalex.org/W4285606830",
+        "locations": [
+          {
+            "url": "https://doi.org/10.24963/ijcai.2022/378",
+            "pdf": "https://www.ijcai.org/proceedings/2022/0378.pdf",
+            "venue": "International Joint Conference on Artificial Intelligence"
+          },
+          {
+            "url": "http://arxiv.org/abs/2112.14603",
+            "pdf": "https://arxiv.org/pdf/2112.14603",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2112.14603",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Learning complex programs through inductive logic programming (ILP) remains a formidable challenge. Existing higher-order enabled ILP systems show improved accuracy and learning performance, though remain hampered by the limitations of the underlying learning mechanism. Experimental results show that our extension of the versatile Learning From Failures paradigm by higher-order definitions significantly improves learning performance without the burdensome human guidance required by existing systems. Our theoretical framework captures a class of higher-order definitions preserving soundness of existing subsumption-based pruning methods."
+      },
+      {
+        "title": "Learning Logic Programs From Noisy Failures",
+        "year": 2021,
+        "doi": "https://doi.org/10.48550/arxiv.2201.03702",
+        "id": "https://openalex.org/W4226103528",
+        "locations": [
+          {
+            "url": "http://arxiv.org/abs/2201.03702",
+            "pdf": "https://arxiv.org/pdf/2201.03702",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2201.03702",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Inductive Logic Programming (ILP) is a form of machine learning (ML) which in contrast to many other state of the art ML methods typically produces highly interpretable and reusable models. However, many ILP systems lack the ability to naturally learn from any noisy or partially misclassified training data. We introduce the relaxed learning from failures approach to ILP, a noise handling modification of the previously introduced learning from failures (LFF) approach which is incapable of handling noise. We additionally introduce the novel Noisy Popper ILP system which implements this relaxed approach and is a modification of the existing Popper system. Like Popper, Noisy Popper takes a generate-test-constrain loop to search its hypothesis space wherein failed hypotheses are used to construct hypothesis constraints. These constraints are used to prune the hypothesis space, making the hypothesis search more efficient. However, in the relaxed setting, constraints are generated in a more lax fashion as to avoid allowing noisy training data to lead to hypothesis constraints which prune optimal hypotheses. Constraints unique to the relaxed setting are generated via hypothesis comparison. Additional constraints are generated by weighing the accuracy of hypotheses against their sizes to avoid overfitting through an application of the minimum description length. We support this new setting through theoretical proofs as well as experimental results which suggest that Noisy Popper improves the noise handling capabilities of Popper but at the cost of overall runtime efficiency."
+      },
+      {
+        "title": "Learning from a Drastic Failure: The Case of the Airbus A380 Program",
+        "year": 2014,
+        "doi": "https://doi.org/10.1080/13662716.2014.910891",
+        "id": "https://openalex.org/W1970922261",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1080/13662716.2014.910891",
+            "pdf": null,
+            "venue": "Industry and Innovation"
+          },
+          {
+            "url": "http://hdl.handle.net/10.1080/13662716.2014.910891",
+            "pdf": null,
+            "venue": "RePEc: Research Papers in Economics"
+          },
+          {
+            "url": "https://portal.findresearcher.sdu.dk/da/publications/183650d6-1043-4dde-a4f6-4ace84a1171b",
+            "pdf": null,
+            "venue": "University of Southern Denmark Research Portal (University of Southern Denmark)"
+          }
+        ],
+        "abstract": "How do organizations learn from a drastic failure? We distinguish between ad hoc and systematic reactions and discuss their effectiveness for dealing with two basic challenges: (1) identifying and solving the problems that caused the failure; and (2) changing the organization accordingly. We apply this conceptual perspective to illustrate the dynamics of learning from the drastic failure that occurred during the development of the Airbus A380 “superjumbo.” Our findings echo extant observations that efforts to redesign organizational behavior in an ad hoc manner are often insufficient. Instead, the organizational system must provide scaffolding that allows experiencing a critical event in a rich and systematic manner. When seen from a dynamic perspective, however, we find that even imperfect ad hoc efforts may play a vital role. By enforcing changes, providing stability, and raising awareness, they can act as a helpful prelude to more systematic problem solving and change."
+      },
+      {
+        "title": "The Hospital Readmissions Reduction Program—Learning From Failure of a Healthcare Policy",
+        "year": 2018,
+        "doi": "https://doi.org/10.1002/ejhf.1212",
+        "id": "https://openalex.org/W2804219457",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1002/ejhf.1212",
+            "pdf": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/ejhf.1212",
+            "venue": "European Journal of Heart Failure"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29791084",
+            "pdf": null,
+            "venue": "PubMed"
+          },
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/6105419",
+            "pdf": null,
+            "venue": "Europe PMC (PubMed Central)"
+          },
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/6105419",
+            "pdf": null,
+            "venue": "PubMed Central"
+          },
+          {
+            "url": "https://escholarship.org/uc/item/0w76540p",
+            "pdf": null,
+            "venue": "eScholarship (California Digital Library)"
+          }
+        ],
+        "abstract": "Heart failure is the leading cause of readmissions in patients aged ≥65 years with high associated societal and economic costs. The utilization metric of 30-day risk standardized readmission rates (RSRRs) has therefore become a target to reduce healthcare costs. In this review, we discuss in detail the implementation, effectiveness, and unintended consequences of the Hospital Readmissions Reduction Program (HRRP)-the major healthcare policy approach in the U.S. to reduce readmissions by financially penalizing hospitals with higher than average 30-day RSRRs. The HRRP was enacted by the Patient Protection and Affordable Care Act of 2010 (popularly known as 'Obamacare'). The public reporting of RSRRs began in June 2009 and the HRRP readmission penalties went into effect starting fiscal year 2013. The policy had limited success in achieving its primary objective of reducing readmissions as the achieved reduction in heart failure readmissions was much smaller (∼9%) than anticipated (∼25%) with some of the reduction in RSRRs attributable to the artifact of administrative upcoding post-HRRP rather than an actual decline in readmissions. From the time of passage of this law, there have been significant concerns regarding gaming of the system such as increase in observation stays, delaying readmissions beyond discharge day 30, and inappropriate triage strategies in emergency departments in order to achieve lower readmission rates to avoid penalties. A series of independent reports have now suggested that implementation of the HRRP was associated with an increase in 30-day, 90-day, and 1-year risk-adjusted heart failure mortality in the U.S. with reversal in decade long trend of declining heart failure mortality. We review the evidence behind effect of the HRRP on readmissions and mortality outcomes as well as discuss various lessons to be learned from the design, implementation, and consequences of this policy."
+      }
+    ]
+  },
+  {
+    "query": "Discrimination among mechanistic models",
+    "total": 102851,
+    "results": [
+      {
+        "title": "Discrimination Among Mechanistic Models",
+        "year": 1967,
+        "doi": "https://doi.org/10.1080/00401706.1967.10490441",
+        "id": "https://openalex.org/W2016950925",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1080/00401706.1967.10490441",
+            "pdf": null,
+            "venue": "Technometrics"
+          },
+          {
+            "url": "https://doi.org/10.2307/1266318",
+            "pdf": null,
+            "venue": "Technometrics"
+          }
+        ],
+        "abstract": "This paper is concerned with research, the object of which is to discover the mechanism for a particular phenomenon leading to a specific mathematical model. Such investigations are distinguished from those in which the object is merely to estimate the output y of a process over a range of values of the input ∊1, ∊2, …, ∊ k . Frequently, a number of possible mechanisms are suggested from theoretical considerations leading to a number of different mathematical models. To discriminate among these a sequential procedure is developed in which calculations made after each experiment determine the most discriminatory process conditions for use in the next experiment. The method is illustrated with examples."
+      },
+      {
+        "title": "USING POWER-LAW RATE EXPRESSION PARAMETERS FOR DISCRIMINATION AMONG MECHANISTIC MODELS IN RATE DATA REGRESSION",
+        "year": 1996,
+        "doi": "https://doi.org/10.1080/00986449608936653",
+        "id": "https://openalex.org/W2094349228",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1080/00986449608936653",
+            "pdf": null,
+            "venue": "Chemical Engineering Communications"
+          }
+        ],
+        "abstract": "Langmuir-Hinshelwood (or Hougen-Watson) type rate expressions are most often used in modeling reaction rate data. In cases when there are tens of possible rival models, effective discrimination between them requires that most of the inadequate models be discarded as early as possible in the discrimination process. In this paper, the relationship between power-law and Hougen and Watson type rate expressions was studied. It was found that there is a clear mathematical connection between the two types of rate expressions. This connection can be utilized in order to discriminate between feasible and infeasible models, using only the numerical values of the power-law rate expression parameters. This way most of the inadequate mechanisms can be discarded after fitting the data to a single (power-law) model. The 95% confidence intervals of the parameters have proven to be key statistical variables in determining the adequacy of both power-law and mechanistic models. Using the data and results of Hougen and Watson (1947), it is shown that they rejected valid mechanisms and accepted invalid ones because they did not take into account the confidence intervals on the parameters."
+      },
+      {
+        "title": "Rapid Discrimination Among Putative Mechanistic Models of Biochemical Systems",
+        "year": 2016,
+        "doi": "https://doi.org/10.1038/srep32375",
+        "id": "https://openalex.org/W2514465786",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1038/srep32375",
+            "pdf": "https://www.nature.com/articles/srep32375.pdf",
+            "venue": "Scientific Reports"
+          },
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5006174",
+            "pdf": null,
+            "venue": "PubMed Central"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27578053",
+            "pdf": null,
+            "venue": "PubMed"
+          },
+          {
+            "url": "https://escholarship.org/uc/item/8tw5s06k",
+            "pdf": "https://escholarship.org/content/qt8tw5s06k/qt8tw5s06k.pdf",
+            "venue": "eScholarship (California Digital Library)"
+          }
+        ],
+        "abstract": "An overarching goal in molecular biology is to gain an understanding of the mechanistic basis underlying biochemical systems. Success is critical if we are to predict effectively the outcome of drug treatments and the development of abnormal phenotypes. However, data from most experimental studies is typically noisy and sparse. This allows multiple potential mechanisms to account for experimental observations, and often devising experiments to test each is not feasible. Here, we introduce a novel strategy that discriminates among putative models based on their repertoire of qualitatively distinct phenotypes, without relying on knowledge of specific values for rate constants and binding constants. As an illustration, we apply this strategy to two synthetic gene circuits exhibiting anomalous behaviors. Our results show that the conventional models, based on their well-characterized components, cannot account for the experimental observations. We examine a total of 40 alternative hypotheses and show that only 5 have the potential to reproduce the experimental data, and one can do so with biologically relevant parameter values."
+      },
+      {
+        "title": "Discrimination and goodness of fit of multiresponse mechanistic models",
+        "year": 1998,
+        "doi": "https://doi.org/10.1002/aic.690440618",
+        "id": "https://openalex.org/W1994800936",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1002/aic.690440618",
+            "pdf": null,
+            "venue": "AIChE Journal"
+          }
+        ],
+        "abstract": "Abstract Criteria are derived for objective choice among rival models of multiresponse processes. Formulas are given for the relative posterior probabilities of candidate models and for their goodness of fit as tested on a common data set with Normally distributed errors. The formulas are demonstrated with examples from chemical kinetics and catalysis."
+      },
+      {
+        "title": "Model Discrimination Using Markov Chain Monte Carlo Methods",
+        "year": 2013,
+        "doi": null,
+        "id": "https://openalex.org/W2561029264",
+        "locations": [
+          {
+            "url": "http://hdl.handle.net/10012/7465",
+            "pdf": "http://hdl.handle.net/10012/7465",
+            "venue": "UWSpace (University of Waterloo)"
+          },
+          {
+            "url": "https://uwspace.uwaterloo.ca/handle/10012/7465",
+            "pdf": null,
+            "venue": null
+          }
+        ],
+        "abstract": "Model discrimination deals with situations where there are several candidate models available to represent a system. The objective is to find the “best” model among rival models with respect to prediction of system behavior. Empirical and mechanistic models are two important categories of models. Mechanistic models are developed based on physical mechanisms. These types of models can be applied for prediction purposes, but they are also developed to gain improved understanding of the underlying physical mechanism or to estimate physico-chemical parameters of interest. When model discrimination is applied to mechanistic models, the main goal is typically to determine the “correct” underlying physical mechanism. This study focuses on mechanistic models and presents a model discrimination procedure which is applicable to mechanistic models for the purpose of studying the underlying physical mechanism. \\nObtaining the data needed from the real system is one of the challenges particularly in applications where experiments are expensive or time consuming. Therefore, it is beneficial to get the maximum information possible from the real system using the least possible number of experiments. \\nIn this research a new approach to model discrimination is presented that takes advantage of Monte Carlo (MC) methods. It combines a design of experiments (DOE) method with an adaptation of MC model selection methods to obtain a sequential Bayesian Markov Chain Monte Carlo model discrimination framework which is general and usable for a wide range of model discrimination problems. \\nThe procedure has been applied to chemical engineering case studies and the promising results have been discussed. Four case studies, order of reaction, rate of FeIII formation, copolymerization, and RAFT polymerization, are presented in this study. \\nThe first three benchmark problems allowed us to refine the proposed approach. Moreover, applying the Sequential Bayesian Monte Carlo model discrimination framework in the RAFT problem made a contribution to the polymer community by recommending analysis an approach to selecting the correct mechanism."
+      }
+    ]
+  },
+  {
+    "query": "Strong inference Platt",
+    "total": 32004,
+    "results": [
+      {
+        "title": "Fifty years of J. R. Platt's strong inference",
+        "year": 2014,
+        "doi": "https://doi.org/10.1242/jeb.104976",
+        "id": "https://openalex.org/W2328541171",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1242/jeb.104976",
+            "pdf": null,
+            "venue": "Journal of Experimental Biology"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/24744419",
+            "pdf": null,
+            "venue": "PubMed"
+          },
+          {
+            "url": "https://digitalcommons.chapman.edu/sees_articles/175",
+            "pdf": null,
+            "venue": "Chapman University Digital Commons (Chapman University)"
+          },
+          {
+            "url": "http://jeb.biologists.org/cgi/content/short/217/8/1202",
+            "pdf": null,
+            "venue": "HighWire Press Open Archive"
+          }
+        ],
+        "abstract": "In 1964, John R. Platt (1918–1992) published a paper in Science with the intention of stimulating debate about how science works and how we might do it better (Platt, 1964). The paper was so provocative and got so much attention that Science republished it in 1965. Since then, Platt's ‘strong inference’ continues to circulate among science departments and inspire young scientists. When I first encountered it as a graduate student, it had a profound effect on my development as a scientist, and it is one of the few papers that I now give to every new member of my lab.The article opens with an irresistible line: ‘Scientists these days tend to keep up a polite fiction that all science is equal.’ Platt goes on to argue that all science is not equal, that some scientists do it better than others, and even that some fields (such as molecular biology and high-energy physics) do it better than others. The difference between good science and bad science, argues Platt, has to do with how systematically one employs the hypothetico-deductive method, which he calls simply ‘strong inference’.Platt's message is inspiring to new scientists because he asserts that doing great science is a skill that can be learned, and, contrary to popular mythology, one that does not require superhuman intellectual gifts. He tells us that we can make profound breakthroughs if we simply cultivate the habits of mind of Watson and Crick, and Jacob and Monod, who systematically applied strong inference thinking and solved some of the most difficult problems of their time.Platt characterizes strong inference as the repetition of three essential steps: (1) devise alternative hypotheses; (2) devise a crucial experiment that will exclude one or more hypotheses; and (3) perform the experiment and obtain a clean result. Then, (1′) recycle the procedure to refine the possibilities that remain.When I first read Platt's strong inference paper as a graduate student, I was familiar with the hypothetico-deductive method, but Platt was the first to reveal to me how it really worked, and I suspect this is true for many of his readers. Platt explained that strong inference can only work if we assume that the universe is a rational place, that even the most confounding questions have an answer, and that the answer must be one of only a handful of reasonable explanations. These insights are the key to understanding how the disproof of hypotheses can lead to the construction of meaningful knowledge, which is something I had not fully grasped before I read Platt's paper. When this light bulb turned on for me, I was enthralled with this new vision of the scientist as Sherlock Holmes, who relied on just this kind of bold strong inference approach. In Holmes' words, ‘when you have eliminated the impossible, whatever remains, however improbable, must be the truth’ (Doyle, 1890).Platt recognized that it was all too easy to make science complicated and to lose focus of its real purpose, which is to find better and better explanations of the world around us. He therefore provided his readers with several practical aids to help them successfully apply strong inference. One of these was the concept of multiple working hypotheses, an idea championed by the geologist T. C. Chamberlin, a predecessor of Platt's at the University of Chicago. Chamberlin argued in an 1897 paper that a scientist working on a problem should strive to entertain several hypotheses at once (Chamberlin, 1897). Such a measure is necessary, according to Chamberlin, because of our tendency to become attached to our ideas, which can lead to science becoming an irrational argument among scientists, rather than a rational competition among ideas. Chamberlin's vision of science, like Platt's, is one grounded in a firm belief in a knowable reality, and one in which good explanations rise out of the ashes of those shown to be false.Platt also espouses the systematic use of a laboratory notebook. He regales us with tales of Fermi, Faraday, Roentgen and Pasteur, who all wrote obsessively in a ‘diary’ or lab notebook, and who all made revolutionary discoveries. While students are typically encouraged to keep a lab notebook as a form of record keeping, Platt asserted that it should be used for much more – as a staging ground for ideas, a place to record puzzling observations, ask questions, dream up hypotheses, derive predictions and critically analyze. In his book The Excitement of Science, he urges every person (not just scientists!) to spend at least one ‘gamesworth’ of analytical reasoning each day, which he defines as the amount of effort required to complete a game of chess or a challenging crossword puzzle (Platt, 1962). I took Platt's advice as a graduate student and was amazed to see how even difficult problems can yield to the cumulative effects of this approach.Platt's paper transformed the way that I thought about my own research and science in general, and it eventually changed how I teach. I was eager to pass on the insights I had learned from Platt, but soon realized that students can find his algorithm of three steps to be quite daunting. For this reason, I find it helpful to expand the strong inference process into smaller, more manageable tasks. This expanded strong inference algorithm, along with the cognitive skills required for each step, is presented in Fig. 1. Each step is explained in more detail below.Observe. All science starts with observation, but only those observations that are puzzling to us have any value, because they are the ones that signal to us that our current explanation might not be correct. Skilled observation requires sensitivity to our environment and an ability to recognize when something is confusing and therefore worth pursuing.Question. Puzzling observations organically lead us to ask non-trivial questions, which are generally ones that begin with ‘why’ or ‘how’. Many students harbor the misconception that scientific questions must take the form, ‘What is the effect of x (independent variable) on y (dependent variable)?’ In fact, answering these kinds of questions typically does not require the scientific method, because it is immediately obvious how to answer them (vary x, measure y). In contrast, it is rarely evident at first how to go about answering ‘how’ and ‘why’ questions and this is where strong inference can provide us with a roadmap.Hypothesize. Platt suggests that we enter difficult problems by devising alternative hypotheses, and my students are shocked to learn that coming up with hypotheses requires nothing less than creativity. When students ask me where good hypotheses come from, I tell them, ‘the same place good poetry comes from’, which is of course a maddening way of saying ‘I don't know.’ Because so many students possess the misconception that a hypothesis is simply an ‘educated guess’ about how an experiment will turn out (i.e. a prediction), I find it useful to apply a simple test to check whether a hypothesis is a good one.The test of a good hypothesis is to ask whether it represents a satisfying answer to the question that has been posed. If it does not, then it is not worth pursuing. A hypothesis may pass this acid test, but get discarded later because we realize it violates a law of physics or is internally inconsistent. With several cycles of creativity followed by criticism, we can whittle down our list of hypotheses to a handful of reasonable explanations. If we assume that one hypothesis is correct and the others are wrong, this is where the real fun begins, because it is at this stage that the whole enterprise starts to feel like a detective story.Predict. Platt tells us next to devise a crucial test, and students are always eager to do this, but I find it useful to insert one more step before the experiments are designed, and that is to list the predictions that each hypothesis makes. I constantly need to remind students that these are not predictions that you make, these are predictions that each hypothesis makes (Hutto, 2012). When we predict instead of letting the hypothesis predict, we lose the tight connection between hypothesis and experiment, and the logical structure of the entire process can fall apart. Finding predictions requires large doses of imagination, because we must try a hypothesis on for size and conjure up how the world would look if it were true. Once we have a list of predictions from each hypothesis, it is important to confirm that they are critical predictions.We can evaluate a prediction's utility by asking ourselves whether the hypothesis can survive if the prediction is found to be false. If it can, then it is not a strong prediction, and probably not worth testing. Focusing on tests with the greatest potential to disprove our hypotheses is important, because it is the fastest way to eliminate faulty explanations that might otherwise stand in our way of reaching the truth.Test. The testing step, sometimes called the experiment step, is when we evaluate whether a prediction is true by comparing it with some aspect of the real world. Much has been written about the ins and outs of experimental design, because there are lots of places where one can go wrong. Platt deliberately says little about this in his paper, because his intention was to illuminate those steps of the scientific method that he felt were being ignored. The test of a good experiment or test is to ask whether the results, whichever way they turn out, will allow you to evaluate how good a given prediction is.Analyze and conclude. The last step is to analyze and conclude, and if all the other steps have been carried out properly, this should be easy, and we should find ourselves closer to an answer to our question. If we have neglected certain parts, the logical bones of our structure might not be sound, and we are at risk of making an erroneous conclusion. Of course the process is not a linear one, and data collected during the testing stage may (and very often do!) become new puzzling observations of their own, which can lead to interesting questions and entirely new lines of inquiry.Platt was not a philosopher of science in the academic sense, and his message was not anything that Karl Popper hadn't said in his extensive writings about scientific discovery (Popper, 1959). Yet Platt's small paper has had a large impact on a wide audience. The ISI Web of Science lists 1320 citations for strong inference, and a perusal of these citations reveals influence in an impressively diverse number of fields, with a large number of citations coming from psychology, ecology, and marketing and business science. Some might wonder whether Platt's message is relevant in our current age of ‘big science’. Surely strong inference was not needed to sequence the human genome, nor will it be useful for mapping all the neural connections in the human brain or barcoding and classifying every species of life on Earth. However, once we have these data, puzzling patterns and compelling questions are certain to emerge, and this is where strong inference can help lead us from confusion to satisfying explanations.Scientists appreciate Platt's paper because of its no-nonsense tone and the practical advice he provides, but also because he gestures toward something important about the psychology required to do good science. Although he doesn't make the point explicitly, Platt suggests that making progress requires walking a razor's edge between audacity and humility, and applying each in the right place at the right time. It is a message that can benefit anyone who is interested in tackling difficult problems – we must be bold enough to assume that one of our ideas is correct, and yet we must have the humility to abandon those ideas that don't stand up to scrutiny.The author would like to thank several people who helped shape the ideas in this paper, including John M. Gosline, E. Don Stevens, Dennis J. Taylor and many students at the University of Guelph. The article benefitted greatly from feedback by Amy C. Rowat and the Rowat Lab at UCLA, and Sheila Patek and the Patek Lab at Duke University."
+      },
+      {
+        "title": "Strong Inference for Systems Biology",
+        "year": 2009,
+        "doi": "https://doi.org/10.1371/journal.pcbi.1000459",
+        "id": "https://openalex.org/W2071456231",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1371/journal.pcbi.1000459",
+            "pdf": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1000459&type=printable",
+            "venue": "PLoS Computational Biology"
+          },
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/2724742",
+            "pdf": null,
+            "venue": "PubMed Central"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19714210",
+            "pdf": null,
+            "venue": "PubMed"
+          },
+          {
+            "url": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.558.4704",
+            "pdf": null,
+            "venue": null
+          },
+          {
+            "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000459",
+            "pdf": null,
+            "venue": "RePEc: Research Papers in Economics"
+          }
+        ],
+        "abstract": "Platt's essay on strong inference [Platt, J.R., 1964. Science 146, 347-353] illuminates a rational approach to scientific inquiry that integrates seamlessly with current investigations on the operation of complex biological systems. Yet in reexamining the 1964 essay in light of current trends, it is apparent that the groundbreaking approach has failed to become universal. Here it is argued that both the opportunity and the need to follow Platt's advice are now greater than ever. A revised method of strong inference for sys-tems biology is presented and applied to analyze longstanding questions in cardiac energy metabolism. It is shown how this logical framework combined with computational-based hypothesis testing illumi-nates unresolved questions regarding how the energetic state of the heart is maintained in response to changes in the rate of ATP hydrolysis. Part 1. Philosophical Framework Platt’s Strong Inference A half century ago Platt proposed a formal schema for scientific inquiry based, in part, on his assess-ment of the rapid progress made in molecular biology and theoretical physics in the middle part of the twentieth century. Building on the “simple old-fashioned method of inductive inference that goes back to Francis Bacon ” [1], Platt proposed a method of strong inference, applied through the following logi-cal sequence: “1. Devising alternative hypotheses; 2. Devising a crucial experiment (or several of them), with alternative possible outcomes, each of which will, as nearly as possible, exclude one or more of the hypotheses; 3. Carrying out the experiment so as to get a clean result; 1’. Recycling the procedure, making subhypotheses or sequential hypotheses to refine the possibilities that remain; and so on.”1 Current use of the scientific method ideally applies this logic, but all too often work stagnates at a par-ticular step without completing the cycle. In adopting and effectively applying Platt’s steps, hypotheses are systematically disproved and refined, successively moving toward a more complete understanding of 1 Where unattributed, all quotations are from Platt [1]."
+      },
+      {
+        "title": "Testing the Adaptive Significance of Acclimation: A Strong Inference Approach",
+        "year": 1999,
+        "doi": "https://doi.org/10.1093/icb/39.2.323",
+        "id": "https://openalex.org/W2126692736",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1093/icb/39.2.323",
+            "pdf": null,
+            "venue": "American Zoologist"
+          },
+          {
+            "url": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.537.2013",
+            "pdf": null,
+            "venue": null
+          }
+        ],
+        "abstract": "Acclimation is a common phenotypic response to environmental change. Acclimation is often thought to enhance performance and thus to be adaptive. This view has recently been formalized as the “Beneficial Acclimation Hypothesis” and predicts that individuals acclimated to one environment perform better in that environment than do individuals acclimated to a different environment. Although Beneficial Acclimation is appealing and widely supported, recent studies with E. coli and Drosophila have challenged its general validity. Although these challenges could be dismissed as mere exceptions, they encourage a re-evaluation of the adaptive significance of acclimation. Our philosophical approach differs from that of most previous studies of acclimation, in which the prediction derived from a Beneficial Acclimation perspective (e.g., heat tolerance is positively correlated with acclimation temperature) is tested against the null hypothesis (“single hypothesis approach”). Instead, we follow Huey and Berrigan (1996) in advocating a strong inference approach (sensu Platt, 1964), which recognizes that Beneficial Acclimation is actually one of a set of competing hypotheses that make different predictions as to how developmental temperature influences the thermal sensitivity of adults (“developmental acclimation”). Using this perspective, Huey and Berrigan proposed a factorial experimental design (3 developmental by 3 adult temperatures) designed to discriminate among all competing hypotheses. We now derive a formal statistical model (ANOVA with orthogonal polynomial contrasts) for this experimental design and use it to evaluate simultaneously the relative impact of each competing hypothesis. We then apply this model to several case studies (Drosophila, Volvox, Trichogramma), and we review also a recent study with E. coli. The influence of Beneficial Acclimation is supported (albeit often weakly) in most cases. Nevertheless, other hypotheses (especially the Optimal Developmental Temperature Hypothesis) often have a greater impact. Even so, however, Beneficial Acclimation usually predicts relative performance at extreme test temperatures. We conclude that, although rumors of its death are premature, Beneficial Acclimation cannot be viewed as the dominant expectation, at least with regard to developmental temperature acclimation. Moreover, our findings reinforce the view that a strong inference approach provides a more comprehensive portrait of complex biological responses than do single-hypothesis approaches."
+      },
+      {
+        "title": "Strong Inference: rationale or inspiration?",
+        "year": 2006,
+        "doi": "https://doi.org/10.1353/pbm.2006.0022",
+        "id": "https://openalex.org/W2067713015",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1353/pbm.2006.0022",
+            "pdf": null,
+            "venue": "Perspectives in biology and medicine"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16702707",
+            "pdf": null,
+            "venue": "PubMed"
+          },
+          {
+            "url": "https://muse.jhu.edu/article/195996",
+            "pdf": null,
+            "venue": "Project Muse (Johns Hopkins University)"
+          },
+          {
+            "url": "https://escholarship.org/uc/item/88f9r3j5",
+            "pdf": null,
+            "venue": "eScholarship (California Digital Library)"
+          },
+          {
+            "url": "https://escholarship.org/uc/item/88f9r3j5",
+            "pdf": null,
+            "venue": "eScholarship (California Digital Library)"
+          }
+        ],
+        "abstract": "John Platt's article \"Strong Inference\" (1964) suggested a general and effective method of scientific investigation. It describes a disciplined strategy of falsification of multiple, clearly formulated hypotheses that is used more regularly in some scientific fields than in others. Platt urged that strong inference be more widely and more systematically applied, particularly in slower-moving fields of science. The article has influenced integrative biological fields since its publication, ranging from ecology to psychology, and has had a substantial following in some of the social sciences. It has also evoked severe criticism for its idealization of certain fields as exemplars and for its imperfections in historiography and philosophy of science. I argue here that the article was more an inspirational tract than the development of a formal scientific methodology. Although both Platt's critics and his adherents appeared to take the article far too seriously, its influence has transcended its limitations."
+      },
+      {
+        "title": "THE WEAKNESSES OF STRONG INFERENCE",
+        "year": 2001,
+        "doi": null,
+        "id": "https://openalex.org/W1606562985",
+        "locations": [
+          {
+            "url": "http://www.behavior.org/resources/102.pdf",
+            "pdf": null,
+            "venue": "Behavior and philosophy"
+          }
+        ],
+        "abstract": "Platt's 1964 paper Strong Inference (SI), published in Science, has had considerable influence upon the conception of the nature of the scientific method held in both the social and physical sciences. Platt suggests that a four-step method of specifying hypotheses and conducting  experiments that systematically eliminate alternatives has been responsible for progress in the history of the successful sciences and, if adopted, will allow the less successful sciences to make greater progress. This paper criticizes SI on a number of grounds including: 1) no demonstration of the central historical claim, that is, that the more successful sciences actually have utilized this method more frequently than the less successful sciences; 2) poor historiography, in that more faithful explications of some of the historical case studies Platt cites as canonical examples of SI fail to support that SI was actually used in any of these cases; 3) failure to identify other cases of important scientific progress that did not use SI and instead used distinct scientific methods; 4) neglect of the importance and implications of background knowledge used in problem formulation; 5) the impossibility of enumerating a complete set of alternative hypotheses; 6) no acknowledgement of the Quine-Duhem thesis indicating that critical experiments are actually logically inconclusive; 7) the assumption that there is one scientific method; and 8) significant ambiguity regarding exactly how each of the four steps of SI is to be faithfully implemented. Some recommendations regarding a normative scientific method are given."
+      }
+    ]
+  },
+  {
+    "query": "Automating scientific discovery language models symbolic regression",
+    "total": 8102,
+    "results": [
+      {
+        "title": "Interpretable scientific discovery with symbolic regression: a review",
+        "year": 2024,
+        "doi": "https://doi.org/10.1007/s10462-023-10622-0",
+        "id": "https://openalex.org/W4390502602",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1007/s10462-023-10622-0",
+            "pdf": "https://link.springer.com/content/pdf/10.1007/s10462-023-10622-0.pdf",
+            "venue": "Artificial Intelligence Review"
+          },
+          {
+            "url": "http://arxiv.org/abs/2211.10873",
+            "pdf": "https://arxiv.org/pdf/2211.10873",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://figshare.com/articles/journal_contribution/Interpretable_scientific_discovery_with_symbolic_regression_a_review/26317009",
+            "pdf": "https://figshare.com/articles/journal_contribution/Interpretable_scientific_discovery_with_symbolic_regression_a_review/26317009",
+            "venue": "Figshare"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2211.10873",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "Abstract Symbolic regression is emerging as a promising machine learning method for learning succinct underlying interpretable mathematical expressions directly from data. Whereas it has been traditionally tackled with genetic programming, it has recently gained a growing interest in deep learning as a data-driven model discovery tool, achieving significant advances in various application domains ranging from fundamental to applied sciences. In this survey, we present a structured and comprehensive overview of symbolic regression methods, review the adoption of these methods for model discovery in various areas, and assess their effectiveness. We have also grouped state-of-the-art symbolic regression applications in a categorized manner in a living review."
+      },
+      {
+        "title": "Integration of Neural Network-Based Symbolic Regression in Deep Learning for Scientific Discovery",
+        "year": 2020,
+        "doi": "https://doi.org/10.1109/tnnls.2020.3017010",
+        "id": "https://openalex.org/W2996029397",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1109/tnnls.2020.3017010",
+            "pdf": "https://ieeexplore.ieee.org/ielx7/5962385/9525619/09180100.pdf",
+            "venue": "IEEE Transactions on Neural Networks and Learning Systems"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32857704",
+            "pdf": null,
+            "venue": "PubMed"
+          },
+          {
+            "url": "http://arxiv.org/abs/1912.04825",
+            "pdf": "https://arxiv.org/pdf/1912.04825",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "http://export.arxiv.org/pdf/1912.04825",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://hdl.handle.net/1721.1/142227",
+            "pdf": null,
+            "venue": "DSpace@MIT (Massachusetts Institute of Technology)"
+          }
+        ],
+        "abstract": "Symbolic regression is a powerful technique to discover analytic equations that describe data, which can lead to explainable models and the ability to predict unseen data. In contrast, neural networks have achieved amazing levels of accuracy on image recognition and natural language processing tasks, but they are often seen as black-box models that are difficult to interpret and typically extrapolate poorly. In this article, we use a neural network-based architecture for symbolic regression called the equation learner (EQL) network and integrate it with other deep learning architectures such that the whole system can be trained end-to-end through backpropagation. To demonstrate the power of such systems, we study their performance on several substantially different tasks. First, we show that the neural network can perform symbolic regression and learn the form of several functions. Next, we present an MNIST arithmetic task where a convolutional network extracts the digits. Finally, we demonstrate the prediction of dynamical systems where an unknown parameter is extracted through an encoder. We find that the EQL-based architecture can extrapolate quite well outside of the training data set compared with a standard neural network-based architecture, paving the way for deep learning to be applied in scientific exploration and discovery."
+      },
+      {
+        "title": "Neuro-Symbolic Hypothesis Engine: Autonomous Scientific Discovery via Hybrid Large Language Models and Symbolic Regression",
+        "year": 2026,
+        "doi": "https://doi.org/10.5281/zenodo.21992962",
+        "id": "https://openalex.org/W7203681829",
+        "locations": [
+          {
+            "url": "https://doi.org/10.5281/zenodo.21992962",
+            "pdf": null,
+            "venue": "Zenodo (CERN European Organization for Nuclear Research)"
+          },
+          {
+            "url": "https://doi.org/10.5281/zenodo.21992963",
+            "pdf": null,
+            "venue": "Zenodo (CERN European Organization for Nuclear Research)"
+          }
+        ],
+        "abstract": "Extracting governing mathematical laws directly from raw empirical datasets is a fundamental challenge in scientific computing and artificial intelligence. Classical symbolic regression methods suffer from combinatorial search spaces, while pure deep learning approaches lack mathematical interpretability. In this paper, we introduce the Neuro-Symbolic Hypothesis Engine, an autonomous quantitative discovery agent that combines the high-level semantic reasoning of Large Language Models (LLMs) with the speed of deterministic numerical solvers and localized evolutionary search. By leveraging a 6-stage hybrid pipeline—incorporating automated domain literature retrieval, whitelisted Abstract Syntax Tree (AST) safety gating, SciPy non-linear optimization, and local expression tree mutations—the engine discovers robust mathematical formulations across astrophysics, digital signals, and computer graphics. We validate the engine on four real-world scientific datasets, achieving R² > 0.977 in all cases while maintaining computational safety and efficiency."
+      },
+      {
+        "title": "Symbolic Regression: A Pathway to Interpretability Towards Automated Scientific Discovery",
+        "year": 2024,
+        "doi": "https://doi.org/10.1145/3637528.3671464",
+        "id": "https://openalex.org/W4401863738",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1145/3637528.3671464",
+            "pdf": "https://dl.acm.org/doi/pdf/10.1145/3637528.3671464",
+            "venue": "ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)"
+          }
+        ],
+        "abstract": "Symbolic regression is a machine learning technique employed for learning mathematical equations directly from data. Mathematical equations capture both functional and causal relationships in the data. In addition, they are simple, compact, generalizable, and interpretable models, making them the best candidates for i) learning inherently transparent models and ii) boosting scientific discovery. Symbolic regression has received a growing interest since the last decade and is tackled using different approaches in supervised and unsupervised deep learning, thanks to the enormous progress achieved in deep learning in the last twenty years. Symbolic regression remains underestimated in conference coverage as a primary form of interpretable AI and a potential candidate for automating scientific discovery. This tutorial overviews symbolic regression: problem definition, approaches, and key limitations, discusses why physical sciences are beneficial to symbolic regression, and explores possible future directions in this research area."
+      },
+      {
+        "title": "Executable Chain-of-Thought Symbolic Regression with Large Language Models for Automated Physical Discovery",
+        "year": 2026,
+        "doi": "https://doi.org/10.21203/rs.3.rs-11095379/v1",
+        "id": "https://openalex.org/W7221038760",
+        "locations": [
+          {
+            "url": "https://doi.org/10.21203/rs.3.rs-11095379/v1",
+            "pdf": "https://www.researchsquare.com/article/rs-11095379/latest.pdf",
+            "venue": "Research Square"
+          }
+        ],
+        "abstract": "Abstract Symbolic regression (SR) seeks compact analytic laws that explain observations, but modern systems still face a tension between combinatorial search, scientific prior knowledge, and verifiability. Large language models (LLMs) provide strong priors over mathematical structure, yet existing LLM-based SR methods commonly use natural-language reasoning only as an informal proposal mechanism: intermediate statements need not correspond to valid symbolic transformations, and a plausible final equation can survive even when the path used to obtain it is dimensionally inconsistent, symmetry-violating, asymptotically incoherent, or numerically unstable. We introduce \\ours, a verification-carrying framework that operationalizes chain-of-thought as an executable Symbolic Derivation Graph. Each reasoning step is a typed transformation of a candidate expression. Exact obligations, such as syntax and dimensional typing, act as hard admissibility constraints, whereas symmetry, limiting behavior, numerical stability, and residual evidence enter as explicitly identified soft verification signals. A verification-weighted trajectory posterior combines the LLM proposal prior with data fit, minimum-description-length complexity, and process-level evidence. Rather than fitting a fixed dataset only, \\ours can also acquire discriminative probe points at which high-posterior hypotheses disagree, yielding an active falsification loop when an oracle or simulator is available. Across Feynman, SRBench, SRSD, Nguyen, and LLM-SRBench tasks, the evaluation covers exact recovery, out-of-distribution extrapolation, noise robustness, search efficiency, verifier behavior, active probing, ablations, and backbone sensitivity. The resulting output is a compact equation accompanied by an executable derivation trace and machine-checkable verification evidence rather than an unsupported natural-language rationale."
+      }
+    ]
+  },
+  {
+    "query": "From Hypotheses to Data-Driven Hypotheses Discovery",
+    "total": 219528,
+    "results": [
+      {
+        "title": "Data Driven Language Transfer Hypotheses",
+        "year": 2014,
+        "doi": "https://doi.org/10.3115/v1/e14-4033",
+        "id": "https://openalex.org/W2169087896",
+        "locations": [
+          {
+            "url": "https://doi.org/10.3115/v1/e14-4033",
+            "pdf": "https://aclanthology.org/E14-4033.pdf",
+            "venue": "Conference of the European Chapter of the Association for Computational Linguistics"
+          },
+          {
+            "url": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.651.8567",
+            "pdf": null,
+            "venue": null
+          }
+        ],
+        "abstract": "Language transfer, the preferential second language behavior caused by similarities to the speaker's native language, requires considerable expertise to be detected by humans alone.Our goal in this work is to replace expert intervention by data-driven methods wherever possible.We define a computational methodology that produces a concise list of lexicalized syntactic patterns that are controlled for redundancy and ranked by relevancy to language transfer.We demonstrate the ability of our methodology to detect hundreds of such candidate patterns from currently available data sources, and validate the quality of the proposed patterns through classification experiments."
+      },
+      {
+        "title": "Data-driven discovery of physical laws",
+        "year": 1981,
+        "doi": "https://doi.org/10.1016/s0364-0213(81)80025-0",
+        "id": "https://openalex.org/W2093696424",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1016/s0364-0213(81)80025-0",
+            "pdf": null,
+            "venue": "Cognitive Science"
+          },
+          {
+            "url": "https://doi.org/10.1111/j.1551-6708.1981.tb00869.x",
+            "pdf": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1551-6708.1981.tb00869.x",
+            "venue": "Cognitive Science"
+          }
+        ],
+        "abstract": "BACON.3 is a production system that discovers empirical laws. Although it does not attempt to model the human discovery process in detail, it incorporates some general heuristics that can lead to discovery in a number of domains. The main heuristics detect constancies and trends in data, and lead to the formulation of hypotheses and the definition of theoretical terms. Rather than making a hard distinction between data and hypotheses, the program represents information at varying levels of description. The lowest levels correspond to direct observations, while the highest correspond to hypotheses that explain everything so for observed. To take advantage of this representation, BACON.3 has the ability to carry out and relate multiple experiments, collapse hypotheses with identical conditions, ignore differences to let similar concepts be treated as equal, and to discover and ignore irrelevant variables. BACON.3 has shown its generality by rediscovering versions of the ideal gas law, Kepler's third law of planetary motion, Coulomb's law, Ohm's law, and Galileo's laws for the pendulum and constant acceleration."
+      },
+      {
+        "title": "Open Targets Platform: facilitating therapeutic hypotheses building in drug discovery",
+        "year": 2024,
+        "doi": "https://doi.org/10.1093/nar/gkae1128",
+        "id": "https://openalex.org/W4405224584",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1093/nar/gkae1128",
+            "pdf": "https://academic.oup.com/nar/advance-article-pdf/doi/10.1093/nar/gkae1128/60967175/gkae1128.pdf",
+            "venue": "Nucleic Acids Research"
+          },
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/11701534",
+            "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11701534/pdf/gkae1128.pdf",
+            "venue": "PubMed Central"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39657122",
+            "pdf": null,
+            "venue": "PubMed"
+          }
+        ],
+        "abstract": "The Open Targets Platform (https://platform.opentargets.org) is a unique, open-source, publicly-available knowledge base providing data and tooling for systematic drug target identification, annotation, and prioritisation. Since our last report, we have expanded the scope of the Platform through a number of significant enhancements and data updates, with the aim to enable our users to formulate more flexible and impactful therapeutic hypotheses. In this context, we have completely revamped our target-disease associations page with more interactive facets and built-in functionalities to empower users with additional control over their experience using the Platform, and added a new Target Prioritisation view. This enables users to prioritise targets based upon clinical precedence, tractability, doability and safety attributes. We have also implemented a direction of effect assessment for eight sources of target-disease association evidence, showing the effect of genetic variation on the function of a target is associated with risk or protection for a trait to inform on potential mechanisms of modulation suitable for disease treatment. These enhancements and the introduction of new back and front-end technologies to support them have increased the impact and usability of our resource within the drug discovery community."
+      },
+      {
+        "title": "k-FWER Controlling Procedures with Possibly Data-driven Order of Hypotheses",
+        "year": 2008,
+        "doi": null,
+        "id": "https://openalex.org/W2184355841",
+        "locations": [
+          {
+            "url": "https://www.research.unipd.it/handle/11577/2272741",
+            "pdf": null,
+            "venue": null
+          }
+        ],
+        "abstract": "Consider the problem of simultaneously testing s null hypotheses. When s is large, the control of the Familywise Error Rate (the probability of falsely rejecting one or more null hypotheses, FWER) may lead to a procedure that is too stringent. One of the possible solutions is to tolerate more than one false rejection, provided the number of such cases is controlled. Namely, one controls the probability of k or more false rejections, the k-Familywise Error Rate (k-FWER); introduced by Lehmann and Romano (2005). We focus on cases in which the hypotheses are ordered. This ordering is usually driven by the application, as in dose-response or toxicity studies. We show that in such cases improvements to the usual k-FWER controlling procedures can be implemented by using a pseudo-gatekeeping approach in which hypotheses are tested in their natural order and rejected until k raw p-values are above the cut-off. We do not rely on any assumption concerning the dependency structure, and show the p-values can come from a parametric as well as a nonparametric setup. We also show that in the general case the order can be derived by a data-driven criterion which is aimed at increasing power when all variables are deemed to have a similar scale. The data-driven approach can be seen as an extension to k-FWER control of the FWER-controlling procedures proposed by Kropf and Hommel (2004) and Kropf et al. (2004). We also consider and evaluate how the procedures control the false discovery proportion (FDP), defined by the number of false rejections divided by the total number of rejections. An application to a real dataset is shown and discussed. R codes are available from the authors."
+      },
+      {
+        "title": "Whither field hydrology? The need for discovery science and outrageous hydrological hypotheses",
+        "year": 2015,
+        "doi": "https://doi.org/10.1002/2014wr016839",
+        "id": "https://openalex.org/W1922112072",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1002/2014wr016839",
+            "pdf": "https://agupubs.onlinelibrary.wiley.com/doi/pdfdirect/10.1002/2014WR016839",
+            "venue": "Water Resources Research"
+          }
+        ],
+        "abstract": "Abstract Field hydrology is on the decline. Meanwhile, the need for new field‐derived insight into the age, origin and pathway of water in the headwaters, where most runoff is generated, is more needed than ever.Water Resources Research(WRR) has included some of the most influential papers in field‐based runoff process understanding, particularly in the formative years when the knowledge base was developing rapidly. Here we take advantage of this 50th anniversary of the journal to highlight a few of these important field‐based papers and show how field scientists have posed strong and sometimes outrageous hypotheses—approaches so needed in an era of largely model‐only research. We chronicle the decline in field work and note that it is not only the quantity of field work that is diminishing but its character is changing too: from discovery science to data collection for model parameterization. While the latter is a necessary activity, the loss of the former is a major concern if we are to advance the science of watershed hydrology. We outline a vision for field research to seek new fundamental understanding, new mechanistic explanations of how watershed systems work, particularly outside the regions of traditional focus."
+      }
+    ]
+  },
+  {
+    "query": "A Method for Automating Scientific Discovery",
+    "total": 378164,
+    "results": [
+      {
+        "title": "From inductive reasoning to automated scientific discovery: foundations and methods with large language models",
+        "year": 2026,
+        "doi": "https://doi.org/10.32657/10356/216192",
+        "id": "https://openalex.org/W7168182504",
+        "locations": [
+          {
+            "url": "https://doi.org/10.32657/10356/216192",
+            "pdf": null,
+            "venue": null
+          },
+          {
+            "url": "https://hdl.handle.net/10356/216192",
+            "pdf": null,
+            "venue": "DR-NTU (Nanyang Technological University)"
+          }
+        ],
+        "abstract": "This thesis investigates how large language models (LLMs) can be leveraged for scientific discovery, starting from inductive reasoning as a natural entry point. The contributions include, but are not limited to: (1) the first systematic evaluation of LLMs on generative inductive reasoning; (2) the first research showing that LLMs can generate novel, valid scientific hypotheses; (3) the first mathematical framework that decomposes the discovery process into tractable subtasks; and (4) the introduction of fine-grained hypothesis discovery, which requires hypotheses to include complete methodological and experimental details, accompanied by a theoretical framework to empirically assess the upper-bound capabilities of current LLMs in meeting this standard. The thesis spans benchmarking, theoretical development, and task design, linking capabilities to real research workflows. It concludes that LLMs already exhibit useful inductive capacities, principled decomposition makes discovery more automatable, and the proposed theoretical framework exposes current limitations while providing concrete guidance for future research."
+      },
+      {
+        "title": "Automated Abduction in Scientific Discovery",
+        "year": 2007,
+        "doi": "https://doi.org/10.1007/978-3-540-71986-1_5",
+        "id": "https://openalex.org/W1903049858",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1007/978-3-540-71986-1_5",
+            "pdf": null,
+            "venue": "Studies in computational intelligence"
+          },
+          {
+            "url": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.102.5104",
+            "pdf": null,
+            "venue": null
+          },
+          {
+            "url": "https://hdl.handle.net/1983/b2be2ba0-d647-4f4d-96a8-484d1e508e1d",
+            "pdf": null,
+            "venue": "Explore Bristol Research"
+          },
+          {
+            "url": "http://www.cs.bris.ac.uk/Publications/pub_master.jsp?id=2000824",
+            "pdf": null,
+            "venue": "Bristol Research (University of Bristol)"
+          }
+        ],
+        "abstract": ""
+      },
+      {
+        "title": "Automating drug discovery",
+        "year": 2017,
+        "doi": "https://doi.org/10.1038/nrd.2017.232",
+        "id": "https://openalex.org/W2775714759",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1038/nrd.2017.232",
+            "pdf": null,
+            "venue": "Nature Reviews Drug Discovery"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29242609",
+            "pdf": null,
+            "venue": "PubMed"
+          }
+        ],
+        "abstract": ""
+      },
+      {
+        "title": "Automated discovery of scientific concepts: Replicating three recent discoveries in mechanics",
+        "year": 2020,
+        "doi": "https://doi.org/10.1016/j.aei.2020.101080",
+        "id": "https://openalex.org/W3009474032",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1016/j.aei.2020.101080",
+            "pdf": null,
+            "venue": "Advanced Engineering Informatics"
+          }
+        ],
+        "abstract": ""
+      },
+      {
+        "title": "Automated Explanation Selection for Scientific Discovery",
+        "year": 2024,
+        "doi": "https://doi.org/10.48550/arxiv.2407.17454",
+        "id": "https://openalex.org/W7161556617",
+        "locations": [
+          {
+            "url": "http://arxiv.org/abs/2407.17454",
+            "pdf": "https://arxiv.org/pdf/2407.17454",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://publikationen.bibliothek.kit.edu/1000174148",
+            "pdf": "https://publikationen.bibliothek.kit.edu/1000174148/177677076",
+            "venue": "Repository KITopen (Karlsruhe Institute of Technology)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2407.17454",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.5445/ir/1000174148/pub",
+            "pdf": null,
+            "venue": "KITopen"
+          }
+        ],
+        "abstract": "Automated reasoning is a key technology in the young but rapidly growing field of Explainable Artificial Intelligence (XAI). Explanability helps build trust in artificial intelligence systems beyond their mere predictive accuracy and robustness. In this paper, we propose a cycle of scientific discovery that combines machine learning with automated reasoning for the generation and the selection of explanations. We present a taxonomy of explanation selection problems that draws on insights from sociology and cognitive science. These selection criteria subsume existing notions and extend them with new properties."
+      }
+    ]
+  },
+  {
+    "query": "AI co-scientist",
+    "total": 215499,
+    "results": [
+      {
+        "title": "AI co-scientists for drug development",
+        "year": 2025,
+        "doi": "https://doi.org/10.5281/zenodo.17583740",
+        "id": "https://openalex.org/W7105028833",
+        "locations": [
+          {
+            "url": "https://doi.org/10.5281/zenodo.17583740",
+            "pdf": null,
+            "venue": "Zenodo (CERN European Organization for Nuclear Research)"
+          },
+          {
+            "url": "https://doi.org/10.5281/zenodo.17583741",
+            "pdf": null,
+            "venue": "Zenodo (CERN European Organization for Nuclear Research)"
+          },
+          {
+            "url": "https://doi.org/10.5281/zenodo.17597011",
+            "pdf": null,
+            "venue": "Zenodo (CERN European Organization for Nuclear Research)"
+          }
+        ],
+        "abstract": "AI Co-Scientists in Drug Development AI is changing how we do science — and it’s opening new frontiers in drug discovery. We’re often asked what “AI co-scientists” really are, how they differ, and how they can fit into the fast-moving world of pharma R&D. Here’s how we’re turning that vision into reality — bringing AI co-scientists from concept to impact."
+      },
+      {
+        "title": "CGIAR AI Co-Scientist Framework",
+        "year": 2025,
+        "doi": null,
+        "id": "https://openalex.org/W7198335154",
+        "locations": [
+          {
+            "url": "https://hdl.handle.net/10568/181257",
+            "pdf": null,
+            "venue": "CGSPace A Repository of Agricultural Research Outputs (Consultative Group for International Agricultural Research)"
+          }
+        ],
+        "abstract": "The AI Co-Scientist Framework is a comprehensive initiative aimed at integrating advanced artificial intelligence (AI) within CGIAR's research processes to enhance scientific capabilities. The framework aligns with CGIAR Strategy 2030 and addresses the complexity and scale of food, land, and water (FLW) systems research. It emphasizes the augmentation of human researchers through AI, supporting hypothesis generation, evidence synthesis, and scenario exploration. The framework establishes shared AI capabilities, robust governance, and a portfolio-based operating model. It includes a phased implementation roadmap from 2026 onward, focusing on foundational capabilities, expansion, and institutionalization. The framework aims to accelerate scientific discovery, improve research quality, and ensure responsible and ethical AI integration, ultimately contributing to CGIAR's mission of transforming FLW systems in a climate crisis."
+      },
+      {
+        "title": "The AI co-scientist is here",
+        "year": 2026,
+        "doi": "https://doi.org/10.1038/s41591-026-04275-z",
+        "id": "https://openalex.org/W7137181438",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1038/s41591-026-04275-z",
+            "pdf": null,
+            "venue": "Nature Medicine"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41840237",
+            "pdf": null,
+            "venue": "PubMed"
+          }
+        ],
+        "abstract": ""
+      },
+      {
+        "title": "Engineering AI co-scientists for statistical genetics applications",
+        "year": 2026,
+        "doi": "https://doi.org/10.1038/s41588-025-02487-6",
+        "id": "https://openalex.org/W7124997155",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1038/s41588-025-02487-6",
+            "pdf": null,
+            "venue": "Nature Genetics"
+          },
+          {
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13561580/",
+            "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13561580/pdf/nihms-2206399.pdf",
+            "venue": "PubMed Central"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41559217",
+            "pdf": null,
+            "venue": "PubMed"
+          }
+        ],
+        "abstract": ""
+      },
+      {
+        "title": "Training AI Co-Scientists Using Rubric Rewards",
+        "year": 2025,
+        "doi": "https://doi.org/10.48550/arxiv.2512.23707",
+        "id": "https://openalex.org/W7117738325",
+        "locations": [
+          {
+            "url": "http://arxiv.org/abs/2512.23707",
+            "pdf": "https://arxiv.org/pdf/2512.23707",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2512.23707",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "AI co-scientists are emerging as a tool to assist human researchers in achieving their research goals. A crucial feature of these AI co-scientists is the ability to generate a research plan given a set of aims and constraints. The plan may be used by researchers for brainstorming, or may even be implemented after further refinement. However, language models currently struggle to generate research plans that follow all constraints and implicit requirements. In this work, we study how to leverage the vast corpus of existing research papers to train language models that generate better research plans. We build a scalable, diverse training corpus by automatically extracting research goals and goal-specific grading rubrics from papers across several domains. We then train models for research plan generation via reinforcement learning with self-grading. A frozen copy of the initial policy acts as the grader during training, with the rubrics creating a generator-verifier gap that enables improvements without external human supervision. To validate this approach, we conduct a study with human experts for machine learning research goals, spanning 225 hours. The experts prefer plans generated by our finetuned Qwen3-30B-A3B model over the initial model for 70% of research goals, and approve 84% of the automatically extracted goal-specific grading rubrics. To assess generality, we also extend our approach to research goals from medical papers, and new arXiv preprints, evaluating with a jury of frontier models. Our finetuning yields 12-22% relative improvements and significant cross-domain generalization, proving effective even in problem settings like medical research where execution feedback is infeasible. Together, these findings demonstrate the potential of a scalable, automated training recipe as a step towards improving general AI co-scientists."
+      }
+    ]
+  },
+  {
+    "query": "The automation of science King",
+    "total": 89453,
+    "results": [
+      {
+        "title": "Automation in the Life Science Research Laboratory",
+        "year": 2020,
+        "doi": "https://doi.org/10.3389/fbioe.2020.571777",
+        "id": "https://openalex.org/W3101157441",
+        "locations": [
+          {
+            "url": "https://doi.org/10.3389/fbioe.2020.571777",
+            "pdf": "https://www.frontiersin.org/articles/10.3389/fbioe.2020.571777/pdf",
+            "venue": "Frontiers in Bioengineering and Biotechnology"
+          },
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/7691657",
+            "pdf": null,
+            "venue": "PubMed Central"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33282848",
+            "pdf": null,
+            "venue": "PubMed"
+          },
+          {
+            "url": "https://www.research.ed.ac.uk/en/publications/f207735a-3616-465d-8736-4f497774c5e8",
+            "pdf": "https://www.research.ed.ac.uk/files/177368167/AcceptedMS.pdf",
+            "venue": "Edinburgh Research Explorer (University of Edinburgh)"
+          },
+          {
+            "url": "https://doaj.org/article/04f16dbf5e0842cdb445d0ef7e72d435",
+            "pdf": null,
+            "venue": "DOAJ (DOAJ: Directory of Open Access Journals)"
+          }
+        ],
+        "abstract": "Protocols in the academic life science laboratory are heavily reliant on the manual manipulation of tools, reagents and instruments by a host of research staff and students. In contrast to industrial and clinical laboratory environments, the usage of automation to augment or replace manual tasks is limited. Causes of this 'automation gap' are unique to academic research, with rigid short-term funding structures, high levels of protocol variability and a benevolent culture of investment in people over equipment. Automation, however, can bestow multiple benefits through improvements in reproducibility, researcher efficiency, clinical translation, and safety. Less immediately obvious are the accompanying limitations, including obsolescence and an inhibitory effect on the freedom to innovate. Growing the range of automation options suitable for research laboratories will require more flexible, modular and cheaper designs. Academic and commercial developers of automation will increasingly need to design with an environmental awareness and an understanding that large high-tech robotic solutions may not be appropriate for laboratories with constrained financial and spatial resources. To fully exploit the potential of laboratory automation, future generations of scientists will require both engineering and biology skills. Automation in the research laboratory is likely to be an increasingly critical component of future research programs and will continue the trend of combining engineering and science expertise together to answer novel research questions."
+      },
+      {
+        "title": "Non-epistemic Values and the Automation of Science",
+        "year": 2025,
+        "doi": "https://doi.org/10.1007/s10838-025-09736-6",
+        "id": "https://openalex.org/W4413956805",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1007/s10838-025-09736-6",
+            "pdf": null,
+            "venue": "Journal for General Philosophy of Science"
+          },
+          {
+            "url": "https://hdl.handle.net/11566/353454",
+            "pdf": null,
+            "venue": "Università Politecnica delle Marche (Università Politecnica delle Marche)"
+          },
+          {
+            "url": "https://philarchive.org/rec/SIKNVA",
+            "pdf": null,
+            "venue": "PhilPapers (PhilPapers Foundation)"
+          },
+          {
+            "url": "https://philpapers.org/rec/SIKNVA",
+            "pdf": null,
+            "venue": "PhilPapers (PhilPapers Foundation)"
+          }
+        ],
+        "abstract": ""
+      },
+      {
+        "title": "Automation and New Tasks: How Technology Displaces and Reinstates Labor",
+        "year": 2019,
+        "doi": "https://doi.org/10.1257/jep.33.2.3",
+        "id": "https://openalex.org/W2922903482",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1257/jep.33.2.3",
+            "pdf": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.33.2.3",
+            "venue": "The Journal of Economic Perspectives"
+          },
+          {
+            "url": "https://www.aeaweb.org/doi/10.1257/jep.33.2.3",
+            "pdf": null,
+            "venue": "RePEc: Research Papers in Economics"
+          },
+          {
+            "url": "https://hdl.handle.net/1721.1/128829",
+            "pdf": null,
+            "venue": "DSpace@MIT (Massachusetts Institute of Technology)"
+          }
+        ],
+        "abstract": "We present a framework for understanding the effects of automation and other types of technological changes on labor demand, and use it to interpret changes in US employment over the recent past. At the center of our framework is the allocation of tasks to capital and labor—the task content of production. Automation, which enables capital to replace labor in tasks it was previously engaged in, shifts the task content of production against labor because of a displacement effect. As a result, automation always reduces the labor share in value added and may reduce labor demand even as it raises productivity. The effects of automation are counterbalanced by the creation of new tasks in which labor has a comparative advantage. The introduction of new tasks changes the task content of production in favor of labor because of a reinstatement effect, and always raises the labor share and labor demand. We show how the role of changes in the task content of production—due to automation and new tasks—can be inferred from industry-level data. Our empirical decomposition suggests that the slower growth of employment over the last three decades is accounted for by an acceleration in the displacement effect, especially in manufacturing, a weaker reinstatement effect, and slower growth of productivity than in previous decades."
+      },
+      {
+        "title": "Post-automation",
+        "year": 2021,
+        "doi": "https://doi.org/10.1016/j.futures.2021.102778",
+        "id": "https://openalex.org/W4210676461",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1016/j.futures.2021.102778",
+            "pdf": "https://www.sciencedirect.com/science/article/pii/S0016328721000872/pdf",
+            "venue": "Futures"
+          },
+          {
+            "url": "http://sro.sussex.ac.uk/id/eprint/99858/1/Smith%20Fressoli%202021%20post-automation.pdf",
+            "pdf": "http://sro.sussex.ac.uk/id/eprint/99858/1/Smith%20Fressoli%202021%20post-automation.pdf",
+            "venue": "Sussex Research Online (University of Sussex)"
+          }
+        ],
+        "abstract": "Tremendous research, policy, and investment is directed towards a new wave of automation in modern societies. Most notable within discourse for the Fourth Industrial Revolution, but also in radical ideas for Fully Automated Luxury Communism, automation appears essential to the future. Advocates claim it will renew capital accumulation, boost labour productivity, and extend managerial control in sustainable systems of production and consumption. Noting criticism about future essentialism in this automation advocacy, this essay will turn to innovations in marginal industrious spaces within industrial societies. Here people are hacking, subverting and appropriating ostensibly automating technologies for purposes of creativity, collaboration, and care. Social capabilities in post-automation are being cultivated. Perhaps greater attention to the politics implied in post-automation can help open our futures to more democratic deliberation?"
+      },
+      {
+        "title": "Lab automation and robotics: Automation on the move",
+        "year": 2003,
+        "doi": "https://doi.org/10.1038/421661a",
+        "id": "https://openalex.org/W2046474663",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1038/421661a",
+            "pdf": null,
+            "venue": "Nature"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12571603",
+            "pdf": null,
+            "venue": "PubMed"
+          },
+          {
+            "url": "https://www.nature.com/articles/421661a",
+            "pdf": null,
+            "venue": "RePEc: Research Papers in Economics"
+          }
+        ],
+        "abstract": ""
+      }
+    ]
+  },
+  {
+    "query": "FunSearch mathematical discoveries",
+    "total": 611,
+    "results": [
+      {
+        "title": "Anatomical Review: Mathematical Discovery -AI & Quantum Perspectives KSC an Anatomical Review of Mathematical Discovery",
+        "year": 2026,
+        "doi": "https://doi.org/10.5281/zenodo.22991236",
+        "id": "https://openalex.org/W7214519044",
+        "locations": [
+          {
+            "url": "https://doi.org/10.5281/zenodo.22991236",
+            "pdf": null,
+            "venue": "Zenodo (CERN European Organization for Nuclear Research)"
+          },
+          {
+            "url": "https://doi.org/10.5281/zenodo.22991237",
+            "pdf": null,
+            "venue": "Zenodo (CERN European Organization for Nuclear Research)"
+          }
+        ],
+        "abstract": "This anatomical review dissects Mathematical Discovery (Color Edition), a heuristic textbook designed to immerse students in the authentic process of mathematical creation. Through close analysis of its four core chapters—Tilings (squaring the rectangle), Pick's Rule, Nim, and Links—the review evaluates pedagogical strengths, conceptual limitations, and profound resonances with contemporary research in AI-driven discovery systems and quantum information science. The work is situated within the traditions of Pólya and Lakatos, contrasted with modern LLM-based explorers (FunSearch, AlphaProof), and examined for its epistemological commitments to fallibilism and constructivism. Potential extensions as Volume I of a new series on computational and quantum heuristics are proposed, with targeted research agendas for hybrid neuro-symbolic discovery agents and topological methods in AI interpretability. Also available on Academia.edu: https://www.academia.edu/attachments/133164887/download_file?s=portfolio"
+      },
+      {
+        "title": "FunBO: Discovering Acquisition Functions for Bayesian Optimization with FunSearch",
+        "year": 2024,
+        "doi": "https://doi.org/10.48550/arxiv.2406.04824",
+        "id": "https://openalex.org/W4399510555",
+        "locations": [
+          {
+            "url": "http://arxiv.org/abs/2406.04824",
+            "pdf": "https://arxiv.org/pdf/2406.04824",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2406.04824",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "The sample efficiency of Bayesian optimization algorithms depends on carefully crafted acquisition functions (AFs) guiding the sequential collection of function evaluations. The best-performing AF can vary significantly across optimization problems, often requiring ad-hoc and problem-specific choices. This work tackles the challenge of designing novel AFs that perform well across a variety of experimental settings. Based on FunSearch, a recent work using Large Language Models (LLMs) for discovery in mathematical sciences, we propose FunBO, an LLM-based method that can be used to learn new AFs written in computer code by leveraging access to a limited number of evaluations for a set of objective functions. We provide the analytic expression of all discovered AFs and evaluate them on various global optimization benchmarks and hyperparameter optimization tasks. We show how FunBO identifies AFs that generalize well in and out of the training distribution of functions, thus outperforming established general-purpose AFs and achieving competitive performance against AFs that are customized to specific function types and are learned via transfer-learning algorithms."
+      },
+      {
+        "title": "Large Language Models for Mathematical Discovery: Generation, Verification, and Knowledge Provenance",
+        "year": 2026,
+        "doi": "https://doi.org/10.54254/2753-8818/2026.pu38278",
+        "id": "https://openalex.org/W7223912593",
+        "locations": [
+          {
+            "url": "https://doi.org/10.54254/2753-8818/2026.pu38278",
+            "pdf": "https://tns.ewapub.com/article/view/38278.pdf",
+            "venue": "Theoretical and Natural Science"
+          }
+        ],
+        "abstract": "Formal mathematics has a data problem, and large language models have become one of the tools applied to it. LeanConjecturer mined 40 seed files from Mathlib and produced 12,289 candidate statements, of which 3,776 resisted the automated tactic used as a filter. AlphaGeometry solved 25 of 30 olympiad geometry problems by letting a language model propose auxiliary constructions whenever symbolic deduction stalled. FunSearch improved on earlier results for the cap set problem by having an evaluator score programs written by a model. Evidence of this kind still supports a narrower claim than mathematical discovery. Five studies are compared in this review: LeanConjecturer, the Conjecturing-Proving Loop, AlphaGeometry, FunSearch, and Unlearning as Ablation. Using literature analysis and comparative case analysis, task objectives, generation mechanisms, verification procedures, and evidential limits are examined side by side. Two findings stand out. External verification is what makes candidate selection and iterative repair function in each system, and each system demonstrates a different slice of the work: conjecture supply, proof repair, geometric construction, program optimization, and, in the case of Unlearning as Ablation, a proposal for auditing knowledge provenance. Correctness, novelty, and independence from previously acquired target knowledge remain three separate questions that require three separate kinds of evidence. A more reliable evaluation framework would combine auditable knowledge boundaries, dependency checking, and expert assessment of mathematical significance."
+      },
+      {
+        "title": "Generative modeling for mathematical discovery",
+        "year": 2026,
+        "doi": "https://doi.org/10.4310/atmp.260412165352",
+        "id": "https://openalex.org/W7153881600",
+        "locations": [
+          {
+            "url": "https://doi.org/10.4310/atmp.260412165352",
+            "pdf": null,
+            "venue": "Advances in Theoretical and Mathematical Physics"
+          },
+          {
+            "url": "http://arxiv.org/abs/2503.11061",
+            "pdf": "https://arxiv.org/pdf/2503.11061",
+            "venue": "arXiv (Cornell University)"
+          },
+          {
+            "url": "https://doi.org/10.48550/arxiv.2503.11061",
+            "pdf": null,
+            "venue": "arXiv (Cornell University)"
+          }
+        ],
+        "abstract": "We present a new implementation of the LLM-driven genetic algorithm funsearch, whose aim is to generate examples of interest to mathematicians and which has already had some success in problems in extremal combinatorics. Our implementation is designed to be useful in practice for working mathematicians; it does not require expertise in machine learning or access to high-performance computing resources. Applying funsearch to a new problem involves modifying a small segment of Python code and selecting a large language model (LLM) from one of many third-party providers. We benchmarked our implementation on three different problems, obtaining metrics that may inform applications of funsearch to new problems. Our results demonstrate that funsearch successfully learns in a variety of combinatorial and number-theoretic settings, and in some contexts learns principles that generalize beyond the problem originally trained on."
+      },
+      {
+        "title": "Mathematical discoveries from program search with large language models",
+        "year": 2023,
+        "doi": "https://doi.org/10.1038/s41586-023-06924-6",
+        "id": "https://openalex.org/W4389727268",
+        "locations": [
+          {
+            "url": "https://doi.org/10.1038/s41586-023-06924-6",
+            "pdf": "https://www.nature.com/articles/s41586-023-06924-6_reference.pdf",
+            "venue": "Nature"
+          },
+          {
+            "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/10794145",
+            "pdf": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10794145/pdf/41586_2023_Article_6924.pdf",
+            "venue": "PubMed Central"
+          },
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38096900",
+            "pdf": null,
+            "venue": "PubMed"
+          },
+          {
+            "url": "https://hal.science/hal-04682926/document",
+            "pdf": "https://hal.science/hal-04682926v1/document",
+            "venue": "HAL"
+          },
+          {
+            "url": "https://www.nature.com/articles/s41586-023-06924-6",
+            "pdf": null,
+            "venue": "RePEc: Research Papers in Economics"
+          }
+        ],
+        "abstract": "Abstract Large language models (LLMs) have demonstrated tremendous capabilities in solving complex tasks, from quantitative reasoning to understanding natural language. However, LLMs sometimes suffer from confabulations (or hallucinations), which can result in them making plausible but incorrect statements 1,2 . This hinders the use of current large models in scientific discovery. Here we introduce FunSearch (short for searching in the function space), an evolutionary procedure based on pairing a pretrained LLM with a systematic evaluator. We demonstrate the effectiveness of this approach to surpass the best-known results in important problems, pushing the boundary of existing LLM-based approaches 3 . Applying FunSearch to a central problem in extremal combinatorics—the cap set problem—we discover new constructions of large cap sets going beyond the best-known ones, both in finite dimensional and asymptotic cases. This shows that it is possible to make discoveries for established open problems using LLMs. We showcase the generality of FunSearch by applying it to an algorithmic problem, online bin packing, finding new heuristics that improve on widely used baselines. In contrast to most computer search approaches, FunSearch searches for programs that describe how to solve a problem, rather than what the solution is. Beyond being an effective and scalable strategy, discovered programs tend to be more interpretable than raw solutions, enabling feedback loops between domain experts and FunSearch, and the deployment of such programs in real-world applications."
+      }
+    ]
+  }
+]

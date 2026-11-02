@@ -1,0 +1,26 @@
+{
+  "time_ns": 1793460210647658809,
+  "body": {
+    "id": "resp_093867b21b400ec3016ae607efbb5c81979786dc71e9e68afd",
+    "object": "chat.completion",
+    "created": 1793460210,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"rationale\":\"The witness suggests that approximately matched x with u=0 can have different drift after different pulse durations. The candidate memory model represents this with z0 driven by u and decaying at rate p0; the current-state model predicts drift determined only by x and u. Use opposite-sign, unequal-duration pulses, then return both inputs to zero so residual history can be compared at a later common time.\",\"hypotheses\":[\"initial\",\"r0_b0\"],\"claim_under_test\":\"At approximately matched x and u=0, drift depends on the preceding input history in a manner consistent with the fitted decaying input-trace state, rather than only on current x and u.\",\"expected_separation\":\"If the trajectories reach sufficiently similar x at the comparison time, the current-state model predicts similar subsequent slopes. The memory model predicts different slopes when the residual z0 values differ; the sign and magnitude depend on the fitted contribution of z0 and the histories.\",\"comparison_time\":8.0,\"matching_tolerance_x\":0.04,\"actions\":[{\"points\":[[0,0],[0.5,1.0],[2.5,0]]},{\"points\":[[0,0],[0.5,-1.0],[1.5,0]]}],\"failure_of_design\":\"The chosen histories may not yield x values within the matching tolerance at 8 seconds, or their residual memory states may be too similar for a resolvable slope difference. Opposite-sign histories can also leave x on opposite sides of zero, making a useful matched-state comparison unlikely.\"}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3826,
+      "completion_tokens": 325,
+      "total_tokens": 4151
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.978722056373954
+}

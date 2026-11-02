@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431228949814276,
+  "http_status": 200,
+  "body": {
+    "id": "resp_02e033717ab62a19016ae596baa1fc8193a8fac3c3b21dc1f9",
+    "object": "chat.completion",
+    "created": 1793431228,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest trajectory-level CV error, but residual lag-1 correlation remains substantial. Alternating input probes history dependence where plausible models disagree most after PRBS.\",\"prediction\":\"After matching current input and output, alternating histories will produce different responses; the slow-memory model predicts gradual relaxation rather than abrupt recovery.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2967,
+      "completion_tokens": 193,
+      "total_tokens": 3160,
+      "completion_tokens_details": {
+        "reasoning_tokens": 106
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.9907237328588963
+}

@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793432149001059409,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "It has the lowest leave-trajectory-out NMSE (0.00118), low residual lag correlation, and beats more complex alternatives; observed responses persist and relax after input changes.",
+    "prediction": "After input returns to zero, responses will decay smoothly, with their trajectory depending on accumulated prior input.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Responses persist after input changes and relax over time, consistent with finite-relaxation storage.",
+      "condition_to_check": "At matched current input and visible state, no history-dependent response would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"It has the lowest leave-trajectory-out NMSE (0.00118), low residual lag correlation, and beats more complex alternatives; observed responses persist and relax after input changes.\",\"prediction\":\"After input returns to zero, responses will decay smoothly, with their trajectory depending on accumulated prior input.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Responses persist after input changes and relax over time, consistent with finite-relaxation storage.\",\"condition_to_check\":\"At matched current input and visible state, no history-dependent response would weaken this relation.\"}}",
+    "input_tokens": 3739,
+    "output_tokens": 189,
+    "batch_elapsed_seconds": 3.0134864524006844,
+    "amortized_seconds": 3.0134864524006844,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3739,
+      "completion_tokens": 189,
+      "total_tokens": 3928,
+      "completion_tokens_details": {
+        "reasoning_tokens": 57
+      }
+    },
+    "api_response_id": "resp_076d4d9ff2e6a662016ae59a51d2c08194a5ef6e1378f55481",
+    "wire_record": "wire/eval/0477_c5375ca434ea4327b7ab723a18df6f2e"
+  }
+}

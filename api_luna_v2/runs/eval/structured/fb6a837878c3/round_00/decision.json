@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431502097372566,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "memory_slow has the lowest trajectory-level CV NMSE (0.0014), far below state (0.0385), while state residuals remain strongly correlated. PRBS distinguishes plausible memory timescales.",
+    "prediction": "Under PRBS, the response will retain a smooth contribution from earlier inputs after switches, rather than tracking only the current input and state.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated history may predict the response beyond current input and visible state, consistent with finite-relaxation storage.",
+      "condition_to_check": "After controlling current input and state, test whether past inputs still predict PRBS responses; no residual predictive effect would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest trajectory-level CV NMSE (0.0014), far below state (0.0385), while state residuals remain strongly correlated. PRBS distinguishes plausible memory timescales.\",\"prediction\":\"Under PRBS, the response will retain a smooth contribution from earlier inputs after switches, rather than tracking only the current input and state.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated history may predict the response beyond current input and visible state, consistent with finite-relaxation storage.\",\"condition_to_check\":\"After controlling current input and state, test whether past inputs still predict PRBS responses; no residual predictive effect would weaken this relation.\"}}",
+    "input_tokens": 2807,
+    "output_tokens": 300,
+    "batch_elapsed_seconds": 4.099668216891587,
+    "amortized_seconds": 4.099668216891587,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2807,
+      "completion_tokens": 300,
+      "total_tokens": 3107,
+      "completion_tokens_details": {
+        "reasoning_tokens": 141
+      }
+    },
+    "api_response_id": "resp_029b578002b233fe016ae597ca9eb8819799c62cc1cace2354",
+    "wire_record": "wire/eval/0118_2c2698c37f7b44109fcedb21701cd1c3"
+  }
+}

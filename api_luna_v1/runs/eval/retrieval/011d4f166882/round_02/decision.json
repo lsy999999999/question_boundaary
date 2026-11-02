@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793430170116449209,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "double_pulse",
+    "reason": "Memory_multiscale has the best trajectory-held-out NMSE, but residual lag correlation remains substantial. A second pulse after recovery can test whether accumulated history predicts the response beyond the current input.",
+    "prediction": "The second pulse will produce a transient different from the first because the system retains input-history effects.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"double_pulse\",\"reason\":\"Memory_multiscale has the best trajectory-held-out NMSE, but residual lag correlation remains substantial. A second pulse after recovery can test whether accumulated history predicts the response beyond the current input.\",\"prediction\":\"The second pulse will produce a transient different from the first because the system retains input-history effects.\",\"accept\":false}",
+    "input_tokens": 3154,
+    "output_tokens": 248,
+    "batch_elapsed_seconds": 3.328577839769423,
+    "amortized_seconds": 3.328577839769423,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3154,
+      "completion_tokens": 248,
+      "total_tokens": 3402,
+      "completion_tokens_details": {
+        "reasoning_tokens": 163
+      }
+    },
+    "api_response_id": "resp_0ff8f3fb4417f4eb016ae5929780a08193b9f674fa16563335",
+    "wire_record": "wire/eval/0254_3ccd68cf7e6d4b34adde6ba0ba5db909"
+  }
+}

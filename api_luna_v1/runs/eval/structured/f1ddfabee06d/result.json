@@ -1,0 +1,84 @@
+{
+  "task_id": "f1ddfabee06d",
+  "split": "eval",
+  "family": "saturated_memory",
+  "seed": 33,
+  "method": "structured",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_slow",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0021692843408525953,
+    "coefficients": [
+      -8.29e-05,
+      -0.5975397,
+      0.9643887,
+      1.34601,
+      -1.5306522,
+      -0.0688448,
+      -1.1955055,
+      0.0147499,
+      1.3548096
+    ]
+  },
+  "test": {
+    "test_nmse": 0.0014484975303960326,
+    "test_mse": 0.0002144193905133149,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 4.075052557212334e-05,
+        "nmse": 0.0005686025606321399
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.0009226798338078266,
+        "nmse": 0.002958991042838498
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 8.324196412833215e-05,
+        "nmse": 0.002724776437822116
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 5.0899635359020334e-05,
+        "nmse": 0.000622709599654227
+      },
+      {
+        "action": "test_prbs",
+        "mse": 4.047580981102448e-05,
+        "nmse": 0.0005028579046500076
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 0.00014846857440156225,
+        "nmse": 0.0013130476367792078
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": false,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 13215,
+  "output_tokens": 970,
+  "generation_seconds_amortized": 16.143792529590428,
+  "elapsed_wall_seconds": 586.2086255550385,
+  "selected_actions": [
+    "alternating",
+    "prbs",
+    "double_pulse"
+  ],
+  "selected_representations": [
+    "memory_slow",
+    "memory_slow",
+    "saturating_memory",
+    "memory_slow"
+  ],
+  "peak_gpu_allocated_gb": 0.0,
+  "peak_process_ram_gb": 0.08880615234375,
+  "inference_backend": "third_party_api",
+  "evaluation_after_commit_ns": 1793430446434512161
+}

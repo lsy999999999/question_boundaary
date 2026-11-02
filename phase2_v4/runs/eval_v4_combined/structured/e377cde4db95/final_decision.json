@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793424080278078745,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "alternating",
+    "reason": "Alternating inputs test persistent memory across positive and negative pulses.",
+    "prediction": "Response will show persistent memory effects, decaying slower than state model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Persistent response indicates storage of past inputs.",
+      "condition_to_check": "Decay rate post-pulse should be visibly slower than state model."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"alternating\",\n  \"reason\": \"Alternating inputs test persistent memory across positive and negative pulses.\",\n  \"prediction\": \"Response will show persistent memory effects, decaying slower than state model.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Persistent response indicates storage of past inputs.\",\n    \"condition_to_check\": \"Decay rate post-pulse should be visibly slower than state model.\"\n  }\n}",
+    "input_tokens": 3936,
+    "output_tokens": 111,
+    "batch_elapsed_seconds": 2.7425116216763854,
+    "amortized_seconds": 2.7425116216763854,
+    "peak_gpu_allocated_gb": 14.989767074584961,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

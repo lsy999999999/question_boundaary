@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793429901640394318,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Slow-memory has the lowest trajectory-level CV error, while high residual autocorrelation shows the state-only model misses history dependence. PRBS best probes history across varied input switches.",
+    "prediction": "After matched current inputs, predicted output will depend on prior input history, with slow recovery following sustained excitation.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow-memory has the lowest trajectory-level CV error, while high residual autocorrelation shows the state-only model misses history dependence. PRBS best probes history across varied input switches.\",\"prediction\":\"After matched current inputs, predicted output will depend on prior input history, with slow recovery following sustained excitation.\",\"accept\":false}",
+    "input_tokens": 2258,
+    "output_tokens": 79,
+    "batch_elapsed_seconds": 2.2276045866310596,
+    "amortized_seconds": 2.2276045866310596,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2258,
+      "completion_tokens": 79,
+      "total_tokens": 2337
+    },
+    "api_response_id": "resp_075560116d640c4f016ae5918c2f4081969af8e089a7d1b230",
+    "wire_record": "wire/eval/0101_d5ee2f0afcfb4e8cb0e71013ec4d9ba2"
+  }
+}

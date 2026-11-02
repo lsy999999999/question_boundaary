@@ -1,0 +1,51 @@
+{
+  "spec": {
+    "parameters": [
+      {
+        "name": "p0",
+        "lower": 0.05,
+        "initial": 0.8,
+        "upper": 3.0
+      }
+    ],
+    "states": [
+      {
+        "name": "z0",
+        "meaning": "Exponentially filtered history of the observed state x, initialized to zero; unlike the parent state, it is not directly driven by u.",
+        "rate": "x-p0*z0"
+      }
+    ],
+    "terms": [
+      "1",
+      "x",
+      "u",
+      "z0"
+    ]
+  },
+  "fit": {
+    "parameters": [
+      0.06132984301302726
+    ],
+    "coefficients": [
+      -0.012685179250543265,
+      -0.3203117068148021,
+      0.7717078127722385,
+      0.03662547832179582
+    ],
+    "solver": {
+      "success": true,
+      "nfev": 12,
+      "message": "`ftol` termination condition is satisfied."
+    },
+    "derivative_mse": 0.0030970514590412243
+  },
+  "trajectory_cv_nmse": 1.9911044932215494,
+  "fold_nmse": [
+    5.089636690930625,
+    0.6629380248132073,
+    0.3823006879934599,
+    0.6300086240117114,
+    3.190638438358742
+  ],
+  "complexity": 22
+}

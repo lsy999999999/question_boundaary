@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423789851184446,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "positive_pulse",
+    "reason": "Multiscale memory shows best cross-validation; test pulse response.",
+    "prediction": "Positive pulse should elicit a delayed peak followed by decay.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Storage should manifest as a delayed peak post-pulse.",
+      "condition_to_check": "No significant change if pulse is absent."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_multiscale\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Multiscale memory shows best cross-validation; test pulse response.\",\n  \"prediction\": \"Positive pulse should elicit a delayed peak followed by decay.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Storage should manifest as a delayed peak post-pulse.\",\n    \"condition_to_check\": \"No significant change if pulse is absent.\"\n  }\n}",
+    "input_tokens": 3191,
+    "output_tokens": 109,
+    "batch_elapsed_seconds": 2.92674919962883,
+    "amortized_seconds": 2.92674919962883,
+    "peak_gpu_allocated_gb": 14.834737300872803,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

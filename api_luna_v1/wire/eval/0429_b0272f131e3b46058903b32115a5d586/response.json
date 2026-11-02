@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430546525587215,
+  "http_status": 200,
+  "body": {
+    "id": "resp_06060edc8f26e900016ae5940fbc1481939525281337806c13",
+    "object": "chat.completion",
+    "created": 1793430546,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"memory_slow has the lowest trajectory-level validation error; no alternative improves it, though residual autocorrelation and higher PRBS error leave uncertainty under rapid switching.\",\"prediction\":\"After input switches, output will retain a smooth, decaying dependence on prior input rather than respond only to current input.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Lingering output after input returns to zero is consistent with a leaky stored influence of past input.\",\"condition_to_check\":\"The relation is weakened if prior input adds no predictive value after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3311,
+      "completion_tokens": 273,
+      "total_tokens": 3584,
+      "completion_tokens_details": {
+        "reasoning_tokens": 138
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.5383562725037336
+}

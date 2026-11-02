@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423915172453551,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "negative_pulse",
+    "reason": "Memory_slow fits well and generalizes across actions.",
+    "prediction": "Negative pulse will cause a delayed decrease in state, similar to positive pulse but in reverse.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "State decreases after input pulse due to accumulated past influence.",
+      "condition_to_check": "No significant change in state during pulse if no storage."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"negative_pulse\",\n  \"reason\": \"Memory_slow fits well and generalizes across actions.\",\n  \"prediction\": \"Negative pulse will cause a delayed decrease in state, similar to positive pulse but in reverse.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"State decreases after input pulse due to accumulated past influence.\",\n    \"condition_to_check\": \"No significant change in state during pulse if no storage.\"\n  }\n}",
+    "input_tokens": 3584,
+    "output_tokens": 113,
+    "batch_elapsed_seconds": 2.694764267653227,
+    "amortized_seconds": 2.694764267653227,
+    "peak_gpu_allocated_gb": 14.917911529541016,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

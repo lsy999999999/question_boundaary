@@ -1,0 +1,25 @@
+{
+  "time_ns": 1793382113572295844,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "positive_pulse",
+    "reason": "Current NMSE suggests underfitting; multiscale memory may capture transient effects.",
+    "prediction": "Positive pulse will show faster rise and longer decay compared to linear model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated past x and u influence future state.",
+      "condition_to_check": "Persistent response after pulse ends."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_multiscale\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Current NMSE suggests underfitting; multiscale memory may capture transient effects.\",\n  \"prediction\": \"Positive pulse will show faster rise and longer decay compared to linear model.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Accumulated past x and u influence future state.\",\n    \"condition_to_check\": \"Persistent response after pulse ends.\"\n  }\n}",
+    "input_tokens": 2031,
+    "output_tokens": 112,
+    "batch_elapsed_seconds": 6.063954249955714,
+    "amortized_seconds": 1.5159885624889284,
+    "peak_gpu_allocated_gb": 15.790612697601318,
+    "model_path": "/home/lsy/theory_discovery_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

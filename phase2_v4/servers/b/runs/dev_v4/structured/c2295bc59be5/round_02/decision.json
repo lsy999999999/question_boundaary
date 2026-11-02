@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423735929768869,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "ramp_reverse",
+    "reason": "Saturating effects should reduce response magnitude during ramp and reverse.",
+    "prediction": "Ramp-reverse will show reduced response magnitude as state nears saturation limits.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Response magnitude decreases with increasing input duration and reversal.",
+      "condition_to_check": "Magnitude reduction persists through ramp and reverse phases."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"ramp_reverse\",\n  \"reason\": \"Saturating effects should reduce response magnitude during ramp and reverse.\",\n  \"prediction\": \"Ramp-reverse will show reduced response magnitude as state nears saturation limits.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"Response magnitude decreases with increasing input duration and reversal.\",\n    \"condition_to_check\": \"Magnitude reduction persists through ramp and reverse phases.\"\n  }\n}",
+    "input_tokens": 3801,
+    "output_tokens": 115,
+    "batch_elapsed_seconds": 2.792936312034726,
+    "amortized_seconds": 2.792936312034726,
+    "peak_gpu_allocated_gb": 14.946794986724854,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.0277862548828125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

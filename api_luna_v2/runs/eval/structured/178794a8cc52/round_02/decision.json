@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431989343421206,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "ramp_reverse",
+    "reason": "Multiscale memory has lower held-out error than memory_slow, while saturating_memory's small additional improvement may reflect extra flexibility. Persistent tails support finite-relaxation history.",
+    "prediction": "After reversing the ramp, output will retain a smooth influence of earlier inputs; comparable states reached at different histories will differ.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Finite-relaxation accumulated input history can predict output beyond current input and visible state.",
+      "condition_to_check": "History features should improve held-out ramp-reversal predictions after controlling current input and visible state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"ramp_reverse\",\"reason\":\"Multiscale memory has lower held-out error than memory_slow, while saturating_memory's small additional improvement may reflect extra flexibility. Persistent tails support finite-relaxation history.\",\"prediction\":\"After reversing the ramp, output will retain a smooth influence of earlier inputs; comparable states reached at different histories will differ.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Finite-relaxation accumulated input history can predict output beyond current input and visible state.\",\"condition_to_check\":\"History features should improve held-out ramp-reversal predictions after controlling current input and visible state.\"}}",
+    "input_tokens": 3485,
+    "output_tokens": 266,
+    "batch_elapsed_seconds": 3.857244654558599,
+    "amortized_seconds": 3.857244654558599,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3485,
+      "completion_tokens": 266,
+      "total_tokens": 3751,
+      "completion_tokens_details": {
+        "reasoning_tokens": 128
+      }
+    },
+    "api_response_id": "resp_0c10b3d99521250d016ae599b2a07081909b3e0283442e26bb",
+    "wire_record": "wire/eval/0411_dea0561965c4437d88effa12cd18cf3e"
+  }
+}

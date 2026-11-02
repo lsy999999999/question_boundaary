@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431241368615303,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "ramp_reverse",
+    "reason": "state_cubic has the lowest trajectory-level CV error; the alternating trial forecast was accurate, but residual lag-1 correlation leaves possible inadequacy. Ramp-reverse has the greatest model disagreement.",
+    "prediction": "At matched state and input during ramp reversal, output will not systematically depend on the preceding input path.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No cross-domain relation is established by these predictive fits.",
+      "condition_to_check": "A repeatable path-dependent difference at matched state and input would contradict the instantaneous representation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state_cubic\",\"experiment\":\"ramp_reverse\",\"reason\":\"state_cubic has the lowest trajectory-level CV error; the alternating trial forecast was accurate, but residual lag-1 correlation leaves possible inadequacy. Ramp-reverse has the greatest model disagreement.\",\"prediction\":\"At matched state and input during ramp reversal, output will not systematically depend on the preceding input path.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is established by these predictive fits.\",\"condition_to_check\":\"A repeatable path-dependent difference at matched state and input would contradict the instantaneous representation.\"}}",
+    "input_tokens": 3240,
+    "output_tokens": 276,
+    "batch_elapsed_seconds": 4.112195327877998,
+    "amortized_seconds": 4.112195327877998,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3240,
+      "completion_tokens": 276,
+      "total_tokens": 3516,
+      "completion_tokens_details": {
+        "reasoning_tokens": 148
+      }
+    },
+    "api_response_id": "resp_0fde37de90ac295a016ae596c645048195a2fdd2a4925b3690",
+    "wire_record": "wire/dev/0034_a7faf4d0509d4f21a7610c3290a5e8d2"
+  }
+}

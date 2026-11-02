@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431241367141146,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0fde37de90ac295a016ae596c645048195a2fdd2a4925b3690",
+    "object": "chat.completion",
+    "created": 1793431241,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"ramp_reverse\",\"reason\":\"state_cubic has the lowest trajectory-level CV error; the alternating trial forecast was accurate, but residual lag-1 correlation leaves possible inadequacy. Ramp-reverse has the greatest model disagreement.\",\"prediction\":\"At matched state and input during ramp reversal, output will not systematically depend on the preceding input path.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is established by these predictive fits.\",\"condition_to_check\":\"A repeatable path-dependent difference at matched state and input would contradict the instantaneous representation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3240,
+      "completion_tokens": 276,
+      "total_tokens": 3516,
+      "completion_tokens_details": {
+        "reasoning_tokens": 148
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.112195327877998
+}

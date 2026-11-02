@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423739601109523,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "ramp_reverse",
+    "reason": "Memory_slow fits well and shows persistent response; ramp_reverse tests accumulation over time.",
+    "prediction": "Response will gradually increase during ramp and decrease during reverse, showing persistent memory.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Response persists after input changes direction due to stored state.",
+      "condition_to_check": "Gradual response change during ramp and reverse."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"ramp_reverse\",\n  \"reason\": \"Memory_slow fits well and shows persistent response; ramp_reverse tests accumulation over time.\",\n  \"prediction\": \"Response will gradually increase during ramp and decrease during reverse, showing persistent memory.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Response persists after input changes direction due to stored state.\",\n    \"condition_to_check\": \"Gradual response change during ramp and reverse.\"\n  }\n}",
+    "input_tokens": 3808,
+    "output_tokens": 115,
+    "batch_elapsed_seconds": 2.7951735528185964,
+    "amortized_seconds": 2.7951735528185964,
+    "peak_gpu_allocated_gb": 14.94734525680542,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.0277862548828125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

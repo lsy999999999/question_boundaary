@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431720401422119,
+  "http_status": 200,
+  "body": {
+    "id": "resp_03e87efe0b2027ab016ae598a557648193b05285c7667b442b",
+    "object": "chat.completion",
+    "created": 1793431720,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest trajectory-held-out NMSE (0.00417), substantially below memory_fast (0.01687); residual lag remains high, so further testing is warranted.\",\"prediction\":\"Under irregular input switches, memory_slow predicts smoother, longer-lived post-switch responses than a fast-memory model.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2648,
+      "completion_tokens": 200,
+      "total_tokens": 2848,
+      "completion_tokens_details": {
+        "reasoning_tokens": 114
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.734808889217675
+}

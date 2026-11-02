@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793432310948629411,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "slow_wave",
+    "reason": "Memory_clock has the best leave-trajectory-out error by a wide margin; history_all performs worse. Forecasts are strong, though residual correlation leaves some uncertainty.",
+    "prediction": "After accounting for accumulated input history, oscillatory deviations should recur at similar elapsed-time phases across interventions.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated past influence with finite relaxation improves prediction beyond current input and visible state.",
+      "condition_to_check": "Falsified if accumulated history has no predictive effect after controlling current input and visible state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"slow_wave\",\"reason\":\"Memory_clock has the best leave-trajectory-out error by a wide margin; history_all performs worse. Forecasts are strong, though residual correlation leaves some uncertainty.\",\"prediction\":\"After accounting for accumulated input history, oscillatory deviations should recur at similar elapsed-time phases across interventions.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence with finite relaxation improves prediction beyond current input and visible state.\",\"condition_to_check\":\"Falsified if accumulated history has no predictive effect after controlling current input and visible state.\"}}",
+    "input_tokens": 3685,
+    "output_tokens": 293,
+    "batch_elapsed_seconds": 4.260923032648861,
+    "amortized_seconds": 4.260923032648861,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3685,
+      "completion_tokens": 293,
+      "total_tokens": 3978,
+      "completion_tokens_details": {
+        "reasoning_tokens": 167
+      }
+    },
+    "api_response_id": "resp_0cdeff22e906304f016ae59af3c03c81968d39e219172762be",
+    "wire_record": "wire/eval/0544_d7b86e2bf4f84d458ac4bfb148bb7579"
+  }
+}

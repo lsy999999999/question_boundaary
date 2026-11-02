@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423715159520959,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "positive_pulse",
+    "reason": "Memory_clock shows best cross-validation NMSE and plausible clock component.",
+    "prediction": "Positive pulse will show phase shift and amplitude modulation over time.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Persistent residuals suggest an external clock driving the system.",
+      "condition_to_check": "Consistent phase shift and modulation regardless of input shape."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_clock\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Memory_clock shows best cross-validation NMSE and plausible clock component.\",\n  \"prediction\": \"Positive pulse will show phase shift and amplitude modulation over time.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"external_clock\",\n    \"target_relation\": \"Persistent residuals suggest an external clock driving the system.\",\n    \"condition_to_check\": \"Consistent phase shift and modulation regardless of input shape.\"\n  }\n}",
+    "input_tokens": 3132,
+    "output_tokens": 110,
+    "batch_elapsed_seconds": 2.529411035589874,
+    "amortized_seconds": 2.529411035589874,
+    "peak_gpu_allocated_gb": 14.82780408859253,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.0277862548828125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

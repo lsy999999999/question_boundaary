@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431917695515123,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0f0c2941172d6826016ae5996b159081939f6a18c61b1e2ab3",
+    "object": "chat.completion",
+    "created": 1793431917,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest trajectory-level CV NMSE (0.00131); pulse and switching observations support history dependence, with no evidence favoring added fast or clock features.\",\"prediction\":\"Under PRBS switches, responses will retain a smooth contribution from earlier inputs after controlling for current input and state.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Past inputs predict responses after switches, consistent with finite-relaxation storage.\",\"condition_to_check\":\"No additional predictive effect of past inputs after controlling current input and state would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3497,
+      "completion_tokens": 252,
+      "total_tokens": 3749,
+      "completion_tokens_details": {
+        "reasoning_tokens": 120
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.4425434032455087
+}

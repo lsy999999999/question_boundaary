@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429708254093607,
+  "http_status": 200,
+  "body": {
+    "id": "resp_05a831d30b0b20c6016ae590c6cc408195a32d54033be80127",
+    "object": "chat.completion",
+    "created": 1793429708,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest trajectory-held-out NMSE (0.0017), far below memory_clock (0.0096); alternating inputs can test whether elapsed-time effects persist across input histories.\",\"prediction\":\"At matched elapsed times, trajectories should show similar clock-related variation despite their differing input histories.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The clock representation captures elapsed-time dependence, but the observations do not establish an independent external driver.\",\"condition_to_check\":\"Compare alternating-input trajectories at matched elapsed times; persistent aligned variation would support clock dependence.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2792,
+      "completion_tokens": 436,
+      "total_tokens": 3228,
+      "completion_tokens_details": {
+        "reasoning_tokens": 305
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 6.847530238330364
+}

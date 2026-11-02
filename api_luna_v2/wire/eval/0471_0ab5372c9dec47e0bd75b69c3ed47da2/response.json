@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793432132929134768,
+  "http_status": 200,
+  "body": {
+    "id": "resp_070f52a98da4e55c016ae59a4350c08196bf0b4c905780fdb3",
+    "object": "chat.completion",
+    "created": 1793432132,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_fast\",\"experiment\":\"prbs\",\"reason\":\"memory_fast has the lowest trajectory-held-out error. The state model’s residual lag-1 correlation suggests remaining temporal dependence, though prior intervention forecast errors were low.\",\"prediction\":\"After matching current state and input, residuals will vary systematically with recent input or state history, especially over subsecond timescales.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Fast accumulated history may carry recent input influence forward with finite relaxation.\",\"condition_to_check\":\"Reject if recent-history features do not improve held-out intervention predictions beyond noise.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3693,
+      "completion_tokens": 125,
+      "total_tokens": 3818
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.6243823813274503
+}

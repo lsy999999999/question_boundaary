@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423844527171030,
+  "decision": {
+    "representation": "clock",
+    "experiment": "positive_pulse",
+    "reason": "Clock features show low NMSE but high prediction variance for positive pulse.",
+    "prediction": "Positive pulse will phase shift with clock model but not with state-only model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Persistent residuals align with elapsed time regardless of input shape.",
+      "condition_to_check": "Residuals should show consistent phase shift for positive and negative pulses."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"clock\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Clock features show low NMSE but high prediction variance for positive pulse.\",\n  \"prediction\": \"Positive pulse will phase shift with clock model but not with state-only model.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"external_clock\",\n    \"target_relation\": \"Persistent residuals align with elapsed time regardless of input shape.\",\n    \"condition_to_check\": \"Residuals should show consistent phase shift for positive and negative pulses.\"\n  }\n}",
+    "input_tokens": 3134,
+    "output_tokens": 117,
+    "batch_elapsed_seconds": 2.677935183979571,
+    "amortized_seconds": 2.677935183979571,
+    "peak_gpu_allocated_gb": 14.829248905181885,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

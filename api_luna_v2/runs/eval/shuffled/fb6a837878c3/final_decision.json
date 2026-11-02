@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793432246061887295,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "slow_wave",
+    "reason": "memory_slow has the lowest trajectory-level CV error and performed well on the tested PRBS, alternating, and double-pulse trajectories. Alternatives offer no validated improvement, though residual correlation remains.",
+    "prediction": "After input returns to zero, output will retain a history-dependent response that decays more slowly than a fast-memory model predicts.",
+    "accept": true,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Finite-leakage storage features represent accumulated input history influencing output after input changes.",
+      "condition_to_check": "At matched current input and visible state, accumulated history should predict subsequent output across interventions."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"slow_wave\",\"reason\":\"memory_slow has the lowest trajectory-level CV error and performed well on the tested PRBS, alternating, and double-pulse trajectories. Alternatives offer no validated improvement, though residual correlation remains.\",\"prediction\":\"After input returns to zero, output will retain a history-dependent response that decays more slowly than a fast-memory model predicts.\",\"accept\":true,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Finite-leakage storage features represent accumulated input history influencing output after input changes.\",\"condition_to_check\":\"At matched current input and visible state, accumulated history should predict subsequent output across interventions.\"}}",
+    "input_tokens": 3684,
+    "output_tokens": 136,
+    "batch_elapsed_seconds": 2.671018600463867,
+    "amortized_seconds": 2.671018600463867,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3684,
+      "completion_tokens": 136,
+      "total_tokens": 3820
+    },
+    "api_response_id": "resp_07a1b00e903132f6016ae59ab44ac88194b53ba63b2b054aaf",
+    "wire_record": "wire/eval/0517_6f629fa4c9ce4e3683b911be63dfe463"
+  }
+}

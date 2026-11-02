@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793431624559840260,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "prbs",
+    "reason": "state_cubic has the lowest trajectory-level CV error by a substantial margin; cubic instantaneous response is better supported than added memory, though residual lag correlation warrants an informative test.",
+    "prediction": "Under irregular reversals, state_cubic will show less history-dependent response than a memory model; systematic history-linked deviations would falsify this choice.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state_cubic\",\"experiment\":\"prbs\",\"reason\":\"state_cubic has the lowest trajectory-level CV error by a substantial margin; cubic instantaneous response is better supported than added memory, though residual lag correlation warrants an informative test.\",\"prediction\":\"Under irregular reversals, state_cubic will show less history-dependent response than a memory model; systematic history-linked deviations would falsify this choice.\",\"accept\":false}",
+    "input_tokens": 2647,
+    "output_tokens": 87,
+    "batch_elapsed_seconds": 2.2155339028686285,
+    "amortized_seconds": 2.2155339028686285,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2647,
+      "completion_tokens": 87,
+      "total_tokens": 2734
+    },
+    "api_response_id": "resp_0cbf6dd327dbd8ef016ae59847137c81938982b19161f0675b",
+    "wire_record": "wire/eval/0209_5f7ca16bcd844001b966f9ab5c81db12"
+  }
+}

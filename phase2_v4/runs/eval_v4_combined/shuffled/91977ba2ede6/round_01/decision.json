@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793423940762495962,
+  "decision": {
+    "representation": "history_all",
+    "experiment": "negative_pulse",
+    "reason": "History_all has lower CV NMSE and higher prediction variance for negative pulses.",
+    "prediction": "Negative pulse will cause a delayed and damped response, differing from positive pulse.",
+    "accept": false,
+    "mapping": {
+      "source_id": "history_all",
+      "target_relation": "The system responds to negative pulses with a delayed and damped oscillation, distinct from the positive pulse response.",
+      "condition_to_check": "Verify the response amplitude and phase shift relative to positive pulse."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"history_all\",\n  \"experiment\": \"negative_pulse\",\n  \"reason\": \"History_all has lower CV NMSE and higher prediction variance for negative pulses.\",\n  \"prediction\": \"Negative pulse will cause a delayed and damped response, differing from positive pulse.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"history_all\",\n    \"target_relation\": \"The system responds to negative pulses with a delayed and damped oscillation, distinct from the positive pulse response.\",\n    \"condition_to_check\": \"Verify the response amplitude and phase shift relative to positive pulse.\"\n  }\n}",
+    "input_tokens": 3571,
+    "output_tokens": 129,
+    "batch_elapsed_seconds": 3.027939678169787,
+    "amortized_seconds": 3.027939678169787,
+    "peak_gpu_allocated_gb": 14.918898582458496,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024013519287109,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

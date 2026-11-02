@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431558500501595,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0726c191e18698ae016ae59804177881969568e531655c9106",
+    "object": "chat.completion",
+    "created": 1793431558,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_fast\",\"experiment\":\"alternating\",\"reason\":\"memory_fast has the lowest leave-trajectory-out NMSE (0.0064), substantially improving on the current state model; alternating has the highest disagreement between plausible models.\",\"prediction\":\"After rapid input switches, memory_fast predicts smoother, accumulated responses than the delay model; the alternating trajectory can distinguish them.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2543,
+      "completion_tokens": 149,
+      "total_tokens": 2692,
+      "prompt_tokens_details": {
+        "cached_tokens": 2304
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 66
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.0703601548448205
+}

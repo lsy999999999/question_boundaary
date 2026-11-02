@@ -1,0 +1,911 @@
+
+
+    Genetic encoding and mutagenesis of RNA droplet phenotypes | Nature Chemical Engineering
+
+    Skip to main content
+
+Thank you for visiting nature.com. You are using a browser version with limited support for CSS. To obtain
+            the best experience, we recommend you use a more up to date browser (or turn off compatibility mode in
+            Internet Explorer). In the meantime, to ensure continued support, we are displaying the site without styles
+            and JavaScript.
+
+Advertisement
+
+                                View all journals
+
+                                Saved research
+
+                                Search
+
+    Account
+
+    Log in
+
+                                        Content
+                                        Explore content
+
+                                        About the journal
+
+                                            Publish with us
+
+                                        Sign up for alerts
+
+                                            RSS feed
+
+                    nature
+
+                                nature chemical engineering
+
+                                articles
+
+                                    article
+
+                            Genetic encoding and mutagenesis of RNA droplet phenotypes
+
+                Download PDF
+
+                Download PDF
+
+        Article
+
+            Open access
+
+                            Published: 07 October 2026
+
+Genetic encoding and mutagenesis of RNA droplet phenotypes
+                        William Verstraeten 
+            ORCID: orcid.org/0009-0005-4458-95791, Mai P. Tran1 na1, Alena Taskina1,2 na1, Pranay Jaiswal3 na1, Ivar S. Haugerud 
+            ORCID: orcid.org/0000-0001-9931-37413, Claudia Helbig1, Moritz Hamberger4,5,6,7, Edward W. Green4,5,6, Michael Platten 
+            ORCID: orcid.org/0000-0002-4746-887X4,5,6,8,9,10, Christoph A. Weber 
+            ORCID: orcid.org/0000-0001-6279-04053 & …Kerstin Göpfrich 
+            ORCID: orcid.org/0000-0003-2115-35511,2,10 Show authors
+
+                            Nature Chemical Engineering
+                            volume 3, pages 573–583 (2026) Cite this article
+
+                    Save article
+
+                View saved research
+
+3729 Accesses
+
+66 Altmetric
+
+Metrics details
+
+Abstract
+RNA droplets assembled from cotranscriptionally folded nanostructures have recently emerged as a promising platform for constructing protocells and minimal synthetic cell models. A custom-designed DNA template encodes an RNA nanostar that self-assembles into droplets by kissing-loop interactions. Here we show that such RNA droplets encapsulate their DNA template, creating a genotype–phenotype link. We find that low mutation rates in the DNA template increase the phenotypical and functional complexity of the RNA droplets. Surprisingly, mutagenesis leads to the formation of long-lived vacuoles. With theory and next-generation sequencing, we explain this emergent behavior. We identify mutant nanostars that facilitate the formation of vacuoles through altered interactions between nanostars. Strikingly, vacuolated droplets exhibit micrometer-scale movement driven by internal vacuole dynamics – an emergent function resulting from mutagenesis. Beyond motility, we show that the vacuoles can be used as subcompartments to store cargo in the RNA droplets. Our findings establish RNA droplets as self-contained, evolvable systems, opening new avenues for the bottom-up evolution of synthetic cells and origins-of-life research.
+
+Similar content being viewed by others
+
+                                        Designer RNA nanostructures co-transcribed and self-assembled inside human cell nuclei
+
+                                        Article
+                                         Open access
+                                         26 December 2025
+
+                                        Genetic encoding and expression of RNA origami cytoskeletons in synthetic cells
+
+                                        Article
+                                         Open access
+                                         17 March 2025
+
+                                        Modular RNA motifs for orthogonal phase separated compartments
+
+                                        Article
+                                         Open access
+                                         30 July 2024
+
+Explore related subjects
+        Discover the latest articles and news in related subjects.
+
+                        Biological physics
+
+                        RNA
+
+                        Prebiotic Chemistry and Origins of Life
+
+Main
+‘How simple can a cell be?’1. The answer depends on how we define life. At the transition from chemical to biological evolution, a minimal cell that can act as a precursor for life needs to self-replicate and evolve2,3,4. For evolution to occur, genetic material needs to undergo changes, and these changes must be reflected in the cell’s phenotype and functions which are subject to selection. Crucially, the genetic material must remain physically linked to the phenotype, for instance, in a compartment, to enable its own selection and inheritance5,6,7,8. Looking at today’s cells, it might seem obvious that a cell should be engineered from phospholipid membranes and proteins. However, it was estimated that such a cell would require a minimum of 150 genes for transcription and translation alone9,10. Lipid synthesis within vesicles, required for growth, is complex. Progress has been made11,12, but a sufficient rate for sustained growth and division cycles has not yet been achieved. Furthermore, the division of lipid-based compartments would have to be coupled to the replication and segregation of the information content inside13. A potential alternative is to bypass lipid membranes for compartmentalization and to use condensates instead. Condensates are liquid droplets that form through liquid–liquid phase separation. Unlike phospholipid vesicles, condensates can grow passively by fusion or spontaneous recruitment of additional monomers from the surrounding solution without the need for membrane-specific enzymes or complex synthetic pathways11,12. Division of condensates has also been achieved14,15,16,17, and theoretical work shows that simple active condensates18 can undergo sustained growth and division cycles19,20.
+It is worth noting that most nucleic acid condensates assemble primarily through nonspecific electrostatic interactions between polycations and polyanions: accordingly, these droplets usually show limited sequence specificity21,22.
+By contrast, condensates made purely from DNA nanostars are a promising model for synthetic cells because of their inherent integration of programmable information storage14,15,16,23,24,25,26,27,28. Recently, droplets made only from RNA nanostars that assemble through kissing-loop (KL) interactions have also been achieved29,30. These RNA droplets are produced cotranscriptionally from a DNA template. This system separates genotype (encoded in DNA) from phenotype (the physical traits of the RNA droplet), which is beneficial for its evolvability4. However, the evolvability of RNA droplets remains to be demonstrated. It is still unclear if they even fulfill the prerequisites for evolution, namely (1) encapsulation of the DNA template inside the compartment to establish a genotype–phenotype correlation, (2) mutations in the DNA affect the droplet phenotype, that is, support heritable phenotypic variation once genotype–phenotype coupling is in place, and (3) mutagenesis leads to functional phenotypic features and increased complexity (rather than only loss-of-function outcomes)5,31,32,33,34. Here, we first show that RNA droplets encapsulate their DNA template upon formation, thus fulfilling prerequisite (1). Taking advantage of this link between DNA code and its compartment, we study the effects of mutagenesis on the compartment’s architecture. Indeed, mutations in the DNA template lead to new droplet phenotypes (prerequisite (2)). In particular, we observe the formation of long-lived vacuoles—hence the emergence of a multicompartment system (prerequisite (3)). Unlike previously reported vacuolated condensates35,36,37, the vacuoles in these RNA droplets are stable for days. Using next-generation sequencing, we identify mutated DNA templates encoding mutant nanostars. We reverse-engineer the mutant nanostars and mix them at different ratios with the non-mutated variants to establish a phase diagram. By combining our experimental data with theory, we show that vacuoles form through a local instability of the RNA droplet driven by the RNA nanostar mutant that perturbs the interactions inside the droplet and facilitates the formation of vacuolated droplets. Interestingly, vacuolated RNA droplets exhibit micron-scale movement, leading to increased droplet fusion and growth, suggesting a functional consequence of mutation-induced changes in droplet architecture, fulfilling prerequisite (3). Moreover, we show that the vacuoles can be used as a new compartment for the recruitment of cargo within RNA droplets.
+Results
+Genotype–phenotype coupling and vacuole formation in RNA droplets
+First, we investigate whether RNA droplets encapsulate their DNA template, effectively linking the droplet phenotype and genotype. To this end, we use an RNA nanostar which folds cotranscriptionally from a single RNA strand (adapted from Fabrini et al.)29. The RNA nanostar consists of four arms, separated by single uracils. Each arm terminates with a self-complementary KL, which enables self-assembly of the nanostars and hence droplet formation29,30,38 (Fig. 1a). Two arms contain a 25 base pair (bp)-long RNA duplex stem. A third arm is functionalized with a malachite green aptamer (MGA) for fluorescence microscopy. We integrate a biotin aptamer into the fourth arm for binding of secondary molecular targets for further applications39,40,41 (Fig. 1a). In addition, we optimize the promoter and starting sequences from the original design29 to ensure optimal transcription yield (DNA template and primer sequences are shown in Supplementary Tables 1 and 2). To determine whether the DNA template is retained within the RNA droplets, we label the DNA template, dubbed wild-type (WT) DNA, using fluorescein-labeled dUTP (Supplementary Information section 1.1).Fig. 1: Genotype–phenotype coupling and vacuole formation in RNA droplets.Full size image
+a, Schematic representation of cotranscriptional folding of RNA nanostars from a DNA template and subsequent droplet formation by KL interactions between the nanostars. b, Confocal snapshots of RNA droplets (red) and their DNA template (green, labeled with fluorescein, λex = 488 nm). The overlay image shows that the RNA droplets encapsulate their DNA template. Scale bars, 50 μm. c, Confocal snapshots of RNA droplets (red) transcribed from nonamplified DNA WT (left) and amplified DNA Mut (right), respectively. Scale bars, 100 μm. d,e, Confocal snapshots showing WT (d) and Mut (e) RNA droplet formation over 48 h (red, droplets contain MGA and are labeled with malachite green dye, λex = 640 nm). Top left corner: time refers to the time since the start of transcription. Scale bars, 100 μm. Experiments shown in b–e were performed twice independently with similar results. f, Quantification of the number of droplets N per field of view (left axis, black) and the ratio of vacuole-to-droplet area (Avacuole/Adroplet) over time (right axis, red) for both WT (continuous line) and Mut (dashed line) droplets. The shaded area denotes the standard error of the mean for seven fields of view per condition (n = 7), across two independent replicates.
+Source data
+Confocal microscopy, shown in Fig. 1b, reveals that the DNA template is localized within the RNA droplets, suggesting that RNA droplets entrap their genetic material during the droplet formation process. The DNA is not homogeneously distributed within the RNA droplet. Instead, it forms DNA hotspots with diameters on the order of 1 μm to 3 μm, which may arise from sequence-specific RNA–RNA interactions together with electrostatic repulsion between DNA and RNA. A plausible mechanism is cotranscriptional capture: nascent nanostar RNA folds and engages in multivalent interactions while still tethered to the DNA template via the RNA polymerase, thereby promoting incorporation of the template during droplet assembly.
+If the genotype, that is, the DNA template, is mutated, we could thus expect to see alterations in the droplet’s phenotype. Making use of the inherent self-complementarity of the DNA sequence, we perform polymerase chain reaction (PCR) to induce mutations in the WT DNA. The self-complementary sequences act as primers and generate a pool of mutated DNA genes (called Mut; Methods; Supplementary Figs. 1–2).
+Interestingly, we find that transcription of Mut DNA consistently produces vacuolated RNA droplets (Mut droplets), whereas that of WT template produces only homogeneous spherical droplets without holes (WT droplets) (Fig. 1c, Supplementary Fig. 3).
+We find that Mut droplets are significantly larger than WT droplets (Supplementary Fig. 4). Vacuoles appear in 74% of Mut droplets with a radius above 15 μm and in 94% with a radius more than 25 μm, while 0% of WT droplets exhibit vacuoles (Supplementary Fig. 5). Note that in DNA droplets, short-lived vacuoles (stable for <1 h) have been induced by DNase treatment35. Importantly, time-lapse imaging of WT droplets shows no vacuoles even after 48 h, while vacuoles remain stable, in Mut droplets, over days (Fig. 1d–f and Supplementary Videos 1 and 2). Long-lived vacuoles started to nucleate just after 2 h of transcription (Supplementary Video 2) and are distinctly visible from the 6-h time point onward (Fig. 1e and Supplementary Video 2). Before vacuole formation, regions of lower density emerge, which gradually shrink and coalesce into vacuoles. The vacuoles persist and grow over time (Supplementary Video 2). The quantification of the ratio of vacuole area to total droplet area reveals that the vacuoles continue to grow for 50 h (Fig. 1f). Moreover, we confirm that Mut droplets are more prone to fusion, resulting in fewer but larger droplets over time (Fig. 1f).
+We find that vacuoles only rarely coalesce, indicating that internal rearrangements in the RNA-rich phase are strongly hindered. Brightfield imaging, which provides a larger depth of field than confocal fluorescence, reveals only a few vacuole–vacuole fusion events over 60 h (highlighted in Supplementary Videos 3 and 4). Consistent with this slow internal dynamics, shape relaxation after droplet–droplet fusion events proceeds on long timescales (capillary velocity ~10−2 μm s−1) and FRAP shows no recovery over 10 min (Supplementary Fig. 6), in line with previous reports for RNA condensates29,30. This suggests that the RNA-rich phase is highly viscous, which slows down vacuole coalescence.
+While we observe that DNA clusters colocalize with the RNA-rich condensates, vacuole position does not seem spatially correlated with these clusters. As in confocal images, the DNA signal is not consistently enriched at vacuole interfaces (Supplementary Fig. 7).
+Note that Fabrini et al. observed vacuoles in some RNA droplets and attributed this to enzymatic degradation by environmental nuclease activity or photodegradation29. To test whether nucleases are responsible for vacuole formation in our system, we perform additional control experiments using RNase inhibitors. The addition of RNase inhibitors has no effect on vacuole formation (Supplementary Fig. 8). Furthermore, WT droplets remain highly stable and do not show any vacuoles even after incubation for 13 days at 37 °C, whereas Mut droplets retain their vacuoles (Supplementary Fig. 9), suggesting that degradation of droplet material17,35,37 is not the underlying mechanism in our case.
+It is known that perturbation of the dense liquid phase, by altering environmental conditions such as temperature or pH, can induce vacuolation in liquid droplets36,42,43. By contrast, in this study, environmental conditions are kept constant, with only RNA concentration gradually increasing during transcription, suggesting that the droplet phenotype is indeed a result of mutagenesis.
+Genetic encoding of vacuole formation
+Next, we investigate what causes vacuole formation in the Mut RNA droplets. An analysis of the WT DNA template by agarose gel electrophoresis (AGE) shows a single band before PCR as expected (Fig. 2a). After PCR, two distinct regions of DNA fragments above and below (L and S zone, respectively) the WT band (M zone) can be seen on the gel, confirming the presence of mutated DNA templates after PCR (Fig. 2a). Increasing the number of PCR cycles increases the build-up of these nonspecific PCR products. The higher bands (L), corresponding to longer DNA fragments, are probably caused by self-priming of the DNA template, whereas the lower bands (S) of shorter DNA can be explained by spurious mispriming events.Fig. 2: Nonspecific PCR products induce vacuole formation in RNA droplets.Full size image
+a, 3% agarose gel electrophoresis (AGE) of DNA before PCR (WT) (left) and of the PCR product (Mut) (right) from PCR with different number of cycles. Longer and shorter nonspecific PCR products are amplified. An increasing number of PCR cycles increases nonspecific product build-up. b, Confocal snapshots of RNA droplets (red) transcribed from gel-purified DNA bands: the main band (M) (left); a mixture of the main and higher bands (M+L) (middle); a mixture of the main and lower bands (M+S) (right). Droplets contain MGA and are labeled with malachite green dye, λex = 640 nm. Scale bars, 100 μm. Experiments were performed twice independently for each condition, with similar results. c, Quantification of the ratio of vacuole-to-total droplet area (Avacuole/Adroplet), averaged per field of view, across two independent replicates. Statistics: median test (nM = 18, nM+L = 15, nM+S = 10), significance with P values <0.001 are marked with ****. P = 4.3 × 10−7 (M versus M+L) and P = 4 × 10−4 (M versus M+S). Median is shown in white, box edges denote the lower and upper quartiles, and whiskers extend to the most extreme data points within 1.5× the interquartile range.
+Source data
+To test whether the nonspecific PCR products are responsible for vacuolation, we test the combination of the DNA from the three regions (L, M and S) for their ability to encode vacuolated droplets (Fig. 2 and Supplementary Fig. 10). As anticipated, transcription of the purified main band (M) produces normal RNA droplets without any vacuoles (Fig. 2b, left), comparable to those generated from the nonamplified WT DNA. Transcription of the purified longer DNA (L) with (M+L) or without the main band results in RNA droplets with vacuoles (Fig. 2b, middle, Fig. 2c and Supplementary Fig. 10). By contrast, RNA droplets from shorter DNA (S) only result in vacuolation in combination with the M band (M+S) (Fig. 2b, right, Fig. 2c and Supplementary Fig. 10). Taken together, these results indicate that nonspecific PCR products are indeed responsible for the vacuoles in the RNA droplets.
+To confirm that self-priming of the DNA template is indeed causing the side products, we perform PCR in absence of all primers or of only the reverse primers. As expected, WT DNA is amplified in both cases, producing mainly nonspecific products (Supplementary Fig. 11). The resulting RNA droplets from PCR-amplified WT DNA without different sets of primers are vacuolated (Supplementary Fig. 11). In the absence of only the reverse primer, the resulting RNA droplets are membrane-like hollow structures; 100% of droplets with radii above 15 μm contain vacuoles (Supplementary Fig. 5).
+Because we use a high-fidelity PCR kit to minimize substitution mutations, the nonspecific PCR products described above are mainly the results of deletion and duplication mutations. Nevertheless, it is highly interesting to make use of substitutions as a mutagenesis strategy as they are often used for in vitro protein engineering44.
+Vacuole formation by substitution mutagenesis
+We thus set out to test substitution mutagenesis as a general route to increase the phenotypical complexity of RNA droplets and to probe how vacuolation depends on mutational load. Unlike the nonspecific PCR byproduct route used in Figs. 1 and 2, substitution-based mutagenesis produces a broad diversity of variants and is widely used in directed-evolution workflows because it is applicable to essentially any DNA sequence and offers quantitative control over mutation rate45.
+For this, we use a nanostar-encoding DNA template, which can be amplified faithfully by PCR (Supplementary Fig. 1), termed WT2 (adapted from Fabrini et al.29; see Supplementary Table 1 for sequences).
+Consistent with the WT design, the WT2 nanostar is composed of four arms terminating in a self-complementary KL. One arm contains the Broccoli aptamer (BrA) for fluorescent readout, the remaining three form 25-bp stems, and all arms are separated by single uracils.
+We use dNTP analogs during PCR to selectively mutate the WT2 DNA template (Fig. 3a and Supplementary Fig. 12). This approach allows us to avoid mutations in the promoter region, necessary for transcription, while controlling the mutation rate by varying the number of PCR cycles46. We observe four distinct phenotypes, directly dependent on the mutagenesis rate (Fig. 3b and Supplementary Figs. 12 and 13). Remarkably, a low mutation rate of ~3% (corresponding on average to seven altered bases per RNA nanostar template) is sufficient to induce vacuole formation, while higher mutation rates result in a percolating RNA network or simply RNA aggregates (Fig. 3b).Fig. 3: Substitution mutations in the DNA template lead to vacuolated droplets.Full size image
+a, Schematic illustration of mutagenesis induced by dNTP analogs. The mutagenesis rate is controlled by the number of PCR cycles with the dNTP analog, dPTP and followed by a high-fidelity PCR. b, Representative confocal snapshots of the RNA droplets (blue) transcribed from dPTP-induced mutated DNA templates after 48 h of transcription (corresponding mutation rates are annotated; Supplementary Fig. 12). c, Schematic illustration of mutagenesis by manganese ion-induced error-prone PCR. Manganese ions are used to destabilize Taq polymerase and reduce its fidelity. d, Representative confocal snapshot of RNA droplets (blue) transcribed from WT2 DNA mutated by error-prone PCR (five error-prone PCR cycles). RNA droplets contain a Broccoli aptamer (BrA) and are labeled with DFHBI-1T, λex = 488 nm. Scale bars, 100 μm. Experiments shown in b and d were performed twice independently with similar results.
+As an orthogonal, widely used substitution mutagenesis method, we additionally use an error-prone PCR protocol to induce mutations by addition of manganese ions45. These ions reduce the ability of Taq polymerase to discriminate between nucleotides, thus reducing its fidelity during DNA replication47 (Fig. 3c). Again, RNA transcribed from the mutated DNA templates forms vacuolated droplets (Fig. 3d and Supplementary Figs. 12 and 13).
+Mechanism of vacuole formation
+Although we have shown that genetic mutations can lead to vacuolation, it was observed as an emergent property, and we have yet to understand the underlying mechanism. To build an effective model for the Mut RNA droplets, we perform long-read nanopore DNA sequencing of the Mut DNA. We find that 94.7% of reads align with the WT sequence (Supplementary Fig. 14), in accordance with our observation that low mutagenesis rates are sufficient to induce vacuolation. The remaining 5.3% contain a T7 promoter and encode various nanostar-like structures, with at least one KL (Supplementary Fig. 14; see Supplementary Table 3 for sequences). The most common of these sequences (2.7%) encodes a nanostar of four arms with three functional KLs (and corresponds to the higher band in Fig. 2a). To test whether vacuolation depends on a single mutant sequence or instead on shared structural features, we design a small set of de novo mutants that reproduce the characteristic secondary-structure motif of this dominant mutant class while varying the number of functional KL interactions (1KL, 2KL and 3KL; Supplementary Fig. 15). When transcribed together with WT DNA, all three variants yield vacuolated condensates (Supplementary Fig. 15), confirming that vacuole formation is not restricted to unique mutant sequences.
+Still guided by these sequencing results, we then design a mutant nanostar (termed Mut RNA throughout this section) that reproduces the same secondary-structure motif as the most common mutant sequence (Fig. 4a and Supplementary Fig. 14) and carries a BrA to distinguish it from the WT RNA48.Fig. 4: Mechanism of vacuole formation.Full size image
+a, Predicted folding of the Mut RNA. KLs are shown in gray. b, Thermodynamic phase diagram of nanostar phase separation. The diagram indicates the WT RNA to Mut RNA compositions for which phase separation into a nanostar-rich and poor phase occurs. Triangles are experimental data points determined from plate reader measurements (Supplementary Fig. 16 and Supplementary Table 4), showing the measured RNA concentrations (Conc.) in the dense and dilute phases, and black lines indicate the experimental tie lines. The binodal fit from the theory is shown in red, and the theoretical tie lines (light gray) agree well with the experimental tie lines (black). Data are presented as mean values ± standard deviation, n = 3 per condition, from two independent replicates. c, Schematic representation of the mechanism for vacuole formation in mutant droplets: transcription leads to droplet growth and gives rise to concentration gradients within the droplets by exchanging RNA nanostars with the nanostar-poor phase. Concentration gradients are more pronounced if diffusion inside is low. For large enough gradients, a spinodal instability is triggered locally, resulting in the formation of a vacuole. d, Diagram describing the onset of vacuole formation. Droplets have to be large enough to form vacuoles. According to the phase diagram shown in b, in the regime studied here, a large enough mutant DNA fraction λ is required to form the vacuole instability, which is consistent with the experimental observations.
+Source data
+Using this Mut RNA nanostar design, we experimentally determine the phase diagram for the WT and Mut nanostars on the basis of their mass concentrations to characterize their interactions (Fig. 4b).
+We estimate the mass concentration of both WT and Mut RNA inside and outside the condensates by plate reader measurements of the respective phases (Fig. 4b and Supplementary Fig. 16; see Supplementary Information section 1.10 and Supplementary Table 4 for experimental details).
+These mass concentrations provide approximate data points for a thermodynamic phase diagram spanned by WT and Mut RNA concentrations. Such a thermodynamic phase diagram is governed by the free energy of the system. Thus, to obtain the phase diagram for the experimental nanostar system, we fit the experimentally obtained data points using an effective free energy density f(cWT, cMut), which depends on the mass concentrations of the WT RNA cWT and the Mut RNA cMut (see equations (2) and (3) in Supplementary Information section 1.12). The interactions among the nanostars and with the solvent are described by three effective interaction parameters: χMut,WT, χWT,sol and χMut,sol, where sol indicates the solvent. From the fits, we obtain these three parameters together with the molecular volume of the WT RNA and Mut RNA. The theoretical phase diagram is obtained from the free energy density f(cWT, cMut) by solving the conditions for phase equilibrium (see Supplementary Information section 1.12 and Supplementary Fig. 17 for details).
+Figure 4b shows the fit of the phase diagram to the experimentally measured mass concentrations. In particular, the tie lines connecting the coexisting phases (thin gray lines) are captured well by the theory. Without Mut RNA, the WT RNA-rich phase has a roughly 400-fold higher mass concentration than the RNA-poor phase. Upon adding Mut RNA, the phase separation propensity remains roughly constant, which is indicated by an almost vertical slope of the RNA-poor branch of the phase diagram (Fig. 4b, left-most branch of the red binodal line). From the fit, we find that the molecular volume of mutant RNA nanostars slightly exceeds the one of the WT, which is consistent with the Mut nanostar having a slightly longer arm compared with the WT (Fig. 4a). Moreover, we find that nanostar phase separation is driven by adhesive interactions among the nanostars, while interactions with the solvent are negligible. Finally, the Mut–Mut interactions turn out to be less adhesive than the WT–WT interactions (see Supplementary Table 5 for values), which is consistent with the design of both RNA nanostars. In summary, the ternary effective free energy can reproduce the experimentally observed phase-separating behavior, yielding physically consistent parameters and highlighting how the interactions between WT and Mut RNA regulate phase separation.
+Having determined the phase diagram, we can now understand the mechanism behind the vacuole formation (Fig. 4c). We begin the explanation when no nanostars have yet been transcribed and the system is homogeneous. When the T7 RNA polymerase starts transcribing the two types of nanostars, the fraction of Mut to WT nanostars cMut-RNA(t)/cWT-RNA(t) is fixed by the fraction of mutant DNA, λ = cMut-DNA/cWT-DNA. When transcription pushes the system beyond the saturation concentrations by crossing the dilute phase branch of the phase diagram (Fig. 4b), RNA nanostar-rich droplets form. Transcription drives droplet growth with a growth speed that is set by the transcription rate k and by thermodynamic properties such as interaction parameters and molecular volumes that are determined by the phase diagram. When droplets grow and concentrations outside change due to transcription, the droplet composition at the interface changes when the line described by λ deviates from the phase diagram’s tie line (Supplementary Fig. 18). This change in composition gives rise to concentration gradients inside when it is faster than nanostar diffusion inside droplets29,49 (Supplementary Video 5).
+Such concentration gradients were indeed experimentally observed at the onset of vacuole formation (Fig. 1e, darker regions at 4-h time point). When these gradients get strong enough such that the composition crosses the spinodal line locally in the phase diagram, a spinodal instability occurs inside the droplet, leading to a new interface inside and thus a vacuole forms.
+To test this mechanism, we derived a kinetic model for phase separation with transcription relying on the parameters obtained from the phase diagram (see Supplementary Information section 1.13 for details on the theoretical model). We obtain transcription rates (see Supplementary Table 6 for values) from transcription experiments and fitting the measured RNA concentration dynamics to the kinetic model (see Supplementary Information section 2.1 and Supplementary Fig. 19 for details) and we use literature-derived estimates of diffusion coefficients50. We apply the kinetic model (see Supplementary Table 7 for values) to the onset of vacuole formation and calculate the radius above which the spinodal instability occurs, eventually leading to vacuoles. We find that a vacuole cannot form when droplets are too small as diffusion masks concentration gradients inside the droplets. Consistent with the experimental observations, the model finds that vacuoles form for droplets with radii above ~21.5 μm (Fig. 4d and Supplementary Fig. 20). Moreover, we unravel the role of the mutant for vacuole formation inside the nanostar-rich droplets. According to our model, vacuoles only form when the mutant fraction λ ≳ 2% (Fig. 4d). Consistent with this, cotranscription at λ = 11% results in vacuoles for droplets with radii above ~24 μm (Supplementary Fig. 21). According to our model, the threshold value of λ results from the inside diffusivity of the Mut nanostar exceeding that of the WT, favoring the nanostar composition crossing the spinodal in the phase diagram. In summary, transcription of nanostars generates pronounced composition gradients of WT and Mut nanostars within the droplets owing to the low diffusion of RNA nanostars, triggering the formation of vacuoles via a local spinodal instability.
+We also hypothesized that Mut RNA could stabilize vacuoles by acting as a surfactant, as proposed for hollow condensates in other systems51. The imaging of the annealed WT and Mut nanostars in water-in-oil droplets shows no enrichment of Mut at the water-condensate interface (Supplementary Fig. 22), suggesting that the Mut RNA does not behave as a surfactant under our conditions, leading us to discard the surfactant hypothesis. The long lifetime of vacuoles is probably explained by slow internal dynamics of the highly viscous RNA-rich phase (Supplementary Fig. 6), such that vacuole–vacuole fusion events remain rare on experimental timescales (Supplementary Videos 3 and 4).
+Gain of synthetic cell function through mutagenesis
+A key requirement of synthetic cell models is that genotypic changes translate into functional phenotypic outcomes that can be selected for.
+We find that mutations of WT to Mut RNA droplets lead not only to vacuole formation, but also to emergent functional behavior, namely droplet movement (Supplementary Videos 1 and 2). To quantify this behavior, we track the geometric center of individual WT and Mut droplets over time from confocal time-lapse microscopy (Fig. 5a,b, Supplementary Fig. 23 and Supplementary Video 6). The droplet trajectories are shown in a medusa plot for both RNA species in Fig. 5b (only 50 highest trajectories are shown in each condition for clarity). These plots reveal that Mut droplets travel further than WT droplets and exhibit irregular, burst-like movement characterized by sudden displacements (Supplementary Fig. 24). Motion persists for more than 50 h. We then calculate the mean squared displacement (MSD) of the 100 most mobile droplets for both WT and Mut droplets. Mut droplets show significantly enhanced motility compared with WT droplets (P < 0.001, Fig. 5c). This enhanced motility leads to an increase in fusion events, as moving droplets have a higher probability of encountering other droplets. As a result, Mut droplets are larger (Supplementary Fig. 4) and show a reduction in droplet number, consistent with our previous observations in Fig. 1f.Fig. 5: Gain of synthetic cell function through mutagenesis.Full size image
+a, Micrometer-scale movement of vacuolated RNA droplets. Representative confocal image and trajectory of a moving Mut RNA droplet (red) over time. Scale bar, 20 μm. b, Medusa plots of the movement of individual RNA droplets for WT (left) and Mut droplets (right), only the 50 most mobile droplets are shown for both RNA species for clarity. c, Quantification of the MSD for the 100 most mobile WT and Mut RNA droplets. Droplets were tracked for up to 56 h. Only the top 100 most mobile droplets are taken into account, across two independent replicates from n = 1,489 WT and n = 724 Mut tracked trajectories. Statistics: median test, significance with P values <0.001 are marked with **** (P = 2.8 × 10−33). Median is shown in white, box edges denote the lower and upper quartiles, and whiskers extend to the most extreme data points within 1.5× the interquartile range. d, Polar plot showing distribution of the angle α, defined as the angle between the droplet’s geometric center displacement vector (orange) and the displacement vector of the vacuole centers’ relative to the droplet’s geometric center (red, nangles = 2,459). Data shown in a–d were acquired from two independent replicates. e, Confocal overlay showing one vacuolated Mut RNA droplet from a single experiment (red, droplet contains MGA and is labeled with malachite green dye λex = 640 nm), excluding DOPC SUVs (blue, 50-nm diameter, labeled with ATTO-390 PE, λex = 405 nm), uptake of 50-kDa FITC-dextran (green, λex = 488 nm) and selectively recruiting biotinylated SUVs (yellow, 100-nm diameter, labeled with Liss Rhod PE λex = 561 nm). Scale bar, 100 μm.
+Source data
+We hypothesize that droplet motion is driven by the internal dynamics of vacuole formation: as vacuoles nucleate and grow, they displace RNA, and because the vacuole-to-droplet volume ratio can be high, this redistribution shifts the droplet’s center of mass. To verify that vacuoles are causing droplet motion, we measure the angle α between the displacement of the vacuole center and that of the droplet geometric center (Fig. 5d; see Supplementary Information section 1.6 for details). On the basis of our hypothesis, we expect angle α > 90°, as this would indicate that the vacuole and droplet center move in opposite directions (Fig. 5d). Indeed, the histogram of α shows that the most frequent angles fall between 174° and 180° (Fig. 5d and Supplementary Figs. 23–25), suggesting that mass displacement by the vacuoles underlies Mut droplet motion. We frequently observe droplet fusion, followed by the formation of new vacuoles, which results in further movement (Fig. 5b and Supplementary Video 2). Importantly, this mechanism is distinct from other previously reported moving DNA droplets35,52,53: in our case, vacuoles remain stable throughout the trajectory and movement can occur repeatedly. Because vacuoles form at essentially random locations, there is no persistent polarity or propulsion axis as seen in self-propelled droplets54.
+Beyond motility, we next want to explore if the vacuoles can serve as internal compartments and thus endow the mutated droplets with yet another functional advantage. The vacuoles establish an internal dilute phase within the droplets. To illustrate the functional consequences of the emergence of subcompartments, we study cargo recruitment to the RNA-dense phase as well as to the vacuoles (Fig. 5e). First, uptake into the droplets should be size selective.
+We find that the dense RNA matrix excludes large nanoparticles such as 50-nm small unilamellar lipid vesicles (SUVs, blue), whereas smaller molecules such as 50-kDa dextran (green, ~10 nm)55 can diffuse through the RNA-dense phase into the vacuoles. Confocal imaging clearly shows that dextran is only present in the RNA dilute phase. A droplet without vacuoles would thus not have the capability to uptake and store this type of cargo. To demonstrate the sequence-specific addressability of the RNA droplets, we additionally make use of the biotin aptamer encoded in the RNA nanostar to specifically recruit biotinylated SUVs to the droplet interface, forming a shell-like structure around the condensate (Fig. 5e, right-most image). Together, these experiments demonstrate that vacuolated RNA droplets can be turned into complex cargo-loaded multicompartment assemblies.
+Discussion
+Mutagenesis has not only led to the first primitive cells at the origins of life but also is the basis for the phenotypical and functional diversity of today’s life forms. Evolution of synthetic cells is thus one of the main goals of bottom-up synthetic biology. An evolvable system requires linking genotype to phenotype in a way that allows heritable variation and selection. In this study, we demonstrate that RNA droplets formed by cotranscriptional folding of RNA nanostars encapsulate their DNA template, thereby establishing a physical and functional link between genetic code and compartment phenotype. Furthermore, mutations in the DNA template reliably induce distinct phenotypic changes in the droplet architecture.
+We find that PCR-induced mutations, either through nonspecific amplification or through targeted substitution mutageneses, result in dramatic changes to droplet morphology, most notably the formation of long-lived vacuoles within RNA droplets. Unlike previous reports of hollow condensates, we show that, rather than resulting from environmental perturbation35,36,42,43, the vacuolation is encoded in the genes encapsulated inside the RNA droplet.
+With next-generation nanopore sequencing, we identify the DNA sequences which are responsible for the vacuolation in Mut droplets. On the basis of these sequences, we reverse-engineer a model mutant nanostar, which allows us to experimentally determine a phase diagram.
+We theoretically describe the free energy density as a function of the mutant fraction and find that vacuoles arise from a local instability of the RNA droplet triggered by transcription of the RNA nanostar mutant, which perturbs intradroplet interactions. This demonstrates how mutations on a genetic level can modulate the thermodynamics of RNA droplets. Remarkably, the emergence of vacuoles is not merely a structural change. We show that vacuolated droplets exhibit micrometer-scale movement caused by internal mass redistribution during vacuole formation.
+Such mutation-induced motility represents an emergent functional phenotype and highlights the capacity of RNA droplets to translate genetic variation into selectable functional traits and a step toward open-endedness in evolution. We show that the function of vacuoles in RNA droplets goes beyond movement and that they can be used in parallel with aptamers to recruit and contain different cargoes depending on their size and chemical properties.
+The RNA droplets satisfy multiple prerequisites for Darwinian evolution: retention of genetic material, mutation-driven phenotypic variability, and the emergence of selectable functional traits. One such trait could be the selection for more hollow RNA droplets, toward evolving a vesicle-like RNA condensate. Evolvability is crucial toward the creation of synthetic life, where Darwinian evolution—leading to open-ended evolution—is a key characteristic. Evolution will also be a clear feat for biotechnological applications where structure–function relationships of increasingly complex systems become obscure and hard to engineer4. We anticipate that RNA droplets could be evolved for more complex desirable features such as distinct material properties, self-propelled microswimmers and drug delivery systems. Sequence programmable function can be added by including RNA aptamers to recruit specific molecules29,30,56 for computational purposes57 or by using the inherent catalytic abilities of ribozymes58,59,60. Further studies exploiting RNA droplets as synthetic cells could look into integrating ribozymes and aptamers into the RNA droplets to encode dynamic behavior of synthetic cells as a starting point for mutagenesis and evolution. Ultimately, RNA droplets and their mutability may contribute to our understanding of how life could have emerged from nonliving molecular assemblies in an RNA world, inform the design of synthetic life and open up opportunities for evolvable materials in biomedicine, biotechnology and beyond.
+Methods
+Materials
+All reagents were ordered from Sigma-Aldrich and dissolved in RNase-free water unless stated otherwise.
+High-fidelity PCRs
+DNA templates and primers were ordered from Integrated DNA Technologies, with templates provided as gBlocks and primers as oligos (purification: standard desalting). The initial sequences for the formation of RNA droplets were adapted from G. Fabrini et al.29 with modifications in the promoter and some of the KLs. All sequences can be found in Supplementary Tables 1 and 2 in the Supplementary Information and are additionally provided in machine-readable form as Supplementary Data 1. DNA templates were amplified by PCR using Phusion High-Fidelity DNA Polymerase in HF-buffer from New England Biolabs (NEB) (cat. no. M0530S) with an annealing temperature of 62 °C for 20 cycles, at a starting template concentration of 0.5 ng μl−1. For the vacuolated droplets in Figs. 1, 2 and 5, the DNA templates were amplified for 45 cycles instead. The resulting PCR products were systematically purified using a Qiagen PCR purification kit (cat. no. 28104) and analyzed by 3% native agarose gel electrophoresis (100-V run for 2 h in 1× TAE buffer). For the purified DNA sequences shown in Fig. 2, the QIAquick Gel Extraction Kit (cat. no. 28706) was used, according to the manufacturer’s instructions.
+Mutagenic PCR
+For the mutagenic PCR with dNTP analogs, we used the Jena Bioscience dNTP-Mutagenesis Kit (cat. no. PP-101); 2 μl dPTP analog was added to the PCR mix to induce mismatches. Following the mutagenic PCR, a normal high-fidelity PCR was performed for 20 cycles. For the error-prone PCR, we used the normal Taq PCR Kit from NEB with the Standard Taq (Mg-free) Reaction Buffer Pack with 7 mM MgCl2 and 0.5 mM MnCl2 for 5 PCR cycles. Following purification, all DNA samples were stored at −20 °C until further use.
+RNA droplet transcription
+Transcription was carried out in a homemade transcription buffer (100 mM HEPES, 20 mM Mg(CH3COO)2, 10 mM rNTPs (2.5 mM each), 1.5 mM DTT, 1.5 mM spermidine, 66.6 mM sucrose) and a 1:10 volumetric dilution of the T7 RNA Polymerase Mix (cat. no. B9015SVIAL) from NEB and final DNA concentration of 3ng μl−1. For droplets shown in red, 50 μM malachite green (cat. no. 38978) was added to the reaction mixture, for droplets shown in blue, 50 μM of DFHBI-1T (cat. no. SML2697-5MG) was used. In confocal time-lapse experiments, malachite green concentration was increased to 100 μM to compensate for photobleaching. RNA polymerase was always added to the reaction mix as a last step. After mixing 40 μl of the mixed sample was added to the microscopy observation chamber and stored at 37 °C.
+Observation chamber preparation
+A microscopy cover slide attached to a six-channel Ibidi sticky slide VI 0.4 (cat. no. 80601) was passivated with 5% (W/V) polyvinyl alcohol (cat. no. 363170) rinsed with nuclease-free water and dried under nitrogen flow. Subsequently, the prepared sample was added to the channels of the Ibidi slide and the channels were immediately sealed using a two-component glue (Picodent cat. no. 1300 1000) to prevent evaporation. Slides were always prepared right before the imaging experiment.
+Confocal imaging
+Before imaging, the incubation chamber of the confocal microscope was heated up to 37 °C for at least 30 min. The samples were visualized using a confocal laser scanning microscope (LSM 900, Carl Zeiss AG). A 20× objective (Plan-Apochromat 20×/0.8 M27, Carl Zeiss AG) was employed for image acquisition, and the internal magnification was set to 0.5×. To prevent any bias and capture RNA droplets of all sizes, images were consistently taken at different z-planes.
+Images were acquired using the ZEN software (ZEN Blue, version 3.1; Carl Zeiss AG). Confocal micrographs shown in the figures of the main text were processed in Fiji (ImageJ2, Version: 2.3.0/1.54f). The brightness and contrast were adjusted linearly, and adjustments were always applied uniformly across the entire image; no local or region-specific adjustments were made.
+Statistics and Reproducibility
+Images used for endpoint quantification (including droplet area statistics) were acquired roughly 48 h after the start of transcription. The time-lapse datasets shown in Fig. 1d,e and quantified in Fig. 1f are exceptions; for these datasets, the indicated time points represent the elapsed time since the start of transcription. As previous reports showed the induction of vacuoles in coacervates due to changing environmental conditions and/or nucleases, all slides contained at least one negative control (WT RNA droplets). To prevent bias, images were analyzed with a custom-written Python script, available on the group GitHub at https://github.com/Biophysical-Engineering-Group/RNAdroplets.
+Use of generative AI
+During the preparation of this work, the authors used ChatGPT4-5 and Claude’s model Opus 5 to help with code generation and writing. After using this tool or service, the authors reviewed and edited the content as needed and take full responsibility for the content of the publication.
+Reporting summary
+Further information on research design is available in the Nature Portfolio Reporting Summary linked to this article.
+
+Data availability
+
+Source data are provided with this paper. Source data used in the Supplementary Information and other source data is available upon reasonable request to the corresponding authors.
+
+Code availability
+
+All custom code used for image analysis, droplet segmentation and plotting and for the generation of the theory is publicly available via GitHub at https://github.com/Biophysical-Engineering-Group/RNAdroplets. The code used for the theory and numerical analysis is available via Zenodo at https://doi.org/10.5281/zenodo.21979218 (ref. 61).
+
+References
+Szostak, J. W., Bartel, D. P. & Luisi, P. L. Synthesizing life. Nature 409, 387–390 https://doi.org/10.1038/35053176 (2001).
+Article 
+    PubMed 
+    CAS 
+
+                    Google Scholar 
+
+Schwille, P. Bottom-up synthetic biology: engineering in a tinkerer’s world. Science 333, 1252–1254 https://doi.org/10.1126/science.1211701 (2011).
+Article 
+    PubMed 
+    CAS 
+
+                    Google Scholar 
+
+Göpfrich, K., Platzman, I. & Spatz, J. P. Mastering complexity: towards bottom-up construction of multifunctional eukaryotic synthetic cells. Trends Biotechnol 36, 938–951 https://doi.org/10.1016/j.tibtech.2018.03.008 (2018).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Kriebisch, C. M. E. et al. A roadmap toward the synthesis of life. Chem 11, 102399 https://doi.org/10.1016/j.chempr.2024.102399 (2025).
+Article 
+    CAS 
+
+                    Google Scholar 
+
+Matsuura, T. et al. Importance of compartment formation for a self-encoding system. Proc. Natl Acad. Sci. USA 99, 7514–7517 https://doi.org/10.1073/pnas.062710399 (2002).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Okauchi, H. & Ichihashi, N. Continuous Cell-Free Replication and Evolution of Artificial Genomic DNA in a Compartmentalized Gene Expression System. ACS Synth. Biol. 10, 3507–3517 https://doi.org/10.1021/acssynbio.1c00430 (2021).
+Article 
+    PubMed 
+    CAS 
+
+                    Google Scholar 
+
+Ichihashi, N. et al. Darwinian evolution in a translation-coupled RNA replication system within a cell-like compartment. Nat. Commun. 4, 2494 https://doi.org/10.1038/ncomms3494 (2013).
+Article 
+    PubMed 
+    CAS 
+
+                    Google Scholar 
+
+Abil, Z. et al. Darwinian Evolution of Self-Replicating DNA in a Synthetic Protocell. Nat. Commun. 15, 9091 https://doi.org/10.1038/s41467-024-53226-0 (2024).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Forster, A. C. & Church, G. M. Towards synthesis of a minimal cell. Mol. Syst. Biol. 2, 45 https://doi.org/10.1038/msb4100090 (2006).
+Article 
+    PubMed 
+    PubMed Central 
+
+                    Google Scholar 
+
+De Capitani, J. & Mutschler, H. The long road to a synthetic self-replicating central dogma. Biochemistry 62, 1221–1232 https://doi.org/10.1021/acs.biochem.3c00023 (2023).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Blanken, D., Foschepoth, D., Serrão, A. C. & Danelon, C. Genetically controlled membrane synthesis in liposomes. Nat. Commun. 11, 4317 https://doi.org/10.1038/s41467-020-17863-5 (2020).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Eto, S. et al. Phospholipid synthesis inside phospholipid membrane vesicles. Commun. Biol. 5, 1016 https://doi.org/10.1038/s42003-022-03999-1 (2022).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Olivi, L. et al. Towards a synthetic cell cycle. Nat. Commun. 12, 4531 https://doi.org/10.1038/s41467-021-24772-8 (2021).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Sato, Y., Sakamoto, T. & Takinoue, M. Sequence-based engineering of dynamic functions of micrometer-sized DNA droplets. Sci. Adv. 6, eaba3471 https://doi.org/10.1126/sciadv.aba3471 (2020).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Tran, M. P. et al. A DNA segregation module for synthetic cells. Small 19, 2202711 https://doi.org/10.1002/smll.202202711 (2023).
+Article 
+    CAS 
+
+                    Google Scholar 
+
+Maruyama, T., Gong, J. & Takinoue, M. Temporally controlled multistep division of DNA droplets for dynamic artificial cells. Nat. Commun. 15, 7397 https://doi.org/10.1038/s41467-024-51299-5 (2024).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Donau, C. et al. Active coacervate droplets as a model for membraneless organelles and protocells. Nat. Commun. 11, 5167 https://doi.org/10.1038/s41467-020-18815-9 (2020).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Weber, C. A., Zwicker, D., Jülicher, F. & Lee, C. F. Physics of active emulsions. Rep. Prog. Phys. 82, 064601 https://doi.org/10.1088/1361-6633/ab052b (2019).
+Article 
+    PubMed 
+    CAS 
+
+                    Google Scholar 
+
+Zwicker, D., Seyboldt, R., Weber, C. A., Hyman, A. A. & Jülicher, F. Growth and division of active droplets provides a model for protocells. Nat. Phys. 13, 408–413 https://doi.org/10.1038/nphys3984 (2017).
+Article 
+    CAS 
+
+                    Google Scholar 
+
+Bauermann, J., Weber, C. A. & Jülicher, F. Energy and matter supply for active droplets. Ann. Phys. 534, 2200132 https://doi.org/10.1002/andp.202200132 (2022).
+Article 
+
+                    Google Scholar 
+
+Majumder, S., Coupe, S., Fakhri, N. & Jain, A. Sequence-encoded intermolecular base pairing modulates fluidity in DNA and RNA condensates. Nat. Commun. 16, 4258 https://doi.org/10.1038/s41467-025-59456-0 (2025).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Wollny, D. et al. Characterization of RNA content in individual phase-separated coacervate microdroplets. Nat. Commun. 13, 2626 https://doi.org/10.1038/s41467-022-30158-1 (2022).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Takinoue, M. DNA droplets for intelligent and dynamical artificial cells: from the viewpoint of computation and non-equilibrium systems. Interface Focus 13, 20230021 https://doi.org/10.1098/rsfs.2023.0021 (2023).
+Article 
+    PubMed 
+    PubMed Central 
+
+                    Google Scholar 
+
+Samanta, A., Baranda Pellejero, L., Masukawa, M. & Walther, A. DNA-empowered synthetic cells as minimalistic life forms. Nat. Rev. Chem. 8, 454–470 https://doi.org/10.1038/s41570-024-00606-1 (2024).
+Article 
+    PubMed 
+    CAS 
+
+                    Google Scholar 
+
+Holtmannspötter, A. L. et al. Regulating nucleic acid catalysis using active droplets. Angew. Chem. Int. Ed. 63, e202412534 https://doi.org/10.1002/anie.202412534 (2024).
+Article 
+    CAS 
+
+                    Google Scholar 
+
+Malouf, L. et al. Sculpting DNA-based synthetic cells through phase separation and phase-targeted activity. Chem 9, 3347–3364 https://doi.org/10.1016/j.chempr.2023.10.004 (2023).
+Article 
+    CAS 
+
+                    Google Scholar 
+
+Wang, M. et al. Responsive DNA artificial cells for contact and behavior regulation of mammalian cells. Nat. Commun. 16, 2410 https://doi.org/10.1038/s41467-025-57770-1 (2025).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Liu, W., Deng, J., Song, S., Sethi, S. & Walther, A. A facile DNA coacervate platform for engineering wetting, engulfment, fusion and transient behavior. Commun. Chem. 7, 100 https://doi.org/10.1038/s42004-024-01185-4 (2024).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Fabrini, G. et al. Co-transcriptional production of programmable RNA condensates and synthetic organelles. Nat. Nanotechnol. 19, 1665–1673 https://doi.org/10.1038/s41565-024-01726-x (2024).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Stewart, J. M. et al. Modular RNA motifs for orthogonal phase separated compartments. Nat. Commun. 15, 6244 https://doi.org/10.1038/s41467-024-50003-x (2024).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Lewontin, R. C. The units of selection. Annu. Rev. Ecol. Evol. Syst. 1, 1–18 https://doi.org/10.1146/annurev.es.01.110170.000245 (1970).
+Article 
+
+                    Google Scholar 
+
+Szathmáry, E., Santos, M. & Fernando, C. Evolutionary potential and requirements for minimal protocells. In Prebiotic Chemistry (ed. Walde, P.) 167–211 (Springer, 2005).
+Adamala, K. & Szostak, J. W. Competition between model protocells driven by an encapsulated catalyst. Nat. Chem. 5, 495–501 https://doi.org/10.1038/nchem.1650 (2013).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Matsumura, S. et al. Transient compartmentalization of RNA replicators prevents extinction due to parasites. Science 354, 1293–1296 https://doi.org/10.1126/science.aag1582 (2016).
+Article 
+    PubMed 
+    CAS 
+
+                    Google Scholar 
+
+Saleh, O. A., Wilken, S., Squires, T. M. & Liedl, T. Vacuole dynamics and popping-based motility in liquid droplets of DNA. Nat. Commun. 14, 3574 https://doi.org/10.1038/s41467-023-39175-0 (2023).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Erkamp, N. A. et al. Biomolecular condensates with complex architectures via controlled nucleation. Nat. Chem. Eng. 1, 430–439 https://doi.org/10.1038/s44286-024-00077-7 (2024).
+Article 
+    CAS 
+
+                    Google Scholar 
+
+Bergmann, A. M. et al. Liquid spherical shells are a non-equilibrium steady state of active droplets. Nat. Commun. 14, 6552 https://doi.org/10.1038/s41467-023-42344-w (2023).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Geary, C., Rothemund, P. W. K. & Andersen, E. S. A single-stranded architecture for cotranscriptional folding of RNA nanostructures. Science 345, 799–804 https://doi.org/10.1126/science.1253920 (2014).
+Article 
+    PubMed 
+    CAS 
+
+                    Google Scholar 
+
+Wilson, C., Nix, J. & Szostak, J. Functional requirements for specific ligand recognition by a biotin-binding RNA pseudoknot. Biochemistry 37, 14410–14419 https://doi.org/10.1021/bi981371j (1998).
+Article 
+    PubMed 
+    CAS 
+
+                    Google Scholar 
+
+Tran, M. P. et al. Genetic encoding and expression of RNA origami cytoskeletons in synthetic cells. Nat. Nanotechnol. 20, 664–671 https://doi.org/10.1038/s41565-025-01879-3 (2025).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+De Franceschi, N., Hoogenberg, B., Katan, A. & Dekker, C. Engineering ssRNA tile filaments for (dis)assembly and membrane binding. Nanoscale 16, 4890–4899 https://doi.org/10.1039/D3NR06423A (2024).
+Article 
+    PubMed 
+    CAS 
+
+                    Google Scholar 
+
+Chen, N., Zhao, Z., Wang, Y. & Dimova, R. Resolving the mechanisms of soy glycinin self-coacervation and hollow-condensate formation. ACS Macro Lett. 9, 1844–1852 https://doi.org/10.1021/acsmacrolett.0c00709 (2020).
+Article 
+    PubMed 
+    CAS 
+
+                    Google Scholar 
+
+Liu, W., Lupfer, C., Samanta, A., Sarkar, A. & Walther, A. Switchable hydrophobic pockets in DNA protocells enhance chemical conversion. J. Am. Chem. Soc. 145, 7090–7094 https://doi.org/10.1021/jacs.3c00997 (2023).
+Article 
+    PubMed 
+    CAS 
+
+                    Google Scholar 
+
+Myers, F. A. Random mutagenesis by PCR. In DNA Manipulation and Analysis (ed. Scarlett, G.) 81–86 https://doi.org/10.1007/978-1-0716-3004-4_7 (Humana, 2023).
+Neylon, C. Chemical and biochemical strategies for the randomization of protein encoding DNA sequences: library construction methods for directed evolution. Nucleic Acids Res. 32, 1448–1459 https://doi.org/10.1093/nar/gkh315 (2004).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Zaccolo, M., Williams, D. M., Brown, D. M. & Gherardi, E. An approach to random mutagenesis of DNA using mixtures of triphosphate derivatives of nucleoside analogues. J. Mol. Biol. 255, 589–603 https://doi.org/10.1006/jmbi.1996.0049 (1996).
+Article 
+    PubMed 
+    CAS 
+
+                    Google Scholar 
+
+El-Deiry, W. S., Downey, K. M. & So, A. G. Molecular mechanisms of manganese mutagenesis. Proc. Natl Acad. Sci. USA 81, 7378–7382 (1984).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Monari, L., Braun, I., Verstraeten, W., Poppleton, E. & Göpfrich, K. PyFuRNAce: an integrated design engine for RNA origami. Nat. Commun. 16, 10815 https://doi.org/10.1038/s41467-025-66290-x (2025).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Xie, M., Chen, W., Vonk-de Roy, M. & Walther, A. Constructing synthetic nuclear architectures via transcriptional condensates in a DNA protonucleus. Nat. Commun. 16, 8254 https://doi.org/10.1038/s41467-025-63445-8 (2025).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Biffi, S. et al. Phase behavior and critical activated dynamics of limited-valence DNA nanostars. Proc. Natl Acad. Sci. USA 110, 15633–15637 https://doi.org/10.1073/pnas.1304632110 (2013).
+Article 
+    PubMed 
+    PubMed Central 
+
+                    Google Scholar 
+
+Alshareedah, I., Moosa, M. M., Raju, M., Potoyan, D. A. & Banerjee, P. R. Phase transition of RNA–protein complexes into ordered hollow condensates. Proc. Natl Acad. Sci. USA 117, 15650–15658 https://doi.org/10.1073/pnas.1922365117 (2020).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Udono, H., Nomura, S.-i. M. & Takinoue, M. Remote-controlled mechanical and directional motions of photoswitchable DNA condensates. Nat. Commun. 16, 4479 https://doi.org/10.1038/s41467-025-59100-x (2025).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Zhao, Q. H., Qi, J. Y. & Deng, N. N. DNA photofluids show life-like motion. Nat. Mater. 24, 935–944 https://doi.org/10.1038/s41563-025-02202-0 (2025).
+Article 
+    PubMed 
+    CAS 
+
+                    Google Scholar 
+
+Maass, C. C., Krüger, C., Herminghaus, S. & Bahr, C. Swimming droplets. Annu. Rev. Condens. Matter Phys. 7, 171–193 https://doi.org/10.1146/annurev-conmatphys-031115-011517 (2016).
+Article 
+    CAS 
+
+                    Google Scholar 
+
+Goins, A. B., Sanabria, H. & Waxham, M. N. Macromolecular crowding and size effects on probe microviscosity. Biophys. J. 95, 5362–5373 https://doi.org/10.1529/biophysj.108.131250 (2008).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Dizani, M., Sorrentino, D., Agarwal, S., Stewart, J. M. & Franco, E. Protein recruitment to dynamic DNA–RNA host condensates. J. Am. Chem. Soc. 146, 29344–29354 https://doi.org/10.1021/jacs.4c07555 (2024).
+Article 
+    PubMed 
+    CAS 
+
+                    Google Scholar 
+
+Udono, H. et al. Programmable computational RNA droplets assembled via kissing-loop interaction. ACS Nano 18, 15477–15486 https://doi.org/10.1021/acsnano.3c12161 (2024).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Iglesias-Artola, J. M. et al. Charge-density reduction promotes ribozyme activity in RNA–peptide coacervates via RNA fluidization and magnesium partitioning. Nat. Chem. 14, 407–416 https://doi.org/10.1038/s41557-022-00890-8 (2022).
+Article 
+    PubMed 
+    PubMed Central 
+    CAS 
+
+                    Google Scholar 
+
+Giessler, F., Verstraeten, W., Abele, T., Maurer, S. J., Monari, L. & Göpfrich, K. Growth, dissolution and segregation of genetically encoded RNA droplets by ribozyme catalysis. Angew. Chem. Int. Ed. 65, e19002 https://doi.org/10.1002/anie.202519002 (2026).
+Article 
+    CAS 
+
+                    Google Scholar 
+
+Le Vay, K. K., Salibi, E., Ghosh, B., Tang, T. D. & Mutschler, H. Ribozyme activity modulates the physical properties of RNA-peptide coacervates. eLife 12, e83543 https://doi.org/10.7554/eLife.83543 (2023).
+Article 
+    PubMed 
+    PubMed Central 
+
+                    Google Scholar 
+
+Jaiswal, P., Haugerud, I. S. & Weber, C. A. Genetic encoding and mutagenesis of RNA droplet phenotypes. Zenodo https://doi.org/10.5281/zenodo.21979218 (2026).
+Download references
+Acknowledgements
+We thank E. Poppleton for the discussions on the phase diagram, M. Bibrowski for suggestions on the role of surface tension as well as J. Boekhoven for their input on this manuscript.
+Funding
+K.G. received funding from the Human Frontiers Science Program (HFSP, reference number RGP003/2023), the ERC Starting Grant ENSYNC (101076997) and the Alfried Krupp Foundation through the Alfried Krupp Förderpreis. This work was supported by the Health + Life Science Alliance Heidelberg Mannheim and the Flagship Molecular Systems Engineering. K.G. and C.A.W. thank the TRR 392: Molecular evolution in prebiotic environments (project number 521256690) for support. M.P. and K.G. received funding through the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) under Germany’s Excellence Strategy—EXC-3018/1—533587280 (Cluster of Excellence SynthImmune). W.V. and K.G. are supported by funding from the Carl-Zeiss-Stiftung and Center SynGen. Open access funding provided by Max Planck Society.
+Author informationAuthor notes
+These authors contributed equally: Mai P. Tran, Alena Taskina, Pranay Jaiswal.
+Authors and Affiliations
+Center for Molecular Biology of Heidelberg University (ZMBH), Heidelberg University, Heidelberg, Germany
+William Verstraeten, Mai P. Tran, Alena Taskina, Claudia Helbig & Kerstin Göpfrich
+Max Planck School Matter to Life, Heidelberg, Germany
+Alena Taskina & Kerstin Göpfrich
+Faculty of Mathematics, Natural Science, and Materials Engineering, Institute of Physics, University of Augsburg, Augsburg, Germany
+Pranay Jaiswal, Ivar S. Haugerud & Christoph A. Weber
+German Cancer Research Center (DKFZ) Heidelberg, CCU Neuroimmunology and Brain Tumor Immunology, Heidelberg, Germany
+Moritz Hamberger, Edward W. Green & Michael Platten
+German Cancer Consortium (DKTK), DKFZ, Core Center Heidelberg, Heidelberg, Germany
+Moritz Hamberger, Edward W. Green & Michael Platten
+Department of Neurology, Medical Faculty Mannheim, MCTN, University of Heidelberg, Mannheim, Germany
+Moritz Hamberger, Edward W. Green & Michael Platten
+Faculty of Bioscience, Heidelberg University, Heidelberg, Germany
+Moritz Hamberger
+Helmholtz Institute for Translational Oncology Mainz, Mainz, Germany
+Michael Platten
+DKFZ-Hector Cancer Institute at the Medical Faculty Mannheim, Heidelberg University, Heidelberg, Germany
+Michael Platten
+Cluster of Excellence SynthImmune, Heidelberg University, Heidelberg, Germany
+Michael Platten & Kerstin GöpfrichAuthorsWilliam VerstraetenView author publications
+Search author on:PubMed Google ScholarMai P. TranView author publications
+Search author on:PubMed Google ScholarAlena TaskinaView author publications
+Search author on:PubMed Google ScholarPranay JaiswalView author publications
+Search author on:PubMed Google ScholarIvar S. HaugerudView author publications
+Search author on:PubMed Google ScholarClaudia HelbigView author publications
+Search author on:PubMed Google ScholarMoritz HambergerView author publications
+Search author on:PubMed Google ScholarEdward W. GreenView author publications
+Search author on:PubMed Google ScholarMichael PlattenView author publications
+Search author on:PubMed Google ScholarChristoph A. WeberView author publications
+Search author on:PubMed Google ScholarKerstin GöpfrichView author publications
+Search author on:PubMed Google Scholar
+Contributions
+W.V. conducted experiments. Data analysis was done by W.V., M.P.T. and A.T., supported by K.G. K.G. and W.V. designed the research, assisted by M.P.T. W.V., M.P.T., C.A.W. and K.G. wrote the manuscript. C.H. helped with experimental procedures. E.W.G. and M.H. handled the nanopore sequencing. A.T. analyzed the nanopore sequencing results and performed the experiments related to the phase diagram. P.J., I.S.H. and C.A.W. developed the models to fit the phase diagram and predict the onset of vacuole formation. All authors contributed to result interpretation and commented on the manuscript. C.A.W. supervised the theory, and K.G. supervised the experimental research.
+Corresponding authors
+Correspondence to
+                Christoph A. Weber or Kerstin Göpfrich.
+Ethics declarations
+
+Competing interests
+
+The authors declare no competing interests.
+
+Peer review
+
+Peer review information
+
+Nature Chemical Engineering thanks Zoher Gueroui and the other, anonymous, reviewer(s) for their contribution to the peer review of this work. Peer reviewer reports are available.
+
+Additional information
+Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.
+Supplementary information
+Supplementary Information (download PDF )
+Supplementary Figs. 1–25, materials and methods, Tables 1–7 and Video Descriptions 1–6. Additional notes on estimates of kinetic parameters for the theoretical model.
+Reporting Summary (download PDF )
+Peer Review File (download PDF )
+Supplementary Data 1 (download XLSX )
+DNA sequences in Excel format.
+Supplementary Video 1 (download MP4 )
+WT droplet formation.
+Supplementary Video 2 (download MP4 )
+Mut droplet formation.
+Supplementary Video 3 (download AVI )
+Fusion of vacuoles.
+Supplementary Video 4 (download AVI )
+Additional fusion of vacuoles.
+Supplementary Video 5 (download MP4 )
+Theory predicted dynamics.
+Supplementary Video 6 (download MP4 )
+Moving Mut droplet.
+Source data
+Source Data Fig. 1 (download XLSX )
+Data used for plotting graphs in Fig. 1.
+Source Data Fig. 2 (download ZIP )
+Data used for plotting graphs in Fig. 2 and uncropped gel shown in Fig. 2a.
+Source Data Fig. 4 (download XLSX )
+Data used for plotting graphs in Fig. 4.
+Source Data Fig. 5 (download XLSX )
+Data used for plotting graphs in Fig. 5.
+Rights and permissions
+
+Open Access  This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/.
+
+Reprints and permissions
+About this article
+Cite this article
+Verstraeten, W., Tran, M.P., Taskina, A. et al. Genetic encoding and mutagenesis of RNA droplet phenotypes.
+                    Nat Chem Eng 3, 573–583 (2026). https://doi.org/10.1038/s44286-026-00454-4
+Download citation
+Received: 28 May 2025
+Accepted: 09 September 2026
+Published: 07 October 2026
+Version of record: 07 October 2026
+Issue date: October 2026
+DOI: https://doi.org/10.1038/s44286-026-00454-4
+Share this article
+Anyone you share the following link with will be able to read this content:Get shareable link
+Sorry, a shareable link is not currently available for this article.
+Copy shareable link to clipboard
+
+                            Provided by the Springer Nature SharedIt content-sharing initiative
+
+                Download PDF
+
+Advertisement
+
+Explore content
+
+                                    Research articles
+
+                                    Reviews & Analysis
+
+                                    News & Comment
+
+                                    Current issue
+
+                                    Collections
+
+                            Sign up for alerts
+
+                                RSS feed
+
+About the journal
+
+                                    Aims & Scope
+
+                                    Journal Information
+
+                                    Editors
+
+                                    Journal Metrics
+
+                                    Our publishing models
+
+                                    Research Cross-Journal Editorial Team
+
+                                    Reviews Cross-Journal Editorial Team
+
+                                    Editorial Values Statement
+
+                                    Editorial policies
+
+                                    Content Types
+
+                                    Contact
+
+Publish with us
+
+                                    Submission Guidelines
+
+                                    For Reviewers
+
+                                    Language editing services
+
+                                Open access funding
+
+                                Submit manuscript
+
+Search
+
+            Search articles by subject, keyword or author
+
+                        Show results from
+
+                                    All journals
+                                    This journal
+
+                        Search
+
+                Advanced search
+
+Quick links
+
+            Explore articles by subject
+            Find a job
+            Guide to authors
+            Editorial policies
+
+                        Nature Chemical Engineering
+
+                    (Nat Chem Eng)
+
+            ISSN 2948-1198 (online)
+
+nature.com footer links
+
+About Nature Portfolio
+
+                    About us
+                    Press releases
+                    Press office
+                    Contact us
+
+Discover content
+
+                    Journals A-Z
+                    Articles by subject
+                    protocols.io
+                    Nature Index
+
+Publishing policies
+
+                    Nature portfolio policies
+                    Open access
+
+Author & Researcher services
+
+                    Reprints & permissions
+                    Research data
+                    Language editing
+                    Scientific editing
+                    Nature Masterclasses
+                    Research Solutions
+
+Libraries & institutions
+
+                    Librarian service & tools
+                    Librarian portal
+                    Open research
+                    Recommend to library
+
+Advertising & partnerships
+
+                    Advertising
+                    Partnerships & Services
+                    Media kits
+
+                    Branded
+                        content
+
+Professional development
+
+                    Nature Awards
+                    Nature Careers
+                    Nature 
+                        Conferences
+
+Regional websites
+
+                    Nature Africa
+                    Nature China
+                    Nature India
+                    Nature Japan
+                    Nature Middle East
+
+            Privacy
+                Policy
+            Use
+                of cookies
+
+                Your privacy choices/Manage cookies
+
+            Legal
+                notice
+            Accessibility
+                statement
+            Terms & Conditions
+            Your US state privacy rights
+
+                Withdrawal from contracts here
+
+© 2026 Springer Nature Limited
+
+            Close banner
+
+        Close
+
+Sign up for the Nature Briefing newsletter — what matters in science, free to your inbox daily.
+
+                        Email address
+
+                            Sign up
+
+                            I agree my information will be processed in accordance with the Nature and Springer Nature Limited Privacy Policy.
+
+            Close banner
+
+        Close
+
+            Get the most important science stories of the day, free in your inbox.
+            Sign up for Nature Briefing
+

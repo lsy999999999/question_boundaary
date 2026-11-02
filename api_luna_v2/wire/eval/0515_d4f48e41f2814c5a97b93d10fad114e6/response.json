@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793432244978394033,
+  "http_status": 200,
+  "body": {
+    "id": "resp_044dd25e281bb4a0016ae59ab377b081979703cca0c1949eda",
+    "object": "chat.completion",
+    "created": 1793432244,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"It has the lowest trajectory-level validation error, and prior alternating, PRBS, and double-pulse forecasts were accurate. Alternatives are close, but clock and saturation variants do not improve validation.\",\"prediction\":\"After input returns to zero, multiscale memory will predict lingering output better than a state-only model.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Lingering output after input stops is consistent with accumulated input history relaxing over multiple timescales.\",\"condition_to_check\":\"At matched current input and visible state, differing prior inputs should predict different subsequent outputs.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3710,
+      "completion_tokens": 135,
+      "total_tokens": 3845
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.1911526741459966
+}

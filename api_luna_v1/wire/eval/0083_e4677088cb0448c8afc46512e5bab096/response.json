@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429869427945519,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0c3948f497636f39016ae59169eabc8190a1daf4f0c81b39a5",
+    "object": "chat.completion",
+    "created": 1793429869,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"State has the lowest leave-trajectory-out error; added memory and clock features do not improve validation. Alternating input best probes the remaining disagreement.\",\"prediction\":\"At matched current state and input, output evolution will not depend systematically on earlier input history.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No added storage relation is justified: history features did not improve trajectory-level validation.\",\"condition_to_check\":\"Reject the state representation if matched state-input conditions show reproducible history-dependent outputs.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2816,
+      "completion_tokens": 267,
+      "total_tokens": 3083,
+      "completion_tokens_details": {
+        "reasoning_tokens": 149
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.676453661173582
+}

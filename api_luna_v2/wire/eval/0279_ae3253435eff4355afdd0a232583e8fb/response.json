@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431745157961955,
+  "http_status": 200,
+  "body": {
+    "id": "resp_095de9d1df37b0ac016ae598be530081969dcd3c67834dd741",
+    "object": "chat.completion",
+    "created": 1793431745,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Slow-memory features have the best trajectory-held-out error, but strong residual lag and poorer PRBS fit leave adequacy uncertain; alternating inputs probe competing memory timescales.\",\"prediction\":\"During rapid reversals, output will show a smooth history-dependent response rather than tracking each input switch immediately.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Finite-timescale accumulated input history predicts output beyond the current input.\",\"condition_to_check\":\"If alternating-input history adds no predictive effect after controlling current input and state, this relation is weakened.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3278,
+      "completion_tokens": 284,
+      "total_tokens": 3562,
+      "completion_tokens_details": {
+        "reasoning_tokens": 155
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.516552112996578
+}

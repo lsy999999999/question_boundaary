@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430216706207084,
+  "http_status": 200,
+  "body": {
+    "id": "resp_02f07477a5e6293a016ae592c5dfc8819083bb0e6754208c9a",
+    "object": "chat.completion",
+    "created": 1793430216,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"It has the lowest trajectory-level CV error; memory_clock is close, but elapsed-time forcing lacks clear support. Residual lag and the PRBS error leave adequacy uncertain.\",\"prediction\":\"After PRBS input switches, output will retain a decaying history-dependent tail; memory_clock instead predicts an elapsed-time component.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Finite-relaxation accumulated history predicts output dependence on past input beyond current input and visible state.\",\"condition_to_check\":\"The relation is weakened if past input adds no predictive value after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3476,
+      "completion_tokens": 273,
+      "total_tokens": 3749,
+      "completion_tokens_details": {
+        "reasoning_tokens": 133
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.366291968151927
+}

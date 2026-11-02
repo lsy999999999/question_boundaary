@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793430048934803497,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "alternating",
+    "reason": "Memory_slow has the best trajectory-level CV NMSE (0.00350), but residual lag-1 correlation remains high. Alternating input has the largest disagreement among the plausible memory models.",
+    "prediction": "Rapid switches will produce history-dependent lag; slow-memory predicts a smoother, more persistent response than fast-memory.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the best trajectory-level CV NMSE (0.00350), but residual lag-1 correlation remains high. Alternating input has the largest disagreement among the plausible memory models.\",\"prediction\":\"Rapid switches will produce history-dependent lag; slow-memory predicts a smoother, more persistent response than fast-memory.\",\"accept\":false}",
+    "input_tokens": 2657,
+    "output_tokens": 84,
+    "batch_elapsed_seconds": 2.0229478059336543,
+    "amortized_seconds": 2.0229478059336543,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2657,
+      "completion_tokens": 84,
+      "total_tokens": 2741
+    },
+    "api_response_id": "resp_0bca84d898621d18016ae5921f9f948197b4e81839e6060fb4",
+    "wire_record": "wire/eval/0186_f556132beed742629b7bfedccf916a48"
+  }
+}

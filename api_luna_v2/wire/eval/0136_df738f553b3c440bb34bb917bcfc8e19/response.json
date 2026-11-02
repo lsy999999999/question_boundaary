@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431521834246114,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0760bbd5884b0591016ae597e022f881979ed9d0ff0966250b",
+    "object": "chat.completion",
+    "created": 1793431521,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest trajectory-level CV NMSE (0.00190), far below the current state model, and PRBS has the greatest disagreement among plausible alternatives.\",\"prediction\":\"Under PRBS, output will show history-dependent lag after input switches, which memory_slow will predict better than the state-only model.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2257,
+      "completion_tokens": 150,
+      "total_tokens": 2407,
+      "prompt_tokens_details": {
+        "cached_tokens": 2048
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 62
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.6563487155362964
+}

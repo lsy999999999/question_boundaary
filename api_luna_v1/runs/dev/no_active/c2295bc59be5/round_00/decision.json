@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793429689939990281,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "alternating",
+    "reason": "State-cubic has the lowest leave-trajectory-out error (0.0161 versus 0.0260 for state); history models validate substantially worse. Strong residual correlation leaves adequacy uncertain.",
+    "prediction": "Rapid input reversals should expose whether instantaneous curvature predicts the response; systematic history-dependent deviations would falsify this representation.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No cross-domain relation is established by the current trajectory evidence.",
+      "condition_to_check": "Compare responses at similar states and inputs reached through different recent histories."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state_cubic\",\"experiment\":\"alternating\",\"reason\":\"State-cubic has the lowest leave-trajectory-out error (0.0161 versus 0.0260 for state); history models validate substantially worse. Strong residual correlation leaves adequacy uncertain.\",\"prediction\":\"Rapid input reversals should expose whether instantaneous curvature predicts the response; systematic history-dependent deviations would falsify this representation.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is established by the current trajectory evidence.\",\"condition_to_check\":\"Compare responses at similar states and inputs reached through different recent histories.\"}}",
+    "input_tokens": 2816,
+    "output_tokens": 287,
+    "batch_elapsed_seconds": 4.630865383893251,
+    "amortized_seconds": 4.630865383893251,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2816,
+      "completion_tokens": 287,
+      "total_tokens": 3103,
+      "completion_tokens_details": {
+        "reasoning_tokens": 159
+      }
+    },
+    "api_response_id": "resp_0fb9c1ee052bf0d7016ae590b678d88194aa685bdc779b8257",
+    "wire_record": "wire/dev/0051_c3877a692d97406690db0523bc7f7269"
+  }
+}

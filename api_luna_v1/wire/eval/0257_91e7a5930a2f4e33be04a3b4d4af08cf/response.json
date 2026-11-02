@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430177409526125,
+  "http_status": 200,
+  "body": {
+    "id": "resp_01ef0ff79327ec6a016ae5929e718481958df03f9fb41c21ca",
+    "object": "chat.completion",
+    "created": 1793430177,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"ramp_reverse\",\"reason\":\"saturating_memory has the lowest trajectory-level CV error, but its improvement over memory_slow is modest; ramp_reverse has the greatest predicted disagreement among plausible models and probes nonlinear history effects.\",\"prediction\":\"At large accumulated responses, saturating_memory will predict a more attenuated trajectory than memory_slow during the ramp reversal.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2806,
+      "completion_tokens": 297,
+      "total_tokens": 3103,
+      "completion_tokens_details": {
+        "reasoning_tokens": 207
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.213585151359439
+}

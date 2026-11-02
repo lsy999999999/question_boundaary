@@ -1,0 +1,67 @@
+{
+  "scope": "Manual review separate from original model output and automated provenance audit; not injected into the running experiment",
+  "findings": [
+    {
+      "round": 0,
+      "decision": "r0_proposal",
+      "model": "v3_r2",
+      "observation": "promoted_v3_sealed_2",
+      "claim": "The proposal states that this trajectory also exceeds whole-trajectory NMSE .05.",
+      "actual_group_cv_nmse": 0.00991,
+      "threshold": 0.05,
+      "verdict": "incorrect metric statement",
+      "impact": "Main failures on promoted_3 and promoted_4 are real; this additional claimed high-error example is false. The model abstained from asserting a threshold boundary.",
+      "evidence": "runs/development_01/initial_models.json and decisions/r0_proposal.json",
+      "reason_for_mistake": "Not established; do not conflate a selected peak-error snippet with whole-trajectory NMSE."
+    },
+    {
+      "round": 1,
+      "decision": "r1_proposal",
+      "model": "b4_r1",
+      "verdict": "tradeoff and context omission",
+      "claim": "The u*z0 interaction is even under simultaneous sign reversal while the other output terms are odd.",
+      "coefficient_before_experiment": 0.014535775837690947,
+      "old_polarity_observed_rms": [
+        0.007766659026699184,
+        0.006928051083954317
+      ],
+      "old_polarity_predicted_rms": [
+        0.04607654526604563,
+        0.031444887658874855
+      ],
+      "evidence": "round_1/models_before_experiment.json and observations/v3_r0_experiment_*.json, v3_r1_experiment_*.json",
+      "impact": "Proposed interaction weakens an existing local polarity relationship. V4 context includes per-input grouped diagnostics and residual snippets but does not explicitly include V3 relation summaries; do not attribute this solely to model reasoning. No universal symmetry constraint is implied."
+    },
+    {
+      "round": 1,
+      "decision": "experiment schema",
+      "verdict": "representation limitation",
+      "evidence": "round_1/outcome.json and boundaries.py FEATURES/FAMILIES",
+      "finding": "Recovery gaps 0 and 1 second produce identical seven supplied global input descriptors. The boundary schema cannot directly express a recovery-gap threshold even though the experiment compiler can vary the gap.",
+      "impact": "Both observed labels are high-error, so this pair does not itself refute all classifiers over those features. Failure to declare a boundary cannot establish that the model lacks capacity or that no more expressive boundary exists."
+    },
+    {
+      "round": 2,
+      "decision": "r2_assessment",
+      "verdict": "mixed_fit_versions_in_explanation",
+      "finding": "Boundary reason cites refitted group-CV errors .1917/.0277 instead of the original prospective errors .20124/.03659. Both yield the same violated labels, but they are distinct quantities.",
+      "evidence": "decisions/r2_assessment.json, round_2/outcome.json"
+    },
+    {
+      "decision": "final",
+      "verdict": "selection_rationale_inconsistent",
+      "selected_id": "v3_r1",
+      "text_recommends": "v3_r2",
+      "finding": "Machine-readable selection and prose recommendation disagree. Executed v3_r1 is preserved; no after-evaluation replacement.",
+      "evidence": "decisions/final.json and final_commit.json"
+    },
+    {
+      "decision": "evidence identifiers",
+      "verdict": "noncanonical_fit_hash_encoding",
+      "model": "b4_r2",
+      "scope_fit_id": "a3d49eddb073",
+      "failure_fit_id": "53a9abfde379",
+      "finding": "The exact same spec/fit hashes differently because one encoder escapes Chinese characters and the other does not. Owners and underlying data agree, but canonical fit identity must be unified in a future version."
+    }
+  ]
+}

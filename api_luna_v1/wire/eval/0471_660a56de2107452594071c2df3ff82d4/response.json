@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430655027071886,
+  "http_status": 200,
+  "body": {
+    "id": "resp_00f8687d50f75c39016ae5947b9764819487cc89d68a24c475",
+    "object": "chat.completion",
+    "created": 1793430654,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest trajectory-level CV error; alternating’s forecast error is low, but residual lag correlation leaves possible structure unresolved.\",\"prediction\":\"During PRBS switches, output should retain smooth carryover from past input after controlling current input; weak carryover would challenge this model.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Leaky accumulated history can carry past input effects forward after the input changes.\",\"condition_to_check\":\"Check whether past input predicts output after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3254,
+      "completion_tokens": 313,
+      "total_tokens": 3567,
+      "completion_tokens_details": {
+        "reasoning_tokens": 189
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.1429030345752835
+}

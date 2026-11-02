@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432075231542119,
+  "http_status": 200,
+  "body": {
+    "id": "resp_03da681fb95d71b2016ae59a084dac819598407722a20ba7d8",
+    "object": "chat.completion",
+    "created": 1793432075,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"double_pulse\",\"reason\":\"Saturating_memory has the best trajectory-held-out NMSE (0.00216), improving on memory_slow (0.00283); residual lag and limited intervention coverage leave adequacy uncertain.\",\"prediction\":\"The second positive pulse will produce a different, likely weaker response than the first because accumulated history alters the effective response.\",\"accept\":false,\"mapping\":{\"source_id\":\"saturation\",\"target_relation\":\"Nonlinear saturation of accumulated history is a candidate explanation for the improved held-out fit over linear memory.\",\"condition_to_check\":\"Compare the two pulse responses; similar responses after accounting for residual history would weaken the saturation hypothesis.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3483,
+      "completion_tokens": 293,
+      "total_tokens": 3776,
+      "completion_tokens_details": {
+        "reasoning_tokens": 147
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.5474727591499686
+}

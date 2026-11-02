@@ -1,0 +1,90 @@
+{
+  "task_id": "14404458fed7",
+  "split": "eval",
+  "family": "delay",
+  "seed": 0,
+  "method": "no_active",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_multiscale",
+    "ridge": 1e-05,
+    "cv_nmse": 0.002369143980720753,
+    "coefficients": [
+      0.000198,
+      1.3743108,
+      0.8119204,
+      -3.9173044,
+      -1.4177708,
+      0.1516543,
+      0.6977104,
+      0.564938,
+      -0.049342,
+      -1.4829514,
+      1.5380583,
+      -1.0715339,
+      1.5496894,
+      3.8626695,
+      5.1756201
+    ]
+  },
+  "test": {
+    "test_nmse": 0.0042977138393374215,
+    "test_mse": 0.0003687878188406466,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 0.0006838867038610165,
+        "nmse": 0.008743080111180366
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.0002705515506121897,
+        "nmse": 0.000666307855848028
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 0.0005802063004052506,
+        "nmse": 0.009919196085342802
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 2.5470913964813335e-05,
+        "nmse": 0.00028046578752080793
+      },
+      {
+        "action": "test_prbs",
+        "mse": 0.0005591033615401439,
+        "nmse": 0.005460007735845926
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 9.350808266046517e-05,
+        "nmse": 0.0007172254602866003
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": true,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 10249,
+  "output_tokens": 455,
+  "generation_seconds_amortized": 319.4664338637376,
+  "elapsed_wall_seconds": 7605.737740278244,
+  "selected_actions": [
+    "prbs",
+    "ramp_reverse",
+    "double_pulse"
+  ],
+  "selected_representations": [
+    "memory_multiscale",
+    "memory_multiscale",
+    "memory_multiscale",
+    "memory_multiscale"
+  ],
+  "peak_gpu_allocated_gb": 0.0,
+  "peak_process_ram_gb": 35.00399398803711,
+  "inference_backend": "cpu-fp32",
+  "evaluation_after_commit_ns": 1793413340174911169
+}

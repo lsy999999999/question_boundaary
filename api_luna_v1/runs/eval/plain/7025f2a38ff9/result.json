@@ -1,0 +1,84 @@
+{
+  "task_id": "7025f2a38ff9",
+  "split": "eval",
+  "family": "two_memory",
+  "seed": 33,
+  "method": "plain",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_slow",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0016790537092912887,
+    "coefficients": [
+      0.0006236,
+      -0.9272394,
+      0.9583527,
+      0.9681369,
+      -1.2533395,
+      -0.428836,
+      -0.5699377,
+      -0.5442405,
+      2.4382698
+    ]
+  },
+  "test": {
+    "test_nmse": 0.000322061711663348,
+    "test_mse": 2.7243539304594225e-05,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 2.5566135131999275e-05,
+        "nmse": 0.0003790941775906668
+      },
+      {
+        "action": "test_three_step",
+        "mse": 4.5823748470368574e-05,
+        "nmse": 0.00015287462104444834
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 1.4981611474131411e-05,
+        "nmse": 0.0005087035524743723
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 2.3167166661032658e-05,
+        "nmse": 0.00029317016218554417
+      },
+      {
+        "action": "test_prbs",
+        "mse": 2.4823337433868125e-05,
+        "nmse": 0.0003256241943925788
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 2.9099236656165307e-05,
+        "nmse": 0.00027290356229247757
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": true,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 10685,
+  "output_tokens": 561,
+  "generation_seconds_amortized": 10.778798004612327,
+  "elapsed_wall_seconds": 412.62989497184753,
+  "selected_actions": [
+    "prbs",
+    "alternating",
+    "double_pulse"
+  ],
+  "selected_representations": [
+    "memory_slow",
+    "memory_slow",
+    "memory_slow",
+    "memory_slow"
+  ],
+  "peak_gpu_allocated_gb": 0.0,
+  "peak_process_ram_gb": 0.08880615234375,
+  "inference_backend": "third_party_api",
+  "evaluation_after_commit_ns": 1793430268846229736
+}

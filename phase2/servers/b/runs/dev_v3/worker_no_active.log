@@ -1,0 +1,27 @@
+2026-10-31 13:10:09.922685: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-10-31 13:10:09.941972: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE4.1 SSE4.2 AVX AVX2 AVX512F AVX512_VNNI AVX512_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.57s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:02<00:01,  1.08it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.36it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.62it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.34it/s]
+/home/lsyedith/theory_discovery_phase2_20261031/.env_gpu/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:628: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.7` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.
+  warnings.warn(
+/home/lsyedith/theory_discovery_phase2_20261031/.env_gpu/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:633: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.8` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+  warnings.warn(
+/home/lsyedith/theory_discovery_phase2_20261031/.env_gpu/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:650: UserWarning: `do_sample` is set to `False`. However, `top_k` is set to `20` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_k`.
+  warnings.warn(
+{"event": "round", "method": "no_active", "task_id": "442fe7a60ac6", "round": 1, "representation": "clock", "cv_nmse": 0.0013298110220135483, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "c2295bc59be5", "round": 1, "representation": "state_cubic", "cv_nmse": 0.0015449843068168411, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "afb8612b2c91", "round": 1, "representation": "memory_slow", "cv_nmse": 0.001962665194248961, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "950f039e72fa", "round": 1, "representation": "memory_clock", "cv_nmse": 0.013663995470386124, "parse_errors": ["invalid_mapping_source_id"]}
+{"event": "round", "method": "no_active", "task_id": "442fe7a60ac6", "round": 2, "representation": "state", "cv_nmse": 0.0011053235327428419, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "c2295bc59be5", "round": 2, "representation": "state_cubic", "cv_nmse": 0.0012130974536485755, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "afb8612b2c91", "round": 2, "representation": "memory_slow", "cv_nmse": 0.0019900918065706044, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "950f039e72fa", "round": 2, "representation": "memory_slow", "cv_nmse": 0.0058183922887543385, "parse_errors": ["invalid_mapping_source_id"]}
+{"event": "round", "method": "no_active", "task_id": "442fe7a60ac6", "round": 3, "representation": "state", "cv_nmse": 0.0011837794365401513, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "c2295bc59be5", "round": 3, "representation": "state_cubic", "cv_nmse": 0.001341465801454463, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "afb8612b2c91", "round": 3, "representation": "memory_slow", "cv_nmse": 0.0018098241945385233, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "950f039e72fa", "round": 3, "representation": "memory_slow", "cv_nmse": 0.005784101679010942, "parse_errors": ["invalid_mapping_source_id"]}
+{"event": "completed", "method": "no_active", "task_id": "442fe7a60ac6", "family": "linear", "test_nmse": 0.00020637542971997444, "invalid_outputs": 0}
+{"event": "completed", "method": "no_active", "task_id": "c2295bc59be5", "family": "cubic", "test_nmse": 0.0027639295017037346, "invalid_outputs": 0}
+{"event": "completed", "method": "no_active", "task_id": "afb8612b2c91", "family": "memory", "test_nmse": 0.006261190957416085, "invalid_outputs": 0}
+{"event": "completed", "method": "no_active", "task_id": "950f039e72fa", "family": "clock", "test_nmse": 0.005508135594105474, "invalid_outputs": 4}
+{"event": "worker_complete", "methods": ["no_active"], "split": "dev"}

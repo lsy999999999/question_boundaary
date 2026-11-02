@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429730184525578,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0cf297d19faa1c3c016ae590e027388195a4effc7bc131f2ad",
+    "object": "chat.completion",
+    "created": 1793429730,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest trajectory-level validation error, but substantial residual lag-1 correlation and disagreement among plausible models leave unseen-intervention adequacy uncertain.\",\"prediction\":\"After rapid input reversals, output will retain a history-dependent component rather than respond only to current input and output.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Finite-relaxation accumulated input history can influence output after the input changes.\",\"condition_to_check\":\"At matched current input and output, vary prior history and test whether subsequent responses differ.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3509,
+      "completion_tokens": 202,
+      "total_tokens": 3711,
+      "completion_tokens_details": {
+        "reasoning_tokens": 77
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.1235962426289916
+}

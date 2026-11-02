@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793429986560252766,
+  "decision": {
+    "representation": "clock",
+    "experiment": "ramp_reverse",
+    "reason": "Clock has the lowest held-out NMSE, but its advantage over state is small and residuals remain correlated; ramp_reverse has the greatest predicted disagreement among available experiments.",
+    "prediction": "If clock features capture an independent driver, residual deviations will recur at matching elapsed times despite the reversed input history.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"ramp_reverse\",\"reason\":\"Clock has the lowest held-out NMSE, but its advantage over state is small and residuals remain correlated; ramp_reverse has the greatest predicted disagreement among available experiments.\",\"prediction\":\"If clock features capture an independent driver, residual deviations will recur at matching elapsed times despite the reversed input history.\",\"accept\":false}",
+    "input_tokens": 2964,
+    "output_tokens": 239,
+    "batch_elapsed_seconds": 3.189322531223297,
+    "amortized_seconds": 3.189322531223297,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2964,
+      "completion_tokens": 239,
+      "total_tokens": 3203,
+      "completion_tokens_details": {
+        "reasoning_tokens": 159
+      }
+    },
+    "api_response_id": "resp_061d77d28baaea9d016ae591e0059481938bb3bfd9b36847ae",
+    "wire_record": "wire/eval/0157_18a372a365bf491695f7c2cb4248699a"
+  }
+}

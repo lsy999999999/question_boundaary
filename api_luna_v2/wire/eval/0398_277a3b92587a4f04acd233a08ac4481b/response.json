@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431962512093905,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0f5817b8d713c8ab016ae5999895ac819696df990994105caa",
+    "object": "chat.completion",
+    "created": 1793431962,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"ramp_reverse\",\"reason\":\"Saturating memory has the lowest trajectory-level CV NMSE (0.00167), improving on memory_slow, though substantial residual lag and model disagreement leave uncertainty.\",\"prediction\":\"During ramp reversal, accumulated history will cause the response to depend on ramp direction, with saturation moderating its magnitude.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3119,
+      "completion_tokens": 185,
+      "total_tokens": 3304,
+      "completion_tokens_details": {
+        "reasoning_tokens": 100
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.8056864188984036
+}

@@ -1,0 +1,84 @@
+{
+  "task_id": "f1ddfabee06d",
+  "split": "eval",
+  "family": "saturated_memory",
+  "seed": 33,
+  "method": "shuffled",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_slow",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0016733934587124062,
+    "coefficients": [
+      0.0020521,
+      -0.6883112,
+      0.9706364,
+      1.3638955,
+      -1.7208044,
+      -0.6285559,
+      -1.4397547,
+      0.4239398,
+      2.1085726
+    ]
+  },
+  "test": {
+    "test_nmse": 0.0015713044319114894,
+    "test_mse": 0.00020176215674711753,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 6.0909887718360005e-05,
+        "nmse": 0.0008498913238107475
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.0008110562464701614,
+        "nmse": 0.002601019422565236
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 0.00010253239879989976,
+        "nmse": 0.0033562142278699392
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 9.234939261175934e-05,
+        "nmse": 0.0011298087480579257
+      },
+      {
+        "action": "test_prbs",
+        "mse": 6.140058086937234e-05,
+        "nmse": 0.0007628202520078108
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 8.232443401315212e-05,
+        "nmse": 0.0007280726171572764
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": true,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 14405,
+  "output_tokens": 437,
+  "generation_seconds_amortized": 10.482686971314251,
+  "elapsed_wall_seconds": 321.14750957489014,
+  "selected_actions": [
+    "positive_pulse",
+    "negative_pulse",
+    "double_pulse"
+  ],
+  "selected_representations": [
+    "memory_slow",
+    "memory_slow",
+    "memory_slow",
+    "memory_slow"
+  ],
+  "peak_gpu_allocated_gb": 14.991199016571045,
+  "peak_process_ram_gb": 5.024013519287109,
+  "inference_backend": "cuda",
+  "evaluation_after_commit_ns": 1793424107038864040
+}

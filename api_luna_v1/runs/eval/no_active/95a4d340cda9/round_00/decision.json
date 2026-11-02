@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430458770505579,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "double_pulse",
+    "reason": "Saturating memory has the lowest trajectory-held-out error (0.0018), far below state-only (0.1408); persistent post-input tails also support history dependence.",
+    "prediction": "The second pulse will produce a different response from the first because accumulated history persists between pulses.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "A decaying post-input effect is consistent with accumulated influence carrying into the future.",
+      "condition_to_check": "Compare the second pulse with the first and test whether the difference tracks residual history."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"double_pulse\",\"reason\":\"Saturating memory has the lowest trajectory-held-out error (0.0018), far below state-only (0.1408); persistent post-input tails also support history dependence.\",\"prediction\":\"The second pulse will produce a different response from the first because accumulated history persists between pulses.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"A decaying post-input effect is consistent with accumulated influence carrying into the future.\",\"condition_to_check\":\"Compare the second pulse with the first and test whether the difference tracks residual history.\"}}",
+    "input_tokens": 2827,
+    "output_tokens": 290,
+    "batch_elapsed_seconds": 3.8343754783272743,
+    "amortized_seconds": 3.8343754783272743,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2827,
+      "completion_tokens": 290,
+      "total_tokens": 3117,
+      "completion_tokens_details": {
+        "reasoning_tokens": 161
+      }
+    },
+    "api_response_id": "resp_065dad4a7f947395016ae593b7cbb48197b51b7a98fdb0deff",
+    "wire_record": "wire/eval/0395_a0791ffaa27b4a42ac238a6dcdbc1d3e"
+  }
+}

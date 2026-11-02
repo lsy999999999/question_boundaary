@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423869047637644,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "double_pulse",
+    "reason": "Current models underperform on pulses; slow memory may capture delayed effects.",
+    "prediction": "Double pulse will show reduced variance compared to single pulses.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Storage should show consistent response regardless of input shape.",
+      "condition_to_check": "Consistent response across different input shapes indicates no storage."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"double_pulse\",\n  \"reason\": \"Current models underperform on pulses; slow memory may capture delayed effects.\",\n  \"prediction\": \"Double pulse will show reduced variance compared to single pulses.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Storage should show consistent response regardless of input shape.\",\n    \"condition_to_check\": \"Consistent response across different input shapes indicates no storage.\"\n  }\n}",
+    "input_tokens": 3648,
+    "output_tokens": 109,
+    "batch_elapsed_seconds": 2.6058978280052543,
+    "amortized_seconds": 2.6058978280052543,
+    "peak_gpu_allocated_gb": 14.91956090927124,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

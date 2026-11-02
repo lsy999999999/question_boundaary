@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423960860203587,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "ramp_reverse",
+    "reason": "Cubic terms capture complex dynamics; ramp_reverse tests gradual changes.",
+    "prediction": "Cubic model will show smoother transition compared to linear.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No hidden nonlinearity beyond cubic terms.",
+      "condition_to_check": "Similar response for ramp_reverse across different amplitudes."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"state_cubic\",\n  \"experiment\": \"ramp_reverse\",\n  \"reason\": \"Cubic terms capture complex dynamics; ramp_reverse tests gradual changes.\",\n  \"prediction\": \"Cubic model will show smoother transition compared to linear.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"none\",\n    \"target_relation\": \"No hidden nonlinearity beyond cubic terms.\",\n    \"condition_to_check\": \"Similar response for ramp_reverse across different amplitudes.\"\n  }\n}",
+    "input_tokens": 3797,
+    "output_tokens": 109,
+    "batch_elapsed_seconds": 2.6683508856222034,
+    "amortized_seconds": 2.6683508856222034,
+    "peak_gpu_allocated_gb": 14.950192928314209,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024013519287109,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

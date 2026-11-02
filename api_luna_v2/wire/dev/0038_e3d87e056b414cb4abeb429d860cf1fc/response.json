@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431245163999428,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0fb4789c5ddb97fa016ae596c9e59c8196b413e2334b2a014e",
+    "object": "chat.completion",
+    "created": 1793431245,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has the lowest trajectory-held-out NMSE by a wide margin, and late drift recurs across distinct interventions. Residual lag correlation leaves some uncertainty, so test with irregular input.\",\"prediction\":\"Late negative drift will recur at similar elapsed times during PRBS input, despite its irregular switches.\",\"accept\":true,\"mapping\":{\"source_id\":\"saturation\",\"target_relation\":\"A shared elapsed-time driver could explain drift recurring across different input interventions.\",\"condition_to_check\":\"Drift timing that shifts with input rather than elapsed time would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3242,
+      "completion_tokens": 326,
+      "total_tokens": 3568,
+      "completion_tokens_details": {
+        "reasoning_tokens": 200
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.9621992222964764
+}

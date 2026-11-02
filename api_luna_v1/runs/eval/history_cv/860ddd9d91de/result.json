@@ -1,0 +1,90 @@
+{
+  "task_id": "860ddd9d91de",
+  "split": "eval",
+  "family": "memory",
+  "seed": 33,
+  "method": "history_cv",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_multiscale",
+    "ridge": 1e-05,
+    "cv_nmse": 0.001243672488845908,
+    "coefficients": [
+      0.003437,
+      1.8891668,
+      1.0091104,
+      -7.7454094,
+      0.6625625,
+      -0.3490039,
+      -1.1004729,
+      0.1814928,
+      0.9536622,
+      -2.7773244,
+      0.5193554,
+      4.266709,
+      2.5043875,
+      2.1849987,
+      3.0204204
+    ]
+  },
+  "test": {
+    "test_nmse": 0.0002782911064876648,
+    "test_mse": 1.7711700969313017e-05,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 1.4402554696060028e-05,
+        "nmse": 0.0001714527896521038
+      },
+      {
+        "action": "test_three_step",
+        "mse": 1.58639912075132e-05,
+        "nmse": 3.988466006908657e-05
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 4.276283789160725e-05,
+        "nmse": 0.0011548503718381297
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 8.205871982885915e-06,
+        "nmse": 8.185307801139548e-05
+      },
+      {
+        "action": "test_prbs",
+        "mse": 1.2600746430806156e-05,
+        "nmse": 0.000131320177568729
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 1.2434203607005559e-05,
+        "nmse": 9.038556178654404e-05
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": null,
+  "invalid_outputs": 0,
+  "generation_calls": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "generation_seconds_amortized": 0,
+  "elapsed_wall_seconds": 2.923286199569702,
+  "selected_actions": [
+    "prbs",
+    "prbs",
+    "alternating"
+  ],
+  "selected_representations": [
+    "memory_clock",
+    "memory_slow",
+    "saturating_memory",
+    "memory_multiscale"
+  ],
+  "peak_gpu_allocated_gb": 0.0,
+  "peak_process_ram_gb": 0.0,
+  "inference_backend": "numerical_baseline",
+  "evaluation_after_commit_ns": 1793429808717340641
+}

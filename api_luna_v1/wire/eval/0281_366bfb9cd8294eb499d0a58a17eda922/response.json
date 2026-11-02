@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430229668973194,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0a07e454156b328f016ae592d1e604819092fa867cc1d4e955",
+    "object": "chat.completion",
+    "created": 1793430229,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"It has the best trajectory-level validation error by a wide margin, and observed post-input decay supports slow history dependence. A double pulse tests whether carryover alters the second response.\",\"prediction\":\"The second pulse response will differ from the first because the first pulse's effect persists through the intervening rest.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history carry past influence forward, with leakage producing finite relaxation.\",\"condition_to_check\":\"At matched input, test whether the intervening pulse history predicts the second response.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3462,
+      "completion_tokens": 275,
+      "total_tokens": 3737,
+      "completion_tokens_details": {
+        "reasoning_tokens": 143
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 9.52920845337212
+}

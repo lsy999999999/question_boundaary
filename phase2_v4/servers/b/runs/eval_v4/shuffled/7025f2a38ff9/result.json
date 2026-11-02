@@ -1,0 +1,84 @@
+{
+  "task_id": "7025f2a38ff9",
+  "split": "eval",
+  "family": "two_memory",
+  "seed": 33,
+  "method": "shuffled",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_slow",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0015011350660529812,
+    "coefficients": [
+      0.0001329,
+      -0.7202256,
+      0.9439704,
+      0.8527637,
+      -0.7783153,
+      -0.3653967,
+      -0.7537278,
+      -0.325209,
+      1.5152758
+    ]
+  },
+  "test": {
+    "test_nmse": 0.000427445342572821,
+    "test_mse": 3.38771699148427e-05,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 3.676563024842735e-05,
+        "nmse": 0.0005451600834725066
+      },
+      {
+        "action": "test_three_step",
+        "mse": 5.094848395534604e-05,
+        "nmse": 0.00016997147630773115
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 2.2271216958179443e-05,
+        "nmse": 0.0007562235347055824
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 3.306892193335113e-05,
+        "nmse": 0.00041847245925020294
+      },
+      {
+        "action": "test_prbs",
+        "mse": 2.946659362288353e-05,
+        "nmse": 0.0003865328679315218
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 3.0742172770868736e-05,
+        "nmse": 0.0002883116337693812
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": true,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 14370,
+  "output_tokens": 422,
+  "generation_seconds_amortized": 10.158593110740185,
+  "elapsed_wall_seconds": 288.446640253067,
+  "selected_actions": [
+    "positive_pulse",
+    "negative_pulse",
+    "double_pulse"
+  ],
+  "selected_representations": [
+    "memory_slow",
+    "memory_slow",
+    "memory_slow",
+    "memory_slow"
+  ],
+  "peak_gpu_allocated_gb": 14.991199016571045,
+  "peak_process_ram_gb": 5.024013519287109,
+  "inference_backend": "cuda",
+  "evaluation_after_commit_ns": 1793424073434205706
+}

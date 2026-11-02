@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430543587799404,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "alternating",
+    "reason": "Memory-clock has much lower leave-trajectory-out error (0.0031) than the current state model (0.4335), though clock and full-history explanations remain plausible.",
+    "prediction": "After controlling input history, predicted oscillatory variation will remain aligned with elapsed time across alternating-input trajectories.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "The fit supports adding clock features, but does not establish an independent external driver.",
+      "condition_to_check": "Compare trajectories under different inputs at matched elapsed times; persistent aligned oscillations would support a clock contribution."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"Memory-clock has much lower leave-trajectory-out error (0.0031) than the current state model (0.4335), though clock and full-history explanations remain plausible.\",\"prediction\":\"After controlling input history, predicted oscillatory variation will remain aligned with elapsed time across alternating-input trajectories.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The fit supports adding clock features, but does not establish an independent external driver.\",\"condition_to_check\":\"Compare trajectories under different inputs at matched elapsed times; persistent aligned oscillations would support a clock contribution.\"}}",
+    "input_tokens": 2785,
+    "output_tokens": 310,
+    "batch_elapsed_seconds": 3.9345680652186275,
+    "amortized_seconds": 3.9345680652186275,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2785,
+      "completion_tokens": 310,
+      "total_tokens": 3095,
+      "completion_tokens_details": {
+        "reasoning_tokens": 178
+      }
+    },
+    "api_response_id": "resp_05cb638ab53ad487016ae5940c63f08195b0877e3cb7d5272f",
+    "wire_record": "wire/eval/0428_c72466238cd94151bd25a2581fcc586e"
+  }
+}

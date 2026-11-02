@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423964176583750,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "alternating",
+    "reason": "Alternating inputs test if response saturates similarly for positive and negative amplitudes.",
+    "prediction": "Responses will show reduced amplitude at high input levels regardless of sign.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Response amplitude decreases at high states regardless of input direction.",
+      "condition_to_check": "Compare alternating responses to single positive and negative pulses."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"alternating\",\n  \"reason\": \"Alternating inputs test if response saturates similarly for positive and negative amplitudes.\",\n  \"prediction\": \"Responses will show reduced amplitude at high input levels regardless of sign.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"Response amplitude decreases at high states regardless of input direction.\",\n    \"condition_to_check\": \"Compare alternating responses to single positive and negative pulses.\"\n  }\n}",
+    "input_tokens": 3828,
+    "output_tokens": 117,
+    "batch_elapsed_seconds": 2.831326705403626,
+    "amortized_seconds": 2.831326705403626,
+    "peak_gpu_allocated_gb": 14.952060222625732,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

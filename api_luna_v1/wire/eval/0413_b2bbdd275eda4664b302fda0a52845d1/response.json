@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430504903329200,
+  "http_status": 200,
+  "body": {
+    "id": "resp_03be281310435b10016ae593e55a448196a79cf13b14c15407",
+    "object": "chat.completion",
+    "created": 1793430504,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest trajectory-held-out error (0.0013), far below memory_clock and history_all; elapsed-time forcing is a better-supported predictive representation than the current state-only model.\",\"prediction\":\"Residual oscillations will remain phase-aligned to elapsed time across alternating input switches, rather than following the input history.\",\"accept\":false,\"mapping\":{\"source_id\":\"saturation\",\"target_relation\":\"A shared elapsed-time driver is consistent with the strong clock-model validation advantage, without establishing a physical mechanism.\",\"condition_to_check\":\"Compare oscillation phase across interventions; input-dependent phase shifts would weaken the clock representation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2786,
+      "completion_tokens": 360,
+      "total_tokens": 3146,
+      "completion_tokens_details": {
+        "reasoning_tokens": 221
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.25173810031265
+}

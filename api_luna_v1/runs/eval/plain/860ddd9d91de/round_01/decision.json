@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793430023718663605,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "alternating",
+    "reason": "Memory_slow has the lowest candidate leave-trajectory-out NMSE (0.00390), while memory_clock retains substantial PRBS error and higher complexity. High residual lag suggests the current model is not yet adequate.",
+    "prediction": "Under rapid alternating inputs, output will lag the switches and show history-dependent, attenuated responses.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest candidate leave-trajectory-out NMSE (0.00390), while memory_clock retains substantial PRBS error and higher complexity. High residual lag suggests the current model is not yet adequate.\",\"prediction\":\"Under rapid alternating inputs, output will lag the switches and show history-dependent, attenuated responses.\",\"accept\":false}",
+    "input_tokens": 2659,
+    "output_tokens": 226,
+    "batch_elapsed_seconds": 3.2868721559643745,
+    "amortized_seconds": 3.2868721559643745,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2659,
+      "completion_tokens": 226,
+      "total_tokens": 2885,
+      "completion_tokens_details": {
+        "reasoning_tokens": 138
+      }
+    },
+    "api_response_id": "resp_0d79a658710b20e0016ae592053c9c8197aed122c4217b3a90",
+    "wire_record": "wire/eval/0173_f3fc4cff77f943cb87a8ea87992d4113"
+  }
+}

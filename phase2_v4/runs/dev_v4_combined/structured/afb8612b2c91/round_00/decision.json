@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423712113613080,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "double_pulse",
+    "reason": "Memory_slow has lowest CV NMSE and shows best generalization on plausible representations.",
+    "prediction": "Double pulse will show distinct phases of response due to slow memory accumulation.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Response persists after input ends due to stored state.",
+      "condition_to_check": "Persistent response after double pulse ends."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"double_pulse\",\n  \"reason\": \"Memory_slow has lowest CV NMSE and shows best generalization on plausible representations.\",\n  \"prediction\": \"Double pulse will show distinct phases of response due to slow memory accumulation.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Response persists after input ends due to stored state.\",\n    \"condition_to_check\": \"Persistent response after double pulse ends.\"\n  }\n}",
+    "input_tokens": 3150,
+    "output_tokens": 110,
+    "batch_elapsed_seconds": 2.5388665860518813,
+    "amortized_seconds": 2.5388665860518813,
+    "peak_gpu_allocated_gb": 14.82780408859253,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.0277862548828125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

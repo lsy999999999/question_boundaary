@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431781502608921,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0c907a35486a5253016ae598e292548190b470c77f22e7a505",
+    "object": "chat.completion",
+    "created": 1793431781,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Slow-memory has strong trajectory-level validation and captures the observed post-input decay. Saturating memory improves CV only marginally with many more coefficients, so that gain is not yet persuasive.\",\"prediction\":\"After rapid input reversals, output will retain a decaying influence of earlier input rather than track the current input alone.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts output after input returns to zero, consistent with finite relaxation.\",\"condition_to_check\":\"At matched current input and visible state, prior input should predict a decaying output; absence of this effect would falsify the relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3293,
+      "completion_tokens": 266,
+      "total_tokens": 3559,
+      "completion_tokens_details": {
+        "reasoning_tokens": 121
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.752546600997448
+}

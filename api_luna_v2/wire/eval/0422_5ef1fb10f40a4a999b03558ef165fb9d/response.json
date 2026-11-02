@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432017012773685,
+  "http_status": 200,
+  "body": {
+    "id": "resp_09f3e6b4ea95221c016ae599cc9cf88194b198725a6c666cb6",
+    "object": "chat.completion",
+    "created": 1793432016,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"memory_slow still has the lowest trajectory-level CV error, but residual lag correlation suggests unresolved dynamics; double_pulse probes how prior history affects a later response.\",\"prediction\":\"The second pulse will produce a response modified by the residual influence of the first, even after accounting for current input and output.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Smooth accumulated history currently predicts better than the tested fixed-delay representation.\",\"condition_to_check\":\"Test whether the second pulse depends on the first pulse after controlling current input and visible output.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3455,
+      "completion_tokens": 385,
+      "total_tokens": 3840,
+      "completion_tokens_details": {
+        "reasoning_tokens": 255
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.292939470149577
+}

@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793432344709288640,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "slow_wave",
+    "reason": "Memory_clock has the lowest leave-trajectory-out error by a wide margin and low forecast errors across interventions. Residual correlation remains, so adequacy for every unseen intervention is not certain.",
+    "prediction": "After accounting for input history, rebound timing will recur at similar elapsed times across different interventions.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Elapsed-time forcing remains plausible, but observations do not distinguish it from input-driven history.",
+      "condition_to_check": "Rebounds that shift with input history rather than elapsed time would weaken the clock account."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"slow_wave\",\"reason\":\"Memory_clock has the lowest leave-trajectory-out error by a wide margin and low forecast errors across interventions. Residual correlation remains, so adequacy for every unseen intervention is not certain.\",\"prediction\":\"After accounting for input history, rebound timing will recur at similar elapsed times across different interventions.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Elapsed-time forcing remains plausible, but observations do not distinguish it from input-driven history.\",\"condition_to_check\":\"Rebounds that shift with input history rather than elapsed time would weaken the clock account.\"}}",
+    "input_tokens": 3684,
+    "output_tokens": 250,
+    "batch_elapsed_seconds": 3.8228034945204854,
+    "amortized_seconds": 3.8228034945204854,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3684,
+      "completion_tokens": 250,
+      "total_tokens": 3934,
+      "completion_tokens_details": {
+        "reasoning_tokens": 121
+      }
+    },
+    "api_response_id": "resp_0a05a1ff582ca51f016ae59b15b7108193b8b03ecaa65c6fb4",
+    "wire_record": "wire/eval/0559_d998187ed7d04941a48d1563223486da"
+  }
+}

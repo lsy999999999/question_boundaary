@@ -1,0 +1,61 @@
+{
+  "round": 0,
+  "actual_conditions_met": true,
+  "prediction_nmse": {
+    "v3_r0": [
+      0.05631008740334578,
+      0.24801843528750045
+    ],
+    "v3_r1": [
+      0.005662917050120511,
+      0.040936539387639644
+    ],
+    "v3_r2": [
+      0.007658549110216072,
+      0.04074742985599456
+    ],
+    "b4_r0": [
+      0.010904275932718085,
+      0.0794011866011285
+    ]
+  },
+  "boundary_owner": "v3_r2",
+  "boundary": {
+    "model_id": "v3_r2",
+    "status": "no_supported_boundary",
+    "reason": "不能从现有行支持可靠的单特征阈值：高误差出现在反转数为2的 sealed_3、sealed_4，但反转数为0的 sealed_1及反转数为3或4的 sealed_0、sealed_5均为低误差；仅用峰值、面积或其他单一描述量也无法清楚分开这些高低误差行。证据 scope:v3_r2:e399d52c79e0 显示模型既有低误差也有高误差轨迹，failure:v3_r2:e399d52c79e0:promoted_v3_sealed_2 进一步表明失败并不局限于反转数为2。因此不提出无充分依据的边界。"
+  },
+  "predicted_high_error": [
+    null,
+    null
+  ],
+  "observed_high_error": [
+    false,
+    false
+  ],
+  "boundary_label_correct": [
+    null,
+    null
+  ],
+  "features": [
+    {
+      "peak_abs": 1.5,
+      "reversal_count": 1,
+      "max_reversal_jump": 1.7,
+      "absolute_area": 5.100000000000001,
+      "signed_area": 3.8999999999999995,
+      "longest_sign_duration": 3.0,
+      "total_variation": 3.4
+    },
+    {
+      "peak_abs": 1.5,
+      "reversal_count": 1,
+      "max_reversal_jump": 2.1,
+      "absolute_area": 6.299999999999999,
+      "signed_area": 2.700000000000001,
+      "longest_sign_duration": 3.0,
+      "total_variation": 4.2
+    }
+  ],
+  "scope": "Prospective errors on this one-factor pair only; .05 is a fixed operational threshold, not a physical law"
+}

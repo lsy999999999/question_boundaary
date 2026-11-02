@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793429925814571682,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Memory_slow has the lowest trajectory-level CV NMSE (0.00195), far below the current state model, and captures the strong residual persistence. PRBS offers the greatest predicted disagreement among plausible representations.",
+    "prediction": "After irregular input reversals, memory_slow predicts smoother, delayed output changes than a state-only model; the measured trajectory can test this response.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the lowest trajectory-level CV NMSE (0.00195), far below the current state model, and captures the strong residual persistence. PRBS offers the greatest predicted disagreement among plausible representations.\",\"prediction\":\"After irregular input reversals, memory_slow predicts smoother, delayed output changes than a state-only model; the measured trajectory can test this response.\",\"accept\":false}",
+    "input_tokens": 2255,
+    "output_tokens": 95,
+    "batch_elapsed_seconds": 2.0697870953008533,
+    "amortized_seconds": 2.0697870953008533,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2255,
+      "completion_tokens": 95,
+      "total_tokens": 2350
+    },
+    "api_response_id": "resp_082090635db82c49016ae591a479108196a97f73ef3b0c507e",
+    "wire_record": "wire/eval/0116_a284273a79fc4264a38f7accfd5f4a8e"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793423859165546670,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "positive_pulse",
+    "reason": "Memory_clock shows best cross-validation and high prediction variance for positive_pulse.",
+    "prediction": "Positive pulse will cause a delayed and oscillatory response due to combined memory and clock effects.",
+    "accept": false,
+    "mapping": {
+      "source_id": "memory_clock",
+      "target_relation": "The system exhibits a delayed and oscillatory response to a positive pulse, indicating both memory and periodic forcing.",
+      "condition_to_check": "No significant response after the pulse ends, ruling out purely memory-based mechanisms."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_clock\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Memory_clock shows best cross-validation and high prediction variance for positive_pulse.\",\n  \"prediction\": \"Positive pulse will cause a delayed and oscillatory response due to combined memory and clock effects.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"memory_clock\",\n    \"target_relation\": \"The system exhibits a delayed and oscillatory response to a positive pulse, indicating both memory and periodic forcing.\",\n    \"condition_to_check\": \"No significant response after the pulse ends, ruling out purely memory-based mechanisms.\"\n  }\n}",
+    "input_tokens": 3155,
+    "output_tokens": 132,
+    "batch_elapsed_seconds": 2.9680311614647508,
+    "amortized_seconds": 2.9680311614647508,
+    "peak_gpu_allocated_gb": 14.834887027740479,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

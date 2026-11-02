@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431240179718395,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0ce81273dee7d57d016ae596c4e4e08193b7f5ff1319343e4a",
+    "object": "chat.completion",
+    "created": 1793431240,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"memory_slow has the lowest trajectory-level CV error, but residual lag and disagreement among memory candidates leave uncertainty about responses to rapid switches.\",\"prediction\":\"Alternating input will produce smoother, lingering output than a fast-memory model predicts after each switch.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The predictive fit favors accumulated history, but does not establish a specific cross-domain mechanism.\",\"condition_to_check\":\"Compare post-switch decay against fast- and slow-memory predictions under alternating input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3254,
+      "completion_tokens": 346,
+      "total_tokens": 3600,
+      "completion_tokens_details": {
+        "reasoning_tokens": 227
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.9376661414280534
+}

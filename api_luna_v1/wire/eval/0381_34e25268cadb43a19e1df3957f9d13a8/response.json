@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430434251056848,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0b60cb104838a5e1016ae5939e1f5c8197b5911de339be3aef",
+    "object": "chat.completion",
+    "created": 1793430434,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest leave-trajectory-out error (0.00097), substantially improving on the state model; post-input tails support a persistent-history effect, though unseen interventions remain untested.\",\"prediction\":\"After input switches, the response will depend on earlier input history and relax smoothly rather than changing only at a fixed delay.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and state history can carry influence into future response with finite leakage.\",\"condition_to_check\":\"At matched current input and visible state, different prior histories should predictably yield different responses.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2830,
+      "completion_tokens": 262,
+      "total_tokens": 3092,
+      "completion_tokens_details": {
+        "reasoning_tokens": 123
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.035495009273291
+}

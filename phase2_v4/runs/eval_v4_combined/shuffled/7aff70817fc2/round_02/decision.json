@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423964247097209,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "alternating",
+    "reason": "Alternating inputs stress memory and saturation limits.",
+    "prediction": "Response will exhibit more pronounced saturation during alternating compared to step_rest.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Persistent response after pulse indicates saturation limit.",
+      "condition_to_check": "Response magnitude exceeds initial value post-pulse."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"alternating\",\n  \"reason\": \"Alternating inputs stress memory and saturation limits.\",\n  \"prediction\": \"Response will exhibit more pronounced saturation during alternating compared to step_rest.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"Persistent response after pulse indicates saturation limit.\",\n    \"condition_to_check\": \"Response magnitude exceeds initial value post-pulse.\"\n  }\n}",
+    "input_tokens": 3730,
+    "output_tokens": 105,
+    "batch_elapsed_seconds": 2.559167596511543,
+    "amortized_seconds": 2.559167596511543,
+    "peak_gpu_allocated_gb": 14.950192928314209,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024013519287109,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

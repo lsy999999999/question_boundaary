@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431528765856768,
+  "http_status": 200,
+  "body": {
+    "id": "resp_033dd7ff597428ef016ae597e548948196899f61ef1876ad16",
+    "object": "chat.completion",
+    "created": 1793431528,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest leave-trajectory-out NMSE (0.00138), far below the state model, and captures the prolonged post-input response. PRBS best separates plausible history models.\",\"prediction\":\"After PRBS input switches, output will retain a history-dependent response rather than immediately tracking the current input.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated history can carry past input influence into the future with finite relaxation.\",\"condition_to_check\":\"Test whether history predicts output beyond current input and visible state during PRBS switches.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2802,
+      "completion_tokens": 255,
+      "total_tokens": 3057,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 122
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.147283014841378
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431790402919193,
+  "http_status": 200,
+  "body": {
+    "id": "resp_046011055ff78c40016ae598ea361c81939219385ea99ffed5",
+    "object": "chat.completion",
+    "created": 1793431790,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"Memory_clock has the lowest trajectory-level CV error by a wide margin and predicted PRBS well; history_all performs worse. Alternating probes the remaining disagreement with history_all.\",\"prediction\":\"After accounting for input history, oscillatory deviations should recur at similar elapsed-time phases across interventions.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Elapsed-time features improve prediction, but independent clock forcing is not established by this evidence alone.\",\"condition_to_check\":\"Compare residual phases across alternating and other interventions; inconsistent phases would weaken the clock interpretation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3256,
+      "completion_tokens": 292,
+      "total_tokens": 3548,
+      "completion_tokens_details": {
+        "reasoning_tokens": 164
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.516482884064317
+}

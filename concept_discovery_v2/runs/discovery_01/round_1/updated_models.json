@@ -1,0 +1,197 @@
+{
+  "initial": {
+    "spec": {
+      "parameters": [],
+      "states": [],
+      "terms": [
+        "1",
+        "x",
+        "u"
+      ]
+    },
+    "fit": {
+      "parameters": [],
+      "coefficients": [
+        0.001605640164244323,
+        -0.1044048531112234,
+        0.5926656001017885
+      ],
+      "solver": {
+        "success": true,
+        "nfev": 0,
+        "message": "No nonlinear parameters"
+      },
+      "derivative_mse": 0.00549140572334439
+    },
+    "trajectory_cv_nmse": 1.1029916568173697,
+    "fold_nmse": [
+      0.24917268805278664,
+      0.4837279773098357,
+      1.1677440835979584,
+      0.3413845819678992,
+      5.04304487267413,
+      0.335288172033922,
+      0.1005792220850559
+    ],
+    "complexity": 8
+  },
+  "r0_b0": {
+    "spec": {
+      "parameters": [
+        {
+          "name": "p0",
+          "lower": 0.05,
+          "initial": 0.25,
+          "upper": 1.5
+        }
+      ],
+      "states": [
+        {
+          "name": "z0",
+          "meaning": "exponentially decaying trace of prior input, initialized to zero",
+          "rate": "u-p0*z0"
+        }
+      ],
+      "terms": [
+        "1",
+        "x",
+        "u",
+        "z0"
+      ]
+    },
+    "fit": {
+      "parameters": [
+        0.7125554689862337
+      ],
+      "coefficients": [
+        -0.003956474695439636,
+        0.0029456680964227372,
+        0.8865695623234433,
+        -0.4464398953112058
+      ],
+      "solver": {
+        "success": true,
+        "nfev": 8,
+        "message": "`ftol` termination condition is satisfied."
+      },
+      "derivative_mse": 0.0008973764599132431
+    },
+    "trajectory_cv_nmse": 0.6785410713151173,
+    "fold_nmse": [
+      0.014125809195113283,
+      0.5022636266848726,
+      0.4488447403048548,
+      0.28990734399793017,
+      3.160398218370264,
+      0.28362045328275076,
+      0.050627307370035755
+    ],
+    "complexity": 22
+  },
+  "r1_b0": {
+    "spec": {
+      "parameters": [
+        {
+          "name": "p0",
+          "lower": 0.05,
+          "initial": 0.25,
+          "upper": 1.5
+        }
+      ],
+      "states": [
+        {
+          "name": "z0",
+          "meaning": "Exponentially decaying trace of prior input, initialized to zero",
+          "rate": "u-p0*z0"
+        }
+      ],
+      "terms": [
+        "1",
+        "x",
+        "u",
+        "z0"
+      ]
+    },
+    "fit": {
+      "parameters": [
+        0.7125554689862337
+      ],
+      "coefficients": [
+        -0.003956474695439636,
+        0.0029456680964227372,
+        0.8865695623234433,
+        -0.4464398953112058
+      ],
+      "solver": {
+        "success": true,
+        "nfev": 8,
+        "message": "`ftol` termination condition is satisfied."
+      },
+      "derivative_mse": 0.0008973764599132431
+    },
+    "trajectory_cv_nmse": 0.6785410713151173,
+    "fold_nmse": [
+      0.014125809195113283,
+      0.5022636266848726,
+      0.4488447403048548,
+      0.28990734399793017,
+      3.160398218370264,
+      0.28362045328275076,
+      0.050627307370035755
+    ],
+    "complexity": 22
+  },
+  "r1_b1": {
+    "spec": {
+      "parameters": [
+        {
+          "name": "p0",
+          "lower": 0.05,
+          "initial": 0.8,
+          "upper": 3.0
+        }
+      ],
+      "states": [
+        {
+          "name": "z0",
+          "meaning": "Exponentially filtered history of the observed state x, initialized to zero; unlike the parent state, it is not directly driven by u.",
+          "rate": "x-p0*z0"
+        }
+      ],
+      "terms": [
+        "1",
+        "x",
+        "u",
+        "z0"
+      ]
+    },
+    "fit": {
+      "parameters": [
+        0.0892446290396717
+      ],
+      "coefficients": [
+        -0.0063977538150007335,
+        -0.3292855809823788,
+        0.7779494634669346,
+        0.04307222602365314
+      ],
+      "solver": {
+        "success": true,
+        "nfev": 10,
+        "message": "`ftol` termination condition is satisfied."
+      },
+      "derivative_mse": 0.0026982772846371925
+    },
+    "trajectory_cv_nmse": 0.755447326317048,
+    "fold_nmse": [
+      0.03274805763440091,
+      0.6257744605570668,
+      0.44775497328299724,
+      0.28393728346536945,
+      3.590290368935893,
+      0.2786740012253889,
+      0.028952139118219797
+    ],
+    "complexity": 22
+  }
+}

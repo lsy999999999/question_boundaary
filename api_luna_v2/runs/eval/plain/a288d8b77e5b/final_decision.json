@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793431999806137899,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "prbs",
+    "reason": "State cubic has the lowest leave-trajectory-out NMSE by a substantial margin. History-rich alternatives perform worse, and repeated input-history probes have not improved validation, so added complexity is unsupported.",
+    "prediction": "On unseen PRBS inputs, state-cubic prediction errors should remain small and show no systematic dependence on past inputs after accounting for current state and input.",
+    "accept": true,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state_cubic\",\"experiment\":\"prbs\",\"reason\":\"State cubic has the lowest leave-trajectory-out NMSE by a substantial margin. History-rich alternatives perform worse, and repeated input-history probes have not improved validation, so added complexity is unsupported.\",\"prediction\":\"On unseen PRBS inputs, state-cubic prediction errors should remain small and show no systematic dependence on past inputs after accounting for current state and input.\",\"accept\":true}",
+    "input_tokens": 2929,
+    "output_tokens": 92,
+    "batch_elapsed_seconds": 2.5653456347063184,
+    "amortized_seconds": 2.5653456347063184,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2929,
+      "completion_tokens": 92,
+      "total_tokens": 3021
+    },
+    "api_response_id": "resp_0201e38ae8319a0f016ae599bdf24c81908c1f0adddfd6c473",
+    "wire_record": "wire/eval/0413_ece2dbab3411465ca96a834305d2b7e3"
+  }
+}

@@ -1,0 +1,1646 @@
+{
+  "scope": "Post-hoc diagnostic; no new model calls or simulator experiments; frozen results unchanged",
+  "python": "3.14.3 (main, Feb  3 2026, 15:32:20) [Clang 17.0.0 (clang-1700.6.3.2)]",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "input_coverage": {
+    "observations": 9,
+    "unique_inputs": 7,
+    "groups": [
+      {
+        "ids": [
+          "initial_0"
+        ],
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0.5,
+            1.0
+          ],
+          [
+            3.0,
+            0
+          ]
+        ]
+      },
+      {
+        "ids": [
+          "initial_1"
+        ],
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            1.0,
+            -1.0
+          ],
+          [
+            4.0,
+            0
+          ]
+        ]
+      },
+      {
+        "ids": [
+          "initial_2"
+        ],
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0.5,
+            0.6
+          ],
+          [
+            7.0,
+            0
+          ]
+        ]
+      },
+      {
+        "ids": [
+          "r0_experiment_0",
+          "r1_experiment_0",
+          "r2_experiment_0"
+        ],
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0.5,
+            1.0
+          ],
+          [
+            2.5,
+            0
+          ]
+        ]
+      },
+      {
+        "ids": [
+          "r0_experiment_1"
+        ],
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0.5,
+            -1.0
+          ],
+          [
+            1.5,
+            0
+          ]
+        ]
+      },
+      {
+        "ids": [
+          "r1_experiment_1"
+        ],
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0.5,
+            0.6
+          ],
+          [
+            4.0,
+            0
+          ],
+          [
+            5.0,
+            0.4
+          ],
+          [
+            6.0,
+            0
+          ]
+        ]
+      },
+      {
+        "ids": [
+          "r2_experiment_1"
+        ],
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0.5,
+            -1
+          ],
+          [
+            2.5,
+            0
+          ]
+        ]
+      }
+    ]
+  },
+  "derivative_fit_support": [
+    {
+      "id": "initial_0",
+      "retained_points": 97,
+      "retained_nonzero_input_points": 16
+    },
+    {
+      "id": "initial_1",
+      "retained_points": 93,
+      "retained_nonzero_input_points": 21
+    },
+    {
+      "id": "initial_2",
+      "retained_points": 97,
+      "retained_nonzero_input_points": 56
+    },
+    {
+      "id": "r0_experiment_0",
+      "retained_points": 97,
+      "retained_nonzero_input_points": 11
+    },
+    {
+      "id": "r0_experiment_1",
+      "retained_points": 97,
+      "retained_nonzero_input_points": 1
+    },
+    {
+      "id": "r1_experiment_0",
+      "retained_points": 97,
+      "retained_nonzero_input_points": 11
+    },
+    {
+      "id": "r1_experiment_1",
+      "retained_points": 79,
+      "retained_nonzero_input_points": 27
+    },
+    {
+      "id": "r2_experiment_0",
+      "retained_points": 97,
+      "retained_nonzero_input_points": 11
+    },
+    {
+      "id": "r2_experiment_1",
+      "retained_points": 97,
+      "retained_nonzero_input_points": 11
+    }
+  ],
+  "preflight": [
+    {
+      "round": 0,
+      "target_hypotheses": [
+        "initial",
+        "r0_b0"
+      ],
+      "predicted_gaps": {
+        "initial": 0.7274647466169466,
+        "r0_b0": 0.7032261559930587
+      },
+      "observed_gap": 1.1615604179902297,
+      "tolerance": 0.04,
+      "all_target_models_predicted_failure": true,
+      "actual_tolerance_multiple": 29.039010449755743
+    },
+    {
+      "round": 1,
+      "target_hypotheses": [
+        "r1_b0",
+        "r1_b1"
+      ],
+      "predicted_gaps": {
+        "initial": 0.26625831771632746,
+        "r0_b0": 0.18369676742929647,
+        "r1_b0": 0.18369676742929647,
+        "r1_b1": 0.2097112711401321
+      },
+      "observed_gap": 0.1010121612540108,
+      "tolerance": 0.04,
+      "all_target_models_predicted_failure": true,
+      "actual_tolerance_multiple": 2.52530403135027
+    },
+    {
+      "round": 2,
+      "target_hypotheses": [
+        "r1_b0",
+        "r2_b1"
+      ],
+      "predicted_gaps": {
+        "initial": 1.6535256696242837,
+        "r0_b0": 1.274196600762091,
+        "r1_b0": 1.274196600762091,
+        "r1_b1": 1.3586450510724637,
+        "r2_b0": 1.6910442225358109,
+        "r2_b1": 1.666149253433356
+      },
+      "observed_gap": 1.4027464468103923,
+      "tolerance": 0.04,
+      "all_target_models_predicted_failure": true,
+      "actual_tolerance_multiple": 35.06866117025981
+    }
+  ],
+  "original_final_fit_on_observed_data": [
+    {
+      "id": "initial_0",
+      "nmse": 0.0016361201339157737,
+      "observed_end": 0.6470566430828617,
+      "predicted_end": 0.6543530943836867,
+      "rmse": 0.011239859332319038
+    },
+    {
+      "id": "initial_1",
+      "nmse": 0.1409525191039863,
+      "observed_end": -0.6644589919107371,
+      "predicted_end": -0.8809368014900898,
+      "rmse": 0.13641114369021842
+    },
+    {
+      "id": "initial_2",
+      "nmse": 0.2880618489903746,
+      "observed_end": 0.7146744227826025,
+      "predicted_end": 1.0552709078442337,
+      "rmse": 0.19639644692354108
+    },
+    {
+      "id": "r0_experiment_0",
+      "nmse": 0.13923999788684283,
+      "observed_end": 0.6326992522941818,
+      "predicted_end": 0.5146646306630815,
+      "rmse": 0.08460072154201562
+    },
+    {
+      "id": "r0_experiment_1",
+      "nmse": 1.2563502422762698,
+      "observed_end": -0.554979719864884,
+      "predicted_end": -0.321586242044878,
+      "rmse": 0.1585149988030325
+    },
+    {
+      "id": "r1_experiment_0",
+      "nmse": 0.13675570289836728,
+      "observed_end": 0.6257816363276733,
+      "predicted_end": 0.5146646306630815,
+      "rmse": 0.08413346477524544
+    },
+    {
+      "id": "r1_experiment_1",
+      "nmse": 0.018879675001344763,
+      "observed_end": 0.6699173702434306,
+      "predicted_end": 0.656796364838745,
+      "rmse": 0.03493322311590506
+    },
+    {
+      "id": "r2_experiment_0",
+      "nmse": 0.13674184261712488,
+      "observed_end": 0.6289781326970645,
+      "predicted_end": 0.5146646306630815,
+      "rmse": 0.08394113967727336
+    },
+    {
+      "id": "r2_experiment_1",
+      "nmse": 0.026925030057206097,
+      "observed_end": -0.6285399953692449,
+      "predicted_end": -0.6005888560917246,
+      "rmse": 0.037089660351575765
+    }
+  ],
+  "mirror_symmetry": {
+    "positive_ids": [
+      "r0_experiment_0",
+      "r1_experiment_0",
+      "r2_experiment_0"
+    ],
+    "negative_id": "r2_experiment_1",
+    "actual_inputs_are_negatives": true,
+    "measured_sum_rms": 0.005357058941355568,
+    "expected_sum_noise_sd": 0.005773502691896257,
+    "positive_signal_rms": 0.7086017061201285,
+    "normalized_even_component": 0.003780102410000275,
+    "prospective_models": {
+      "initial": {
+        "sum_rms": 0.014685261962918444,
+        "nmse": [
+          0.2814927280419325,
+          0.31006676715572806
+        ]
+      },
+      "r0_b0": {
+        "sum_rms": 0.05566684561027993,
+        "nmse": [
+          0.19918581196418395,
+          0.04657583958397251
+        ]
+      },
+      "r1_b0": {
+        "sum_rms": 0.05566684561027993,
+        "nmse": [
+          0.19918581196418395,
+          0.04657583958397251
+        ]
+      },
+      "r1_b1": {
+        "sum_rms": 0.04309789896237545,
+        "nmse": [
+          0.18847029978638039,
+          0.07358709873711883
+        ]
+      },
+      "r2_b0": {
+        "sum_rms": 0.08763214045627249,
+        "nmse": [
+          0.2568350086448349,
+          0.4035714122498856
+        ]
+      },
+      "r2_b1": {
+        "sum_rms": 0.060482206350496066,
+        "nmse": [
+          0.22994027571814643,
+          0.39240831324520564
+        ]
+      }
+    },
+    "caution": "Observed approximate odd response for this particular pulse, not a global symmetry proof."
+  },
+  "coordinate_equivalence": {
+    "original_coefficients": {
+      "a": -0.0035987346704010256,
+      "b": -0.0008696871551329079,
+      "c": 0.893572614368555,
+      "d": -0.462870602618349,
+      "p": 0.7567036187260302
+    },
+    "transformed": {
+      "q": 0.23870363173511566,
+      "B": -0.5188696741460475,
+      "D": 0.12319798019842895,
+      "hidden_affine_term": -0.015131291190399373,
+      "k": 0.23783394457998275
+    },
+    "coordinate": "w=(x-c*z)/(b+p+d/c)",
+    "equations": [
+      "dx=a+(b+d/c)*x+c*u-(d/c)*(b+p+d/c)*w",
+      "dw=x-(p+d/c)*w+a/(b+p+d/c)"
+    ],
+    "maximum_recorded_input_replay_difference": 6.661338147750939e-16,
+    "conditions": "c != 0 and b+p+d/c != 0; initial x=z=w=0. Exact for the same simultaneous Euler scheme.",
+    "scope": "Affine output-history realization of final input-history model, NOT equality of the two separately fitted hypotheses.",
+    "restriction": "When a=0 the hidden affine term vanishes. Actual output-history proposal did not include this term; exact equality is not asserted for its frozen parameters."
+  },
+  "fitted_transfer_functions": {
+    "r1_b0": {
+      "numerator": [
+        0.893572614368555,
+        0.21329902826881597
+      ],
+      "denominator": [
+        1,
+        0.7575733058811631,
+        0.0006580954174486178
+      ],
+      "poles": [
+        -0.7567036187260302,
+        -0.0008696871551329079
+      ],
+      "zero": -0.23870363173511555,
+      "note": "Input-dependent transfer only; affine forcing separate."
+    },
+    "r1_b1": {
+      "numerator": [
+        0.7926640562353255,
+        0.10622793025275538
+      ],
+      "denominator": [
+        1,
+        0.48678001087446054,
+        -0.009028516034506204
+      ],
+      "poles": [
+        -0.5046699525844256,
+        0.01788994170996506
+      ],
+      "zero": -0.13401381003356422,
+      "note": "Input-dependent transfer only; affine forcing separate."
+    }
+  },
+  "posthoc_grouped_diagnostic": {
+    "results": [
+      {
+        "hypothesis": "initial",
+        "original_leave_one_trajectory_nmse": 0.7226767963511737,
+        "grouped_equal_input_mean_nmse": 0.8794149151912649,
+        "grouped_equal_observation_mean_nmse": 0.8052766374522524,
+        "folds": [
+          {
+            "ids": [
+              "initial_0"
+            ],
+            "mean_nmse": 0.2971891823582598
+          },
+          {
+            "ids": [
+              "initial_1"
+            ],
+            "mean_nmse": 0.6688765944365274
+          },
+          {
+            "ids": [
+              "initial_2"
+            ],
+            "mean_nmse": 1.3115955800207901
+          },
+          {
+            "ids": [
+              "r0_experiment_0",
+              "r1_experiment_0",
+              "r2_experiment_0"
+            ],
+            "mean_nmse": 0.5457926653657087
+          },
+          {
+            "ids": [
+              "r0_experiment_1"
+            ],
+            "mean_nmse": 2.857829745334842
+          },
+          {
+            "ids": [
+              "r1_experiment_1"
+            ],
+            "mean_nmse": 0.13230497659882326
+          },
+          {
+            "ids": [
+              "r2_experiment_1"
+            ],
+            "mean_nmse": 0.34231566222390336
+          }
+        ]
+      },
+      {
+        "hypothesis": "r1_b0",
+        "original_leave_one_trajectory_nmse": 0.40224933000381896,
+        "grouped_equal_input_mean_nmse": 0.49781426484229657,
+        "grouped_equal_observation_mean_nmse": 0.4823289860442428,
+        "folds": [
+          {
+            "ids": [
+              "initial_0"
+            ],
+            "mean_nmse": 0.001996942831250751
+          },
+          {
+            "ids": [
+              "initial_1"
+            ],
+            "mean_nmse": 0.33104615276347826
+          },
+          {
+            "ids": [
+              "initial_2"
+            ],
+            "mean_nmse": 0.5186665638921243
+          },
+          {
+            "ids": [
+              "r0_experiment_0",
+              "r1_experiment_0",
+              "r2_experiment_0"
+            ],
+            "mean_nmse": 0.42813051025105436
+          },
+          {
+            "ids": [
+              "r0_experiment_1"
+            ],
+            "mean_nmse": 2.1323444867605788
+          },
+          {
+            "ids": [
+              "r1_experiment_1"
+            ],
+            "mean_nmse": 0.024808892154253897
+          },
+          {
+            "ids": [
+              "r2_experiment_1"
+            ],
+            "mean_nmse": 0.04770630524333557
+          }
+        ]
+      },
+      {
+        "hypothesis": "r1_b1",
+        "original_leave_one_trajectory_nmse": 0.43133384518496676,
+        "grouped_equal_input_mean_nmse": 0.5401211028647908,
+        "grouped_equal_observation_mean_nmse": 0.5263310205038294,
+        "folds": [
+          {
+            "ids": [
+              "initial_0"
+            ],
+            "mean_nmse": 0.022945700950249354
+          },
+          {
+            "ids": [
+              "initial_1"
+            ],
+            "mean_nmse": 0.41337508391107214
+          },
+          {
+            "ids": [
+              "initial_2"
+            ],
+            "mean_nmse": 0.5053929984224753
+          },
+          {
+            "ids": [
+              "r0_experiment_0",
+              "r1_experiment_0",
+              "r2_experiment_0"
+            ],
+            "mean_nmse": 0.47806573224046467
+          },
+          {
+            "ids": [
+              "r0_experiment_1"
+            ],
+            "mean_nmse": 2.267350757247462
+          },
+          {
+            "ids": [
+              "r1_experiment_1"
+            ],
+            "mean_nmse": 0.014054132621328173
+          },
+          {
+            "ids": [
+              "r2_experiment_1"
+            ],
+            "mean_nmse": 0.0796633146604834
+          }
+        ]
+      },
+      {
+        "hypothesis": "r2_b0",
+        "original_leave_one_trajectory_nmse": 0.8987928607195114,
+        "grouped_equal_input_mean_nmse": 1.1139037529064504,
+        "grouped_equal_observation_mean_nmse": 0.9894571082091907,
+        "folds": [
+          {
+            "ids": [
+              "initial_0"
+            ],
+            "mean_nmse": 0.2519544259392304
+          },
+          {
+            "ids": [
+              "initial_1"
+            ],
+            "mean_nmse": 2.149397902746251
+          },
+          {
+            "ids": [
+              "initial_2"
+            ],
+            "mean_nmse": 1.20016759623753
+          },
+          {
+            "ids": [
+              "r0_experiment_0",
+              "r1_experiment_0",
+              "r2_experiment_0"
+            ],
+            "mean_nmse": 0.5538938517687823
+          },
+          {
+            "ids": [
+              "r0_experiment_1"
+            ],
+            "mean_nmse": 3.045652920529872
+          },
+          {
+            "ids": [
+              "r1_experiment_1"
+            ],
+            "mean_nmse": 0.10554436273254082
+          },
+          {
+            "ids": [
+              "r2_experiment_1"
+            ],
+            "mean_nmse": 0.490715210390945
+          }
+        ]
+      },
+      {
+        "hypothesis": "r2_b1",
+        "original_leave_one_trajectory_nmse": 1.1961933588054023,
+        "grouped_equal_input_mean_nmse": 1.5011314662645636,
+        "grouped_equal_observation_mean_nmse": 1.2917878201982296,
+        "folds": [
+          {
+            "ids": [
+              "initial_0"
+            ],
+            "mean_nmse": 0.25209227000897705
+          },
+          {
+            "ids": [
+              "initial_1"
+            ],
+            "mean_nmse": 2.9497022446278405
+          },
+          {
+            "ids": [
+              "initial_2"
+            ],
+            "mean_nmse": 1.24801697286869
+          },
+          {
+            "ids": [
+              "r0_experiment_0",
+              "r1_experiment_0",
+              "r2_experiment_0"
+            ],
+            "mean_nmse": 0.5590850589660591
+          },
+          {
+            "ids": [
+              "r0_experiment_1"
+            ],
+            "mean_nmse": 4.913478537100086
+          },
+          {
+            "ids": [
+              "r1_experiment_1"
+            ],
+            "mean_nmse": 0.1308698571816386
+          },
+          {
+            "ids": [
+              "r2_experiment_1"
+            ],
+            "mean_nmse": 0.4546753230986558
+          }
+        ]
+      }
+    ],
+    "note": "New local numeric refits on existing observations only; different grouping/weighting from original. Not replacement benchmark scores."
+  },
+  "parameter_profiles": {
+    "r1_b0": {
+      "recorded_p": 0.7567036187260302,
+      "derivative_min_on_grid": {
+        "p": 0.756875,
+        "derivative_mse": 0.0007969673308607186,
+        "in_sample_rollout_nmse": 0.23838325914797945
+      },
+      "rollout_min_on_grid": {
+        "p": 0.9562499999999999,
+        "derivative_mse": 0.0008572135011332433,
+        "in_sample_rollout_nmse": 0.2326024470629186
+      },
+      "points": [
+        {
+          "p": 0.05,
+          "derivative_mse": 0.005312311255317201,
+          "in_sample_rollout_nmse": 0.49641573983269716
+        },
+        {
+          "p": 0.068125,
+          "derivative_mse": 0.005153968972120599,
+          "in_sample_rollout_nmse": 0.5258289605048705
+        },
+        {
+          "p": 0.08625,
+          "derivative_mse": 0.004791016962742034,
+          "in_sample_rollout_nmse": 0.5337539554386344
+        },
+        {
+          "p": 0.104375,
+          "derivative_mse": 0.004322112619715538,
+          "in_sample_rollout_nmse": 0.5234838926579515
+        },
+        {
+          "p": 0.1225,
+          "derivative_mse": 0.003841435590032966,
+          "in_sample_rollout_nmse": 0.5103028385172729
+        },
+        {
+          "p": 0.140625,
+          "derivative_mse": 0.003403771655296988,
+          "in_sample_rollout_nmse": 0.4998119360987883
+        },
+        {
+          "p": 0.15875,
+          "derivative_mse": 0.0030283342174803663,
+          "in_sample_rollout_nmse": 0.4854905744587106
+        },
+        {
+          "p": 0.176875,
+          "derivative_mse": 0.0027145502869871754,
+          "in_sample_rollout_nmse": 0.4654856160772163
+        },
+        {
+          "p": 0.195,
+          "derivative_mse": 0.0024541425596034862,
+          "in_sample_rollout_nmse": 0.44279695912721734
+        },
+        {
+          "p": 0.213125,
+          "derivative_mse": 0.0022373448133642467,
+          "in_sample_rollout_nmse": 0.4204515625578469
+        },
+        {
+          "p": 0.23125,
+          "derivative_mse": 0.002055357183630109,
+          "in_sample_rollout_nmse": 0.4000202882340811
+        },
+        {
+          "p": 0.249375,
+          "derivative_mse": 0.0019010028396387467,
+          "in_sample_rollout_nmse": 0.3819765581047695
+        },
+        {
+          "p": 0.26749999999999996,
+          "derivative_mse": 0.0017686766704768703,
+          "in_sample_rollout_nmse": 0.36625141162630387
+        },
+        {
+          "p": 0.28562499999999996,
+          "derivative_mse": 0.0016540791897178715,
+          "in_sample_rollout_nmse": 0.35257563088969107
+        },
+        {
+          "p": 0.30374999999999996,
+          "derivative_mse": 0.0015539287989779621,
+          "in_sample_rollout_nmse": 0.34064092186239825
+        },
+        {
+          "p": 0.32187499999999997,
+          "derivative_mse": 0.0014657151196589124,
+          "in_sample_rollout_nmse": 0.33016315449625705
+        },
+        {
+          "p": 0.33999999999999997,
+          "derivative_mse": 0.0013875051748276817,
+          "in_sample_rollout_nmse": 0.3209010314653791
+        },
+        {
+          "p": 0.35812499999999997,
+          "derivative_mse": 0.001317796928884288,
+          "in_sample_rollout_nmse": 0.3126567809951738
+        },
+        {
+          "p": 0.37625,
+          "derivative_mse": 0.0012554105551401476,
+          "in_sample_rollout_nmse": 0.3052707039442234
+        },
+        {
+          "p": 0.394375,
+          "derivative_mse": 0.0011994082628333435,
+          "in_sample_rollout_nmse": 0.2986144244480407
+        },
+        {
+          "p": 0.4125,
+          "derivative_mse": 0.001149035236078107,
+          "in_sample_rollout_nmse": 0.29258463182791544
+        },
+        {
+          "p": 0.430625,
+          "derivative_mse": 0.001103676019552965,
+          "in_sample_rollout_nmse": 0.28709783181734383
+        },
+        {
+          "p": 0.44875,
+          "derivative_mse": 0.0010628221715796463,
+          "in_sample_rollout_nmse": 0.2820861350362414
+        },
+        {
+          "p": 0.466875,
+          "derivative_mse": 0.0010260481445805295,
+          "in_sample_rollout_nmse": 0.27749394685507517
+        },
+        {
+          "p": 0.48499999999999993,
+          "derivative_mse": 0.0009929931933559905,
+          "in_sample_rollout_nmse": 0.2732753889928268
+        },
+        {
+          "p": 0.5031249999999999,
+          "derivative_mse": 0.0009633477202476338,
+          "in_sample_rollout_nmse": 0.2693922965097722
+        },
+        {
+          "p": 0.52125,
+          "derivative_mse": 0.0009368429035162591,
+          "in_sample_rollout_nmse": 0.2658126605066348
+        },
+        {
+          "p": 0.5393749999999999,
+          "derivative_mse": 0.0009132427687984996,
+          "in_sample_rollout_nmse": 0.2625094139213986
+        },
+        {
+          "p": 0.5575,
+          "derivative_mse": 0.000892338088677101,
+          "in_sample_rollout_nmse": 0.2594594810825904
+        },
+        {
+          "p": 0.575625,
+          "derivative_mse": 0.0008739416577072599,
+          "in_sample_rollout_nmse": 0.256643030325449
+        },
+        {
+          "p": 0.59375,
+          "derivative_mse": 0.000857884607813075,
+          "in_sample_rollout_nmse": 0.25404288342974785
+        },
+        {
+          "p": 0.6118750000000001,
+          "derivative_mse": 0.0008440135146121756,
+          "in_sample_rollout_nmse": 0.2516440466543538
+        },
+        {
+          "p": 0.63,
+          "derivative_mse": 0.000832188107982278,
+          "in_sample_rollout_nmse": 0.24943333647780971
+        },
+        {
+          "p": 0.648125,
+          "derivative_mse": 0.0008222794464414794,
+          "in_sample_rollout_nmse": 0.24739907944453135
+        },
+        {
+          "p": 0.66625,
+          "derivative_mse": 0.0008141684492099685,
+          "in_sample_rollout_nmse": 0.24553087026778542
+        },
+        {
+          "p": 0.684375,
+          "derivative_mse": 0.0008077447053894242,
+          "in_sample_rollout_nmse": 0.2438193759394941
+        },
+        {
+          "p": 0.7025,
+          "derivative_mse": 0.0008029054988580404,
+          "in_sample_rollout_nmse": 0.24225617633356344
+        },
+        {
+          "p": 0.720625,
+          "derivative_mse": 0.0007995550019088192,
+          "in_sample_rollout_nmse": 0.2408336338795897
+        },
+        {
+          "p": 0.73875,
+          "derivative_mse": 0.0007976036015732052,
+          "in_sample_rollout_nmse": 0.23954478648833152
+        },
+        {
+          "p": 0.756875,
+          "derivative_mse": 0.0007969673308607186,
+          "in_sample_rollout_nmse": 0.23838325914797945
+        },
+        {
+          "p": 0.775,
+          "derivative_mse": 0.0007975673834623579,
+          "in_sample_rollout_nmse": 0.23734319056976239
+        },
+        {
+          "p": 0.793125,
+          "derivative_mse": 0.0007993296952956474,
+          "in_sample_rollout_nmse": 0.23641917200884727
+        },
+        {
+          "p": 0.81125,
+          "derivative_mse": 0.0008021845799726797,
+          "in_sample_rollout_nmse": 0.23560619597137566
+        },
+        {
+          "p": 0.829375,
+          "derivative_mse": 0.0008060664081194596,
+          "in_sample_rollout_nmse": 0.23489961297811407
+        },
+        {
+          "p": 0.8475,
+          "derivative_mse": 0.0008109133226681442,
+          "in_sample_rollout_nmse": 0.23429509491788647
+        },
+        {
+          "p": 0.865625,
+          "derivative_mse": 0.0008166669839369362,
+          "in_sample_rollout_nmse": 0.23378860381123323
+        },
+        {
+          "p": 0.88375,
+          "derivative_mse": 0.0008232723396218214,
+          "in_sample_rollout_nmse": 0.23337636503299708
+        },
+        {
+          "p": 0.901875,
+          "derivative_mse": 0.0008306774158387143,
+          "in_sample_rollout_nmse": 0.23305484422450565
+        },
+        {
+          "p": 0.9199999999999999,
+          "derivative_mse": 0.000838833126141751,
+          "in_sample_rollout_nmse": 0.23282072727157274
+        },
+        {
+          "p": 0.938125,
+          "derivative_mse": 0.0008476930960552445,
+          "in_sample_rollout_nmse": 0.23267090284111325
+        },
+        {
+          "p": 0.9562499999999999,
+          "derivative_mse": 0.0008572135011332433,
+          "in_sample_rollout_nmse": 0.2326024470629186
+        },
+        {
+          "p": 0.974375,
+          "derivative_mse": 0.0008673529169323345,
+          "in_sample_rollout_nmse": 0.23261261001861866
+        },
+        {
+          "p": 0.9924999999999999,
+          "derivative_mse": 0.0008780721795740063,
+          "in_sample_rollout_nmse": 0.23269880376078744
+        },
+        {
+          "p": 1.0106249999999999,
+          "derivative_mse": 0.0008893342558008484,
+          "in_sample_rollout_nmse": 0.23285859163439204
+        },
+        {
+          "p": 1.0287499999999998,
+          "derivative_mse": 0.0009011041216102324,
+          "in_sample_rollout_nmse": 0.233089678712751
+        },
+        {
+          "p": 1.046875,
+          "derivative_mse": 0.0009133486486907932,
+          "in_sample_rollout_nmse": 0.23338990319253616
+        },
+        {
+          "p": 1.065,
+          "derivative_mse": 0.0009260364979995549,
+          "in_sample_rollout_nmse": 0.2337572286187656
+        },
+        {
+          "p": 1.083125,
+          "derivative_mse": 0.0009391380199073167,
+          "in_sample_rollout_nmse": 0.23418973683216773
+        },
+        {
+          "p": 1.10125,
+          "derivative_mse": 0.0009526251604121947,
+          "in_sample_rollout_nmse": 0.23468562154891204
+        },
+        {
+          "p": 1.119375,
+          "derivative_mse": 0.0009664713729797303,
+          "in_sample_rollout_nmse": 0.23524318249699838
+        },
+        {
+          "p": 1.1375,
+          "derivative_mse": 0.0009806515356158903,
+          "in_sample_rollout_nmse": 0.23586082004544184
+        },
+        {
+          "p": 1.155625,
+          "derivative_mse": 0.0009951418728188681,
+          "in_sample_rollout_nmse": 0.2365370302720218
+        },
+        {
+          "p": 1.17375,
+          "derivative_mse": 0.001009919882088716,
+          "in_sample_rollout_nmse": 0.2372704004234009
+        },
+        {
+          "p": 1.191875,
+          "derivative_mse": 0.0010249642647018023,
+          "in_sample_rollout_nmse": 0.23805960472800602
+        },
+        {
+          "p": 1.21,
+          "derivative_mse": 0.0010402548604811048,
+          "in_sample_rollout_nmse": 0.23890340052755635
+        },
+        {
+          "p": 1.228125,
+          "derivative_mse": 0.0010557725863141077,
+          "in_sample_rollout_nmse": 0.23980062469766977
+        },
+        {
+          "p": 1.2462499999999999,
+          "derivative_mse": 0.0010714993781883375,
+          "in_sample_rollout_nmse": 0.24075019033183218
+        },
+        {
+          "p": 1.264375,
+          "derivative_mse": 0.00108741813653072,
+          "in_sample_rollout_nmse": 0.24175108366618991
+        },
+        {
+          "p": 1.2825,
+          "derivative_mse": 0.0011035126746514942,
+          "in_sample_rollout_nmse": 0.24280236122534526
+        },
+        {
+          "p": 1.300625,
+          "derivative_mse": 0.0011197676701065053,
+          "in_sample_rollout_nmse": 0.24390314717160314
+        },
+        {
+          "p": 1.3187499999999999,
+          "derivative_mse": 0.0011361686188037007,
+          "in_sample_rollout_nmse": 0.24505263084209913
+        },
+        {
+          "p": 1.336875,
+          "derivative_mse": 0.001152701791690635,
+          "in_sample_rollout_nmse": 0.24625006445989506
+        },
+        {
+          "p": 1.355,
+          "derivative_mse": 0.00116935419386995,
+          "in_sample_rollout_nmse": 0.2474947610065455
+        },
+        {
+          "p": 1.373125,
+          "derivative_mse": 0.0011861135259992287,
+          "in_sample_rollout_nmse": 0.24878609224492695
+        },
+        {
+          "p": 1.3912499999999999,
+          "derivative_mse": 0.0012029681478403786,
+          "in_sample_rollout_nmse": 0.2501234868821681
+        },
+        {
+          "p": 1.409375,
+          "derivative_mse": 0.0012199070438319297,
+          "in_sample_rollout_nmse": 0.2515064288634974
+        },
+        {
+          "p": 1.4275,
+          "derivative_mse": 0.0012369197905652677,
+          "in_sample_rollout_nmse": 0.2529344557886375
+        },
+        {
+          "p": 1.445625,
+          "derivative_mse": 0.0012539965260530504,
+          "in_sample_rollout_nmse": 0.2544071574431452
+        },
+        {
+          "p": 1.4637499999999999,
+          "derivative_mse": 0.0012711279206847948,
+          "in_sample_rollout_nmse": 0.2559241744377307
+        },
+        {
+          "p": 1.481875,
+          "derivative_mse": 0.0012883051497709615,
+          "in_sample_rollout_nmse": 0.25748519694919275
+        },
+        {
+          "p": 1.5,
+          "derivative_mse": 0.0013055198675828302,
+          "in_sample_rollout_nmse": 0.25908996355714964
+        }
+      ],
+      "caution": "Both objectives use training data. No generalization claim or score replacement."
+    },
+    "r1_b1": {
+      "recorded_p": 0.13401381003356422,
+      "derivative_min_on_grid": {
+        "p": 3.0,
+        "derivative_mse": 0.00047310745044868915,
+        "in_sample_rollout_nmse": 4.396331848612738
+      },
+      "rollout_min_on_grid": {
+        "p": 0.234375,
+        "derivative_mse": 0.0025014938897367648,
+        "in_sample_rollout_nmse": 0.24593503911258457
+      },
+      "points": [
+        {
+          "p": 0.05,
+          "derivative_mse": 0.0024629708778778694,
+          "in_sample_rollout_nmse": 0.25963340239631666
+        },
+        {
+          "p": 0.08687500000000001,
+          "derivative_mse": 0.002423347088093468,
+          "in_sample_rollout_nmse": 0.2550262122620365
+        },
+        {
+          "p": 0.12375000000000001,
+          "derivative_mse": 0.002405098895950143,
+          "in_sample_rollout_nmse": 0.2513136520985898
+        },
+        {
+          "p": 0.16062500000000002,
+          "derivative_mse": 0.0024107790116256,
+          "in_sample_rollout_nmse": 0.24854470601734124
+        },
+        {
+          "p": 0.1975,
+          "derivative_mse": 0.0024424401389572213,
+          "in_sample_rollout_nmse": 0.24674780061231905
+        },
+        {
+          "p": 0.234375,
+          "derivative_mse": 0.0025014938897367648,
+          "in_sample_rollout_nmse": 0.24593503911258457
+        },
+        {
+          "p": 0.27125000000000005,
+          "derivative_mse": 0.0025885896929072885,
+          "in_sample_rollout_nmse": 0.24610848353467166
+        },
+        {
+          "p": 0.30812500000000004,
+          "derivative_mse": 0.002703519765226276,
+          "in_sample_rollout_nmse": 0.24726760933831107
+        },
+        {
+          "p": 0.34500000000000003,
+          "derivative_mse": 0.002845154627985695,
+          "in_sample_rollout_nmse": 0.2494170551516238
+        },
+        {
+          "p": 0.381875,
+          "derivative_mse": 0.0030114127176604404,
+          "in_sample_rollout_nmse": 0.25257400021495224
+        },
+        {
+          "p": 0.41875,
+          "derivative_mse": 0.0031992674175575853,
+          "in_sample_rollout_nmse": 0.25677480186295787
+        },
+        {
+          "p": 0.45562500000000006,
+          "derivative_mse": 0.003404795020894449,
+          "in_sample_rollout_nmse": 0.26208079446933114
+        },
+        {
+          "p": 0.49250000000000005,
+          "derivative_mse": 0.003623267110195005,
+          "in_sample_rollout_nmse": 0.2685833187521195
+        },
+        {
+          "p": 0.529375,
+          "derivative_mse": 0.003849289874020662,
+          "in_sample_rollout_nmse": 0.2764081007257862
+        },
+        {
+          "p": 0.5662500000000001,
+          "derivative_mse": 0.004076990380523838,
+          "in_sample_rollout_nmse": 0.28571905333174846
+        },
+        {
+          "p": 0.6031250000000001,
+          "derivative_mse": 0.004300245569850173,
+          "in_sample_rollout_nmse": 0.29672146311771824
+        },
+        {
+          "p": 0.6400000000000001,
+          "derivative_mse": 0.004512944061654901,
+          "in_sample_rollout_nmse": 0.3096643779724585
+        },
+        {
+          "p": 0.6768750000000001,
+          "derivative_mse": 0.004709264756452378,
+          "in_sample_rollout_nmse": 0.32484185054215986
+        },
+        {
+          "p": 0.7137500000000001,
+          "derivative_mse": 0.00488395104928291,
+          "in_sample_rollout_nmse": 0.34259253084384056
+        },
+        {
+          "p": 0.7506250000000001,
+          "derivative_mse": 0.005032556776171615,
+          "in_sample_rollout_nmse": 0.3632969561190361
+        },
+        {
+          "p": 0.7875000000000001,
+          "derivative_mse": 0.0051516409060427685,
+          "in_sample_rollout_nmse": 0.3873717773465553
+        },
+        {
+          "p": 0.8243750000000002,
+          "derivative_mse": 0.0052388927978847385,
+          "in_sample_rollout_nmse": 0.41526012200857193
+        },
+        {
+          "p": 0.8612500000000002,
+          "derivative_mse": 0.0052931778874677066,
+          "in_sample_rollout_nmse": 0.44741736792125436
+        },
+        {
+          "p": 0.8981250000000002,
+          "derivative_mse": 0.005314503406909335,
+          "in_sample_rollout_nmse": 0.48429185499679533
+        },
+        {
+          "p": 0.9350000000000002,
+          "derivative_mse": 0.005303913207571156,
+          "in_sample_rollout_nmse": 0.5263005646699029
+        },
+        {
+          "p": 0.9718750000000002,
+          "derivative_mse": 0.005263328141219456,
+          "in_sample_rollout_nmse": 0.5738006227380481
+        },
+        {
+          "p": 1.00875,
+          "derivative_mse": 0.005195352591212706,
+          "in_sample_rollout_nmse": 0.6270586657693663
+        },
+        {
+          "p": 1.045625,
+          "derivative_mse": 0.00510306834701877,
+          "in_sample_rollout_nmse": 0.6862215796762041
+        },
+        {
+          "p": 1.0825000000000002,
+          "derivative_mse": 0.004989834598803072,
+          "in_sample_rollout_nmse": 0.7512935715361293
+        },
+        {
+          "p": 1.1193750000000002,
+          "derivative_mse": 0.004859108422977461,
+          "in_sample_rollout_nmse": 0.8221253223793021
+        },
+        {
+          "p": 1.1562500000000002,
+          "derivative_mse": 0.00471429490818552,
+          "in_sample_rollout_nmse": 0.8984200798255342
+        },
+        {
+          "p": 1.1931250000000002,
+          "derivative_mse": 0.004558631047394566,
+          "in_sample_rollout_nmse": 0.9797579386626665
+        },
+        {
+          "p": 1.2300000000000002,
+          "derivative_mse": 0.004395103376753021,
+          "in_sample_rollout_nmse": 1.065632990107346
+        },
+        {
+          "p": 1.2668750000000002,
+          "derivative_mse": 0.004226396391540614,
+          "in_sample_rollout_nmse": 1.1554903070582192
+        },
+        {
+          "p": 1.3037500000000002,
+          "derivative_mse": 0.004054867028372108,
+          "in_sample_rollout_nmse": 1.2487455164372945
+        },
+        {
+          "p": 1.3406250000000002,
+          "derivative_mse": 0.0038825397909208323,
+          "in_sample_rollout_nmse": 1.344775370365725
+        },
+        {
+          "p": 1.3775000000000002,
+          "derivative_mse": 0.0037111171456702804,
+          "in_sample_rollout_nmse": 1.4428874046027735
+        },
+        {
+          "p": 1.4143750000000002,
+          "derivative_mse": 0.0035420003487507306,
+          "in_sample_rollout_nmse": 1.5423067254268548
+        },
+        {
+          "p": 1.4512500000000002,
+          "derivative_mse": 0.0033763166492786064,
+          "in_sample_rollout_nmse": 1.642243501669646
+        },
+        {
+          "p": 1.4881250000000001,
+          "derivative_mse": 0.0032149496734788082,
+          "in_sample_rollout_nmse": 1.7421046317542872
+        },
+        {
+          "p": 1.5250000000000001,
+          "derivative_mse": 0.0030585706126663873,
+          "in_sample_rollout_nmse": 1.8418721469228265
+        },
+        {
+          "p": 1.5618750000000003,
+          "derivative_mse": 0.0029076685532739154,
+          "in_sample_rollout_nmse": 1.9425940750252693
+        },
+        {
+          "p": 1.5987500000000003,
+          "derivative_mse": 0.0027625788724160863,
+          "in_sample_rollout_nmse": 2.0468499846591426
+        },
+        {
+          "p": 1.6356250000000003,
+          "derivative_mse": 0.002623509076418413,
+          "in_sample_rollout_nmse": 2.1590053013274115
+        },
+        {
+          "p": 1.6725000000000003,
+          "derivative_mse": 0.002490561794754932,
+          "in_sample_rollout_nmse": 2.2850880359256704
+        },
+        {
+          "p": 1.7093750000000003,
+          "derivative_mse": 0.0023637548768288157,
+          "in_sample_rollout_nmse": 2.432211856565793
+        },
+        {
+          "p": 1.7462500000000003,
+          "derivative_mse": 0.002243038694389273,
+          "in_sample_rollout_nmse": 2.6076005477681603
+        },
+        {
+          "p": 1.7831250000000003,
+          "derivative_mse": 0.0021283108471972334,
+          "in_sample_rollout_nmse": 2.8173921208833446
+        },
+        {
+          "p": 1.8200000000000003,
+          "derivative_mse": 0.0020194285202381865,
+          "in_sample_rollout_nmse": 3.0654716893223886
+        },
+        {
+          "p": 1.8568750000000003,
+          "derivative_mse": 0.0019162187606381492,
+          "in_sample_rollout_nmse": 3.3525791582700677
+        },
+        {
+          "p": 1.8937500000000003,
+          "derivative_mse": 0.0018184869417773148,
+          "in_sample_rollout_nmse": 3.675867929963007
+        },
+        {
+          "p": 1.9306250000000003,
+          "derivative_mse": 0.0017260236685976713,
+          "in_sample_rollout_nmse": 4.028982623748178
+        },
+        {
+          "p": 1.9675000000000002,
+          "derivative_mse": 0.001638610357297237,
+          "in_sample_rollout_nmse": 4.40261275493538
+        },
+        {
+          "p": 2.004375,
+          "derivative_mse": 0.0015560236983324796,
+          "in_sample_rollout_nmse": 4.785394568679436
+        },
+        {
+          "p": 2.0412500000000002,
+          "derivative_mse": 0.001478039186466659,
+          "in_sample_rollout_nmse": 5.164990033000687
+        },
+        {
+          "p": 2.078125,
+          "derivative_mse": 0.0014044338771293872,
+          "in_sample_rollout_nmse": 5.529170939227831
+        },
+        {
+          "p": 2.115,
+          "derivative_mse": 0.0013349885055407246,
+          "in_sample_rollout_nmse": 5.866767153779358
+        },
+        {
+          "p": 2.151875,
+          "derivative_mse": 0.0012694890843989728,
+          "in_sample_rollout_nmse": 6.168386642228621
+        },
+        {
+          "p": 2.18875,
+          "derivative_mse": 0.0012077280776208823,
+          "in_sample_rollout_nmse": 6.426866790571801
+        },
+        {
+          "p": 2.225625,
+          "derivative_mse": 0.001149505231650155,
+          "in_sample_rollout_nmse": 6.637461334585052
+        },
+        {
+          "p": 2.2625,
+          "derivative_mse": 0.0010946281320892484,
+          "in_sample_rollout_nmse": 6.7977992261835185
+        },
+        {
+          "p": 2.299375,
+          "derivative_mse": 0.001042912541674462,
+          "in_sample_rollout_nmse": 6.907669662363727
+        },
+        {
+          "p": 2.33625,
+          "derivative_mse": 0.000994182565686347,
+          "in_sample_rollout_nmse": 6.968692940231468
+        },
+        {
+          "p": 2.373125,
+          "derivative_mse": 0.0009482706825465284,
+          "in_sample_rollout_nmse": 6.983933001340598
+        },
+        {
+          "p": 2.41,
+          "derivative_mse": 0.000905017670383343,
+          "in_sample_rollout_nmse": 6.957498084758313
+        },
+        {
+          "p": 2.4468750000000004,
+          "derivative_mse": 0.0008642724545549297,
+          "in_sample_rollout_nmse": 6.894164001821301
+        },
+        {
+          "p": 2.48375,
+          "derivative_mse": 0.0008258918963228532,
+          "in_sample_rollout_nmse": 6.799042560229761
+        },
+        {
+          "p": 2.5206250000000003,
+          "derivative_mse": 0.0007897405389141214,
+          "in_sample_rollout_nmse": 6.677307118445253
+        },
+        {
+          "p": 2.5575,
+          "derivative_mse": 0.0007556903239572208,
+          "in_sample_rollout_nmse": 6.533978896120807
+        },
+        {
+          "p": 2.5943750000000003,
+          "derivative_mse": 0.0007236202886171144,
+          "in_sample_rollout_nmse": 6.3737716767997155
+        },
+        {
+          "p": 2.63125,
+          "derivative_mse": 0.0006934162515772621,
+          "in_sample_rollout_nmse": 6.200988740220084
+        },
+        {
+          "p": 2.6681250000000003,
+          "derivative_mse": 0.0006649704942467369,
+          "in_sample_rollout_nmse": 6.01946386344288
+        },
+        {
+          "p": 2.705,
+          "derivative_mse": 0.0006381814421336253,
+          "in_sample_rollout_nmse": 5.832537592744976
+        },
+        {
+          "p": 2.7418750000000003,
+          "derivative_mse": 0.0006129533501632096,
+          "in_sample_rollout_nmse": 5.6430602848028935
+        },
+        {
+          "p": 2.77875,
+          "derivative_mse": 0.0005891959947807942,
+          "in_sample_rollout_nmse": 5.453414283823171
+        },
+        {
+          "p": 2.8156250000000003,
+          "derivative_mse": 0.0005668243749303699,
+          "in_sample_rollout_nmse": 5.265548751936519
+        },
+        {
+          "p": 2.8525,
+          "derivative_mse": 0.0005457584233923084,
+          "in_sample_rollout_nmse": 5.081021914944523
+        },
+        {
+          "p": 2.8893750000000002,
+          "derivative_mse": 0.0005259227294937752,
+          "in_sample_rollout_nmse": 4.901046668582959
+        },
+        {
+          "p": 2.92625,
+          "derivative_mse": 0.000507246273817598,
+          "in_sample_rollout_nmse": 4.7265365631760625
+        },
+        {
+          "p": 2.9631250000000002,
+          "derivative_mse": 0.0004896621752472504,
+          "in_sample_rollout_nmse": 4.558150080033739
+        },
+        {
+          "p": 3.0,
+          "derivative_mse": 0.00047310745044868915,
+          "in_sample_rollout_nmse": 4.396331848612738
+        }
+      ],
+      "caution": "Both objectives use training data. No generalization claim or score replacement."
+    }
+  },
+  "conditional_design_feasibility": {
+    "solved": true,
+    "scope": "Model-only diagnostic. These inputs have NOT been observed or tested on the simulator.",
+    "actions": [
+      {
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0.5,
+            1.5
+          ],
+          [
+            2,
+            -1.2187680541296078
+          ],
+          [
+            4,
+            1.0511295323448306
+          ],
+          [
+            6,
+            -1.3479897935013425
+          ],
+          [
+            7,
+            0
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0.5,
+            -1.5
+          ],
+          [
+            2,
+            1.2187680541296078
+          ],
+          [
+            4,
+            -1.0511295323448306
+          ],
+          [
+            6,
+            1.3479897935013425
+          ],
+          [
+            7,
+            0
+          ]
+        ]
+      }
+    ],
+    "predicted_match_gaps": {
+      "initial": 0.04000000000000075,
+      "r1_b0": 0.03999999999999941,
+      "r1_b1": 0.04000000000000058
+    },
+    "max_slope_effect_disagreement_in_this_four_segment_class": 0.060123849443068145,
+    "endpoint_pair_slope_noise_sd": 0.02,
+    "caution": "Linear-program optimum for these fixed fits/segment times only; not proof about all designs, actual matching, or scientific mechanisms."
+  },
+  "sealed_posthoc": {
+    "mean": 0.09287405991120716,
+    "worst_id": "sealed_4",
+    "worst_nmse": 0.38319251451344655,
+    "worst_fraction_of_sum_nmse": 0.6876561565913385,
+    "max_abs_error_time": 8.5,
+    "predicted_at_max_error": 1.2145904573051207,
+    "truth_at_max_error": 0.6806520820721471,
+    "note": "Already evaluated sealed data, now inspected for diagnosis. Must not become a new untouched confirmation set."
+  },
+  "privileged_world_diagnosis": {
+    "nonzero_equilibria": [
+      -0.6131528345190795,
+      0.6131528345190795
+    ],
+    "zero_equilibrium_eigenvalues": [
+      {
+        "real": -1.4026619427073486,
+        "imag": 0.0
+      },
+      {
+        "real": 0.10266194270734857,
+        "imag": 0.0
+      }
+    ],
+    "note": "Analyst access to simulator equations, NOT an agent discovery or inference from finite observations. Do not put equations/labels in next agent prompt."
+  },
+  "frozen_run_unchanged": true
+}

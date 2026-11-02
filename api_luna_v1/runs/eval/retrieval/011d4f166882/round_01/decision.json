@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793430030622027347,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "alternating",
+    "reason": "Memory_multiscale has the lowest trajectory-held-out NMSE, but residual lag correlation remains substantial and PRBS fit is weaker. Alternating has high disagreement among plausible memory representations.",
+    "prediction": "After rapid input reversals, trajectories will retain history-dependent transients; competing memory models will disagree most during those reversals.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"alternating\",\"reason\":\"Memory_multiscale has the lowest trajectory-held-out NMSE, but residual lag correlation remains substantial and PRBS fit is weaker. Alternating has high disagreement among plausible memory representations.\",\"prediction\":\"After rapid input reversals, trajectories will retain history-dependent transients; competing memory models will disagree most during those reversals.\",\"accept\":false}",
+    "input_tokens": 2995,
+    "output_tokens": 182,
+    "batch_elapsed_seconds": 4.950678365305066,
+    "amortized_seconds": 4.950678365305066,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2995,
+      "completion_tokens": 182,
+      "total_tokens": 3177,
+      "completion_tokens_details": {
+        "reasoning_tokens": 94
+      }
+    },
+    "api_response_id": "resp_0d89267715905bd3016ae5920c2aa48194b6bc3c0563db07a0",
+    "wire_record": "wire/eval/0177_e6a4e15d28aa469ca31dfd8329b6059e"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430699262050839,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0fc4cd05d2af330f016ae594a82cfc81978f6033c03b635087",
+    "object": "chat.completion",
+    "created": 1793430699,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"double_pulse\",\"reason\":\"State_cubic has the lowest trajectory-level CV NMSE (0.00162); memory alternatives perform worse. Residual lag-1 correlation remains, so adequacy for unseen interventions is uncertain.\",\"prediction\":\"The second pulse response should be determined by the current state and input, with no additional effect from the first pulse once those are matched.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No mechanism relation is established; the instantaneous cubic model validates best among tested candidates.\",\"condition_to_check\":\"At matched current state and input, a systematic difference between first- and second-pulse responses would challenge this model.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3457,
+      "completion_tokens": 283,
+      "total_tokens": 3740,
+      "completion_tokens_details": {
+        "reasoning_tokens": 136
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.7667360296472907
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430286386349378,
+  "http_status": 200,
+  "body": {
+    "id": "resp_086957bba8e83dda016ae5930c3a5c8194a9db13274a1e8e6c",
+    "object": "chat.completion",
+    "created": 1793430286,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"ramp_reverse\",\"reason\":\"State_cubic has the best trajectory-level cross-validation score, and adding memory worsens it. However, residual lag-1 correlation remains, so adequacy for unseen interventions is not established.\",\"prediction\":\"On a ramp-reverse input, output should be explained by current state, input, and cubic curvature; persistent direction-dependent residuals would challenge this model.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3293,
+      "completion_tokens": 180,
+      "total_tokens": 3473,
+      "completion_tokens_details": {
+        "reasoning_tokens": 84
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.390900501050055
+}

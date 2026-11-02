@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430195913214527,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0f9d4cd3b1984a44016ae592b185b08195a3ca45c5bce76481",
+    "object": "chat.completion",
+    "created": 1793430195,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"prbs\",\"reason\":\"Memory_clock has the lowest leave-trajectory-out error (0.00738), substantially below history_all (0.03487). PRBS provides an irregular input sequence to probe remaining history effects.\",\"prediction\":\"Under PRBS input, predictions will track the irregular response better than a model using accumulated history without elapsed-time terms.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2810,
+      "completion_tokens": 230,
+      "total_tokens": 3040,
+      "completion_tokens_details": {
+        "reasoning_tokens": 143
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.332014499232173
+}

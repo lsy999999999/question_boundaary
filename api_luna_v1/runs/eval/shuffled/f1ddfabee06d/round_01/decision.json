@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430655027804930,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "memory_slow has the lowest trajectory-level CV error; alternating’s forecast error is low, but residual lag correlation leaves possible structure unresolved.",
+    "prediction": "During PRBS switches, output should retain smooth carryover from past input after controlling current input; weak carryover would challenge this model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Leaky accumulated history can carry past input effects forward after the input changes.",
+      "condition_to_check": "Check whether past input predicts output after controlling current input and visible state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest trajectory-level CV error; alternating’s forecast error is low, but residual lag correlation leaves possible structure unresolved.\",\"prediction\":\"During PRBS switches, output should retain smooth carryover from past input after controlling current input; weak carryover would challenge this model.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Leaky accumulated history can carry past input effects forward after the input changes.\",\"condition_to_check\":\"Check whether past input predicts output after controlling current input and visible state.\"}}",
+    "input_tokens": 3254,
+    "output_tokens": 313,
+    "batch_elapsed_seconds": 4.1429030345752835,
+    "amortized_seconds": 4.1429030345752835,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3254,
+      "completion_tokens": 313,
+      "total_tokens": 3567,
+      "completion_tokens_details": {
+        "reasoning_tokens": 189
+      }
+    },
+    "api_response_id": "resp_00f8687d50f75c39016ae5947b9764819487cc89d68a24c475",
+    "wire_record": "wire/eval/0471_660a56de2107452594071c2df3ff82d4"
+  }
+}

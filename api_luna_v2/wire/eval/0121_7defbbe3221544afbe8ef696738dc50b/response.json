@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431505960401884,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0e94ee7fc7362678016ae597cf479c8190a553a6a7e2b3e45a",
+    "object": "chat.completion",
+    "created": 1793431505,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory models greatly outperform the state-only model in trajectory-level validation; memory_slow has the lowest CV error, while residual correlation indicates persistent unmodeled dynamics.\",\"prediction\":\"Under PRBS input, slow accumulated history should predict output after input switches better than the state-only model.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Finite-leakage storage is a plausible representation of the persistent post-input response.\",\"condition_to_check\":\"At matched current input and visible state, accumulated history should predict subsequent output across PRBS segments.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2807,
+      "completion_tokens": 281,
+      "total_tokens": 3088,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 151
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.3387342235073447
+}

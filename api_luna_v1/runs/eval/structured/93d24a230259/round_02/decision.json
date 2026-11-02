@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430156628755771,
+  "decision": {
+    "representation": "state",
+    "experiment": "slow_wave",
+    "reason": "State retains the lowest leave-trajectory-out error, and prior alternating and ramp-reversal forecasts were accurate. Slow-wave input can further distinguish it from clock and slow-memory alternatives.",
+    "prediction": "At matched current state and input, output evolution will not depend systematically on elapsed-time phase or earlier input history.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No added clock or storage relation is supported by current trajectory-level validation.",
+      "condition_to_check": "Reject state if slow-wave responses show reproducible phase or history dependence after matching current state and input."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"slow_wave\",\"reason\":\"State retains the lowest leave-trajectory-out error, and prior alternating and ramp-reversal forecasts were accurate. Slow-wave input can further distinguish it from clock and slow-memory alternatives.\",\"prediction\":\"At matched current state and input, output evolution will not depend systematically on elapsed-time phase or earlier input history.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No added clock or storage relation is supported by current trajectory-level validation.\",\"condition_to_check\":\"Reject state if slow-wave responses show reproducible phase or history dependence after matching current state and input.\"}}",
+    "input_tokens": 3447,
+    "output_tokens": 255,
+    "batch_elapsed_seconds": 3.3298125956207514,
+    "amortized_seconds": 3.3298125956207514,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3447,
+      "completion_tokens": 255,
+      "total_tokens": 3702,
+      "completion_tokens_details": {
+        "reasoning_tokens": 125
+      }
+    },
+    "api_response_id": "resp_085a76d084ba4efb016ae5928a01cc819694279abc549803db",
+    "wire_record": "wire/eval/0247_b3f61a3194264799ab11708eecb94c80"
+  }
+}

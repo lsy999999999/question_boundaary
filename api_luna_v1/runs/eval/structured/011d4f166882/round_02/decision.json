@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430216708847310,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "prbs",
+    "reason": "It has the lowest trajectory-level CV error; memory_clock is close, but elapsed-time forcing lacks clear support. Residual lag and the PRBS error leave adequacy uncertain.",
+    "prediction": "After PRBS input switches, output will retain a decaying history-dependent tail; memory_clock instead predicts an elapsed-time component.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Finite-relaxation accumulated history predicts output dependence on past input beyond current input and visible state.",
+      "condition_to_check": "The relation is weakened if past input adds no predictive value after controlling current input and visible state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"It has the lowest trajectory-level CV error; memory_clock is close, but elapsed-time forcing lacks clear support. Residual lag and the PRBS error leave adequacy uncertain.\",\"prediction\":\"After PRBS input switches, output will retain a decaying history-dependent tail; memory_clock instead predicts an elapsed-time component.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Finite-relaxation accumulated history predicts output dependence on past input beyond current input and visible state.\",\"condition_to_check\":\"The relation is weakened if past input adds no predictive value after controlling current input and visible state.\"}}",
+    "input_tokens": 3476,
+    "output_tokens": 273,
+    "batch_elapsed_seconds": 4.366291968151927,
+    "amortized_seconds": 4.366291968151927,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3476,
+      "completion_tokens": 273,
+      "total_tokens": 3749,
+      "completion_tokens_details": {
+        "reasoning_tokens": 133
+      }
+    },
+    "api_response_id": "resp_02f07477a5e6293a016ae592c5dfc8819083bb0e6754208c9a",
+    "wire_record": "wire/eval/0277_2568df03ed6d42b7bc968e0b8f385259"
+  }
+}

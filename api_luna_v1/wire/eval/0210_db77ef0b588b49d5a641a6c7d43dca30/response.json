@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430093915471117,
+  "http_status": 200,
+  "body": {
+    "id": "resp_01b3482ff95eaf61016ae5924ac38081949958cc92711e7d9c",
+    "object": "chat.completion",
+    "created": 1793430093,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the best trajectory-held-out NMSE, but residual lag-1 correlation remains high. Alternating inputs probe history dependence under rapid switches.\",\"prediction\":\"After each input reversal, output will continue reflecting earlier inputs and relax gradually rather than switching immediately.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated input history predicts lingering output after input changes.\",\"condition_to_check\":\"If output after reversals is explained by current input and visible state, without lingering history dependence, this relation is weakened.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3261,
+      "completion_tokens": 259,
+      "total_tokens": 3520,
+      "completion_tokens_details": {
+        "reasoning_tokens": 133
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.9094276344403625
+}

@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430579196752438,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Memory_slow has the lowest trajectory-level CV NMSE; alternatives score worse, and the observed post-input tails support history dependence. PRBS can test this beyond the existing waveforms.",
+    "prediction": "After matching current input and visible output, different prior input histories will produce measurably different subsequent outputs.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Accumulated past influence can persist after input changes and relax over time, consistent with the observed post-pulse tails.",
+      "condition_to_check": "At matched current input and visible output, compare subsequent outputs after distinct prior input histories."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the lowest trajectory-level CV NMSE; alternatives score worse, and the observed post-input tails support history dependence. PRBS can test this beyond the existing waveforms.\",\"prediction\":\"After matching current input and visible output, different prior input histories will produce measurably different subsequent outputs.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Accumulated past influence can persist after input changes and relax over time, consistent with the observed post-pulse tails.\",\"condition_to_check\":\"At matched current input and visible output, compare subsequent outputs after distinct prior input histories.\"}}",
+    "input_tokens": 3267,
+    "output_tokens": 387,
+    "batch_elapsed_seconds": 4.359092742204666,
+    "amortized_seconds": 4.359092742204666,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3267,
+      "completion_tokens": 387,
+      "total_tokens": 3654,
+      "completion_tokens_details": {
+        "reasoning_tokens": 247
+      }
+    },
+    "api_response_id": "resp_01f1fbdb438469c9016ae5942f8948819683fee32d23bb9007",
+    "wire_record": "wire/eval/0441_1e8181d27c934edcbc2db85bd704d064"
+  }
+}

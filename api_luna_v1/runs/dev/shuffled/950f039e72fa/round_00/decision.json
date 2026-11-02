@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793429708256708145,
+  "decision": {
+    "representation": "clock",
+    "experiment": "alternating",
+    "reason": "Clock has the lowest trajectory-held-out NMSE (0.0017), far below memory_clock (0.0096); alternating inputs can test whether elapsed-time effects persist across input histories.",
+    "prediction": "At matched elapsed times, trajectories should show similar clock-related variation despite their differing input histories.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "The clock representation captures elapsed-time dependence, but the observations do not establish an independent external driver.",
+      "condition_to_check": "Compare alternating-input trajectories at matched elapsed times; persistent aligned variation would support clock dependence."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest trajectory-held-out NMSE (0.0017), far below memory_clock (0.0096); alternating inputs can test whether elapsed-time effects persist across input histories.\",\"prediction\":\"At matched elapsed times, trajectories should show similar clock-related variation despite their differing input histories.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The clock representation captures elapsed-time dependence, but the observations do not establish an independent external driver.\",\"condition_to_check\":\"Compare alternating-input trajectories at matched elapsed times; persistent aligned variation would support clock dependence.\"}}",
+    "input_tokens": 2792,
+    "output_tokens": 436,
+    "batch_elapsed_seconds": 6.847530238330364,
+    "amortized_seconds": 6.847530238330364,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2792,
+      "completion_tokens": 436,
+      "total_tokens": 3228,
+      "completion_tokens_details": {
+        "reasoning_tokens": 305
+      }
+    },
+    "api_response_id": "resp_05a831d30b0b20c6016ae590c6cc408195a32d54033be80127",
+    "wire_record": "wire/dev/0057_520c64411a164a9aa112c3d58742b8fd"
+  }
+}

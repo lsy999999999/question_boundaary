@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793432308819639230,
+  "decision": {
+    "representation": "clock",
+    "experiment": "prbs",
+    "reason": "Clock has the lowest trajectory-level CV error by a wide margin, and its forecast errors remain low across tested interventions; alternatives fit substantially worse.",
+    "prediction": "Under a new input pattern, elapsed-time oscillation phase should remain aligned with phases observed in other interventions.",
+    "accept": true,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Low errors across distinct input trajectories are consistent with a shared elapsed-time periodic driver.",
+      "condition_to_check": "A repeatable phase shift tied to input history, rather than elapsed time, would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has the lowest trajectory-level CV error by a wide margin, and its forecast errors remain low across tested interventions; alternatives fit substantially worse.\",\"prediction\":\"Under a new input pattern, elapsed-time oscillation phase should remain aligned with phases observed in other interventions.\",\"accept\":true,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Low errors across distinct input trajectories are consistent with a shared elapsed-time periodic driver.\",\"condition_to_check\":\"A repeatable phase shift tied to input history, rather than elapsed time, would weaken this relation.\"}}",
+    "input_tokens": 3646,
+    "output_tokens": 260,
+    "batch_elapsed_seconds": 3.486525770276785,
+    "amortized_seconds": 3.486525770276785,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3646,
+      "completion_tokens": 260,
+      "total_tokens": 3906,
+      "completion_tokens_details": {
+        "reasoning_tokens": 135
+      }
+    },
+    "api_response_id": "resp_07ce669c1e979a02016ae59af1fd588197b6e757ce0180a8c9",
+    "wire_record": "wire/eval/0543_ac2e4680401246a298f277ee6462a108"
+  }
+}

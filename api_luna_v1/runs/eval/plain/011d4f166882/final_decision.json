@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793430256272815628,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "ramp_reverse",
+    "reason": "It has the lowest trajectory-held-out error, and its validation improved after the alternating experiment; richer clock or saturating variants do not improve held-out performance.",
+    "prediction": "On a slow ramp followed by reversal, it will predict the response more accurately than state-only dynamics, with residual errors remaining small and not systematically tracking elapsed time.",
+    "accept": true,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"ramp_reverse\",\"reason\":\"It has the lowest trajectory-held-out error, and its validation improved after the alternating experiment; richer clock or saturating variants do not improve held-out performance.\",\"prediction\":\"On a slow ramp followed by reversal, it will predict the response more accurately than state-only dynamics, with residual errors remaining small and not systematically tracking elapsed time.\",\"accept\":true}",
+    "input_tokens": 2997,
+    "output_tokens": 89,
+    "batch_elapsed_seconds": 2.409506374038756,
+    "amortized_seconds": 2.409506374038756,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2997,
+      "completion_tokens": 89,
+      "total_tokens": 3086
+    },
+    "api_response_id": "resp_00e85779e891b279016ae592ee79b48196822a99ba2458e360",
+    "wire_record": "wire/eval/0294_dac06772cb9b419d87387399caa17cf0"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423847861998985,
+  "decision": {
+    "representation": "memory_fast",
+    "experiment": "double_pulse",
+    "reason": "Fast memory shows best fit but may overfit simple pulses; double pulse tests generalization.",
+    "prediction": "Memory fast will show higher variance in predictions compared to simpler models like state.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Persistent effects after inputs stop indicate storage rather than just fast dynamics.",
+      "condition_to_check": "If memory fast predicts future states well after inputs cease, storage is likely."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_fast\",\n  \"experiment\": \"double_pulse\",\n  \"reason\": \"Fast memory shows best fit but may overfit simple pulses; double pulse tests generalization.\",\n  \"prediction\": \"Memory fast will show higher variance in predictions compared to simpler models like state.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Persistent effects after inputs stop indicate storage rather than just fast dynamics.\",\n    \"condition_to_check\": \"If memory fast predicts future states well after inputs cease, storage is likely.\"\n  }\n}",
+    "input_tokens": 3129,
+    "output_tokens": 124,
+    "batch_elapsed_seconds": 2.811970481649041,
+    "amortized_seconds": 2.811970481649041,
+    "peak_gpu_allocated_gb": 14.829248905181885,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793432334583223195,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "slow_wave",
+    "reason": "Memory_clock has the lowest leave-trajectory-out error by a wide margin; alternatives fit substantially worse, though residual lag-1 correlation leaves adequacy uncertain.",
+    "prediction": "On a new intervention, elapsed-time periodic features plus accumulated history will predict better than state-only dynamics, but residual errors may remain temporally correlated.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Predictive history features do not establish a physical storage mechanism or independent clock.",
+      "condition_to_check": "A reproducible history effect after controlling current state and input would support storage; aligned periodic effects across interventions would support a clock."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"slow_wave\",\"reason\":\"Memory_clock has the lowest leave-trajectory-out error by a wide margin; alternatives fit substantially worse, though residual lag-1 correlation leaves adequacy uncertain.\",\"prediction\":\"On a new intervention, elapsed-time periodic features plus accumulated history will predict better than state-only dynamics, but residual errors may remain temporally correlated.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Predictive history features do not establish a physical storage mechanism or independent clock.\",\"condition_to_check\":\"A reproducible history effect after controlling current state and input would support storage; aligned periodic effects across interventions would support a clock.\"}}",
+    "input_tokens": 3664,
+    "output_tokens": 249,
+    "batch_elapsed_seconds": 3.7242631800472736,
+    "amortized_seconds": 3.7242631800472736,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3664,
+      "completion_tokens": 249,
+      "total_tokens": 3913,
+      "completion_tokens_details": {
+        "reasoning_tokens": 109
+      }
+    },
+    "api_response_id": "resp_0fa7f04281061aee016ae59b0b872c8195b98c40a4c54a42aa",
+    "wire_record": "wire/eval/0554_3f4dbb339d4c4430b1a028a2c66495b8"
+  }
+}

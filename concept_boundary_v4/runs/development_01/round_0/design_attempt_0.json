@@ -1,0 +1,96 @@
+{
+  "question": {
+    "family": "reversal_depth",
+    "purpose": "discriminate",
+    "target_ids": [
+      "v3_r2",
+      "b4_r0"
+    ],
+    "amplitude_range": [
+      0.8,
+      1.5
+    ],
+    "value_range": [
+      0.2,
+      1.5
+    ],
+    "evidence_ids": [
+      "scope:v3_r2:e399d52c79e0",
+      "scope:b4_r0:34194cf95754",
+      "failure:v3_r2:e399d52c79e0:promoted_v3_sealed_2",
+      "failure:b4_r0:34194cf95754:promoted_v3_sealed_3"
+    ],
+    "rationale": "No supported single-feature boundary is declared, so use a discrimination design. Current held-out failures include substantial residuals for both v3_r2 and b4_r0, while b4_r0 has the best aggregate grouped-CV score; the available rows do not identify a reliable threshold in reversal count or another coarse descriptor. Varying reversal depth directly tests whether these active models make distinguishable predictions across a controlled reversal while holding the first pulse schedule fixed. The amplitude range emphasizes moderate-to-large conditioning pulses within the permitted input limit.",
+    "claim": "Across at least some tested conditioning amplitudes and reversal depths, v3_r2 and b4_r0 will predict trajectory outputs separated by the discrimination criterion, revealing whether their differing state structures yield distinguishable input-output behavior on controlled reversals.",
+    "update_if_violated": "If the compiler finds no admissible separation, or if new observations show no reproducible separation at the chosen settings, retain no_supported_boundary and revise or merge models based on their held-out predictions rather than asserting a single-descriptor threshold."
+  },
+  "result": {
+    "passed": true,
+    "actions": [
+      {
+        "points": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.5,
+            1.5
+          ],
+          [
+            3.5,
+            -0.2
+          ],
+          [
+            6.5,
+            0.0
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.5,
+            1.5
+          ],
+          [
+            3.5,
+            -0.6
+          ],
+          [
+            6.5,
+            0.0
+          ]
+        ]
+      }
+    ],
+    "descriptor": {
+      "family": "reversal_depth",
+      "amplitude": 1.5,
+      "sign": 1,
+      "values": [
+        0.2,
+        0.6
+      ]
+    },
+    "guard": {
+      "passed": true,
+      "contrast_rms": 0.054418764238394146,
+      "minimum_discrimination_rms": 0.021213203435596427,
+      "boundary_labels": [
+        null,
+        null
+      ],
+      "straddles_boundary": false
+    },
+    "considered": 36,
+    "rejected_count": 12,
+    "reasons": {
+      "Predicted separation below 3 noise RMS": 12
+    }
+  }
+}

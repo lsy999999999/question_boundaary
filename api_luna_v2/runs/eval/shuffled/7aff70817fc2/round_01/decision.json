@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431700522205849,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "double_pulse",
+    "reason": "State_cubic has the lowest trajectory-level CV NMSE (0.00204), substantially improving on saturating_memory (0.00614); the best fit does not establish adequacy for unseen interventions.",
+    "prediction": "The second positive pulse may differ from the first at matched input and visible state if accumulated history matters.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No cross-domain mechanism is justified by the predictive validation results.",
+      "condition_to_check": "Compare pulse responses while accounting for current state and input."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state_cubic\",\"experiment\":\"double_pulse\",\"reason\":\"State_cubic has the lowest trajectory-level CV NMSE (0.00204), substantially improving on saturating_memory (0.00614); the best fit does not establish adequacy for unseen interventions.\",\"prediction\":\"The second positive pulse may differ from the first at matched input and visible state if accumulated history matters.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain mechanism is justified by the predictive validation results.\",\"condition_to_check\":\"Compare pulse responses while accounting for current state and input.\"}}",
+    "input_tokens": 3264,
+    "output_tokens": 281,
+    "batch_elapsed_seconds": 4.9948654640465975,
+    "amortized_seconds": 4.9948654640465975,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3264,
+      "completion_tokens": 281,
+      "total_tokens": 3545,
+      "completion_tokens_details": {
+        "reasoning_tokens": 155
+      }
+    },
+    "api_response_id": "resp_02bff80faf1dc62a016ae59891b70c81979f87f97813ea2f70",
+    "wire_record": "wire/eval/0252_7f216547eae443dd901f93771cc89eeb"
+  }
+}

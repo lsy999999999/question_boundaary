@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793432276592423976,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0122a72fe7199306016ae59ad2c0d88190adc9f86ebfe7d44b",
+    "object": "chat.completion",
+    "created": 1793432276,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"It has the lowest trajectory-level CV NMSE, and observed pulse and reversal responses support persistent history. Alternatives perform slightly worse; residual lag-1 correlation leaves some uncertainty about adequacy.\",\"prediction\":\"After input returns to zero, output will relax with history-dependent tails; pulse history will affect the response to a later pulse.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence can persist after input returns to zero, while leakage produces relaxation.\",\"condition_to_check\":\"At matched current input and output, prior input history should predict subsequent output; no predictive effect would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3715,
+      "completion_tokens": 142,
+      "total_tokens": 3857
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.55644444655627
+}

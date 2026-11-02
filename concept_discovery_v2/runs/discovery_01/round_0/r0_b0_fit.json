@@ -1,0 +1,49 @@
+{
+  "spec": {
+    "parameters": [
+      {
+        "name": "p0",
+        "lower": 0.05,
+        "initial": 0.25,
+        "upper": 1.5
+      }
+    ],
+    "states": [
+      {
+        "name": "z0",
+        "meaning": "exponentially decaying trace of prior input, initialized to zero",
+        "rate": "u-p0*z0"
+      }
+    ],
+    "terms": [
+      "1",
+      "x",
+      "u",
+      "z0"
+    ]
+  },
+  "fit": {
+    "parameters": [
+      0.7025966359597164
+    ],
+    "coefficients": [
+      -0.00034392466706728505,
+      -0.008513006781409265,
+      0.9137657772657898,
+      -0.4664314159374722
+    ],
+    "solver": {
+      "success": true,
+      "nfev": 7,
+      "message": "`ftol` termination condition is satisfied."
+    },
+    "derivative_mse": 0.0008030874553505304
+  },
+  "trajectory_cv_nmse": 1.4073695719041526,
+  "fold_nmse": [
+    0.22188477602928325,
+    3.6853005358578246,
+    0.3149234038253497
+  ],
+  "complexity": 22
+}

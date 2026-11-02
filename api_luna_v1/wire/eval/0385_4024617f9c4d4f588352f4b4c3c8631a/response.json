@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430441678303486,
+  "http_status": 200,
+  "body": {
+    "id": "resp_037b5fb0d2294803016ae593a69f0c8195b2fc2a6816c0fbaf",
+    "object": "chat.completion",
+    "created": 1793430441,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"ramp_reverse\",\"reason\":\"It has the lowest leave-trajectory-out error (0.00195), substantially beating other candidates. Persistent post-input decay supports memory; residual lag-1 correlation leaves some uncertainty.\",\"prediction\":\"After input returns to zero, output will decay rather than immediately follow a model based only on current input and state.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Output persists and decays after input cessation, consistent with accumulated history carrying forward with finite relaxation.\",\"condition_to_check\":\"At matched current input and output, different prior histories should predict distinct subsequent responses.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3681,
+      "completion_tokens": 272,
+      "total_tokens": 3953,
+      "completion_tokens_details": {
+        "reasoning_tokens": 135
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.783335153013468
+}

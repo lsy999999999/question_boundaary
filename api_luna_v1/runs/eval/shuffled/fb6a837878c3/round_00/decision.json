@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430448124862679,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "alternating",
+    "reason": "Memory_slow has the lowest trajectory-level CV NMSE (0.00140), while the current state-only model has strong residual autocorrelation and much higher error.",
+    "prediction": "After input switches, the output will retain history-dependent relaxation; alternating inputs should reveal this more clearly than a single pulse.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Accumulated past influence can persist after input changes and relax over time, consistent with the observed post-pulse tails.",
+      "condition_to_check": "At matched current input and visible output, test whether differing prior inputs predict different subsequent outputs."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest trajectory-level CV NMSE (0.00140), while the current state-only model has strong residual autocorrelation and much higher error.\",\"prediction\":\"After input switches, the output will retain history-dependent relaxation; alternating inputs should reveal this more clearly than a single pulse.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Accumulated past influence can persist after input changes and relax over time, consistent with the observed post-pulse tails.\",\"condition_to_check\":\"At matched current input and visible output, test whether differing prior inputs predict different subsequent outputs.\"}}",
+    "input_tokens": 2807,
+    "output_tokens": 337,
+    "batch_elapsed_seconds": 4.188908013515174,
+    "amortized_seconds": 4.188908013515174,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2807,
+      "completion_tokens": 337,
+      "total_tokens": 3144,
+      "completion_tokens_details": {
+        "reasoning_tokens": 197
+      }
+    },
+    "api_response_id": "resp_065a6b1799da26d5016ae593acaf088197838d885c25cfe20b",
+    "wire_record": "wire/eval/0389_a9898a6fdc3e4b21aaf12b0dbab9f53c"
+  }
+}

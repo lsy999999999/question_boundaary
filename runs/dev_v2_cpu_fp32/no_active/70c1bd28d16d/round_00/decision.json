@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793386563018472311,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "positive_pulse",
+    "reason": "Cubic terms improve fit for non-linear responses; pulse tests their necessity.",
+    "prediction": "Positive pulse will show increased nonlinearity beyond quadratic fit.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Non-linear response to input",
+      "condition_to_check": "Significant change in NMSE between quadratic and cubic fits"
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"state_cubic\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Cubic terms improve fit for non-linear responses; pulse tests their necessity.\",\n  \"prediction\": \"Positive pulse will show increased nonlinearity beyond quadratic fit.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"none\",\n    \"target_relation\": \"Non-linear response to input\",\n    \"condition_to_check\": \"Significant change in NMSE between quadratic and cubic fits\"\n  }\n}",
+    "input_tokens": 2066,
+    "output_tokens": 109,
+    "batch_elapsed_seconds": 266.032727366779,
+    "amortized_seconds": 66.50818184169475,
+    "peak_gpu_allocated_gb": 0.0,
+    "backend": "cpu-fp32",
+    "peak_process_ram_gb": 33.58416748046875,
+    "model_path": "/home/lsy/theory_discovery_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

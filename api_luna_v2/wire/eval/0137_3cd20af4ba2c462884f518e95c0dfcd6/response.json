@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431525242332394,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0c0fb121799330cb016ae597e28d008194894fd29af1f9218e",
+    "object": "chat.completion",
+    "created": 1793431525,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow-history features have the lowest trajectory-held-out error (0.00195), far below the current state model; high residual autocorrelation supports persistent history dependence. PRBS best separates plausible models.\",\"prediction\":\"After matching current input and visible state, the response will still depend on prior input history, with slow relaxation across seconds.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2566,
+      "completion_tokens": 154,
+      "total_tokens": 2720,
+      "prompt_tokens_details": {
+        "cached_tokens": 2432
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 65
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.4839636301621795
+}

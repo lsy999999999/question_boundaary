@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793431498439481751,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "prbs",
+    "reason": "Memory_clock has the lowest trajectory-level CV NMSE (0.00163), while high residual autocorrelation in the state model indicates missing dynamics. PRBS has the largest disagreement among plausible models.",
+    "prediction": "PRBS responses will be better predicted by accumulated-history features than by instantaneous state alone, with memory_clock outperforming memory_slow on held-out trajectories.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"prbs\",\"reason\":\"Memory_clock has the lowest trajectory-level CV NMSE (0.00163), while high residual autocorrelation in the state model indicates missing dynamics. PRBS has the largest disagreement among plausible models.\",\"prediction\":\"PRBS responses will be better predicted by accumulated-history features than by instantaneous state alone, with memory_clock outperforming memory_slow on held-out trajectories.\",\"accept\":false}",
+    "input_tokens": 2252,
+    "output_tokens": 92,
+    "batch_elapsed_seconds": 2.0047792941331863,
+    "amortized_seconds": 2.0047792941331863,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2252,
+      "completion_tokens": 92,
+      "total_tokens": 2344
+    },
+    "api_response_id": "resp_0c905ab096c3c0c3016ae597c9090881909d68e2b2f34be709",
+    "wire_record": "wire/eval/0115_9c05526eb1c04fdcb06dfde7ced4efa1"
+  }
+}

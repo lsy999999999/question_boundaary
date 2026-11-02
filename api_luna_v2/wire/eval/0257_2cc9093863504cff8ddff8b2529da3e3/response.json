@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431708512386105,
+  "http_status": 200,
+  "body": {
+    "id": "resp_07a58ebf6b196407016ae598994df4819587a14794e3928107",
+    "object": "chat.completion",
+    "created": 1793431708,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"memory_slow has the lowest trajectory-level CV error; alternating input has the greatest predicted disagreement among plausible memory models and tests persistent history under rapid switches.\",\"prediction\":\"After switches, memory_slow will predict output better than faster-memory or saturating alternatives, with residuals depending on accumulated history.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Finite-leakage storage represents accumulated input history that can influence output after the input changes.\",\"condition_to_check\":\"At matched current input and visible state, accumulated history should predict subsequent output across alternating segments.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3264,
+      "completion_tokens": 321,
+      "total_tokens": 3585,
+      "completion_tokens_details": {
+        "reasoning_tokens": 187
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.287304821424186
+}

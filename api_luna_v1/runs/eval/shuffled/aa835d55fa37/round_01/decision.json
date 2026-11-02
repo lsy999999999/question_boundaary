@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430675485920817,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "prbs",
+    "reason": "Memory_clock has far lower trajectory-held-out error than alternatives, but substantial residual autocorrelation leaves room for missing dynamics. PRBS tests it under irregular input.",
+    "prediction": "After accounting for input history, oscillatory variation will remain aligned with elapsed time during the irregular-input trajectory.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "The fit supports clock features but does not establish an independent external driver.",
+      "condition_to_check": "Compare residual oscillations at matched elapsed times across distinct input interventions; lack of alignment would weaken the clock interpretation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"prbs\",\"reason\":\"Memory_clock has far lower trajectory-held-out error than alternatives, but substantial residual autocorrelation leaves room for missing dynamics. PRBS tests it under irregular input.\",\"prediction\":\"After accounting for input history, oscillatory variation will remain aligned with elapsed time during the irregular-input trajectory.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The fit supports clock features but does not establish an independent external driver.\",\"condition_to_check\":\"Compare residual oscillations at matched elapsed times across distinct input interventions; lack of alignment would weaken the clock interpretation.\"}}",
+    "input_tokens": 3239,
+    "output_tokens": 291,
+    "batch_elapsed_seconds": 4.1770096849650145,
+    "amortized_seconds": 4.1770096849650145,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3239,
+      "completion_tokens": 291,
+      "total_tokens": 3530,
+      "completion_tokens_details": {
+        "reasoning_tokens": 163
+      }
+    },
+    "api_response_id": "resp_0577fe4278978dd1016ae5948ffccc8196b420acde2a0d078a",
+    "wire_record": "wire/eval/0476_494f750c25bc4263b63ad07871900106"
+  }
+}

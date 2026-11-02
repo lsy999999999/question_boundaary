@@ -1,0 +1,215 @@
+{
+  "split": "dev",
+  "complete": true,
+  "expected_tasks_per_method": 4,
+  "methods": {
+    "state_fixed": {
+      "n": 4,
+      "median_test_nmse": 0.02568840987812766,
+      "mean_test_nmse": 0.06133693786741706,
+      "test_nmse_below_0_1": 3,
+      "accepted": 2,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "generation_seconds_amortized": 0,
+      "peak_gpu_allocated_gb": 0.0,
+      "peak_process_ram_gb": 0.0,
+      "final_representations": {
+        "state": 4
+      },
+      "tasks_with_revision": 0
+    },
+    "history_cv": {
+      "n": 4,
+      "median_test_nmse": 0.0004029339101778715,
+      "mean_test_nmse": 0.00040790343159430423,
+      "test_nmse_below_0_1": 4,
+      "accepted": 4,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "generation_seconds_amortized": 0,
+      "peak_gpu_allocated_gb": 0.0,
+      "peak_process_ram_gb": 0.0,
+      "final_representations": {
+        "state": 1,
+        "clock": 1,
+        "memory_slow": 1,
+        "state_cubic": 1
+      },
+      "tasks_with_revision": 0
+    },
+    "plain": {
+      "n": 4,
+      "median_test_nmse": 0.0008335451338669953,
+      "mean_test_nmse": 0.0012712643374536753,
+      "test_nmse_below_0_1": 4,
+      "accepted": 4,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 16,
+      "input_tokens": 48069,
+      "output_tokens": 953,
+      "generation_seconds_amortized": 24.09228298906237,
+      "peak_gpu_allocated_gb": 14.859097480773926,
+      "peak_process_ram_gb": 5.018749237060547,
+      "final_representations": {
+        "memory_multiscale": 1,
+        "memory_clock": 1,
+        "memory_slow": 1,
+        "saturating_memory": 1
+      },
+      "tasks_with_revision": 2
+    },
+    "retrieval": {
+      "n": 4,
+      "median_test_nmse": 0.0006753891892603627,
+      "mean_test_nmse": 0.0011913494671977108,
+      "test_nmse_below_0_1": 4,
+      "accepted": 4,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 16,
+      "input_tokens": 53109,
+      "output_tokens": 961,
+      "generation_seconds_amortized": 25.0976679706946,
+      "peak_gpu_allocated_gb": 14.920419216156006,
+      "peak_process_ram_gb": 5.020332336425781,
+      "final_representations": {
+        "memory_multiscale": 1,
+        "memory_clock": 1,
+        "memory_slow": 1,
+        "saturating_memory": 1
+      },
+      "tasks_with_revision": 2
+    },
+    "structured": {
+      "n": 4,
+      "median_test_nmse": 0.001713294243926676,
+      "mean_test_nmse": 0.0017762619847943271,
+      "test_nmse_below_0_1": 4,
+      "accepted": 4,
+      "false_accepted": 0,
+      "invalid_outputs": 11,
+      "generation_calls": 16,
+      "input_tokens": 56011,
+      "output_tokens": 1817,
+      "generation_seconds_amortized": 43.21843141503632,
+      "peak_gpu_allocated_gb": 14.96709394454956,
+      "peak_process_ram_gb": 5.024242401123047,
+      "final_representations": {
+        "memory_multiscale": 2,
+        "memory_slow": 1,
+        "saturating_memory": 1
+      },
+      "tasks_with_revision": 3
+    },
+    "no_active": {
+      "n": 4,
+      "median_test_nmse": 0.004136032547904604,
+      "mean_test_nmse": 0.003684907870736317,
+      "test_nmse_below_0_1": 4,
+      "accepted": 4,
+      "false_accepted": 0,
+      "invalid_outputs": 4,
+      "generation_calls": 16,
+      "input_tokens": 56624,
+      "output_tokens": 1710,
+      "generation_seconds_amortized": 41.285818467848,
+      "peak_gpu_allocated_gb": 14.963831901550293,
+      "peak_process_ram_gb": 5.025932312011719,
+      "final_representations": {
+        "state": 1,
+        "memory_slow": 1,
+        "nonlinear_delay": 1,
+        "saturating_memory": 1
+      },
+      "tasks_with_revision": 4
+    },
+    "shuffled": {
+      "n": 4,
+      "median_test_nmse": 0.000901619854345787,
+      "mean_test_nmse": 0.0013053016976930713,
+      "test_nmse_below_0_1": 4,
+      "accepted": 4,
+      "false_accepted": 0,
+      "invalid_outputs": 6,
+      "generation_calls": 16,
+      "input_tokens": 55898,
+      "output_tokens": 1761,
+      "generation_seconds_amortized": 42.50489036552608,
+      "peak_gpu_allocated_gb": 14.962264060974121,
+      "peak_process_ram_gb": 5.025005340576172,
+      "final_representations": {
+        "memory_multiscale": 1,
+        "memory_clock": 1,
+        "memory_slow": 1,
+        "saturating_memory": 1
+      },
+      "tasks_with_revision": 3
+    }
+  },
+  "total_results": 28,
+  "paired_comparisons": [
+    {
+      "left": "structured",
+      "right": "plain",
+      "paired_tasks": 4,
+      "left_wins": 2,
+      "geometric_nmse_ratio": 1.2212644680645484,
+      "descriptive_bootstrap_95_interval": [
+        0.6861431008094483,
+        2.664073930873348
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "retrieval",
+      "paired_tasks": 4,
+      "left_wins": 0,
+      "geometric_nmse_ratio": 1.3870881418922643,
+      "descriptive_bootstrap_95_interval": [
+        1.0,
+        2.668776329247284
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "shuffled",
+      "paired_tasks": 4,
+      "left_wins": 2,
+      "geometric_nmse_ratio": 1.1774845957679474,
+      "descriptive_bootstrap_95_interval": [
+        0.6861431008094483,
+        2.387716773496039
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "no_active",
+      "paired_tasks": 4,
+      "left_wins": 2,
+      "geometric_nmse_ratio": 0.5757716471167375,
+      "descriptive_bootstrap_95_interval": [
+        0.1463318022469907,
+        1.6573745586013218
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "history_cv",
+      "paired_tasks": 4,
+      "left_wins": 1,
+      "geometric_nmse_ratio": 3.053372624606179,
+      "descriptive_bootstrap_95_interval": [
+        1.2131879270872594,
+        7.684781703258621
+      ]
+    }
+  ]
+}

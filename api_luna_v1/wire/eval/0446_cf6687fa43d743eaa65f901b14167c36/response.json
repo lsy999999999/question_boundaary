@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430591643204840,
+  "http_status": 200,
+  "body": {
+    "id": "resp_02f3938f47052ac5016ae5943add648196b40e022a549dbe50",
+    "object": "chat.completion",
+    "created": 1793430591,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest trajectory-level CV error (0.00390), outperforming memory_clock (0.00727); persistent residual correlation means adequacy for unseen interventions is not established.\",\"prediction\":\"After PRBS input ends, the output will retain a history-dependent transient; repeated input patterns should produce distinguishable tails.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The trajectories support history dependence but do not establish a specific cross-domain mechanism.\",\"condition_to_check\":\"Compare the post-PRBS tail with model forecasts; systematic, repeatable deviations would falsify this representation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3277,
+      "completion_tokens": 443,
+      "total_tokens": 3720,
+      "completion_tokens_details": {
+        "reasoning_tokens": 302
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.693202207796276
+}

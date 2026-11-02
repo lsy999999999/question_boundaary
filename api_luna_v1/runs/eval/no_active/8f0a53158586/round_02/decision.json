@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430662498594669,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "alternating",
+    "reason": "Memory_slow has the lowest trajectory-held-out error (0.00111); alternatives perform worse, though residual lag correlation and forecast failures leave some uncertainty about adequacy.",
+    "prediction": "After rapid input reversals, the post-input response will retain history dependence and decay gradually rather than immediately returning to baseline.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated input and output history predict a measurable, finite relaxation after input returns to zero.",
+      "condition_to_check": "Compare post-input responses across histories at matched current input and visible state; no remaining history dependence would falsify this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest trajectory-held-out error (0.00111); alternatives perform worse, though residual lag correlation and forecast failures leave some uncertainty about adequacy.\",\"prediction\":\"After rapid input reversals, the post-input response will retain history dependence and decay gradually rather than immediately returning to baseline.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history predict a measurable, finite relaxation after input returns to zero.\",\"condition_to_check\":\"Compare post-input responses across histories at matched current input and visible state; no remaining history dependence would falsify this relation.\"}}",
+    "input_tokens": 3497,
+    "output_tokens": 247,
+    "batch_elapsed_seconds": 8.540607035160065,
+    "amortized_seconds": 8.540607035160065,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3497,
+      "completion_tokens": 247,
+      "total_tokens": 3744,
+      "completion_tokens_details": {
+        "reasoning_tokens": 106
+      }
+    },
+    "api_response_id": "resp_09f088c8b58775a7016ae59483a79881958ad6e17cd16723c2",
+    "wire_record": "wire/eval/0472_a49c1faecb214674acd0b797e5b300f6"
+  }
+}

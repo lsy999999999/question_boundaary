@@ -1,0 +1,688 @@
+{
+  "split": "dev",
+  "comparisons": {
+    "plain": {
+      "luna_summary": {
+        "n": 4,
+        "median_test_nmse": 0.00036824572732795384,
+        "mean_test_nmse": 0.0003676197010390174,
+        "test_nmse_below_0_1": 4,
+        "accepted": 4,
+        "false_accepted": 0,
+        "invalid_outputs": 0,
+        "generation_calls": 16,
+        "input_tokens": 42712,
+        "output_tokens": 2391,
+        "generation_seconds_amortized": 51.98955783434212,
+        "peak_gpu_allocated_gb": 0.0,
+        "peak_process_ram_gb": 0.08880615234375,
+        "final_representations": {
+          "state": 1,
+          "clock": 1,
+          "memory_slow": 1,
+          "state_cubic": 1
+        },
+        "tasks_with_revision": 0
+      },
+      "qwen_summary": {
+        "n": 4,
+        "median_test_nmse": 0.0008335451338669953,
+        "mean_test_nmse": 0.0012704274395010271,
+        "test_nmse_below_0_1": 4,
+        "accepted": 4,
+        "false_accepted": 0,
+        "invalid_outputs": 0,
+        "generation_calls": 16,
+        "input_tokens": 48140,
+        "output_tokens": 976,
+        "generation_seconds_amortized": 31.673551828600466,
+        "peak_gpu_allocated_gb": 14.862669944763184,
+        "peak_process_ram_gb": 5.016998291015625,
+        "final_representations": {
+          "memory_multiscale": 1,
+          "memory_clock": 1,
+          "memory_slow": 1,
+          "saturating_memory": 1
+        },
+        "tasks_with_revision": 2
+      },
+      "paired_luna_over_qwen": {
+        "left": "luna",
+        "right": "qwen",
+        "paired_tasks": 4,
+        "left_wins": 3,
+        "geometric_nmse_ratio": 0.34978887372034423,
+        "descriptive_bootstrap_95_interval": [
+          0.16586613834098202,
+          0.7743424565012378
+        ],
+        "luna_wins_tolerance_1e_12": 3,
+        "ties_tolerance_1e_12": 0
+      }
+    },
+    "retrieval": {
+      "luna_summary": {
+        "n": 4,
+        "median_test_nmse": 0.00036824572732795384,
+        "mean_test_nmse": 0.000388710895621685,
+        "test_nmse_below_0_1": 4,
+        "accepted": 4,
+        "false_accepted": 0,
+        "invalid_outputs": 0,
+        "generation_calls": 16,
+        "input_tokens": 47664,
+        "output_tokens": 2822,
+        "generation_seconds_amortized": 55.56056479085237,
+        "peak_gpu_allocated_gb": 0.0,
+        "peak_process_ram_gb": 0.08880615234375,
+        "final_representations": {
+          "state": 1,
+          "clock": 1,
+          "memory_fast": 1,
+          "state_cubic": 1
+        },
+        "tasks_with_revision": 1
+      },
+      "qwen_summary": {
+        "n": 4,
+        "median_test_nmse": 0.0006753891892603627,
+        "mean_test_nmse": 0.0011913494671977108,
+        "test_nmse_below_0_1": 4,
+        "accepted": 4,
+        "false_accepted": 0,
+        "invalid_outputs": 0,
+        "generation_calls": 16,
+        "input_tokens": 53109,
+        "output_tokens": 961,
+        "generation_seconds_amortized": 25.07087520789355,
+        "peak_gpu_allocated_gb": 14.920419216156006,
+        "peak_process_ram_gb": 5.019771575927734,
+        "final_representations": {
+          "memory_multiscale": 1,
+          "memory_clock": 1,
+          "memory_slow": 1,
+          "saturating_memory": 1
+        },
+        "tasks_with_revision": 2
+      },
+      "paired_luna_over_qwen": {
+        "left": "luna",
+        "right": "qwen",
+        "paired_tasks": 4,
+        "left_wins": 3,
+        "geometric_nmse_ratio": 0.41139322275105505,
+        "descriptive_bootstrap_95_interval": [
+          0.16586613834098202,
+          0.9800080232416216
+        ],
+        "luna_wins_tolerance_1e_12": 3,
+        "ties_tolerance_1e_12": 0
+      }
+    },
+    "structured": {
+      "luna_summary": {
+        "n": 4,
+        "median_test_nmse": 0.00036824572732795384,
+        "mean_test_nmse": 0.00038871089562168197,
+        "test_nmse_below_0_1": 4,
+        "accepted": 4,
+        "false_accepted": 0,
+        "invalid_outputs": 0,
+        "generation_calls": 16,
+        "input_tokens": 52666,
+        "output_tokens": 3883,
+        "generation_seconds_amortized": 57.06620120164007,
+        "peak_gpu_allocated_gb": 0.0,
+        "peak_process_ram_gb": 0.08880615234375,
+        "final_representations": {
+          "state": 1,
+          "clock": 1,
+          "memory_fast": 1,
+          "state_cubic": 1
+        },
+        "tasks_with_revision": 1
+      },
+      "qwen_summary": {
+        "n": 4,
+        "median_test_nmse": 0.001713294243926676,
+        "mean_test_nmse": 0.0017762619847943271,
+        "test_nmse_below_0_1": 4,
+        "accepted": 4,
+        "false_accepted": 0,
+        "invalid_outputs": 3,
+        "generation_calls": 16,
+        "input_tokens": 57934,
+        "output_tokens": 1791,
+        "generation_seconds_amortized": 43.291876977309585,
+        "peak_gpu_allocated_gb": 14.990030288696289,
+        "peak_process_ram_gb": 5.0277862548828125,
+        "final_representations": {
+          "memory_multiscale": 2,
+          "memory_slow": 1,
+          "saturating_memory": 1
+        },
+        "tasks_with_revision": 3
+      },
+      "paired_luna_over_qwen": {
+        "left": "luna",
+        "right": "qwen",
+        "paired_tasks": 4,
+        "left_wins": 3,
+        "geometric_nmse_ratio": 0.29658765750086113,
+        "descriptive_bootstrap_95_interval": [
+          0.11979041359727328,
+          0.7343178468151675
+        ],
+        "luna_wins_tolerance_1e_12": 3,
+        "ties_tolerance_1e_12": 0
+      }
+    },
+    "no_active": {
+      "luna_summary": {
+        "n": 4,
+        "median_test_nmse": 0.0002786357284915821,
+        "mean_test_nmse": 0.00029994309941739673,
+        "test_nmse_below_0_1": 4,
+        "accepted": 4,
+        "false_accepted": 0,
+        "invalid_outputs": 0,
+        "generation_calls": 16,
+        "input_tokens": 53157,
+        "output_tokens": 3977,
+        "generation_seconds_amortized": 60.520658544264734,
+        "peak_gpu_allocated_gb": 0.0,
+        "peak_process_ram_gb": 0.08880615234375,
+        "final_representations": {
+          "state": 1,
+          "clock": 1,
+          "memory_slow": 1,
+          "state_cubic": 1
+        },
+        "tasks_with_revision": 0
+      },
+      "qwen_summary": {
+        "n": 4,
+        "median_test_nmse": 0.0011271179759403736,
+        "mean_test_nmse": 0.0013076718960684398,
+        "test_nmse_below_0_1": 4,
+        "accepted": 4,
+        "false_accepted": 0,
+        "invalid_outputs": 2,
+        "generation_calls": 16,
+        "input_tokens": 58641,
+        "output_tokens": 1747,
+        "generation_seconds_amortized": 42.22516788542271,
+        "peak_gpu_allocated_gb": 14.99066686630249,
+        "peak_process_ram_gb": 5.029041290283203,
+        "final_representations": {
+          "state_cubic": 1,
+          "memory_clock": 1,
+          "memory_slow": 1,
+          "saturating_memory": 1
+        },
+        "tasks_with_revision": 2
+      },
+      "paired_luna_over_qwen": {
+        "left": "luna",
+        "right": "qwen",
+        "paired_tasks": 4,
+        "left_wins": 3,
+        "geometric_nmse_ratio": 0.3493851290338904,
+        "descriptive_bootstrap_95_interval": [
+          0.12387441405209447,
+          0.9854332658130085
+        ],
+        "luna_wins_tolerance_1e_12": 3,
+        "ties_tolerance_1e_12": 1
+      }
+    },
+    "shuffled": {
+      "luna_summary": {
+        "n": 4,
+        "median_test_nmse": 0.00036824572732795384,
+        "mean_test_nmse": 0.00038871089562168197,
+        "test_nmse_below_0_1": 4,
+        "accepted": 4,
+        "false_accepted": 0,
+        "invalid_outputs": 0,
+        "generation_calls": 16,
+        "input_tokens": 52740,
+        "output_tokens": 4329,
+        "generation_seconds_amortized": 63.51094330754131,
+        "peak_gpu_allocated_gb": 0.0,
+        "peak_process_ram_gb": 0.08880615234375,
+        "final_representations": {
+          "state": 1,
+          "clock": 1,
+          "memory_fast": 1,
+          "state_cubic": 1
+        },
+        "tasks_with_revision": 1
+      },
+      "qwen_summary": {
+        "n": 4,
+        "median_test_nmse": 0.0005505114410377318,
+        "mean_test_nmse": 0.0011289105930863954,
+        "test_nmse_below_0_1": 4,
+        "accepted": 4,
+        "false_accepted": 0,
+        "invalid_outputs": 0,
+        "generation_calls": 16,
+        "input_tokens": 57922,
+        "output_tokens": 1795,
+        "generation_seconds_amortized": 43.32343765348196,
+        "peak_gpu_allocated_gb": 14.990144729614258,
+        "peak_process_ram_gb": 5.017097473144531,
+        "final_representations": {
+          "memory_multiscale": 1,
+          "memory_clock": 1,
+          "memory_slow": 1,
+          "saturating_memory": 1
+        },
+        "tasks_with_revision": 2
+      },
+      "paired_luna_over_qwen": {
+        "left": "luna",
+        "right": "qwen",
+        "paired_tasks": 4,
+        "left_wins": 3,
+        "geometric_nmse_ratio": 0.4479203999243401,
+        "descriptive_bootstrap_95_interval": [
+          0.18059322057562793,
+          0.9800080232416066
+        ],
+        "luna_wins_tolerance_1e_12": 3,
+        "ties_tolerance_1e_12": 0
+      }
+    }
+  },
+  "luna_within_model_pairs": [
+    {
+      "left": "structured",
+      "right": "plain",
+      "paired_tasks": 4,
+      "left_wins": 0,
+      "geometric_nmse_ratio": 1.0373437836853763,
+      "descriptive_bootstrap_95_interval": [
+        1.0,
+        1.1162671036749574
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "retrieval",
+      "paired_tasks": 4,
+      "left_wins": 1,
+      "geometric_nmse_ratio": 0.9999999999999848,
+      "descriptive_bootstrap_95_interval": [
+        0.9999999999999541,
+        1.0
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "shuffled",
+      "paired_tasks": 4,
+      "left_wins": 0,
+      "geometric_nmse_ratio": 1.0,
+      "descriptive_bootstrap_95_interval": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "no_active",
+      "paired_tasks": 4,
+      "left_wins": 1,
+      "geometric_nmse_ratio": 1.2459978161656453,
+      "descriptive_bootstrap_95_interval": [
+        1.061691237244632,
+        1.462299492947432
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "history_cv",
+      "paired_tasks": 4,
+      "left_wins": 2,
+      "geometric_nmse_ratio": 0.9055926342118525,
+      "descriptive_bootstrap_95_interval": [
+        0.7532690410738676,
+        1.076082125551761
+      ]
+    }
+  ],
+  "card_control_agreement": {
+    "n": 4,
+    "same_final_representation": 4,
+    "same_action_sequence": 4,
+    "same_score_tolerance_1e_12": 4,
+    "structured_wins_tolerance_1e_12": 0,
+    "shuffled_wins_tolerance_1e_12": 0
+  },
+  "candidate_choice_analysis": {
+    "luna": {
+      "plain": {
+        "calls": 16,
+        "invalid_decisions": 0,
+        "cv_minimum_choices": 16,
+        "valid_cv_minimum_choices": 16,
+        "revision_records": []
+      },
+      "retrieval": {
+        "calls": 16,
+        "invalid_decisions": 0,
+        "cv_minimum_choices": 16,
+        "valid_cv_minimum_choices": 16,
+        "revision_records": [
+          {
+            "task_id": "afb8612b2c91",
+            "round": 3,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_fast",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00016482706568055977,
+            "reason": "Memory_fast has the lowest trajectory-level cross-validation error (0.00184), narrowly outperforming memory_slow; simpler state and delay models perform much worse. Residual autocorrelation leaves some uncertainty.",
+            "source_mapping": null
+          }
+        ]
+      },
+      "structured": {
+        "calls": 16,
+        "invalid_decisions": 0,
+        "cv_minimum_choices": 16,
+        "valid_cv_minimum_choices": 16,
+        "revision_records": [
+          {
+            "task_id": "afb8612b2c91",
+            "round": 3,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_fast",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00016482706568055977,
+            "reason": "Memory_fast has the lowest trajectory-level CV error (0.00184) and comparable forecast errors; memory_slow is slightly worse, while multiscale and clock variants do not improve validation. Residual autocorrelation leaves some uncertainty.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Finite-relaxation accumulated history is supported as a predictive feature, but the best validated timescales are fast.",
+              "condition_to_check": "The history feature should predict output after controlling current input and visible state; absence of that effect weakens this relation."
+            }
+          }
+        ]
+      },
+      "no_active": {
+        "calls": 16,
+        "invalid_decisions": 0,
+        "cv_minimum_choices": 16,
+        "valid_cv_minimum_choices": 16,
+        "revision_records": []
+      },
+      "shuffled": {
+        "calls": 16,
+        "invalid_decisions": 0,
+        "cv_minimum_choices": 16,
+        "valid_cv_minimum_choices": 16,
+        "revision_records": [
+          {
+            "task_id": "afb8612b2c91",
+            "round": 3,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_fast",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00016482706568055977,
+            "reason": "memory_fast has the lowest trajectory-held-out NMSE (0.00184), narrowly beating memory_slow. Memory models greatly outperform state-only models; prior PRBS, alternating, and double-pulse forecasts were not accepted, so adequacy for unseen interventions remains unverified.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Accumulated past influence predicts response beyond current input and visible state, consistent with a predictive storage relation.",
+              "condition_to_check": "The relation is weakened if history adds no predictive effect after controlling current input and visible state."
+            }
+          }
+        ]
+      }
+    },
+    "qwen": {
+      "plain": {
+        "calls": 16,
+        "invalid_decisions": 0,
+        "cv_minimum_choices": 6,
+        "valid_cv_minimum_choices": 6,
+        "revision_records": [
+          {
+            "task_id": "442fe7a60ac6",
+            "round": 1,
+            "from_rep": "clock",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00012045320255846265,
+            "reason": "Slow memory terms show lower NMSE, indicating persistent effects.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "442fe7a60ac6",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00014727681154290683,
+            "reason": "Multiscale memory shows best CV performance, likely captures complex dynamics.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "c2295bc59be5",
+            "round": 1,
+            "from_rep": "state_cubic",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00015745460930666045,
+            "reason": "Alternating inputs stress memory and saturation limits.",
+            "source_mapping": null
+          }
+        ]
+      },
+      "retrieval": {
+        "calls": 16,
+        "invalid_decisions": 0,
+        "cv_minimum_choices": 6,
+        "valid_cv_minimum_choices": 6,
+        "revision_records": [
+          {
+            "task_id": "442fe7a60ac6",
+            "round": 1,
+            "from_rep": "clock",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00012045320255846265,
+            "reason": "Slow memory terms show best CV NMSE; suggest persistent effects.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "442fe7a60ac6",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00014727681154290683,
+            "reason": "Combines fast and slow memory, showing best CV NMSE.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "c2295bc59be5",
+            "round": 1,
+            "from_rep": "state_cubic",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00015745460930666045,
+            "reason": "Saturating effects and memory should distinguish this model; alternating inputs test robustness.",
+            "source_mapping": null
+          }
+        ]
+      },
+      "structured": {
+        "calls": 16,
+        "invalid_decisions": 3,
+        "cv_minimum_choices": 7,
+        "valid_cv_minimum_choices": 7,
+        "revision_records": [
+          {
+            "task_id": "442fe7a60ac6",
+            "round": 1,
+            "from_rep": "memory_slow",
+            "to_rep": "state",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00013120058774024156,
+            "reason": "State model has lowest cross-validation error among plausible options.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "No additional state needed beyond current x, u, and intercept.",
+              "condition_to_check": "Decay rate post-pulse should match linear trend."
+            }
+          },
+          {
+            "task_id": "442fe7a60ac6",
+            "round": 2,
+            "from_rep": "state",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00013229850974948637,
+            "reason": "Multiscale memory shows lower CV NMSE than other plausible models.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Persistent response after input ends indicates storage mechanism.",
+              "condition_to_check": "Decay rate post-pulse should show distinct phases corresponding to fast and slow timescales."
+            }
+          },
+          {
+            "task_id": "950f039e72fa",
+            "round": 1,
+            "from_rep": "memory_clock",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00015367176419720308,
+            "reason": "Memory_multiscale outperforms others with lower CV NMSE.",
+            "source_mapping": {
+              "source_id": "memory_multiscale",
+              "target_relation": "System exhibits both fast and slow memory effects.",
+              "condition_to_check": "Consistent phase shift and decay regardless of input polarity."
+            }
+          },
+          {
+            "task_id": "c2295bc59be5",
+            "round": 1,
+            "from_rep": "state_cubic",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00015745460930666045,
+            "reason": "Saturating effects should be consistent across positive and negative inputs.",
+            "source_mapping": {
+              "source_id": "saturation",
+              "target_relation": "Response magnitude decreases with repeated alternating inputs.",
+              "condition_to_check": "Magnitude reduction persists after multiple cycles."
+            }
+          }
+        ]
+      },
+      "no_active": {
+        "calls": 16,
+        "invalid_decisions": 2,
+        "cv_minimum_choices": 6,
+        "valid_cv_minimum_choices": 5,
+        "revision_records": [
+          {
+            "task_id": "442fe7a60ac6",
+            "round": 1,
+            "from_rep": "memory_slow",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00016766544821314832,
+            "reason": "State cubic adds nonlinearity to state, potentially capturing more complex dynamics.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "Nonlinear response to input changes indicates underlying nonlinear dynamics.",
+              "condition_to_check": "Response amplitude should increase significantly compared to linear models."
+            }
+          },
+          {
+            "task_id": "c2295bc59be5",
+            "round": 2,
+            "from_rep": "state_cubic",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00014512215225854615,
+            "reason": "Saturating terms and memory improve fit; test nonlinear response limits.",
+            "source_mapping": {
+              "source_id": "saturation",
+              "target_relation": "Nonlinear response saturates before linear prediction.",
+              "condition_to_check": "Saturation limit reached before linear extrapolation."
+            }
+          }
+        ]
+      },
+      "shuffled": {
+        "calls": 16,
+        "invalid_decisions": 0,
+        "cv_minimum_choices": 7,
+        "valid_cv_minimum_choices": 7,
+        "revision_records": [
+          {
+            "task_id": "442fe7a60ac6",
+            "round": 1,
+            "from_rep": "memory_slow",
+            "to_rep": "state",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00013120058774024156,
+            "reason": "State model fits well but may miss nonlinearities or delays.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "If decay is quick, no significant storage effect exists.",
+              "condition_to_check": "Quick decay indicates immediate response without persistent effects."
+            }
+          },
+          {
+            "task_id": "442fe7a60ac6",
+            "round": 2,
+            "from_rep": "state",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00013229850974948637,
+            "reason": "Multiscale memory should handle both fast and slow dynamics better.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Distinct recovery phases indicate combined fast and slow storage mechanisms.",
+              "condition_to_check": "Separate recovery phases validate multiscale memory over single-scale models."
+            }
+          },
+          {
+            "task_id": "c2295bc59be5",
+            "round": 1,
+            "from_rep": "state_cubic",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00015745460930666045,
+            "reason": "Saturating terms should handle asymmetry better than cubic terms.",
+            "source_mapping": {
+              "source_id": "saturation",
+              "target_relation": "Persistent response reduction under repeated input changes.",
+              "condition_to_check": "Consistent amplitude decrease with alternating inputs."
+            }
+          }
+        ]
+      }
+    }
+  },
+  "api_usage": {
+    "calls": 80,
+    "input_tokens": 248939,
+    "output_tokens": 17402,
+    "reported_reasoning_tokens": 8410,
+    "finish_reason_counts": {
+      "stop": 80
+    },
+    "returned_models": {
+      "gpt-6-luna": 80
+    },
+    "summed_request_seconds": 288.6479256786406,
+    "server_gpu_memory_unknown": true,
+    "provider_price_unknown": true
+  },
+  "limits": "Descriptive fixed-task model comparison; single run via unverified third-party model alias; differing tokenizers and reasoning budgets. CV ranking agreement is not evidence of new concepts."
+}

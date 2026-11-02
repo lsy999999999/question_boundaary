@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430650145170705,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "alternating",
+    "reason": "Saturating memory has the lowest leave-trajectory-out error. Other candidates validate worse, though residual lag-1 correlation leaves room for unmodeled temporal structure.",
+    "prediction": "After rapid input reversals, outputs will remain history-dependent and decay after input stops; larger amplitudes will produce less-than-proportional increases.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Accumulated input history predicts persistent effects after input stops, consistent with the observed decaying tails.",
+      "condition_to_check": "At matched current input and visible state, differing histories should predict differing outputs; no difference would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"alternating\",\"reason\":\"Saturating memory has the lowest leave-trajectory-out error. Other candidates validate worse, though residual lag-1 correlation leaves room for unmodeled temporal structure.\",\"prediction\":\"After rapid input reversals, outputs will remain history-dependent and decay after input stops; larger amplitudes will produce less-than-proportional increases.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Accumulated input history predicts persistent effects after input stops, consistent with the observed decaying tails.\",\"condition_to_check\":\"At matched current input and visible state, differing histories should predict differing outputs; no difference would weaken this relation.\"}}",
+    "input_tokens": 3255,
+    "output_tokens": 392,
+    "batch_elapsed_seconds": 4.913668124936521,
+    "amortized_seconds": 4.913668124936521,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3255,
+      "completion_tokens": 392,
+      "total_tokens": 3647,
+      "completion_tokens_details": {
+        "reasoning_tokens": 246
+      }
+    },
+    "api_response_id": "resp_025e58af72f13712016ae59475ec6481938e81e5136e190a50",
+    "wire_record": "wire/eval/0469_628da427e2c7460f87b3d8de036b6ccf"
+  }
+}

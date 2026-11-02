@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423708953801181,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "double_pulse",
+    "reason": "Cubic terms improve fit but may overfit simple pulses.",
+    "prediction": "Double pulse will show distinct response phases not captured by linear model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Nonlinear response persists after pulse ends, indicating stored state.",
+      "condition_to_check": "Distinct response phases after each pulse"
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"state_cubic\",\n  \"experiment\": \"double_pulse\",\n  \"reason\": \"Cubic terms improve fit but may overfit simple pulses.\",\n  \"prediction\": \"Double pulse will show distinct response phases not captured by linear model.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Nonlinear response persists after pulse ends, indicating stored state.\",\n    \"condition_to_check\": \"Distinct response phases after each pulse\"\n  }\n}",
+    "input_tokens": 3143,
+    "output_tokens": 108,
+    "batch_elapsed_seconds": 2.490055501461029,
+    "amortized_seconds": 2.490055501461029,
+    "peak_gpu_allocated_gb": 14.827783107757568,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.0277862548828125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

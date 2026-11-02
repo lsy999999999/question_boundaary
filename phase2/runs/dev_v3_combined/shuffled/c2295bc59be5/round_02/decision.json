@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423448487597922,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "ramp_reverse",
+    "reason": "Test if saturation threshold changes with varying input rates.",
+    "prediction": "Ramp and reverse inputs will show different saturation levels compared to step inputs.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Saturation threshold should vary with input rate.",
+      "condition_to_check": "Different saturation levels for ramp and step inputs."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"ramp_reverse\",\n  \"reason\": \"Test if saturation threshold changes with varying input rates.\",\n  \"prediction\": \"Ramp and reverse inputs will show different saturation levels compared to step inputs.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"Saturation threshold should vary with input rate.\",\n    \"condition_to_check\": \"Different saturation levels for ramp and step inputs.\"\n  }\n}",
+    "input_tokens": 3686,
+    "output_tokens": 110,
+    "batch_elapsed_seconds": 2.6650632498785853,
+    "amortized_seconds": 2.6650632498785853,
+    "peak_gpu_allocated_gb": 14.926839351654053,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025005340576172,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

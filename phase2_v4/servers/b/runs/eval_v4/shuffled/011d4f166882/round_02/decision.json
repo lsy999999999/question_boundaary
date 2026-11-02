@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423978460537851,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "double_pulse",
+    "reason": "Multiscale memory shows best cross-validation but high variance on pulses.",
+    "prediction": "Double pulse will elicit a response with distinct phases reflecting fast and slow memory components.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Distinct fast and slow memory phases should be observable in double pulse response.",
+      "condition_to_check": "Phases should differ in rise and decay times compared to single pulse."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_multiscale\",\n  \"experiment\": \"double_pulse\",\n  \"reason\": \"Multiscale memory shows best cross-validation but high variance on pulses.\",\n  \"prediction\": \"Double pulse will elicit a response with distinct phases reflecting fast and slow memory components.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Distinct fast and slow memory phases should be observable in double pulse response.\",\n    \"condition_to_check\": \"Phases should differ in rise and decay times compared to single pulse.\"\n  }\n}",
+    "input_tokens": 3767,
+    "output_tokens": 124,
+    "batch_elapsed_seconds": 2.9703732673078775,
+    "amortized_seconds": 2.9703732673078775,
+    "peak_gpu_allocated_gb": 14.950192928314209,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024013519287109,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

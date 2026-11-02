@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793429639719213652,
+  "decision": {
+    "representation": "clock",
+    "experiment": "prbs",
+    "reason": "Clock has much lower held-out error than alternatives, but residual lag correlation and similar late drift leave input-history explanations plausible; PRBS offers strong disagreement.",
+    "prediction": "If elapsed-time forcing matters, late output features should recur at similar times despite PRBS input changes.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Shared elapsed-time features may predict residual structure across different input interventions.",
+      "condition_to_check": "Compare PRBS output with other trajectories at matched times; input-dependent residuals would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has much lower held-out error than alternatives, but residual lag correlation and similar late drift leave input-history explanations plausible; PRBS offers strong disagreement.\",\"prediction\":\"If elapsed-time forcing matters, late output features should recur at similar times despite PRBS input changes.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Shared elapsed-time features may predict residual structure across different input interventions.\",\"condition_to_check\":\"Compare PRBS output with other trajectories at matched times; input-dependent residuals would weaken this relation.\"}}",
+    "input_tokens": 3246,
+    "output_tokens": 327,
+    "batch_elapsed_seconds": 4.091467850841582,
+    "amortized_seconds": 4.091467850841582,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3246,
+      "completion_tokens": 327,
+      "total_tokens": 3573,
+      "completion_tokens_details": {
+        "reasoning_tokens": 204
+      }
+    },
+    "api_response_id": "resp_0a55f1fec5927975016ae5908472388190be2b51e5574f8afa",
+    "wire_record": "wire/dev/0024_65c94e94839a4c17b14d83a7667570ae"
+  }
+}

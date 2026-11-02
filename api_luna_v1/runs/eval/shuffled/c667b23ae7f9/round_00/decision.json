@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430430039618946,
+  "decision": {
+    "representation": "state",
+    "experiment": "alternating",
+    "reason": "State has the lowest trajectory-level validation error; memory_fast is close, but residual autocorrelation leaves memory unresolved. Alternating input has the greatest prediction disagreement.",
+    "prediction": "If memory_fast is needed, alternating input will produce systematic trajectory deviations from the state model, especially after input switches.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "The observed relaxation is compatible with history dependence but does not establish a distinct mechanism.",
+      "condition_to_check": "Check whether alternating-input residuals persist after controlling current input and visible state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"State has the lowest trajectory-level validation error; memory_fast is close, but residual autocorrelation leaves memory unresolved. Alternating input has the greatest prediction disagreement.\",\"prediction\":\"If memory_fast is needed, alternating input will produce systematic trajectory deviations from the state model, especially after input switches.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The observed relaxation is compatible with history dependence but does not establish a distinct mechanism.\",\"condition_to_check\":\"Check whether alternating-input residuals persist after controlling current input and visible state.\"}}",
+    "input_tokens": 2798,
+    "output_tokens": 263,
+    "batch_elapsed_seconds": 4.328891213051975,
+    "amortized_seconds": 4.328891213051975,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2798,
+      "completion_tokens": 263,
+      "total_tokens": 3061,
+      "completion_tokens_details": {
+        "reasoning_tokens": 139
+      }
+    },
+    "api_response_id": "resp_03aae1322561390c016ae5939ab65c8193b67ec45b8f5ff7c3",
+    "wire_record": "wire/eval/0380_39aff22270b94a8986c2776515b1ea8d"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423925753095892,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "positive_pulse",
+    "reason": "Saturating memory shows best fit and high prediction variance.",
+    "prediction": "Positive pulse will saturate more quickly than linear models.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Saturation limits growth regardless of input shape.",
+      "condition_to_check": "Compare peak response magnitude for positive and negative pulses."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Saturating memory shows best fit and high prediction variance.\",\n  \"prediction\": \"Positive pulse will saturate more quickly than linear models.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"Saturation limits growth regardless of input shape.\",\n    \"condition_to_check\": \"Compare peak response magnitude for positive and negative pulses.\"\n  }\n}",
+    "input_tokens": 3637,
+    "output_tokens": 108,
+    "batch_elapsed_seconds": 2.5861148834228516,
+    "amortized_seconds": 2.5861148834228516,
+    "peak_gpu_allocated_gb": 14.9249587059021,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

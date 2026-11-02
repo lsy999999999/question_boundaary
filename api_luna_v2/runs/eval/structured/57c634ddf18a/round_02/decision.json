@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793432089914252271,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "prbs",
+    "reason": "It has the best trajectory-level validation error, but residual lag-1 correlation remains high and prior tests do not establish adequacy on unseen input sequences.",
+    "prediction": "After PRBS switches, trajectories with different accumulated histories will differ even when current state and input match.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated history improves prediction, consistent with past influence carrying forward beyond current input and visible state.",
+      "condition_to_check": "At matched current state and input, absence of a reproducible history-dependent difference would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"prbs\",\"reason\":\"It has the best trajectory-level validation error, but residual lag-1 correlation remains high and prior tests do not establish adequacy on unseen input sequences.\",\"prediction\":\"After PRBS switches, trajectories with different accumulated histories will differ even when current state and input match.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated history improves prediction, consistent with past influence carrying forward beyond current input and visible state.\",\"condition_to_check\":\"At matched current state and input, absence of a reproducible history-dependent difference would weaken this relation.\"}}",
+    "input_tokens": 3449,
+    "output_tokens": 325,
+    "batch_elapsed_seconds": 8.700111451558769,
+    "amortized_seconds": 8.700111451558769,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3449,
+      "completion_tokens": 325,
+      "total_tokens": 3774,
+      "completion_tokens_details": {
+        "reasoning_tokens": 196
+      }
+    },
+    "api_response_id": "resp_0c8f956b0e9a65fb016ae59a1632ac8193a89e68019fd6ad71",
+    "wire_record": "wire/eval/0451_402c9c7da4ab4398bab228764234d7ab"
+  }
+}

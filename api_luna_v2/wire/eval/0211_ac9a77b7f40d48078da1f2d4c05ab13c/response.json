@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431626673310019,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0ed5937d1a321f7f016ae59847a2a08190bee0bdbd12fc2340",
+    "object": "chat.completion",
+    "created": 1793431626,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"double_pulse\",\"reason\":\"State retains the lowest trajectory-level validation error; memory and clock alternatives perform worse. The PRBS forecast error is near the measurement-noise scale, so added complexity is not yet justified.\",\"prediction\":\"The second pulse response will be determined by the current state and input, without a reproducible extra effect from the first pulse.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No storage, transport, saturation, or independent clock relation is supported over the state-only model.\",\"condition_to_check\":\"Reject this mapping if the second pulse shows reproducible history-dependent residuals after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3287,
+      "completion_tokens": 285,
+      "total_tokens": 3572,
+      "completion_tokens_details": {
+        "reasoning_tokens": 143
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.073042911477387
+}

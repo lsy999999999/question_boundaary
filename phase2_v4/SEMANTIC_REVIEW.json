@@ -1,0 +1,977 @@
+{
+  "scope": "All 48 final decisions of structured and shuffled, including all 38 valid nonempty final citations; round 0-2 and no_active are not semantically rated. This is a single unblinded assistant review of source-target relation alignment, not a scientific correctness or citation-accuracy score.",
+  "rubric": {
+    "relation_aligned": "Declared relation consistent with the mechanism text actually present under the cited id; does not validate its existence in the target.",
+    "partial_or_mixed": "Some overlap but mixes extra mechanisms or omits a defining condition.",
+    "insufficient_or_conflicting": "Vague relation, unsupported implication, or conflict with supplied mechanism text.",
+    "none": "No mapping declared.",
+    "invalid_source": "Identifier does not locate a supplied card."
+  },
+  "evidence_limit": "Final conditions were proposed after the final selection with no remaining experiment; they are not recorded successful falsification tests.",
+  "counts": {
+    "structured": {
+      "relation_aligned": 13,
+      "partial_or_mixed": 2,
+      "insufficient_or_conflicting": 5,
+      "invalid_source": 3,
+      "none": 1
+    },
+    "shuffled": {
+      "insufficient_or_conflicting": 11,
+      "partial_or_mixed": 4,
+      "relation_aligned": 3,
+      "invalid_source": 4,
+      "none": 2
+    }
+  },
+  "records": [
+    {
+      "method": "structured",
+      "task_id": "011d4f166882",
+      "record": "runs/eval_v4_combined/structured/011d4f166882/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/011d4f166882/request_03_1793424068819188739.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Integrated fast and slow memory should show distinct alternating behavior compared to state-only model.",
+        "condition_to_check": "Slower alternation rate indicates storage mechanism."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "178794a8cc52",
+      "record": "runs/eval_v4_combined/structured/178794a8cc52/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/178794a8cc52/request_03_1793424087408959503.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Persistent oscillations indicate sustained memory beyond simple delay.",
+        "condition_to_check": "No significant change in state without alternating inputs."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "partial_or_mixed",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "1d2417e51713",
+      "record": "runs/eval_v4_combined/structured/1d2417e51713/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/1d2417e51713/request_03_1793424038583685319.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Storage should consistently respond to alternating inputs.",
+        "condition_to_check": "Consistent response to alternating inputs vs steady or pulsed inputs."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "insufficient_or_conflicting",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "1f9bd1bae585",
+      "record": "runs/eval_v4_combined/structured/1f9bd1bae585/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/1f9bd1bae585/request_03_1793424090987075852.json",
+      "declared_mapping": {
+        "source_id": "external_clock",
+        "target_relation": "Persistent residuals suggest an external driver.",
+        "condition_to_check": "Consistent phase shift and decay under alternating inputs."
+      },
+      "supplied_card": {
+        "id": "external_clock",
+        "domain": "seasonal and periodically driven systems",
+        "structure": "A shared unobserved driver tied to elapsed time can generate persistent residuals without endogenous memory.",
+        "conditions": "Compare different input interventions aligned in elapsed time.",
+        "failure": "A decaying impulse response or input-driven oscillation is not sufficient evidence for an independent clock."
+      },
+      "relation_alignment_review": "partial_or_mixed",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "2e356a891a56",
+      "record": "runs/eval_v4_combined/structured/2e356a891a56/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/2e356a891a56/request_03_1793424083812133796.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Persistent response indicates storage mechanism.",
+        "condition_to_check": "Decay rate difference between models"
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "57c634ddf18a",
+      "record": "runs/eval_v4_combined/structured/57c634ddf18a/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/57c634ddf18a/request_03_1793424114182234382.json",
+      "declared_mapping": {
+        "source_id": "memory_clock",
+        "target_relation": "The system exhibits oscillatory behavior with delayed peaks in response to double pulses.",
+        "condition_to_check": "Check for oscillatory delayed peaks in response to double pulses."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "invalid_source",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "58b038a9dcbc",
+      "record": "runs/eval_v4_combined/structured/58b038a9dcbc/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/58b038a9dcbc/request_03_1793424098582882988.json",
+      "declared_mapping": {
+        "source_id": "external_clock",
+        "target_relation": "Persistent residuals align with elapsed time regardless of input shape.",
+        "condition_to_check": "Residuals should show consistent phase shift for step_rest."
+      },
+      "supplied_card": {
+        "id": "external_clock",
+        "domain": "seasonal and periodically driven systems",
+        "structure": "A shared unobserved driver tied to elapsed time can generate persistent residuals without endogenous memory.",
+        "conditions": "Compare different input interventions aligned in elapsed time.",
+        "failure": "A decaying impulse response or input-driven oscillation is not sufficient evidence for an independent clock."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "6cd641ade75d",
+      "record": "runs/eval_v4_combined/structured/6cd641ade75d/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/6cd641ade75d/request_03_1793424102841763642.json",
+      "declared_mapping": {
+        "source_id": "saturation",
+        "target_relation": "Nonlinear response weakens at large state magnitudes, indicating saturation limits.",
+        "condition_to_check": "If saturation limits predict future states accurately under PRBS, saturation is likely."
+      },
+      "supplied_card": {
+        "id": "saturation",
+        "domain": "population / resource constraints",
+        "structure": "Growth and response can weaken at large state magnitudes because of limited capacity.",
+        "conditions": "Compare responses across positive and negative amplitudes; determine whether history is necessary in addition to curvature.",
+        "failure": "A visually flattening trajectory also occurs in a linear stable system approaching equilibrium."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "7025f2a38ff9",
+      "record": "runs/eval_v4_combined/structured/7025f2a38ff9/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/7025f2a38ff9/request_03_1793424076439580574.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Persistent response after input alternation indicates storage mechanism.",
+        "condition_to_check": "Decay rates between alternating pulses should differ."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "76756fbed619",
+      "record": "runs/eval_v4_combined/structured/76756fbed619/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/76756fbed619/request_03_1793424042121977367.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "No additional state needed beyond current x and input u.",
+        "condition_to_check": "Response to positive pulse matches single pulse."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "7aff70817fc2",
+      "record": "runs/eval_v4_combined/structured/7aff70817fc2/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/7aff70817fc2/request_03_1793424053415698703.json",
+      "declared_mapping": {
+        "source_id": "saturation",
+        "target_relation": "Saturation limits response amplitude regardless of input direction.",
+        "condition_to_check": "Compare ramp and reverse ramp responses for saturation effects."
+      },
+      "supplied_card": {
+        "id": "saturation",
+        "domain": "population / resource constraints",
+        "structure": "Growth and response can weaken at large state magnitudes because of limited capacity.",
+        "conditions": "Compare responses across positive and negative amplitudes; determine whether history is necessary in addition to curvature.",
+        "failure": "A visually flattening trajectory also occurs in a linear stable system approaching equilibrium."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "7dc2896588f5",
+      "record": "runs/eval_v4_combined/structured/7dc2896588f5/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/7dc2896588f5/request_03_1793424061154618717.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Distinct decay rates indicate separate storage mechanisms.",
+        "condition_to_check": "Significant difference in response patterns between models"
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "860ddd9d91de",
+      "record": "runs/eval_v4_combined/structured/860ddd9d91de/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/860ddd9d91de/request_03_1793424064954697234.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Consistent phase shifts and amplitude changes indicate long-term memory rather than short-term effects.",
+        "condition_to_check": "Immediate response without delay rules out long-term memory."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "The memory relation aligns, but immediate response does not rule out additional long-term memory; the proposed falsifier is too strong.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "8f0a53158586",
+      "record": "runs/eval_v4_combined/structured/8f0a53158586/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/8f0a53158586/request_03_1793424072907431384.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "The system should show a delayed response with contributions from both fast and slow memory components.",
+        "condition_to_check": "Verify the presence of distinct fast and slow decay rates in the response."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "91977ba2ede6",
+      "record": "runs/eval_v4_combined/structured/91977ba2ede6/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/91977ba2ede6/request_03_1793424118201222626.json",
+      "declared_mapping": {
+        "source_id": "history_all",
+        "target_relation": "The system responds to alternating inputs with a delayed and damped oscillation, distinct from pulse responses.",
+        "condition_to_check": "No significant response after alternating inputs cease, confirming delayed damping."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "invalid_source",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "93d24a230259",
+      "record": "runs/eval_v4_combined/structured/93d24a230259/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/93d24a230259/request_03_1793424034879612633.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Persistent differences between PRBS and step_rest responses indicate storage mechanisms.",
+        "condition_to_check": "Differences in response shape and magnitude between PRBS and step_rest."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "insufficient_or_conflicting",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "95a4d340cda9",
+      "record": "runs/eval_v4_combined/structured/95a4d340cda9/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/95a4d340cda9/request_03_1793424106663995577.json",
+      "declared_mapping": {
+        "source_id": "saturation",
+        "target_relation": "State response weakens at high magnitudes due to saturation.",
+        "condition_to_check": "Compare response amplitudes before and after step input."
+      },
+      "supplied_card": {
+        "id": "saturation",
+        "domain": "population / resource constraints",
+        "structure": "Growth and response can weaken at large state magnitudes because of limited capacity.",
+        "conditions": "Compare responses across positive and negative amplitudes; determine whether history is necessary in addition to curvature.",
+        "failure": "A visually flattening trajectory also occurs in a linear stable system approaching equilibrium."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "a288d8b77e5b",
+      "record": "runs/eval_v4_combined/structured/a288d8b77e5b/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/a288d8b77e5b/request_03_1793424049622088401.json",
+      "declared_mapping": {
+        "source_id": "saturation",
+        "target_relation": "Response magnitude decreases with increasing input complexity.",
+        "condition_to_check": "Reduced response during PRBS compared to step rest."
+      },
+      "supplied_card": {
+        "id": "saturation",
+        "domain": "population / resource constraints",
+        "structure": "Growth and response can weaken at large state magnitudes because of limited capacity.",
+        "conditions": "Compare responses across positive and negative amplitudes; determine whether history is necessary in addition to curvature.",
+        "failure": "A visually flattening trajectory also occurs in a linear stable system approaching equilibrium."
+      },
+      "relation_alignment_review": "insufficient_or_conflicting",
+      "review_note": "Input complexity versus response magnitude does not establish weakening at large state magnitude, the saturation relation in the card.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "aa835d55fa37",
+      "record": "runs/eval_v4_combined/structured/aa835d55fa37/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/aa835d55fa37/request_03_1793424122022952094.json",
+      "declared_mapping": {
+        "source_id": "memory_clock",
+        "target_relation": "Response amplitude and phase shift vary with elapsed time and pulse sequence.",
+        "condition_to_check": "Consistent phase shifts and amplitudes for double versus single pulses."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "invalid_source",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "b8513efb6701",
+      "record": "runs/eval_v4_combined/structured/b8513efb6701/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/b8513efb6701/request_03_1793424094686219676.json",
+      "declared_mapping": {
+        "source_id": "external_clock",
+        "target_relation": "Consistent phase shift and frequency in responses to various inputs.",
+        "condition_to_check": "Distinct responses to each pulse with consistent phase shifts."
+      },
+      "supplied_card": {
+        "id": "external_clock",
+        "domain": "seasonal and periodically driven systems",
+        "structure": "A shared unobserved driver tied to elapsed time can generate persistent residuals without endogenous memory.",
+        "conditions": "Compare different input interventions aligned in elapsed time.",
+        "failure": "A decaying impulse response or input-driven oscillation is not sufficient evidence for an independent clock."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "c667b23ae7f9",
+      "record": "runs/eval_v4_combined/structured/c667b23ae7f9/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/c667b23ae7f9/request_03_1793424045720731219.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Nonlinear response indicates storage with curvature.",
+        "condition_to_check": "Distinct response to alternating vs constant inputs."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "insufficient_or_conflicting",
+      "review_note": "Infers storage from instantaneous curvature, which the supplied storage card explicitly warns can occur without storage.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "e377cde4db95",
+      "record": "runs/eval_v4_combined/structured/e377cde4db95/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/e377cde4db95/request_03_1793424080223153454.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Persistent response indicates storage of past inputs.",
+        "condition_to_check": "Decay rate post-pulse should be visibly slower than state model."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "f1ddfabee06d",
+      "record": "runs/eval_v4_combined/structured/f1ddfabee06d/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/f1ddfabee06d/request_03_1793424110381536663.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Persistent state after input removal indicates storage.",
+        "condition_to_check": "Recovery time constant should be longer than input duration."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "fb6a837878c3",
+      "record": "runs/eval_v4_combined/structured/fb6a837878c3/final_decision.json",
+      "request": "runs/eval_v4_combined/structured/fb6a837878c3/request_03_1793424057448360045.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "The system's response to PRBS should exhibit coherent noise, indicating persistent storage of past states.",
+        "condition_to_check": "Incoherent noise suggests the response is driven by input rather than stored state."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "insufficient_or_conflicting",
+      "review_note": "Coherent versus incoherent noise is not the accumulation/leakage relation or a controlled test of extra predictive state.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "011d4f166882",
+      "record": "runs/eval_v4_combined/shuffled/011d4f166882/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/011d4f166882/request_03_1793424065690367393.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Distinct fast and slow memory phases should be observable in alternating response.",
+        "condition_to_check": "Phases should differ in rise and decay times compared to single pulse."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "An effect can arrive after a travel time; a lag can differ from a smooth accumulation of history.",
+        "conditions": "Response timing should persist across different input shapes.",
+        "failure": "A slow sensor or a distributed relaxation can resemble a pure delay."
+      },
+      "relation_alignment_review": "insufficient_or_conflicting",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "178794a8cc52",
+      "record": "runs/eval_v4_combined/shuffled/178794a8cc52/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/178794a8cc52/request_03_1793424084383997404.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Distinct responses to different pulse durations indicate persistent storage.",
+        "condition_to_check": "Delayed response to longer pulse compared to shorter pulses."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "An effect can arrive after a travel time; a lag can differ from a smooth accumulation of history.",
+        "conditions": "Response timing should persist across different input shapes.",
+        "failure": "A slow sensor or a distributed relaxation can resemble a pure delay."
+      },
+      "relation_alignment_review": "insufficient_or_conflicting",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "1d2417e51713",
+      "record": "runs/eval_v4_combined/shuffled/1d2417e51713/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/1d2417e51713/request_03_1793424036123965591.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Distinct phase shifts indicate nonlinear storage mechanism.",
+        "condition_to_check": "Phase shifts differ between positive and negative inputs."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "An effect can arrive after a travel time; a lag can differ from a smooth accumulation of history.",
+        "conditions": "Response timing should persist across different input shapes.",
+        "failure": "A slow sensor or a distributed relaxation can resemble a pure delay."
+      },
+      "relation_alignment_review": "insufficient_or_conflicting",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "1f9bd1bae585",
+      "record": "runs/eval_v4_combined/shuffled/1f9bd1bae585/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/1f9bd1bae585/request_03_1793424087980356155.json",
+      "declared_mapping": {
+        "source_id": "external_clock",
+        "target_relation": "Storage element with periodic forcing generates oscillatory behavior.",
+        "condition_to_check": "Consistent phase shifts between alternating inputs."
+      },
+      "supplied_card": {
+        "id": "external_clock",
+        "domain": "seasonal and periodically driven systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "partial_or_mixed",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "2e356a891a56",
+      "record": "runs/eval_v4_combined/shuffled/2e356a891a56/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/2e356a891a56/request_03_1793424080427868538.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Delayed response persists after input ends.",
+        "condition_to_check": "Response timing should match across different input shapes."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "An effect can arrive after a travel time; a lag can differ from a smooth accumulation of history.",
+        "conditions": "Response timing should persist across different input shapes.",
+        "failure": "A slow sensor or a distributed relaxation can resemble a pure delay."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "57c634ddf18a",
+      "record": "runs/eval_v4_combined/shuffled/57c634ddf18a/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/57c634ddf18a/request_03_1793424110532121317.json",
+      "declared_mapping": {
+        "source_id": "memory_clock",
+        "target_relation": "System responds with delayed and oscillatory oscillations to double pulses.",
+        "condition_to_check": "Verify if response amplitude decreases over cycles post-double pulse."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "invalid_source",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "58b038a9dcbc",
+      "record": "runs/eval_v4_combined/shuffled/58b038a9dcbc/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/58b038a9dcbc/request_03_1793424095646224342.json",
+      "declared_mapping": {
+        "source_id": "external_clock",
+        "target_relation": "Response phase shift and delay due to combined history and periodic forcing.",
+        "condition_to_check": "Consistent phase shift and delay across multiple pulse timings."
+      },
+      "supplied_card": {
+        "id": "external_clock",
+        "domain": "seasonal and periodically driven systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "partial_or_mixed",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "6cd641ade75d",
+      "record": "runs/eval_v4_combined/shuffled/6cd641ade75d/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/6cd641ade75d/request_03_1793424099450388968.json",
+      "declared_mapping": {
+        "source_id": "saturation",
+        "target_relation": "Accumulated state should limit growth even with irregular inputs.",
+        "condition_to_check": "No overshoot or undershoot beyond expected limits."
+      },
+      "supplied_card": {
+        "id": "saturation",
+        "domain": "population / resource constraints",
+        "structure": "A shared unobserved driver tied to elapsed time can generate persistent residuals without endogenous memory.",
+        "conditions": "Compare different input interventions aligned in elapsed time.",
+        "failure": "A decaying impulse response or input-driven oscillation is not sufficient evidence for an independent clock."
+      },
+      "relation_alignment_review": "insufficient_or_conflicting",
+      "review_note": "Uses capacity/growth limits although saturation contains external elapsed-time driver content in this condition.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "7025f2a38ff9",
+      "record": "runs/eval_v4_combined/shuffled/7025f2a38ff9/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/7025f2a38ff9/request_03_1793424073199716657.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Response timing should persist across different input shapes.",
+        "condition_to_check": "Compare response timing for alternating inputs."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "An effect can arrive after a travel time; a lag can differ from a smooth accumulation of history.",
+        "conditions": "Response timing should persist across different input shapes.",
+        "failure": "A slow sensor or a distributed relaxation can resemble a pure delay."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Matches response timing across input shapes, the transport relation actually supplied under storage in this prompt.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "76756fbed619",
+      "record": "runs/eval_v4_combined/shuffled/76756fbed619/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/76756fbed619/request_03_1793424039563250339.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "",
+        "condition_to_check": ""
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "7aff70817fc2",
+      "record": "runs/eval_v4_combined/shuffled/7aff70817fc2/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/7aff70817fc2/request_03_1793424050622989238.json",
+      "declared_mapping": {
+        "source_id": "saturation",
+        "target_relation": "Persistent response after pulse indicates saturation limit.",
+        "condition_to_check": "Response magnitude exceeds initial value post-pulse."
+      },
+      "supplied_card": {
+        "id": "saturation",
+        "domain": "population / resource constraints",
+        "structure": "A shared unobserved driver tied to elapsed time can generate persistent residuals without endogenous memory.",
+        "conditions": "Compare different input interventions aligned in elapsed time.",
+        "failure": "A decaying impulse response or input-driven oscillation is not sufficient evidence for an independent clock."
+      },
+      "relation_alignment_review": "insufficient_or_conflicting",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "7dc2896588f5",
+      "record": "runs/eval_v4_combined/shuffled/7dc2896588f5/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/7dc2896588f5/request_03_1793424057906617131.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Alternating inputs should produce opposite responses with lags.",
+        "condition_to_check": "No significant change between alternating phases."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "An effect can arrive after a travel time; a lag can differ from a smooth accumulation of history.",
+        "conditions": "Response timing should persist across different input shapes.",
+        "failure": "A slow sensor or a distributed relaxation can resemble a pure delay."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "860ddd9d91de",
+      "record": "runs/eval_v4_combined/shuffled/860ddd9d91de/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/860ddd9d91de/request_03_1793424061848179142.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Delayed and attenuated response indicates storage with finite timescale.",
+        "condition_to_check": "No significant response difference between ramp and step inputs rules out storage."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "An effect can arrive after a travel time; a lag can differ from a smooth accumulation of history.",
+        "conditions": "Response timing should persist across different input shapes.",
+        "failure": "A slow sensor or a distributed relaxation can resemble a pure delay."
+      },
+      "relation_alignment_review": "partial_or_mixed",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "8f0a53158586",
+      "record": "runs/eval_v4_combined/shuffled/8f0a53158586/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/8f0a53158586/request_03_1793424069700709883.json",
+      "declared_mapping": {
+        "source_id": "memory_multiscale",
+        "target_relation": "Validate the combined fast and slow memory effects on distinct input shapes.",
+        "condition_to_check": "Compare individual and combined responses to positive and negative double pulses."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "invalid_source",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "91977ba2ede6",
+      "record": "runs/eval_v4_combined/shuffled/91977ba2ede6/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/91977ba2ede6/request_03_1793424114490781311.json",
+      "declared_mapping": {
+        "source_id": "history_all",
+        "target_relation": "The system responds to step rest with a delayed and damped oscillation, distinct from pulse responses.",
+        "condition_to_check": "Verify the response amplitude and phase shift relative to pulses."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "invalid_source",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "93d24a230259",
+      "record": "runs/eval_v4_combined/shuffled/93d24a230259/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/93d24a230259/request_03_1793424032544552884.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Memory and periodic forcing should produce oscillatory decay after pulse.",
+        "condition_to_check": "Oscillatory behavior persists across different pulse amplitudes."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "An effect can arrive after a travel time; a lag can differ from a smooth accumulation of history.",
+        "conditions": "Response timing should persist across different input shapes.",
+        "failure": "A slow sensor or a distributed relaxation can resemble a pure delay."
+      },
+      "relation_alignment_review": "insufficient_or_conflicting",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "95a4d340cda9",
+      "record": "runs/eval_v4_combined/shuffled/95a4d340cda9/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/95a4d340cda9/request_03_1793424103163386751.json",
+      "declared_mapping": {
+        "source_id": "saturation",
+        "target_relation": "Persistent response after input ceases indicates saturation.",
+        "condition_to_check": "Decay rate between alternating pulses should be slower."
+      },
+      "supplied_card": {
+        "id": "saturation",
+        "domain": "population / resource constraints",
+        "structure": "A shared unobserved driver tied to elapsed time can generate persistent residuals without endogenous memory.",
+        "conditions": "Compare different input interventions aligned in elapsed time.",
+        "failure": "A decaying impulse response or input-driven oscillation is not sufficient evidence for an independent clock."
+      },
+      "relation_alignment_review": "insufficient_or_conflicting",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "a288d8b77e5b",
+      "record": "runs/eval_v4_combined/shuffled/a288d8b77e5b/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/a288d8b77e5b/request_03_1793424046866897455.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "No hidden nonlinearity beyond cubic terms.",
+        "condition_to_check": "Similar recovery for positive pulse regardless of amplitude."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "aa835d55fa37",
+      "record": "runs/eval_v4_combined/shuffled/aa835d55fa37/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/aa835d55fa37/request_03_1793424118304005812.json",
+      "declared_mapping": {
+        "source_id": "history_all",
+        "target_relation": "The system's response should include detailed memory and clock contributions.",
+        "condition_to_check": "Verify intricate memory and clock effects during ramp and reverse."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "invalid_source",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "b8513efb6701",
+      "record": "runs/eval_v4_combined/shuffled/b8513efb6701/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/b8513efb6701/request_03_1793424091901743681.json",
+      "declared_mapping": {
+        "source_id": "external_clock",
+        "target_relation": "The system shows distinct oscillatory responses to each pulse, indicating an external clock mechanism.",
+        "condition_to_check": "Verify if the oscillations persist and align with elapsed time after removing inputs."
+      },
+      "supplied_card": {
+        "id": "external_clock",
+        "domain": "seasonal and periodically driven systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "insufficient_or_conflicting",
+      "review_note": "Cites elapsed-time oscillations as an external clock although this prompt supplies accumulation/leakage under that identifier.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "c667b23ae7f9",
+      "record": "runs/eval_v4_combined/shuffled/c667b23ae7f9/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/c667b23ae7f9/request_03_1793424043114233510.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Nonlinear response should manifest differently for positive and negative inputs.",
+        "condition_to_check": "Distinct phase responses for alternating inputs."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "An effect can arrive after a travel time; a lag can differ from a smooth accumulation of history.",
+        "conditions": "Response timing should persist across different input shapes.",
+        "failure": "A slow sensor or a distributed relaxation can resemble a pure delay."
+      },
+      "relation_alignment_review": "insufficient_or_conflicting",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "e377cde4db95",
+      "record": "runs/eval_v4_combined/shuffled/e377cde4db95/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/e377cde4db95/request_03_1793424076788546041.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Alternating inputs should produce persistent but opposite responses.",
+        "condition_to_check": "No residual decay after alternating inputs."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "An effect can arrive after a travel time; a lag can differ from a smooth accumulation of history.",
+        "conditions": "Response timing should persist across different input shapes.",
+        "failure": "A slow sensor or a distributed relaxation can resemble a pure delay."
+      },
+      "relation_alignment_review": "insufficient_or_conflicting",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "f1ddfabee06d",
+      "record": "runs/eval_v4_combined/shuffled/f1ddfabee06d/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/f1ddfabee06d/request_03_1793424106787473157.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Consistent lag and decay under repeated input changes.",
+        "condition_to_check": "Stable and predictable response to alternating inputs."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "An effect can arrive after a travel time; a lag can differ from a smooth accumulation of history.",
+        "conditions": "Response timing should persist across different input shapes.",
+        "failure": "A slow sensor or a distributed relaxation can resemble a pure delay."
+      },
+      "relation_alignment_review": "partial_or_mixed",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "fb6a837878c3",
+      "record": "runs/eval_v4_combined/shuffled/fb6a837878c3/final_decision.json",
+      "request": "runs/eval_v4_combined/shuffled/fb6a837878c3/request_03_1793424054285637685.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Persistent response to alternating inputs suggests storage.",
+        "condition_to_check": "Persistent effects indicate storage beyond simple accumulation."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "An effect can arrive after a travel time; a lag can differ from a smooth accumulation of history.",
+        "conditions": "Response timing should persist across different input shapes.",
+        "failure": "A slow sensor or a distributed relaxation can resemble a pure delay."
+      },
+      "relation_alignment_review": "insufficient_or_conflicting",
+      "review_note": "",
+      "target_mechanism_validated_by_review": false
+    }
+  ]
+}

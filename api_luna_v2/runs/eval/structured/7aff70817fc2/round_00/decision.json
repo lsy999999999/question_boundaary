@@ -1,0 +1,42 @@
+{
+  "time_ns": 1793431497381900105,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "alternating",
+    "reason": "Saturating memory has the lowest trajectory-level CV error, narrowly beating state_cubic and improving on state; high residual autocorrelation means adequacy remains uncertain.",
+    "prediction": "Under rapid input reversals, the response will depend on accumulated history and differ from an instantaneous state_cubic prediction.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No cross-domain relation is established by the predictive fit alone.",
+      "condition_to_check": "Compare alternating responses with predictions from instantaneous curvature and history-dependent models."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"alternating\",\"reason\":\"Saturating memory has the lowest trajectory-level CV error, narrowly beating state_cubic and improving on state; high residual autocorrelation means adequacy remains uncertain.\",\"prediction\":\"Under rapid input reversals, the response will depend on accumulated history and differ from an instantaneous state_cubic prediction.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is established by the predictive fit alone.\",\"condition_to_check\":\"Compare alternating responses with predictions from instantaneous curvature and history-dependent models.\"}}",
+    "input_tokens": 2804,
+    "output_tokens": 308,
+    "batch_elapsed_seconds": 3.7901646457612514,
+    "amortized_seconds": 3.7901646457612514,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2804,
+      "completion_tokens": 308,
+      "total_tokens": 3112,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 186
+      }
+    },
+    "api_response_id": "resp_0a8d4d07fb59504e016ae597c63bd081908df18b77605d1769",
+    "wire_record": "wire/eval/0113_c9fa1b8b6cd74b64986034a92e9afdb9"
+  }
+}

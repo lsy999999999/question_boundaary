@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793414046703071636,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "negative_pulse",
+    "reason": "Cubic terms fit pulses well; test negative input.",
+    "prediction": "Negative pulse should cause similar response as positive but in opposite direction.",
+    "accept": true,
+    "mapping": {
+      "source_id": "nonlinear_response",
+      "target_relation": "Nonlinear response accelerates and amplifies with larger inputs regardless of sign.",
+      "condition_to_check": "Compare rise time and peak amplitude between positive and negative pulses."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"state_cubic\",\n  \"experiment\": \"negative_pulse\",\n  \"reason\": \"Cubic terms fit pulses well; test negative input.\",\n  \"prediction\": \"Negative pulse should cause similar response as positive but in opposite direction.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"nonlinear_response\",\n    \"target_relation\": \"Nonlinear response accelerates and amplifies with larger inputs regardless of sign.\",\n    \"condition_to_check\": \"Compare rise time and peak amplitude between positive and negative pulses.\"\n  }\n}",
+    "input_tokens": 2918,
+    "output_tokens": 117,
+    "batch_elapsed_seconds": 354.5387912117876,
+    "amortized_seconds": 88.6346978029469,
+    "peak_gpu_allocated_gb": 0.0,
+    "backend": "cpu-fp32",
+    "peak_process_ram_gb": 35.00408935546875,
+    "model_path": "/home/lsy/theory_discovery_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

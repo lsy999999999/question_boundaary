@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431758079367399,
+  "http_status": 200,
+  "body": {
+    "id": "resp_097d52fb253b4b13016ae598caf0d0819582467960e2256e61",
+    "object": "chat.completion",
+    "created": 1793431757,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest trajectory-held-out error (0.00132), substantially better than alternatives. Persistent post-input tails support history dependence, but residual lag correlation and competing memory models leave uncertainty.\",\"prediction\":\"After rapid input reversals, output will retain a gradual, input-history-dependent tail after the input returns to zero.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Finite-leakage stored influence can carry past input effects into later output.\",\"condition_to_check\":\"At matched current input and visible output, different prior inputs should predict different subsequent trajectories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3265,
+      "completion_tokens": 260,
+      "total_tokens": 3525,
+      "completion_tokens_details": {
+        "reasoning_tokens": 123
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.8289387663826346
+}

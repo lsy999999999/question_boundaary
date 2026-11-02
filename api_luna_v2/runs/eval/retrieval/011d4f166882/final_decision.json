@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793432119287275978,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "slow_wave",
+    "reason": "Memory_slow has the lowest trajectory-level CV NMSE and uses fewer coefficients than memory_multiscale. Residual lag correlation remains, so adequacy for unseen interventions is not established.",
+    "prediction": "After input returns to zero, output will retain a history-dependent tail that decays over several seconds.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"slow_wave\",\"reason\":\"Memory_slow has the lowest trajectory-level CV NMSE and uses fewer coefficients than memory_multiscale. Residual lag correlation remains, so adequacy for unseen interventions is not established.\",\"prediction\":\"After input returns to zero, output will retain a history-dependent tail that decays over several seconds.\",\"accept\":false}",
+    "input_tokens": 3280,
+    "output_tokens": 237,
+    "batch_elapsed_seconds": 3.8715890115126967,
+    "amortized_seconds": 3.8715890115126967,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3280,
+      "completion_tokens": 237,
+      "total_tokens": 3517,
+      "completion_tokens_details": {
+        "reasoning_tokens": 154
+      }
+    },
+    "api_response_id": "resp_0c14c6f54619cc94016ae59a3393c88196ab59f6be7d23f12f",
+    "wire_record": "wire/eval/0466_ed40968e67fe45ec8cc0339d9c0e7dc1"
+  }
+}

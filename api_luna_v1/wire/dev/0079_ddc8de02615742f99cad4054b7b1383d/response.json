@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793429763381587425,
+  "http_status": 200,
+  "body": {
+    "id": "resp_09bca8d8333d6045016ae59101508c81949a379cdac497ce69",
+    "object": "chat.completion",
+    "created": 1793429763,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_fast\",\"experiment\":\"prbs\",\"reason\":\"memory_fast has the lowest trajectory-held-out NMSE (0.00184), narrowly beating memory_slow. Memory models greatly outperform state-only models; prior PRBS, alternating, and double-pulse forecasts were not accepted, so adequacy for unseen interventions remains unverified.\",\"prediction\":\"With current input and visible state matched, recent input history will still predict response; rapid reversals should favor shorter memory timescales.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence predicts response beyond current input and visible state, consistent with a predictive storage relation.\",\"condition_to_check\":\"The relation is weakened if history adds no predictive effect after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3727,
+      "completion_tokens": 158,
+      "total_tokens": 3885
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.8270300943404436
+}

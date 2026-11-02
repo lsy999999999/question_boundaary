@@ -1,0 +1,65 @@
+[
+  {
+    "task_id": "011d4f166882",
+    "representations": [
+      "memory_multiscale",
+      "memory_multiscale",
+      "memory_multiscale",
+      "memory_multiscale"
+    ],
+    "actions": [
+      "alternating",
+      "prbs",
+      "double_pulse"
+    ],
+    "forecast_mse": [
+      0.0001480054588493729,
+      0.00037084195167568906,
+      0.00012713979466939807
+    ],
+    "final_reason": "It has the lowest trajectory-level validation error, and prior alternating, PRBS, and double-pulse forecasts were accurate. Alternatives are close, but clock and saturation variants do not improve validation.",
+    "final_test_nmse": 0.0015018961769559423
+  },
+  {
+    "task_id": "7dc2896588f5",
+    "representations": [
+      "memory_slow",
+      "memory_slow",
+      "memory_multiscale",
+      "memory_multiscale"
+    ],
+    "actions": [
+      "prbs",
+      "alternating",
+      "double_pulse"
+    ],
+    "forecast_mse": [
+      0.00014893207022149274,
+      0.0001544351469487708,
+      0.00010560614424014613
+    ],
+    "final_reason": "Multiscale memory has the lowest trajectory-level CV error among the non-clock candidates and strong performance across interventions. Memory_clock’s tiny advantage is insufficient evidence for an independent clock; residual lag correlation leaves some uncertainty.",
+    "final_test_nmse": 0.00010571022976919441
+  },
+  {
+    "task_id": "93d24a230259",
+    "representations": [
+      "state",
+      "state",
+      "state",
+      "memory_fast"
+    ],
+    "actions": [
+      "alternating",
+      "slow_wave",
+      "double_pulse"
+    ],
+    "forecast_mse": [
+      0.0001426188981656416,
+      0.00015573782557291578,
+      0.00011551036851066519
+    ],
+    "final_reason": "memory_fast has the lowest trajectory-held-out error. The state model’s residual lag-1 correlation suggests remaining temporal dependence, though prior intervention forecast errors were low.",
+    "final_test_nmse": 0.00024613880700413547
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793432234961534767,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Memory models outperform state-only alternatives, and memory_slow has the lowest leave-trajectory-out NMSE with fewer coefficients than saturating_memory. Residual autocorrelation leaves adequacy uncertain.",
+    "prediction": "Under irregular reversals, output will retain gradual history-dependent carryover rather than responding only to the current input and visible state.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory models outperform state-only alternatives, and memory_slow has the lowest leave-trajectory-out NMSE with fewer coefficients than saturating_memory. Residual autocorrelation leaves adequacy uncertain.\",\"prediction\":\"Under irregular reversals, output will retain gradual history-dependent carryover rather than responding only to the current input and visible state.\",\"accept\":false}",
+    "input_tokens": 3294,
+    "output_tokens": 299,
+    "batch_elapsed_seconds": 4.456778028048575,
+    "amortized_seconds": 4.456778028048575,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3294,
+      "completion_tokens": 299,
+      "total_tokens": 3593,
+      "completion_tokens_details": {
+        "reasoning_tokens": 211
+      }
+    },
+    "api_response_id": "resp_052179351d3f2a40016ae59aa6d9ac8196accb70db7bd22960",
+    "wire_record": "wire/eval/0512_17dc0e33a9b64d5191a2e612dc0b500c"
+  }
+}

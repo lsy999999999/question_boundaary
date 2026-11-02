@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430710995602001,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "alternating",
+    "reason": "Saturating memory has the lowest trajectory-held-out NMSE; the successful ramp-reverse forecast supports it, but residual autocorrelation and PRBS error leave intervention uncertainty.",
+    "prediction": "Under rapid switches, response will depend on accumulated history and remain smoother than a response determined only by current input and state.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Saturating transforms of accumulated history improve validation over linear memory features.",
+      "condition_to_check": "Compare alternating responses across amplitudes and histories; no reproducible history-dependent flattening would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"alternating\",\"reason\":\"Saturating memory has the lowest trajectory-held-out NMSE; the successful ramp-reverse forecast supports it, but residual autocorrelation and PRBS error leave intervention uncertainty.\",\"prediction\":\"Under rapid switches, response will depend on accumulated history and remain smoother than a response determined only by current input and state.\",\"accept\":false,\"mapping\":{\"source_id\":\"saturation\",\"target_relation\":\"Saturating transforms of accumulated history improve validation over linear memory features.\",\"condition_to_check\":\"Compare alternating responses across amplitudes and histories; no reproducible history-dependent flattening would weaken this relation.\"}}",
+    "input_tokens": 3457,
+    "output_tokens": 338,
+    "batch_elapsed_seconds": 4.9031901098787785,
+    "amortized_seconds": 4.9031901098787785,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3457,
+      "completion_tokens": 338,
+      "total_tokens": 3795,
+      "completion_tokens_details": {
+        "reasoning_tokens": 202
+      }
+    },
+    "api_response_id": "resp_01bd6f1a33e78e90016ae594b3146c81939ab7484e39a2459b",
+    "wire_record": "wire/eval/0490_fa0a4047dbfd4330874fcab1093d1939"
+  }
+}

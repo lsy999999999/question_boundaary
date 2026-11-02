@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793424020962096580,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "step_rest",
+    "reason": "Step rest has low prediction variance and supports memory and clock effects.",
+    "prediction": "Step input will show a delayed and oscillatory response, verifying memory and clock contributions.",
+    "accept": true,
+    "mapping": {
+      "source_id": "memory_clock",
+      "target_relation": "System responds with delayed and oscillatory oscillations to step inputs.",
+      "condition_to_check": "Check if the response amplitude decreases over cycles post-step."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_clock\",\n  \"experiment\": \"step_rest\",\n  \"reason\": \"Step rest has low prediction variance and supports memory and clock effects.\",\n  \"prediction\": \"Step input will show a delayed and oscillatory response, verifying memory and clock contributions.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"memory_clock\",\n    \"target_relation\": \"System responds with delayed and oscillatory oscillations to step inputs.\",\n    \"condition_to_check\": \"Check if the response amplitude decreases over cycles post-step.\"\n  }\n}",
+    "input_tokens": 3731,
+    "output_tokens": 118,
+    "batch_elapsed_seconds": 2.830502496100962,
+    "amortized_seconds": 2.830502496100962,
+    "peak_gpu_allocated_gb": 14.950192928314209,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024013519287109,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

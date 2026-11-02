@@ -1,0 +1,42 @@
+{
+  "time_ns": 1793431455989499962,
+  "decision": {
+    "representation": "state",
+    "experiment": "alternating",
+    "reason": "State has the lowest trajectory-held-out error; added memory and clock features do not improve validation. Alternating input has the greatest disagreement among plausible models.",
+    "prediction": "Under alternating input, the state model predicts no systematic residual dependence on earlier inputs once current state and input are accounted for.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No additional history-dependent relation is established beyond the current state representation.",
+      "condition_to_check": "Reject this account if alternating-input residuals systematically depend on prior inputs after conditioning on current state and input."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"State has the lowest trajectory-held-out error; added memory and clock features do not improve validation. Alternating input has the greatest disagreement among plausible models.\",\"prediction\":\"Under alternating input, the state model predicts no systematic residual dependence on earlier inputs once current state and input are accounted for.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No additional history-dependent relation is established beyond the current state representation.\",\"condition_to_check\":\"Reject this account if alternating-input residuals systematically depend on prior inputs after conditioning on current state and input.\"}}",
+    "input_tokens": 2816,
+    "output_tokens": 271,
+    "batch_elapsed_seconds": 8.222750741057098,
+    "amortized_seconds": 8.222750741057098,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2816,
+      "completion_tokens": 271,
+      "total_tokens": 3087,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 144
+      }
+    },
+    "api_response_id": "resp_0e9ad405682f9a27016ae5979cd114819681d1ea4182630c29",
+    "wire_record": "wire/eval/0082_5142ed50f80d4e7c800ca1868c8fc9a6"
+  }
+}

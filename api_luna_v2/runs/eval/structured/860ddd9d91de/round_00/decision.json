@@ -1,0 +1,42 @@
+{
+  "time_ns": 1793431515135324649,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "prbs",
+    "reason": "Memory_clock has the lowest trajectory-level CV error (0.00163), substantially below state (0.129). The persistent post-input response supports history dependence, but clock effects remain uncertain.",
+    "prediction": "After matched recent inputs, responses may differ with elapsed time; PRBS should expose systematic deviations from memory-only predictions.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated past influence may predict the lingering response after input returns to zero.",
+      "condition_to_check": "Test whether history improves predictions after controlling current input and visible state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"prbs\",\"reason\":\"Memory_clock has the lowest trajectory-level CV error (0.00163), substantially below state (0.129). The persistent post-input response supports history dependence, but clock effects remain uncertain.\",\"prediction\":\"After matched recent inputs, responses may differ with elapsed time; PRBS should expose systematic deviations from memory-only predictions.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence may predict the lingering response after input returns to zero.\",\"condition_to_check\":\"Test whether history improves predictions after controlling current input and visible state.\"}}",
+    "input_tokens": 2801,
+    "output_tokens": 282,
+    "batch_elapsed_seconds": 4.358929109759629,
+    "amortized_seconds": 4.358929109759629,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2801,
+      "completion_tokens": 282,
+      "total_tokens": 3083,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 153
+      }
+    },
+    "api_response_id": "resp_0c5431cd65c51f2d016ae597d805a08194a618140231d2bf65",
+    "wire_record": "wire/eval/0130_3ec7cf14cee74fe0ad5f2e5ea26444d7"
+  }
+}

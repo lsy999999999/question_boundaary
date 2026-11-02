@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793429945822363372,
+  "http_status": 200,
+  "body": {
+    "id": "resp_077c8445cb80d329016ae591b81da08194bf5426e2fddb61b9",
+    "object": "chat.completion",
+    "created": 1793429945,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the lowest trajectory-held-out NMSE (0.00097), far below the current state model (0.019); PRBS provides varied input histories to test whether that advantage generalizes.\",\"prediction\":\"After input switches, trajectories with different prior input histories will differ even at matched current input and state; PRBS should expose this history dependence.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence with finite relaxation is a useful predictive relation consistent with the strong memory-model validation improvement.\",\"condition_to_check\":\"Test whether PRBS forecasts improve over state-only predictions after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2807,
+      "completion_tokens": 148,
+      "total_tokens": 2955
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.788200660608709
+}

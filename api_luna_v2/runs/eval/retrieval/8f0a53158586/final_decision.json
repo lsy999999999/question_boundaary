@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793432131916546223,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Memory_slow has the lowest leave-trajectory-out error by a clear margin, and its advantage persists across pulse, step, alternating, and PRBS trials. More complex alternatives validate worse.",
+    "prediction": "On a new input sequence, slow accumulated history will improve trajectory predictions over a model using only the current state and input.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the lowest leave-trajectory-out error by a clear margin, and its advantage persists across pulse, step, alternating, and PRBS trials. More complex alternatives validate worse.\",\"prediction\":\"On a new input sequence, slow accumulated history will improve trajectory predictions over a model using only the current state and input.\",\"accept\":false}",
+    "input_tokens": 3305,
+    "output_tokens": 86,
+    "batch_elapsed_seconds": 1.9470642460510135,
+    "amortized_seconds": 1.9470642460510135,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3305,
+      "completion_tokens": 86,
+      "total_tokens": 3391
+    },
+    "api_response_id": "resp_090d1b66662c8b62016ae59a42a3688193abf085ef6df5157f",
+    "wire_record": "wire/eval/0470_7404b6a3acf54c37bfe9f3dab182a688"
+  }
+}

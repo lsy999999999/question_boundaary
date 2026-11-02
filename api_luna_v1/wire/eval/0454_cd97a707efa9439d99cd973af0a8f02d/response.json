@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430611712920475,
+  "http_status": 200,
+  "body": {
+    "id": "resp_021b7732e2c37f38016ae5945043c881979e6f66c5ae1cfca6",
+    "object": "chat.completion",
+    "created": 1793430611,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest leave-trajectory-out NMSE, but residual lag-1 correlation and higher PRBS error leave uncertainty; alternating best separates the plausible memory variants.\",\"prediction\":\"After input switches, outputs will retain a history-dependent tail rather than depend only on current input and output.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A leaky accumulated influence can persist after input changes or returns to zero.\",\"condition_to_check\":\"Test whether input history predicts output after controlling current input and visible output.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3257,
+      "completion_tokens": 323,
+      "total_tokens": 3580,
+      "completion_tokens_details": {
+        "reasoning_tokens": 198
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.199929212220013
+}

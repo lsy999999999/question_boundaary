@@ -1,0 +1,117 @@
+{
+  "method_cards": [
+    {
+      "id": "M28",
+      "group": "E 推导、计算与参数",
+      "name": "结构与参数分离拟合",
+      "tags": [
+        "fit",
+        "missing_compute",
+        "parameter_failure"
+      ],
+      "trigger": "研究者凭文字选参数，或把优化失败当成结构错误。",
+      "required_inputs": "固定结构、参数范围、测量误差和独立分组。",
+      "steps": [
+        "指定损失/似然与测量映射",
+        "多初值或合理搜索拟合",
+        "保留参数、数据ID、目标值和求解器诊断"
+      ],
+      "deliverable": "绑定结构和数据的拟合产物与数值失败分类。",
+      "failure_or_limit": "局部最优或病态损失不否定整个模型族；训练误差不能作预测成绩。",
+      "if_blocked": "M29检查识别，M31检查结构残差。",
+      "source_ids": [
+        "P08",
+        "P12",
+        "P15"
+      ],
+      "basis": "direct_method_adaptation",
+      "evidence_note": "来源支持基础方法；本卡的触发条件、交付约定和方法衔接为本项目整理，未验证其在新案例上的收益。"
+    },
+    {
+      "id": "M29",
+      "group": "E 推导、计算与参数",
+      "name": "参数与机制的可识别性",
+      "tags": [
+        "identifiability",
+        "too_many_parameters",
+        "missing_data"
+      ],
+      "trigger": "不同参数/机制拟合相近，却得出不同解释。",
+      "required_inputs": "模型、可观测量、噪声模型和参数范围。",
+      "steps": [
+        "检查参数组合是否存在等价变换",
+        "用profile likelihood或适当敏感度诊断",
+        "区分结构不可识别和数据不足导致的不确定"
+      ],
+      "deliverable": "可识别组合、区间和能够消歧的新测量。",
+      "failure_or_limit": "平坦剖面需要可靠优化；参数可识别也不等于机制唯一。",
+      "if_blocked": "约化参数、换观测量或M33设计区分实验。",
+      "source_ids": [
+        "P08"
+      ],
+      "basis": "direct_method_adaptation",
+      "evidence_note": "来源支持基础方法；本卡的触发条件、交付约定和方法衔接为本项目整理，未验证其在新案例上的收益。"
+    },
+    {
+      "id": "M36",
+      "group": "F 模型批评与区分实验",
+      "name": "测量伪影与替代观测模型",
+      "tags": [
+        "measurement",
+        "coordinate_artifact",
+        "preprocessing"
+      ],
+      "trigger": "结论依赖阈值、共享分母、坐标、轨迹长度或筛选规则。",
+      "required_inputs": "原始数据、预处理和测量规则。",
+      "steps": [
+        "写出哪些误差或共同变量会同时影响两个量",
+        "在合理预设变体下重算",
+        "需要时建立显式观测误差模型"
+      ],
+      "deliverable": "测量稳健范围及仍存在的偏差路径。",
+      "failure_or_limit": "稳健性检查不能用挑出有利阈值代替；原始信息缺失可能无法校正。",
+      "if_blocked": "申请校准/同步测量，或把结论限定到原测量定义。",
+      "source_ids": [
+        "P08",
+        "P10",
+        "P12"
+      ],
+      "basis": "engineering_synthesis",
+      "evidence_note": "来源支持基础方法；本卡的触发条件、交付约定和方法衔接为本项目整理，未验证其在新案例上的收益。"
+    }
+  ],
+  "measurement": [
+    {
+      "template_fraction": "M",
+      "n_fields": 3,
+      "median_field_mean_empty_fraction": 2.7853291144878946e-05,
+      "field_mean_empty_fractions": [
+        2.7853291144878946e-05,
+        0.00016496983408747812,
+        0.0
+      ]
+    },
+    {
+      "template_fraction": "M+L",
+      "n_fields": 5,
+      "median_field_mean_empty_fraction": 0.04445828743121418,
+      "field_mean_empty_fractions": [
+        0.042889071607366366,
+        0.06561580579976005,
+        0.057610926734964554,
+        0.029657181595508317,
+        0.04445828743121418
+      ]
+    },
+    {
+      "template_fraction": "M+S",
+      "n_fields": 2,
+      "median_field_mean_empty_fraction": 0.09412483585099253,
+      "field_mean_empty_fractions": [
+        0.05459724838435311,
+        0.13365242331763194
+      ]
+    }
+  ],
+  "clarification": "This category contains observed cavity-area endpoints for gel-purified template length fractions, not measured RNA yields or precise mixing ratios. No time-resolved RNA concentrations or carryover-matched controls available."
+}

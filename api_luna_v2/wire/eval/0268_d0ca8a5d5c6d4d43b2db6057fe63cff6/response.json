@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431728821662505,
+  "http_status": 200,
+  "body": {
+    "id": "resp_04d837e46fcd1870016ae598acfcd881959bb047f098c47e27",
+    "object": "chat.completion",
+    "created": 1793431728,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the best trajectory-held-out NMSE by a wide margin and captures prolonged post-input responses. Residual lag correlation warrants testing rapid reversals.\",\"prediction\":\"During alternating switches, output will retain influence from earlier inputs and will not immediately follow the current input.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated history predicts prolonged effects after input changes, with finite relaxation.\",\"condition_to_check\":\"Check whether prior input predicts output after controlling for current input and visible state during alternating switches.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3265,
+      "completion_tokens": 310,
+      "total_tokens": 3575,
+      "completion_tokens_details": {
+        "reasoning_tokens": 185
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.520862019620836
+}

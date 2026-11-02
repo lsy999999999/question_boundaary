@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430628560093849,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "prbs",
+    "reason": "State_cubic has the lowest leave-trajectory-out error (0.001415), and prior PRBS and ramp-reverse forecasts were accurate. Memory alternatives validate worse; current evidence does not justify adding history.",
+    "prediction": "Current state and input should explain the response; systematic residual dependence on earlier inputs during irregular reversals would falsify this prediction.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Observed curvature is captured predictively, but does not establish a distinct saturation mechanism.",
+      "condition_to_check": "Check whether earlier inputs predict residuals after controlling current state and input across irregular reversals."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state_cubic\",\"experiment\":\"prbs\",\"reason\":\"State_cubic has the lowest leave-trajectory-out error (0.001415), and prior PRBS and ramp-reverse forecasts were accurate. Memory alternatives validate worse; current evidence does not justify adding history.\",\"prediction\":\"Current state and input should explain the response; systematic residual dependence on earlier inputs during irregular reversals would falsify this prediction.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Observed curvature is captured predictively, but does not establish a distinct saturation mechanism.\",\"condition_to_check\":\"Check whether earlier inputs predict residuals after controlling current state and input across irregular reversals.\"}}",
+    "input_tokens": 3523,
+    "output_tokens": 260,
+    "batch_elapsed_seconds": 4.625827559269965,
+    "amortized_seconds": 4.625827559269965,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3523,
+      "completion_tokens": 260,
+      "total_tokens": 3783,
+      "completion_tokens_details": {
+        "reasoning_tokens": 118
+      }
+    },
+    "api_response_id": "resp_0f4c6612f6fe89c4016ae59461ab3c819498e49cfed6843462",
+    "wire_record": "wire/eval/0461_032b7f1ca8954ab480bf3be8419a0826"
+  }
+}

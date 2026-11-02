@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793431906810168488,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "alternating",
+    "reason": "Slow-memory has the best trajectory-held-out error, but residual lag-1 correlation remains high. Alternating input has the greatest disagreement among plausible models and can test their response to rapid reversals.",
+    "prediction": "After each input reversal, the output will retain a history-dependent carryover rather than immediately following the new input.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Slow-memory has the best trajectory-held-out error, but residual lag-1 correlation remains high. Alternating input has the greatest disagreement among plausible models and can test their response to rapid reversals.\",\"prediction\":\"After each input reversal, the output will retain a history-dependent carryover rather than immediately following the new input.\",\"accept\":false}",
+    "input_tokens": 3131,
+    "output_tokens": 173,
+    "batch_elapsed_seconds": 3.540916874073446,
+    "amortized_seconds": 3.540916874073446,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3131,
+      "completion_tokens": 173,
+      "total_tokens": 3304,
+      "completion_tokens_details": {
+        "reasoning_tokens": 86
+      }
+    },
+    "api_response_id": "resp_0a329011e3ac41ba016ae5996077288197b129b591c83f3c38",
+    "wire_record": "wire/eval/0367_75b7d0f557a14f3e826adbdaa304ccf2"
+  }
+}

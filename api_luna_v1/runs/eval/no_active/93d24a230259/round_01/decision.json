@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430482156578859,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "double_pulse",
+    "reason": "Slow-memory features modestly improve leave-trajectory-out NMSE over state, and state residuals retain lag-1 correlation; this supports testing accumulated history, though the gain is limited.",
+    "prediction": "The second pulse response will differ from the first because of accumulated influence from the earlier pulse.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Slow accumulated history improves validation modestly, consistent with a predictive finite-relaxation memory term.",
+      "condition_to_check": "Reject this relation if the second pulse shows no reproducible history-dependent difference after controlling current state and input."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"Slow-memory features modestly improve leave-trajectory-out NMSE over state, and state residuals retain lag-1 correlation; this supports testing accumulated history, though the gain is limited.\",\"prediction\":\"The second pulse response will differ from the first because of accumulated influence from the earlier pulse.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated history improves validation modestly, consistent with a predictive finite-relaxation memory term.\",\"condition_to_check\":\"Reject this relation if the second pulse shows no reproducible history-dependent difference after controlling current state and input.\"}}",
+    "input_tokens": 3300,
+    "output_tokens": 283,
+    "batch_elapsed_seconds": 4.709530537948012,
+    "amortized_seconds": 4.709530537948012,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3300,
+      "completion_tokens": 283,
+      "total_tokens": 3583,
+      "completion_tokens_details": {
+        "reasoning_tokens": 146
+      }
+    },
+    "api_response_id": "resp_0e91b55c5f0e0031016ae593ce84588197807b7e183f7fa01d",
+    "wire_record": "wire/eval/0406_b8857cc8628d41c2a93b0daa220a4142"
+  }
+}

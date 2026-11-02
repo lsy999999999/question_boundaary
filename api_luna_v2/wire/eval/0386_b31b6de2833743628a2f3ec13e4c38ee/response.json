@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431945407349640,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0fabba2afe771e7b016ae599862dd48193ad7ac6c71f89e184",
+    "object": "chat.completion",
+    "created": 1793431945,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"prbs\",\"reason\":\"State_cubic has the best trajectory-level CV NMSE (0.00223), well below alternatives, but residual lag correlation and unexplained interventions leave adequacy uncertain.\",\"prediction\":\"At matched current state and input, the predicted response will not depend on earlier input history; systematic differences under PRBS would falsify this representation.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Validation supports an empirical nonlinear state model, not a specific cross-domain mechanism.\",\"condition_to_check\":\"Check whether PRBS responses differ at matched current state and input after accounting for measurement noise.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3465,
+      "completion_tokens": 250,
+      "total_tokens": 3715,
+      "completion_tokens_details": {
+        "reasoning_tokens": 113
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.997776933014393
+}

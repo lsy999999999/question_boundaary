@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430046428813001,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0a5f870f486c4233016ae5921c46c48190b50adfd7846510f3",
+    "object": "chat.completion",
+    "created": 1793430046,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the lowest trajectory-held-out NMSE (0.00143), clearly outperforming alternatives; PRBS has the greatest prediction disagreement among plausible models.\",\"prediction\":\"Under irregular reversals, output will retain a smooth history-dependent response after input switches, rather than track input instantaneously.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Post-pulse decay is consistent with accumulated past influence persisting after input returns to zero.\",\"condition_to_check\":\"Check whether slow history features predict PRBS responses beyond current input and visible output; failure would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3275,
+      "completion_tokens": 213,
+      "total_tokens": 3488,
+      "completion_tokens_details": {
+        "reasoning_tokens": 75
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.94335921946913
+}

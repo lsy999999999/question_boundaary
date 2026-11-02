@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431558875002790,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0b639fc1f175792b016ae59803eab48195bf4b5d22eb21024c",
+    "object": "chat.completion",
+    "created": 1793431558,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow-memory validation error is lowest (0.0019), far below the state model, and the current residuals are strongly autocorrelated; PRBS probes varied input histories.\",\"prediction\":\"After matching current input and output, PRBS segments with different prior input histories will still produce different outputs.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Accumulated history improves prediction, but the observations do not establish a specific cross-domain mechanism.\",\"condition_to_check\":\"Test whether history-dependent output differences persist across repeated PRBS trajectories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2806,
+      "completion_tokens": 274,
+      "total_tokens": 3080,
+      "completion_tokens_details": {
+        "reasoning_tokens": 145
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.893373585306108
+}

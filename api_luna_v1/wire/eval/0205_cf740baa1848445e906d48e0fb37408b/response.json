@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430086108299231,
+  "http_status": 200,
+  "body": {
+    "id": "resp_03a9c98b9d5fa882016ae59243aec4819682986585e2277e60",
+    "object": "chat.completion",
+    "created": 1793430086,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"alternating\",\"reason\":\"Saturating memory has the lowest trajectory-held-out error, but residual lag-1 correlation remains and alternating input has the largest prediction disagreement among available experiments.\",\"prediction\":\"During rapid switches, output will lag the input and depend on preceding pulses; the fitted model predicts this better than an instantaneous state-only response.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2962,
+      "completion_tokens": 183,
+      "total_tokens": 3145,
+      "completion_tokens_details": {
+        "reasoning_tokens": 97
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.119971228763461
+}

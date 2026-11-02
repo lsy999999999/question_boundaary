@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793424049678557073,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "prbs",
+    "reason": "PRBS tests complex, irregular input patterns; cubic terms capture nonlinearities.",
+    "prediction": "PRBS will show reduced response magnitude at high states, indicating saturation.",
+    "accept": true,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Response magnitude decreases with increasing input complexity.",
+      "condition_to_check": "Reduced response during PRBS compared to step rest."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"prbs\",\n  \"reason\": \"PRBS tests complex, irregular input patterns; cubic terms capture nonlinearities.\",\n  \"prediction\": \"PRBS will show reduced response magnitude at high states, indicating saturation.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"Response magnitude decreases with increasing input complexity.\",\n    \"condition_to_check\": \"Reduced response during PRBS compared to step rest.\"\n  }\n}",
+    "input_tokens": 4009,
+    "output_tokens": 114,
+    "batch_elapsed_seconds": 2.813647063449025,
+    "amortized_seconds": 2.813647063449025,
+    "peak_gpu_allocated_gb": 14.989767074584961,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

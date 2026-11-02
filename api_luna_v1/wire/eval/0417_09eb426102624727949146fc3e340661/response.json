@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430512063755292,
+  "http_status": 200,
+  "body": {
+    "id": "resp_07b143ed47939abd016ae593edc0ec81938156f0b52eed9a76",
+    "object": "chat.completion",
+    "created": 1793430511,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"memory_slow has the lowest leave-trajectory-out error, substantially below alternatives, and low residual lag supports its adequacy; alternating probes remaining disagreement among memory models.\",\"prediction\":\"After rapid input reversals, output will retain a smooth, decaying influence from earlier inputs rather than track the current input alone.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts output after current input is controlled.\",\"condition_to_check\":\"With matched current input and output, earlier input history should predict subsequent output; failure weakens this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3302,
+      "completion_tokens": 232,
+      "total_tokens": 3534,
+      "completion_tokens_details": {
+        "reasoning_tokens": 99
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.0464487550780177
+}

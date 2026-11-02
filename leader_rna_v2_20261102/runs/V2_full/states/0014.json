@@ -1,0 +1,1633 @@
+{
+  "version": 14,
+  "candidates": {
+    "C1": {
+      "id": "C1",
+      "version": 6,
+      "ledger": [
+        {
+          "version": 1,
+          "summary": "L1 introduced H1 production-relaxation threshold and trapping model; alternatives retained.",
+          "superseded": false
+        },
+        {
+          "version": 2,
+          "summary": "L2 sharpened slow loop exchange/percolation bridge and noted generic analogies plus ambiguous motion.",
+          "superseded": false
+        },
+        {
+          "version": 3,
+          "summary": "Executor interpreted R1 analogies and E1 mixed mobility summaries; retained H1 as provisional.",
+          "superseded": false
+        },
+        {
+          "version": 4,
+          "summary": "L3 formalized closed-form x dynamics, conditional schedule illustration and 36-48 h commitment.",
+          "superseded": false
+        },
+        {
+          "version": 5,
+          "summary": "Current state preserves R2 zero-result status and requests C3, R3, E2.",
+          "superseded": false
+        }
+      ],
+      "target": "Delayed emergence and persistence of segmented internal cavity area in transcribing RNA droplets, especially B versus A.",
+      "known_relations": [
+        "E0: A/B area fractions similar at t=0; at 24 h A=.00446 and B=.08918. Image area fraction, not concentration or free energy; fields nested within two preparations.",
+        "R1_S1 abstract: exchange-dependent arrest in simulated sticker-spacer condensate coalescence; not RNA loop junctions, cavity formation, or transcription.",
+        "R1_S3 abstract: percolated beta-sheet networks can trap protein condensates; distinct chemistry.",
+        "R2 returned zero sources for RNA loop exchange; unresolved retrieval, not biological negative.",
+        "E1 B n=279, median squared displacement 1.596 um2 over median 98 frames, selected top-100 median 123.05 um2; A n=838, median .636 um2 over 159 frames, selected top-100 median 19.58 um2. Unequal durations and selected tail do not establish cavity-specific arrest."
+      ],
+      "hypotheses": [
+        "H1 (new, unconfirmed): production-driven accumulation of connected RNA loop junctions outruns relaxation and traps internal solvent-rich domains after a threshold crossing.",
+        "H1a (unverified bridge): terminal self-complementary loops act as reversible stickers; sufficiently slow exchange and network connectivity permit path-dependent arrest.",
+        "H2 alternative: equilibrium composition-driven demixing; after matching final composition and equilibration, production schedule does not matter.",
+        "H3 alternative: amplification-linked carryover or imaging/segmentation changes cause some or all of the contrast."
+      ],
+      "gaps": [
+        {
+          "id": "G1",
+          "status": "open",
+          "description": "Target-compatible RNA loop exchange/connectivity and production-relaxation threshold remain unverified. R2 returned no usable sources."
+        },
+        {
+          "id": "G2",
+          "status": "open",
+          "description": "Amplification effects on template/product heterogeneity versus carryover unresolved."
+        },
+        {
+          "id": "G3",
+          "status": "open",
+          "description": "No calibrated cavity-specific mobility or measured phase-composition evidence yet establishes cavity identity or arrest."
+        }
+      ],
+      "variables_units": {
+        "t": "h",
+        "r": "reduced production rate per droplet volume, h^-1",
+        "x": "dimensionless effective network state",
+        "alpha": "dimensionless conversion",
+        "tau": "relaxation time, h",
+        "xc": "dimensionless threshold",
+        "q": "segmented cavity area fraction proxy, dimensionless",
+        "kn": "h^-1",
+        "kd": "h^-1"
+      },
+      "equations": [
+        "xdot=alpha*r-x/tau",
+        "For constant r over duration T: x(T)=x0*exp(-T/tau)+alpha*r*tau*(1-exp(-T/tau)).",
+        "Before arrest qdot=kn*max(x-xc,0)-kd*q; after first upward crossing x>=xc impose qdot=0.",
+        "Constant-rate threshold requires alpha*r*tau>xc.",
+        "Observed y_area=q+epsilon is an uncalibrated map; q is not RNA concentration."
+      ],
+      "parameters_ranges": {
+        "alpha": "positive, exploratory .1-10, not estimated",
+        "tau": "positive, exploratory .1-100 h, unmeasured",
+        "xc": "0-1 normalized x, not estimated",
+        "kn": "positive .001-1 h^-1, not estimated",
+        "kd": "0-1 h^-1, not estimated"
+      },
+      "initial_boundary_conditions": "x(0)=x0 in [0,1], r>=0; q(0) maps to measured area fraction only provisionally. No spatial geometry or conservation claim.",
+      "observation_mapping": "E0 is segmented dark area / filled droplet area. E1 is aggregate track displacement, not cavity-specific relaxation. E2, if returned, is direct measured phase composition with units/conditions, not inference from DNA reads.",
+      "alternatives": [
+        "Equilibrium demixing set by final composition, schedule-independent after equilibration.",
+        "Carryover from amplification changes transcription or imaging.",
+        "Segmentation threshold or denominator effects alter area fraction."
+      ],
+      "predictions": [
+        "Equal integrated production schedules can produce different x endpoints if relaxation occurs during production; H1 predicts only a schedule crossing xc traps q, while H2 predicts equal endpoint after matched composition and equilibration. This awaits C3 actual result.",
+        "If B crossed threshold by 24 h, conditional commitment from L3 predicts at 36 and 48 h y_area remains above A and grows more slowly than over 12-24 h."
+      ],
+      "checks": [
+        "alpha*r and x/tau both h^-1; qdot terms h^-1.",
+        "Closed-form solution follows integrating factor; r=0 yields exponential decay; if alpha*r*tau<=xc and x0<xc there is no crossing.",
+        "Post-threshold freeze imposes persistence and is not established empirically.",
+        "Area fraction is not concentration; no fit claimed.",
+        "No R3, C3, or E2 output has yet been returned in this input."
+      ],
+      "evidence_conflicts": [
+        "E1 B high-displacement tail conflicts with uniform immobilization, but durations and selection differ.",
+        "R1_S1 material differs from RNA loops; R2 yielded zero results.",
+        "E0 is compatible with delayed B increase but not mechanism-specific."
+      ],
+      "untested": [
+        "RNA loop exchange/connectivity and network relaxation.",
+        "Whether tracked objects are cavities and how censoring affects comparison.",
+        "Whether dark area maps to physical cavity fraction.",
+        "Whether phase compositions track cavity state after history controls."
+      ],
+      "dissent": "I preserve H1 only as a hypothesis. R2 zero results are unresolved, not negative biological evidence; R1 analogies are insufficient for target transfer.",
+      "next_task": "Interpret actual C3/R3/E2 returns, update the conditional schedule discriminator and phase alternative, and retain explicit no-result status where applicable.",
+      "author": "executor",
+      "reply": "R3"
+    }
+  },
+  "tasks": {
+    "T1": {
+      "id": "T1",
+      "candidate_id": "C1",
+      "gap_id": "G1",
+      "kind": "mechanism",
+      "status": "acceptance",
+      "deliverable": "Interpret actual returned background evidence on production/relaxation and arrest, assess transfer to transcribing associative RNA droplets, and compare schedule-history prediction with equilibrium demixing.",
+      "acceptance": "Identify source/support level, extract relation and conditions from actual returns, state transfer limits, preserve alternatives, and do not close G1 from related literature alone.",
+      "evidence_refs": [
+        "E0"
+      ],
+      "reason": "No actual tool returns are present; requests address the missing mechanism bridge and discrimination."
+    },
+    "T2": {
+      "id": "T2",
+      "candidate_id": "C1",
+      "gap_id": "G1",
+      "kind": "mechanism",
+      "status": "acceptance",
+      "deliverable": "Use direct background evidence on RNA loop exchange and connectivity to assess H1a plausibility and transfer conditions, while retaining the schedule-history discriminator against equilibrium demixing.",
+      "acceptance": "Extract source relations and actual conditions from returned records; distinguish RNA-loop binding from protein sticker systems; preserve C1 as hypothesis unless target-compatible bridge is justified; never infer RNA concentrations from DNA read frequencies.",
+      "evidence_refs": [
+        "R1_S1",
+        "R1_S3",
+        "E0",
+        "E1"
+      ],
+      "reason": "Current evidence establishes generic analogies only and E1 is ambiguous; target-specific RNA interaction kinetics remain missing."
+    },
+    "T3": {
+      "id": "T3",
+      "candidate_id": "C1",
+      "gap_id": "G1",
+      "kind": "mechanism",
+      "status": "acceptance",
+      "deliverable": "Execute conditional equal-dose threshold calculation, request direct phase-composition measurements, and retrieve RNA loop association/kinetics background.",
+      "acceptance": "Report assumptions, dimensions, threshold status, numerical checks, and equilibrium alternative; preserve R2 no-result status; do not infer concentration from DNA reads.",
+      "evidence_refs": [
+        "E0",
+        "R1_S1",
+        "E1",
+        "R2"
+      ],
+      "reason": "Produce a concrete conditional model consequence and seek the most relevant available composition measurement and RNA interaction evidence."
+    }
+  },
+  "actor_events": [
+    {
+      "label": "L1",
+      "role": "leader",
+      "reply": {
+        "recognition": "uncertain; no specific study is identified from the supplied input",
+        "summary": "E0 (initial_measurements.json) shows similar t=0 segmented empty-area fractions in A and B, followed by lower values in A (~0.0044 at 24 h) and increasing B values (~0.0892 at 24 h). These are image area fractions, not concentrations or free energies; seven fields are nested within two preparations. Candidate C1 proposes that B develops internal RNA-poor cavities when transcription-driven junction accumulation outruns network relaxation, trapping solvent-rich regions that then become mechanically arrested. This is an explicitly new, unconfirmed mechanism hypothesis, not an inference from the area-fraction curve. Reduced state x is load-bearing junction density (dimensionless effective fraction); r(t) is transcriptional production flux per droplet volume (h^-1 in this reduced model); tau is network relaxation time (h). Adopt xdot = alpha r(t) - x/tau, with alpha dimensionless. Define arrest threshold x_c and cavity state q: qdot = k_n max(x-x_c,0) - k_d q while x < x_c, and qdot = 0 after x first reaches x_c (arrest). Here q is cavity area fraction, k_n and k_d have units h^-1, and the post-threshold freeze is a proposed reduced rule, not established physics. It predicts a rate/history effect: at equal integrated production, a sufficiently fast pulse can cross x_c while a slow schedule does not; after arrest, q persists when production falls. Meaningful alternative C_alt is equilibrium composition-driven demixing: after matching final composition and allowing equilibration, cavity fraction should not depend on production schedule. E0 alone cannot distinguish these, identify x, show arrest, or establish amplification as causal.",
+        "candidates": [
+          {
+            "id": "C1",
+            "version": 1,
+            "target": "Delayed emergence and persistence of segmented internal RNA-poor cavities in transcribing RNA droplets, particularly the B versus A contrast.",
+            "known_relations": [
+              "E0: at t=0 A=0.01487 and B=0.01381; by 24 h A=0.00446 and B=0.08918 in mean segmented empty-area fraction.",
+              "E0 measures area fractions. It does not measure RNA concentration, composition, free energy, network relaxation, or cavity motion.",
+              "A/B differ by amplification treatment, whose effects on template sequence, purity, and carryover are not identified."
+            ],
+            "hypotheses": [
+              "H1 (new, unconfirmed): B enters a kinetic-arrest regime because transcription-driven accumulation of load-bearing RNA junctions exceeds network relaxation; solvent-rich cavities form above a threshold and become trapped when the network arrests.",
+              "H2 (alternative): amplification-linked composition or product heterogeneity changes equilibrium phase coexistence, producing cavities without a production-rate-dependent arrest threshold.",
+              "H3 (alternative causal path): reaction carryover or imaging/segmentation changes associated with preparation account for some or all of the difference."
+            ],
+            "gaps": [
+              {
+                "id": "G1",
+                "status": "open",
+                "description": "Missing relation: under what conditions can ongoing production and slow relaxation of an associating RNA network generate internal solvent-rich domains and arrest their coarsening, and what rate/history dependence follows? A result supporting a threshold or arrest under compatible conditions would motivate H1; evidence that such conditions are incompatible would weaken it."
+              },
+              {
+                "id": "G2",
+                "status": "open",
+                "description": "A/B causal attribution is unresolved among altered template/product populations, carryover, and measurement differences."
+              },
+              {
+                "id": "G3",
+                "status": "open",
+                "description": "No direct measurements of junction density, relaxation time, phase composition, or cavity trajectories are supplied."
+              }
+            ],
+            "variables_units": {
+              "t": "time (h)",
+              "r": "effective transcriptional production rate per droplet volume, reduced units h^-1",
+              "x": "dimensionless effective load-bearing junction fraction",
+              "tau": "network relaxation time (h)",
+              "alpha": "dimensionless conversion from integrated production to x",
+              "x_c": "dimensionless arrest threshold",
+              "q": "segmented cavity area fraction, dimensionless, 0<=q<=1; model state is only provisionally mapped to the measured observable",
+              "k_n": "cavity-generation coefficient (h^-1)",
+              "k_d": "pre-arrest cavity-loss coefficient (h^-1)"
+            },
+            "equations": [
+              "xdot = alpha*r(t) - x/tau",
+              "Before arrest: qdot = k_n*max(x-x_c,0) - k_d*q",
+              "At the first upward crossing x>=x_c, set qdot=0 as the minimal trapping rule; this is a hypothesis, not a known constitutive law.",
+              "Observation: y_area(t)=q(t)+epsilon only if segmentation faithfully reports the model cavity area fraction; this mapping is uncalibrated."
+            ],
+            "parameters_ranges": {
+              "alpha": "positive; exploratory dimensionless range 0.1 to 10, not estimated",
+              "tau": "positive; exploratory 0.1 to 100 h, not measured",
+              "x_c": "0 to 1 in the normalized x convention, not estimated",
+              "k_n": "positive; exploratory 0.001 to 1 h^-1, not estimated",
+              "k_d": "nonnegative; exploratory 0 to 1 h^-1, not estimated"
+            },
+            "initial_boundary_conditions": "x(0)=x0 in [0,1], q(0)=observed initial area fraction only under the unvalidated mapping; r(t)>=0. No spatial boundary or droplet geometry is supplied. This reduced model has no conservation claim for total RNA or solvent.",
+            "observation_mapping": "Only y_area, the segmented internal dark area divided by filled droplet area, is currently measured. It is not RNA concentration and need not equal a material volume fraction. SEM and object counts do not provide preparation-level replication. No fit is claimed.",
+            "alternatives": [
+              "C_alt equilibrium composition-driven phase separation: at matched final composition after equilibration, predicted cavity fraction is schedule-independent.",
+              "C_alt2 amplification-related reaction carryover can alter transcription or imaging independently of sequence/network arrest.",
+              "C_alt3 segmentation or denominator changes can alter y_area without equivalent changes in physical cavity volume."
+            ],
+            "predictions": [
+              "For a production pulse and a slower schedule with equal integrated production and matched final composition, H1 predicts cavity formation only in the schedule whose x(t) crosses x_c; C_alt predicts convergence after equilibration.",
+              "If H1 arrest has occurred, decreasing production after threshold crossing does not promptly erase q; before threshold crossing, q decays with timescale 1/k_d when x<=x_c.",
+              "Under a constant rate r, x approaches alpha*r*tau from below; threshold crossing is possible only if alpha*r*tau>x_c. This is a conditional consequence, not an estimated property of A or B."
+            ],
+            "checks": [
+              "Dimensional check: alpha*r and x/tau both have units h^-1; each term in qdot has units h^-1 because q and x are dimensionless.",
+              "Threshold limit: if alpha*r*tau<=x_c from x0 below threshold, the model predicts no newly generated cavities; if r=0, x decays exponentially with time constant tau.",
+              "Persistence is produced by the stated post-threshold arrest rule, so it is a distinct testable assumption, not a derivation from known RNA physics.",
+              "Measurement compatibility is unresolved: q is provisionally equated to an area fraction, not a concentration or volume fraction.",
+              "E0 trend is directionally compatible with delayed cavity growth in B but does not test x, threshold crossing, persistence after production stops, or schedule dependence."
+            ],
+            "evidence_conflicts": [
+              "The small initial difference and later B increase are compatible with delayed emergence, but field-pooled SEMs cannot establish preparation-level significance or causal mechanism.",
+              "No supplied evidence measures production rate, sequence heterogeneity, phase composition, or motion; alternatives remain live."
+            ],
+            "untested": [
+              "Whether this production/relaxation/arrest connection exists in the target material.",
+              "Whether amplification changes sequence/product composition, reaction carryover, or both.",
+              "Whether internal dark regions are solvent-rich cavities and whether they persist after production ceases.",
+              "Whether area fraction tracks physical cavity fraction consistently across time and conditions."
+            ],
+            "dissent": "No executor input or independent role judgment is present yet; preserve disagreement when returned.",
+            "next_task": "T1: retrieve background evidence on production-driven phase separation/gelation and kinetic arrest in associating polymer or RNA networks, then state whether conditions and predicted schedule dependence transfer. Preserve C1 as a hypothesis unless the relation and applicability are supported."
+          }
+        ],
+        "tasks": [
+          {
+            "id": "T1",
+            "candidate_id": "C1",
+            "gap_id": "G1",
+            "kind": "mechanism",
+            "status": "proposed",
+            "deliverable": "Executor: adopt/reissue the relation-oriented search request R1, extract the relevant result and conditions from returned abstract/metadata, and report whether it supports, weakens, or fails to bear on the production-versus-relaxation threshold and arrest link. Then propose one discriminating schedule-history prediction without claiming empirical confirmation.",
+            "acceptance": "Identify the source and its support level; extract the actual relation and conditions; explicitly assess transfer to transcribing associative RNA droplets; retain uncertainties and alternatives. Do not close G1 merely because related literature exists.",
+            "evidence_refs": [
+              "E0"
+            ],
+            "reason": "This is the missing mechanism bridge. The initial curve is insufficient to establish it."
+          }
+        ],
+        "requests": [
+          {
+            "type": "search",
+            "id": "R1",
+            "candidate_id": "C1",
+            "gap_id": "G1",
+            "missing_relation": "Whether production-driven accumulation in an associating polymer/RNA network can outpace relaxation to create and then kinetically arrest internal solvent-rich domains, including the conditions and rate-history dependence.",
+            "variables": [
+              "production rate r (h^-1 reduced units)",
+              "junction/network state x (dimensionless)",
+              "relaxation time tau (h)",
+              "cavity area fraction q (dimensionless observable proxy)"
+            ],
+            "conditions": "Background published by 2025-05-12; theory or experiments on associative polymer/RNA condensates, reaction-driven phase separation, gelation, or kinetic arrest. No target identity query.",
+            "query": "(RNA condensate OR RNA droplet OR associative polymer network) AND (transcription-driven OR reaction-driven OR production-driven) AND (kinetic arrest OR gelation OR viscoelastic relaxation OR solvent-rich domains OR pores)",
+            "change_if_found": "If a dated source supports production-rate competition with relaxation and arrested solvent-rich domain growth under conditions plausibly compatible with reversible RNA junctions, retain H1 as a motivated hypothesis and sharpen its applicability conditions. If sources show incompatible timescales/material requirements or only equilibrium demixing, weaken H1 and prioritize composition-driven C_alt. Abstract-level evidence alone cannot establish target applicability."
+          },
+          {
+            "type": "evidence",
+            "id": "E1",
+            "category": "motion",
+            "reason": "Preparation-1 cavity tracking could establish whether cavities persist, coarsen, merge, or move relative to droplets. Arrest predicts a plateau in cavity motion/coarsening after a threshold; continued coarsening favors an unfrozen demixing model. Availability is not support, and one preparation is not independent replication."
+          }
+        ],
+        "literature_use": [],
+        "adjudication": null,
+        "final": null
+      },
+      "protocol_errors": [],
+      "input_sha256": "a698e5b0f4305e24a6f6f8a4113d393a89e6e2efe4bd6f2687773b70c7e6764b",
+      "reply_sha256": "9b706bdc8428730a364b3a3f59c1a737ea24bfa88b07a02f62bd2fae7d9f1d3d"
+    },
+    {
+      "label": "R1",
+      "role": "executor",
+      "reply": {
+        "recognition": "uncertain; no specific study recognized",
+        "summary": "I adopt T1 by reissuing the relation search. The supplied tool ledger is empty, so there are no actual literature returns to interpret and no support for the missing production-relaxation/arrest relation can yet be claimed. E0 reports segmented empty-area fraction, B rising from 0.01381 at 0 h to 0.08918 at 24 h while A is 0.00446 at 24 h. These are image area fractions, not RNA concentrations or direct phase composition; fields are nested within two preparations. Preserve C1 hypothesis H1: xdot=alpha*r(t)-x/tau, where x is an effective dimensionless junction state, r is a reduced production rate (h^-1), tau is relaxation time (h), alpha is dimensionless. Before threshold crossing x>=x_c, qdot=k_n*max(x-x_c,0)-k_d*q; after the first crossing impose qdot=0 as a phenomenological trapping rule. q is only provisionally mapped to segmented area fraction y_area=q+epsilon. At equal integrated production and matched final composition, a pulse may cross x_c and trap q while a slower schedule may not; equilibrated composition-driven demixing predicts schedule-independent convergence. This is conditional on H1 and the uncalibrated observation map.",
+        "candidates": [
+          {
+            "id": "C1",
+            "version": 2,
+            "target": "Delayed emergence and persistence of segmented internal RNA-poor cavities in transcribing RNA droplets, particularly B versus A.",
+            "known_relations": [
+              "E0: t=0 A=0.01487 and B=0.01381; t=24 h A=0.00446 and B=0.08918 mean segmented empty-area fraction.",
+              "E0 is an image area fraction and does not measure RNA concentration, free energy, phase composition, network relaxation, or cavity motion.",
+              "Seven fields are pooled across two independent preparations; fields, objects, and SEMs do not establish preparation-level replication.",
+              "Amplification effects on template/product populations, carryover, and imaging are unresolved.",
+              "No broker search or evidence return is present in this input."
+            ],
+            "hypotheses": [
+              "H1 (new, explicit, unconfirmed): transcription-driven accumulation of load-bearing RNA junctions can outrun network relaxation, cross a threshold, generate internal solvent-rich domains, and kinetically trap their area.",
+              "H2 (alternative): amplification-linked composition or product heterogeneity changes equilibrium phase coexistence; at matched composition after equilibration cavity fraction is schedule-independent.",
+              "H3 (alternative): reaction carryover or imaging/segmentation changes explain some or all of the contrast."
+            ],
+            "gaps": [
+              {
+                "id": "G1",
+                "status": "open",
+                "description": "Whether production-driven accumulation can outrun relaxation in an associating RNA network and generate then arrest internal solvent-rich domains, under what material and timescale conditions, and with what rate-history dependence. No returned source addresses it yet."
+              },
+              {
+                "id": "G2",
+                "status": "open",
+                "description": "A/B causal attribution among template/product heterogeneity, carryover, and measurement differences is unresolved."
+              },
+              {
+                "id": "G3",
+                "status": "open",
+                "description": "No direct junction-state, relaxation-time, phase-composition, or cavity-trajectory measurement is supplied; observation map is uncalibrated."
+              }
+            ],
+            "variables_units": {
+              "t": "time (h)",
+              "r": "effective production rate, reduced units (h^-1)",
+              "x": "dimensionless effective load-bearing junction fraction",
+              "tau": "relaxation time (h)",
+              "alpha": "dimensionless conversion",
+              "x_c": "dimensionless threshold",
+              "q": "model cavity area fraction, dimensionless [0,1], provisional map",
+              "k_n": "generation coefficient (h^-1)",
+              "k_d": "pre-arrest loss coefficient (h^-1)",
+              "y_area": "segmented internal dark area / filled droplet area, dimensionless"
+            },
+            "equations": [
+              "xdot=alpha*r(t)-x/tau",
+              "Before arrest: qdot=k_n*max(x-x_c,0)-k_d*q",
+              "At first upward crossing x>=x_c impose qdot=0 thereafter; hypothesized arrest rule, not established constitutive physics.",
+              "Observation y_area=q+epsilon only under an uncalibrated segmentation-to-state map."
+            ],
+            "parameters_ranges": {
+              "alpha": "positive; exploratory 0.1 to 10, not estimated",
+              "tau": "positive; exploratory 0.1 to 100 h, not measured",
+              "x_c": "0 to 1 normalized x, not estimated",
+              "k_n": "positive; exploratory 0.001 to 1 h^-1, not estimated",
+              "k_d": "nonnegative; exploratory 0 to 1 h^-1, not estimated"
+            },
+            "initial_boundary_conditions": "x(0)=x0 in [0,1]; q(0) may equal observed area fraction only if the unvalidated mapping holds; r(t)>=0. No spatial boundary, geometry, or total RNA/solvent balance is specified.",
+            "observation_mapping": "Only segmented internal dark area divided by filled droplet area is measured. It is not concentration and need not equal material volume fraction. No fit is claimed. Fields do not provide independent preparation-level inference.",
+            "alternatives": [
+              "Equilibrium composition-driven demixing predicts schedule-independent cavity fraction after equilibration at matched composition.",
+              "Amplification-related carryover changes transcription or imaging without junction-mediated arrest.",
+              "Segmentation or denominator changes alter y_area without equivalent changes in cavity volume."
+            ],
+            "predictions": [
+              "At equal integrated production and matched final composition, a pulse crossing x_c predicts trapped q while a slower schedule staying below x_c predicts no new threshold-generated q; the equilibrium alternative predicts convergence after equilibration.",
+              "After crossing, reduced r does not promptly erase q under the imposed arrest rule; below threshold q may decay on timescale 1/k_d.",
+              "For constant r, x approaches alpha*r*tau; from below threshold crossing requires alpha*r*tau>x_c. Conditional consequence, not an estimate for A or B."
+            ],
+            "checks": [
+              "Dimensional: alpha*r and x/tau have units h^-1; qdot terms have units h^-1 since q and x are dimensionless.",
+              "Limit: r=0 gives x(t)=x(0)exp(-t/tau); if x(0)<x_c and alpha*r*tau<=x_c at constant rate, there is no upward crossing.",
+              "Persistence follows from the imposed post-crossing freeze and is an assumption to test.",
+              "No conservation or geometry maps area to volume; compatibility remains unresolved.",
+              "E0 is directionally compatible with delayed B area growth but does not measure x or test arrest or schedule dependence."
+            ],
+            "evidence_conflicts": [
+              "Initial similarity and later contrast are compatible with H1, H2, H3, or measurement effects; current data cannot distinguish them.",
+              "No returned literature or direct state/phase/motion evidence is available in this input."
+            ],
+            "untested": [
+              "Whether production/relaxation competition and threshold arrest exist in this material.",
+              "Whether amplification changes sequence/product population, carryover, or both.",
+              "Whether dark regions are solvent-rich cavities and persist after production stops.",
+              "Whether q maps consistently to y_area across conditions and time."
+            ],
+            "dissent": "No executor-leader disagreement can be assessed from this input. Preserve C1 only as a hypothesis; absent actual returns I neither adopt literature support nor close G1.",
+            "next_task": "T1: interpret broker returns from search and cavity tracking; state support level and transfer limits, then retain or weaken H1 without treating related literature as target confirmation."
+          }
+        ],
+        "tasks": [
+          {
+            "id": "T1",
+            "candidate_id": "C1",
+            "gap_id": "G1",
+            "kind": "mechanism",
+            "status": "in_progress",
+            "deliverable": "Interpret actual returned background evidence on production/relaxation and arrest, assess transfer to transcribing associative RNA droplets, and compare schedule-history prediction with equilibrium demixing.",
+            "acceptance": "Identify source/support level, extract relation and conditions from actual returns, state transfer limits, preserve alternatives, and do not close G1 from related literature alone.",
+            "evidence_refs": [
+              "E0"
+            ],
+            "reason": "No actual tool returns are present; requests address the missing mechanism bridge and discrimination."
+          }
+        ],
+        "requests": [
+          {
+            "type": "search",
+            "id": "R1",
+            "candidate_id": "C1",
+            "gap_id": "G1",
+            "missing_relation": "Whether production-driven accumulation in an associative polymer/RNA network can outpace relaxation to create and kinetically arrest internal solvent-rich domains, including material conditions and rate/history dependence.",
+            "variables": [
+              "production rate r (reduced h^-1)",
+              "junction state x (dimensionless)",
+              "relaxation time tau (h)",
+              "cavity area fraction q (dimensionless proxy)"
+            ],
+            "conditions": "Background published by 2025-05-12; associative polymer/RNA condensates, reaction-driven phase separation, gelation, or kinetic arrest. No target identity query.",
+            "query": "(RNA condensate OR RNA droplet OR associative polymer network) AND (transcription-driven OR reaction-driven OR production-driven) AND (kinetic arrest OR gelation OR viscoelastic relaxation OR solvent-rich domains OR pores)",
+            "change_if_found": "Compatible evidence for production-rate competition and arrest motivates H1 but does not establish transfer; incompatible material/timescale requirements or only equilibrium demixing weaken H1 and prioritize H2. Abstract evidence alone cannot establish target applicability."
+          },
+          {
+            "type": "evidence",
+            "id": "E1",
+            "category": "motion",
+            "reason": "Request preparation-1 tracking of cavity persistence, coarsening, merging, and motion relative to droplets. A motion/coarsening plateau is consistent with the imposed arrest rule; continued coarsening challenges it. One preparation is not independent replication; availability is not support."
+          }
+        ],
+        "literature_use": [],
+        "adjudication": null,
+        "final": null
+      },
+      "protocol_errors": [],
+      "input_sha256": "0f04f143a381e8f81d4801ea5d83e193fdee62aaf1016d3f5215454adfac2411",
+      "reply_sha256": "110531aab66dcae105d0a7712b2444d2e33ca75506bf8aebb17d6e98c4b96884"
+    },
+    {
+      "label": "L2",
+      "role": "leader",
+      "reply": {
+        "recognition": "uncertain; no specific study is identified from the supplied input",
+        "summary": "R1_S1 reports, in an abstract-only metadynamics study of sticker-spacer condensates, kinetic arrest when stickers exchange slowly, while faster exchange can allow merger toward equilibrium; this supports the general possibility of exchange-limited arrest, not transcription-generated internal cavities in this RNA system. R1_S3 reports gel-like kinetic trapping for percolated beta-sheet networks in proteins with multiple LARKS, a material-specific route. R1_S2 is a review noting condensates can retard diffusion; R1_S4 concerns electrostatics and phase-behavior modeling. All are abstract-level background. E1 motion summaries show B n=279, median final squared displacement 1.596 um^2 over median 98 frames, with top-100 high-displacement median 123.05 um^2; A n=838, median 0.636 um^2 over 159 frames, top-100 median 19.58 um^2. Unequal track durations and selected upper tails make these summaries insufficient to infer arrested cavity motion. I retain C1 as an unconfirmed hypothesis, sharpened to slow exchange/percolation of reversible RNA loop junctions as a possible memory mechanism. Its conditional threshold consequence remains x_ss=alpha*r*tau>x_c for constant r. No target-specific confirmation or DNA-to-RNA concentration inference is made.",
+        "candidates": [
+          {
+            "id": "C1",
+            "version": 2,
+            "ledger": [
+              {
+                "version": 1,
+                "summary": "H1: production-driven accumulation outruns relaxation, crossing an arrest threshold and trapping solvent-rich cavities; reduced equations and dimensional/limit checks were supplied in L1. H2 equilibrium composition demixing and carryover/measurement alternatives retained.",
+                "superseded": false
+              }
+            ],
+            "target": "Delayed emergence and persistence of internal RNA-poor cavity area in transcribing RNA droplets, especially the B/A contrast.",
+            "known_relations": [
+              "E0: mean segmented area fraction is similar at t=0 (A .01487, B .01381); at 24 h A .00446 and B .08918. These are pooled-field image measures, not independent preparation-level inference.",
+              "R1_S1 (abstract only; 2024-12-15) describes slow sticker exchange causing kinetic arrest in simulated sticker-spacer condensate coalescence; faster exchange at similar saturation permits merger to equilibrium. It does not study transcription-produced cavities or this RNA nanostructure.",
+              "R1_S3 (abstract only; 2023-06-29) describes kinetically trapped gel-like condensates for proteins with at least two LARKS through percolated beta-sheet networks; protein-specific chemistry and topology limit transfer.",
+              "R1_S2 is a review abstract on condensate tradeoffs including diffusion retardation; R1_S4 is about electrostatics and model phase-behavior accuracy in charge-rich condensates. Neither directly supplies the missing cavity mechanism.",
+              "E1 is existing preparation-1 tracking summary: B has fewer and shorter tracks than A, but a much larger selected top-100 displacement summary. Track-level censoring/distribution and cavity size/identity are unavailable in the summary."
+            ],
+            "hypotheses": [
+              "H1 (new, unconfirmed): production of associative RNA creates a percolating population of loop-mediated junctions whose exchange is slow relative to production and stress relaxation; a threshold crossing traps solvent-rich internal domains. This combines known general arrest possibilities with a new, unverified bridge to the target RNA and cavity formation.",
+              "H1a (mechanistic bridge hypothesis): self-complementary terminal RNA loops act as stickers; slow junction exchange plus sufficient network connectivity can produce a long-lived arrested state. No supplied source establishes these assumptions for this material.",
+              "H2 alternative: amplification-linked composition/product heterogeneity changes equilibrium phase coexistence; at matched final composition after equilibration, schedule history should not matter.",
+              "H3 alternative: reaction carryover or measurement/segmentation differences associated with amplification explain some or all of the condition contrast."
+            ],
+            "gaps": [
+              {
+                "id": "G1",
+                "status": "open",
+                "description": "Do reversible RNA loop junctions have exchange/connectivity conditions capable of arresting this network, and can production rate cross a threshold that traps internal cavities? R1 supports generic exchange-limited arrest only in other condensate systems."
+              },
+              {
+                "id": "G2",
+                "status": "open",
+                "description": "Causal effects of amplification on template/product heterogeneity versus reaction carryover remain unresolved."
+              },
+              {
+                "id": "G3",
+                "status": "open",
+                "description": "Tracking summaries do not resolve cavity-specific mobility, coarsening, or arrest because durations and selected displacement summaries differ; network state and phase composition are unmeasured."
+              }
+            ],
+            "variables_units": {
+              "t": "h",
+              "r": "reduced production rate per droplet volume (h^-1)",
+              "x": "dimensionless effective load-bearing junction fraction",
+              "tau": "relaxation time (h)",
+              "alpha": "dimensionless production-to-junction conversion",
+              "x_c": "dimensionless arrest threshold",
+              "q": "cavity area fraction proxy (dimensionless, 0 to 1)",
+              "k_n": "h^-1 cavity creation coefficient",
+              "k_d": "h^-1 pre-arrest cavity loss coefficient"
+            },
+            "equations": [
+              "xdot=alpha*r(t)-x/tau",
+              "Before arrest: qdot=k_n*max(x-x_c,0)-k_d*q.",
+              "At first upward crossing x>=x_c, impose qdot=0 as a minimal trapping rule.",
+              "For constant r, x_ss=alpha*r*tau, and threshold crossing from below is possible only when alpha*r*tau>x_c.",
+              "Observed y_area=q+epsilon is an uncalibrated provisional measurement mapping, not a concentration or volume fraction."
+            ],
+            "parameters_ranges": {
+              "alpha": "positive, exploratory 0.1-10, not estimated",
+              "tau": "positive, exploratory 0.1-100 h, not measured",
+              "x_c": "0-1 under normalized x convention, not estimated",
+              "k_n": "positive, exploratory 0.001-1 h^-1, not estimated",
+              "k_d": "0-1 h^-1, not estimated"
+            },
+            "initial_boundary_conditions": "x(0)=x0 in [0,1]; q(0) equals initial measured area fraction only under unvalidated mapping. r(t)>=0. No spatial geometry or conservation law is supplied.",
+            "observation_mapping": "E0 is segmented dark internal area divided by filled-droplet area. E1 reports summarized track displacement, not a direct relaxation measurement or cavity-specific coarsening rate. Neither identifies x, tau, composition, or RNA concentration.",
+            "alternatives": [
+              "H2 equilibrium composition-driven demixing, history-independent after composition matching and equilibration.",
+              "H3 amplification-related reaction carryover changes transcription or imaging.",
+              "H4 apparent cavity changes due to segmentation/denominator or tracking-selection effects."
+            ],
+            "predictions": [
+              "H1 predicts equal-integrated-production schedules can differ if only the faster schedule raises x above x_c; H2 predicts convergence after matched final composition and equilibration.",
+              "After threshold crossing, cavity area should persist and cavity-specific coarsening/mobility should plateau; E1 summaries cannot yet test this due to unequal track duration and selection.",
+              "Conditional 36-48 h commitment: if H1 arrest has occurred in B by 24 h, its mean segmented cavity area fraction should remain above A at 36 and 48 h, with slower growth than the 12-24 h increase. This is qualitative and may fail if the mapping changes or no arrest occurred."
+            ],
+            "checks": [
+              "Units remain consistent: alpha*r and x/tau are h^-1; qdot terms are h^-1.",
+              "At r=0, x decays exponentially with tau; if x remains below x_c, the model creates no new cavities.",
+              "The generic literature relation is about condensate coalescence or protein-network aging, not RNA cavity nucleation; the bridge is a marked hypothesis.",
+              "The post-threshold freeze rule builds persistence into the model and needs independent cavity-specific motion/coarsening evidence.",
+              "E1 is not interpreted as proof of arrest: B track durations are shorter and high-displacement tail summary differs markedly."
+            ],
+            "evidence_conflicts": [
+              "E0 is compatible with delayed B cavity emergence but cannot identify mechanism or causal effect.",
+              "E1 has larger B selected-tail displacement despite a smaller B median and shorter median tracks; this is inconsistent with a simple claim that all B cavities are immobile and suggests heterogeneity or selection.",
+              "R1_S1 supports slow-exchange arrest in a different modeled system, but not cavity creation, RNA-loop exchange, or transcription coupling."
+            ],
+            "untested": [
+              "RNA loop junction exchange rate and network connectivity in the target conditions.",
+              "Whether the reported tracked objects are cavities and how track censoring affects comparisons.",
+              "Whether q faithfully maps to the segmented area fraction.",
+              "Whether production-history effects persist at matched final composition."
+            ],
+            "dissent": "No executor scientific interpretation is present in this input beyond its prior request to preserve H1 as unconfirmed. Keep any later disagreement explicit.",
+            "next_task": "T2: retrieve background on RNA kissing-loop/self-complementary junction exchange and network connectivity/viscoelasticity, then report whether conditions plausibly support H1a. Do not use DNA read frequencies as RNA concentration."
+          }
+        ],
+        "tasks": [
+          {
+            "id": "T2",
+            "candidate_id": "C1",
+            "gap_id": "G1",
+            "kind": "mechanism",
+            "status": "proposed",
+            "deliverable": "Executor: adopt/reissue R2 on RNA loop-junction exchange and network connectivity/relaxation; extract actual reported conditions and relation; assess whether H1a transfers, and specify a schedule-history discriminator against equilibrium composition demixing.",
+            "acceptance": "Use actual returned sources and their support level; distinguish nucleic-acid loop binding from protein sticker systems; preserve C1 as hypothesis unless target-compatible bridge is justified; do not infer RNA concentration from DNA read frequencies.",
+            "evidence_refs": [
+              "R1_S1",
+              "R1_S3",
+              "E0",
+              "E1"
+            ],
+            "reason": "R1 establishes only generic analogues; the target-specific interaction interface is still missing."
+          }
+        ],
+        "requests": [
+          {
+            "type": "search",
+            "id": "R2",
+            "candidate_id": "C1",
+            "gap_id": "G1",
+            "missing_relation": "Whether reversible RNA self-complementary/kissing-loop junctions can form connected networks with exchange or relaxation slow enough to create path-dependent viscoelastic arrest.",
+            "variables": [
+              "loop-junction dissociation/exchange time (s or min)",
+              "network connectivity/percolation threshold (dimensionless)",
+              "relaxation time (s or min)",
+              "RNA concentration only when directly measured"
+            ],
+            "conditions": "Date <=2025-05-12; RNA kissing-loop or self-assembling RNA nanostructure networks; kinetic/relaxation measurements, condensate material properties, or junction exchange. No target identity search.",
+            "query": "RNA kissing-loop network junction exchange kinetics relaxation viscoelasticity self-assembling RNA nanostructure",
+            "change_if_found": "Direct measurements showing slow exchange or percolation under comparable RNA loop/ionic conditions strengthen plausibility of H1a but do not establish cavities or transcription dependence. Fast exchange or absent network connectivity weakens this bridge and shifts priority to equilibrium composition or carryover alternatives."
+          }
+        ],
+        "literature_use": [
+          {
+            "source_id": "R1_S1",
+            "action": "modify_as_hypothesis",
+            "relation": "Slow sticker exchange can kinetically arrest simulated sticker-spacer condensate coalescence; faster exchange allows merger under reported model conditions.",
+            "variables_units": "sticker exchange timescale and condensate merger kinetics; abstract provides no transferable numeric units or threshold",
+            "conditions": "Abstract-only metadynamics simulations of sticker-spacer condensates, 2024 publication.",
+            "impact_on_model_or_action": "Motivates but does not validate H1a; search directly for RNA loop exchange/relaxation."
+          },
+          {
+            "source_id": "R1_S3",
+            "action": "alternative",
+            "relation": "Percolated beta-sheet networks can kinetically trap protein condensates with multiple LARKS.",
+            "variables_units": "LARKS abundance/location and viscoelastic state; no target parameters available",
+            "conditions": "Protein/RNA-binding protein model systems; abstract-only.",
+            "impact_on_model_or_action": "Supports a general percolation-arrest analogy but distinct chemistry makes it weak transfer evidence."
+          },
+          {
+            "source_id": "R1_S2",
+            "action": "followup",
+            "relation": "Condensates can retard diffusion and may inhibit reaction pathways.",
+            "variables_units": "diffusion and reaction rates; abstract gives no target values",
+            "conditions": "Review abstract.",
+            "impact_on_model_or_action": "Background only; not evidence for cavity mechanism."
+          },
+          {
+            "source_id": "R1_S4",
+            "action": "followup",
+            "relation": "Charge-rich condensate phase behavior depends on electrostatic interactions and explicit charge treatment.",
+            "variables_units": "charge patterning, stoichiometry, salt; no target values",
+            "conditions": "Coarse-grained modeling study, abstract-only.",
+            "impact_on_model_or_action": "Keep ionic/compositional dependence as a possible alternative; no direct causal inference."
+          }
+        ],
+        "adjudication": null,
+        "final": null
+      },
+      "protocol_errors": [],
+      "input_sha256": "b4d0e17579b44374c06197b5049e7c5efb40d97edd9e73c52e9936ed5afc10ef",
+      "reply_sha256": "dd41ba52b64d0c83dbb3600f8328d9681978892f62e4fc3c6e3bda21cad54826"
+    },
+    {
+      "label": "R2",
+      "role": "executor",
+      "reply": {
+        "recognition": "uncertain; no specific target study recognized",
+        "summary": "R1_S1 (abstract only, 2024-12-15) reports metadynamics simulations in which slow sticker exchange kinetically arrests sticker-spacer condensate coalescence, while faster exchange at similar saturation permits merger; it does not address RNA loop junctions, cavity formation, or transcription coupling. R1_S3 (abstract only, 2023-06-29) reports gel-like kinetic trapping from percolated beta-sheet networks in proteins with at least two LARKS; this is chemically distinct. R1_S2 is a review on condensate effects on reaction pathways, and R1_S4 concerns electrostatics and charge-rich condensate phase modeling; neither provides the missing mechanism. E1 existing preparation-1 summary: B n=279 tracks, median final squared displacement 1.596 um2, median 98 frames, selected top-100 median 123.048 um2; A n=838, median 0.636 um2, median 159 frames, selected top-100 median 19.583 um2. The unequal durations and selected-tail statistic do not support uniform immobilization; they are compatible with heterogeneity or selection and do not establish cavity-specific arrest. H1 remains an explicit unconfirmed bridge hypothesis. Search R2 is issued for RNA self-complementary/kissing-loop exchange and network connectivity.",
+        "candidates": [
+          {
+            "id": "C1",
+            "version": 4,
+            "ledger": [
+              {
+                "version": 1,
+                "summary": "L1 introduced H1 production-relaxation threshold and trapping model with alternatives.",
+                "superseded": false
+              },
+              {
+                "version": 2,
+                "summary": "R1 executor reply retained H1 without actual search results and requested search/motion data.",
+                "superseded": false
+              },
+              {
+                "version": 3,
+                "summary": "L2 added generic literature analogies, E1 motion summaries, and conditional 36-48 h commitment; retained gaps.",
+                "superseded": false
+              }
+            ],
+            "target": "Delayed emergence and persistence of internal RNA-poor cavity area in transcribing RNA droplets, especially the B/A contrast.",
+            "known_relations": [
+              "E0: mean segmented area fraction A=.01487 and B=.01381 at t=0; at 24 h A=.00446 and B=.08918. Pooled fields are not independent preparation-level inference.",
+              "R1_S1 abstract: slow sticker exchange can arrest simulated sticker-spacer condensate coalescence; faster exchange at similar saturation allows merger. No target RNA or cavity mechanism.",
+              "R1_S3 abstract: multiple LARKS can form percolated beta-sheet networks and kinetically trap protein condensates; chemistry differs from RNA loop junctions.",
+              "R1_S2 review abstract mentions both enhancement and inhibition of reactions in condensates, including diffusion retardation; not cavity mechanism evidence.",
+              "R1_S4 abstract concerns electrostatic effects and coarse-grained phase predictions for charge-rich condensates; ionic/composition variables remain possible alternatives.",
+              "E1 existing prep-1 summary: B n=279, median final squared displacement 1.596 um2, median 98 frames, selected top-100 median 123.048 um2; A n=838, median .636 um2, median 159 frames, selected top-100 median 19.583 um2. Unequal track durations and selected tail limit interpretation."
+            ],
+            "hypotheses": [
+              "H1 (new, unconfirmed): production of associative RNA creates a percolating population of loop-mediated junctions whose exchange is slow relative to production and stress relaxation; threshold crossing traps internal solvent-rich domains. This is a new bridge hypothesis, not established in target material.",
+              "H1a (unverified bridge): terminal self-complementary RNA loops act as exchangeable stickers, and slow exchange plus sufficient connectivity can produce long-lived viscoelastic arrest.",
+              "H2 alternative: amplification-linked composition/product heterogeneity changes equilibrium phase coexistence; at matched composition after equilibration schedule history does not matter.",
+              "H3 alternative: reaction carryover or imaging/segmentation differences cause some or all of the contrast."
+            ],
+            "gaps": [
+              {
+                "id": "G1",
+                "status": "open",
+                "description": "Whether reversible RNA loop junctions have exchange and connectivity conditions capable of arresting this network, and whether production rate can cross a threshold that traps internal cavities. R1 supports generic arrest analogies only in other condensate systems."
+              },
+              {
+                "id": "G2",
+                "status": "open",
+                "description": "Amplification effects on template/product heterogeneity versus reaction carryover remain unresolved."
+              },
+              {
+                "id": "G3",
+                "status": "open",
+                "description": "Tracking summaries do not resolve cavity-specific mobility, coarsening, or arrest; network state, relaxation, and phase composition are unmeasured."
+              }
+            ],
+            "variables_units": {
+              "t": "h",
+              "r": "reduced production rate per droplet volume (h^-1)",
+              "x": "dimensionless effective load-bearing junction fraction",
+              "tau": "relaxation time (h)",
+              "alpha": "dimensionless production-to-junction conversion",
+              "x_c": "dimensionless threshold",
+              "q": "cavity area fraction proxy, dimensionless [0,1]",
+              "k_n": "h^-1 cavity creation coefficient",
+              "k_d": "h^-1 pre-arrest cavity loss coefficient",
+              "t_ex": "RNA junction exchange time (s or min; unmeasured)",
+              "C_net": "network connectivity/percolation state (dimensionless; unmeasured)"
+            },
+            "equations": [
+              "xdot=alpha*r(t)-x/tau",
+              "Before arrest: qdot=k_n*max(x-x_c,0)-k_d*q.",
+              "At first upward crossing x>=x_c impose qdot=0 as a minimal trapping rule.",
+              "Constant r gives x_ss=alpha*r*tau; crossing from below requires alpha*r*tau>x_c.",
+              "Observed y_area=q+epsilon is an uncalibrated provisional map, not a concentration or volume fraction."
+            ],
+            "parameters_ranges": {
+              "alpha": "positive, exploratory 0.1-10, not estimated",
+              "tau": "positive, exploratory 0.1-100 h, not measured",
+              "x_c": "0-1 under normalized x, not estimated",
+              "k_n": "positive, exploratory 0.001-1 h^-1, not estimated",
+              "k_d": "0-1 h^-1, not estimated",
+              "t_ex": "unknown; no target-compatible range from current evidence",
+              "C_net_threshold": "unknown; no target-compatible range from current evidence"
+            },
+            "initial_boundary_conditions": "x(0)=x0 in [0,1]; q(0) equals observed area fraction only if unvalidated mapping holds; r(t)>=0. No spatial geometry or conservation law supplied.",
+            "observation_mapping": "E0 is segmented dark internal area divided by filled-droplet area. E1 summarizes displacement and track duration, not direct relaxation or cavity-specific coarsening. Neither identifies x, tau, composition, or RNA concentration.",
+            "alternatives": [
+              "H2 equilibrium composition-driven demixing; schedule-independent after matched composition and equilibration.",
+              "H3 amplification-related carryover changes transcription or imaging.",
+              "H4 segmentation, denominator, track-duration censoring, or selected-tail effects produce apparent mobility/area differences."
+            ],
+            "predictions": [
+              "At equal integrated production and matched final composition, H1 predicts different q only when the faster schedule crosses x_c; H2 predicts convergence after equilibration.",
+              "If threshold arrest occurs, cavity-specific coarsening should plateau after crossing; E1 cannot establish this because track durations differ and selected tail is not a population trajectory.",
+              "Conditional 36-48 h commitment inherited from L2: if arrest occurred in B by 24 h, mean B area fraction stays above A at 36 and 48 h and grows more slowly than over 12-24 h; conditional and not revised by E1."
+            ],
+            "checks": [
+              "Units: alpha*r and x/tau are h^-1; qdot terms are h^-1.",
+              "At r=0, x decays exponentially with tau; if below x_c there is no threshold-generated q.",
+              "R1_S1 is an abstract-level simulation of coalescence, not RNA cavity nucleation; R1_S3 is protein-specific beta-sheet aging. Transfer to RNA loops and transcription remains an added hypothesis.",
+              "Post-threshold freeze stipulates persistence and requires direct cavity-specific motion/coarsening evidence.",
+              "E1 B has shorter median tracks (98 vs 159 frames) and much larger selected top-100 displacement than A (123.048 vs 19.583 um2), despite smaller median displacement; this contradicts a simple all-B-immobile account and may reflect heterogeneity/selection.",
+              "E1 provides no uncertainty, track-level distribution, cavity identity validation, or duration-matched comparison; no inferential statistic is calculated."
+            ],
+            "evidence_conflicts": [
+              "E0 is compatible with delayed B cavity emergence but does not identify mechanism or causal effect.",
+              "E1 selected-tail mobility is higher in B while median mobility is modestly higher and median track duration shorter; uniform arrest is not supported.",
+              "Generic R1 analogies support possible exchange-limited/percolation arrest elsewhere, not RNA loop exchange, cavity formation, or production coupling."
+            ],
+            "untested": [
+              "RNA loop exchange time and network connectivity under target conditions.",
+              "Whether tracked objects are cavities and how duration/censoring and selection affect comparisons.",
+              "Whether q maps faithfully to area fraction.",
+              "Whether production-history effects persist at matched final composition."
+            ],
+            "dissent": "I agree with retaining H1 only as a hypothesis. R1_S1 and R1_S3 provide analogies but do not close G1; E1 does not support uniform immobilization and leaves selection/heterogeneity unresolved.",
+            "next_task": "T2: retrieve direct background on RNA kissing-loop/self-complementary junction exchange and network connectivity/viscoelasticity; assess reported conditions and whether H1a is plausible. Do not infer RNA concentration from DNA read frequencies."
+          }
+        ],
+        "tasks": [
+          {
+            "id": "T2",
+            "candidate_id": "C1",
+            "gap_id": "G1",
+            "kind": "mechanism",
+            "status": "in_progress",
+            "deliverable": "Use direct background evidence on RNA loop exchange and connectivity to assess H1a plausibility and transfer conditions, while retaining the schedule-history discriminator against equilibrium demixing.",
+            "acceptance": "Extract source relations and actual conditions from returned records; distinguish RNA-loop binding from protein sticker systems; preserve C1 as hypothesis unless target-compatible bridge is justified; never infer RNA concentrations from DNA read frequencies.",
+            "evidence_refs": [
+              "R1_S1",
+              "R1_S3",
+              "E0",
+              "E1"
+            ],
+            "reason": "Current evidence establishes generic analogies only and E1 is ambiguous; target-specific RNA interaction kinetics remain missing."
+          }
+        ],
+        "requests": [
+          {
+            "type": "search",
+            "id": "R2",
+            "candidate_id": "C1",
+            "gap_id": "G1",
+            "missing_relation": "Whether reversible RNA self-complementary or kissing-loop junctions form connected networks with exchange or relaxation slow enough to support path-dependent viscoelastic arrest.",
+            "variables": [
+              "loop-junction dissociation/exchange time (s or min)",
+              "network connectivity/percolation threshold (dimensionless)",
+              "relaxation time (s or min)",
+              "RNA concentration only if directly measured"
+            ],
+            "conditions": "Background published on or before 2025-05-12; RNA kissing-loop or self-assembling RNA nanostructure networks; kinetic/relaxation measurements, condensate material properties, or junction exchange. No target identity query.",
+            "query": "RNA kissing-loop network junction exchange kinetics relaxation viscoelasticity self-assembling RNA nanostructure",
+            "change_if_found": "Direct exchange/connectivity measurements under comparable loop and ionic conditions strengthen plausibility of H1a but do not establish cavity formation or transcription dependence. Fast exchange or absent network connectivity weakens H1a and prioritizes equilibrium-composition or carryover alternatives."
+          }
+        ],
+        "literature_use": [
+          {
+            "source_id": "R1_S1",
+            "action": "modify_as_hypothesis",
+            "relation": "Slow sticker exchange can kinetically arrest simulated sticker-spacer condensate coalescence; faster exchange at similar saturation allows merger.",
+            "variables_units": "Sticker exchange timescale and condensate merger kinetics; abstract gives no transferable numeric units or threshold.",
+            "conditions": "Abstract-only metadynamics simulation; published 2024-12-15.",
+            "impact_on_model_or_action": "Motivates but does not validate H1a; motivates direct search for RNA loop exchange and relaxation."
+          },
+          {
+            "source_id": "R1_S3",
+            "action": "alternative",
+            "relation": "Percolated beta-sheet networks can kinetically trap protein condensates with multiple LARKS.",
+            "variables_units": "LARKS abundance/location and viscoelastic state; no target values.",
+            "conditions": "Protein/RNA-binding-protein model systems; abstract-only, 2023-06-29.",
+            "impact_on_model_or_action": "General percolation-arrest analogy; distinct chemistry makes transfer weak."
+          },
+          {
+            "source_id": "R1_S2",
+            "action": "followup",
+            "relation": "Condensates may enhance or inhibit reactions, with diffusion retardation one possible inhibitory effect.",
+            "variables_units": "Diffusion and reaction rates; no target values.",
+            "conditions": "Review abstract, published 2025-04-07.",
+            "impact_on_model_or_action": "Background only; no evidence for cavity mechanism."
+          },
+          {
+            "source_id": "R1_S4",
+            "action": "followup",
+            "relation": "Charge-rich condensate behavior depends on electrostatics, stoichiometry, and salt.",
+            "variables_units": "Charge patterning, stoichiometry, salt; no target values.",
+            "conditions": "Coarse-grained modeling study, abstract-only, 2025-02-11.",
+            "impact_on_model_or_action": "Retain ionic/compositional dependence as an alternative; no direct causal inference."
+          }
+        ],
+        "adjudication": null,
+        "final": null
+      },
+      "protocol_errors": [],
+      "input_sha256": "e9be3b8dfbb7c2bbfa76bf5cbba427e57da740f2538f38f028f80cd4638cfaff",
+      "reply_sha256": "177a450a20959b51f9c80e20243c5bde5be542e6fe5195d1dca25c51ed231286"
+    },
+    {
+      "label": "L3",
+      "role": "leader",
+      "reply": {
+        "recognition": "uncertain",
+        "summary": "R2 returned zero sources for its exact query; this is a retrieval result, not evidence against RNA junction arrest. R1_S1 is a weak analogue: slow sticker exchange arrested coalescence in simulated sticker-spacer condensates, whereas faster exchange permitted merger. E1 tracking summaries are not cavity-specific; track durations differ and B has an extreme selected high-displacement tail. C1 remains hypothetical. A conditional equal-dose calculation to be executed by the executor compares xdot=alpha*r-x/tau at alpha=1,tau=5 h,x0=0,xc=.5: r=.2 h^-1 for 5 h versus .05 h^-1 for 20 h. Closed form gives xfast=.632 and xslow=.245; this is not a fit or measurement. H1 predicts only the fast schedule crosses threshold; equilibrium H2 predicts no history effect after matched final composition and equilibration.",
+        "candidates": [
+          {
+            "id": "C1",
+            "version": 3,
+            "ledger": [
+              {
+                "version": 1,
+                "summary": "L1 production versus relaxation threshold and trapping hypothesis; composition and carryover alternatives retained.",
+                "superseded": false
+              },
+              {
+                "version": 2,
+                "summary": "L2 sharpened to slow exchange/percolation of RNA loops; generic arrest analogies and ambiguous E1 tracking.",
+                "superseded": false
+              }
+            ],
+            "target": "Delayed emergence and persistence of segmented internal cavity area in transcribing RNA droplets, especially B versus A.",
+            "known_relations": [
+              "E0: A/B area fractions similar at t=0; at 24 h A=.00446 and B=.08918. This is image area fraction, not concentration or free energy; fields are nested within two preparations.",
+              "R1_S1 abstract supports exchange-dependent kinetic arrest in simulated sticker-spacer coalescence, not RNA cavity formation or transcription.",
+              "R2 exact RNA loop exchange search returned zero usable sources; this is not a biological negative.",
+              "E1: B n=279, median displacement 1.596 um2 over median 98 frames, top-100 median 123.05 um2; A n=838, median .636 um2 over 159 frames, top-100 median 19.58 um2. Aggregate unequal-duration tracking does not establish cavity-specific arrest."
+            ],
+            "hypotheses": [
+              "H1 (new, unconfirmed): transcription-driven accumulation of connected RNA loop junctions can outrun network relaxation and trap solvent-rich internal domains after a threshold crossing.",
+              "H1a (unverified bridge): terminal self-complementary RNA loops behave as reversible stickers with sufficiently slow exchange and connectivity to create path-dependent arrest.",
+              "H2 alternative: equilibrium composition-driven demixing; at matched final composition after equilibration, production schedule does not matter.",
+              "H3 alternative: amplification-linked carryover or imaging/segmentation changes cause some or all of the condition contrast."
+            ],
+            "gaps": [
+              {
+                "id": "G1",
+                "status": "open",
+                "description": "Target-compatible loop exchange/connectivity and production-relaxation threshold remain unverified; R2 returned no sources."
+              },
+              {
+                "id": "G2",
+                "status": "open",
+                "description": "Amplification effects on sequence/product heterogeneity versus reaction carryover unresolved."
+              },
+              {
+                "id": "G3",
+                "status": "open",
+                "description": "No calibrated cavity-specific mobility or measured phase-composition evidence establishes cavity identity or arrest."
+              }
+            ],
+            "variables_units": {
+              "t": "h",
+              "r": "reduced production rate per droplet volume, h^-1",
+              "x": "dimensionless effective network state",
+              "alpha": "dimensionless conversion",
+              "tau": "relaxation time, h",
+              "xc": "dimensionless threshold",
+              "q": "segmented cavity area fraction proxy, dimensionless",
+              "kn": "h^-1",
+              "kd": "h^-1"
+            },
+            "equations": [
+              "xdot=alpha*r-x/tau",
+              "For constant r over duration T: x(T)=x0*exp(-T/tau)+alpha*r*tau*(1-exp(-T/tau)).",
+              "Before arrest qdot=kn*max(x-xc,0)-kd*q; after first upward crossing x>=xc impose qdot=0.",
+              "Constant-rate threshold requires alpha*r*tau>xc.",
+              "Observed y_area=q+epsilon is uncalibrated; q is not RNA concentration."
+            ],
+            "parameters_ranges": {
+              "alpha": "positive, exploratory 0.1-10, not estimated",
+              "tau": "positive, exploratory 0.1-100 h, unmeasured",
+              "xc": "0-1 normalized x, not estimated",
+              "kn": "positive 0.001-1 h^-1, not estimated",
+              "kd": "0-1 h^-1, not estimated"
+            },
+            "initial_boundary_conditions": "x(0)=x0 in [0,1], r>=0; q(0) maps to measured initial area fraction only provisionally. No spatial geometry or conservation claim.",
+            "observation_mapping": "E0 is segmented dark area / filled droplet area. E1 is aggregate track displacement, not cavity-specific relaxation. E2 phase composition, if returned, is direct measured concentration/composition and not inferred from DNA reads.",
+            "alternatives": [
+              "Equilibrium demixing set by final composition, schedule-independent after equilibration.",
+              "Carryover from amplification changes transcription or imaging.",
+              "Segmentation threshold/denominator effects alter area fraction."
+            ],
+            "predictions": [
+              "Conditional equal-dose illustration: alpha=1,tau=5 h,x0=0,xc=.5; fast .2 h^-1 for 5 h gives x=.632; slow .05 h^-1 for 20 h gives x=.245. H1 predicts only fast schedule crosses; H2 predicts equal endpoint after matched composition/equilibration. Assumptions, pending executor computation; not a fitted value.",
+              "If B crossed threshold by 24 h, predict at 36 and 48 h y_area remains above A and grows more slowly than 12-24 h, conditional on mapping."
+            ],
+            "checks": [
+              "alpha*r and x/tau both h^-1; qdot terms h^-1.",
+              "Closed form is integrating-factor solution; at r=0, x decays exponentially; if alpha*r*tau<=xc and x0<xc, no crossing.",
+              "Post-threshold freeze imposes persistence; no returned evidence establishes it.",
+              "Area fraction is not concentration; no fit claimed."
+            ],
+            "evidence_conflicts": [
+              "E1 B high-displacement tail conflicts with uniform immobilization, but durations and selection differ.",
+              "R1_S1 materials differ from RNA loops; R2 yielded zero results.",
+              "E0 is compatible with delayed B increase but not mechanism-specific."
+            ],
+            "untested": [
+              "RNA loop exchange/connectivity and network relaxation.",
+              "Whether tracked objects are cavities and how censoring affects comparison.",
+              "Whether dark area maps to physical cavity fraction.",
+              "Whether phase compositions track cavity state after history controls."
+            ],
+            "dissent": "No independent executor interpretation received in this turn yet; preserve any disagreement.",
+            "next_task": "T3: run conditional equal-dose pulse-versus-slow calculation, seek a syntactically explicit RNA loop association/kinetics background result, and request measured phase-composition data."
+          }
+        ],
+        "tasks": [
+          {
+            "id": "T3",
+            "candidate_id": "C1",
+            "gap_id": "G1",
+            "kind": "mechanism",
+            "status": "proposed",
+            "deliverable": "Executor adopt/reissue R3, request E2 phase-composition data, and execute C3 comparing equal integrated production schedules under conditional threshold model versus equilibrium alternative.",
+            "acceptance": "Report assumptions, dimensions, threshold status, numerical checks, and alternative comparison. Preserve no-result status for R2; do not infer concentration from DNA reads.",
+            "evidence_refs": [
+              "E0",
+              "R1_S1",
+              "E1",
+              "R2"
+            ],
+            "reason": "Obtain a concrete model consequence and the most relevant available composition measurement."
+          }
+        ],
+        "requests": [
+          {
+            "type": "search",
+            "id": "R3",
+            "candidate_id": "C1",
+            "gap_id": "G1",
+            "missing_relation": "Whether RNA self-complementary/kissing-loop association has measurable exchange kinetics or relaxation compatible with path-dependent arrest.",
+            "variables": [
+              "RNA loop association/dissociation rates with reported units",
+              "network relaxation time",
+              "ionic conditions",
+              "direct RNA concentration only if measured"
+            ],
+            "conditions": "First published by 2025-05-12; no target identity; historical RNA loop association, RNA nanostructure, or kissing-loop kinetics.",
+            "query": "(\"kissing loop\" OR \"RNA loop\" OR \"RNA nanostructure\") AND (association OR dissociation OR kinetics OR relaxation)",
+            "change_if_found": "Comparable direct RNA exchange/connectivity measurements strengthen H1a plausibility but do not show cavities or transcription coupling. Fast exchange or incompatible conditions weakens H1a. No result is unresolved, not falsification."
+          },
+          {
+            "type": "evidence",
+            "id": "E2",
+            "category": "phase_composition",
+            "reason": "Request existing measured coexisting phase concentrations/compositions to assess whether equilibrium demixing is quantitatively available. Report units and conditions; availability does not imply support or establish kinetic arrest."
+          },
+          {
+            "type": "compute",
+            "id": "C3",
+            "candidate_id": "C1",
+            "gap_id": "G1",
+            "purpose": "Illustrate whether equal integrated production schedules cross the proposed threshold differently, against equilibrium schedule independence; conditional model only, not fitting.",
+            "model_spec": "Dimensionless x obeys dx/dt=alpha*r-x/tau, t hours, r h^-1, x0=0, xc=.5. Fast r=.2 h^-1 for 5 h, slow r=.05 h^-1 for 20 h; each integral is 1. Sensitivity tau=[1,5,20] h and alpha=[.5,1,2]. Report x_end and crossing time; equilibrium alternative predicts no schedule effect after composition matching/equilibration. Do not model q.",
+            "code": "import json, math\nrows=[]\nfor tau in (1.0,5.0,20.0):\n for alpha in (0.5,1.0,2.0):\n  for name,r,duration in ((\"fast\",0.2,5.0),(\"slow\",0.05,20.0)):\n   x=alpha*r*tau*(1-math.exp(-duration/tau)); xs=alpha*r*tau; xc=0.5; tc=None\n   if xs>xc:\n    candidate=-tau*math.log(1-xc/xs)\n    if candidate<=duration: tc=candidate\n   rows.append({\"tau_h\":tau,\"alpha\":alpha,\"schedule\":name,\"r_per_h\":r,\"duration_h\":duration,\"integrated_r\":r*duration,\"x_end\":x,\"steady_x\":xs,\"crossed\":x>=xc,\"crossing_time_h\":tc,\"units\":\"alpha*r and x/tau are h^-1\"})\nprint(json.dumps({\"assumptions\":{\"x0\":0,\"xc\":0.5},\"rows\":rows,\"all_integrals_equal_one\":all(abs(z[\"integrated_r\"]-1)<1e-12 for z in rows),\"nonnegative_x\":all(z[\"x_end\"]>=0 for z in rows),\"alternative\":\"equilibrium predicts no schedule effect after composition match and equilibration\",\"status\":\"conditional hypothetical; not fitted or empirical\"},sort_keys=True))"
+          }
+        ],
+        "literature_use": [
+          {
+            "source_id": "R1_S1",
+            "action": "modify_as_hypothesis",
+            "relation": "Slow sticker exchange can arrest simulated sticker-spacer condensate coalescence; fast exchange allows merger.",
+            "variables_units": "Exchange dynamics and coalescence, no transferable numeric parameters in abstract.",
+            "conditions": "Abstract-only 2024 simulation in distinct material.",
+            "impact_on_model_or_action": "Motivates H1a as hypothesis only; search directly for RNA loop exchange."
+          },
+          {
+            "source_id": "R2",
+            "action": "followup",
+            "relation": "Exact RNA loop search returned zero sources.",
+            "variables_units": "Not applicable.",
+            "conditions": "Zero-source retrieval result.",
+            "impact_on_model_or_action": "Treat as no usable evidence, not a biological negative."
+          }
+        ],
+        "adjudication": null,
+        "final": null
+      },
+      "protocol_errors": [],
+      "input_sha256": "c69326a17dc0c9702b589b1d951fccfb7486c64663c8146d898f7e334864878a",
+      "reply_sha256": "a67eff18f2b9a73a52a3584ecd2ffd2dc4f4e3c681dbbd0e7f455717befd64f6"
+    },
+    {
+      "label": "R3",
+      "role": "executor",
+      "reply": {
+        "recognition": "uncertain; no specific target study recognized",
+        "summary": "R2 returned zero sources for RNA kissing-loop/junction exchange. This is no usable retrieval evidence, not evidence that RNA junctions exchange quickly or that networks cannot form. I adopt T3 requests: C3 is a conditional standard-library calculation, R3 searches for historical RNA loop association/dissociation kinetics using explicit query syntax, and E2 requests existing phase-composition measurements. No actual C3 or E2 result is present yet. Retain H1/H1a as unconfirmed. The model consequence to calculate is x(T)=x0 exp(-T/tau)+alpha*r*tau*(1-exp(-T/tau)) for constant r; the equal-dose pulse and slow schedule can have different x(T) because relaxation occurs during production. Equilibrium alternative predicts no schedule effect after matched final composition and equilibration.",
+        "candidates": [
+          {
+            "id": "C1",
+            "version": 6,
+            "ledger": [
+              {
+                "version": 1,
+                "summary": "L1 introduced H1 production-relaxation threshold and trapping model; alternatives retained.",
+                "superseded": false
+              },
+              {
+                "version": 2,
+                "summary": "L2 sharpened slow loop exchange/percolation bridge and noted generic analogies plus ambiguous motion.",
+                "superseded": false
+              },
+              {
+                "version": 3,
+                "summary": "Executor interpreted R1 analogies and E1 mixed mobility summaries; retained H1 as provisional.",
+                "superseded": false
+              },
+              {
+                "version": 4,
+                "summary": "L3 formalized closed-form x dynamics, conditional schedule illustration and 36-48 h commitment.",
+                "superseded": false
+              },
+              {
+                "version": 5,
+                "summary": "Current state preserves R2 zero-result status and requests C3, R3, E2.",
+                "superseded": false
+              }
+            ],
+            "target": "Delayed emergence and persistence of segmented internal cavity area in transcribing RNA droplets, especially B versus A.",
+            "known_relations": [
+              "E0: A/B area fractions similar at t=0; at 24 h A=.00446 and B=.08918. Image area fraction, not concentration or free energy; fields nested within two preparations.",
+              "R1_S1 abstract: exchange-dependent arrest in simulated sticker-spacer condensate coalescence; not RNA loop junctions, cavity formation, or transcription.",
+              "R1_S3 abstract: percolated beta-sheet networks can trap protein condensates; distinct chemistry.",
+              "R2 returned zero sources for RNA loop exchange; unresolved retrieval, not biological negative.",
+              "E1 B n=279, median squared displacement 1.596 um2 over median 98 frames, selected top-100 median 123.05 um2; A n=838, median .636 um2 over 159 frames, selected top-100 median 19.58 um2. Unequal durations and selected tail do not establish cavity-specific arrest."
+            ],
+            "hypotheses": [
+              "H1 (new, unconfirmed): production-driven accumulation of connected RNA loop junctions outruns relaxation and traps internal solvent-rich domains after a threshold crossing.",
+              "H1a (unverified bridge): terminal self-complementary loops act as reversible stickers; sufficiently slow exchange and network connectivity permit path-dependent arrest.",
+              "H2 alternative: equilibrium composition-driven demixing; after matching final composition and equilibration, production schedule does not matter.",
+              "H3 alternative: amplification-linked carryover or imaging/segmentation changes cause some or all of the contrast."
+            ],
+            "gaps": [
+              {
+                "id": "G1",
+                "status": "open",
+                "description": "Target-compatible RNA loop exchange/connectivity and production-relaxation threshold remain unverified. R2 returned no usable sources."
+              },
+              {
+                "id": "G2",
+                "status": "open",
+                "description": "Amplification effects on template/product heterogeneity versus carryover unresolved."
+              },
+              {
+                "id": "G3",
+                "status": "open",
+                "description": "No calibrated cavity-specific mobility or measured phase-composition evidence yet establishes cavity identity or arrest."
+              }
+            ],
+            "variables_units": {
+              "t": "h",
+              "r": "reduced production rate per droplet volume, h^-1",
+              "x": "dimensionless effective network state",
+              "alpha": "dimensionless conversion",
+              "tau": "relaxation time, h",
+              "xc": "dimensionless threshold",
+              "q": "segmented cavity area fraction proxy, dimensionless",
+              "kn": "h^-1",
+              "kd": "h^-1"
+            },
+            "equations": [
+              "xdot=alpha*r-x/tau",
+              "For constant r over duration T: x(T)=x0*exp(-T/tau)+alpha*r*tau*(1-exp(-T/tau)).",
+              "Before arrest qdot=kn*max(x-xc,0)-kd*q; after first upward crossing x>=xc impose qdot=0.",
+              "Constant-rate threshold requires alpha*r*tau>xc.",
+              "Observed y_area=q+epsilon is an uncalibrated map; q is not RNA concentration."
+            ],
+            "parameters_ranges": {
+              "alpha": "positive, exploratory .1-10, not estimated",
+              "tau": "positive, exploratory .1-100 h, unmeasured",
+              "xc": "0-1 normalized x, not estimated",
+              "kn": "positive .001-1 h^-1, not estimated",
+              "kd": "0-1 h^-1, not estimated"
+            },
+            "initial_boundary_conditions": "x(0)=x0 in [0,1], r>=0; q(0) maps to measured area fraction only provisionally. No spatial geometry or conservation claim.",
+            "observation_mapping": "E0 is segmented dark area / filled droplet area. E1 is aggregate track displacement, not cavity-specific relaxation. E2, if returned, is direct measured phase composition with units/conditions, not inference from DNA reads.",
+            "alternatives": [
+              "Equilibrium demixing set by final composition, schedule-independent after equilibration.",
+              "Carryover from amplification changes transcription or imaging.",
+              "Segmentation threshold or denominator effects alter area fraction."
+            ],
+            "predictions": [
+              "Equal integrated production schedules can produce different x endpoints if relaxation occurs during production; H1 predicts only a schedule crossing xc traps q, while H2 predicts equal endpoint after matched composition and equilibration. This awaits C3 actual result.",
+              "If B crossed threshold by 24 h, conditional commitment from L3 predicts at 36 and 48 h y_area remains above A and grows more slowly than over 12-24 h."
+            ],
+            "checks": [
+              "alpha*r and x/tau both h^-1; qdot terms h^-1.",
+              "Closed-form solution follows integrating factor; r=0 yields exponential decay; if alpha*r*tau<=xc and x0<xc there is no crossing.",
+              "Post-threshold freeze imposes persistence and is not established empirically.",
+              "Area fraction is not concentration; no fit claimed.",
+              "No R3, C3, or E2 output has yet been returned in this input."
+            ],
+            "evidence_conflicts": [
+              "E1 B high-displacement tail conflicts with uniform immobilization, but durations and selection differ.",
+              "R1_S1 material differs from RNA loops; R2 yielded zero results.",
+              "E0 is compatible with delayed B increase but not mechanism-specific."
+            ],
+            "untested": [
+              "RNA loop exchange/connectivity and network relaxation.",
+              "Whether tracked objects are cavities and how censoring affects comparison.",
+              "Whether dark area maps to physical cavity fraction.",
+              "Whether phase compositions track cavity state after history controls."
+            ],
+            "dissent": "I preserve H1 only as a hypothesis. R2 zero results are unresolved, not negative biological evidence; R1 analogies are insufficient for target transfer.",
+            "next_task": "Interpret actual C3/R3/E2 returns, update the conditional schedule discriminator and phase alternative, and retain explicit no-result status where applicable."
+          }
+        ],
+        "tasks": [
+          {
+            "id": "T3",
+            "candidate_id": "C1",
+            "gap_id": "G1",
+            "kind": "mechanism",
+            "status": "in_progress",
+            "deliverable": "Execute conditional equal-dose threshold calculation, request direct phase-composition measurements, and retrieve RNA loop association/kinetics background.",
+            "acceptance": "Report assumptions, dimensions, threshold status, numerical checks, and equilibrium alternative; preserve R2 no-result status; do not infer concentration from DNA reads.",
+            "evidence_refs": [
+              "E0",
+              "R1_S1",
+              "E1",
+              "R2"
+            ],
+            "reason": "Produce a concrete conditional model consequence and seek the most relevant available composition measurement and RNA interaction evidence."
+          }
+        ],
+        "requests": [
+          {
+            "type": "search",
+            "id": "R3",
+            "candidate_id": "C1",
+            "gap_id": "G1",
+            "missing_relation": "Whether RNA self-complementary/kissing-loop association has measured exchange kinetics or relaxation compatible with path-dependent arrest.",
+            "variables": [
+              "RNA loop association/dissociation rates with units",
+              "network relaxation time",
+              "ionic conditions",
+              "direct RNA concentration only if measured"
+            ],
+            "conditions": "First published by 2025-05-12; no target identity; historical RNA loop association, RNA nanostructure, or kissing-loop kinetics.",
+            "query": "(\"kissing loop\" OR \"RNA loop\" OR \"RNA nanostructure\") AND (association OR dissociation OR kinetics OR relaxation)",
+            "change_if_found": "Comparable direct RNA exchange/connectivity measurements strengthen H1a plausibility but do not show cavities or transcription coupling. Fast exchange or incompatible conditions weakens H1a. No result is unresolved, not falsification."
+          },
+          {
+            "type": "evidence",
+            "id": "E2",
+            "category": "phase_composition",
+            "reason": "Request existing measured coexisting phase concentrations/compositions to assess quantitative availability of equilibrium demixing. Preserve units and conditions; availability is not support and does not establish kinetic arrest."
+          },
+          {
+            "type": "compute",
+            "id": "C3",
+            "candidate_id": "C1",
+            "gap_id": "G1",
+            "purpose": "Conditional equal-integrated-production comparison of pulse and slow schedules under threshold model versus schedule-independent equilibrium alternative; not a fit.",
+            "model_spec": "Dimensionless x obeys dx/dt=alpha*r-x/tau, t hours, r h^-1, x0=0, xc=.5. Fast r=.2 h^-1 for 5 h and slow r=.05 h^-1 for 20 h; both integrated r=1. Sensitivity tau=[1,5,20] h and alpha=[.5,1,2]. Report x_end and crossing time. Equilibrium alternative predicts no schedule effect after matched composition and equilibration. Do not model q.",
+            "code": "import json, math\nrows=[]\nfor tau in (1.0,5.0,20.0):\n for alpha in (0.5,1.0,2.0):\n  for name,r,duration in ((\"fast\",0.2,5.0),(\"slow\",0.05,20.0)):\n   x=alpha*r*tau*(1-math.exp(-duration/tau)); xs=alpha*r*tau; xc=0.5; tc=None\n   if xs>xc:\n    candidate=-tau*math.log(1-xc/xs)\n    if candidate<=duration: tc=candidate\n   rows.append({\"tau_h\":tau,\"alpha\":alpha,\"schedule\":name,\"r_per_h\":r,\"duration_h\":duration,\"integrated_r\":r*duration,\"x_end\":x,\"steady_x\":xs,\"crossed\":x>=xc,\"crossing_time_h\":tc,\"units\":\"alpha*r and x/tau are h^-1\"})\nprint(json.dumps({\"assumptions\":{\"x0\":0,\"xc\":0.5},\"rows\":rows,\"all_integrals_equal_one\":all(abs(z[\"integrated_r\"]-1)<1e-12 for z in rows),\"nonnegative_x\":all(z[\"x_end\"]>=0 for z in rows),\"alternative\":\"equilibrium predicts no schedule effect after composition match and equilibration\",\"status\":\"conditional hypothetical; not fitted or empirical\"},sort_keys=True))"
+          }
+        ],
+        "literature_use": [
+          {
+            "source_id": "R1_S1",
+            "action": "modify_as_hypothesis",
+            "relation": "Slow sticker exchange can arrest simulated sticker-spacer condensate coalescence; fast exchange allows merger.",
+            "variables_units": "Exchange dynamics and coalescence; abstract provides no transferable numeric parameters.",
+            "conditions": "Abstract-only 2024 simulation in distinct material.",
+            "impact_on_model_or_action": "Motivates H1a only and does not validate RNA-loop transfer."
+          },
+          {
+            "source_id": "R2",
+            "action": "followup",
+            "relation": "Exact RNA loop search returned zero sources.",
+            "variables_units": "Not applicable.",
+            "conditions": "Zero-source retrieval.",
+            "impact_on_model_or_action": "No usable evidence, not biological negative; refine query R3."
+          }
+        ],
+        "adjudication": null,
+        "final": null
+      },
+      "protocol_errors": [],
+      "input_sha256": "f9e2ff62290c499b04643e85c0ba9c5d9aca8d0ec1783357cd754ced18948a9a",
+      "reply_sha256": "6849bbbb603785583fc330caf925276ad4c2a7e98918e600a8742a3b78583208"
+    }
+  ],
+  "tools": [
+    {
+      "id": "R1",
+      "type": "search",
+      "candidate_id": "C1",
+      "gap_id": "G1",
+      "request": {
+        "type": "search",
+        "id": "R1",
+        "candidate_id": "C1",
+        "gap_id": "G1",
+        "missing_relation": "Whether production-driven accumulation in an associative polymer/RNA network can outpace relaxation to create and kinetically arrest internal solvent-rich domains, including material conditions and rate/history dependence.",
+        "variables": [
+          "production rate r (reduced h^-1)",
+          "junction state x (dimensionless)",
+          "relaxation time tau (h)",
+          "cavity area fraction q (dimensionless proxy)"
+        ],
+        "conditions": "Background published by 2025-05-12; associative polymer/RNA condensates, reaction-driven phase separation, gelation, or kinetic arrest. No target identity query.",
+        "query": "(RNA condensate OR RNA droplet OR associative polymer network) AND (transcription-driven OR reaction-driven OR production-driven) AND (kinetic arrest OR gelation OR viscoelastic relaxation OR solvent-rich domains OR pores)",
+        "change_if_found": "Compatible evidence for production-rate competition and arrest motivates H1 but does not establish transfer; incompatible material/timescale requirements or only equilibrium demixing weaken H1 and prioritize H2. Abstract evidence alone cannot establish target applicability."
+      },
+      "result": {
+        "status": "returned",
+        "sources": [
+          {
+            "id": "R1_S1",
+            "title": "Separation of sticker-spacer energetics governs the coalescence of metastable condensates.",
+            "doi": "10.1016/j.bpj.2024.12.017",
+            "pmid": "39674888",
+            "first_publication_date": "2024-12-15",
+            "retrieval_time": "2026-11-02T07:33:36.247067+00:00",
+            "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+            "original_evidence": "Biological condensates often emerge as a multidroplet state and never coalesce into one large droplet within the experimental timespan. Previous work revealed that the sticker-spacer architecture of biopolymers may dynamically stabilize the multidroplet state. Here, we simulate the condensate coalescence using metadynamics approach and reveal two distinct physical mechanisms underlying the fusion of droplets. Condensates made of sticker-spacer polymers readily undergo a kinetic arrest when stickers exhibit slow exchange while fast exchanging stickers at similar levels of saturation allow merger to equilibrium states. On the other hand, condensates composed of homopolymers fuse readily until they reach a threshold density. Increase in entropy upon intercondensate mixing of chains drives the fusion of sticker-spacer chains. We map the range of mechanisms of kinetic arrest from slow sticker exchange dynamics to density mediated in terms of energetic separation of stickers and spacers. Our predictions appear to be in qualitative agreement with recent experiments probing dynamic nature of protein-RNA condensates.",
+            "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+            "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+          },
+          {
+            "id": "R1_S2",
+            "title": "Toward Design Principles for Biomolecular Condensates for Metabolic Pathways.",
+            "doi": "10.1002/adbi.202400672",
+            "pmid": "40195042",
+            "first_publication_date": "2025-04-07",
+            "retrieval_time": "2026-11-02T07:33:36.247130+00:00",
+            "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+            "original_evidence": "Biology uses membrane-less organelles or biomolecular condensates as dynamic reaction compartments that can form or dissolve to regulate biochemical pathways. This has led to a flurry of research aiming to design new synthetic organelles that function as reaction crucibles for enzymes and biomolecular cascades in biotechnology. The mechanisms by which a condensate can enhance multistep biochemical processes including mass action, tuning the chemical environment, scaffolding and metabolic channelling is reviewed. These mechanisms are not inherently beneficial for the rate of enzymatic processes but can also inhibit a reaction. Similarly, some aspects of condensates are likely intrinsically inhibitory including retardation of diffusion, where the net effect of a condensate will be a trade-off between inhibitory and stimulatory effects. It is discussed which generalizable conclusions can be drawn so far and how close it is to design principles for condensates for enzyme cascades in microbial cell factories including which reactions are likely to be enhanced by condensates and which type of condensate will be suited for which reaction.",
+            "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+            "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+          },
+          {
+            "id": "R1_S3",
+            "title": "Location and Concentration of Aromatic-Rich Segments Dictates the Percolating Inter-Molecular Network and Viscoelastic Properties of Ageing Condensates.",
+            "doi": "10.1002/advs.202207742",
+            "pmid": "37386790",
+            "first_publication_date": "2023-06-29",
+            "retrieval_time": "2026-11-02T07:33:36.247141+00:00",
+            "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+            "original_evidence": "Maturation of functional liquid-like biomolecular condensates into solid-like aggregates has been linked to the onset of several neurodegenerative disorders. Low-complexity aromatic-rich kinked segments (LARKS) contained in numerous RNA-binding proteins can promote aggregation by forming inter-protein β-sheet fibrils that accumulate over time and ultimately drive the liquid-to-solid transition of the condensates. Here, atomistic molecular dynamics simulations are combined with sequence-dependent coarse-grained models of various resolutions to investigate the role of LARKS abundance and position within the amino acid sequence in the maturation of condensates. Remarkably, proteins with tail-located LARKS display much higher viscosity over time than those in which the LARKS are placed toward the center. Yet, at very long timescales, proteins with a single LARKS-independently of its location-can still relax and form high viscous liquid condensates. However, phase-separated condensates of proteins containing two or more LARKS become kinetically trapped due to the formation of percolated β-sheet networks that display gel-like behavior. Furthermore, as a work case example, they demonstrate how shifting the location of the LARKS-containing low-complexity domain of FUS protein toward its center effectively precludes the accumulation of β-sheet fibrils in FUS-RNA condensates, maintaining functional liquid-like behavior without ageing.",
+            "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+            "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+          },
+          {
+            "id": "R1_S4",
+            "title": "Chemically Informed Coarse-Graining of Electrostatic Forces in Charge-Rich Biomolecular Condensates.",
+            "doi": "10.1021/acscentsci.4c01617",
+            "pmid": "40028356",
+            "first_publication_date": "2025-02-11",
+            "retrieval_time": "2026-11-02T07:33:36.247146+00:00",
+            "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+            "original_evidence": "Biomolecular condensates composed of highly charged biomolecules, such as DNA, RNA, chromatin, and nucleic-acid binding proteins, are ubiquitous in the cell nucleus. The biophysical properties of these charge-rich condensates are largely regulated by electrostatic interactions. Residue-resolution coarse-grained models that describe solvent and ions implicitly are widely used to gain mechanistic insights into the biophysical properties of condensates, offering transferability, computational efficiency, and accurate predictions for multiple systems. However, their predictive accuracy diminishes for charge-rich condensates due to the implicit treatment of solvent and ions. Here, we present Mpipi-Recharged, a residue-resolution coarse-grained model that improves the description of charge effects in biomolecular condensates containing disordered proteins, multidomain proteins, and/or disordered single-stranded RNAs. Mpipi-Recharged introduces a pair-specific asymmetric Yukawa electrostatic potential, informed by atomistic simulations. We show that this asymmetric coarse-graining of electrostatic forces captures intricate effects, such as charge blockiness, stoichiometry variations in complex coacervates, and modulation of salt concentration, without requiring explicit solvation. Mpipi-Recharged provides excellent agreement with experiments in predicting the phase behavior of highly charged condensates. Overall, Mpipi-Recharged improves the computational tools available to investigate the physicochemical mechanisms regulating biomolecular condensates, enhancing the scope of computer simulations in this field.",
+            "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+            "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+          }
+        ],
+        "excluded": [
+          {
+            "id": "39573880",
+            "reason": "date/target/no-abstract"
+          }
+        ],
+        "hit_count": 2740,
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28RNA+condensate+OR+RNA+droplet+OR+associative+polymer+network%29+AND+%28transcription-driven+OR+reaction-driven+OR+production-driven%29+AND+%28kinetic+arrest+OR+gelation+OR+viscoelastic+relaxation+OR+solvent-rich+domains+OR+pores%29+AND+FIRST_PDATE%3A%5B1900-01-01+TO+2025-05-12%5D&format=json&pageSize=5&resultType=core",
+        "raw_sha256": "26e04dd3bb1ceb8cbc257d29c96bf21223a5f8af5149f6821a0088d9defeacf5",
+        "knowledge_limit": "No full-text formulas/units are inferred from the abstract. Refine or request a known historical source if needed."
+      }
+    },
+    {
+      "id": "E1",
+      "type": "evidence",
+      "candidate_id": null,
+      "gap_id": null,
+      "request": {
+        "type": "evidence",
+        "id": "E1",
+        "category": "motion",
+        "reason": "Request preparation-1 tracking of cavity persistence, coarsening, merging, and motion relative to droplets. A motion/coarsening plateau is consistent with the imposed arrest rule; continued coarsening challenges it. One preparation is not independent replication; availability is not support."
+      },
+      "result": {
+        "status": "returned",
+        "filename": "mobility_dev.json",
+        "data": [
+          {
+            "condition": "B",
+            "n_tracks": 279,
+            "median_final_squared_displacement_um2": 1.596246372681656,
+            "median_n_frames": 98.0,
+            "top_100_by_max_displacement_median_final_squared_displacement_um2": 123.04789558444844
+          },
+          {
+            "condition": "A",
+            "n_tracks": 838,
+            "median_final_squared_displacement_um2": 0.6357464296597586,
+            "median_n_frames": 159.0,
+            "top_100_by_max_displacement_median_final_squared_displacement_um2": 19.582408620947668
+          }
+        ],
+        "note": "Existing measured data, not a new experiment"
+      }
+    },
+    {
+      "id": "R2",
+      "type": "search",
+      "candidate_id": "C1",
+      "gap_id": "G1",
+      "request": {
+        "type": "search",
+        "id": "R2",
+        "candidate_id": "C1",
+        "gap_id": "G1",
+        "missing_relation": "Whether reversible RNA self-complementary or kissing-loop junctions form connected networks with exchange or relaxation slow enough to support path-dependent viscoelastic arrest.",
+        "variables": [
+          "loop-junction dissociation/exchange time (s or min)",
+          "network connectivity/percolation threshold (dimensionless)",
+          "relaxation time (s or min)",
+          "RNA concentration only if directly measured"
+        ],
+        "conditions": "Background published on or before 2025-05-12; RNA kissing-loop or self-assembling RNA nanostructure networks; kinetic/relaxation measurements, condensate material properties, or junction exchange. No target identity query.",
+        "query": "RNA kissing-loop network junction exchange kinetics relaxation viscoelasticity self-assembling RNA nanostructure",
+        "change_if_found": "Direct exchange/connectivity measurements under comparable loop and ionic conditions strengthen plausibility of H1a but do not establish cavity formation or transcription dependence. Fast exchange or absent network connectivity weakens H1a and prioritizes equilibrium-composition or carryover alternatives."
+      },
+      "result": {
+        "status": "returned",
+        "sources": [],
+        "excluded": [],
+        "hit_count": 0,
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=RNA+kissing-loop+network+junction+exchange+kinetics+relaxation+viscoelasticity+self-assembling+RNA+nanostructure+AND+FIRST_PDATE%3A%5B1900-01-01+TO+2025-05-12%5D&format=json&pageSize=5&resultType=core",
+        "raw_sha256": "5efa83673141d763547a7eefcc36d1864a1e7aee140247031f2846b3fe3c5102",
+        "knowledge_limit": "No full-text formulas/units are inferred from the abstract. Refine or request a known historical source if needed."
+      }
+    },
+    {
+      "id": "R3",
+      "type": "search",
+      "candidate_id": "C1",
+      "gap_id": "G1",
+      "request": {
+        "type": "search",
+        "id": "R3",
+        "candidate_id": "C1",
+        "gap_id": "G1",
+        "missing_relation": "Whether RNA self-complementary/kissing-loop association has measured exchange kinetics or relaxation compatible with path-dependent arrest.",
+        "variables": [
+          "RNA loop association/dissociation rates with units",
+          "network relaxation time",
+          "ionic conditions",
+          "direct RNA concentration only if measured"
+        ],
+        "conditions": "First published by 2025-05-12; no target identity; historical RNA loop association, RNA nanostructure, or kissing-loop kinetics.",
+        "query": "(\"kissing loop\" OR \"RNA loop\" OR \"RNA nanostructure\") AND (association OR dissociation OR kinetics OR relaxation)",
+        "change_if_found": "Comparable direct RNA exchange/connectivity measurements strengthen H1a plausibility but do not show cavities or transcription coupling. Fast exchange or incompatible conditions weakens H1a. No result is unresolved, not falsification."
+      },
+      "result": {
+        "status": "waiting_external",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28%22kissing+loop%22+OR+%22RNA+loop%22+OR+%22RNA+nanostructure%22%29+AND+%28association+OR+dissociation+OR+kinetics+OR+relaxation%29+AND+FIRST_PDATE%3A%5B1900-01-01+TO+2025-05-12%5D&format=json&pageSize=5&resultType=core",
+        "output_path": "/Applications/ideas/research/1031_question_boundary/leader_rna_v2_20261102/runs/V2_full/tools/R3/raw.json",
+        "reason": "Await exact HTTP transport; no model/curator scientific selection"
+      }
+    },
+    {
+      "id": "E2",
+      "type": "evidence",
+      "candidate_id": null,
+      "gap_id": null,
+      "request": {
+        "type": "evidence",
+        "id": "E2",
+        "category": "phase_composition",
+        "reason": "Request existing measured coexisting phase concentrations/compositions to assess quantitative availability of equilibrium demixing. Preserve units and conditions; availability is not support and does not establish kinetic arrest."
+      },
+      "result": {
+        "status": "returned",
+        "filename": "phase_measurements.json",
+        "data": [
+          {
+            "phase": "dilute",
+            "tie_line_id": 0,
+            "point_index_in_series": 0,
+            "reference_RNA_ng_per_uL": 27.48,
+            "variant_RNA_ng_per_uL": 0.0,
+            "wt_error_lower_ng_per_uL": 9.0684,
+            "wt_error_upper_ng_per_uL": 9.0684,
+            "mut_error_lower_ng_per_uL": 0.0,
+            "mut_error_upper_ng_per_uL": 0.0
+          },
+          {
+            "phase": "dilute",
+            "tie_line_id": 1,
+            "point_index_in_series": 1,
+            "reference_RNA_ng_per_uL": 53.68,
+            "variant_RNA_ng_per_uL": 0.53,
+            "wt_error_lower_ng_per_uL": 17.7144,
+            "wt_error_upper_ng_per_uL": 17.7144,
+            "mut_error_lower_ng_per_uL": 0.1749,
+            "mut_error_upper_ng_per_uL": 0.1749
+          },
+          {
+            "phase": "dilute",
+            "tie_line_id": 2,
+            "point_index_in_series": 2,
+            "reference_RNA_ng_per_uL": 92.98,
+            "variant_RNA_ng_per_uL": 115.63,
+            "wt_error_lower_ng_per_uL": 30.6834,
+            "wt_error_upper_ng_per_uL": 30.6834,
+            "mut_error_lower_ng_per_uL": 38.1579,
+            "mut_error_upper_ng_per_uL": 38.1579
+          },
+          {
+            "phase": "dense",
+            "tie_line_id": 0,
+            "point_index_in_series": 0,
+            "reference_RNA_ng_per_uL": 12893.0,
+            "variant_RNA_ng_per_uL": 0.0,
+            "wt_error_lower_ng_per_uL": 6446.5,
+            "wt_error_upper_ng_per_uL": 12893.0,
+            "mut_error_lower_ng_per_uL": 0.0,
+            "mut_error_upper_ng_per_uL": 0.0
+          },
+          {
+            "phase": "dense",
+            "tie_line_id": 1,
+            "point_index_in_series": 1,
+            "reference_RNA_ng_per_uL": 12805.0,
+            "variant_RNA_ng_per_uL": 4787.0,
+            "wt_error_lower_ng_per_uL": 6402.5,
+            "wt_error_upper_ng_per_uL": 12805.0,
+            "mut_error_lower_ng_per_uL": 2393.5,
+            "mut_error_upper_ng_per_uL": 4787.0
+          },
+          {
+            "phase": "dense",
+            "tie_line_id": 2,
+            "point_index_in_series": 2,
+            "reference_RNA_ng_per_uL": 48826.0,
+            "variant_RNA_ng_per_uL": 20352.0,
+            "wt_error_lower_ng_per_uL": 24413.0,
+            "wt_error_upper_ng_per_uL": 48826.0,
+            "mut_error_lower_ng_per_uL": 10176.0,
+            "mut_error_upper_ng_per_uL": 20352.0
+          }
+        ],
+        "note": "Existing measured data, not a new experiment"
+      }
+    },
+    {
+      "id": "C3",
+      "type": "compute",
+      "candidate_id": "C1",
+      "gap_id": "G1",
+      "request": {
+        "type": "compute",
+        "id": "C3",
+        "candidate_id": "C1",
+        "gap_id": "G1",
+        "purpose": "Conditional equal-integrated-production comparison of pulse and slow schedules under threshold model versus schedule-independent equilibrium alternative; not a fit.",
+        "model_spec": "Dimensionless x obeys dx/dt=alpha*r-x/tau, t hours, r h^-1, x0=0, xc=.5. Fast r=.2 h^-1 for 5 h and slow r=.05 h^-1 for 20 h; both integrated r=1. Sensitivity tau=[1,5,20] h and alpha=[.5,1,2]. Report x_end and crossing time. Equilibrium alternative predicts no schedule effect after matched composition and equilibration. Do not model q.",
+        "code": "import json, math\nrows=[]\nfor tau in (1.0,5.0,20.0):\n for alpha in (0.5,1.0,2.0):\n  for name,r,duration in ((\"fast\",0.2,5.0),(\"slow\",0.05,20.0)):\n   x=alpha*r*tau*(1-math.exp(-duration/tau)); xs=alpha*r*tau; xc=0.5; tc=None\n   if xs>xc:\n    candidate=-tau*math.log(1-xc/xs)\n    if candidate<=duration: tc=candidate\n   rows.append({\"tau_h\":tau,\"alpha\":alpha,\"schedule\":name,\"r_per_h\":r,\"duration_h\":duration,\"integrated_r\":r*duration,\"x_end\":x,\"steady_x\":xs,\"crossed\":x>=xc,\"crossing_time_h\":tc,\"units\":\"alpha*r and x/tau are h^-1\"})\nprint(json.dumps({\"assumptions\":{\"x0\":0,\"xc\":0.5},\"rows\":rows,\"all_integrals_equal_one\":all(abs(z[\"integrated_r\"]-1)<1e-12 for z in rows),\"nonnegative_x\":all(z[\"x_end\"]>=0 for z in rows),\"alternative\":\"equilibrium predicts no schedule effect after composition match and equilibration\",\"status\":\"conditional hypothetical; not fitted or empirical\"},sort_keys=True))"
+      },
+      "result": {
+        "status": "executed",
+        "returncode": 0,
+        "stdout": "{\"all_integrals_equal_one\": true, \"alternative\": \"equilibrium predicts no schedule effect after composition match and equilibration\", \"assumptions\": {\"x0\": 0, \"xc\": 0.5}, \"nonnegative_x\": true, \"rows\": [{\"alpha\": 0.5, \"crossed\": false, \"crossing_time_h\": null, \"duration_h\": 5.0, \"integrated_r\": 1.0, \"r_per_h\": 0.2, \"schedule\": \"fast\", \"steady_x\": 0.1, \"tau_h\": 1.0, \"units\": \"alpha*r and x/tau are h^-1\", \"x_end\": 0.09932620530009145}, {\"alpha\": 0.5, \"crossed\": false, \"crossing_time_h\": null, \"duration_h\": 20.0, \"integrated_r\": 1.0, \"r_per_h\": 0.05, \"schedule\": \"slow\", \"steady_x\": 0.025, \"tau_h\": 1.0, \"units\": \"alpha*r and x/tau are h^-1\", \"x_end\": 0.02499999994847116}, {\"alpha\": 1.0, \"crossed\": false, \"crossing_time_h\": null, \"duration_h\": 5.0, \"integrated_r\": 1.0, \"r_per_h\": 0.2, \"schedule\": \"fast\", \"steady_x\": 0.2, \"tau_h\": 1.0, \"units\": \"alpha*r and x/tau are h^-1\", \"x_end\": 0.1986524106001829}, {\"alpha\": 1.0, \"crossed\": false, \"crossing_time_h\": null, \"duration_h\": 20.0, \"integrated_r\": 1.0, \"r_per_h\": 0.05, \"schedule\": \"slow\", \"steady_x\": 0.05, \"tau_h\": 1.0, \"units\": \"alpha*r and x/tau are h^-1\", \"x_end\": 0.04999999989694232}, {\"alpha\": 2.0, \"crossed\": false, \"crossing_time_h\": null, \"duration_h\": 5.0, \"integrated_r\": 1.0, \"r_per_h\": 0.2, \"schedule\": \"fast\", \"steady_x\": 0.4, \"tau_h\": 1.0, \"units\": \"alpha*r and x/tau are h^-1\", \"x_end\": 0.3973048212003658}, {\"alpha\": 2.0, \"crossed\": false, \"crossing_time_h\": null, \"duration_h\": 20.0, \"integrated_r\": 1.0, \"r_per_h\": 0.05, \"schedule\": \"slow\", \"steady_x\": 0.1, \"tau_h\": 1.0, \"units\": \"alpha*r and x/tau are h^-1\", \"x_end\": 0.09999999979388464}, {\"alpha\": 0.5, \"crossed\": false, \"crossing_time_h\": null, \"duration_h\": 5.0, \"integrated_r\": 1.0, \"r_per_h\": 0.2, \"schedule\": \"fast\", \"steady_x\": 0.5, \"tau_h\": 5.0, \"units\": \"alpha*r and x/tau are h^-1\", \"x_end\": 0.31606027941427883}, {\"alpha\": 0.5, \"crossed\": false, \"crossing_time_h\": null, \"duration_h\": 20.0, \"integrated_r\": 1.0, \"r_per_h\": 0.05, \"schedule\": \"slow\", \"steady_x\": 0.125, \"tau_h\": 5.0, \"units\": \"alpha*r and x/tau are h^-1\", \"x_end\": 0.12271054513890822}, {\"alpha\": 1.0, \"crossed\": true, \"crossing_time_h\": 3.4657359027997265, \"duration_h\": 5.0, \"integrated_r\": 1.0, \"r_per_h\": 0.2, \"schedule\": \"fast\", \"steady_x\": 1.0, \"tau_h\": 5.0, \"units\": \"alpha*r and x/tau are h^-1\", \"x_end\": 0.6321205588285577}, {\"alpha\": 1.0, \"crossed\": false, \"crossing_time_h\": null, \"duration_h\": 20.0, \"integrated_r\": 1.0, \"r_per_h\": 0.05, \"schedule\": \"slow\", \"steady_x\": 0.25, \"tau_h\": 5.0, \"units\": \"alpha*r and x/tau are h^-1\", \"x_end\": 0.24542109027781644}, {\"alpha\": 2.0, \"crossed\": true, \"crossing_time_h\": 1.4384103622589044, \"duration_h\": 5.0, \"integrated_r\": 1.0, \"r_per_h\": 0.2, \"schedule\": \"fast\", \"steady_x\": 2.0, \"tau_h\": 5.0, \"units\": \"alpha*r and x/tau are h^-1\", \"x_end\": 1.2642411176571153}, {\"alpha\": 2.0, \"crossed\": false, \"crossing_time_h\": null, \"duration_h\": 20.0, \"integrated_r\": 1.0, \"r_per_h\": 0.05, \"schedule\": \"slow\", \"steady_x\": 0.5, \"tau_h\": 5.0, \"units\": \"alpha*r and x/tau are h^-1\", \"x_end\": 0.4908421805556329}, {\"alpha\": 0.5, \"crossed\": false, \"crossing_time_h\": null, \"duration_h\": 5.0, \"integrated_r\": 1.0, \"r_per_h\": 0.2, \"schedule\": \"fast\", \"steady_x\": 2.0, \"tau_h\": 20.0, \"units\": \"alpha*r and x/tau are h^-1\", \"x_end\": 0.44239843385719024}, {\"alpha\": 0.5, \"crossed\": false, \"crossing_time_h\": null, \"duration_h\": 20.0, \"integrated_r\": 1.0, \"r_per_h\": 0.05, \"schedule\": \"slow\", \"steady_x\": 0.5, \"tau_h\": 20.0, \"units\": \"alpha*r and x/tau are h^-1\", \"x_end\": 0.31606027941427883}, {\"alpha\": 1.0, \"crossed\": true, \"crossing_time_h\": 2.6706278524904525, \"duration_h\": 5.0, \"integrated_r\": 1.0, \"r_per_h\": 0.2, \"schedule\": \"fast\", \"steady_x\": 4.0, \"tau_h\": 20.0, \"units\": \"alpha*r and x/tau are h^-1\", \"x_end\": 0.8847968677143805}, {\"alpha\": 1.0, \"crossed\": true, \"crossing_time_h\": 13.862943611198906, \"duration_h\": 20.0, \"integrated_r\": 1.0, \"r_per_h\": 0.05, \"schedule\": \"slow\", \"steady_x\": 1.0, \"tau_h\": 20.0, \"units\": \"alpha*r and x/tau are h^-1\", \"x_end\": 0.6321205588285577}, {\"alpha\": 2.0, \"crossed\": true, \"crossing_time_h\": 1.2907704227514236, \"duration_h\": 5.0, \"integrated_r\": 1.0, \"r_per_h\": 0.2, \"schedule\": \"fast\", \"steady_x\": 8.0, \"tau_h\": 20.0, \"units\": \"alpha*r and x/tau are h^-1\", \"x_end\": 1.769593735428761}, {\"alpha\": 2.0, \"crossed\": true, \"crossing_time_h\": 5.753641449035618, \"duration_h\": 20.0, \"integrated_r\": 1.0, \"r_per_h\": 0.05, \"schedule\": \"slow\", \"steady_x\": 2.0, \"tau_h\": 20.0, \"units\": \"alpha*r and x/tau are h^-1\", \"x_end\": 1.2642411176571153}], \"status\": \"conditional hypothetical; not fitted or empirical\"}\n",
+        "stderr": "",
+        "code_sha256": "04fa91203bdb0bc6415d4eab9b51ac20ed36ebd94ac1b73a77d88f81ae79c13f",
+        "data_sha256": "b55ce376848d9d233623a0828a66a1699e252398e6d8df0ed8c7ac2755704f46",
+        "scope": "Unmodified executor code, broker prepends DATA. Conditional simulation unless model says and evidence supports otherwise."
+      }
+    }
+  ],
+  "literature_use": [
+    {
+      "source_id": "R1_S1",
+      "action": "modify_as_hypothesis",
+      "relation": "Slow sticker exchange can kinetically arrest simulated sticker-spacer condensate coalescence; faster exchange allows merger under reported model conditions.",
+      "variables_units": "sticker exchange timescale and condensate merger kinetics; abstract provides no transferable numeric units or threshold",
+      "conditions": "Abstract-only metadynamics simulations of sticker-spacer condensates, 2024 publication.",
+      "impact_on_model_or_action": "Motivates but does not validate H1a; search directly for RNA loop exchange/relaxation."
+    },
+    {
+      "source_id": "R1_S3",
+      "action": "alternative",
+      "relation": "Percolated beta-sheet networks can kinetically trap protein condensates with multiple LARKS.",
+      "variables_units": "LARKS abundance/location and viscoelastic state; no target parameters available",
+      "conditions": "Protein/RNA-binding protein model systems; abstract-only.",
+      "impact_on_model_or_action": "Supports a general percolation-arrest analogy but distinct chemistry makes it weak transfer evidence."
+    },
+    {
+      "source_id": "R1_S2",
+      "action": "followup",
+      "relation": "Condensates can retard diffusion and may inhibit reaction pathways.",
+      "variables_units": "diffusion and reaction rates; abstract gives no target values",
+      "conditions": "Review abstract.",
+      "impact_on_model_or_action": "Background only; not evidence for cavity mechanism."
+    },
+    {
+      "source_id": "R1_S4",
+      "action": "followup",
+      "relation": "Charge-rich condensate phase behavior depends on electrostatic interactions and explicit charge treatment.",
+      "variables_units": "charge patterning, stoichiometry, salt; no target values",
+      "conditions": "Coarse-grained modeling study, abstract-only.",
+      "impact_on_model_or_action": "Keep ionic/compositional dependence as a possible alternative; no direct causal inference."
+    },
+    {
+      "source_id": "R1_S1",
+      "action": "modify_as_hypothesis",
+      "relation": "Slow sticker exchange can kinetically arrest simulated sticker-spacer condensate coalescence; faster exchange at similar saturation allows merger.",
+      "variables_units": "Sticker exchange timescale and condensate merger kinetics; abstract gives no transferable numeric units or threshold.",
+      "conditions": "Abstract-only metadynamics simulation; published 2024-12-15.",
+      "impact_on_model_or_action": "Motivates but does not validate H1a; motivates direct search for RNA loop exchange and relaxation."
+    },
+    {
+      "source_id": "R1_S3",
+      "action": "alternative",
+      "relation": "Percolated beta-sheet networks can kinetically trap protein condensates with multiple LARKS.",
+      "variables_units": "LARKS abundance/location and viscoelastic state; no target values.",
+      "conditions": "Protein/RNA-binding-protein model systems; abstract-only, 2023-06-29.",
+      "impact_on_model_or_action": "General percolation-arrest analogy; distinct chemistry makes transfer weak."
+    },
+    {
+      "source_id": "R1_S2",
+      "action": "followup",
+      "relation": "Condensates may enhance or inhibit reactions, with diffusion retardation one possible inhibitory effect.",
+      "variables_units": "Diffusion and reaction rates; no target values.",
+      "conditions": "Review abstract, published 2025-04-07.",
+      "impact_on_model_or_action": "Background only; no evidence for cavity mechanism."
+    },
+    {
+      "source_id": "R1_S4",
+      "action": "followup",
+      "relation": "Charge-rich condensate behavior depends on electrostatics, stoichiometry, and salt.",
+      "variables_units": "Charge patterning, stoichiometry, salt; no target values.",
+      "conditions": "Coarse-grained modeling study, abstract-only, 2025-02-11.",
+      "impact_on_model_or_action": "Retain ionic/compositional dependence as an alternative; no direct causal inference."
+    },
+    {
+      "source_id": "R1_S1",
+      "action": "modify_as_hypothesis",
+      "relation": "Slow sticker exchange can arrest simulated sticker-spacer condensate coalescence; fast exchange allows merger.",
+      "variables_units": "Exchange dynamics and coalescence, no transferable numeric parameters in abstract.",
+      "conditions": "Abstract-only 2024 simulation in distinct material.",
+      "impact_on_model_or_action": "Motivates H1a as hypothesis only; search directly for RNA loop exchange."
+    },
+    {
+      "source_id": "R2",
+      "action": "followup",
+      "relation": "Exact RNA loop search returned zero sources.",
+      "variables_units": "Not applicable.",
+      "conditions": "Zero-source retrieval result.",
+      "impact_on_model_or_action": "Treat as no usable evidence, not a biological negative."
+    },
+    {
+      "source_id": "R1_S1",
+      "action": "modify_as_hypothesis",
+      "relation": "Slow sticker exchange can arrest simulated sticker-spacer condensate coalescence; fast exchange allows merger.",
+      "variables_units": "Exchange dynamics and coalescence; abstract provides no transferable numeric parameters.",
+      "conditions": "Abstract-only 2024 simulation in distinct material.",
+      "impact_on_model_or_action": "Motivates H1a only and does not validate RNA-loop transfer."
+    },
+    {
+      "source_id": "R2",
+      "action": "followup",
+      "relation": "Exact RNA loop search returned zero sources.",
+      "variables_units": "Not applicable.",
+      "conditions": "Zero-source retrieval.",
+      "impact_on_model_or_action": "No usable evidence, not biological negative; refine query R3."
+    }
+  ],
+  "adjudications": [],
+  "opened": [
+    "case_brief.md",
+    "initial_measurements.json",
+    "mobility_dev.json",
+    "phase_measurements.json"
+  ],
+  "counters": {
+    "replies": 6,
+    "search": 3,
+    "compute": 1,
+    "evidence": 2
+  },
+  "finals": [],
+  "reason": "tool return C3"
+}

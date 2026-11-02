@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430517153998159,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0a23615db7f3cb94016ae593f1b92c8196af18f6daba3e1e1f",
+    "object": "chat.completion",
+    "created": 1793430517,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Slow memory has the lowest trajectory-level CV error; multiscale and clock extensions do not improve it. Residual lag correlation leaves some uncertainty about adequacy.\",\"prediction\":\"After rapid input reversals, output will retain a history-dependent tail that decays over seconds.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts a persistent output tail after input changes.\",\"condition_to_check\":\"Test whether prior input predicts output under alternating interventions after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3282,
+      "completion_tokens": 263,
+      "total_tokens": 3545,
+      "completion_tokens_details": {
+        "reasoning_tokens": 141
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.362892873585224
+}

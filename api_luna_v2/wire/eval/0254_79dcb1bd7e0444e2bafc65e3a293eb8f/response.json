@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431704820760564,
+  "http_status": 200,
+  "body": {
+    "id": "resp_097f166a885e6f1d016ae598952d988195a7ebd4e6beccfac9",
+    "object": "chat.completion",
+    "created": 1793431704,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest trajectory-level CV error; PRBS forecast error was low, but residual correlation and disagreement among memory variants leave uncertainty on rapid switches.\",\"prediction\":\"During rapid alternation, output will depend on accumulated input history rather than only the current input and state.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts carryover after input changes, beyond current input and visible state.\",\"condition_to_check\":\"Alternating-input trajectories should be better predicted by history features than by a state-only model.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3278,
+      "completion_tokens": 248,
+      "total_tokens": 3526,
+      "completion_tokens_details": {
+        "reasoning_tokens": 118
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.714295278303325
+}

@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431199636442169,
+  "http_status": 200,
+  "body": {
+    "id": "resp_01ca78db2dd8409e016ae5969b6aa88193add46c145d53e07a",
+    "object": "chat.completion",
+    "created": 1793431199,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"alternating\",\"reason\":\"State_cubic has the lowest trajectory-level validation error (0.0161), improving on state (0.0260); history-based candidates validate substantially worse. High residual lag leaves adequacy uncertain.\",\"prediction\":\"Under rapid input switches, state_cubic predicts response shaped by current state rather than an additional persistent history effect.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain mechanism is established by these predictive fits.\",\"condition_to_check\":\"Test whether history predicts the response after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2816,
+      "completion_tokens": 303,
+      "total_tokens": 3119,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 176
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.99589114729315
+}

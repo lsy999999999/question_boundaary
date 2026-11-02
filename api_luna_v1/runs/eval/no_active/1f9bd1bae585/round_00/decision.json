@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430440763797490,
+  "decision": {
+    "representation": "clock",
+    "experiment": "alternating",
+    "reason": "Clock has the lowest trajectory-held-out error by a wide margin; memory-only models leave substantial error. Alternating input offers a useful contrast between elapsed-time forcing and input-driven history.",
+    "prediction": "After accounting for input, residual oscillations will recur at similar elapsed times across interventions.",
+    "accept": true,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "A shared elapsed-time driver is consistent with the strong clock-model validation advantage.",
+      "condition_to_check": "Compare residual oscillations at aligned elapsed times across different input interventions; absence of recurrence would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest trajectory-held-out error by a wide margin; memory-only models leave substantial error. Alternating input offers a useful contrast between elapsed-time forcing and input-driven history.\",\"prediction\":\"After accounting for input, residual oscillations will recur at similar elapsed times across interventions.\",\"accept\":true,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A shared elapsed-time driver is consistent with the strong clock-model validation advantage.\",\"condition_to_check\":\"Compare residual oscillations at aligned elapsed times across different input interventions; absence of recurrence would weaken this relation.\"}}",
+    "input_tokens": 2812,
+    "output_tokens": 280,
+    "batch_elapsed_seconds": 3.5837210221216083,
+    "amortized_seconds": 3.5837210221216083,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2812,
+      "completion_tokens": 280,
+      "total_tokens": 3092,
+      "completion_tokens_details": {
+        "reasoning_tokens": 151
+      }
+    },
+    "api_response_id": "resp_0b33805cc417c834016ae593a5d4e8819699535f65e714ca03",
+    "wire_record": "wire/eval/0384_145d00e714ee4ef480765f8c1fb536b1"
+  }
+}

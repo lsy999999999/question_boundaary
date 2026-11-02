@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430229669694573,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "double_pulse",
+    "reason": "It has the best trajectory-level validation error by a wide margin, and observed post-input decay supports slow history dependence. A double pulse tests whether carryover alters the second response.",
+    "prediction": "The second pulse response will differ from the first because the first pulse's effect persists through the intervening rest.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated input and output history carry past influence forward, with leakage producing finite relaxation.",
+      "condition_to_check": "At matched input, test whether the intervening pulse history predicts the second response."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"It has the best trajectory-level validation error by a wide margin, and observed post-input decay supports slow history dependence. A double pulse tests whether carryover alters the second response.\",\"prediction\":\"The second pulse response will differ from the first because the first pulse's effect persists through the intervening rest.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history carry past influence forward, with leakage producing finite relaxation.\",\"condition_to_check\":\"At matched input, test whether the intervening pulse history predicts the second response.\"}}",
+    "input_tokens": 3462,
+    "output_tokens": 275,
+    "batch_elapsed_seconds": 9.52920845337212,
+    "amortized_seconds": 9.52920845337212,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3462,
+      "completion_tokens": 275,
+      "total_tokens": 3737,
+      "completion_tokens_details": {
+        "reasoning_tokens": 143
+      }
+    },
+    "api_response_id": "resp_0a07e454156b328f016ae592d1e604819092fa867cc1d4e955",
+    "wire_record": "wire/eval/0281_366bfb9cd8294eb499d0a58a17eda922"
+  }
+}

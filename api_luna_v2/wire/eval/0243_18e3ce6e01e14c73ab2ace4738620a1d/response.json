@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431685652534048,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0edad2cf695b01f3016ae59882e3088196b1a7d47b10646115",
+    "object": "chat.completion",
+    "created": 1793431685,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest trajectory-held-out error (0.00390), improving on memory_clock (0.00727) with fewer coefficients; persistent post-input responses support history dependence, not an independent clock.\",\"prediction\":\"During alternating input, response will retain dependence on earlier input history after controlling the current input and visible state.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts persistent response after input switches or returns to zero.\",\"condition_to_check\":\"The relation is weakened if history adds no predictive value after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3300,
+      "completion_tokens": 239,
+      "total_tokens": 3539,
+      "completion_tokens_details": {
+        "reasoning_tokens": 101
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 8.595692394301295
+}

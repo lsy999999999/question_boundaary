@@ -1,0 +1,42 @@
+{
+  "time_ns": 1793431489346752528,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "alternating",
+    "reason": "It has the lowest leave-trajectory-out error (0.00351), improving on state_cubic and state; residual lag remains, so unseen-intervention adequacy is uncertain.",
+    "prediction": "Alternating switches will produce excursions that differ from isolated pulses because accumulated history affects the response.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "The saturation-augmented representation predicts weakened response as state or accumulated history grows.",
+      "condition_to_check": "Compare positive and negative responses across amplitudes; failure to weaken would count against saturation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest leave-trajectory-out error (0.00351), improving on state_cubic and state; residual lag remains, so unseen-intervention adequacy is uncertain.\",\"prediction\":\"Alternating switches will produce excursions that differ from isolated pulses because accumulated history affects the response.\",\"accept\":false,\"mapping\":{\"source_id\":\"saturation\",\"target_relation\":\"The saturation-augmented representation predicts weakened response as state or accumulated history grows.\",\"condition_to_check\":\"Compare positive and negative responses across amplitudes; failure to weaken would count against saturation.\"}}",
+    "input_tokens": 2827,
+    "output_tokens": 314,
+    "batch_elapsed_seconds": 8.772603475488722,
+    "amortized_seconds": 8.772603475488722,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2827,
+      "completion_tokens": 314,
+      "total_tokens": 3141,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 184
+      }
+    },
+    "api_response_id": "resp_0f87ef13cdd2f3f0016ae597bdafa081959b324fca71422ac0",
+    "wire_record": "wire/eval/0106_aef48ac9e6604d74a6bc0b59c5dc452b"
+  }
+}

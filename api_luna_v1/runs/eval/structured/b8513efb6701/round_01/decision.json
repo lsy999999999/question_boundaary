@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430111760119195,
+  "decision": {
+    "representation": "clock",
+    "experiment": "prbs",
+    "reason": "Clock has far lower leave-trajectory-out error than history-only alternatives and previously forecast alternating inputs well. Residual autocorrelation remains, so PRBS tests whether irregular input history explains the remaining structure.",
+    "prediction": "After PRBS input ends, oscillation phase will align with elapsed time across repeats despite differing input histories.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Elapsed-time periodic forcing may explain oscillations shared across differently driven trajectories.",
+      "condition_to_check": "Compare post-input oscillation phase across PRBS repeats and against the clock model."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has far lower leave-trajectory-out error than history-only alternatives and previously forecast alternating inputs well. Residual autocorrelation remains, so PRBS tests whether irregular input history explains the remaining structure.\",\"prediction\":\"After PRBS input ends, oscillation phase will align with elapsed time across repeats despite differing input histories.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time periodic forcing may explain oscillations shared across differently driven trajectories.\",\"condition_to_check\":\"Compare post-input oscillation phase across PRBS repeats and against the clock model.\"}}",
+    "input_tokens": 3236,
+    "output_tokens": 245,
+    "batch_elapsed_seconds": 3.9070316441357136,
+    "amortized_seconds": 3.9070316441357136,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3236,
+      "completion_tokens": 245,
+      "total_tokens": 3481,
+      "completion_tokens_details": {
+        "reasoning_tokens": 115
+      }
+    },
+    "api_response_id": "resp_0b25dafdd6845477016ae5925cf8308194855f1c0a8bd7e102",
+    "wire_record": "wire/eval/0220_7592ce3fa3564a898c50f1d0b7c9dd7a"
+  }
+}

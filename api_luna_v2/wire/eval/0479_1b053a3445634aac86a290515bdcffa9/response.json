@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432151906446615,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0b67fcdcd3fcd46c016ae59a54d75c81939df36fec46489516",
+    "object": "chat.completion",
+    "created": 1793432151,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"double_pulse\",\"reason\":\"Memory_clock has the lowest leave-trajectory-out NMSE (0.0017), and prior alternating forecasts were accurate. Double pulses probe whether its history features generalize across separated inputs.\",\"prediction\":\"The second pulse response should depend on the first pulse’s history, with small forecast errors; repeatable residuals aligned to elapsed time would challenge the model.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Validation favors history-and-clock features but does not establish a specific physical mechanism.\",\"condition_to_check\":\"Compare second-pulse responses and residuals against forecasts after accounting for input history and elapsed time.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3446,
+      "completion_tokens": 312,
+      "total_tokens": 3758,
+      "completion_tokens_details": {
+        "reasoning_tokens": 169
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 6.343079466372728
+}

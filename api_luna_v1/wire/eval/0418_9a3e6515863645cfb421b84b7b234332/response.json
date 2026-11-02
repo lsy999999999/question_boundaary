@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430513271225893,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0112597b0bf2c267016ae593eee0108190a98a0a2010b7c835",
+    "object": "chat.completion",
+    "created": 1793430513,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_fast\",\"experiment\":\"alternating\",\"reason\":\"memory_fast has much lower leave-trajectory-out error than the current state model and delay; alternating inputs can help distinguish accumulated history from lagged response.\",\"prediction\":\"After rapid input switches, memory_fast predicts a smoother, history-dependent response than a pure delay model.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The observations support adding predictive history features, but do not establish a specific cross-domain relation.\",\"condition_to_check\":\"Compare alternating-input forecasts with delay-model predictions and test whether accumulated history improves trajectory-level accuracy.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2781,
+      "completion_tokens": 239,
+      "total_tokens": 3020,
+      "completion_tokens_details": {
+        "reasoning_tokens": 113
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.05886438023299
+}

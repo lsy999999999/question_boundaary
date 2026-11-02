@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423796007267510,
+  "decision": {
+    "representation": "clock",
+    "experiment": "alternating",
+    "reason": "Clock terms reduce NMSE for pulses but not steps; alternating inputs test phase-independence.",
+    "prediction": "Alternating inputs should show consistent phase shifts regardless of amplitude.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Persistent residuals align with elapsed time regardless of input shape.",
+      "condition_to_check": "Phase shifts match elapsed time intervals."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"clock\",\n  \"experiment\": \"alternating\",\n  \"reason\": \"Clock terms reduce NMSE for pulses but not steps; alternating inputs test phase-independence.\",\n  \"prediction\": \"Alternating inputs should show consistent phase shifts regardless of amplitude.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"external_clock\",\n    \"target_relation\": \"Persistent residuals align with elapsed time regardless of input shape.\",\n    \"condition_to_check\": \"Phase shifts match elapsed time intervals.\"\n  }\n}",
+    "input_tokens": 3158,
+    "output_tokens": 111,
+    "batch_elapsed_seconds": 2.5529369059950113,
+    "amortized_seconds": 2.5529369059950113,
+    "peak_gpu_allocated_gb": 14.829248905181885,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

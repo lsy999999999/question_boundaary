@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423822112254503,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "positive_pulse",
+    "reason": "Memory_slow has lowest CV NMSE and shows best generalization.",
+    "prediction": "Positive pulse will cause a delayed response with a slower decay compared to state-only model.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "The system's response to a pulse should show a delayed effect with a longer relaxation time.",
+      "condition_to_check": "Check if the response to a positive pulse decays more slowly than a simple exponential."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Memory_slow has lowest CV NMSE and shows best generalization.\",\n  \"prediction\": \"Positive pulse will cause a delayed response with a slower decay compared to state-only model.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"The system's response to a pulse should show a delayed effect with a longer relaxation time.\",\n    \"condition_to_check\": \"Check if the response to a positive pulse decays more slowly than a simple exponential.\"\n  }\n}",
+    "input_tokens": 3151,
+    "output_tokens": 128,
+    "batch_elapsed_seconds": 2.900998504832387,
+    "amortized_seconds": 2.900998504832387,
+    "peak_gpu_allocated_gb": 14.829248905181885,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

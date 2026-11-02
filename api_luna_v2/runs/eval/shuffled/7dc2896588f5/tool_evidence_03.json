@@ -1,0 +1,114 @@
+{
+  "candidate_models": [
+    {
+      "representation": "state",
+      "cv_nmse": 0.036811827441874535,
+      "ridge": 1e-05,
+      "coefficient_count": 3
+    },
+    {
+      "representation": "state_cubic",
+      "cv_nmse": 0.06616031895637654,
+      "ridge": 0.001,
+      "coefficient_count": 5
+    },
+    {
+      "representation": "memory_fast",
+      "cv_nmse": 0.0009116762230317719,
+      "ridge": 1e-05,
+      "coefficient_count": 9
+    },
+    {
+      "representation": "memory_slow",
+      "cv_nmse": 0.0007662605566327553,
+      "ridge": 1e-05,
+      "coefficient_count": 9
+    },
+    {
+      "representation": "memory_multiscale",
+      "cv_nmse": 0.0007745603139891879,
+      "ridge": 1e-05,
+      "coefficient_count": 15
+    },
+    {
+      "representation": "saturating_memory",
+      "cv_nmse": 0.0007973525199717412,
+      "ridge": 1e-05,
+      "coefficient_count": 23
+    },
+    {
+      "representation": "delay",
+      "cv_nmse": 0.0033521734950097723,
+      "ridge": 1e-05,
+      "coefficient_count": 11
+    },
+    {
+      "representation": "clock",
+      "cv_nmse": 0.03940099612838148,
+      "ridge": 1e-05,
+      "coefficient_count": 9
+    },
+    {
+      "representation": "memory_clock",
+      "cv_nmse": 0.0007717219926571136,
+      "ridge": 1e-05,
+      "coefficient_count": 21
+    },
+    {
+      "representation": "nonlinear_delay",
+      "cv_nmse": 0.0019093252162725681,
+      "ridge": 1e-05,
+      "coefficient_count": 25
+    },
+    {
+      "representation": "history_all",
+      "cv_nmse": 0.0028241057099520355,
+      "ridge": 1e-05,
+      "coefficient_count": 37
+    }
+  ],
+  "experiment_disagreement": {
+    "plausible_representations": [
+      "memory_slow",
+      "memory_clock",
+      "memory_multiscale",
+      "saturating_memory"
+    ],
+    "scores": [
+      {
+        "action": "positive_pulse",
+        "clipped_prediction_variance": 3.1538354618126036e-06
+      },
+      {
+        "action": "negative_pulse",
+        "clipped_prediction_variance": 3.952493473618751e-06
+      },
+      {
+        "action": "step_rest",
+        "clipped_prediction_variance": 2.6318230261601212e-06
+      },
+      {
+        "action": "double_pulse",
+        "clipped_prediction_variance": 4.490866992494144e-06
+      },
+      {
+        "action": "alternating",
+        "clipped_prediction_variance": 8.817710704012743e-06
+      },
+      {
+        "action": "ramp_reverse",
+        "clipped_prediction_variance": 2.2899122989572944e-06
+      },
+      {
+        "action": "slow_wave",
+        "clipped_prediction_variance": 1.6421476840852065e-06
+      },
+      {
+        "action": "prbs",
+        "clipped_prediction_variance": 9.289663704403824e-06
+      }
+    ]
+  },
+  "fits": 11,
+  "training_observations": 6
+}

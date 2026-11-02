@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793432328111607996,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0a4537c58fccdafe016ae59b068b608193934827daf21c3a4e",
+    "object": "chat.completion",
+    "created": 1793432328,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"ramp_reverse\",\"reason\":\"It has the lowest trajectory-level CV error (0.00194), substantially outperforming history_all (0.00290) and simpler memory models. Residual lag remains, so adequacy for unseen interventions is not established.\",\"prediction\":\"At matched input and visible state, predictions will still depend on accumulated history, with larger-magnitude responses limited by saturation.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Nonlinear accumulated-history features improve prediction, but these data do not justify a specific physical mechanism.\",\"condition_to_check\":\"On unseen interventions, test whether residual lag and trajectory error remain low relative to simpler memory models.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3685,
+      "completion_tokens": 148,
+      "total_tokens": 3833
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.5690915985032916
+}

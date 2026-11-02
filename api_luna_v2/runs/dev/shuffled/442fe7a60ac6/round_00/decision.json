@@ -1,0 +1,42 @@
+{
+  "time_ns": 1793431187090060522,
+  "decision": {
+    "representation": "state",
+    "experiment": "alternating",
+    "reason": "The state model has the lowest leave-trajectory-out error; added memory and nonlinear features validate worse. Alternating input best separates plausible models by prediction disagreement.",
+    "prediction": "If the state model is adequate, rapid reversals will track current input and state without systematic history-dependent deviations.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No mechanism relation is established by the available trajectory evidence.",
+      "condition_to_check": "Compare alternating-input observations with predictions and test for residual dependence on prior input."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"The state model has the lowest leave-trajectory-out error; added memory and nonlinear features validate worse. Alternating input best separates plausible models by prediction disagreement.\",\"prediction\":\"If the state model is adequate, rapid reversals will track current input and state without systematic history-dependent deviations.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No mechanism relation is established by the available trajectory evidence.\",\"condition_to_check\":\"Compare alternating-input observations with predictions and test for residual dependence on prior input.\"}}",
+    "input_tokens": 2802,
+    "output_tokens": 223,
+    "batch_elapsed_seconds": 5.434426938183606,
+    "amortized_seconds": 5.434426938183606,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2802,
+      "completion_tokens": 223,
+      "total_tokens": 3025,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 105
+      }
+    },
+    "api_response_id": "resp_091e1e7d29c785d8016ae5968ffed08195a67b26b23e605d63",
+    "wire_record": "wire/dev/0003_69eb82a2448b4aff9993316a1444acff"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430523080737829,
+  "http_status": 200,
+  "body": {
+    "id": "resp_05ff07447ed9bbdd016ae593f7ba1881958df4d09aae71b341",
+    "object": "chat.completion",
+    "created": 1793430522,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"ramp_reverse\",\"reason\":\"Saturating memory has the lowest leave-trajectory-out error; strong residual autocorrelation and post-pulse decay also contradict a state-only model.\",\"prediction\":\"After reversal, the output will retain a history-dependent tail; its magnitude will grow less than proportionally at larger input amplitudes.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Accumulated input history predicts persistent post-pulse effects beyond current state and input.\",\"condition_to_check\":\"At matched current state and input, different prior ramps should yield different outputs; no difference would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2804,
+      "completion_tokens": 312,
+      "total_tokens": 3116,
+      "completion_tokens_details": {
+        "reasoning_tokens": 175
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 9.18321247305721
+}

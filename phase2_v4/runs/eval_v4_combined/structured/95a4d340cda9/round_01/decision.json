@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423932413276859,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "negative_pulse",
+    "reason": "Saturating_memory performs well on positive pulses; test negative input.",
+    "prediction": "Negative pulse will show similar response shape but opposite sign.",
+    "accept": true,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "State response weakens at high magnitudes due to saturation.",
+      "condition_to_check": "Compare response amplitudes for positive and negative pulses."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"negative_pulse\",\n  \"reason\": \"Saturating_memory performs well on positive pulses; test negative input.\",\n  \"prediction\": \"Negative pulse will show similar response shape but opposite sign.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"State response weakens at high magnitudes due to saturation.\",\n    \"condition_to_check\": \"Compare response amplitudes for positive and negative pulses.\"\n  }\n}",
+    "input_tokens": 3581,
+    "output_tokens": 114,
+    "batch_elapsed_seconds": 2.7160811331123114,
+    "amortized_seconds": 2.7160811331123114,
+    "peak_gpu_allocated_gb": 14.917911529541016,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

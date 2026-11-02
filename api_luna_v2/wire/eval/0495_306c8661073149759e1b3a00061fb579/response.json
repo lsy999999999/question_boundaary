@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793432194433552090,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0febc613623a6b09016ae59a80ab7c81908b6a59cfd3dfeb48",
+    "object": "chat.completion",
+    "created": 1793432194,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"prbs\",\"reason\":\"State has the lowest leave-trajectory-out NMSE; every added-history, clock, or nonlinear candidate validates worse, and prior interventions had low forecast error.\",\"prediction\":\"For unseen inputs, trajectories will be predicted from current input and visible state without a reproducible extra history- or elapsed-time-dependent effect.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Current validation and intervention results do not justify an additional mechanism relation.\",\"condition_to_check\":\"Repeatable held-out forecast errors tied to past input after accounting for current input and visible state would challenge this representation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3680,
+      "completion_tokens": 131,
+      "total_tokens": 3811
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.557884189300239
+}

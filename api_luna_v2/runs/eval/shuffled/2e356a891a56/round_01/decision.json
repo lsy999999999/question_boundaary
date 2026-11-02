@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431791609390970,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "alternating",
+    "reason": "Memory_slow has the lowest trajectory-level CV error; the PRBS fit is less accurate, so rapid input switches can test whether this representation handles changing histories.",
+    "prediction": "After input switches, output will retain a decaying dependence on earlier inputs even when current input matches.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "The observed post-pulse decay is consistent with accumulated past influence that leaks over time.",
+      "condition_to_check": "Test whether earlier inputs predict output after controlling current input and visible output."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest trajectory-level CV error; the PRBS fit is less accurate, so rapid input switches can test whether this representation handles changing histories.\",\"prediction\":\"After input switches, output will retain a decaying dependence on earlier inputs even when current input matches.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"The observed post-pulse decay is consistent with accumulated past influence that leaks over time.\",\"condition_to_check\":\"Test whether earlier inputs predict output after controlling current input and visible output.\"}}",
+    "input_tokens": 3250,
+    "output_tokens": 436,
+    "batch_elapsed_seconds": 6.248158265836537,
+    "amortized_seconds": 6.248158265836537,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3250,
+      "completion_tokens": 436,
+      "total_tokens": 3686,
+      "completion_tokens_details": {
+        "reasoning_tokens": 311
+      }
+    },
+    "api_response_id": "resp_081b88d901476c15016ae598eadae88194bc71201a32beef2c",
+    "wire_record": "wire/eval/0306_686a6d2a6b6c46e59fa8e88c3bcc091a"
+  }
+}

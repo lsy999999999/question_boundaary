@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793429678609614141,
+  "decision": {
+    "representation": "memory_fast",
+    "experiment": "slow_wave",
+    "reason": "Memory_fast has the lowest trajectory-level CV error (0.00184) and comparable forecast errors; memory_slow is slightly worse, while multiscale and clock variants do not improve validation. Residual autocorrelation leaves some uncertainty.",
+    "prediction": "After input changes, predicted output will retain a short-lived history-dependent component that decays over roughly seconds.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Finite-relaxation accumulated history is supported as a predictive feature, but the best validated timescales are fast.",
+      "condition_to_check": "The history feature should predict output after controlling current input and visible state; absence of that effect weakens this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_fast\",\"experiment\":\"slow_wave\",\"reason\":\"Memory_fast has the lowest trajectory-level CV error (0.00184) and comparable forecast errors; memory_slow is slightly worse, while multiscale and clock variants do not improve validation. Residual autocorrelation leaves some uncertainty.\",\"prediction\":\"After input changes, predicted output will retain a short-lived history-dependent component that decays over roughly seconds.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Finite-relaxation accumulated history is supported as a predictive feature, but the best validated timescales are fast.\",\"condition_to_check\":\"The history feature should predict output after controlling current input and visible state; absence of that effect weakens this relation.\"}}",
+    "input_tokens": 3693,
+    "output_tokens": 152,
+    "batch_elapsed_seconds": 3.073558366857469,
+    "amortized_seconds": 3.073558366857469,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3693,
+      "completion_tokens": 152,
+      "total_tokens": 3845
+    },
+    "api_response_id": "resp_08ea3412f6c3bf67016ae590ac51688196bf1bdfa6f808d492",
+    "wire_record": "wire/dev/0046_030eb50955544817b1f5c349abf8cae5"
+  }
+}

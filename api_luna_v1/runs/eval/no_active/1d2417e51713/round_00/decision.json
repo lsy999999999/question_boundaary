@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430352536424845,
+  "decision": {
+    "representation": "state",
+    "experiment": "prbs",
+    "reason": "The state model has the best trajectory-level validation error and low residual autocorrelation; richer memory and clock models do not improve validation. PRBS best probes remaining disagreement.",
+    "prediction": "After controlling current state and input, output should show no persistent elapsed-time pattern or additional history-dependent effect.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No cross-domain mechanism is established by the current observations.",
+      "condition_to_check": "Test whether PRBS residuals depend on past inputs or elapsed time after accounting for current state and input."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"prbs\",\"reason\":\"The state model has the best trajectory-level validation error and low residual autocorrelation; richer memory and clock models do not improve validation. PRBS best probes remaining disagreement.\",\"prediction\":\"After controlling current state and input, output should show no persistent elapsed-time pattern or additional history-dependent effect.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain mechanism is established by the current observations.\",\"condition_to_check\":\"Test whether PRBS residuals depend on past inputs or elapsed time after accounting for current state and input.\"}}",
+    "input_tokens": 2830,
+    "output_tokens": 288,
+    "batch_elapsed_seconds": 3.9495084062218666,
+    "amortized_seconds": 3.9495084062218666,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2830,
+      "completion_tokens": 288,
+      "total_tokens": 3118,
+      "completion_tokens_details": {
+        "reasoning_tokens": 163
+      }
+    },
+    "api_response_id": "resp_038702e76626b5df016ae5934d43d8819681785c66eddc9ae4",
+    "wire_record": "wire/eval/0340_4aadcff499934bc0a2f79762bdb60773"
+  }
+}

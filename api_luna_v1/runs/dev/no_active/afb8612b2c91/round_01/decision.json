@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793429713343419615,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "alternating",
+    "reason": "memory_slow has the best trajectory-level validation error, but residual lag-1 correlation remains substantial and plausible memory variants disagree; adequacy for unseen interventions is not established.",
+    "prediction": "After rapid input reversals, the output will retain a history-dependent component rather than responding solely to the current input and output.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated past input influence with finite relaxation predicts persistent output effects after input returns to zero.",
+      "condition_to_check": "At matched current input and output, vary prior input history and test whether subsequent responses differ."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"memory_slow has the best trajectory-level validation error, but residual lag-1 correlation remains substantial and plausible memory variants disagree; adequacy for unseen interventions is not established.\",\"prediction\":\"After rapid input reversals, the output will retain a history-dependent component rather than responding solely to the current input and output.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past input influence with finite relaxation predicts persistent output effects after input returns to zero.\",\"condition_to_check\":\"At matched current input and output, vary prior input history and test whether subsequent responses differ.\"}}",
+    "input_tokens": 3291,
+    "output_tokens": 280,
+    "batch_elapsed_seconds": 3.680054980330169,
+    "amortized_seconds": 3.680054980330169,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3291,
+      "completion_tokens": 280,
+      "total_tokens": 3571,
+      "completion_tokens_details": {
+        "reasoning_tokens": 144
+      }
+    },
+    "api_response_id": "resp_0b8181c793f0fc83016ae590ce8b588195acb5596569716bdb",
+    "wire_record": "wire/dev/0059_13c50fb0937c42a39949d05254d5e524"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793431814801278330,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "double_pulse",
+    "reason": "memory_slow has the lowest trajectory-level CV NMSE (0.00131) and consistently low error across observed actions. A double pulse tests whether its slow-history representation predicts the response to renewed input after partial recovery.",
+    "prediction": "The second pulse will produce a history-dependent response differing from the first, and memory_slow will predict that difference better than state-only.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"memory_slow has the lowest trajectory-level CV NMSE (0.00131) and consistently low error across observed actions. A double pulse tests whether its slow-history representation predicts the response to renewed input after partial recovery.\",\"prediction\":\"The second pulse will produce a history-dependent response differing from the first, and memory_slow will predict that difference better than state-only.\",\"accept\":false}",
+    "input_tokens": 2826,
+    "output_tokens": 96,
+    "batch_elapsed_seconds": 2.9311521407216787,
+    "amortized_seconds": 2.9311521407216787,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2826,
+      "completion_tokens": 96,
+      "total_tokens": 2922
+    },
+    "api_response_id": "resp_07db86d509919d9d016ae599052f2481909c337503c501a42e",
+    "wire_record": "wire/eval/0317_a2c22eb1325b4ed0a2cdcb67ad738bee"
+  }
+}

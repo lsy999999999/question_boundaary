@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430052258106861,
+  "http_status": 200,
+  "body": {
+    "id": "resp_048260d523162919016ae59221110481969e32624c0319460f",
+    "object": "chat.completion",
+    "created": 1793430052,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"Memory models outperform state-only alternatives; multiscale history modestly improves cross-validation over memory_slow, while saturation and clock variants offer only small gains.\",\"prediction\":\"Under irregular input switches, output will retain a history-dependent response that decays over multiple timescales after input returns to zero.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past input and output predict lingering response after current input returns to zero.\",\"condition_to_check\":\"Compare post-switch outputs across PRBS segments with current input and visible state controlled; no history-dependent effect would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3266,
+      "completion_tokens": 326,
+      "total_tokens": 3592,
+      "completion_tokens_details": {
+        "reasoning_tokens": 186
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.948854104615748
+}

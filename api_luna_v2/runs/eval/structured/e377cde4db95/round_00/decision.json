@@ -1,0 +1,42 @@
+{
+  "time_ns": 1793431540716784978,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Slow accumulated-history features have the lowest trajectory-held-out error (0.00195), far below the state-only model; residual correlation also indicates unmodeled persistence.",
+    "prediction": "After input switches, output will retain a smooth, slowly decaying history-dependent component rather than changing only with current input.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated past influence is represented as a finite-timescale state that can predict output beyond current input and visible state.",
+      "condition_to_check": "Under PRBS, test whether history predicts output after controlling current input and state; absence of this effect would weaken the relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow accumulated-history features have the lowest trajectory-held-out error (0.00195), far below the state-only model; residual correlation also indicates unmodeled persistence.\",\"prediction\":\"After input switches, output will retain a smooth, slowly decaying history-dependent component rather than changing only with current input.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence is represented as a finite-timescale state that can predict output beyond current input and visible state.\",\"condition_to_check\":\"Under PRBS, test whether history predicts output after controlling current input and state; absence of this effect would weaken the relation.\"}}",
+    "input_tokens": 2804,
+    "output_tokens": 233,
+    "batch_elapsed_seconds": 4.841098207049072,
+    "amortized_seconds": 4.841098207049072,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2804,
+      "completion_tokens": 233,
+      "total_tokens": 3037,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 87
+      }
+    },
+    "api_response_id": "resp_03ab8fb174c1a106016ae597f23dec819580a0a434e598e17d",
+    "wire_record": "wire/eval/0151_6952f3de6f9b4845aacbeec3b5ebe40e"
+  }
+}

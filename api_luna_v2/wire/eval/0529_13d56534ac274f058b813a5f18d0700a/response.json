@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793432282453051302,
+  "http_status": 200,
+  "body": {
+    "id": "resp_028d6d7bcfc8f0af016ae59ad8c204819085a9c3af9b734383",
+    "object": "chat.completion",
+    "created": 1793432282,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"ramp_reverse\",\"reason\":\"It has the lowest trajectory-held-out error, and persistent post-input tails across varied interventions support slow history dependence. Alternatives fit worse; residual lag correlation means adequacy for unseen interventions is not assured.\",\"prediction\":\"After input returns to zero, trajectories with different prior inputs will diverge temporarily and relax gradually.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated history features predict lingering effects of past input after the input changes.\",\"condition_to_check\":\"At matched current input and output, different prior histories should predict different subsequent trajectories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3693,
+      "completion_tokens": 129,
+      "total_tokens": 3822
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.511490519158542
+}

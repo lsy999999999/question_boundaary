@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793429928215626080,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Slow-history memory has the lowest trajectory-level CV error (0.00190), far below the state model, and addresses its strongly correlated residuals. PRBS has the greatest prediction disagreement among plausible models.",
+    "prediction": "After PRBS input switches, output will retain a history-dependent response rather than track only the current input and visible state.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow-history memory has the lowest trajectory-level CV error (0.00190), far below the state model, and addresses its strongly correlated residuals. PRBS has the greatest prediction disagreement among plausible models.\",\"prediction\":\"After PRBS input switches, output will retain a history-dependent response rather than track only the current input and visible state.\",\"accept\":false}",
+    "input_tokens": 2568,
+    "output_tokens": 181,
+    "batch_elapsed_seconds": 3.3040336510166526,
+    "amortized_seconds": 3.3040336510166526,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2568,
+      "completion_tokens": 181,
+      "total_tokens": 2749,
+      "completion_tokens_details": {
+        "reasoning_tokens": 90
+      }
+    },
+    "api_response_id": "resp_076faac55962572f016ae591a5fef08196bbe6f837b8702cbf",
+    "wire_record": "wire/eval/0118_b1d172942d904747a73007b5c89f2dee"
+  }
+}

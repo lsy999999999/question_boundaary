@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793432177566171119,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0e8788e097e62929016ae59a70295881979cc12f1af9da600a",
+    "object": "chat.completion",
+    "created": 1793432177,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"ramp_reverse\",\"reason\":\"Memory_clock has the lowest leave-trajectory-out NMSE (0.00232), substantially beating history_all (0.0294); recent independent trajectories also have low forecast error. Residual lag correlation warrants caution, not a more complex model with worse validation.\",\"prediction\":\"For unseen ramp-reversal inputs, memory_clock will generally predict better than state-only models, though small temporally correlated residuals may remain.\",\"accept\":true}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2952,
+      "completion_tokens": 104,
+      "total_tokens": 3056
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.0959627144038677
+}

@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793432102306416813,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "step_rest",
+    "reason": "It has strong trajectory-level validation and low forecast error, while combining fast and slow history effects. The small CV advantage of memory_clock does not establish an independent elapsed-time driver.",
+    "prediction": "After input returns to zero, output will relax over multiple timescales and depend on prior input history, rather than immediately returning to baseline.",
+    "accept": true,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"step_rest\",\"reason\":\"It has strong trajectory-level validation and low forecast error, while combining fast and slow history effects. The small CV advantage of memory_clock does not establish an independent elapsed-time driver.\",\"prediction\":\"After input returns to zero, output will relax over multiple timescales and depend on prior input history, rather than immediately returning to baseline.\",\"accept\":true}",
+    "input_tokens": 3316,
+    "output_tokens": 172,
+    "batch_elapsed_seconds": 2.9108656588941813,
+    "amortized_seconds": 2.9108656588941813,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3316,
+      "completion_tokens": 172,
+      "total_tokens": 3488,
+      "completion_tokens_details": {
+        "reasoning_tokens": 82
+      }
+    },
+    "api_response_id": "resp_0721f77f1116c17d016ae59a2417788194ae2bd7cad45f6213",
+    "wire_record": "wire/eval/0456_daf54d3a393f4c0ca37ee2f998a674a6"
+  }
+}

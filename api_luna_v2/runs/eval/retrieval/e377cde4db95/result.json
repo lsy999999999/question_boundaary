@@ -1,0 +1,84 @@
+{
+  "task_id": "e377cde4db95",
+  "split": "eval",
+  "family": "delay",
+  "seed": 31,
+  "method": "retrieval",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_slow",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0032328480943688777,
+    "coefficients": [
+      -0.0024583,
+      -1.6572408,
+      1.016627,
+      2.2772134,
+      -8.7425555,
+      -7.470059,
+      -8.404075,
+      10.8067682,
+      15.8583576
+    ]
+  },
+  "test": {
+    "test_nmse": 0.0022757087253544063,
+    "test_mse": 0.0001512869569653385,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 0.00018722830656440201,
+        "nmse": 0.0028369166147160494
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.0001527324837117799,
+        "nmse": 0.0005637932385782057
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 0.0001243103382045609,
+        "nmse": 0.004273472704338615
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 0.00018408600478600552,
+        "nmse": 0.002932344596784517
+      },
+      {
+        "action": "test_prbs",
+        "mse": 0.00012799892933053455,
+        "nmse": 0.0017431191352079618
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 0.00013136567919474812,
+        "nmse": 0.0013046060625010868
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": false,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 11975,
+  "output_tokens": 650,
+  "generation_seconds_amortized": 14.398337554186583,
+  "elapsed_wall_seconds": 718.1568651199341,
+  "selected_actions": [
+    "prbs",
+    "double_pulse",
+    "alternating"
+  ],
+  "selected_representations": [
+    "memory_slow",
+    "memory_slow",
+    "memory_slow",
+    "memory_slow"
+  ],
+  "peak_gpu_allocated_gb": 0.0,
+  "peak_process_ram_gb": 0.08777236938476562,
+  "inference_backend": "third_party_api",
+  "evaluation_after_commit_ns": 1793432149460348788
+}

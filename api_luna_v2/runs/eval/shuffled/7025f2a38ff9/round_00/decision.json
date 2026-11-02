@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431542719223812,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "memory_slow has the lowest trajectory-level CV error; the state-only model performs poorly, while delay and clock models do not explain the observations as well.",
+    "prediction": "After input switches, the output will retain a gradual history-dependent response rather than changing only after a fixed travel-time lag.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Smooth accumulated history predicts better than the tested pure-delay representation.",
+      "condition_to_check": "Across irregular input switches, test whether gradual history dependence persists beyond what fixed lags predict."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest trajectory-level CV error; the state-only model performs poorly, while delay and clock models do not explain the observations as well.\",\"prediction\":\"After input switches, the output will retain a gradual history-dependent response rather than changing only after a fixed travel-time lag.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Smooth accumulated history predicts better than the tested pure-delay representation.\",\"condition_to_check\":\"Across irregular input switches, test whether gradual history dependence persists beyond what fixed lags predict.\"}}",
+    "input_tokens": 2806,
+    "output_tokens": 370,
+    "batch_elapsed_seconds": 9.42379120644182,
+    "amortized_seconds": 9.42379120644182,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2806,
+      "completion_tokens": 370,
+      "total_tokens": 3176,
+      "completion_tokens_details": {
+        "reasoning_tokens": 244
+      }
+    },
+    "api_response_id": "resp_061f123354deabf2016ae597f2c9c0819593dfea0d195cb731",
+    "wire_record": "wire/eval/0149_f1378273cc56478091cd9804b09ff457"
+  }
+}

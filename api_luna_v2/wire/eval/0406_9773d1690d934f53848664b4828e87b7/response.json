@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431980656136220,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0225835a65e25e6a016ae599a921948195b094732204536541",
+    "object": "chat.completion",
+    "created": 1793431980,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"Slow-memory has the lowest trajectory-held-out NMSE, but substantial residual lag correlation and weaker PRBS/alternating fits mean adequacy for unseen interventions is not established.\",\"prediction\":\"The second positive pulse will produce a different response from the first because accumulated history persists between pulses.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history predicts persistent influence after the input changes.\",\"condition_to_check\":\"Compare the second pulse response with the first while accounting for current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3441,
+      "completion_tokens": 305,
+      "total_tokens": 3746,
+      "completion_tokens_details": {
+        "reasoning_tokens": 179
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.520285027101636
+}

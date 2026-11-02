@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430578813287411,
+  "http_status": 200,
+  "body": {
+    "id": "resp_03680524388e4a58016ae5942ff61081938e2ed68611f3e2d3",
+    "object": "chat.completion",
+    "created": 1793430578,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"double_pulse\",\"reason\":\"It has the lowest trajectory-held-out NMSE (0.00253), substantially better than memory_fast, though the PRBS fit and correlated residuals leave uncertainty about unseen interventions.\",\"prediction\":\"The second positive pulse will produce a different peak from the first because the response depends nonlinearly on accumulated history.\",\"accept\":false,\"mapping\":{\"source_id\":\"saturation\",\"target_relation\":\"Saturating transforms of accumulated history improve validation over linear memory features.\",\"condition_to_check\":\"Compare pulse responses across amplitudes and histories; absence of reproducible amplitude-dependent flattening would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3240,
+      "completion_tokens": 243,
+      "total_tokens": 3483,
+      "completion_tokens_details": {
+        "reasoning_tokens": 104
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.516615460626781
+}

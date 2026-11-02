@@ -1,0 +1,29 @@
+{
+  "id": "C2L2-domain-literature",
+  "type": "search",
+  "candidate_id": "RNA-C2-selectivity-cavity-v1",
+  "gap_id": "G1",
+  "request": {
+    "type": "search",
+    "id": "C2L2-domain-literature",
+    "candidate_id": "RNA-C2-selectivity-cavity-v1",
+    "gap_id": "G1",
+    "missing_relation": "Whether composition-dependent partitioning or preferential enrichment in multicomponent RNA condensates can produce internal dilute domains/cavity morphology, and under what concentration, sequence, and phase conditions.",
+    "variables": [
+      "RNA species identity/composition",
+      "dense and dilute phase concentrations (mass or molar concentration, if reported)",
+      "mixture composition",
+      "domain morphology/internal cavities",
+      "phase volumes or topology, if reported"
+    ],
+    "conditions": "Background first published on or before 2025-05-12; exclude target identity and later accounts. Prefer direct multicomponent RNA condensate evidence; distinguish full-text support from abstract-only support and flag non-RNA analogies.",
+    "query": "(RNA condensate OR RNA phase separation) AND (multicomponent OR mixture OR compositional partitioning) AND (internal domains OR cavities OR vacuoles OR wetting OR morphology)",
+    "change_if_found": "If a pre-cutoff source directly shows that composition-dependent preferential partitioning creates internal dilute domains in RNA-rich condensates, refine H1 to its reported species/concentration/phase conditions and derive a case-specific conditional prediction; if sources only show bulk coexistence or non-RNA analogies, keep the bridge speculative and use them only as alternatives or follow-up."
+  },
+  "result": {
+    "status": "waiting_external",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28RNA+condensate+OR+RNA+phase+separation%29+AND+%28multicomponent+OR+mixture+OR+compositional+partitioning%29+AND+%28internal+domains+OR+cavities+OR+vacuoles+OR+wetting+OR+morphology%29+AND+FIRST_PDATE%3A%5B1900-01-01+TO+2025-05-12%5D&format=json&pageSize=5&resultType=core",
+    "output_path": "/Applications/ideas/research/1031_question_boundary/leader_rna_v2_20261102/runs/C2/tools/C2L2-domain-literature/raw.json",
+    "reason": "Await exact HTTP transport; no model/curator scientific selection"
+  }
+}

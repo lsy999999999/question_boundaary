@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793432017417272232,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "slow_wave",
+    "reason": "Memory representations greatly outperform state-only models. Memory_multiscale has the best current trajectory-level CV error (0.000847), slightly better than memory_clock and saturating_memory; the small gap does not justify added clock features.",
+    "prediction": "After input changes, output will depend on both recent and longer-term input history, producing different responses for similar current inputs.",
+    "accept": true,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"slow_wave\",\"reason\":\"Memory representations greatly outperform state-only models. Memory_multiscale has the best current trajectory-level CV error (0.000847), slightly better than memory_clock and saturating_memory; the small gap does not justify added clock features.\",\"prediction\":\"After input changes, output will depend on both recent and longer-term input history, producing different responses for similar current inputs.\",\"accept\":true}",
+    "input_tokens": 2982,
+    "output_tokens": 95,
+    "batch_elapsed_seconds": 2.3187572499737144,
+    "amortized_seconds": 2.3187572499737144,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2982,
+      "completion_tokens": 95,
+      "total_tokens": 3077
+    },
+    "api_response_id": "resp_0f5c8ff172af7102016ae599cf6cfc8196b6bdb32c2aab78da",
+    "wire_record": "wire/eval/0426_5d7d5688a1444bd8b58df4b6a8a9f975"
+  }
+}

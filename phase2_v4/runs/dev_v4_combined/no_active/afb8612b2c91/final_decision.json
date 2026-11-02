@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793423754173947642,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "positive_pulse",
+    "reason": "Memory_slow fits best and shows high residual correlation.",
+    "prediction": "Future states will recover more slowly post-pulse compared to state-only model.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Storage should cause slower response recovery post-pulse.",
+      "condition_to_check": "Recovery time constant should be longer than input duration."
+    }
+  },
+  "parse_errors": [
+    "invalid_experiment"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"none\",\n  \"reason\": \"Memory_slow fits best and shows high residual correlation.\",\n  \"prediction\": \"Future states will recover more slowly post-pulse compared to state-only model.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Storage should cause slower response recovery post-pulse.\",\n    \"condition_to_check\": \"Recovery time constant should be longer than input duration.\"\n  }\n}",
+    "input_tokens": 4029,
+    "output_tokens": 108,
+    "batch_elapsed_seconds": 2.6628720173612237,
+    "amortized_seconds": 2.6628720173612237,
+    "peak_gpu_allocated_gb": 14.99042797088623,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.029041290283203,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

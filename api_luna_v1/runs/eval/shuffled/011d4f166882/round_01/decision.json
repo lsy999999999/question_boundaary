@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430596575425097,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "prbs",
+    "reason": "Memory_multiscale has the lowest trajectory-held-out NMSE, and pulse tails support history dependence. PRBS has the largest prediction disagreement among plausible models, making it a useful discriminator.",
+    "prediction": "Under PRBS, output will retain input-history dependence; outcomes can distinguish multiscale memory from clock or saturation alternatives.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No bibliography-card relation is sufficiently established by these observations.",
+      "condition_to_check": "Compare PRBS outcomes against each model’s trajectory-level predictions."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"Memory_multiscale has the lowest trajectory-held-out NMSE, and pulse tails support history dependence. PRBS has the largest prediction disagreement among plausible models, making it a useful discriminator.\",\"prediction\":\"Under PRBS, output will retain input-history dependence; outcomes can distinguish multiscale memory from clock or saturation alternatives.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No bibliography-card relation is sufficiently established by these observations.\",\"condition_to_check\":\"Compare PRBS outcomes against each model’s trajectory-level predictions.\"}}",
+    "input_tokens": 3283,
+    "output_tokens": 294,
+    "batch_elapsed_seconds": 4.1988014271482825,
+    "amortized_seconds": 4.1988014271482825,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3283,
+      "completion_tokens": 294,
+      "total_tokens": 3577,
+      "completion_tokens_details": {
+        "reasoning_tokens": 168
+      }
+    },
+    "api_response_id": "resp_0e94a6149e3c04e3016ae59441088c81958f8de20589322f75",
+    "wire_record": "wire/eval/0448_f70ea343043248f294e34adadc11ca16"
+  }
+}

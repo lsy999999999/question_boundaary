@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430453170184034,
+  "http_status": 200,
+  "body": {
+    "id": "resp_06e60594a530acd1016ae593b17f4881978da4673397139567",
+    "object": "chat.completion",
+    "created": 1793430453,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"memory_slow has the lowest leave-trajectory-out error by a substantial margin, while the state-only model has strongly correlated residuals.\",\"prediction\":\"After rapid input reversals, the response will retain a smoother, longer-lived dependence on prior input than the state-only model predicts.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Persistent post-input response supports accumulated history with finite relaxation over an instantaneous state-only response.\",\"condition_to_check\":\"Across alternating inputs, test whether prior input predicts output after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2809,
+      "completion_tokens": 356,
+      "total_tokens": 3165,
+      "completion_tokens_details": {
+        "reasoning_tokens": 227
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.439931882545352
+}

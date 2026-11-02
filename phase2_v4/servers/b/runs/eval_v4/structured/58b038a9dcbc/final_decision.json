@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793424098640017016,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "step_rest",
+    "reason": "Memory_clock shows low NMSE and distinct phase shifts for different inputs.",
+    "prediction": "Step_rest will show a consistent phase shift with elapsed time, unlike clock-only model.",
+    "accept": true,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Persistent residuals align with elapsed time regardless of input shape.",
+      "condition_to_check": "Residuals should show consistent phase shift for step_rest."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_clock\",\n  \"experiment\": \"step_rest\",\n  \"reason\": \"Memory_clock shows low NMSE and distinct phase shifts for different inputs.\",\n  \"prediction\": \"Step_rest will show a consistent phase shift with elapsed time, unlike clock-only model.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"external_clock\",\n    \"target_relation\": \"Persistent residuals align with elapsed time regardless of input shape.\",\n    \"condition_to_check\": \"Residuals should show consistent phase shift for step_rest.\"\n  }\n}",
+    "input_tokens": 3921,
+    "output_tokens": 118,
+    "batch_elapsed_seconds": 2.891096537001431,
+    "amortized_seconds": 2.891096537001431,
+    "peak_gpu_allocated_gb": 14.989767074584961,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

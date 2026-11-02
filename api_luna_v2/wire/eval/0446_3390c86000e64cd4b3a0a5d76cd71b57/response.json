@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432076248410978,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0f888b360673c2f3016ae59a0882fc819689900b0c8ad69216",
+    "object": "chat.completion",
+    "created": 1793432076,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"State has the lowest leave-trajectory-out NMSE (0.001174); slow memory is slightly worse (0.001232), and prior forecasts were accurate. Residual lag leaves some uncertainty but does not justify added features.\",\"prediction\":\"After controlling current state and input, alternating-input responses will show no reproducible dependence on earlier inputs.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Validation does not establish a predictive effect of accumulated history beyond current state and input.\",\"condition_to_check\":\"Test whether prior inputs predict residuals after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3692,
+      "completion_tokens": 288,
+      "total_tokens": 3980,
+      "completion_tokens_details": {
+        "reasoning_tokens": 153
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.44120273925364
+}

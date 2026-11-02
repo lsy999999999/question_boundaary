@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793429952219977764,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "ramp_reverse",
+    "reason": "Saturating memory has the lowest trajectory-held-out error by a wide margin, while the state-only fit leaves strongly correlated residuals. A ramp reversal probes history dependence under changing input.",
+    "prediction": "At the same input during reversal, output will differ from its earlier value because accumulated history persists.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"ramp_reverse\",\"reason\":\"Saturating memory has the lowest trajectory-held-out error by a wide margin, while the state-only fit leaves strongly correlated residuals. A ramp reversal probes history dependence under changing input.\",\"prediction\":\"At the same input during reversal, output will differ from its earlier value because accumulated history persists.\",\"accept\":false}",
+    "input_tokens": 2566,
+    "output_tokens": 257,
+    "batch_elapsed_seconds": 3.6317035807296634,
+    "amortized_seconds": 3.6317035807296634,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2566,
+      "completion_tokens": 257,
+      "total_tokens": 2823,
+      "completion_tokens_details": {
+        "reasoning_tokens": 173
+      }
+    },
+    "api_response_id": "resp_069b9d53a8b5d7aa016ae591bd47f48193bda31a68880be287",
+    "wire_record": "wire/eval/0135_73d50f06e4194742bf35879ad190c84f"
+  }
+}

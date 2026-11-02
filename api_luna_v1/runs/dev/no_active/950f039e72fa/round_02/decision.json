@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793429735690931864,
+  "decision": {
+    "representation": "clock",
+    "experiment": "alternating",
+    "reason": "Clock has the lowest leave-trajectory-out NMSE by a wide margin, and PRBS and ramp-reverse forecasts remain accurate. Residual lag correlation leaves some uncertainty about unseen interventions.",
+    "prediction": "Under rapid switches, late baseline drift will align more closely by elapsed time than by recent input history.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "A shared elapsed-time component may account for similar late drift across distinct input trajectories.",
+      "condition_to_check": "The relation is weakened if aligned drift instead follows recent input history."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest leave-trajectory-out NMSE by a wide margin, and PRBS and ramp-reverse forecasts remain accurate. Residual lag correlation leaves some uncertainty about unseen interventions.\",\"prediction\":\"Under rapid switches, late baseline drift will align more closely by elapsed time than by recent input history.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A shared elapsed-time component may account for similar late drift across distinct input trajectories.\",\"condition_to_check\":\"The relation is weakened if aligned drift instead follows recent input history.\"}}",
+    "input_tokens": 3470,
+    "output_tokens": 276,
+    "batch_elapsed_seconds": 3.3889889139682055,
+    "amortized_seconds": 3.3889889139682055,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3470,
+      "completion_tokens": 276,
+      "total_tokens": 3746,
+      "completion_tokens_details": {
+        "reasoning_tokens": 150
+      }
+    },
+    "api_response_id": "resp_0855585e99425b1b016ae590e526248194afc21d29d3d51471",
+    "wire_record": "wire/dev/0069_c5504f8f322b43fcaba3949fd5e64dee"
+  }
+}

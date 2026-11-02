@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793430018770133932,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "prbs",
+    "reason": "Memory models fit far better than state-only models. Multiscale memory has lower trajectory-level CV error than the current slow-memory model; PRBS probes responses across varied switching times and has high disagreement among plausible alternatives.",
+    "prediction": "The multiscale-memory model will predict PRBS responses better than slow-memory, especially across rapid switches and subsequent recovery.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"Memory models fit far better than state-only models. Multiscale memory has lower trajectory-level CV error than the current slow-memory model; PRBS probes responses across varied switching times and has high disagreement among plausible alternatives.\",\"prediction\":\"The multiscale-memory model will predict PRBS responses better than slow-memory, especially across rapid switches and subsequent recovery.\",\"accept\":false}",
+    "input_tokens": 2661,
+    "output_tokens": 92,
+    "batch_elapsed_seconds": 4.431818953715265,
+    "amortized_seconds": 4.431818953715265,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2661,
+      "completion_tokens": 92,
+      "total_tokens": 2753
+    },
+    "api_response_id": "resp_022bd7e48b569e38016ae592016a8481969239684bb89d4590",
+    "wire_record": "wire/eval/0170_d152e3772b834064a509752c5e5075bb"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "value": {
+    "updates": [
+      {
+        "id": "v3_r0",
+        "status": "weakened",
+        "evidence_ids": [
+          "failure_v3_r0_experiment_0",
+          "failure_v3_r0_experiment_1",
+          "outcome_0"
+        ],
+        "reason": "The model has substantial held-out trajectory errors on both positive and negative input schedules, so its current full-trajectory predictions are incomplete. However, the executed polarity intervention is consistent with odd symmetry at the measured noise scale. Retain that relation as local evidence, not a universal law."
+      },
+      {
+        "id": "r0_b0",
+        "status": "weakened",
+        "evidence_ids": [
+          "failure_r0_experiment_1"
+        ],
+        "reason": "The held-out trajectory has a persistent late-time prediction discrepancy when input is zero, which weakens this model's full-trajectory account. This failure does not by itself identify which model component is wrong."
+      }
+    ],
+    "next_question": "Probe the weakened current model with a held-out schedule that varies pulse order or spacing while preserving polarity-paired trials, and compare complete trajectories. This can test whether its history trace predicts the post-input response without treating the observed polarity relation as universal."
+  },
+  "generation_records": [
+    {
+      "wire": "wire/003_r0_assessment_0",
+      "valid": true
+    }
+  ]
+}

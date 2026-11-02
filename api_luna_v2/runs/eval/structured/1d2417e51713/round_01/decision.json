@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431645391606290,
+  "decision": {
+    "representation": "state",
+    "experiment": "alternating",
+    "reason": "State has the lowest trajectory-level CV error; added memory and clock terms worsen validation. Alternating input can test whether its remaining residual structure reflects history dependence.",
+    "prediction": "After conditioning on current input and state, alternating-input residuals will show no systematic dependence on earlier inputs.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "",
+      "condition_to_check": "Check whether alternating-input residuals depend on past inputs after conditioning on current input and state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"State has the lowest trajectory-level CV error; added memory and clock terms worsen validation. Alternating input can test whether its remaining residual structure reflects history dependence.\",\"prediction\":\"After conditioning on current input and state, alternating-input residuals will show no systematic dependence on earlier inputs.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"\",\"condition_to_check\":\"Check whether alternating-input residuals depend on past inputs after conditioning on current input and state.\"}}",
+    "input_tokens": 3239,
+    "output_tokens": 255,
+    "batch_elapsed_seconds": 4.216035236604512,
+    "amortized_seconds": 4.216035236604512,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3239,
+      "completion_tokens": 255,
+      "total_tokens": 3494,
+      "completion_tokens_details": {
+        "reasoning_tokens": 146
+      }
+    },
+    "api_response_id": "resp_078ea0a1daf3771b016ae5985a0f448190a4650a17109e97a6",
+    "wire_record": "wire/eval/0224_9c99fa7f1c3143da91bebfd965a421a9"
+  }
+}

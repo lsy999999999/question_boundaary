@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430023717952901,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0d79a658710b20e0016ae592053c9c8197aed122c4217b3a90",
+    "object": "chat.completion",
+    "created": 1793430023,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest candidate leave-trajectory-out NMSE (0.00390), while memory_clock retains substantial PRBS error and higher complexity. High residual lag suggests the current model is not yet adequate.\",\"prediction\":\"Under rapid alternating inputs, output will lag the switches and show history-dependent, attenuated responses.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2659,
+      "completion_tokens": 226,
+      "total_tokens": 2885,
+      "completion_tokens_details": {
+        "reasoning_tokens": 138
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.2868721559643745
+}

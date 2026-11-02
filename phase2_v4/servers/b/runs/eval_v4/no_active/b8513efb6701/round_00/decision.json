@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423840216869059,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "positive_pulse",
+    "reason": "Memory_clock shows best cross-validation NMSE and high prediction variance for positive_pulse.",
+    "prediction": "Positive pulse will cause a delayed response followed by a persistent oscillation.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Persistent oscillation after positive pulse suggests an external clock driving the system.",
+      "condition_to_check": "Oscillation amplitude and frequency should match across different pulse amplitudes."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_clock\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Memory_clock shows best cross-validation NMSE and high prediction variance for positive_pulse.\",\n  \"prediction\": \"Positive pulse will cause a delayed response followed by a persistent oscillation.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"external_clock\",\n    \"target_relation\": \"Persistent oscillation after positive pulse suggests an external clock driving the system.\",\n    \"condition_to_check\": \"Oscillation amplitude and frequency should match across different pulse amplitudes.\"\n  }\n}",
+    "input_tokens": 3156,
+    "output_tokens": 123,
+    "batch_elapsed_seconds": 2.782738860696554,
+    "amortized_seconds": 2.782738860696554,
+    "peak_gpu_allocated_gb": 14.834887027740479,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

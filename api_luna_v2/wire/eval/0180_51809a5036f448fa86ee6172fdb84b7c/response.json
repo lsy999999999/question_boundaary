@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431581265360033,
+  "http_status": 200,
+  "body": {
+    "id": "resp_08469f40b2c3360f016ae5981a491081979d909e0687e5875b",
+    "object": "chat.completion",
+    "created": 1793431581,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"double_pulse\",\"reason\":\"It has the lowest trajectory-held-out error by a wide margin; the state-only model also leaves strongly correlated residuals. Unseen-intervention adequacy remains untested.\",\"prediction\":\"The second pulse will produce a different trajectory from the first because accumulated history changes the response.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence predicts future output beyond current input and visible state.\",\"condition_to_check\":\"Compare the second pulse with the first; the predicted history-dependent change should persist after controlling for input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2827,
+      "completion_tokens": 285,
+      "total_tokens": 3112,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 156
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.609318940900266
+}

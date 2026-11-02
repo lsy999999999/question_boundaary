@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423818584084174,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "positive_pulse",
+    "reason": "Multiscale memory shows best cross-validation but high variance on positive pulse.",
+    "prediction": "Response will show slower rise than state-only model due to combined fast and slow memory.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Combined fast and slow memory should show distinct response compared to single-scale models.",
+      "condition_to_check": "Slower rise time compared to state-only model indicates storage mechanism."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_multiscale\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Multiscale memory shows best cross-validation but high variance on positive pulse.\",\n  \"prediction\": \"Response will show slower rise than state-only model due to combined fast and slow memory.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Combined fast and slow memory should show distinct response compared to single-scale models.\",\n    \"condition_to_check\": \"Slower rise time compared to state-only model indicates storage mechanism.\"\n  }\n}",
+    "input_tokens": 3161,
+    "output_tokens": 125,
+    "batch_elapsed_seconds": 2.841552935540676,
+    "amortized_seconds": 2.841552935540676,
+    "peak_gpu_allocated_gb": 14.829248905181885,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

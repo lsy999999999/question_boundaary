@@ -1,0 +1,84 @@
+{
+  "task_id": "f1ddfabee06d",
+  "split": "eval",
+  "family": "saturated_memory",
+  "seed": 33,
+  "method": "retrieval",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_slow",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0020787279931534304,
+    "coefficients": [
+      0.0015294,
+      -0.5977829,
+      0.9584305,
+      1.6126628,
+      -2.2004745,
+      -0.7905567,
+      -1.7741651,
+      0.531767,
+      2.7611825
+    ]
+  },
+  "test": {
+    "test_nmse": 0.0015341822110467185,
+    "test_mse": 0.000224988744160954,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 3.151332617906096e-05,
+        "nmse": 0.00043971354253422577
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.000957559078903885,
+        "nmse": 0.003070847149408289
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 9.301993019856908e-05,
+        "nmse": 0.003044840624641773
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 4.7163598098158486e-05,
+        "nmse": 0.0005770026657912467
+      },
+      {
+        "action": "test_prbs",
+        "mse": 3.3812284882721824e-05,
+        "nmse": 0.0004200725027352892
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 0.00018686424670332852,
+        "nmse": 0.0016526167811694878
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": true,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 13386,
+  "output_tokens": 232,
+  "generation_seconds_amortized": 6.0467393742874265,
+  "elapsed_wall_seconds": 218.78140592575073,
+  "selected_actions": [
+    "double_pulse",
+    "alternating",
+    "ramp_reverse"
+  ],
+  "selected_representations": [
+    "memory_slow",
+    "memory_slow",
+    "memory_slow",
+    "memory_slow"
+  ],
+  "peak_gpu_allocated_gb": 14.921139240264893,
+  "peak_process_ram_gb": 5.024284362792969,
+  "inference_backend": "cuda",
+  "evaluation_after_commit_ns": 1793424003955785635
+}

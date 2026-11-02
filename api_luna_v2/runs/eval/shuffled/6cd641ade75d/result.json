@@ -1,0 +1,98 @@
+{
+  "task_id": "6cd641ade75d",
+  "split": "eval",
+  "family": "saturated_memory",
+  "seed": 31,
+  "method": "shuffled",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "saturating_memory",
+    "ridge": 0.001,
+    "cv_nmse": 0.0018266699119686037,
+    "coefficients": [
+      -0.0003825,
+      0.0529858,
+      0.8778513,
+      -0.0035678,
+      -0.0733543,
+      -0.447224,
+      -0.0871956,
+      0.0032465,
+      -0.0630322,
+      -0.0622028,
+      0.0134853,
+      0.0235687,
+      -0.2004727,
+      -0.0767993,
+      -0.0041487,
+      0.0041671,
+      0.0957236,
+      -0.2307552,
+      0.1829644,
+      0.1950805,
+      0.0342724,
+      -0.0335051,
+      0.0094556
+    ]
+  },
+  "test": {
+    "test_nmse": 0.0007764173018717386,
+    "test_mse": 9.095275466717929e-05,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 7.747436647742082e-05,
+        "nmse": 0.0009448098270086518
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.00028450638000067954,
+        "nmse": 0.0007433078343071031
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 5.9157357946196246e-05,
+        "nmse": 0.0017170871773307791
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 1.9560112828237217e-05,
+        "nmse": 0.00021393396462317927
+      },
+      {
+        "action": "test_prbs",
+        "mse": 7.86678853188675e-05,
+        "nmse": 0.0008448550310455198
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 2.6350425431674478e-05,
+        "nmse": 0.00019450997691519773
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": false,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 13103,
+  "output_tokens": 1026,
+  "generation_seconds_amortized": 14.493743572384119,
+  "elapsed_wall_seconds": 887.2797374725342,
+  "selected_actions": [
+    "alternating",
+    "alternating",
+    "prbs"
+  ],
+  "selected_representations": [
+    "memory_fast",
+    "memory_slow",
+    "memory_slow",
+    "saturating_memory"
+  ],
+  "peak_gpu_allocated_gb": 0.0,
+  "peak_process_ram_gb": 0.08777236938476562,
+  "inference_backend": "third_party_api",
+  "evaluation_after_commit_ns": 1793432323812996707
+}

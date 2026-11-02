@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793424069104957083,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "positive_pulse",
+    "reason": "Memory_slow fits best and shows high residual correlation.",
+    "prediction": "Future states will recover more slowly after perturbations.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Storage should cause slower response recovery post-perturbation.",
+      "condition_to_check": "No significant change in recovery speed without storage."
+    }
+  },
+  "parse_errors": [
+    "invalid_experiment"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"none\",\n  \"reason\": \"Memory_slow fits best and shows high residual correlation.\",\n  \"prediction\": \"Future states will recover more slowly after perturbations.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Storage should cause slower response recovery post-perturbation.\",\n    \"condition_to_check\": \"No significant change in recovery speed without storage.\"\n  }\n}",
+    "input_tokens": 4019,
+    "output_tokens": 103,
+    "batch_elapsed_seconds": 2.564267826266587,
+    "amortized_seconds": 2.564267826266587,
+    "peak_gpu_allocated_gb": 14.995047092437744,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

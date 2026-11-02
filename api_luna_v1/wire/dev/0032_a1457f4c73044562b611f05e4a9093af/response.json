@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429652630225940,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0a43ef75f1897427016ae59091da1c8195a0e377a135dbae19",
+    "object": "chat.completion",
+    "created": 1793429652,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"prbs\",\"reason\":\"State_cubic has the lowest trajectory-level CV error (0.00119), and its recent alternating and ramp-reverse forecast errors were small. Residual lag correlation leaves adequacy uncertain.\",\"prediction\":\"Under PRBS input, state_cubic will predict the response without systematic residual patterns tied to earlier inputs.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Instantaneous curvature is supported comparatively, but no mechanism card is justified by these fits.\",\"condition_to_check\":\"Reject the model if PRBS residuals show reproducible dependence on past inputs after accounting for current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3471,
+      "completion_tokens": 273,
+      "total_tokens": 3744,
+      "completion_tokens_details": {
+        "reasoning_tokens": 133
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.539231179282069
+}

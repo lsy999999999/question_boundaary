@@ -1,0 +1,37 @@
+{
+  "id": "C2-lever-rule-limits",
+  "type": "compute",
+  "candidate_id": "R01-selective-phase-v1",
+  "gap_id": "G1-selective-phase-bridge",
+  "request": {
+    "type": "compute",
+    "id": "C2-lever-rule-limits",
+    "candidate_id": "R01-selective-phase-v1",
+    "gap_id": "G1-selective-phase-bridge",
+    "purpose": "Test the algebraic lever rule under equal partition selectivity, identical concentrations across phases, a degenerate 0/0 case and an incompatible composition; report whether phase fraction is identifiable and check mass balance where it is.",
+    "model_spec": {
+      "variables_units": {
+        "C_ref,d,C_ref,l,C_var,d,C_var,l": "ng/uL synthetic endpoint values",
+        "r": "dimensionless total variant/reference mass ratio",
+        "phi_l": "dimensionless dilute phase volume fraction",
+        "M_ref,M_var": "ng for arbitrary total volume 1 uL"
+      },
+      "assumptions": [
+        "Synthetic values are algebraic unit tests, not empirical values for E04 or B.",
+        "Closed two-phase system, conserved masses, fixed endpoint concentrations, total volume 1 uL.",
+        "Equal selectivity means K_var=C_var,d/C_var,l equals K_ref=C_ref,d/C_ref,l while each species may differ across phases."
+      ],
+      "range_conditions": "Case A: ref d/l=10/1 and var d/l=20/2 (both K=10); test r=2 and r=1. Case B: identical endpoint concentration within each species across phases (ref 10/10, var 2/2); test r=0.2. Case C: equal-K case with r=2 where numerator and denominator vanish, plus a chosen r yielding nonzero numerator and zero denominator. Return analytic status and, for any identified phi, reconstruct both masses; do not infer empirical support."
+    },
+    "code": "import json\ndef solve(e, r):\n    dr=e['ref_l']-e['ref_d']; dv=e['var_l']-e['var_d']\n    den=r*dr-dv; num=e['var_d']-r*e['ref_d']\n    if abs(den)<1e-12:\n        return {'phi_l':None,'status':'underdetermined 0/0' if abs(num)<1e-12 else 'no solution: zero denominator, nonzero numerator','numerator':num,'denominator':den}\n    phi=num/den\n    if not (0<=phi<=1): return {'phi_l':phi,'status':'incompatible'}\n    ref=e['ref_d']+phi*dr; var=e['var_d']+phi*dv\n    return {'phi_l':phi,'status':'identified by both-species balance','mass_ratio_reconstructed':var/ref,'mass_ratio_residual':abs(var/ref-r),'M_ref_ng_at_1uL':ref,'M_var_ng_at_1uL':var}\ncases=[('equal_K_match',{'ref_d':10.,'ref_l':1.,'var_d':20.,'var_l':2.},2.),('equal_K_mismatch',{'ref_d':10.,'ref_l':1.,'var_d':20.,'var_l':2.},1.),('same_concentration_each_phase',{'ref_d':10.,'ref_l':10.,'var_d':2.,'var_l':2.},0.2)]\nout=[]\nfor name,e,r in cases: out.append({'case':name,'endpoints_ng_per_uL':e,'r':r,**solve(e,r)})\nout.append({'case':'units','statement':'1 uL * ng/uL = ng; ratios and phase fractions dimensionless'})\nprint(json.dumps(out,sort_keys=True))"
+  },
+  "result": {
+    "status": "executed",
+    "returncode": 0,
+    "stdout": "[{\"case\": \"equal_K_match\", \"denominator\": 0.0, \"endpoints_ng_per_uL\": {\"ref_d\": 10.0, \"ref_l\": 1.0, \"var_d\": 20.0, \"var_l\": 2.0}, \"numerator\": 0.0, \"phi_l\": null, \"r\": 2.0, \"status\": \"underdetermined 0/0\"}, {\"case\": \"equal_K_mismatch\", \"endpoints_ng_per_uL\": {\"ref_d\": 10.0, \"ref_l\": 1.0, \"var_d\": 20.0, \"var_l\": 2.0}, \"phi_l\": 1.1111111111111112, \"r\": 1.0, \"status\": \"incompatible\"}, {\"case\": \"same_concentration_each_phase\", \"denominator\": 0.0, \"endpoints_ng_per_uL\": {\"ref_d\": 10.0, \"ref_l\": 10.0, \"var_d\": 2.0, \"var_l\": 2.0}, \"numerator\": 0.0, \"phi_l\": null, \"r\": 0.2, \"status\": \"underdetermined 0/0\"}, {\"case\": \"units\", \"statement\": \"1 uL * ng/uL = ng; ratios and phase fractions dimensionless\"}]\n",
+    "stderr": "",
+    "code_sha256": "e01d5894bc1ba4c577fe831ec1633163865d77f67ddee3f86006a93173c613cc",
+    "data_sha256": "d3a6cc3a3a3b482814e2f5e5fb0a8b3477b00994d86cad2913f9e7b789fedf36",
+    "scope": "Unmodified executor code, broker prepends DATA. Conditional simulation unless model says and evidence supports otherwise."
+  }
+}

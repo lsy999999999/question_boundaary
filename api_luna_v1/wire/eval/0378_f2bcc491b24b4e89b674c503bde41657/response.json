@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430427123363375,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0a3a29aa03ac77b8016ae5939848548197814bd9c7b55e220e",
+    "object": "chat.completion",
+    "created": 1793430427,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow accumulated-history features reduce leave-trajectory-out NMSE from 0.060 to 0.0019; persistent post-input tails support predictive memory, though alternative memory forms remain plausible.\",\"prediction\":\"After irregular input switches, output will retain a decaying dependence on prior input beyond what current input and state alone predict.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence with finite leakage is consistent with the observed post-input tails and improved slow-memory validation.\",\"condition_to_check\":\"The storage relation is weakened if prior input adds no predictive value after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2829,
+      "completion_tokens": 268,
+      "total_tokens": 3097,
+      "completion_tokens_details": {
+        "reasoning_tokens": 124
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.544039678759873
+}

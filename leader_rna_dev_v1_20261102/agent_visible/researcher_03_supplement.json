@@ -1,0 +1,100 @@
+{
+  "method_cards": [
+    {
+      "id": "M21",
+      "group": "D 机制组合与表示修订",
+      "name": "异质性、随机性与群体混合",
+      "tags": [
+        "stochastic",
+        "heterogeneity",
+        "mixture"
+      ],
+      "trigger": "均值变化可能来自个体动力学，也可能来自群体组成。",
+      "required_inputs": "单体分布、重复层次、筛选和删失规则。",
+      "steps": [
+        "比较单一过程、随机过程和混合群体",
+        "检查均值相同但分布不同的情况",
+        "预测方差、尾部或个体转换率"
+      ],
+      "deliverable": "分布级模型及区分群体替换和个体变化的测量。",
+      "failure_or_limit": "有限样本下混合成分可能不可识别；不可把拟合成分直接命名为实体亚型。",
+      "if_blocked": "申请纵向追踪或独立标记。",
+      "source_ids": [
+        "P08",
+        "P12"
+      ],
+      "basis": "engineering_synthesis",
+      "evidence_note": "来源支持基础方法；本卡的触发条件、交付约定和方法衔接为本项目整理，未验证其在新案例上的收益。"
+    },
+    {
+      "id": "M36",
+      "group": "F 模型批评与区分实验",
+      "name": "测量伪影与替代观测模型",
+      "tags": [
+        "measurement",
+        "coordinate_artifact",
+        "preprocessing"
+      ],
+      "trigger": "结论依赖阈值、共享分母、坐标、轨迹长度或筛选规则。",
+      "required_inputs": "原始数据、预处理和测量规则。",
+      "steps": [
+        "写出哪些误差或共同变量会同时影响两个量",
+        "在合理预设变体下重算",
+        "需要时建立显式观测误差模型"
+      ],
+      "deliverable": "测量稳健范围及仍存在的偏差路径。",
+      "failure_or_limit": "稳健性检查不能用挑出有利阈值代替；原始信息缺失可能无法校正。",
+      "if_blocked": "申请校准/同步测量，或把结论限定到原测量定义。",
+      "source_ids": [
+        "P08",
+        "P10",
+        "P12"
+      ],
+      "basis": "engineering_synthesis",
+      "evidence_note": "来源支持基础方法；本卡的触发条件、交付约定和方法衔接为本项目整理，未验证其在新案例上的收益。"
+    },
+    {
+      "id": "M33",
+      "group": "F 模型批评与区分实验",
+      "name": "选择能区分候选的实验",
+      "tags": [
+        "experimental_design",
+        "indistinguishable",
+        "missing_data"
+      ],
+      "trigger": "多个模型都解释现有数据。",
+      "required_inputs": "候选及预测分布/范围、可达条件、噪声与成本。",
+      "steps": [
+        "枚举有限可达实验",
+        "比较不同模型预测差异相对噪声和成本",
+        "事前写出结果与各模型更新规则"
+      ],
+      "deliverable": "最有信息价值的下一实验及承诺预测。",
+      "failure_or_limit": "无概率模型时只是分离度代理；所选候选若共同漏掉真机制，实验也会偏。",
+      "if_blocked": "保留异常结果入口；若全模型都失败转M41。",
+      "source_ids": [
+        "P01",
+        "P09"
+      ],
+      "basis": "direct_method_adaptation",
+      "evidence_note": "来源支持基础方法；本卡的触发条件、交付约定和方法衔接为本项目整理，未验证其在新案例上的收益。"
+    }
+  ],
+  "available_mobility_summary": [
+    {
+      "condition": "B",
+      "n_tracks": 279,
+      "median_final_squared_displacement_um2": 1.596246372681656,
+      "median_n_frames": 98.0,
+      "top_100_by_max_displacement_median_final_squared_displacement_um2": 123.04789558444844
+    },
+    {
+      "condition": "A",
+      "n_tracks": 838,
+      "median_final_squared_displacement_um2": 0.6357464296597586,
+      "median_n_frames": 159.0,
+      "top_100_by_max_displacement_median_final_squared_displacement_um2": 19.582408620947668
+    }
+  ],
+  "availability": "Tracking tables contain centre positions/displacements for droplets and cavities, not same-object cavity area/appearance/disappearance trajectories or reasons for track ending. Those requested endpoints are unavailable. Available geometry and motion cannot fill them."
+}

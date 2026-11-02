@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430300416693375,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "double_pulse",
+    "reason": "Saturating memory has the lowest trajectory-held-out error; pulse decay supports history dependence, and the step’s flattening makes saturation worth testing, though it could reflect ordinary relaxation.",
+    "prediction": "The second positive pulse will produce a smaller peak than the first if saturation persists across the intervening rest.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Response may weaken at larger state magnitudes; the flattening step trajectory motivates testing this alongside memory.",
+      "condition_to_check": "Compare peak responses across pulses and amplitudes; no attenuation beyond that predicted by relaxation would weaken the saturation relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"double_pulse\",\"reason\":\"Saturating memory has the lowest trajectory-held-out error; pulse decay supports history dependence, and the step’s flattening makes saturation worth testing, though it could reflect ordinary relaxation.\",\"prediction\":\"The second positive pulse will produce a smaller peak than the first if saturation persists across the intervening rest.\",\"accept\":false,\"mapping\":{\"source_id\":\"saturation\",\"target_relation\":\"Response may weaken at larger state magnitudes; the flattening step trajectory motivates testing this alongside memory.\",\"condition_to_check\":\"Compare peak responses across pulses and amplitudes; no attenuation beyond that predicted by relaxation would weaken the saturation relation.\"}}",
+    "input_tokens": 3457,
+    "output_tokens": 341,
+    "batch_elapsed_seconds": 4.856059562414885,
+    "amortized_seconds": 4.856059562414885,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3457,
+      "completion_tokens": 341,
+      "total_tokens": 3798,
+      "completion_tokens_details": {
+        "reasoning_tokens": 198
+      }
+    },
+    "api_response_id": "resp_0d23f66b0e3a8616016ae59318561c8196831f6376f9f41bc7",
+    "wire_record": "wire/eval/0317_45dc4619980f434d9e29692cbe3e2539"
+  }
+}

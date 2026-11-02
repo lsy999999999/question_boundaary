@@ -1,0 +1,1473 @@
+{
+  "stage": "completed",
+  "errors": [],
+  "partial_integrity_passed": true,
+  "calls": 8,
+  "input_tokens": 267415,
+  "completion_tokens": 2871,
+  "reported_reasoning_tokens": 623,
+  "reasoning_detail_missing": 5,
+  "api_elapsed_seconds": 45.30017920490354,
+  "wall_seconds": 712.422013647,
+  "validation_failures": 0,
+  "wires": [
+    {
+      "name": "001_r0_proposal_0",
+      "value": {
+        "parent_id": "v3_r2",
+        "evidence_ids": [
+          "aggregate:v3_r2:89beda8821af",
+          "cv:v3_r2:6c443ef32854:b4_r1_experiment_0",
+          "cv:v3_r2:2244622d5e0b:b4_r1_experiment_1",
+          "cv:v3_r2:05587018a59b:b4_r2_experiment_0",
+          "cv:v3_r2:a300e96e99a2:promoted_v4_sealed_1",
+          "cv:v3_r2:510541eef845:promoted_v4_sealed_2",
+          "local_relation_0",
+          "local_relation_1",
+          "local_relation_2"
+        ],
+        "operation": "revise",
+        "concept": "镜像对称的状态记忆基线，保留非比例幅值响应",
+        "reason": "v3_r2整体组外NMSE为0.041，但多条反转/清零输入高于0.05，且后段静默窗口出现明显偏差。新增一个较快输入迹线，使短时反转及停输入后的记忆可独立调节；奇函数项仍保留记录的局部镜像性质。",
+        "spec": {
+          "parameters": [
+            {
+              "name": "p0",
+              "lower": 0.05,
+              "initial": 0.75,
+              "upper": 1.5
+            },
+            {
+              "name": "p1",
+              "lower": 0.05,
+              "initial": 0.5,
+              "upper": 1.5
+            }
+          ],
+          "states": [
+            {
+              "name": "z0",
+              "meaning": "输入的平滑迹线；解释未验证。",
+              "rate": "u-p0*z0"
+            },
+            {
+              "name": "z1",
+              "meaning": "输入迹线与z0之差的平滑响应；解释未验证。",
+              "rate": "(u-z0)-p1*z1"
+            }
+          ],
+          "terms": [
+            "x",
+            "x**3",
+            "tanh(x)",
+            "x*tanh(x)**2",
+            "u",
+            "z0",
+            "z1"
+          ]
+        },
+        "expected_change": "让反转与清零后的暂态误差可由第二时间尺度吸收，同时维持幅值非比例和局部镜像兼容性。",
+        "analogy": {
+          "domain": "线性滤波",
+          "mapping": "两个衰减状态代表不同时间尺度的输入记忆；仅作未验证类比。"
+        },
+        "provenance": "model_knowledge_unverified",
+        "boundary": {
+          "model_id": "v3_r2",
+          "status": "abstain",
+          "expression": "",
+          "reason": "已见高误差样例多样且窗口残差不对应单一输入条件，现有证据不足以界定全轨迹NMSE超0.05的输入范围。"
+        }
+      },
+      "validation": null
+    },
+    {
+      "name": "002_r0_retention_0",
+      "value": {
+        "model_id": "b4_r0",
+        "disposition": "keep_for_test",
+        "relations": [
+          {
+            "relation_id": "local_relation_0",
+            "computed_status": "compatible",
+            "response": "retain_local_fact"
+          },
+          {
+            "relation_id": "local_relation_1",
+            "computed_status": "compatible",
+            "response": "retain_local_fact"
+          },
+          {
+            "relation_id": "local_relation_2",
+            "computed_status": "compatible",
+            "response": "retain_local_fact"
+          }
+        ],
+        "comment": "三项局部关系检查均兼容，且拟合及组外诊断足以支持继续测试；不代表已验证完整轨迹准确性。"
+      },
+      "validation": null
+    },
+    {
+      "name": "003_r0_question_0_0",
+      "value": {
+        "family": "reversal_depth",
+        "purpose": "discriminate",
+        "target_ids": [
+          "v3_r1",
+          "v3_r2",
+          "b4_r0"
+        ],
+        "amplitude_range": [
+          1.2,
+          1.5
+        ],
+        "value_range": [
+          0.2,
+          1.5
+        ],
+        "evidence_ids": [
+          "aggregate:v3_r1:520c3ec27e67",
+          "aggregate:v3_r2:89beda8821af",
+          "aggregate:b4_r0:fb2cbd3bdda7",
+          "local_relation_2",
+          "legacy_v4_boundary_refuted"
+        ],
+        "rationale": "三模型整体拟合相近，但反转干预诊断曾出现分歧；改变反转深度可检验其预测差异，且不把历史边界当作当前模型规律。"
+      },
+      "validation": null
+    },
+    {
+      "name": "004_r0_assessment_0",
+      "value": {
+        "updates": [
+          {
+            "id": "v3_r1",
+            "status": "weakened",
+            "evidence_ids": [
+              "prospective:v3_r1:520c3ec27e67:e5_r0_experiment_0",
+              "prospective:v3_r1:520c3ec27e67:e5_r0_experiment_1"
+            ],
+            "reason": "成对前瞻预测一条低误差、一条高误差，显示对该干预响应不稳。"
+          },
+          {
+            "id": "v3_r2",
+            "status": "weakened",
+            "evidence_ids": [
+              "prospective:v3_r2:89beda8821af:e5_r0_experiment_0",
+              "prospective:v3_r2:89beda8821af:e5_r0_experiment_1"
+            ],
+            "reason": "实际误差跨越高误差阈值；原边界已弃答，不能据此断言边界失效。"
+          },
+          {
+            "id": "b4_r0",
+            "status": "weakened",
+            "evidence_ids": [
+              "prospective:b4_r0:fb2cbd3bdda7:e5_r0_experiment_0",
+              "prospective:b4_r0:fb2cbd3bdda7:e5_r0_experiment_1"
+            ],
+            "reason": "成对前瞻误差一低一高，提示该模型对成对干预中的一项预测欠佳。"
+          }
+        ],
+        "boundary_verdict": "untested",
+        "boundary_metric_ids": [],
+        "comment": "仅评估实际前瞻误差；v3_r2边界弃答，所需边界指标为空，不能由新拟合CV替代。"
+      },
+      "validation": null
+    },
+    {
+      "name": "005_r1_proposal_0",
+      "value": {
+        "parent_id": "v3_r1",
+        "evidence_ids": [
+          "aggregate:v3_r1:f3be5fccda41",
+          "cv:v3_r1:cce509ddbfa0:b4_r1_experiment_0",
+          "cv:v3_r1:29838c6c4ab1:b4_r2_experiment_0",
+          "prospective:v3_r1:520c3ec27e67:e5_r0_experiment_1",
+          "local_relation_0",
+          "local_relation_1",
+          "local_relation_2"
+        ],
+        "operation": "revise",
+        "concept": "加入第二级输入历史状态以表征反转后的滞后响应",
+        "reason": "整体组留出误差为0.043，但反转干预和一条前瞻输入误差超过0.05；双状态候选在部分反转样例较好。保留已观测的局部镜像与非比例性质，不宣称普遍成立。",
+        "spec": {
+          "parameters": [
+            {
+              "name": "p0",
+              "lower": 0.05,
+              "initial": 0.8,
+              "upper": 1.5
+            },
+            {
+              "name": "p1",
+              "lower": 0.05,
+              "initial": 0.5,
+              "upper": 1.5
+            }
+          ],
+          "states": [
+            {
+              "name": "z0",
+              "meaning": "输入的平滑历史变量；物理解释未证实。",
+              "rate": "u-p0*z0"
+            },
+            {
+              "name": "z1",
+              "meaning": "由输入与z0差异驱动的另一历史变量；物理解释未证实。",
+              "rate": "(u-z0)-p1*z1"
+            }
+          ],
+          "terms": [
+            "x",
+            "x**3",
+            "tanh(x)",
+            "x*tanh(x)**2",
+            "u",
+            "z0",
+            "z1"
+          ]
+        },
+        "expected_change": "额外历史通道可改变反转及持续输入后的预测轨迹；须检验是否降低高误差而不损害局部关系。",
+        "analogy": {
+          "domain": "线性滤波器组（未验证）",
+          "mapping": "z0、z1作为不同时间尺度的输入历史摘要"
+        },
+        "provenance": "model_knowledge_unverified",
+        "boundary": {
+          "model_id": "v3_r1",
+          "status": "abstain",
+          "expression": "",
+          "reason": "现有证据仅定位若干失败输入，未给出可可靠概括的输入历史分界。"
+        }
+      },
+      "validation": null
+    },
+    {
+      "name": "006_r1_retention_0",
+      "value": {
+        "model_id": "b4_r0",
+        "disposition": "keep_for_test",
+        "relations": [
+          {
+            "relation_id": "local_relation_0",
+            "computed_status": "compatible",
+            "response": "retain_local_fact"
+          },
+          {
+            "relation_id": "local_relation_1",
+            "computed_status": "compatible",
+            "response": "retain_local_fact"
+          },
+          {
+            "relation_id": "local_relation_2",
+            "computed_status": "compatible",
+            "response": "retain_local_fact"
+          }
+        ],
+        "comment": "三项局部关系检查均兼容，保留其原始证据；尽管存在部分高误差，候选仍值得测试。"
+      },
+      "validation": null
+    },
+    {
+      "name": "007_r1_question_0_0",
+      "value": {
+        "family": "polarity",
+        "purpose": "probe_relation",
+        "target_ids": [
+          "v3_r1",
+          "v3_r2",
+          "b4_r0"
+        ],
+        "amplitude_range": [
+          0.9,
+          1.35
+        ],
+        "value_range": [
+          1,
+          5
+        ],
+        "evidence_ids": [
+          "local_relation_0",
+          "local_relation_1",
+          "local_relation_2"
+        ],
+        "rationale": "检验已观察到的局部镜像关系能否延伸至不同脉冲时长与幅度；仅作关系探测，不将其视为普遍对称律。"
+      },
+      "validation": null
+    },
+    {
+      "name": "008_r1_assessment_0",
+      "value": {
+        "updates": [
+          {
+            "id": "v3_r1",
+            "status": "weakened",
+            "evidence_ids": [
+              "prospective:v3_r1:f3be5fccda41:e5_r1_experiment_0",
+              "prospective:v3_r1:f3be5fccda41:e5_r1_experiment_1"
+            ],
+            "reason": "两条预先提交预测均高误差；局部镜像关系仍获支持，不能据此否定该局部性质。"
+          },
+          {
+            "id": "v3_r2",
+            "status": "weakened",
+            "evidence_ids": [
+              "prospective:v3_r2:73c61dd11b09:e5_r1_experiment_0",
+              "prospective:v3_r2:73c61dd11b09:e5_r1_experiment_1"
+            ],
+            "reason": "两条预先提交预测均为高误差，削弱其外推可靠性。"
+          },
+          {
+            "id": "b4_r0",
+            "status": "weakened",
+            "evidence_ids": [
+              "prospective:b4_r0:391115561a16:e5_r1_experiment_0",
+              "prospective:b4_r0:391115561a16:e5_r1_experiment_1"
+            ],
+            "reason": "两条预先提交预测均为高误差，削弱其外推可靠性。"
+          }
+        ],
+        "boundary_verdict": "untested",
+        "boundary_metric_ids": [],
+        "comment": "新前瞻误差与自适应重拟合诊断分开评估；边界已弃答，不能据此判定边界。"
+      },
+      "validation": null
+    }
+  ],
+  "pairs": [
+    {
+      "round": "round_0",
+      "descriptor": {
+        "family": "reversal_depth",
+        "amplitude": 1.5,
+        "sign": -1,
+        "values": [
+          0.2,
+          1.1
+        ]
+      },
+      "guard": {
+        "passed": true,
+        "contrast_rms": 0.03276737643989887,
+        "boundary_labels": [
+          null,
+          null
+        ],
+        "straddles": false
+      },
+      "question": {
+        "family": "reversal_depth",
+        "purpose": "discriminate",
+        "target_ids": [
+          "v3_r1",
+          "v3_r2",
+          "b4_r0"
+        ],
+        "amplitude_range": [
+          1.2,
+          1.5
+        ],
+        "value_range": [
+          0.2,
+          1.5
+        ],
+        "evidence_ids": [
+          "aggregate:v3_r1:520c3ec27e67",
+          "aggregate:v3_r2:89beda8821af",
+          "aggregate:b4_r0:fb2cbd3bdda7",
+          "local_relation_2",
+          "legacy_v4_boundary_refuted"
+        ],
+        "rationale": "三模型整体拟合相近，但反转干预诊断曾出现分歧；改变反转深度可检验其预测差异，且不把历史边界当作当前模型规律。"
+      },
+      "boundary": {
+        "model_id": "v3_r2",
+        "status": "abstain",
+        "expression": "",
+        "reason": "已见高误差样例多样且窗口残差不对应单一输入条件，现有证据不足以界定全轨迹NMSE超0.05的输入范围。"
+      },
+      "outcome": {
+        "round": 0,
+        "actual_conditions_met": true,
+        "metrics": [
+          {
+            "id": "prospective:v3_r1:520c3ec27e67:e5_r0_experiment_0",
+            "owner_model_id": "v3_r1",
+            "fit_version": "520c3ec27e6779c6b397f0d4e0b4c584fe6d1b087013c321d575a70e8faf31df",
+            "observation": "e5_r0_experiment_0",
+            "metric": "trajectory_nmse",
+            "phase": "observed_error_of_precommitted_prediction",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.026037168595159223,
+            "high_error": false,
+            "forecast_commit_time_ns": 1793520378120484280,
+            "observation_time_ns": 1793520378154186822
+          },
+          {
+            "id": "prospective:v3_r1:520c3ec27e67:e5_r0_experiment_1",
+            "owner_model_id": "v3_r1",
+            "fit_version": "520c3ec27e6779c6b397f0d4e0b4c584fe6d1b087013c321d575a70e8faf31df",
+            "observation": "e5_r0_experiment_1",
+            "metric": "trajectory_nmse",
+            "phase": "observed_error_of_precommitted_prediction",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.08137818574443353,
+            "high_error": true,
+            "forecast_commit_time_ns": 1793520378120484280,
+            "observation_time_ns": 1793520378156453012
+          },
+          {
+            "id": "prospective:v3_r2:89beda8821af:e5_r0_experiment_0",
+            "owner_model_id": "v3_r2",
+            "fit_version": "89beda8821af54b1fe2e855fa7771d74ddedd22d5d3b19defd92e39487c8d9b7",
+            "observation": "e5_r0_experiment_0",
+            "metric": "trajectory_nmse",
+            "phase": "observed_error_of_precommitted_prediction",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.02352508367611716,
+            "high_error": false,
+            "forecast_commit_time_ns": 1793520378120484280,
+            "observation_time_ns": 1793520378154186822
+          },
+          {
+            "id": "prospective:v3_r2:89beda8821af:e5_r0_experiment_1",
+            "owner_model_id": "v3_r2",
+            "fit_version": "89beda8821af54b1fe2e855fa7771d74ddedd22d5d3b19defd92e39487c8d9b7",
+            "observation": "e5_r0_experiment_1",
+            "metric": "trajectory_nmse",
+            "phase": "observed_error_of_precommitted_prediction",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.08015492891090698,
+            "high_error": true,
+            "forecast_commit_time_ns": 1793520378120484280,
+            "observation_time_ns": 1793520378156453012
+          },
+          {
+            "id": "prospective:b4_r0:fb2cbd3bdda7:e5_r0_experiment_0",
+            "owner_model_id": "b4_r0",
+            "fit_version": "fb2cbd3bdda716b749d1d8a5172b0c53716469403ef8865ad8ed0b016740b4eb",
+            "observation": "e5_r0_experiment_0",
+            "metric": "trajectory_nmse",
+            "phase": "observed_error_of_precommitted_prediction",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.016020567461730945,
+            "high_error": false,
+            "forecast_commit_time_ns": 1793520378120484280,
+            "observation_time_ns": 1793520378154186822
+          },
+          {
+            "id": "prospective:b4_r0:fb2cbd3bdda7:e5_r0_experiment_1",
+            "owner_model_id": "b4_r0",
+            "fit_version": "fb2cbd3bdda716b749d1d8a5172b0c53716469403ef8865ad8ed0b016740b4eb",
+            "observation": "e5_r0_experiment_1",
+            "metric": "trajectory_nmse",
+            "phase": "observed_error_of_precommitted_prediction",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.09302364358075554,
+            "high_error": true,
+            "forecast_commit_time_ns": 1793520378120484280,
+            "observation_time_ns": 1793520378156453012
+          }
+        ],
+        "boundary": {
+          "model_id": "v3_r2",
+          "status": "abstain",
+          "expression": "",
+          "reason": "已见高误差样例多样且窗口残差不对应单一输入条件，现有证据不足以界定全轨迹NMSE超0.05的输入范围。"
+        },
+        "boundary_fit_version": "89beda8821af54b1fe2e855fa7771d74ddedd22d5d3b19defd92e39487c8d9b7",
+        "predicted_high_error": [
+          null,
+          null
+        ],
+        "observed_high_error": [
+          false,
+          true
+        ],
+        "boundary_verdict": "untested",
+        "boundary_metric_ids": [
+          "prospective:v3_r2:89beda8821af:e5_r0_experiment_0",
+          "prospective:v3_r2:89beda8821af:e5_r0_experiment_1"
+        ]
+      }
+    },
+    {
+      "round": "round_1",
+      "descriptor": {
+        "family": "polarity",
+        "amplitude": 1.35,
+        "sign": 1,
+        "values": [
+          5.0
+        ]
+      },
+      "guard": {
+        "passed": true,
+        "contrast_rms": 0.11215867175656408,
+        "boundary_labels": [
+          null,
+          null
+        ],
+        "straddles": false
+      },
+      "question": {
+        "family": "polarity",
+        "purpose": "probe_relation",
+        "target_ids": [
+          "v3_r1",
+          "v3_r2",
+          "b4_r0"
+        ],
+        "amplitude_range": [
+          0.9,
+          1.35
+        ],
+        "value_range": [
+          1,
+          5
+        ],
+        "evidence_ids": [
+          "local_relation_0",
+          "local_relation_1",
+          "local_relation_2"
+        ],
+        "rationale": "检验已观察到的局部镜像关系能否延伸至不同脉冲时长与幅度；仅作关系探测，不将其视为普遍对称律。"
+      },
+      "boundary": {
+        "model_id": "v3_r1",
+        "status": "abstain",
+        "expression": "",
+        "reason": "现有证据仅定位若干失败输入，未给出可可靠概括的输入历史分界。"
+      },
+      "outcome": {
+        "round": 1,
+        "actual_conditions_met": true,
+        "metrics": [
+          {
+            "id": "prospective:v3_r1:f3be5fccda41:e5_r1_experiment_0",
+            "owner_model_id": "v3_r1",
+            "fit_version": "f3be5fccda414e221cf528e8964e28f81084ba850bcbb5a4ceeacbbf1c4eda90",
+            "observation": "e5_r1_experiment_0",
+            "metric": "trajectory_nmse",
+            "phase": "observed_error_of_precommitted_prediction",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.25039416680839177,
+            "high_error": true,
+            "forecast_commit_time_ns": 1793520619638804339,
+            "observation_time_ns": 1793520619665320892
+          },
+          {
+            "id": "prospective:v3_r1:f3be5fccda41:e5_r1_experiment_1",
+            "owner_model_id": "v3_r1",
+            "fit_version": "f3be5fccda414e221cf528e8964e28f81084ba850bcbb5a4ceeacbbf1c4eda90",
+            "observation": "e5_r1_experiment_1",
+            "metric": "trajectory_nmse",
+            "phase": "observed_error_of_precommitted_prediction",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.25120312463192357,
+            "high_error": true,
+            "forecast_commit_time_ns": 1793520619638804339,
+            "observation_time_ns": 1793520619667032187
+          },
+          {
+            "id": "prospective:v3_r2:73c61dd11b09:e5_r1_experiment_0",
+            "owner_model_id": "v3_r2",
+            "fit_version": "73c61dd11b0967f0365b912368d77b588c2da652bcec26db7d7368805135f677",
+            "observation": "e5_r1_experiment_0",
+            "metric": "trajectory_nmse",
+            "phase": "observed_error_of_precommitted_prediction",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.11190101476202165,
+            "high_error": true,
+            "forecast_commit_time_ns": 1793520619638804339,
+            "observation_time_ns": 1793520619665320892
+          },
+          {
+            "id": "prospective:v3_r2:73c61dd11b09:e5_r1_experiment_1",
+            "owner_model_id": "v3_r2",
+            "fit_version": "73c61dd11b0967f0365b912368d77b588c2da652bcec26db7d7368805135f677",
+            "observation": "e5_r1_experiment_1",
+            "metric": "trajectory_nmse",
+            "phase": "observed_error_of_precommitted_prediction",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.11231445204830626,
+            "high_error": true,
+            "forecast_commit_time_ns": 1793520619638804339,
+            "observation_time_ns": 1793520619667032187
+          },
+          {
+            "id": "prospective:b4_r0:391115561a16:e5_r1_experiment_0",
+            "owner_model_id": "b4_r0",
+            "fit_version": "391115561a167ca995c43292a92e5278f00d56653de2f572bcb44735e13c0e6a",
+            "observation": "e5_r1_experiment_0",
+            "metric": "trajectory_nmse",
+            "phase": "observed_error_of_precommitted_prediction",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.12749399152553298,
+            "high_error": true,
+            "forecast_commit_time_ns": 1793520619638804339,
+            "observation_time_ns": 1793520619665320892
+          },
+          {
+            "id": "prospective:b4_r0:391115561a16:e5_r1_experiment_1",
+            "owner_model_id": "b4_r0",
+            "fit_version": "391115561a167ca995c43292a92e5278f00d56653de2f572bcb44735e13c0e6a",
+            "observation": "e5_r1_experiment_1",
+            "metric": "trajectory_nmse",
+            "phase": "observed_error_of_precommitted_prediction",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.12797560571439703,
+            "high_error": true,
+            "forecast_commit_time_ns": 1793520619638804339,
+            "observation_time_ns": 1793520619667032187
+          }
+        ],
+        "boundary": {
+          "model_id": "v3_r1",
+          "status": "abstain",
+          "expression": "",
+          "reason": "现有证据仅定位若干失败输入，未给出可可靠概括的输入历史分界。"
+        },
+        "boundary_fit_version": "f3be5fccda414e221cf528e8964e28f81084ba850bcbb5a4ceeacbbf1c4eda90",
+        "predicted_high_error": [
+          null,
+          null
+        ],
+        "observed_high_error": [
+          true,
+          true
+        ],
+        "boundary_verdict": "untested",
+        "boundary_metric_ids": [
+          "prospective:v3_r1:f3be5fccda41:e5_r1_experiment_0",
+          "prospective:v3_r1:f3be5fccda41:e5_r1_experiment_1"
+        ],
+        "observed_mirror_rms": 0.0065227632115004075
+      }
+    }
+  ],
+  "model_summaries": {
+    "initial_models.json": {
+      "v3_r1": {
+        "group_cv_nmse": 0.04193544467130768,
+        "distinct_inputs": 33,
+        "full_optimizer_converged": true,
+        "converged_folds": 33,
+        "folds": 33,
+        "retention": [
+          {
+            "relation_id": "local_relation_0",
+            "property": "near_mirror",
+            "fit_version": "520c3ec27e6779c6b397f0d4e0b4c584fe6d1b087013c321d575a70e8faf31df",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_1",
+            "property": "near_mirror",
+            "fit_version": "520c3ec27e6779c6b397f0d4e0b4c584fe6d1b087013c321d575a70e8faf31df",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_2",
+            "property": "nonproportional_response",
+            "fit_version": "520c3ec27e6779c6b397f0d4e0b4c584fe6d1b087013c321d575a70e8faf31df",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.19050947301690235,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          }
+        ]
+      },
+      "v3_r2": {
+        "group_cv_nmse": 0.041010699159005765,
+        "distinct_inputs": 33,
+        "full_optimizer_converged": true,
+        "converged_folds": 33,
+        "folds": 33,
+        "retention": [
+          {
+            "relation_id": "local_relation_0",
+            "property": "near_mirror",
+            "fit_version": "89beda8821af54b1fe2e855fa7771d74ddedd22d5d3b19defd92e39487c8d9b7",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_1",
+            "property": "near_mirror",
+            "fit_version": "89beda8821af54b1fe2e855fa7771d74ddedd22d5d3b19defd92e39487c8d9b7",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_2",
+            "property": "nonproportional_response",
+            "fit_version": "89beda8821af54b1fe2e855fa7771d74ddedd22d5d3b19defd92e39487c8d9b7",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.19832589275210008,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          }
+        ]
+      },
+      "b4_r0": {
+        "group_cv_nmse": 0.04753739985016932,
+        "distinct_inputs": 33,
+        "full_optimizer_converged": false,
+        "converged_folds": 27,
+        "folds": 33,
+        "retention": [
+          {
+            "relation_id": "local_relation_0",
+            "property": "near_mirror",
+            "fit_version": "fb2cbd3bdda716b749d1d8a5172b0c53716469403ef8865ad8ed0b016740b4eb",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_1",
+            "property": "near_mirror",
+            "fit_version": "fb2cbd3bdda716b749d1d8a5172b0c53716469403ef8865ad8ed0b016740b4eb",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_2",
+            "property": "nonproportional_response",
+            "fit_version": "fb2cbd3bdda716b749d1d8a5172b0c53716469403ef8865ad8ed0b016740b4eb",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.20093590027122854,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          }
+        ]
+      }
+    },
+    "round_0/updated_models.json": {
+      "v3_r1": {
+        "group_cv_nmse": 0.0429411109016321,
+        "distinct_inputs": 35,
+        "full_optimizer_converged": true,
+        "converged_folds": 35,
+        "folds": 35,
+        "retention": [
+          {
+            "relation_id": "local_relation_0",
+            "property": "near_mirror",
+            "fit_version": "f3be5fccda414e221cf528e8964e28f81084ba850bcbb5a4ceeacbbf1c4eda90",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_1",
+            "property": "near_mirror",
+            "fit_version": "f3be5fccda414e221cf528e8964e28f81084ba850bcbb5a4ceeacbbf1c4eda90",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_2",
+            "property": "nonproportional_response",
+            "fit_version": "f3be5fccda414e221cf528e8964e28f81084ba850bcbb5a4ceeacbbf1c4eda90",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.18155326657371254,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          }
+        ]
+      },
+      "v3_r2": {
+        "group_cv_nmse": 0.04140737632534809,
+        "distinct_inputs": 35,
+        "full_optimizer_converged": true,
+        "converged_folds": 35,
+        "folds": 35,
+        "retention": [
+          {
+            "relation_id": "local_relation_0",
+            "property": "near_mirror",
+            "fit_version": "73c61dd11b0967f0365b912368d77b588c2da652bcec26db7d7368805135f677",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_1",
+            "property": "near_mirror",
+            "fit_version": "73c61dd11b0967f0365b912368d77b588c2da652bcec26db7d7368805135f677",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_2",
+            "property": "nonproportional_response",
+            "fit_version": "73c61dd11b0967f0365b912368d77b588c2da652bcec26db7d7368805135f677",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.1865621536826495,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          }
+        ]
+      },
+      "b4_r0": {
+        "group_cv_nmse": 0.0455428895835401,
+        "distinct_inputs": 35,
+        "full_optimizer_converged": true,
+        "converged_folds": 33,
+        "folds": 35,
+        "retention": [
+          {
+            "relation_id": "local_relation_0",
+            "property": "near_mirror",
+            "fit_version": "391115561a167ca995c43292a92e5278f00d56653de2f572bcb44735e13c0e6a",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_1",
+            "property": "near_mirror",
+            "fit_version": "391115561a167ca995c43292a92e5278f00d56653de2f572bcb44735e13c0e6a",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_2",
+            "property": "nonproportional_response",
+            "fit_version": "391115561a167ca995c43292a92e5278f00d56653de2f572bcb44735e13c0e6a",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.18633722462284671,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          }
+        ]
+      }
+    },
+    "round_1/updated_models.json": {
+      "v3_r1": {
+        "group_cv_nmse": 0.04906086931738825,
+        "distinct_inputs": 37,
+        "full_optimizer_converged": true,
+        "converged_folds": 37,
+        "folds": 37,
+        "retention": [
+          {
+            "relation_id": "local_relation_0",
+            "property": "near_mirror",
+            "fit_version": "61dab2a7e7f190b95813906375b4edee20dad9b0176a8ddd067144717d285865",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_1",
+            "property": "near_mirror",
+            "fit_version": "61dab2a7e7f190b95813906375b4edee20dad9b0176a8ddd067144717d285865",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_2",
+            "property": "nonproportional_response",
+            "fit_version": "61dab2a7e7f190b95813906375b4edee20dad9b0176a8ddd067144717d285865",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.2341252268106817,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          }
+        ]
+      },
+      "v3_r2": {
+        "group_cv_nmse": 0.042829975554447175,
+        "distinct_inputs": 37,
+        "full_optimizer_converged": true,
+        "converged_folds": 37,
+        "folds": 37,
+        "retention": [
+          {
+            "relation_id": "local_relation_0",
+            "property": "near_mirror",
+            "fit_version": "dbdf5ed5af777ca3a3e3f8ec179cd3cfebd33404ad381f8249761af996b717c9",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_1",
+            "property": "near_mirror",
+            "fit_version": "dbdf5ed5af777ca3a3e3f8ec179cd3cfebd33404ad381f8249761af996b717c9",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_2",
+            "property": "nonproportional_response",
+            "fit_version": "dbdf5ed5af777ca3a3e3f8ec179cd3cfebd33404ad381f8249761af996b717c9",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.2263534660239969,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          }
+        ]
+      },
+      "b4_r0": {
+        "group_cv_nmse": 0.04916630779034067,
+        "distinct_inputs": 37,
+        "full_optimizer_converged": true,
+        "converged_folds": 32,
+        "folds": 37,
+        "retention": [
+          {
+            "relation_id": "local_relation_0",
+            "property": "near_mirror",
+            "fit_version": "76bb4bb2de8125b1048fe0808f1ffd6371838d0e9362b3dac03646bd87ee206c",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_1",
+            "property": "near_mirror",
+            "fit_version": "76bb4bb2de8125b1048fe0808f1ffd6371838d0e9362b3dac03646bd87ee206c",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_2",
+            "property": "nonproportional_response",
+            "fit_version": "76bb4bb2de8125b1048fe0808f1ffd6371838d0e9362b3dac03646bd87ee206c",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.23703541775143597,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          }
+        ]
+      }
+    },
+    "final_models.json": {
+      "v3_r1": {
+        "group_cv_nmse": 0.04906086931738825,
+        "distinct_inputs": 37,
+        "full_optimizer_converged": true,
+        "converged_folds": 37,
+        "folds": 37,
+        "retention": [
+          {
+            "relation_id": "local_relation_0",
+            "property": "near_mirror",
+            "fit_version": "61dab2a7e7f190b95813906375b4edee20dad9b0176a8ddd067144717d285865",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_1",
+            "property": "near_mirror",
+            "fit_version": "61dab2a7e7f190b95813906375b4edee20dad9b0176a8ddd067144717d285865",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_2",
+            "property": "nonproportional_response",
+            "fit_version": "61dab2a7e7f190b95813906375b4edee20dad9b0176a8ddd067144717d285865",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.2341252268106817,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          }
+        ]
+      },
+      "v3_r2": {
+        "group_cv_nmse": 0.042829975554447175,
+        "distinct_inputs": 37,
+        "full_optimizer_converged": true,
+        "converged_folds": 37,
+        "folds": 37,
+        "retention": [
+          {
+            "relation_id": "local_relation_0",
+            "property": "near_mirror",
+            "fit_version": "dbdf5ed5af777ca3a3e3f8ec179cd3cfebd33404ad381f8249761af996b717c9",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_1",
+            "property": "near_mirror",
+            "fit_version": "dbdf5ed5af777ca3a3e3f8ec179cd3cfebd33404ad381f8249761af996b717c9",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_2",
+            "property": "nonproportional_response",
+            "fit_version": "dbdf5ed5af777ca3a3e3f8ec179cd3cfebd33404ad381f8249761af996b717c9",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.2263534660239969,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          }
+        ]
+      },
+      "b4_r0": {
+        "group_cv_nmse": 0.04916630779034067,
+        "distinct_inputs": 37,
+        "full_optimizer_converged": true,
+        "converged_folds": 32,
+        "folds": 37,
+        "retention": [
+          {
+            "relation_id": "local_relation_0",
+            "property": "near_mirror",
+            "fit_version": "76bb4bb2de8125b1048fe0808f1ffd6371838d0e9362b3dac03646bd87ee206c",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_1",
+            "property": "near_mirror",
+            "fit_version": "76bb4bb2de8125b1048fe0808f1ffd6371838d0e9362b3dac03646bd87ee206c",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.0,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          },
+          {
+            "relation_id": "local_relation_2",
+            "property": "nonproportional_response",
+            "fit_version": "76bb4bb2de8125b1048fe0808f1ffd6371838d0e9362b3dac03646bd87ee206c",
+            "metric": "predicted_relation_rms",
+            "time_window": [
+              0.0,
+              12.0
+            ],
+            "value": 0.23703541775143597,
+            "status": "compatible",
+            "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+          }
+        ]
+      }
+    }
+  },
+  "final_commit_present": true,
+  "evaluation_present": true,
+  "evaluation": {
+    "old_frozen": {
+      "values": [
+        0.030994490573931843,
+        0.23601834358412804,
+        0.2084082935553361,
+        0.015869531027158067,
+        0.009887177041135986,
+        0.05874816803836979,
+        0.00949602702273196,
+        0.0304510029546505
+      ],
+      "mean": 0.07498412922468028,
+      "median": 0.03072274676429117,
+      "above_0_1": 2
+    },
+    "old_formula_refit": {
+      "values": [
+        0.02587876828248176,
+        0.17352925955372356,
+        0.15016546135246867,
+        0.028247547219528966,
+        0.005708138059336092,
+        0.05456115846727882,
+        0.009901241934401513,
+        0.017158214305553827
+      ],
+      "mean": 0.05814372364684665,
+      "median": 0.027063157751005363,
+      "above_0_1": 2
+    },
+    "selected": {
+      "values": [
+        0.017247690169176388,
+        0.16085522674238298,
+        0.14531122914259467,
+        0.02228545862012196,
+        0.005405270641102835,
+        0.059598861481360836,
+        0.019200257391129565,
+        0.021409344065794048
+      ],
+      "mean": 0.05641416728170791,
+      "median": 0.021847401342958005,
+      "above_0_1": 2
+    }
+  },
+  "final_decision": {
+    "selected_id": "v3_r2",
+    "criterion": "minimum_group_cv_among_not_withdrawn_complete_cv_and_two_local_mirror_compatible",
+    "eligible_order": [
+      "v3_r2",
+      "v3_r1",
+      "b4_r0"
+    ],
+    "scores": {
+      "v3_r2": 0.042829975554447175,
+      "v3_r1": 0.04906086931738825,
+      "b4_r0": 0.04916630779034067
+    },
+    "retention": {
+      "v3_r1": [
+        {
+          "relation_id": "local_relation_0",
+          "property": "near_mirror",
+          "fit_version": "61dab2a7e7f190b95813906375b4edee20dad9b0176a8ddd067144717d285865",
+          "metric": "predicted_relation_rms",
+          "time_window": [
+            0.0,
+            12.0
+          ],
+          "value": 0.0,
+          "status": "compatible",
+          "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+        },
+        {
+          "relation_id": "local_relation_1",
+          "property": "near_mirror",
+          "fit_version": "61dab2a7e7f190b95813906375b4edee20dad9b0176a8ddd067144717d285865",
+          "metric": "predicted_relation_rms",
+          "time_window": [
+            0.0,
+            12.0
+          ],
+          "value": 0.0,
+          "status": "compatible",
+          "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+        },
+        {
+          "relation_id": "local_relation_2",
+          "property": "nonproportional_response",
+          "fit_version": "61dab2a7e7f190b95813906375b4edee20dad9b0176a8ddd067144717d285865",
+          "metric": "predicted_relation_rms",
+          "time_window": [
+            0.0,
+            12.0
+          ],
+          "value": 0.2341252268106819,
+          "status": "compatible",
+          "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+        }
+      ],
+      "v3_r2": [
+        {
+          "relation_id": "local_relation_0",
+          "property": "near_mirror",
+          "fit_version": "dbdf5ed5af777ca3a3e3f8ec179cd3cfebd33404ad381f8249761af996b717c9",
+          "metric": "predicted_relation_rms",
+          "time_window": [
+            0.0,
+            12.0
+          ],
+          "value": 0.0,
+          "status": "compatible",
+          "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+        },
+        {
+          "relation_id": "local_relation_1",
+          "property": "near_mirror",
+          "fit_version": "dbdf5ed5af777ca3a3e3f8ec179cd3cfebd33404ad381f8249761af996b717c9",
+          "metric": "predicted_relation_rms",
+          "time_window": [
+            0.0,
+            12.0
+          ],
+          "value": 0.0,
+          "status": "compatible",
+          "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+        },
+        {
+          "relation_id": "local_relation_2",
+          "property": "nonproportional_response",
+          "fit_version": "dbdf5ed5af777ca3a3e3f8ec179cd3cfebd33404ad381f8249761af996b717c9",
+          "metric": "predicted_relation_rms",
+          "time_window": [
+            0.0,
+            12.0
+          ],
+          "value": 0.22635346602399656,
+          "status": "compatible",
+          "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+        }
+      ],
+      "b4_r0": [
+        {
+          "relation_id": "local_relation_0",
+          "property": "near_mirror",
+          "fit_version": "76bb4bb2de8125b1048fe0808f1ffd6371838d0e9362b3dac03646bd87ee206c",
+          "metric": "predicted_relation_rms",
+          "time_window": [
+            0.0,
+            12.0
+          ],
+          "value": 0.0,
+          "status": "compatible",
+          "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+        },
+        {
+          "relation_id": "local_relation_1",
+          "property": "near_mirror",
+          "fit_version": "76bb4bb2de8125b1048fe0808f1ffd6371838d0e9362b3dac03646bd87ee206c",
+          "metric": "predicted_relation_rms",
+          "time_window": [
+            0.0,
+            12.0
+          ],
+          "value": 0.0,
+          "status": "compatible",
+          "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+        },
+        {
+          "relation_id": "local_relation_2",
+          "property": "nonproportional_response",
+          "fit_version": "76bb4bb2de8125b1048fe0808f1ffd6371838d0e9362b3dac03646bd87ee206c",
+          "metric": "predicted_relation_rms",
+          "time_window": [
+            0.0,
+            12.0
+          ],
+          "value": 0.23703541775143697,
+          "status": "compatible",
+          "check_scope": "qualitative property on original inputs; not complete trajectory accuracy"
+        }
+      ]
+    },
+    "explanation": "按冻结规则选择 v3_r2，当前分组CV NMSE=0.04282998。",
+    "decision_author": "deterministic_tool_rule_not_Luna_free_choice"
+  },
+  "full_execution_audit": {
+    "passed": true,
+    "errors": [],
+    "calls": 8,
+    "executed_pairs": 2,
+    "input_tokens": 267415,
+    "completion_tokens": 2871,
+    "reported_reasoning_tokens": 623,
+    "reasoning_detail_missing_responses": 5,
+    "final_selection_author": "deterministic_frozen_rule",
+    "scope": "Execution and typed evidence audit, not a certificate for free-form scientific prose"
+  }
+}

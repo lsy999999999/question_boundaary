@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431771178700224,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "double_pulse",
+    "reason": "Its leave-trajectory-out NMSE (0.00253) is substantially lower than alternatives, consistent with history dependence and nonlinear response; unseen-intervention adequacy remains uncertain.",
+    "prediction": "The second pulse will produce a different peak from the first because accumulated history changes the response.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated history predicts later output beyond current input and state, as represented by the best cross-validated model.",
+      "condition_to_check": "Falsified if double-pulse responses are predicted without history-dependent effects after controlling current input and state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"double_pulse\",\"reason\":\"Its leave-trajectory-out NMSE (0.00253) is substantially lower than alternatives, consistent with history dependence and nonlinear response; unseen-intervention adequacy remains uncertain.\",\"prediction\":\"The second pulse will produce a different peak from the first because accumulated history changes the response.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated history predicts later output beyond current input and state, as represented by the best cross-validated model.\",\"condition_to_check\":\"Falsified if double-pulse responses are predicted without history-dependent effects after controlling current input and state.\"}}",
+    "input_tokens": 3280,
+    "output_tokens": 316,
+    "batch_elapsed_seconds": 3.777920765802264,
+    "amortized_seconds": 3.777920765802264,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3280,
+      "completion_tokens": 316,
+      "total_tokens": 3596,
+      "completion_tokens_details": {
+        "reasoning_tokens": 177
+      }
+    },
+    "api_response_id": "resp_09d56ed0216782fb016ae598d8404c81958f431693b0d9cbe2",
+    "wire_record": "wire/eval/0291_ef5061156c7446d88339eaa0a0bd69ba"
+  }
+}

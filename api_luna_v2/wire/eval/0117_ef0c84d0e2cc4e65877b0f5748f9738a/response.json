@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431500380919892,
+  "http_status": 200,
+  "body": {
+    "id": "resp_09a473a5038fc310016ae597c99ef48193924a6eeb27180544",
+    "object": "chat.completion",
+    "created": 1793431500,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory models greatly outperform the state-only model in trajectory-level validation, and slow accumulation has the lowest CV error. Alternating inputs probe history dependence under rapid reversals.\",\"prediction\":\"After a reversal, output will retain a contribution from earlier input and differ from the response to the same current input after a different history.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence predicts output beyond current input and visible state, consistent with a leaky stored state.\",\"condition_to_check\":\"At matched current input and output, different prior input histories should predictably produce different subsequent trajectories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2832,
+      "completion_tokens": 139,
+      "total_tokens": 2971,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.4352117720991373
+}

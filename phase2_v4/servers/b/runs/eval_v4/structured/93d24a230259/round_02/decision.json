@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423949762896461,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "ramp_reverse",
+    "reason": "Cubic terms improve fit for nonlinear responses; ramp_reverse tests persistent memory.",
+    "prediction": "Ramp_reverse will show distinct responses compared to step_rest due to nonlinear history effects.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Nonlinear history effects indicate persistent storage mechanisms.",
+      "condition_to_check": "Differences in response shape and magnitude between ramp_reverse and step_rest."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"state_cubic\",\n  \"experiment\": \"ramp_reverse\",\n  \"reason\": \"Cubic terms improve fit for nonlinear responses; ramp_reverse tests persistent memory.\",\n  \"prediction\": \"Ramp_reverse will show distinct responses compared to step_rest due to nonlinear history effects.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Nonlinear history effects indicate persistent storage mechanisms.\",\n    \"condition_to_check\": \"Differences in response shape and magnitude between ramp_reverse and step_rest.\"\n  }\n}",
+    "input_tokens": 3794,
+    "output_tokens": 120,
+    "batch_elapsed_seconds": 2.901873934082687,
+    "amortized_seconds": 2.901873934082687,
+    "peak_gpu_allocated_gb": 14.94624376296997,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

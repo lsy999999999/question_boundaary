@@ -1,0 +1,98 @@
+{
+  "task_id": "17a490c94137",
+  "split": "eval",
+  "family": "saturated_memory",
+  "seed": 1,
+  "method": "history_cv",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "saturating_memory",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0022737687153390937,
+    "coefficients": [
+      0.0030427,
+      2.1786154,
+      0.9190855,
+      0.0021413,
+      -0.1951013,
+      -7.3201935,
+      0.9473324,
+      0.010664,
+      -0.3612716,
+      0.4025547,
+      -0.1408262,
+      -3.3002033,
+      3.431638,
+      3.499987,
+      -0.3994294,
+      -1.0092569,
+      -1.0057787,
+      -2.345649,
+      2.4267337,
+      -0.8552924,
+      2.0159305,
+      1.801749,
+      -0.5101171
+    ]
+  },
+  "test": {
+    "test_nmse": 0.001065117111078139,
+    "test_mse": 8.053660062266498e-05,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 5.372891310540331e-05,
+        "nmse": 0.0007396558759431937
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.00020316815820809437,
+        "nmse": 0.0006520295397386956
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 0.00012104192634312042,
+        "nmse": 0.003812882127492923
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 1.3079178297688537e-05,
+        "nmse": 0.00015559279225057683
+      },
+      {
+        "action": "test_prbs",
+        "mse": 6.003814836598323e-05,
+        "nmse": 0.0007401396530610198
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 3.216327941569993e-05,
+        "nmse": 0.0002904026779824237
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": null,
+  "invalid_outputs": 0,
+  "generation_calls": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "generation_seconds_amortized": 0,
+  "elapsed_wall_seconds": 3.0717926025390625,
+  "selected_actions": [
+    "alternating",
+    "prbs",
+    "prbs"
+  ],
+  "selected_representations": [
+    "memory_slow",
+    "saturating_memory",
+    "saturating_memory",
+    "saturating_memory"
+  ],
+  "peak_gpu_allocated_gb": 0.0,
+  "peak_process_ram_gb": 0.0,
+  "inference_backend": "numerical_baseline",
+  "evaluation_after_commit_ns": 1793387634643337880
+}

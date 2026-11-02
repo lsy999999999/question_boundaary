@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429729930517967,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0eaec95b34b1dd8b016ae590ded9748194ac767a8b1f634a49",
+    "object": "chat.completion",
+    "created": 1793429729,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has the lowest trajectory-held-out NMSE (0.00145), but residual lag correlation remains; PRBS offers high disagreement among plausible models and varies input history.\",\"prediction\":\"At matched elapsed times, clock-model variation should remain aligned despite the irregular input sequence.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Elapsed-time features predict well, but this does not establish an independent external driver.\",\"condition_to_check\":\"Compare PRBS observations with predictions at matched elapsed times; systematic history-linked deviations would challenge clock dependence.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3246,
+      "completion_tokens": 282,
+      "total_tokens": 3528,
+      "completion_tokens_details": {
+        "reasoning_tokens": 156
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.811574266292155
+}

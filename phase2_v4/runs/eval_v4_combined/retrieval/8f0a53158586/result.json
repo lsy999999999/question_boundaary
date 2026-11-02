@@ -1,0 +1,84 @@
+{
+  "task_id": "8f0a53158586",
+  "split": "eval",
+  "family": "two_memory",
+  "seed": 32,
+  "method": "retrieval",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_slow",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0013546465008167155,
+    "coefficients": [
+      0.0013293,
+      -0.657071,
+      0.9617351,
+      0.7928181,
+      -1.2388516,
+      -0.0478642,
+      -0.6193773,
+      -0.6991067,
+      2.7513879
+    ]
+  },
+  "test": {
+    "test_nmse": 0.0002501274667351401,
+    "test_mse": 2.62911196168894e-05,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 2.0664742502779395e-05,
+        "nmse": 0.00025181521427597474
+      },
+      {
+        "action": "test_three_step",
+        "mse": 3.237450068096415e-05,
+        "nmse": 7.868739276597433e-05
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 1.278465255502915e-05,
+        "nmse": 0.0003564257411782299
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 3.276909110846304e-05,
+        "nmse": 0.00034044226863616295
+      },
+      {
+        "action": "test_prbs",
+        "mse": 1.6244015037277344e-05,
+        "nmse": 0.00017068310410077236
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 4.2909715816823315e-05,
+        "nmse": 0.00030271107945372647
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": true,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 13332,
+  "output_tokens": 218,
+  "generation_seconds_amortized": 5.744382006116211,
+  "elapsed_wall_seconds": 193.23266339302063,
+  "selected_actions": [
+    "double_pulse",
+    "alternating",
+    "positive_pulse"
+  ],
+  "selected_representations": [
+    "memory_slow",
+    "memory_slow",
+    "memory_slow",
+    "memory_slow"
+  ],
+  "peak_gpu_allocated_gb": 14.921139240264893,
+  "peak_process_ram_gb": 5.024284362792969,
+  "inference_backend": "cuda",
+  "evaluation_after_commit_ns": 1793423977414649712
+}

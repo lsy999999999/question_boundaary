@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431601153831280,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0aa3df6cc2c20cbd016ae5982e4ed0819681be1d9117fc4ce5",
+    "object": "chat.completion",
+    "created": 1793431601,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest trajectory-held-out error (0.00199) versus 0.01423 for state, while residual lag correlation is high. Alternating input has the greatest predicted disagreement among plausible memory models.\",\"prediction\":\"After rapid input reversals, the output will retain a slower, history-dependent tail than a fast-memory model predicts.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history may predict the response beyond current state and input, consistent with finite relaxation.\",\"condition_to_check\":\"Check whether alternating-input output retains a history-dependent tail after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2806,
+      "completion_tokens": 225,
+      "total_tokens": 3031,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 77
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.544640474021435
+}

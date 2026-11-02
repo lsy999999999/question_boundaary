@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431451552412094,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0fa4326c675b9022016ae59798c92c819599d8197d59d2a6ec",
+    "object": "chat.completion",
+    "created": 1793431451,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"The state model has the best leave-trajectory-out score; added memory features do not improve validation enough to justify their complexity. Alternating input has the greatest prediction disagreement among plausible models.\",\"prediction\":\"If history matters, the response after a reversal will differ from the state model’s prediction at the same input and output level.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2267,
+      "completion_tokens": 236,
+      "total_tokens": 2503,
+      "prompt_tokens_details": {
+        "cached_tokens": 2048
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 150
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.7598982183262706
+}

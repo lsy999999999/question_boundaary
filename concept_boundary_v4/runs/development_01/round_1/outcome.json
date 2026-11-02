@@ -1,0 +1,65 @@
+{
+  "round": 1,
+  "actual_conditions_met": true,
+  "prediction_nmse": {
+    "v3_r0": [
+      0.4456186583873771,
+      0.26605317021634595
+    ],
+    "v3_r1": [
+      0.2484296883554552,
+      0.15873832516768172
+    ],
+    "v3_r2": [
+      0.2747502298004692,
+      0.16422661362606802
+    ],
+    "b4_r0": [
+      0.28208669851843704,
+      0.1821494146003988
+    ],
+    "b4_r1": [
+      0.3638008082246567,
+      0.22606659320256772
+    ]
+  },
+  "boundary_owner": "v3_r1",
+  "boundary": {
+    "model_id": "v3_r1",
+    "status": "no_supported_boundary",
+    "reason": "v3_r1 的高误差行包括 sealed_3 和 sealed_4（反转数均为2），但反转数为0的行以及反转数为1、3、4的行也有低误差；例如 sealed_5 反转数为4仍低误差，新边界干预两行也都低于0.05。峰值、面积和持续时长同样未显示可将本模型高低误差行可靠分开的单一阈值。因此不提出单特征边界。证据：scope:v3_r1:c179384f8458。"
+  },
+  "predicted_high_error": [
+    null,
+    null
+  ],
+  "observed_high_error": [
+    true,
+    true
+  ],
+  "boundary_label_correct": [
+    null,
+    null
+  ],
+  "features": [
+    {
+      "peak_abs": 1.5,
+      "reversal_count": 1,
+      "max_reversal_jump": 3.0,
+      "absolute_area": 7.5,
+      "signed_area": -1.5,
+      "longest_sign_duration": 3.0,
+      "total_variation": 6.0
+    },
+    {
+      "peak_abs": 1.5,
+      "reversal_count": 1,
+      "max_reversal_jump": 3.0,
+      "absolute_area": 7.5,
+      "signed_area": -1.5,
+      "longest_sign_duration": 3.0,
+      "total_variation": 6.0
+    }
+  ],
+  "scope": "Prospective errors on this one-factor pair only; .05 is a fixed operational threshold, not a physical law"
+}

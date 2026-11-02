@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430721155765647,
+  "http_status": 200,
+  "body": {
+    "id": "resp_09f5284c8077dc60016ae594be9944819682eadea49982e830",
+    "object": "chat.completion",
+    "created": 1793430721,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest leave-trajectory-out error by a wide margin, but residual lag-1 correlation remains substantial, so adequacy for unseen interventions is uncertain.\",\"prediction\":\"After rapid reversals, output will retain a decaying influence of earlier inputs even when the current input changes sign.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Past input influence persists after inputs cease and relaxes over time, consistent with a storage-like predictive relation.\",\"condition_to_check\":\"At matched current input and visible state, earlier input history should predict output; otherwise this relation is weakened.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3517,
+      "completion_tokens": 278,
+      "total_tokens": 3795,
+      "completion_tokens_details": {
+        "reasoning_tokens": 140
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.3219992965459824
+}

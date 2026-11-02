@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432305652881293,
+  "http_status": 200,
+  "body": {
+    "id": "resp_05a9dd346bbcdc36016ae59aeefbc881969daedd9bcf41608e",
+    "object": "chat.completion",
+    "created": 1793432305,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest leave-trajectory-out NMSE (0.00212); richer alternatives validate worse, while post-input decay supports a slow-history representation. Residual correlation leaves some uncertainty.\",\"prediction\":\"After input stops or reverses, output will retain a decaying influence of earlier input rather than track current input alone.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts output after input stops, consistent with finite relaxation.\",\"condition_to_check\":\"At matched current input and visible state, prior input should predict a decaying output; absence would falsify this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3727,
+      "completion_tokens": 209,
+      "total_tokens": 3936,
+      "completion_tokens_details": {
+        "reasoning_tokens": 67
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.526736158877611
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431930205159047,
+  "http_status": 200,
+  "body": {
+    "id": "resp_01d08a317c061685016ae599770bf08195a72fc539514aa41e",
+    "object": "chat.completion",
+    "created": 1793431930,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"alternating\",\"reason\":\"Saturating_memory has the lowest trajectory-level CV error (0.00246), narrowly beating memory_multiscale; memory_slow has higher error and substantial residual autocorrelation.\",\"prediction\":\"Rapid alternating inputs should reveal whether responses depend nonlinearly on accumulated history rather than following a linear multiscale-memory prediction.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Persistent responses after input cessation, together with improved history-based validation, support accumulated past influence with finite relaxation.\",\"condition_to_check\":\"Test whether accumulated history predicts the lingering response after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3440,
+      "completion_tokens": 294,
+      "total_tokens": 3734,
+      "completion_tokens_details": {
+        "reasoning_tokens": 154
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.9330262234434485
+}

@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431846213132093,
+  "decision": {
+    "representation": "state",
+    "experiment": "double_pulse",
+    "reason": "State has the lowest trajectory-held-out NMSE; clock’s slight advantage is absent, and richer memory models validate worse. Residual lag correlation still cautions against declaring adequacy.",
+    "prediction": "At matched current state and input, the predicted response should not depend on elapsed time or earlier input history.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No independent clock, storage, transport, or saturation relation is established by these comparisons.",
+      "condition_to_check": "Check whether residuals at matched state and input depend systematically on elapsed time or prior input."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"double_pulse\",\"reason\":\"State has the lowest trajectory-held-out NMSE; clock’s slight advantage is absent, and richer memory models validate worse. Residual lag correlation still cautions against declaring adequacy.\",\"prediction\":\"At matched current state and input, the predicted response should not depend on elapsed time or earlier input history.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No independent clock, storage, transport, or saturation relation is established by these comparisons.\",\"condition_to_check\":\"Check whether residuals at matched state and input depend systematically on elapsed time or prior input.\"}}",
+    "input_tokens": 3489,
+    "output_tokens": 254,
+    "batch_elapsed_seconds": 3.6467820182442665,
+    "amortized_seconds": 3.6467820182442665,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3489,
+      "completion_tokens": 254,
+      "total_tokens": 3743,
+      "completion_tokens_details": {
+        "reasoning_tokens": 122
+      }
+    },
+    "api_response_id": "resp_0d9d2e7fca7fc0ce016ae599237f0c8190b3e4ad1a311e419e",
+    "wire_record": "wire/eval/0333_3a6fd57b632a45edafaf04a3e68a1594"
+  }
+}

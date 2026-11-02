@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793431328568798447,
+  "http_status": 200,
+  "body": {
+    "id": "resp_001e421cbd3ef860016ae5971eeb5481959bbf6f7bd39c9ee4",
+    "object": "chat.completion",
+    "created": 1793431328,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"prbs\",\"reason\":\"State_cubic has the lowest trajectory-level CV NMSE (0.00123), substantially outperforming every history-based candidate. Recent alternating, ramp-reverse, and PRBS forecasts were accurate, though residual autocorrelation leaves adequacy uncertain.\",\"prediction\":\"For unseen input sequences, next output will depend on current state and input, with no reproducible additional effect of past input at matched state.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The predictive fits support nonlinear instantaneous response, not a specific cross-domain mechanism.\",\"condition_to_check\":\"A repeatable dependence on past input at matched current state and input would falsify this representation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3673,
+      "completion_tokens": 149,
+      "total_tokens": 3822
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.340914382599294
+}

@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793430361423906767,
+  "decision": {
+    "representation": "clock",
+    "experiment": "ramp_reverse",
+    "reason": "Clock has the lowest leave-trajectory-out error by a wide margin, and alternating, PRBS, and double-pulse forecasts support it. Added memory features worsen validation; choose the simpler representation.",
+    "prediction": "Across unseen inputs, residual oscillations should recur at similar elapsed times after reset rather than shift with input changes.",
+    "accept": true,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"ramp_reverse\",\"reason\":\"Clock has the lowest leave-trajectory-out error by a wide margin, and alternating, PRBS, and double-pulse forecasts support it. Added memory features worsen validation; choose the simpler representation.\",\"prediction\":\"Across unseen inputs, residual oscillations should recur at similar elapsed times after reset rather than shift with input changes.\",\"accept\":true}",
+    "input_tokens": 3278,
+    "output_tokens": 84,
+    "batch_elapsed_seconds": 2.0280533991754055,
+    "amortized_seconds": 2.0280533991754055,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3278,
+      "completion_tokens": 84,
+      "total_tokens": 3362
+    },
+    "api_response_id": "resp_004d37b98d555e7e016ae5935837bc8194af68a24fbe5326c6",
+    "wire_record": "wire/eval/0344_c6eb4fba5b38484682650ee92e62bfd8"
+  }
+}

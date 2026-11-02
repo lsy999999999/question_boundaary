@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793432269235051579,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0d1f7adecd6e3c35016ae59acb745881979148d69a8df6436a",
+    "object": "chat.completion",
+    "created": 1793432269,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest trajectory-level CV error (0.001679), outperforming other candidates. Its small but nonzero residual autocorrelation leaves uncertainty, so adequacy for unseen interventions is not established.\",\"prediction\":\"After input returns to zero, output will decay gradually; at matched current input and state, earlier input history may still predict output.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history can persist and influence later response over finite relaxation timescales.\",\"condition_to_check\":\"If prior history adds no predictive value after controlling current input and visible state, this storage relation is weakened.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3724,
+      "completion_tokens": 147,
+      "total_tokens": 3871
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.969844777137041
+}

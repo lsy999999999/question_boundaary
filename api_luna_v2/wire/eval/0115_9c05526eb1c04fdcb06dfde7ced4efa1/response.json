@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793431498438821725,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0c905ab096c3c0c3016ae597c9090881909d68e2b2f34be709",
+    "object": "chat.completion",
+    "created": 1793431498,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"prbs\",\"reason\":\"Memory_clock has the lowest trajectory-level CV NMSE (0.00163), while high residual autocorrelation in the state model indicates missing dynamics. PRBS has the largest disagreement among plausible models.\",\"prediction\":\"PRBS responses will be better predicted by accumulated-history features than by instantaneous state alone, with memory_clock outperforming memory_slow on held-out trajectories.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2252,
+      "completion_tokens": 92,
+      "total_tokens": 2344
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.0047792941331863
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431796385989294,
+  "http_status": 200,
+  "body": {
+    "id": "resp_04c99249260233e4016ae598f107e881938b523373f06c5d33",
+    "object": "chat.completion",
+    "created": 1793431796,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest leave-trajectory-out error (0.0132), far below history_all (0.0345); however, residual lag-1 correlation remains high, so adequacy is not established.\",\"prediction\":\"After accounting for input history, residual oscillations will align in elapsed time across alternating-input trajectories.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Elapsed-time features improve prediction, but current evidence does not distinguish an independent clock from input-driven dynamics.\",\"condition_to_check\":\"Compare residual timing across distinct interventions; a component that follows input history rather than elapsed time weakens the clock interpretation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3267,
+      "completion_tokens": 314,
+      "total_tokens": 3581,
+      "completion_tokens_details": {
+        "reasoning_tokens": 170
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.3440519738942385
+}

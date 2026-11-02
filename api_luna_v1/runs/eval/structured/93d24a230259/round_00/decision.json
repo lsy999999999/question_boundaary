@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793429869429805945,
+  "decision": {
+    "representation": "state",
+    "experiment": "alternating",
+    "reason": "State has the lowest leave-trajectory-out error; added memory and clock features do not improve validation. Alternating input best probes the remaining disagreement.",
+    "prediction": "At matched current state and input, output evolution will not depend systematically on earlier input history.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No added storage relation is justified: history features did not improve trajectory-level validation.",
+      "condition_to_check": "Reject the state representation if matched state-input conditions show reproducible history-dependent outputs."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"State has the lowest leave-trajectory-out error; added memory and clock features do not improve validation. Alternating input best probes the remaining disagreement.\",\"prediction\":\"At matched current state and input, output evolution will not depend systematically on earlier input history.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No added storage relation is justified: history features did not improve trajectory-level validation.\",\"condition_to_check\":\"Reject the state representation if matched state-input conditions show reproducible history-dependent outputs.\"}}",
+    "input_tokens": 2816,
+    "output_tokens": 267,
+    "batch_elapsed_seconds": 4.676453661173582,
+    "amortized_seconds": 4.676453661173582,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2816,
+      "completion_tokens": 267,
+      "total_tokens": 3083,
+      "completion_tokens_details": {
+        "reasoning_tokens": 149
+      }
+    },
+    "api_response_id": "resp_0c3948f497636f39016ae59169eabc8190a1daf4f0c81b39a5",
+    "wire_record": "wire/eval/0083_e4677088cb0448c8afc46512e5bab096"
+  }
+}

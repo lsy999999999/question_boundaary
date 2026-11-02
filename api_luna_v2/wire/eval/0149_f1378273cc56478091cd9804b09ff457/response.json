@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431542715806664,
+  "http_status": 200,
+  "body": {
+    "id": "resp_061f123354deabf2016ae597f2c9c0819593dfea0d195cb731",
+    "object": "chat.completion",
+    "created": 1793431542,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest trajectory-level CV error; the state-only model performs poorly, while delay and clock models do not explain the observations as well.\",\"prediction\":\"After input switches, the output will retain a gradual history-dependent response rather than changing only after a fixed travel-time lag.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Smooth accumulated history predicts better than the tested pure-delay representation.\",\"condition_to_check\":\"Across irregular input switches, test whether gradual history dependence persists beyond what fixed lags predict.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2806,
+      "completion_tokens": 370,
+      "total_tokens": 3176,
+      "completion_tokens_details": {
+        "reasoning_tokens": 244
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 9.42379120644182
+}

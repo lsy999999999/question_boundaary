@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429990718389496,
+  "http_status": 200,
+  "body": {
+    "id": "resp_030f2c8100be9c61016ae591e1e89481968f1e0e33bacfb0a9",
+    "object": "chat.completion",
+    "created": 1793429990,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"Memory_clock has the best leave-trajectory-out error (0.0031), while strong residual autocorrelation challenges the current state-only model. Alternating input best probes disagreement among plausible models.\",\"prediction\":\"After accounting for input history, any remaining oscillation should recur at the same elapsed-time phase across repeated interventions.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time periodic features substantially improve prediction alongside accumulated history, consistent with a possible shared clock contribution.\",\"condition_to_check\":\"Compare residual phase across distinct input interventions; the relation is falsified if oscillations track input history rather than elapsed time.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2785,
+      "completion_tokens": 358,
+      "total_tokens": 3143,
+      "completion_tokens_details": {
+        "reasoning_tokens": 214
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.4831167962402105
+}

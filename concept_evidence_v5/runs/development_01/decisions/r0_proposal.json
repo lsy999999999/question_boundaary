@@ -1,0 +1,60 @@
+{
+  "time_ns": 1793519685389430085,
+  "value": {
+    "parent_id": "v3_r2",
+    "evidence_ids": [
+      "aggregate:v3_r2:89beda8821af",
+      "cv:v3_r2:2244622d5e0b:b4_r1_experiment_1",
+      "cv:v3_r2:510541eef845:promoted_v4_sealed_2",
+      "local_relation_0",
+      "local_relation_1",
+      "local_relation_2"
+    ],
+    "operation": "retain",
+    "concept": "暂保留兼顾镜像关系与非比例响应的奇对称模型",
+    "reason": "组均NMSE为0.0410，略优于v3_r1；虽有多条高误差轨迹，尚不足以支持具体新项。其奇对称结构符合局部镜像证据，也能表达非比例响应。",
+    "spec": {
+      "parameters": [
+        {
+          "name": "p0",
+          "lower": 0.05,
+          "initial": 0.75,
+          "upper": 1.5
+        }
+      ],
+      "states": [
+        {
+          "name": "z0",
+          "meaning": "衰减的输入轨迹；物理解释未证实",
+          "rate": "u-p0*z0"
+        }
+      ],
+      "terms": [
+        "x",
+        "x**3",
+        "tanh(x)",
+        "x*tanh(x)**2",
+        "u",
+        "z0"
+      ]
+    },
+    "expected_change": "不引入未经验证的机制；保留当前拟合基线，后续针对高误差输入再检验。",
+    "analogy": {
+      "domain": "奇对称响应系统",
+      "mapping": "奇函数结构可保留输入反向时的镜像响应；此类比未经验证。"
+    },
+    "provenance": "model_knowledge_unverified",
+    "boundary": {
+      "model_id": "v3_r2",
+      "status": "abstain",
+      "expression": "",
+      "reason": "虽见若干高误差轨迹，但输入条件不足以支撑对该模型NMSE阈值的可靠范围判断。"
+    }
+  },
+  "generation_records": [
+    {
+      "wire": "wire/001_r0_proposal_0",
+      "valid": true
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793424118611972009,
+  "decision": {
+    "representation": "history_all",
+    "experiment": "positive_pulse",
+    "reason": "History_all has lower CV NMSE, indicating better generalization.",
+    "prediction": "Positive pulse will show a distinct response pattern compared to other models.",
+    "accept": true,
+    "mapping": {
+      "source_id": "history_all",
+      "target_relation": "Captures complex temporal dependencies and nonlinearities.",
+      "condition_to_check": "Distinct response pattern to positive pulse."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"history_all\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"History_all has lower CV NMSE, indicating better generalization.\",\n  \"prediction\": \"Positive pulse will show a distinct response pattern compared to other models.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"history_all\",\n    \"target_relation\": \"Captures complex temporal dependencies and nonlinearities.\",\n    \"condition_to_check\": \"Distinct response pattern to positive pulse.\"\n  }\n}",
+    "input_tokens": 4040,
+    "output_tokens": 106,
+    "batch_elapsed_seconds": 2.6325058676302433,
+    "amortized_seconds": 2.6325058676302433,
+    "peak_gpu_allocated_gb": 14.998802661895752,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

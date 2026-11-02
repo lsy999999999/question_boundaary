@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793432220629612319,
+  "http_status": 200,
+  "body": {
+    "id": "resp_07ddee15d231a529016ae59a9ac94c8194b8cc1ca696646034",
+    "object": "chat.completion",
+    "created": 1793432220,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"Multiscale memory has the lowest trajectory-level CV error among the non-clock candidates and strong performance across interventions. Memory_clock’s tiny advantage is insufficient evidence for an independent clock; residual lag correlation leaves some uncertainty.\",\"prediction\":\"After input changes, predictions using multiscale history will remain more accurate than state-only predictions, including during rapid switches and pulse recovery.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history predict carryover beyond current input and visible state.\",\"condition_to_check\":\"The storage relation would be weakened if history features failed to improve prediction across distinct interventions.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3699,
+      "completion_tokens": 142,
+      "total_tokens": 3841
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.023521777242422
+}

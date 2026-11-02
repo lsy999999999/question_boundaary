@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431646250873764,
+  "http_status": 200,
+  "body": {
+    "id": "resp_096251789f0c09b9016ae5985b75f08193bfd5cb7e4aeeded5",
+    "object": "chat.completion",
+    "created": 1793431646,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"The state model has the lowest trajectory-level validation error; added memory and clock features perform worse. Alternating input has the greatest remaining disagreement among plausible models.\",\"prediction\":\"Under alternating input, the state model will predict responses without systematic residuals tied to prior inputs or elapsed time.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is justified by the available evidence.\",\"condition_to_check\":\"Check whether alternating-input residuals depend systematically on input history or elapsed time.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3248,
+      "completion_tokens": 246,
+      "total_tokens": 3494,
+      "completion_tokens_details": {
+        "reasoning_tokens": 128
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.521883023902774
+}

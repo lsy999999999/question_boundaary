@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431604604186312,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0910bb96df98ab94016ae598311cc48196952eb6319b51a185",
+    "object": "chat.completion",
+    "created": 1793431604,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"slow_wave\",\"reason\":\"Saturating memory has the lowest trajectory-level CV error (0.0018), far below state (0.141); residual lag also argues against an instantaneous state-only model.\",\"prediction\":\"On the reversing slow wave, outputs at matched inputs will depend on prior history, with saturation limiting the response at larger magnitudes.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The predictive fit favors nonlinear accumulated-history features; this alone does not establish a physical storage mechanism.\",\"condition_to_check\":\"Test whether history improves held-out slow-wave predictions beyond current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2804,
+      "completion_tokens": 309,
+      "total_tokens": 3113,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 171
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.03559485822916
+}

@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423790116343472,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "double_pulse",
+    "reason": "Multiscale memory shows better fit than fast or slow alone; double pulse tests combined effects.",
+    "prediction": "Response will show distinct phases of fast and slow recovery after each pulse.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Combined fast and slow memory should produce biphasic response.",
+      "condition_to_check": "Biphasic response persists across different pulse amplitudes and durations."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_multiscale\",\n  \"experiment\": \"double_pulse\",\n  \"reason\": \"Multiscale memory shows better fit than fast or slow alone; double pulse tests combined effects.\",\n  \"prediction\": \"Response will show distinct phases of fast and slow recovery after each pulse.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Combined fast and slow memory should produce biphasic response.\",\n    \"condition_to_check\": \"Biphasic response persists across different pulse amplitudes and durations.\"\n  }\n}",
+    "input_tokens": 3168,
+    "output_tokens": 125,
+    "batch_elapsed_seconds": 3.241397438570857,
+    "amortized_seconds": 3.241397438570857,
+    "peak_gpu_allocated_gb": 14.829248905181885,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024013519287109,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

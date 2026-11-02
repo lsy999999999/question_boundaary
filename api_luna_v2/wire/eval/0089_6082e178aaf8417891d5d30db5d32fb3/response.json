@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793431462543632008,
+  "http_status": 200,
+  "body": {
+    "id": "resp_09c771f95380a696016ae597a4e788819684c1bc42f5db9bf1",
+    "object": "chat.completion",
+    "created": 1793431462,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"State has the best leave-trajectory-out error and near-zero residual lag correlation; added memory and nonlinear features worsen validation. Alternating inputs can probe for unmodeled history dependence.\",\"prediction\":\"After matching current state and input, responses will not depend systematically on earlier input history.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No storage, delay, saturation, or independent clock relation is supported over the current state-only model.\",\"condition_to_check\":\"Reject this mapping if alternating inputs produce reproducible history-dependent residuals after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2830,
+      "completion_tokens": 130,
+      "total_tokens": 2960
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.9095064383000135
+}

@@ -1,0 +1,737 @@
+{
+  "scope": "Post-hoc diagnostic; no new model calls or simulator experiments; frozen results unchanged",
+  "python": "3.14.3 (main, Feb  3 2026, 15:32:20) [Clang 17.0.0 (clang-1700.6.3.2)]",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "input_coverage": {
+    "observations": 9,
+    "unique_inputs": 7,
+    "groups": [
+      {
+        "ids": [
+          "initial_0"
+        ],
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0.5,
+            1.0
+          ],
+          [
+            3.0,
+            0
+          ]
+        ]
+      },
+      {
+        "ids": [
+          "initial_1"
+        ],
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            1.0,
+            -1.0
+          ],
+          [
+            4.0,
+            0
+          ]
+        ]
+      },
+      {
+        "ids": [
+          "initial_2"
+        ],
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0.5,
+            0.6
+          ],
+          [
+            7.0,
+            0
+          ]
+        ]
+      },
+      {
+        "ids": [
+          "r0_experiment_0",
+          "r1_experiment_0",
+          "r2_experiment_0"
+        ],
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0.5,
+            1.0
+          ],
+          [
+            2.5,
+            0
+          ]
+        ]
+      },
+      {
+        "ids": [
+          "r0_experiment_1"
+        ],
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0.5,
+            -1.0
+          ],
+          [
+            1.5,
+            0
+          ]
+        ]
+      },
+      {
+        "ids": [
+          "r1_experiment_1"
+        ],
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0.5,
+            0.6
+          ],
+          [
+            4.0,
+            0
+          ],
+          [
+            5.0,
+            0.4
+          ],
+          [
+            6.0,
+            0
+          ]
+        ]
+      },
+      {
+        "ids": [
+          "r2_experiment_1"
+        ],
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0.5,
+            -1
+          ],
+          [
+            2.5,
+            0
+          ]
+        ]
+      }
+    ]
+  },
+  "derivative_fit_support": [
+    {
+      "id": "initial_0",
+      "retained_points": 97,
+      "retained_nonzero_input_points": 16
+    },
+    {
+      "id": "initial_1",
+      "retained_points": 93,
+      "retained_nonzero_input_points": 21
+    },
+    {
+      "id": "initial_2",
+      "retained_points": 97,
+      "retained_nonzero_input_points": 56
+    },
+    {
+      "id": "r0_experiment_0",
+      "retained_points": 97,
+      "retained_nonzero_input_points": 11
+    },
+    {
+      "id": "r0_experiment_1",
+      "retained_points": 97,
+      "retained_nonzero_input_points": 1
+    },
+    {
+      "id": "r1_experiment_0",
+      "retained_points": 97,
+      "retained_nonzero_input_points": 11
+    },
+    {
+      "id": "r1_experiment_1",
+      "retained_points": 79,
+      "retained_nonzero_input_points": 27
+    },
+    {
+      "id": "r2_experiment_0",
+      "retained_points": 97,
+      "retained_nonzero_input_points": 11
+    },
+    {
+      "id": "r2_experiment_1",
+      "retained_points": 97,
+      "retained_nonzero_input_points": 11
+    }
+  ],
+  "preflight": [
+    {
+      "round": 0,
+      "target_hypotheses": [
+        "initial",
+        "r0_b0"
+      ],
+      "predicted_gaps": {
+        "initial": 0.7274647466169466,
+        "r0_b0": 0.7032261559930587
+      },
+      "observed_gap": 1.1615604179902297,
+      "tolerance": 0.04,
+      "all_target_models_predicted_failure": true,
+      "actual_tolerance_multiple": 29.039010449755743
+    },
+    {
+      "round": 1,
+      "target_hypotheses": [
+        "r1_b0",
+        "r1_b1"
+      ],
+      "predicted_gaps": {
+        "initial": 0.26625831771632746,
+        "r0_b0": 0.18369676742929647,
+        "r1_b0": 0.18369676742929647,
+        "r1_b1": 0.2097112711401321
+      },
+      "observed_gap": 0.1010121612540108,
+      "tolerance": 0.04,
+      "all_target_models_predicted_failure": true,
+      "actual_tolerance_multiple": 2.52530403135027
+    },
+    {
+      "round": 2,
+      "target_hypotheses": [
+        "r1_b0",
+        "r2_b1"
+      ],
+      "predicted_gaps": {
+        "initial": 1.6535256696242837,
+        "r0_b0": 1.274196600762091,
+        "r1_b0": 1.274196600762091,
+        "r1_b1": 1.3586450510724637,
+        "r2_b0": 1.6910442225358109,
+        "r2_b1": 1.666149253433356
+      },
+      "observed_gap": 1.4027464468103923,
+      "tolerance": 0.04,
+      "all_target_models_predicted_failure": true,
+      "actual_tolerance_multiple": 35.06866117025981
+    }
+  ],
+  "mirror_symmetry": {
+    "positive_ids": [
+      "r0_experiment_0",
+      "r1_experiment_0",
+      "r2_experiment_0"
+    ],
+    "negative_id": "r2_experiment_1",
+    "actual_inputs_are_negatives": true,
+    "measured_sum_rms": 0.005357058941355568,
+    "expected_sum_noise_sd": 0.005773502691896257,
+    "positive_signal_rms": 0.7086017061201285,
+    "normalized_even_component": 0.003780102410000275,
+    "prospective_models": {
+      "initial": {
+        "sum_rms": 0.014685261962918444,
+        "nmse": [
+          0.2814927280419325,
+          0.31006676715572806
+        ]
+      },
+      "r0_b0": {
+        "sum_rms": 0.05566684561027993,
+        "nmse": [
+          0.19918581196418395,
+          0.04657583958397251
+        ]
+      },
+      "r1_b0": {
+        "sum_rms": 0.05566684561027993,
+        "nmse": [
+          0.19918581196418395,
+          0.04657583958397251
+        ]
+      },
+      "r1_b1": {
+        "sum_rms": 0.04309789896237545,
+        "nmse": [
+          0.18847029978638039,
+          0.07358709873711883
+        ]
+      },
+      "r2_b0": {
+        "sum_rms": 0.08763214045627249,
+        "nmse": [
+          0.2568350086448349,
+          0.4035714122498856
+        ]
+      },
+      "r2_b1": {
+        "sum_rms": 0.060482206350496066,
+        "nmse": [
+          0.22994027571814643,
+          0.39240831324520564
+        ]
+      }
+    },
+    "caution": "Observed approximate odd response for this particular pulse, not a global symmetry proof."
+  },
+  "coordinate_equivalence": {
+    "original_coefficients": {
+      "a": -0.0035987346704010256,
+      "b": -0.0008696871551329079,
+      "c": 0.893572614368555,
+      "d": -0.462870602618349,
+      "p": 0.7567036187260302
+    },
+    "transformed": {
+      "q": 0.23870363173511566,
+      "B": -0.5188696741460475,
+      "D": 0.12319798019842895,
+      "hidden_affine_term": -0.015131291190399373,
+      "k": 0.23783394457998275
+    },
+    "coordinate": "w=(x-c*z)/(b+p+d/c)",
+    "equations": [
+      "dx=a+(b+d/c)*x+c*u-(d/c)*(b+p+d/c)*w",
+      "dw=x-(p+d/c)*w+a/(b+p+d/c)"
+    ],
+    "maximum_recorded_input_replay_difference": 6.661338147750939e-16,
+    "conditions": "c != 0 and b+p+d/c != 0; initial x=z=w=0. Exact for the same simultaneous Euler scheme.",
+    "scope": "Affine output-history realization of final input-history model, NOT equality of the two separately fitted hypotheses.",
+    "restriction": "When a=0 the hidden affine term vanishes. Actual output-history proposal did not include this term; exact equality is not asserted for its frozen parameters."
+  },
+  "fitted_transfer_functions": {
+    "r1_b0": {
+      "numerator": [
+        0.893572614368555,
+        0.21329902826881597
+      ],
+      "denominator": [
+        1,
+        0.7575733058811631,
+        0.0006580954174486178
+      ],
+      "poles": [
+        -0.7567036187260302,
+        -0.0008696871551329079
+      ],
+      "zero": -0.23870363173511555,
+      "note": "Input-dependent transfer only; affine forcing separate."
+    },
+    "r1_b1": {
+      "numerator": [
+        0.7926640562353255,
+        0.10622793025275538
+      ],
+      "denominator": [
+        1,
+        0.48678001087446054,
+        -0.009028516034506204
+      ],
+      "poles": [
+        -0.5046699525844256,
+        0.01788994170996506
+      ],
+      "zero": -0.13401381003356422,
+      "note": "Input-dependent transfer only; affine forcing separate."
+    }
+  },
+  "posthoc_grouped_diagnostic": {
+    "results": [
+      {
+        "hypothesis": "initial",
+        "original_leave_one_trajectory_nmse": 0.7226767963511737,
+        "grouped_equal_input_mean_nmse": 0.8794149151912649,
+        "grouped_equal_observation_mean_nmse": 0.8052766374522524,
+        "folds": [
+          {
+            "ids": [
+              "initial_0"
+            ],
+            "mean_nmse": 0.2971891823582598
+          },
+          {
+            "ids": [
+              "initial_1"
+            ],
+            "mean_nmse": 0.6688765944365274
+          },
+          {
+            "ids": [
+              "initial_2"
+            ],
+            "mean_nmse": 1.3115955800207901
+          },
+          {
+            "ids": [
+              "r0_experiment_0",
+              "r1_experiment_0",
+              "r2_experiment_0"
+            ],
+            "mean_nmse": 0.5457926653657087
+          },
+          {
+            "ids": [
+              "r0_experiment_1"
+            ],
+            "mean_nmse": 2.857829745334842
+          },
+          {
+            "ids": [
+              "r1_experiment_1"
+            ],
+            "mean_nmse": 0.13230497659882326
+          },
+          {
+            "ids": [
+              "r2_experiment_1"
+            ],
+            "mean_nmse": 0.34231566222390336
+          }
+        ]
+      },
+      {
+        "hypothesis": "r1_b0",
+        "original_leave_one_trajectory_nmse": 0.40224933000381896,
+        "grouped_equal_input_mean_nmse": 0.49781426484229657,
+        "grouped_equal_observation_mean_nmse": 0.4823289860442428,
+        "folds": [
+          {
+            "ids": [
+              "initial_0"
+            ],
+            "mean_nmse": 0.001996942831250751
+          },
+          {
+            "ids": [
+              "initial_1"
+            ],
+            "mean_nmse": 0.33104615276347826
+          },
+          {
+            "ids": [
+              "initial_2"
+            ],
+            "mean_nmse": 0.5186665638921243
+          },
+          {
+            "ids": [
+              "r0_experiment_0",
+              "r1_experiment_0",
+              "r2_experiment_0"
+            ],
+            "mean_nmse": 0.42813051025105436
+          },
+          {
+            "ids": [
+              "r0_experiment_1"
+            ],
+            "mean_nmse": 2.1323444867605788
+          },
+          {
+            "ids": [
+              "r1_experiment_1"
+            ],
+            "mean_nmse": 0.024808892154253897
+          },
+          {
+            "ids": [
+              "r2_experiment_1"
+            ],
+            "mean_nmse": 0.04770630524333557
+          }
+        ]
+      },
+      {
+        "hypothesis": "r1_b1",
+        "original_leave_one_trajectory_nmse": 0.43133384518496676,
+        "grouped_equal_input_mean_nmse": 0.5401211028647908,
+        "grouped_equal_observation_mean_nmse": 0.5263310205038294,
+        "folds": [
+          {
+            "ids": [
+              "initial_0"
+            ],
+            "mean_nmse": 0.022945700950249354
+          },
+          {
+            "ids": [
+              "initial_1"
+            ],
+            "mean_nmse": 0.41337508391107214
+          },
+          {
+            "ids": [
+              "initial_2"
+            ],
+            "mean_nmse": 0.5053929984224753
+          },
+          {
+            "ids": [
+              "r0_experiment_0",
+              "r1_experiment_0",
+              "r2_experiment_0"
+            ],
+            "mean_nmse": 0.47806573224046467
+          },
+          {
+            "ids": [
+              "r0_experiment_1"
+            ],
+            "mean_nmse": 2.267350757247462
+          },
+          {
+            "ids": [
+              "r1_experiment_1"
+            ],
+            "mean_nmse": 0.014054132621328173
+          },
+          {
+            "ids": [
+              "r2_experiment_1"
+            ],
+            "mean_nmse": 0.0796633146604834
+          }
+        ]
+      },
+      {
+        "hypothesis": "r2_b0",
+        "original_leave_one_trajectory_nmse": 0.8987928607195114,
+        "grouped_equal_input_mean_nmse": 1.1139037529064504,
+        "grouped_equal_observation_mean_nmse": 0.9894571082091907,
+        "folds": [
+          {
+            "ids": [
+              "initial_0"
+            ],
+            "mean_nmse": 0.2519544259392304
+          },
+          {
+            "ids": [
+              "initial_1"
+            ],
+            "mean_nmse": 2.149397902746251
+          },
+          {
+            "ids": [
+              "initial_2"
+            ],
+            "mean_nmse": 1.20016759623753
+          },
+          {
+            "ids": [
+              "r0_experiment_0",
+              "r1_experiment_0",
+              "r2_experiment_0"
+            ],
+            "mean_nmse": 0.5538938517687823
+          },
+          {
+            "ids": [
+              "r0_experiment_1"
+            ],
+            "mean_nmse": 3.045652920529872
+          },
+          {
+            "ids": [
+              "r1_experiment_1"
+            ],
+            "mean_nmse": 0.10554436273254082
+          },
+          {
+            "ids": [
+              "r2_experiment_1"
+            ],
+            "mean_nmse": 0.490715210390945
+          }
+        ]
+      },
+      {
+        "hypothesis": "r2_b1",
+        "original_leave_one_trajectory_nmse": 1.1961933588054023,
+        "grouped_equal_input_mean_nmse": 1.5011314662645636,
+        "grouped_equal_observation_mean_nmse": 1.2917878201982296,
+        "folds": [
+          {
+            "ids": [
+              "initial_0"
+            ],
+            "mean_nmse": 0.25209227000897705
+          },
+          {
+            "ids": [
+              "initial_1"
+            ],
+            "mean_nmse": 2.9497022446278405
+          },
+          {
+            "ids": [
+              "initial_2"
+            ],
+            "mean_nmse": 1.24801697286869
+          },
+          {
+            "ids": [
+              "r0_experiment_0",
+              "r1_experiment_0",
+              "r2_experiment_0"
+            ],
+            "mean_nmse": 0.5590850589660591
+          },
+          {
+            "ids": [
+              "r0_experiment_1"
+            ],
+            "mean_nmse": 4.913478537100086
+          },
+          {
+            "ids": [
+              "r1_experiment_1"
+            ],
+            "mean_nmse": 0.1308698571816386
+          },
+          {
+            "ids": [
+              "r2_experiment_1"
+            ],
+            "mean_nmse": 0.4546753230986558
+          }
+        ]
+      }
+    ],
+    "note": "New local numeric refits on existing observations only; different grouping/weighting from original. Not replacement benchmark scores."
+  },
+  "conditional_design_feasibility": {
+    "solved": true,
+    "scope": "Model-only diagnostic. These inputs have NOT been observed or tested on the simulator.",
+    "actions": [
+      {
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0.5,
+            1.5
+          ],
+          [
+            2,
+            -1.2187680541296078
+          ],
+          [
+            4,
+            1.0511295323448306
+          ],
+          [
+            6,
+            -1.3479897935013425
+          ],
+          [
+            7,
+            0
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0.5,
+            -1.5
+          ],
+          [
+            2,
+            1.2187680541296078
+          ],
+          [
+            4,
+            -1.0511295323448306
+          ],
+          [
+            6,
+            1.3479897935013425
+          ],
+          [
+            7,
+            0
+          ]
+        ]
+      }
+    ],
+    "predicted_match_gaps": {
+      "initial": 0.04000000000000075,
+      "r1_b0": 0.03999999999999941,
+      "r1_b1": 0.04000000000000058
+    },
+    "max_slope_effect_disagreement_in_this_four_segment_class": 0.060123849443068145,
+    "endpoint_pair_slope_noise_sd": 0.02,
+    "caution": "Linear-program optimum for these fixed fits/segment times only; not proof about all designs, actual matching, or scientific mechanisms."
+  },
+  "sealed_posthoc": {
+    "mean": 0.09287405991120716,
+    "worst_id": "sealed_4",
+    "worst_nmse": 0.38319251451344655,
+    "worst_fraction_of_sum_nmse": 0.6876561565913385,
+    "max_abs_error_time": 8.5,
+    "predicted_at_max_error": 1.2145904573051207,
+    "truth_at_max_error": 0.6806520820721471,
+    "note": "Already evaluated sealed data, now inspected for diagnosis. Must not become a new untouched confirmation set."
+  },
+  "privileged_world_diagnosis": {
+    "nonzero_equilibria": [
+      -0.6131528345190795,
+      0.6131528345190795
+    ],
+    "zero_equilibrium_eigenvalues": [
+      {
+        "real": -1.4026619427073486,
+        "imag": 0.0
+      },
+      {
+        "real": 0.10266194270734857,
+        "imag": 0.0
+      }
+    ],
+    "note": "Analyst access to simulator equations, NOT an agent discovery or inference from finite observations. Do not put equations/labels in next agent prompt."
+  },
+  "frozen_run_unchanged": true
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431698374274779,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0d496540fb8f3f7b016ae59890016c81908880853ea1d41bef",
+    "object": "chat.completion",
+    "created": 1793431698,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"memory_slow has the lowest trajectory-level CV NMSE (0.0014), and PRBS forecasting supports history dependence; alternating has the greatest predicted disagreement among plausible memory models.\",\"prediction\":\"During rapid switches, the response will retain a smooth contribution from earlier inputs rather than immediately tracking the current input.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past inputs predict responses after switches, consistent with finite-relaxation storage.\",\"condition_to_check\":\"If past inputs add no predictive effect after controlling current input and state during alternating switches, this relation is weakened.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3293,
+      "completion_tokens": 239,
+      "total_tokens": 3532,
+      "completion_tokens_details": {
+        "reasoning_tokens": 101
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.3547101225703955
+}

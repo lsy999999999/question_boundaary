@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430074132003818,
+  "http_status": 200,
+  "body": {
+    "id": "resp_02ef0e051b22bb58016ae5923770c8819090c26e81febab5de",
+    "object": "chat.completion",
+    "created": 1793430074,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest leave-trajectory-out error by a wide margin, and pulse responses show multi-second carryover. Alternating has the greatest remaining disagreement among plausible models.\",\"prediction\":\"After input switches, output will retain a history-dependent component that relaxes over seconds, even when current input reverses.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history can carry past influence forward with finite relaxation.\",\"condition_to_check\":\"At matched current input and output, differing prior inputs should predict different subsequent outputs.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3262,
+      "completion_tokens": 245,
+      "total_tokens": 3507,
+      "completion_tokens_details": {
+        "reasoning_tokens": 113
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.444129442796111
+}

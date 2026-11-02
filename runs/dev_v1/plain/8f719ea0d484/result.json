@@ -1,0 +1,98 @@
+{
+  "task_id": "8f719ea0d484",
+  "split": "dev",
+  "family": "linear",
+  "seed": 101,
+  "method": "plain",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "nonlinear_delay",
+    "ridge": 1e-05,
+    "cv_nmse": 0.004668992177431245,
+    "coefficients": [
+      0.0009494,
+      3.4368427,
+      0.5046776,
+      0.0019993,
+      -0.0094166,
+      -11.2790921,
+      -2.8266845,
+      0.9290546,
+      -0.5223676,
+      -1.4079806,
+      -0.9396194,
+      -0.4555699,
+      -1.8083495,
+      1.6924593,
+      3.0095404,
+      1.9042981,
+      2.1551395,
+      4.5253347,
+      2.1185885,
+      0.5387539,
+      -0.0204371,
+      0.5046776,
+      0.0095335,
+      0.0210579,
+      0.0123185
+    ]
+  },
+  "test": {
+    "test_nmse": 0.044761454206618735,
+    "test_mse": 0.0037946328379291246,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 0.007342894234065251,
+        "nmse": 0.07414298992889799
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.002787578538796274,
+        "nmse": 0.005619455405683733
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 0.005011736609320763,
+        "nmse": 0.12573422984701038
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 0.000580185432768053,
+        "nmse": 0.0047550451444823534
+      },
+      {
+        "action": "test_prbs",
+        "mse": 0.005773056590269473,
+        "nmse": 0.051288298849209
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 0.0012723456223549322,
+        "nmse": 0.007028706064428947
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": true,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 8296,
+  "output_tokens": 224,
+  "generation_seconds_amortized": 4.1337668226333335,
+  "elapsed_wall_seconds": 18.0779447555542,
+  "selected_actions": [
+    "positive_pulse",
+    "negative_pulse",
+    "step_rest"
+  ],
+  "selected_representations": [
+    "nonlinear_delay",
+    "nonlinear_delay",
+    "nonlinear_delay",
+    "nonlinear_delay"
+  ],
+  "peak_gpu_allocated_gb": 16.042112827301025,
+  "evaluation_after_commit_ns": 1793382028949226917
+}

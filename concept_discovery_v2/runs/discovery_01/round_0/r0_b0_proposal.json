@@ -1,0 +1,48 @@
+{
+  "parent_id": "initial",
+  "target_witnesses": [
+    "r0_witness_0"
+  ],
+  "concept": "Slow input-history memory",
+  "explanation": "The witness compares approximately similar x values with u=0 but different preceding input durations. The longer, weaker input history is associated with a less negative estimated derivative. A slowly decaying latent trace of past input could distinguish these cases, whereas the parent model uses only current x and u. This is a candidate explanation, not proof: the states and derivatives are approximate and noisy.",
+  "analogy": {
+    "domain": "linear systems",
+    "relation": "a first-order low-pass state retains a decaying trace of past forcing",
+    "mapping": "z0 is the filtered history of u, with rate u-p0*z0; its contribution to dx/dt is the fitted coefficient on z0",
+    "breaks_when": "the input changes much faster than the memory time scale, or when response depends on history features not captured by a single exponentially weighted trace"
+  },
+  "provenance": "model_knowledge_unverified",
+  "spec": {
+    "parameters": [
+      {
+        "name": "p0",
+        "lower": 0.05,
+        "initial": 0.25,
+        "upper": 1.5
+      }
+    ],
+    "states": [
+      {
+        "name": "z0",
+        "meaning": "exponentially decaying trace of prior input, initialized to zero",
+        "rate": "u-p0*z0"
+      }
+    ],
+    "terms": [
+      "1",
+      "x",
+      "u",
+      "z0"
+    ]
+  },
+  "distinguishing_prediction": "After different-duration input pulses, compare trials at matched x and u=0. This model predicts different instantaneous drift when their residual z0 values differ; the current-state-only parent predicts the same drift. With input held at zero, the memory contribution should decay on a timescale set by 1/p0.",
+  "falsifier": "Repeated, adequately resolved trials with matched x and u=0 but substantially different input histories show no reproducible derivative difference, or show differences inconsistent with a decaying filtered-input trace.",
+  "limitations": "The supplied witness is an approximate match and does not establish latent memory. A single trace may conflate input history with unmodeled drift or other latent processes; coefficients and the memory timescale require fitting and complete-trajectory validation.",
+  "generation_records": [
+    {
+      "wire": "wire/001_r0_b0_0",
+      "valid": true
+    }
+  ],
+  "round": 0
+}

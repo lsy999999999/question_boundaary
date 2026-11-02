@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432233064295071,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0b6b35e29575ad92016ae59aa61d988193a886b5f822527c86",
+    "object": "chat.completion",
+    "created": 1793432232,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"slow_wave\",\"reason\":\"Memory_multiscale has the lowest trajectory-level CV error (0.00124), slightly outperforming memory_clock and saturating_memory. Persistent post-input response supports history dependence; clock and saturation add little validated improvement.\",\"prediction\":\"After input returns to zero, the response should decay according to accumulated history, without a reproducible elapsed-time periodic component.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence with finite relaxation can predict the lingering response after input cessation.\",\"condition_to_check\":\"Check whether history improves predictions after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3667,
+      "completion_tokens": 251,
+      "total_tokens": 3918,
+      "completion_tokens_details": {
+        "reasoning_tokens": 113
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.933285160921514
+}

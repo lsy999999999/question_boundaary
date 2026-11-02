@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430601519727694,
+  "http_status": 200,
+  "body": {
+    "id": "resp_04560b4a86761f85016ae59445fd6c8197a22d056f235decf2",
+    "object": "chat.completion",
+    "created": 1793430601,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"memory_slow has the lowest trajectory-held-out NMSE (0.00132), well below alternatives. PRBS forecast error was low, but residual lag-1 correlation and disagreement across memory variants warrant another discriminating test.\",\"prediction\":\"After rapid input switches, the response will retain a slow, input-history-dependent component after each switch.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No bibliography card is justified by the predictive fit alone.\",\"condition_to_check\":\"Check whether alternating-input responses match the slow-memory forecast across held-out trajectories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3262,
+      "completion_tokens": 328,
+      "total_tokens": 3590,
+      "completion_tokens_details": {
+        "reasoning_tokens": 196
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.214741102419794
+}

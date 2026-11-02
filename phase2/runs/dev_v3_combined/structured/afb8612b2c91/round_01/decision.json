@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793423438046845972,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "alternating",
+    "reason": "Alternating inputs test memory and nonlinearity without clear fast vs slow dynamics.",
+    "prediction": "Response should show consistent hysteresis loop, indicating memory effects.",
+    "accept": false,
+    "mapping": {
+      "source_id": "memory_slow",
+      "target_relation": "Hysteresis loop confirms memory effects beyond simple linearity.",
+      "condition_to_check": "Check if response loop differs between positive and negative alternating inputs."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"alternating\",\n  \"reason\": \"Alternating inputs test memory and nonlinearity without clear fast vs slow dynamics.\",\n  \"prediction\": \"Response should show consistent hysteresis loop, indicating memory effects.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"memory_slow\",\n    \"target_relation\": \"Hysteresis loop confirms memory effects beyond simple linearity.\",\n    \"condition_to_check\": \"Check if response loop differs between positive and negative alternating inputs.\"\n  }\n}",
+    "input_tokens": 3512,
+    "output_tokens": 119,
+    "batch_elapsed_seconds": 2.7915082555264235,
+    "amortized_seconds": 2.7915082555264235,
+    "peak_gpu_allocated_gb": 14.893336296081543,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024242401123047,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

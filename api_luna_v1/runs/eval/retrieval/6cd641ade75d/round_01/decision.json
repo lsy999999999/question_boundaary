@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793430081326030508,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Memory_slow has the lowest trajectory-held-out NMSE (0.00417), substantially outperforming the current memory_fast model (0.01687); PRBS provides varied input history to test that advantage.",
+    "prediction": "After input switches, output will retain a slower history-dependent carryover than memory_fast predicts.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the lowest trajectory-held-out NMSE (0.00417), substantially outperforming the current memory_fast model (0.01687); PRBS provides varied input history to test that advantage.\",\"prediction\":\"After input switches, output will retain a slower history-dependent carryover than memory_fast predicts.\",\"accept\":false}",
+    "input_tokens": 2964,
+    "output_tokens": 250,
+    "batch_elapsed_seconds": 3.773526548407972,
+    "amortized_seconds": 3.773526548407972,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2964,
+      "completion_tokens": 250,
+      "total_tokens": 3214,
+      "completion_tokens_details": {
+        "reasoning_tokens": 164
+      }
+    },
+    "api_response_id": "resp_04cb1934d62a218e016ae5923e3bd08194b556216596c5a7a2",
+    "wire_record": "wire/eval/0203_d6cc7f5a23e2478a80e5a2d5669f5c60"
+  }
+}

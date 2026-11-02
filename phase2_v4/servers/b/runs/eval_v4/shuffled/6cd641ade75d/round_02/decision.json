@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793424010361048188,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "ramp_reverse",
+    "reason": "Saturating memory shows best fit for complex inputs; ramp reverse tests accumulation limits.",
+    "prediction": "Response will flatten before reaching steady state, unlike linear models.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Accumulated state should limit growth even with increasing input.",
+      "condition_to_check": "Response should level off before reaching expected steady state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"ramp_reverse\",\n  \"reason\": \"Saturating memory shows best fit for complex inputs; ramp reverse tests accumulation limits.\",\n  \"prediction\": \"Response will flatten before reaching steady state, unlike linear models.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"Accumulated state should limit growth even with increasing input.\",\n    \"condition_to_check\": \"Response should level off before reaching expected steady state.\"\n  }\n}",
+    "input_tokens": 3787,
+    "output_tokens": 118,
+    "batch_elapsed_seconds": 2.8587489426136017,
+    "amortized_seconds": 2.8587489426136017,
+    "peak_gpu_allocated_gb": 14.950192928314209,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024013519287109,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

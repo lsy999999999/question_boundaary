@@ -1,0 +1,42 @@
+{
+  "time_ns": 1793431575154445974,
+  "decision": {
+    "representation": "clock",
+    "experiment": "prbs",
+    "reason": "Clock has far lower leave-trajectory-out error than the current state model; residuals are strongly correlated, while memory and history alternatives validate less well.",
+    "prediction": "Under PRBS input, a time-aligned component of the output will persist across input changes and be predicted by the clock model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "An elapsed-time-linked shared driver could explain the clock features and persistent residuals.",
+      "condition_to_check": "Compare PRBS output at matched elapsed times with different input histories; absence of a repeatable time-linked component falsifies this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has far lower leave-trajectory-out error than the current state model; residuals are strongly correlated, while memory and history alternatives validate less well.\",\"prediction\":\"Under PRBS input, a time-aligned component of the output will persist across input changes and be predicted by the clock model.\",\"accept\":false,\"mapping\":{\"source_id\":\"saturation\",\"target_relation\":\"An elapsed-time-linked shared driver could explain the clock features and persistent residuals.\",\"condition_to_check\":\"Compare PRBS output at matched elapsed times with different input histories; absence of a repeatable time-linked component falsifies this relation.\"}}",
+    "input_tokens": 2789,
+    "output_tokens": 379,
+    "batch_elapsed_seconds": 4.593782725743949,
+    "amortized_seconds": 4.593782725743949,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2789,
+      "completion_tokens": 379,
+      "total_tokens": 3168,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 241
+      }
+    },
+    "api_response_id": "resp_0fe97a7af2fad790016ae5981354008194839ffd5e163a3a14",
+    "wire_record": "wire/eval/0173_6e35406ce1db471b9a659c881e58614d"
+  }
+}

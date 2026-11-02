@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793432269398444564,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "memory_slow has the lowest trajectory-level CV error (0.001679), outperforming other candidates. Its small but nonzero residual autocorrelation leaves uncertainty, so adequacy for unseen interventions is not established.",
+    "prediction": "After input returns to zero, output will decay gradually; at matched current input and state, earlier input history may still predict output.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated input and output history can persist and influence later response over finite relaxation timescales.",
+      "condition_to_check": "If prior history adds no predictive value after controlling current input and visible state, this storage relation is weakened."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest trajectory-level CV error (0.001679), outperforming other candidates. Its small but nonzero residual autocorrelation leaves uncertainty, so adequacy for unseen interventions is not established.\",\"prediction\":\"After input returns to zero, output will decay gradually; at matched current input and state, earlier input history may still predict output.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history can persist and influence later response over finite relaxation timescales.\",\"condition_to_check\":\"If prior history adds no predictive value after controlling current input and visible state, this storage relation is weakened.\"}}",
+    "input_tokens": 3724,
+    "output_tokens": 147,
+    "batch_elapsed_seconds": 2.969844777137041,
+    "amortized_seconds": 2.969844777137041,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3724,
+      "completion_tokens": 147,
+      "total_tokens": 3871
+    },
+    "api_response_id": "resp_0d1f7adecd6e3c35016ae59acb745881979148d69a8df6436a",
+    "wire_record": "wire/eval/0524_aba852336e0c4636a1d4fe1b3e9dcd39"
+  }
+}

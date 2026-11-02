@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793423427515387700,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "positive_pulse",
+    "reason": "Clock terms may interact with memory effects, better distinguishing them.",
+    "prediction": "Positive pulse will show distinct phase shift compared to memory-only models.",
+    "accept": false,
+    "mapping": {
+      "source_id": "clock",
+      "target_relation": "Phase shift between input and output varies with elapsed time.",
+      "condition_to_check": "Phase shift remains consistent across different pulse durations."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_clock\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Clock terms may interact with memory effects, better distinguishing them.\",\n  \"prediction\": \"Positive pulse will show distinct phase shift compared to memory-only models.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"clock\",\n    \"target_relation\": \"Phase shift between input and output varies with elapsed time.\",\n    \"condition_to_check\": \"Phase shift remains consistent across different pulse durations.\"\n  }\n}",
+    "input_tokens": 3032,
+    "output_tokens": 108,
+    "batch_elapsed_seconds": 2.4718236001208425,
+    "amortized_seconds": 2.4718236001208425,
+    "peak_gpu_allocated_gb": 14.805195331573486,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025932312011719,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

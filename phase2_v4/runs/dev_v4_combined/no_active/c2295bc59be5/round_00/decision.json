@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423709016520838,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "positive_pulse",
+    "reason": "Cubic terms improve fit; positive pulse tests nonlinearity.",
+    "prediction": "Positive pulse will cause larger response than linear model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Nonlinear response persists after pulse.",
+      "condition_to_check": "Response magnitude exceeds linear prediction."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"state_cubic\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Cubic terms improve fit; positive pulse tests nonlinearity.\",\n  \"prediction\": \"Positive pulse will cause larger response than linear model.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Nonlinear response persists after pulse.\",\n    \"condition_to_check\": \"Response magnitude exceeds linear prediction.\"\n  }\n}",
+    "input_tokens": 3166,
+    "output_tokens": 100,
+    "batch_elapsed_seconds": 2.3196483524516225,
+    "amortized_seconds": 2.3196483524516225,
+    "peak_gpu_allocated_gb": 14.829967021942139,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.029041290283203,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

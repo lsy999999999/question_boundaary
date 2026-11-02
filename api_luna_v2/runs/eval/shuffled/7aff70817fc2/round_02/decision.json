@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431945408925945,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "prbs",
+    "reason": "State_cubic has the best trajectory-level CV NMSE (0.00223), well below alternatives, but residual lag correlation and unexplained interventions leave adequacy uncertain.",
+    "prediction": "At matched current state and input, the predicted response will not depend on earlier input history; systematic differences under PRBS would falsify this representation.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Validation supports an empirical nonlinear state model, not a specific cross-domain mechanism.",
+      "condition_to_check": "Check whether PRBS responses differ at matched current state and input after accounting for measurement noise."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state_cubic\",\"experiment\":\"prbs\",\"reason\":\"State_cubic has the best trajectory-level CV NMSE (0.00223), well below alternatives, but residual lag correlation and unexplained interventions leave adequacy uncertain.\",\"prediction\":\"At matched current state and input, the predicted response will not depend on earlier input history; systematic differences under PRBS would falsify this representation.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Validation supports an empirical nonlinear state model, not a specific cross-domain mechanism.\",\"condition_to_check\":\"Check whether PRBS responses differ at matched current state and input after accounting for measurement noise.\"}}",
+    "input_tokens": 3465,
+    "output_tokens": 250,
+    "batch_elapsed_seconds": 3.997776933014393,
+    "amortized_seconds": 3.997776933014393,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3465,
+      "completion_tokens": 250,
+      "total_tokens": 3715,
+      "completion_tokens_details": {
+        "reasoning_tokens": 113
+      }
+    },
+    "api_response_id": "resp_0fabba2afe771e7b016ae599862dd48193ad7ac6c71f89e184",
+    "wire_record": "wire/eval/0386_b31b6de2833743628a2f3ec13e4c38ee"
+  }
+}

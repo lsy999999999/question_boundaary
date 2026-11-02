@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793431491772150744,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Slow accumulated-history features give the lowest trajectory-level CV error; the state-only model has strongly correlated residuals. PRBS has the greatest prediction disagreement among plausible models.",
+    "prediction": "After input switches, the output will retain a slowly decaying influence of earlier inputs, beyond what current input and state alone predict.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow accumulated-history features give the lowest trajectory-level CV error; the state-only model has strongly correlated residuals. PRBS has the greatest prediction disagreement among plausible models.\",\"prediction\":\"After input switches, the output will retain a slowly decaying influence of earlier inputs, beyond what current input and state alone predict.\",\"accept\":false}",
+    "input_tokens": 2569,
+    "output_tokens": 191,
+    "batch_elapsed_seconds": 3.12167495675385,
+    "amortized_seconds": 3.12167495675385,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2569,
+      "completion_tokens": 191,
+      "total_tokens": 2760,
+      "completion_tokens_details": {
+        "reasoning_tokens": 106
+      }
+    },
+    "api_response_id": "resp_05b2d9d900d9c3ed016ae597c181e48194bb95f0055e868e4c",
+    "wire_record": "wire/eval/0111_b79a9b4d1764449594b22bcfe0929425"
+  }
+}

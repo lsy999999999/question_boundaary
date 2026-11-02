@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430391916513834,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0f0409682ce34f08016ae59375271481949f7689d6fe5a7e62",
+    "object": "chat.completion",
+    "created": 1793430391,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Slow accumulated history has the lowest trajectory-level CV error (0.00062), far below the current state-only model; residuals indicate persistent history dependence.\",\"prediction\":\"After input switches to zero, the output will retain a history-dependent tail that decays over seconds.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence predicts a persistent response after the input changes.\",\"condition_to_check\":\"After controlling current input and visible state, test whether prior input predicts the output tail across alternating interventions.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2832,
+      "completion_tokens": 236,
+      "total_tokens": 3068,
+      "completion_tokens_details": {
+        "reasoning_tokens": 111
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.553749203681946
+}

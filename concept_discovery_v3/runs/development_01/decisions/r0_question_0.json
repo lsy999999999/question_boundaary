@@ -1,0 +1,31 @@
+{
+  "value": {
+    "kind": "polarity",
+    "purpose": "probe_relation",
+    "target_ids": [
+      "v3_r0"
+    ],
+    "evidence_ids": [
+      "relation_r0_experiment_0_r2_experiment_1"
+    ],
+    "rationale": "The best held-out model is v3_r0 (group_cv_nmse 0.0207), and the supplied polarity comparison found an input/output sign relation consistent with measurement noise on its tested inputs. Probe whether that approximate odd-response relation persists at a broader range of amplitudes and durations; this is a structural probe, not a claim that the relation is universal.",
+    "claim": "For v3_r0, reversing the input polarity approximately reverses the output trajectory over the tested amplitude and duration range.",
+    "update_if_violated": "If polarity reversal produces a reproducible discrepancy beyond the measurement-noise scale, revise or qualify the odd-response relation and investigate the model's nonzero constant term or other missing asymmetry.",
+    "amplitude_range": [
+      0.2,
+      1.2
+    ],
+    "duration_range": [
+      1.0,
+      4.0
+    ],
+    "scale": 1.5,
+    "tolerance_x": 0.04
+  },
+  "generation_records": [
+    {
+      "wire": "wire/002_r0_question_0_0",
+      "valid": true
+    }
+  ]
+}

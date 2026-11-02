@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793424057502932246,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "PRBS input will reveal complex memory patterns.",
+    "prediction": "PRBS should produce a noisy but coherent response pattern, consistent with slow memory accumulation.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "The system's response to PRBS should exhibit coherent noise, indicating persistent storage of past states.",
+      "condition_to_check": "Incoherent noise suggests the response is driven by input rather than stored state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"prbs\",\n  \"reason\": \"PRBS input will reveal complex memory patterns.\",\n  \"prediction\": \"PRBS should produce a noisy but coherent response pattern, consistent with slow memory accumulation.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"The system's response to PRBS should exhibit coherent noise, indicating persistent storage of past states.\",\n    \"condition_to_check\": \"Incoherent noise suggests the response is driven by input rather than stored state.\"\n  }\n}",
+    "input_tokens": 3952,
+    "output_tokens": 124,
+    "batch_elapsed_seconds": 3.0231533236801624,
+    "amortized_seconds": 3.0231533236801624,
+    "peak_gpu_allocated_gb": 14.989767074584961,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

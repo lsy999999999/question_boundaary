@@ -1,0 +1,29 @@
+{
+  "forecast_order_errors": [],
+  "forecast_hash_errors": [],
+  "evaluation_order_errors": [],
+  "mapping_source_id_audit": {
+    "structured": {
+      "decisions": 16,
+      "valid_source_id": 16,
+      "missing_mapping": 0,
+      "invalid_source_ids": {},
+      "valid_source_id_rate": 1.0
+    },
+    "no_active": {
+      "decisions": 16,
+      "valid_source_id": 14,
+      "missing_mapping": 0,
+      "invalid_source_ids": {
+        "nonlinear": 2
+      },
+      "valid_source_id_rate": 0.875
+    }
+  },
+  "fitting_calls_per_task_from_code_path": {
+    "state_fixed": 7,
+    "history_cv": 51,
+    "language_model_methods": 8
+  },
+  "scope": "Source id checks validate declared provenance only; mapping semantics require independent review. GPU v1 checked mapping fields only; CPU v2 also validates source-id enum and records these errors in invalid-output counts."
+}

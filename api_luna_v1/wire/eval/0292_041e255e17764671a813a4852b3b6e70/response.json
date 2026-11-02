@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430248383671675,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0418042df84a14e3016ae592e5503c81979ad3616cd1f38040",
+    "object": "chat.completion",
+    "created": 1793430248,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"Memory_slow has the lowest trajectory-held-out NMSE (0.00318); recent PRBS and alternating forecasts were accurate, though residual lag-1 correlation remains high.\",\"prediction\":\"The first pulse will leave a lingering contribution, so the response to the second pulse will differ from an isolated pulse.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated input history predicts lingering output after input changes.\",\"condition_to_check\":\"If the second-pulse response matches an isolated pulse after controlling current input and visible state, the storage relation is weakened.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3455,
+      "completion_tokens": 273,
+      "total_tokens": 3728,
+      "completion_tokens_details": {
+        "reasoning_tokens": 138
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.85860613361001
+}

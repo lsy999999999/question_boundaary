@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793430384444579991,
+  "http_status": 200,
+  "body": {
+    "id": "resp_075d04d17ea56343016ae5936d3f108196aa5a65ee1c9a27e1",
+    "object": "chat.completion",
+    "created": 1793430384,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"slow_wave\",\"reason\":\"Memory_slow has the lowest trajectory-level CV error, narrowly outperforming multiscale. Persistent pulse tails and PRBS fit support history dependence; the remaining lag correlation cautions that adequacy is not certain.\",\"prediction\":\"After input returns to zero, output will relax gradually, with its tail depending on prior input rather than elapsed time alone.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Finite-relaxation accumulated history predicts output dependence on past input beyond current input.\",\"condition_to_check\":\"Weaken this relation if past input adds no predictive value after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3666,
+      "completion_tokens": 140,
+      "total_tokens": 3806
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.085605768486857
+}

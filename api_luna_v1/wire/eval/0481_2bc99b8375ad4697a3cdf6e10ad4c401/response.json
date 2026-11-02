@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430687871754048,
+  "http_status": 200,
+  "body": {
+    "id": "resp_03c45d5b269bc626016ae5949cb4e081978264aaa0ee27a188",
+    "object": "chat.completion",
+    "created": 1793430687,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"It retains the lowest trajectory-level CV error (0.00153), but residual autocorrelation and higher PRBS error leave rapid-switch behavior uncertain.\",\"prediction\":\"Following rapid reversals, the response will vary smoothly and retain a history-dependent tail rather than change immediately with input.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Leaky accumulated input and state history can influence the response after input switches.\",\"condition_to_check\":\"At matched current input and visible state, different prior histories should predict different subsequent responses.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3496,
+      "completion_tokens": 249,
+      "total_tokens": 3745,
+      "completion_tokens_details": {
+        "reasoning_tokens": 124
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.29187739174813
+}

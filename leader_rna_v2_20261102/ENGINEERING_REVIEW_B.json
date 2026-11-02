@@ -1,0 +1,29 @@
+{
+  "time": "2026-11-02T07:23:46.618253+00:00",
+  "full_log_reconstructable": true,
+  "live_ingestion_clean": false,
+  "issues": [
+    {
+      "id": "race_B1_L1",
+      "finding": "Root ingested a draft while actor was still running; final actor file differs in measurement clarifications and forecast references. Exact ingested bytes reconstructed from versioned state and verified by original SHA256; final file kept.",
+      "impact": "B1 executor initially used ingested version; later leader knew final text. Preserve this mixed-context deviation, no clean-replay claim.",
+      "fix": "For C, wait for actual FINAL_ANSWER, seal exact bytes and require actor_finished marker/hash before intake."
+    },
+    {
+      "id": "identity_and_adjudication",
+      "finding": "Actors used version-in-ID and dict adjudication; invalid task identity updates were rejected and retained in protocol_errors.",
+      "fix": "C keeps IDs stable; zero scientific content repair."
+    },
+    {
+      "id": "formal_gate_analytic",
+      "finding": "B automatic gate allowed only successful tool IDs and numeric execution, so bounded analytic assessments could be recorded as rework despite valid algebra.",
+      "fix": "C permits identified actor derivation artifacts with explicit checks; substantive validity still reviewed separately."
+    },
+    {
+      "id": "role_tool_routing",
+      "finding": "Some B searches/calculations were requested directly by the leader rather than executor.",
+      "fix": "C defers leader tool proposals for executor adoption, no standing retrieval role."
+    }
+  ],
+  "scope": "Postfreeze engineering fixes; C is a development demonstration with these documented changes, not a clean causal test of the selected B paragraph alone."
+}

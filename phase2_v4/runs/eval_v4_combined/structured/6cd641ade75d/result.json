@@ -1,0 +1,98 @@
+{
+  "task_id": "6cd641ade75d",
+  "split": "eval",
+  "family": "saturated_memory",
+  "seed": 31,
+  "method": "structured",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "saturating_memory",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0017342755206960969,
+    "coefficients": [
+      -0.0021825,
+      2.1915464,
+      0.8883396,
+      0.0008258,
+      -0.1172955,
+      -6.2811833,
+      0.5431196,
+      0.7547978,
+      0.7107311,
+      -0.1558196,
+      0.8131011,
+      -2.4362014,
+      2.3492968,
+      2.491131,
+      0.0380747,
+      -1.5059741,
+      -0.5706149,
+      -1.4671424,
+      1.8453811,
+      -0.5507077,
+      1.476136,
+      -0.4370724,
+      -0.1356921
+    ]
+  },
+  "test": {
+    "test_nmse": 0.0016962010786167787,
+    "test_mse": 0.00013256789459841175,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 0.00014256831432615628,
+        "nmse": 0.0017386388623735032
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.0002265007600897101,
+        "nmse": 0.0005917610334460444
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 0.0001897930967062334,
+        "nmse": 0.005508888564573367
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 3.3079937920662834e-05,
+        "nmse": 0.0003618037549681062
+      },
+      {
+        "action": "test_prbs",
+        "mse": 0.00014122185049529747,
+        "nmse": 0.0015166543552162172
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 6.224340805241047e-05,
+        "nmse": 0.0004594599011234346
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": true,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 14602,
+  "output_tokens": 501,
+  "generation_seconds_amortized": 11.878731051459908,
+  "elapsed_wall_seconds": 317.2921516895294,
+  "selected_actions": [
+    "double_pulse",
+    "alternating",
+    "ramp_reverse"
+  ],
+  "selected_representations": [
+    "memory_fast",
+    "memory_fast",
+    "saturating_memory",
+    "saturating_memory"
+  ],
+  "peak_gpu_allocated_gb": 14.991811275482178,
+  "peak_process_ram_gb": 5.025672912597656,
+  "inference_backend": "cuda",
+  "evaluation_after_commit_ns": 1793424103095547857
+}

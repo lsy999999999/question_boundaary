@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429639717594601,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0a55f1fec5927975016ae5908472388190be2b51e5574f8afa",
+    "object": "chat.completion",
+    "created": 1793429639,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has much lower held-out error than alternatives, but residual lag correlation and similar late drift leave input-history explanations plausible; PRBS offers strong disagreement.\",\"prediction\":\"If elapsed-time forcing matters, late output features should recur at similar times despite PRBS input changes.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Shared elapsed-time features may predict residual structure across different input interventions.\",\"condition_to_check\":\"Compare PRBS output with other trajectories at matched times; input-dependent residuals would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3246,
+      "completion_tokens": 327,
+      "total_tokens": 3573,
+      "completion_tokens_details": {
+        "reasoning_tokens": 204
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.091467850841582
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431638052858993,
+  "http_status": 200,
+  "body": {
+    "id": "resp_092373ec13f3d884016ae5985304d4819583fdc4ef87a32afb",
+    "object": "chat.completion",
+    "created": 1793431637,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"ramp_reverse\",\"reason\":\"State has the lowest trajectory-held-out error; added memory, clock, and nonlinear features do not improve validation, and the alternating experiment did not produce a forecast failure.\",\"prediction\":\"At matched current input and visible state, the response will not depend reproducibly on the preceding ramp direction.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No additional mechanism relation is justified by the current validation evidence.\",\"condition_to_check\":\"A repeatable difference by ramp direction after controlling current input and visible state would challenge the state model.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3253,
+      "completion_tokens": 295,
+      "total_tokens": 3548,
+      "completion_tokens_details": {
+        "reasoning_tokens": 169
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.028122466988862
+}

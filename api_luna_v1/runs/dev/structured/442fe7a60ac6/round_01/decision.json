@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793429626304759212,
+  "decision": {
+    "representation": "state",
+    "experiment": "slow_wave",
+    "reason": "The state model has the lowest leave-trajectory-out error; adding memory or clock features worsens validation. Residual autocorrelation leaves some uncertainty, so test a slow-wave input.",
+    "prediction": "After accounting for current state and input, slow-wave residuals will show no persistent dependence on earlier input history.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No cross-domain relation is established by these observations.",
+      "condition_to_check": "Check whether identical current state and input predict different outputs after different input histories."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"slow_wave\",\"reason\":\"The state model has the lowest leave-trajectory-out error; adding memory or clock features worsens validation. Residual autocorrelation leaves some uncertainty, so test a slow-wave input.\",\"prediction\":\"After accounting for current state and input, slow-wave residuals will show no persistent dependence on earlier input history.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is established by these observations.\",\"condition_to_check\":\"Check whether identical current state and input predict different outputs after different input histories.\"}}",
+    "input_tokens": 3238,
+    "output_tokens": 290,
+    "batch_elapsed_seconds": 4.105774155817926,
+    "amortized_seconds": 4.105774155817926,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3238,
+      "completion_tokens": 290,
+      "total_tokens": 3528,
+      "completion_tokens_details": {
+        "reasoning_tokens": 168
+      }
+    },
+    "api_response_id": "resp_0c5d56f767a10446016ae590773ba88196b4d29360197db511",
+    "wire_record": "wire/dev/0014_f70f5716eb2f4a3fb8baf77c4b2f5e4a"
+  }
+}

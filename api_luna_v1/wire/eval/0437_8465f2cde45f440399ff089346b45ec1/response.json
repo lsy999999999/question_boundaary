@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430564766042822,
+  "http_status": 200,
+  "body": {
+    "id": "resp_085b7ed5b46e5a22016ae59420fc548196a975a11e224cc032",
+    "object": "chat.completion",
+    "created": 1793430564,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"ramp_reverse\",\"reason\":\"State_cubic has the best trajectory-level validation error (0.00211 versus 0.00394 for state). Alternating-input results did not support the prior memory concern, but residual autocorrelation leaves adequacy uncertain.\",\"prediction\":\"At matched current state and input, the ramp and reverse portions will have similar outputs; persistent differences would argue for memory.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The evidence favors instantaneous curvature but does not establish a specific mechanism.\",\"condition_to_check\":\"Check for reproducible output differences at matched state and input after different histories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3251,
+      "completion_tokens": 352,
+      "total_tokens": 3603,
+      "completion_tokens_details": {
+        "reasoning_tokens": 213
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.53155913669616
+}

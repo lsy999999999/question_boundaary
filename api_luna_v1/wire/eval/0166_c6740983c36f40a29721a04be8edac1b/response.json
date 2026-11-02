@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430010613126697,
+  "http_status": 200,
+  "body": {
+    "id": "resp_08f6467f41142595016ae591f761608195b1d6e379fac652b6",
+    "object": "chat.completion",
+    "created": 1793430010,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"prbs\",\"reason\":\"State has the lowest trajectory-level CV error and PRBS forecast error is small; richer memory and clock representations do not improve validation, though residual lag correlation warrants another probe.\",\"prediction\":\"At matched current state and input, next-step responses under PRBS should not systematically depend on earlier input history.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No additional cross-domain relation is supported by the validated state model.\",\"condition_to_check\":\"Reject if repeated PRBS trajectories show reproducible history-dependent residuals after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3259,
+      "completion_tokens": 316,
+      "total_tokens": 3575,
+      "completion_tokens_details": {
+        "reasoning_tokens": 188
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.0179753210395575
+}

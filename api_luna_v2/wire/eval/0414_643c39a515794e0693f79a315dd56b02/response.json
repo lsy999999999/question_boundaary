@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432003431280394,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0ac3dffd396aa334016ae599bfc7448193851a8f19c9d22fa0",
+    "object": "chat.completion",
+    "created": 1793432003,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"Memory_slow has the lowest trajectory-held-out error, substantially outperforming state-only and alternative memory models. Persistent post-input tails support history dependence, though residual lag correlation leaves uncertainty.\",\"prediction\":\"The second pulse will produce an output shaped by the residual influence of the first pulse, followed by a gradual relaxation after input returns to zero.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated input history predicts lingering output effects after input changes.\",\"condition_to_check\":\"At matched current input and output, different prior pulse histories should predict different subsequent trajectories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3470,
+      "completion_tokens": 258,
+      "total_tokens": 3728,
+      "completion_tokens_details": {
+        "reasoning_tokens": 123
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.199752014130354
+}

@@ -1,0 +1,84 @@
+{
+  "task_id": "2e356a891a56",
+  "split": "eval",
+  "family": "delay",
+  "seed": 32,
+  "method": "structured",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_slow",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0028803020446056967,
+    "coefficients": [
+      0.000857,
+      -2.5865828,
+      0.9915732,
+      -2.9496437,
+      -8.5310328,
+      -7.9990634,
+      -15.2852936,
+      21.0473313,
+      30.231853
+    ]
+  },
+  "test": {
+    "test_nmse": 0.0013867378991789011,
+    "test_mse": 7.268079538955366e-05,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 8.508758438621064e-05,
+        "nmse": 0.0014484284934402664
+      },
+      {
+        "action": "test_three_step",
+        "mse": 7.147903217225135e-05,
+        "nmse": 0.0002647820392800344
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 0.00011623271032134692,
+        "nmse": 0.004232781342509387
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 2.745635130497394e-05,
+        "nmse": 0.0005360629850959535
+      },
+      {
+        "action": "test_prbs",
+        "mse": 9.129720268257246e-05,
+        "nmse": 0.0013777455208235942
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 4.453189146996666e-05,
+        "nmse": 0.00046062701392417114
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": false,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 13149,
+  "output_tokens": 937,
+  "generation_seconds_amortized": 15.226655079051852,
+  "elapsed_wall_seconds": 853.1800491809845,
+  "selected_actions": [
+    "prbs",
+    "alternating",
+    "double_pulse"
+  ],
+  "selected_representations": [
+    "memory_slow",
+    "memory_slow",
+    "memory_slow",
+    "memory_slow"
+  ],
+  "peak_gpu_allocated_gb": 0.0,
+  "peak_process_ram_gb": 0.08777236938476562,
+  "inference_backend": "third_party_api",
+  "evaluation_after_commit_ns": 1793432285452207663
+}

@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431512527550739,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Memory_slow has the lowest leave-trajectory-out error, while strong residual autocorrelation and pulse recovery contradict the state-only model. PRBS probes history dependence across varied input sequences.",
+    "prediction": "After an input switch to zero, the output will retain a decaying dependence on earlier inputs, differing across PRBS histories at similar current states.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Accumulated history improves prediction, but these observations do not establish a specific cross-domain mechanism.",
+      "condition_to_check": "Compare PRBS segments with similar current input and output but different prior inputs; persistent differences would support history dependence."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the lowest leave-trajectory-out error, while strong residual autocorrelation and pulse recovery contradict the state-only model. PRBS probes history dependence across varied input sequences.\",\"prediction\":\"After an input switch to zero, the output will retain a decaying dependence on earlier inputs, differing across PRBS histories at similar current states.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Accumulated history improves prediction, but these observations do not establish a specific cross-domain mechanism.\",\"condition_to_check\":\"Compare PRBS segments with similar current input and output but different prior inputs; persistent differences would support history dependence.\"}}",
+    "input_tokens": 2809,
+    "output_tokens": 340,
+    "batch_elapsed_seconds": 4.649794803932309,
+    "amortized_seconds": 4.649794803932309,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2809,
+      "completion_tokens": 340,
+      "total_tokens": 3149,
+      "completion_tokens_details": {
+        "reasoning_tokens": 194
+      }
+    },
+    "api_response_id": "resp_0958e7a97f7a5477016ae597d4ba748193b41b105cee419c22",
+    "wire_record": "wire/eval/0127_461dffdbee214393a744f871046e93e5"
+  }
+}

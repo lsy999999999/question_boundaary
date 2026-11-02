@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430232549840890,
+  "http_status": 200,
+  "body": {
+    "id": "resp_001d36623894a0d0016ae592d62fa48190a918f686d9312755",
+    "object": "chat.completion",
+    "created": 1793430232,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"ramp_reverse\",\"reason\":\"Saturating_memory has the lowest trajectory-held-out NMSE (0.00167), improving on memory_slow (0.00232); residual lag remains high, so adequacy is uncertain.\",\"prediction\":\"On ramp reversal, the output will show history-dependent curvature that a linear slow-memory model does not capture.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3121,
+      "completion_tokens": 216,
+      "total_tokens": 3337,
+      "completion_tokens_details": {
+        "reasoning_tokens": 127
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.5010164696723223
+}

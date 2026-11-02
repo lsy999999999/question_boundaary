@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423705840651942,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "positive_pulse",
+    "reason": "Memory_slow has lower NMSE and better cross-validation than state and clock.",
+    "prediction": "Positive pulse will show slower decay compared to state and clock models.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Persistent response after input ends indicates storage mechanism.",
+      "condition_to_check": "Decay rate post-pulse should be slower than linear or clock models."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Memory_slow has lower NMSE and better cross-validation than state and clock.\",\n  \"prediction\": \"Positive pulse will show slower decay compared to state and clock models.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Persistent response after input ends indicates storage mechanism.\",\n    \"condition_to_check\": \"Decay rate post-pulse should be slower than linear or clock models.\"\n  }\n}",
+    "input_tokens": 3151,
+    "output_tokens": 115,
+    "batch_elapsed_seconds": 3.034845344722271,
+    "amortized_seconds": 3.034845344722271,
+    "peak_gpu_allocated_gb": 14.827783107757568,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.0277862548828125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

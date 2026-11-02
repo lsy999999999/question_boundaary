@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431662059407015,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "ramp_reverse",
+    "reason": "State_cubic has the best trajectory-held-out error (0.00211 versus 0.00394 for state). More complex history models validate worse, so curvature is the best-supported revision, though adequacy remains uncertain.",
+    "prediction": "During ramp reversal, responses at matched current state and input should be similar despite different prior input histories.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Improved validation supports an instantaneous nonlinear fit, but does not establish a saturation mechanism.",
+      "condition_to_check": "At matched state and input, test whether response still depends reproducibly on prior input."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state_cubic\",\"experiment\":\"ramp_reverse\",\"reason\":\"State_cubic has the best trajectory-held-out error (0.00211 versus 0.00394 for state). More complex history models validate worse, so curvature is the best-supported revision, though adequacy remains uncertain.\",\"prediction\":\"During ramp reversal, responses at matched current state and input should be similar despite different prior input histories.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Improved validation supports an instantaneous nonlinear fit, but does not establish a saturation mechanism.\",\"condition_to_check\":\"At matched state and input, test whether response still depends reproducibly on prior input.\"}}",
+    "input_tokens": 3250,
+    "output_tokens": 322,
+    "batch_elapsed_seconds": 7.209719128906727,
+    "amortized_seconds": 7.209719128906727,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3250,
+      "completion_tokens": 322,
+      "total_tokens": 3572,
+      "completion_tokens_details": {
+        "reasoning_tokens": 181
+      }
+    },
+    "api_response_id": "resp_0723f51f4f990a26016ae5986a41fc819580379554182712e6",
+    "wire_record": "wire/eval/0234_5cdb949c69084c39bfa07d4ef768911b"
+  }
+}

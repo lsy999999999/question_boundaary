@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793432302537901058,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "slow_wave",
+    "reason": "It has the lowest trajectory-level CV NMSE (0.001311); more complex alternatives are slightly worse, while state-only models and delay models perform poorly. Residual lag correlation remains, so adequacy is not established.",
+    "prediction": "After input returns to zero, output will retain a history-dependent tail that decays over multiple timescales.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Leaky accumulated input history predicts output beyond current input and visible state.",
+      "condition_to_check": "The relation is falsified if past input adds no predictive value after controlling current input and visible state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"slow_wave\",\"reason\":\"It has the lowest trajectory-level CV NMSE (0.001311); more complex alternatives are slightly worse, while state-only models and delay models perform poorly. Residual lag correlation remains, so adequacy is not established.\",\"prediction\":\"After input returns to zero, output will retain a history-dependent tail that decays over multiple timescales.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Leaky accumulated input history predicts output beyond current input and visible state.\",\"condition_to_check\":\"The relation is falsified if past input adds no predictive value after controlling current input and visible state.\"}}",
+    "input_tokens": 3686,
+    "output_tokens": 141,
+    "batch_elapsed_seconds": 3.412475016899407,
+    "amortized_seconds": 3.412475016899407,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3686,
+      "completion_tokens": 141,
+      "total_tokens": 3827
+    },
+    "api_response_id": "resp_098904c5c58ce272016ae59aecd99c81959c2748871d25077a",
+    "wire_record": "wire/eval/0539_959a280cd12d4c97a392aa73b6100e16"
+  }
+}

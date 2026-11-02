@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431230544830256,
+  "http_status": 200,
+  "body": {
+    "id": "resp_00b22eebe5d78e4e016ae596bbc3f08197bbd99c2eed86f4b5",
+    "object": "chat.completion",
+    "created": 1793431230,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"ramp_reverse\",\"reason\":\"State_cubic has the lowest trajectory-level CV NMSE (0.00151); memory alternatives validate worse. Residual autocorrelation leaves adequacy uncertain.\",\"prediction\":\"At matched current state and input, ramp-up and ramp-down trajectories should yield similar outputs if instantaneous state_cubic dynamics suffice.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain mechanism is established by predictive fit alone.\",\"condition_to_check\":\"Compare outputs at matched states and inputs reached during ramp-up and ramp-down.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3233,
+      "completion_tokens": 267,
+      "total_tokens": 3500,
+      "completion_tokens_details": {
+        "reasoning_tokens": 143
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.020970156416297
+}

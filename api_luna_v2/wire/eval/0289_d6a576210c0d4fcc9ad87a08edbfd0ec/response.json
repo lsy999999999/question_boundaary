@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431775849883251,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0ab340b00d7eac48016ae598d7318c819487a7345d8750ec63",
+    "object": "chat.completion",
+    "created": 1793431775,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"memory_slow has the lowest trajectory-level CV error by a wide margin, though residual lag correlation leaves some dynamics unexplained. Alternating inputs probe disagreement among plausible memory models.\",\"prediction\":\"After rapid input reversals, output changes will be smoothed and retain history-dependent persistence rather than tracking each switch immediately.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated history predicts better than the tested instantaneous and fixed-delay representations.\",\"condition_to_check\":\"Test whether persistence after rapid reversals remains after controlling current input and visible output.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3254,
+      "completion_tokens": 301,
+      "total_tokens": 3555,
+      "completion_tokens_details": {
+        "reasoning_tokens": 171
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 9.330750769004226
+}

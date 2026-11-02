@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423912263168450,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "double_pulse",
+    "reason": "Memory_slow shows low NMSE and high residual correlation.",
+    "prediction": "Double pulse will exhibit slower recovery compared to state model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Storage should cause slower response recovery.",
+      "condition_to_check": "Recovery time after double pulse should be longer than state model."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"double_pulse\",\n  \"reason\": \"Memory_slow shows low NMSE and high residual correlation.\",\n  \"prediction\": \"Double pulse will exhibit slower recovery compared to state model.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Storage should cause slower response recovery.\",\n    \"condition_to_check\": \"Recovery time after double pulse should be longer than state model.\"\n  }\n}",
+    "input_tokens": 3631,
+    "output_tokens": 105,
+    "batch_elapsed_seconds": 2.5206690076738596,
+    "amortized_seconds": 2.5206690076738596,
+    "peak_gpu_allocated_gb": 14.9249587059021,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

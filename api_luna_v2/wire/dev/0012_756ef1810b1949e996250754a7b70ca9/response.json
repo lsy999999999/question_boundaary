@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431201698724829,
+  "http_status": 200,
+  "body": {
+    "id": "resp_05c30300fd45c94b016ae5969fc5f0819492c281866acdba6d",
+    "object": "chat.completion",
+    "created": 1793431201,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the lowest trajectory-held-out NMSE (0.00176), far below the current state model, and PRBS has the greatest prediction disagreement among plausible representations.\",\"prediction\":\"Under PRBS, memory_slow will predict held-out output more accurately than the state model, especially after input switches.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2258,
+      "completion_tokens": 166,
+      "total_tokens": 2424,
+      "prompt_tokens_details": {
+        "cached_tokens": 2048
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 80
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.035259666852653
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431213723665273,
+  "http_status": 200,
+  "body": {
+    "id": "resp_06525d2d22d1c7b0016ae596aa0ac48195bdf3f5a11dbbc72b",
+    "object": "chat.completion",
+    "created": 1793431213,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest leave-trajectory-out error (0.0017), far below memory_clock (0.0096); similar late drift across different inputs is consistent with elapsed-time forcing.\",\"prediction\":\"Despite rapid input switches, the late negative drift will recur at similar elapsed times across interventions.\",\"accept\":true,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A shared elapsed-time driver could explain the similar late drift under different inputs.\",\"condition_to_check\":\"Compare drift timing across interventions; inconsistent timing after controlling input would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2792,
+      "completion_tokens": 321,
+      "total_tokens": 3113,
+      "completion_tokens_details": {
+        "reasoning_tokens": 194
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.329172411933541
+}

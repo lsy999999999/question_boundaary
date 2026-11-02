@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429938380371713,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0105f425dda3afd8016ae591aff6c48194adbbd840c8088d14",
+    "object": "chat.completion",
+    "created": 1793429938,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow-memory features have the lowest trajectory-held-out NMSE (0.00195), far below the state model, whose residuals remain strongly correlated. PRBS best separates plausible memory timescales.\",\"prediction\":\"After input switches to zero, the output will retain a decaying dependence on prior input rather than responding instantaneously.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated history predicts lingering output after input returns to zero.\",\"condition_to_check\":\"Test whether prior input predicts output under zero current input across different PRBS histories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2804,
+      "completion_tokens": 228,
+      "total_tokens": 3032,
+      "completion_tokens_details": {
+        "reasoning_tokens": 96
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.481216979213059
+}

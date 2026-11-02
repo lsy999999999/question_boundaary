@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430442319224999,
+  "http_status": 200,
+  "body": {
+    "id": "resp_06f9e28c1a9e491a016ae593a6bf308190bdafc99294e0c104",
+    "object": "chat.completion",
+    "created": 1793430442,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"alternating\",\"reason\":\"Saturating_memory has the lowest cross-validation NMSE, narrowly beating state_cubic; elevated residual autocorrelation leaves adequacy uncertain. Alternating input has the greatest disagreement among plausible models.\",\"prediction\":\"Under alternating input, the trajectory will differ measurably from state_cubic’s forecast, beyond the observed noise level.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is sufficiently supported by these trajectory comparisons.\",\"condition_to_check\":\"Test whether history-dependent predictions persist after controlling current input and state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2804,
+      "completion_tokens": 311,
+      "total_tokens": 3115,
+      "completion_tokens_details": {
+        "reasoning_tokens": 182
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.301453736610711
+}

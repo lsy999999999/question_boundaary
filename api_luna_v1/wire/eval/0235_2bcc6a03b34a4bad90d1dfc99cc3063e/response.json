@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430139089816102,
+  "http_status": 200,
+  "body": {
+    "id": "resp_031773f20e953a34016ae592781e3c819096c27cc6a5d49d33",
+    "object": "chat.completion",
+    "created": 1793430139,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"prbs\",\"reason\":\"Memory_clock has the best trajectory-level validation error, but residual autocorrelation remains and clock effects are not independently established. PRBS provides varied input histories to test predictive differences.\",\"prediction\":\"At matched elapsed times, memory_clock and history_all predictions will diverge most during irregular input changes; persistent forecast errors would challenge the current model.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No independent elapsed-time driver is yet supported; clock features improve prediction but may proxy for unmodeled input-history dynamics.\",\"condition_to_check\":\"Compare predictions and outputs across interventions aligned by elapsed time; absent shared clock-linked variation weakens this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3245,
+      "completion_tokens": 306,
+      "total_tokens": 3551,
+      "completion_tokens_details": {
+        "reasoning_tokens": 158
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.705439724959433
+}

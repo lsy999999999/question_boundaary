@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423719297633621,
+  "decision": {
+    "representation": "state",
+    "experiment": "negative_pulse",
+    "reason": "State model fits well but may miss nonlinearities or delays.",
+    "prediction": "Negative pulse will show quicker decay compared to memory_slow.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "If decay is quick, no significant storage effect exists.",
+      "condition_to_check": "Quick decay indicates immediate response without persistent effects."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"state\",\n  \"experiment\": \"negative_pulse\",\n  \"reason\": \"State model fits well but may miss nonlinearities or delays.\",\n  \"prediction\": \"Negative pulse will show quicker decay compared to memory_slow.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"If decay is quick, no significant storage effect exists.\",\n    \"condition_to_check\": \"Quick decay indicates immediate response without persistent effects.\"\n  }\n}",
+    "input_tokens": 3578,
+    "output_tokens": 105,
+    "batch_elapsed_seconds": 2.5201920717954636,
+    "amortized_seconds": 2.5201920717954636,
+    "peak_gpu_allocated_gb": 14.90444803237915,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.017097473144531,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

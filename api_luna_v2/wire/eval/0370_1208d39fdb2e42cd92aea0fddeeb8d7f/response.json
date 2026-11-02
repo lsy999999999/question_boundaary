@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431918833009543,
+  "http_status": 200,
+  "body": {
+    "id": "resp_02abad58260873f9016ae5996c790c8190b56786301f600b67",
+    "object": "chat.completion",
+    "created": 1793431918,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"alternating\",\"reason\":\"Memory_multiscale has the lowest trajectory-held-out NMSE (0.00162), modestly improving on memory_slow; residual lag-1 correlation remains, so adequacy is not established.\",\"prediction\":\"During alternating input, response will depend on accumulated fast and slow input history beyond current input and visible state.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts persistent responses after input switches or returns to zero.\",\"condition_to_check\":\"The relation weakens if history adds no predictive value after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3523,
+      "completion_tokens": 254,
+      "total_tokens": 3777,
+      "completion_tokens_details": {
+        "reasoning_tokens": 118
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.048750971443951
+}

@@ -1,0 +1,84 @@
+{
+  "task_id": "950f039e72fa",
+  "split": "dev",
+  "family": "clock",
+  "seed": 201,
+  "method": "no_active",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_slow",
+    "ridge": 1e-05,
+    "cv_nmse": 0.005784101679010942,
+    "coefficients": [
+      0.0863852,
+      -0.4243787,
+      0.9957082,
+      0.9424687,
+      2.4030526,
+      -7.0988598,
+      -1.862307,
+      -2.3753844,
+      6.9941259
+    ]
+  },
+  "test": {
+    "test_nmse": 0.005508135594105474,
+    "test_mse": 0.00047293573744399173,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 0.000341625760415103,
+        "nmse": 0.0029860855553959847
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.0001370579469916831,
+        "nmse": 0.00035616418683670064
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 0.0004535398703881178,
+        "nmse": 0.007872872617851022
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 0.000472813252851553,
+        "nmse": 0.003965148820362478
+      },
+      {
+        "action": "test_prbs",
+        "mse": 0.00035566544421268526,
+        "nmse": 0.00301377579090594
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 0.001076912149804808,
+        "nmse": 0.01485476659328072
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": true,
+  "invalid_outputs": 4,
+  "generation_calls": 4,
+  "input_tokens": 14137,
+  "output_tokens": 435,
+  "generation_seconds_amortized": 10.387404835782945,
+  "elapsed_wall_seconds": 54.61755609512329,
+  "selected_actions": [
+    "prbs",
+    "ramp_reverse",
+    "double_pulse"
+  ],
+  "selected_representations": [
+    "memory_clock",
+    "memory_slow",
+    "memory_slow",
+    "memory_slow"
+  ],
+  "peak_gpu_allocated_gb": 14.963831901550293,
+  "peak_process_ram_gb": 5.025932312011719,
+  "inference_backend": "cuda",
+  "evaluation_after_commit_ns": 1793423469559324895
+}

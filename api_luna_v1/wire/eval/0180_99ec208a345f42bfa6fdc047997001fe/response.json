@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430040712782928,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0dd1d5482f9936d1016ae592158fe881949adf4cb5c3d8e180",
+    "object": "chat.completion",
+    "created": 1793430040,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"prbs\",\"reason\":\"State_cubic has substantially lower leave-trajectory-out NMSE (0.00204) than saturating_memory (0.00614); the current memory model's residual correlation does not outweigh this validation evidence.\",\"prediction\":\"Under PRBS input, state_cubic predicts no systematic history-dependent residual after accounting for current state and input.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is sufficiently supported by these observations.\",\"condition_to_check\":\"Test whether PRBS residuals retain reproducible dependence on past input after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3246,
+      "completion_tokens": 325,
+      "total_tokens": 3571,
+      "completion_tokens_details": {
+        "reasoning_tokens": 189
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.9020298216491938
+}

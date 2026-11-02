@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423462896840697,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "positive_pulse",
+    "reason": "Saturating memory should handle nonlinearities better than cubic terms.",
+    "prediction": "Positive pulse will show reduced response amplitude as state saturates.",
+    "accept": true,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Nonlinear response diminishes with large state magnitudes.",
+      "condition_to_check": "Reduced response amplitude indicates saturation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Saturating memory should handle nonlinearities better than cubic terms.\",\n  \"prediction\": \"Positive pulse will show reduced response amplitude as state saturates.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"Nonlinear response diminishes with large state magnitudes.\",\n    \"condition_to_check\": \"Reduced response amplitude indicates saturation.\"\n  }\n}",
+    "input_tokens": 3887,
+    "output_tokens": 109,
+    "batch_elapsed_seconds": 2.6659074164927006,
+    "amortized_seconds": 2.6659074164927006,
+    "peak_gpu_allocated_gb": 14.96169376373291,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024242401123047,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

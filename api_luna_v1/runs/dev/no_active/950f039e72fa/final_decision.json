@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793429759256727691,
+  "decision": {
+    "representation": "clock",
+    "experiment": "slow_wave",
+    "reason": "Clock has the lowest trajectory-held-out NMSE, and forecasts remained accurate across PRBS, ramp-reverse, and double-pulse trials; richer history models validate worse.",
+    "prediction": "Across different inputs, elapsed-time-aligned late drift will be more similar than drift aligned by recent input history.",
+    "accept": true,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "A shared elapsed-time component may account for similar late drift across distinct input trajectories.",
+      "condition_to_check": "The relation is weakened if aligned drift instead tracks recent input history."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"slow_wave\",\"reason\":\"Clock has the lowest trajectory-held-out NMSE, and forecasts remained accurate across PRBS, ramp-reverse, and double-pulse trials; richer history models validate worse.\",\"prediction\":\"Across different inputs, elapsed-time-aligned late drift will be more similar than drift aligned by recent input history.\",\"accept\":true,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A shared elapsed-time component may account for similar late drift across distinct input trajectories.\",\"condition_to_check\":\"The relation is weakened if aligned drift instead tracks recent input history.\"}}",
+    "input_tokens": 3683,
+    "output_tokens": 318,
+    "batch_elapsed_seconds": 7.448354338295758,
+    "amortized_seconds": 7.448354338295758,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3683,
+      "completion_tokens": 318,
+      "total_tokens": 4001,
+      "completion_tokens_details": {
+        "reasoning_tokens": 193
+      }
+    },
+    "api_response_id": "resp_061aafc6b2f8eeb5016ae590fc3d508193989d11a30e042ecf",
+    "wire_record": "wire/dev/0076_dd9998bdc9404f9ea33d551ae96144a6"
+  }
+}

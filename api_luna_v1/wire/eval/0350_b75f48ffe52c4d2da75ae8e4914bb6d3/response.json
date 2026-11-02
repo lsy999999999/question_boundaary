@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793430372297054367,
+  "http_status": 200,
+  "body": {
+    "id": "resp_02ea6816d0421669016ae59362dc448190acf849607b41ca69",
+    "object": "chat.completion",
+    "created": 1793430372,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"It has the lowest leave-trajectory-out error among the simpler memory candidates and substantially outperforms state-only models; memory_clock’s small gain is not compelling evidence for an external clock.\",\"prediction\":\"After input returns to zero, output will retain a history-dependent response that decays across timescales.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history predict a lingering response after current input returns to zero.\",\"condition_to_check\":\"No history-dependent predictive effect after controlling current input and visible state would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3692,
+      "completion_tokens": 132,
+      "total_tokens": 3824
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.115419762209058
+}

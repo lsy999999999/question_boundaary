@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432256832508377,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0783e90a5971e83e016ae59abe72c8819096315eb7091f5999",
+    "object": "chat.completion",
+    "created": 1793432256,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"It has the lowest leave-trajectory-out NMSE (0.001323); alternatives validate worse. Persistent post-input tails support slow history dependence, though residual lag correlation leaves some uncertainty.\",\"prediction\":\"After input returns to zero, output will retain a history-dependent tail that decays over seconds.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated history predicts persistent output after input changes, consistent with finite-relaxation storage.\",\"condition_to_check\":\"The relation is weakened if current input and visible state alone explain post-input tails across interventions.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3711,
+      "completion_tokens": 233,
+      "total_tokens": 3944,
+      "completion_tokens_details": {
+        "reasoning_tokens": 100
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.083436139859259
+}

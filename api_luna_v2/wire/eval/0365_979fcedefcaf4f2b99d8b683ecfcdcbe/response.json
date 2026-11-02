@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431905765882666,
+  "http_status": 200,
+  "body": {
+    "id": "resp_03efb29d4a695a17016ae5995ea7cc81938b698c969b2d4452",
+    "object": "chat.completion",
+    "created": 1793431905,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Slow-memory has the lowest trajectory-level CV error and fits varied pulse and ramp responses well. Remaining residual correlation and close alternatives leave unseen-intervention adequacy uncertain.\",\"prediction\":\"After rapid reversals, responses will retain a decaying contribution from earlier input, even when current input is the same.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slowly accumulated history predicts output beyond current input, consistent with a leaky stored state.\",\"condition_to_check\":\"At matched current input and output, different prior histories should predict different subsequent trajectories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3490,
+      "completion_tokens": 318,
+      "total_tokens": 3808,
+      "completion_tokens_details": {
+        "reasoning_tokens": 187
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.7982623782008886
+}

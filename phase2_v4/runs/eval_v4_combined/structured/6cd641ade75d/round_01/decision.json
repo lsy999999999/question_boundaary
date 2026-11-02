@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423928967455753,
+  "decision": {
+    "representation": "memory_fast",
+    "experiment": "alternating",
+    "reason": "Alternating inputs test generalization beyond simple pulses.",
+    "prediction": "Memory fast will show lower prediction variance compared to simpler models.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Persistent effects after inputs stop indicate storage rather than just fast dynamics.",
+      "condition_to_check": "If memory fast predicts future states well after inputs cease, storage is likely."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_fast\",\n  \"experiment\": \"alternating\",\n  \"reason\": \"Alternating inputs test generalization beyond simple pulses.\",\n  \"prediction\": \"Memory fast will show lower prediction variance compared to simpler models.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Persistent effects after inputs stop indicate storage rather than just fast dynamics.\",\n    \"condition_to_check\": \"If memory fast predicts future states well after inputs cease, storage is likely.\"\n  }\n}",
+    "input_tokens": 3610,
+    "output_tokens": 113,
+    "batch_elapsed_seconds": 2.702543918043375,
+    "amortized_seconds": 2.702543918043375,
+    "peak_gpu_allocated_gb": 14.917911529541016,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

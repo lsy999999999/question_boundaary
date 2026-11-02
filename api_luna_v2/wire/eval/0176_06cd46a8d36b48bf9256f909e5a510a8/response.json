@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431576276586835,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0bb1f091acb5e6f7016ae598152b2c81959a9e41743bde6e45",
+    "object": "chat.completion",
+    "created": 1793431576,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has far lower trajectory-level CV error than the current state model; similar late oscillations across distinct inputs suggest an elapsed-time component, though intervention testing is needed.\",\"prediction\":\"After alternating input ends, oscillations should recur at approximately the same elapsed-time phase as in other interventions.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A shared elapsed-time periodic driver is consistent with similar late oscillations across different input trajectories.\",\"condition_to_check\":\"Compare post-input oscillation phase across interventions; phase that shifts with input history would weaken the clock hypothesis.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2790,
+      "completion_tokens": 313,
+      "total_tokens": 3103,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 180
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.725550953298807
+}

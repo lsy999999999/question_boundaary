@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431778749107143,
+  "http_status": 200,
+  "body": {
+    "id": "resp_01885b7ef8a0d1c6016ae598dfea90819594d98fa6c76a9e18",
+    "object": "chat.completion",
+    "created": 1793431778,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has far lower trajectory-level validation error than alternatives, and post-input oscillations recur across interventions. PRBS offers high disagreement to test this hypothesis.\",\"prediction\":\"After PRBS input ends, residual oscillations will remain approximately aligned in elapsed-time phase with those after pulse interventions.\",\"accept\":true,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time periodic forcing may explain oscillations shared across differently driven trajectories.\",\"condition_to_check\":\"Compare post-input oscillation phase across PRBS and pulse interventions; phase shifts tied to input would weaken the clock explanation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3234,
+      "completion_tokens": 284,
+      "total_tokens": 3518,
+      "completion_tokens_details": {
+        "reasoning_tokens": 153
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.565783760510385
+}

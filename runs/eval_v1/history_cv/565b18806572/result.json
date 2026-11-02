@@ -1,0 +1,94 @@
+{
+  "task_id": "565b18806572",
+  "split": "eval",
+  "family": "two_memory",
+  "seed": 1,
+  "method": "history_cv",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_clock",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0012729285004442435,
+    "coefficients": [
+      -4.89e-05,
+      2.1924535,
+      0.9776845,
+      -8.9090442,
+      -0.5373394,
+      1.1191608,
+      -0.8654877,
+      -1.1093933,
+      1.3908876,
+      -3.3494109,
+      1.070813,
+      4.6507009,
+      4.0980511,
+      1.3898661,
+      1.7304668,
+      0.001764,
+      0.0014573,
+      0.0013626,
+      -0.0033834,
+      -0.0048895,
+      0.0003104
+    ]
+  },
+  "test": {
+    "test_nmse": 0.00017003651412873797,
+    "test_mse": 1.2155033856932679e-05,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 6.594355655147156e-06,
+        "nmse": 8.21534616191049e-05
+      },
+      {
+        "action": "test_three_step",
+        "mse": 1.9649399564974997e-05,
+        "nmse": 5.116946775711772e-05
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 2.288813526475855e-05,
+        "nmse": 0.0006737592888560067
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 1.8760320246107707e-06,
+        "nmse": 1.9710898211784413e-05
+      },
+      {
+        "action": "test_prbs",
+        "mse": 9.08289523840007e-06,
+        "nmse": 9.933350899596783e-05
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 1.283938539370453e-05,
+        "nmse": 9.409245933244615e-05
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": null,
+  "invalid_outputs": 0,
+  "generation_calls": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "generation_seconds_amortized": 0,
+  "elapsed_wall_seconds": 1.7675445079803467,
+  "selected_actions": [
+    "prbs",
+    "prbs",
+    "alternating"
+  ],
+  "selected_representations": [
+    "memory_slow",
+    "memory_slow",
+    "memory_slow",
+    "memory_clock"
+  ],
+  "peak_gpu_allocated_gb": 0.0,
+  "evaluation_after_commit_ns": 1793382109578627015
+}

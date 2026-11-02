@@ -1,0 +1,53 @@
+{
+  "value": {
+    "parent_id": "v3_r0",
+    "evidence_ids": [
+      "failure_v3_r0_experiment_0",
+      "failure_v3_r0_experiment_1",
+      "relation_v3_r0_experiment_0_v3_r0_experiment_1",
+      "outcome_0"
+    ],
+    "concept": "Odd state-dependent response with a saturating correction to the cubic state term",
+    "reason": "The current model underpredicts the magnitude of the held-out trajectories around t=4.3–4.8 for both input polarities, by roughly 0.3 in x, so its high-|x| response is insufficiently flexible on those trajectories (failure_v3_r0_experiment_0; failure_v3_r0_experiment_1). The polarity comparison, including the intervention outcome, is consistent with odd symmetry at the measurement-noise scale for the tested inputs (relation_v3_r0_experiment_0_v3_r0_experiment_1; outcome_0). Add an odd, bounded state term while retaining the existing input-history state and cubic term. This is a model revision to test against complete held-out schedules, not a claim of universal symmetry.",
+    "operation": "revise",
+    "spec": {
+      "parameters": [
+        {
+          "name": "p0",
+          "lower": 0.05,
+          "initial": 0.75,
+          "upper": 1.5
+        }
+      ],
+      "states": [
+        {
+          "name": "z0",
+          "meaning": "A decaying input trace, initialized at zero; physical interpretation is unverified.",
+          "rate": "u-p0*z0"
+        }
+      ],
+      "terms": [
+        "x",
+        "x**3",
+        "tanh(x)",
+        "u",
+        "z0"
+      ]
+    },
+    "observable_consequence": "If the additional bounded odd state dependence captures the held-out discrepancy, refitting should reduce complete-trajectory held-out error, particularly near the large-|x| portion of the trajectories, while preserving approximately polarity-reversed predictions on tested paired schedules.",
+    "analogy": {
+      "domain": "nonlinear response modeling",
+      "relation": "A bounded odd correction supplements a polynomial approximation when its response at larger state magnitudes is inadequate.",
+      "mapping": "The existing x and x**3 terms remain, while tanh(x) provides a bounded odd contribution to dx/dt; z0 retains the parent model's input-history term.",
+      "failure_condition": "The revision is unsupported if grouped held-out trajectories do not improve, or if the fitted bounded term does not address the high-|x| residuals without degrading other schedules."
+    },
+    "provenance": "model_knowledge_unverified",
+    "limitations": "The evidence is limited to the supplied schedules and held-out failures. The residuals motivate added flexibility but do not identify a unique mechanism; the bounded correction must be evaluated by fitting, since optimizer success and generalization are not guaranteed."
+  },
+  "generation_records": [
+    {
+      "wire": "wire/004_r1_proposal_0",
+      "valid": true
+    }
+  ]
+}

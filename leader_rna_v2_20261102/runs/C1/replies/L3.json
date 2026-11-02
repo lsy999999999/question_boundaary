@@ -1,0 +1,178 @@
+{
+  "recognition": "uncertain; no specific target study recognized.",
+  "summary": "The submitted mechanism is only a conditional two-species/two-phase mass-balance model. C1 executed successfully using E04 endpoint concentrations: for each tie-line, phi_l=(C_var,d-r*C_ref,d)/(r*(C_ref,l-C_ref,d)-(C_var,l-C_var,d)), where r=x_var/(1-x_var), provided the denominator is nonzero and 0<=phi_l<=1. Units are consistent (uL*ng/uL=ng), and normalized mass reconstruction residuals at valid central points are <=2.3e-15. Relative partition preference reverses across tie-lines 1 and 2; tie-line 0 has no variant and its K_var is undefined. C2 executed equal-K and identical-phase-concentration synthetic checks: matched ratios produce 0/0 non-identifiability, mismatch is incompatible, and identical concentrations cannot identify phase fraction. The requested zero-denominator/nonzero-numerator branch was not executed. S1/S2 returned abstract-only reviews/perspective discussing general crowding, RNA sequence/composition and multiphase condensate topics, but no direct evidence of internal RNA-poor cavities or wetting conditions. Therefore H1 is a conditional derivation with a testable prediction, not a supported causal explanation for B; H2 remains viable.",
+  "candidates": [
+    {
+      "id": "R01-selective-phase-v1",
+      "version": 6,
+      "target": "Explain the emergence and persistence of internal RNA-poor cavities using f(t), the arithmetic mean of per-droplet segmented internal dark-area fractions; reserved 36/48 h measurements are unavailable here.",
+      "known_relations": [
+        "Observed E01: A f declines from 0.01487 at 0 h to about 0.0044 at 8-24 h; B rises from 0.01381 to 0.08918 by 24 h. Seven fields per condition pool two preparations, so fields and objects are not independent preparation replicates.",
+        "Observed E02: endpoint f medians M=2.785e-5, M+L=0.04446, M+S=0.09412; length-fraction images lack precise mixture ratios, RNA yield, time course and carryover matching.",
+        "Observed E04/C04: three measured endpoint tie-lines give reference and variant RNA concentrations in dilute/dense phases with broad marginal error bounds; no phase volumes, B time-course composition, cavity-local composition or mapping to f.",
+        "Observed E03: aggregate motion summaries differ, but no same-droplet cavity-state trajectory is supplied.",
+        "Computed C1 successfully: K_ref=238.54 and K_var=9032.08 at tie-line 1 (ratio 37.86); K_ref=525.12 and K_var=176.01 at tie-line 2 (ratio .335); tie-line 0 K_var is undefined because variant concentration is zero in both phases. Central grid compatible points were x_var=.1,.2 on line 1 and .3,.4,.5 on line 2; error-corner envelopes are sensitivity ranges, not confidence intervals.",
+        "Computed C2 successfully on synthetic limits: equal-K matched composition and identical endpoint concentrations yield 0/0 underdetermination; an equal-K mismatch is incompatible. The zero-denominator/nonzero-numerator branch was not executed.",
+        "Retrieved S1/S2 only as abstracts: broad RNA/crowding and condensate-compartment context, without direct evidence for internal RNA-poor cavities, selective internal partitioning, or wetting conditions in this system."
+      ],
+      "hypotheses": [
+        "H1 (new, explicit, unverified and conditional): if reference and variant RNAs coexist at fixed E04-like tie-line endpoints in two phases, and the dilute phase forms the internal compartment, independently measured global RNA mass composition must be compatible with the lever rule and determines the dilute phase volume fraction. Compatible composition intervals and relative partition direction depend on tie-line; this model does not predict image f without compartment identity, geometry and a calibrated observation map.",
+        "H2 (alternative): aging or amplification carryover changes transcription or material state and causes cavitation without variant-specific partition enrichment; at matched age and carryover, varying RNA composition alone need not systematically enrich an internal phase."
+      ],
+      "gaps": [
+        {
+          "id": "G1-selective-phase-bridge",
+          "status": "active",
+          "description": "The conditional lever-rule consequence is derived and computed, but the physical bridge remains untested: whether the measured endpoint phases apply to B, whether a dilute phase occupies the cavity, what interfacial/wetting conditions produce internal morphology, whether phase volume predicts f or persistence, and whether composition rather than age/carryover causes the phenotype."
+        }
+      ],
+      "variables_units": {
+        "f": "dimensionless arithmetic mean over droplets of segmented internal dark area / filled area",
+        "C_ref,d,C_var,d,C_ref,l,C_var,l": "ng/uL measured E04 dense (d) and dilute (l) concentrations",
+        "K_i": "dimensionless dense/dilute concentration ratio C_i,d/C_i,l; undefined when C_i,l=0",
+        "x_var": "dimensionless variant fraction by RNA mass in the total mixture; unknown, not inferable from DNA read fraction",
+        "r": "dimensionless total variant/reference RNA mass ratio x_var/(1-x_var)",
+        "phi_l": "dimensionless dilute-phase volume fraction, not an image area fraction",
+        "V_d,V_l": "uL unknown phase volumes",
+        "M_ref,M_var": "ng total species masses",
+        "t": "hours"
+      },
+      "equations": [
+        "M_i=V_d*C_i,d+V_l*C_i,l; uL times ng/uL gives ng.",
+        "With phi_l=V_l/(V_d+V_l), delta_i=C_i,l-C_i,d, and r=M_var/M_ref: r=[C_var,d+phi_l*delta_var]/[C_ref,d+phi_l*delta_ref], so phi_l=(C_var,d-r*C_ref,d)/(r*delta_ref-delta_var), only when defined and in [0,1].",
+        "At equal partition selectivity, proportional species endpoint pairs make mixture composition independent of phi_l; a matching ratio gives 0/0 non-identifiability and a mismatching ratio is incompatible. If each species concentration is equal in both phases, composition likewise cannot identify phase fraction.",
+        "If denominator is zero and numerator nonzero, no finite phi_l satisfies the ratio equation; this branch is algebraically specified but was not exercised by C2.",
+        "f remains mean_j(A_internal,j/A_filled,j); no equality to phi_l is assumed."
+      ],
+      "parameters_ranges": [
+        "C1 evaluated x_var=0,.1,...,1 with E04 central endpoints and all 16 supplied lower/upper endpoint corners at .1-.9; corner outputs are sensitivity envelopes, not statistical intervals.",
+        "Only 0<=phi_l<=1 is compatible with a fixed tie-line; C1 flags out-of-range values rather than clipping them.",
+        "Pure-species endpoints do not identify two-species phase fraction from the ratio alone.",
+        "E04 is not B time-course data; do not infer RNA fractions from DNA reads."
+      ],
+      "initial_boundary_conditions": [
+        "C1 assumes a closed two-phase system, conserved species masses, fixed coexistence endpoints and no third species or source/sink during lever-rule evaluation.",
+        "No actual initial masses, phase volumes, RNA production composition or boundary fluxes are supplied.",
+        "C2 synthetic limiting checks are algebra checks, not empirical support; its zero-denominator/nonzero-numerator case remains unexecuted."
+      ],
+      "observation_mapping": [
+        "E01 f is a segmented image-area statistic, not concentration, phase volume or free energy.",
+        "E02 measures endpoint images of template length fractions, not RNA species mass fractions.",
+        "E04 gives phase endpoint concentrations but not B time-course/cavity-local measurements or phase volumes.",
+        "C1/C2 produce conditional algebraic phase-volume consequences only and do not predict f.",
+        "A discriminating experiment would quantify internal and outer-region RNA species mass fractions and f in matched droplets/preparations over time while holding age, total RNA and carryover fixed."
+      ],
+      "alternatives": [
+        "H2: age/carryover-driven cavitation without variant-specific enrichment.",
+        "Population selection, changing object counts, segmentation or filled-area denominators could change aggregate f without within-droplet phase growth."
+      ],
+      "predictions": [
+        "Conditional H1: at independently measured x_var and fixed coexisting endpoints, only tie-line-compatible compositions yield a physical phi_l; tie-lines 1 and 2 predict opposite relative dense-phase variant/reference preferences. If the internal compartment is the dilute phase, its RNA species concentrations must match that dilute endpoint under the stated assumptions.",
+        "H2 predicts no necessary tie-line-specific internal species enrichment when age and carryover are matched and RNA composition is varied.",
+        "A composition-controlled series measuring cavity-local RNA composition and f distinguishes H1 from H2; f alone does not identify the mechanism.",
+        "No 36/48 h extrapolation is made."
+      ],
+      "checks": [
+        "C1 executed with returncode 0; units check passes and normalized mass-balance residuals at valid central points are approximately 0 to 2.3e-15.",
+        "C1 correctly leaves variant K undefined at tie-line 0 and flags incompatible phase fractions without clipping.",
+        "C2 executed with returncode 0; equal-K matched and same-concentration cases return underdetermined 0/0, while equal-K mismatch is incompatible.",
+        "C2 did not exercise the requested zero-denominator/nonzero-numerator test; retain this as an untested algebraic branch.",
+        "Neither calculation maps phase volume to f or establishes cavity identity/causality. Preparation-level replication is two, not seven fields or hundreds of objects."
+      ],
+      "evidence_conflicts": [
+        "Relative variant/reference dense-phase preference reverses between tie-lines 1 and 2 (K_var/K_ref 37.86 versus .335), ruling out one universal direction from these endpoints.",
+        "Tie-line 0 has no variant in either phase and informs no variant partition preference.",
+        "S1/S2 abstracts support only broad background on RNA/crowding/composition or multiphase research; they do not demonstrate internal RNA-poor compartments, wetting, or this case mechanism.",
+        "E02 endpoint differences are confounded by preparation, RNA yield and carryover; E04 lacks matched B and cavity-local data."
+      ],
+      "untested": [
+        "Whether observed DNA variants are transcribed, their RNA mass fractions, or their identity relative to E04/E02 species.",
+        "Whether cavities are a dilute coexisting liquid phase and whether that phase is RNA-poor or compositionally enriched.",
+        "The interfacial/wetting condition for internal rather than external organization.",
+        "Whether phase volume and geometry predict f or persistence, and whether composition or aging/carryover causes B's phenotype."
+      ],
+      "dissent": [
+        "The executor's candidate record preserves H1 as a conditional mechanism consequence; I agree it is not evidence that B cavities arise by selective partitioning. H2 and morphology/measurement alternatives remain unresolved."
+      ],
+      "next_task": "Matched experiments should measure transcribed RNA species mass fractions and RNA concentrations inside cavities versus outer/dilute regions, phase identity, and droplet geometry alongside f across independent preparations; match total RNA, age and carryover. A result without internal species enrichment would weaken H1; composition-linked enrichment with the tie-line-specific direction would distinguish H1 from H2."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T1-derive-selective-phase-bridge",
+      "candidate_id": "R01-selective-phase-v1",
+      "gap_id": "G1-selective-phase-bridge",
+      "kind": "mechanism",
+      "status": "complete",
+      "deliverable": "A conditional lever-rule consequence and composition-controlled prediction versus H2, with explicit limits on mapping phase volume to f.",
+      "acceptance": "C1 used E04 only as measured endpoints, checked units, mass reconstruction and phase-fraction ranges, and reported error corners only as sensitivity. C2 executed equal-K and identical-endpoint-concentration limit checks; its separate zero-denominator/nonzero-numerator branch was not run and remains disclosed. S1/S2 abstract evidence was reviewed as limited background, not direct cavity evidence. H1/H2 and a discriminating composition-controlled observation are stated without causal attribution.",
+      "evidence_refs": ["E01", "E02", "E03", "E04", "C04", "C1-lever-rule-sensitivity", "C2-lever-rule-limits", "S1-internal-phase-partition", "S2-rna-compartment-wetting"],
+      "reason": "The scoped task asked for a conditional computed consequence and distinct testable prediction, not empirical causal attribution. Those deliverables are complete; the remaining physical and causal gap is retained on candidate G1."
+    }
+  ],
+  "requests": [],
+  "literature_use": [
+    {
+      "source_id": "S1-internal-phase-partition_S1",
+      "action": "modify_as_hypothesis",
+      "relation": "The abstract describes molecular crowding as collective effects in mixed macromolecular environments; it does not report this RNA morphology.",
+      "variables_units": "Macromolecular mixture composition and crowding; no quantitative units or equations in the abstract.",
+      "conditions": "2024 review abstract only; historical abstract text not independently archived in the search return.",
+      "impact_on_model_or_action": "Broad background only; no support for internal compartments, wetting, or this mechanism."
+    },
+    {
+      "source_id": "S1-internal-phase-partition_S2",
+      "action": "modify_as_hypothesis",
+      "relation": "The abstract states RNA sequence, structure and chemical modifications correlate with RNA crowding/condensate phenomena and mentions composition-characterization methods and NEAT1/XIST examples; it does not establish preferential partition into internal RNA-poor cavities.",
+      "variables_units": "RNA sequence, structure, modifications and condensate composition; no quantitative relation or units in abstract.",
+      "conditions": "2024 review abstract only; no full text or independently archived historical abstract text in the return.",
+      "impact_on_model_or_action": "Supports composition-sensitive RNA assembly only as a hypothesis; does not validate H1 or cavity morphology."
+    },
+    {
+      "source_id": "S2-rna-compartment-wetting_S1",
+      "action": "followup",
+      "relation": "The perspective abstract identifies interfaces, active systems, multiphases and aging as research frontiers but supplies no RNA-specific internal-compartment result or wetting relation.",
+      "variables_units": "Compartment structure, interfaces, multiphase organization and aging; no quantitative units or equations in abstract.",
+      "conditions": "Reported first publication date 2025-05-03; abstract only and historical text not independently archived.",
+      "impact_on_model_or_action": "Does not support H1 directly; leaves cavity identity and interface conditions unresolved."
+    },
+    {
+      "source_id": "S2-rna-compartment-wetting_S2",
+      "action": "modify_as_hypothesis",
+      "relation": "The RNA review abstract reiterates sequence, structure and modification associations with condensate/crowding and composition characterization; it does not report internal RNA-poor compartment formation.",
+      "variables_units": "RNA sequence, structure, modifications and condensate composition; no quantitative relation or units in abstract.",
+      "conditions": "2024 review abstract only; no full text or independently archived historical abstract text in the return.",
+      "impact_on_model_or_action": "Broad plausibility context only; retain the internal-compartment bridge as unverified."
+    }
+  ],
+  "adjudication": {
+    "task_id": "T1-derive-selective-phase-bridge",
+    "decision": "complete",
+    "artifact_ids": ["C1-lever-rule-sensitivity", "C2-lever-rule-limits", "S1-internal-phase-partition", "S2-rna-compartment-wetting"],
+    "checks": [
+      "C1 and C2 returned executed with returncode 0; conclusions were limited to their stated conditional/synthetic scopes.",
+      "C1 dimensions and mass reconstruction checked; tie-line compatibility and uncertainty-envelope limits inspected.",
+      "C2 equal-K and identical-phase limits agree with the lever-rule non-identifiability interpretation; its unexecuted nonzero-numerator degenerate case remains explicit.",
+      "Both literature searches returned abstract-only background, no direct evidence of internal RNA-poor cavities or wetting in this system.",
+      "The predicted phase volume is not equated to f; DNA read fractions are not interpreted as RNA concentrations."
+    ],
+    "remaining_gap": "Whether B cavities are compositionally distinct internal phases, whether E04 endpoints apply to them, what interfacial conditions produce the morphology, and whether composition rather than aging/carryover causes f(t) remain unidentified.",
+    "reason": "The bounded derivation, actual computations, background extraction and discriminating prediction are complete. The unresolved empirical mechanism is reported as a limitation and next-experiment target, not falsely closed."
+  },
+  "final": {
+    "selected_candidate": "R01-selective-phase-v1",
+    "question_and_reason": "Can differential partitioning of reference and variant RNA explain the composition dependence of internal RNA-poor cavities? This is the concrete missing relation linking the measured phase endpoints to a candidate cavity mechanism, while remaining separable from age/carryover effects.",
+    "increment": "Derived and computed a two-species lever-rule consequence under fixed E04-like endpoints, identified that partition preference reverses across tie-lines, and converted this into a composition-controlled prediction distinct from H2. The calculation does not establish the phases or mechanism in B.",
+    "new_hypotheses": [
+      "H1: if an E04-like two-phase state applies and the dilute phase is the internal compartment, an independently measured global RNA mass fraction constrains its volume fraction by the lever rule; internal species concentrations follow that phase endpoint. The compatible interval is tie-line-specific.",
+      "H2: aging or amplification carryover causes cavitation without variant-specific partition enrichment; after matching these conditions, RNA composition alone need not change internal enrichment."
+    ],
+    "actual_derivation_or_computation": "For each species M_i=V_d C_i,d+V_l C_i,l. With phi_l=V_l/(V_d+V_l) and r=M_var/M_ref=x_var/(1-x_var), solving the two mass balances yields phi_l=(C_var,d-r C_ref,d)/(r(C_ref,l-C_ref,d)-(C_var,l-C_var,d)). C1 executed successfully: K_var/K_ref=37.86 on tie-line 1 and 0.335 on tie-line 2; tie-line 0 K_var is undefined. Valid central grid points were x_var=.1,.2 on line 1 and .3,.4,.5 on line 2; reconstructed mass fractions had residuals <=2.3e-15. C2 executed synthetic equal-selectivity and identical-phase checks: matched ratios are non-identifiable (0/0), mismatched composition is incompatible. Its zero-denominator/nonzero-numerator branch was requested but not executed. Units check passes; no phase-volume-to-f mapping was computed.",
+    "discriminating_prediction": "At matched age, total RNA and carryover, measure transcribed species mass fractions and internal versus outer-phase concentrations while varying composition. H1 predicts a tie-line-compatible composition range and internal enrichment matching the relevant dilute-phase endpoint, with tie-line-dependent direction; H2 predicts no necessary composition-linked enrichment. A change in f without species enrichment favors H2 or another morphology/measurement explanation over H1.",
+    "evidence_support_conflict_untested": "E01 establishes different A/B image f trajectories; E02 shows endpoint differences across length fractions but is confounded and not a time course. E04/C04 supports conditional phase-concentration arithmetic only. E03 does not track cavity state within droplets. S1/S2 are abstract-only background and do not establish RNA-poor internal compartments. The opposite K_var/K_ref direction across tie-lines conflicts with any universal partition-direction claim. RNA composition in B, cavity phase identity, wetting, geometry-to-f mapping, causal carryover controls and persistence remain untested.",
+    "decision": "The scoped conditional derivation task is complete. There is no empirical basis to claim that selective partitioning explains B's cavities; retain H1 as a hypothesis and H2 as a live alternative.",
+    "dissent": "No executor dissent beyond the stated caution: the calculation is conditional and does not establish B causality. Population selection and segmentation/denominator alternatives also remain viable.",
+    "next_experiment": "Across independent preparations, match total RNA, age and amplification carryover while varying verified transcribed RNA composition. Measure RNA species concentrations in cavity and outer/dilute regions, identify the phases and their interface, track same-droplet cavity geometry over time, and compute the defined per-droplet f. Predeclare that internal species enrichment in the tie-line-specific direction supports H1; absent enrichment or composition-independent f growth supports H2/other alternatives.",
+    "limitations": "Only two independent preparations per original condition; fields and objects are not independent replicates. E04 endpoints are not B time courses, concentrations do not specify phase volumes, and image area fraction is not phase volume. Search evidence was limited to abstracts. One algebraic degenerate branch was not executed. No new physical measurement or confirmation is available."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "time_ns": 1793520602928942276,
+  "value": {
+    "updates": [
+      {
+        "id": "v3_r1",
+        "status": "weakened",
+        "evidence_ids": [
+          "prospective:v3_r1:520c3ec27e67:e5_r0_experiment_0",
+          "prospective:v3_r1:520c3ec27e67:e5_r0_experiment_1"
+        ],
+        "reason": "成对前瞻预测一条低误差、一条高误差，显示对该干预响应不稳。"
+      },
+      {
+        "id": "v3_r2",
+        "status": "weakened",
+        "evidence_ids": [
+          "prospective:v3_r2:89beda8821af:e5_r0_experiment_0",
+          "prospective:v3_r2:89beda8821af:e5_r0_experiment_1"
+        ],
+        "reason": "实际误差跨越高误差阈值；原边界已弃答，不能据此断言边界失效。"
+      },
+      {
+        "id": "b4_r0",
+        "status": "weakened",
+        "evidence_ids": [
+          "prospective:b4_r0:fb2cbd3bdda7:e5_r0_experiment_0",
+          "prospective:b4_r0:fb2cbd3bdda7:e5_r0_experiment_1"
+        ],
+        "reason": "成对前瞻误差一低一高，提示该模型对成对干预中的一项预测欠佳。"
+      }
+    ],
+    "boundary_verdict": "untested",
+    "boundary_metric_ids": [],
+    "comment": "仅评估实际前瞻误差；v3_r2边界弃答，所需边界指标为空，不能由新拟合CV替代。"
+  },
+  "generation_records": [
+    {
+      "wire": "wire/004_r0_assessment_0",
+      "valid": true
+    }
+  ]
+}

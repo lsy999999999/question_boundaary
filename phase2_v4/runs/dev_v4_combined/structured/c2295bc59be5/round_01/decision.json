@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423721813042478,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "alternating",
+    "reason": "Saturating effects should be consistent across positive and negative inputs.",
+    "prediction": "Alternating input will show reduced response magnitude as state approaches saturation limits.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Response magnitude decreases with repeated alternating inputs.",
+      "condition_to_check": "Magnitude reduction persists after multiple cycles."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"alternating\",\n  \"reason\": \"Saturating effects should be consistent across positive and negative inputs.\",\n  \"prediction\": \"Alternating input will show reduced response magnitude as state approaches saturation limits.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"Response magnitude decreases with repeated alternating inputs.\",\n    \"condition_to_check\": \"Magnitude reduction persists after multiple cycles.\"\n  }\n}",
+    "input_tokens": 3601,
+    "output_tokens": 108,
+    "batch_elapsed_seconds": 2.588747115805745,
+    "amortized_seconds": 2.588747115805745,
+    "peak_gpu_allocated_gb": 14.911035537719727,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.0277862548828125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

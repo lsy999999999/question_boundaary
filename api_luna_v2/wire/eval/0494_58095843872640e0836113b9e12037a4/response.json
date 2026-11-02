@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432195168191230,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0d4f3ce939d6991f016ae59a80a1088193998a7bb043d4afa3",
+    "object": "chat.completion",
+    "created": 1793432195,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"Multiscale memory has strong trajectory-level validation and low residual correlation. Memory_clock’s small CV advantage does not justify extra clock features without evidence of elapsed-time forcing.\",\"prediction\":\"After PRBS input stops, output will continue to depend on accumulated input history and relax rather than immediately track the current input.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts lingering responses after pulses and step input cease.\",\"condition_to_check\":\"At matched current input and output, different prior histories should produce different subsequent responses.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3725,
+      "completion_tokens": 221,
+      "total_tokens": 3946,
+      "completion_tokens_details": {
+        "reasoning_tokens": 91
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.4025000240653753
+}

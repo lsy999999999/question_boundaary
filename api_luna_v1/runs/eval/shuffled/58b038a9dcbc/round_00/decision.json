@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430509696155496,
+  "decision": {
+    "representation": "clock",
+    "experiment": "alternating",
+    "reason": "Clock has far lower leave-trajectory-out NMSE than the current state model; similar late oscillations across distinct inputs support testing elapsed-time effects.",
+    "prediction": "Oscillations will recur at similar elapsed times despite alternating input; their phase should not track input switches.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Elapsed-time periodic forcing may explain residual oscillations shared across different input interventions.",
+      "condition_to_check": "Compare oscillation phase across interventions; input-dependent phase or disappearance under alternating input would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has far lower leave-trajectory-out NMSE than the current state model; similar late oscillations across distinct inputs support testing elapsed-time effects.\",\"prediction\":\"Oscillations will recur at similar elapsed times despite alternating input; their phase should not track input switches.\",\"accept\":false,\"mapping\":{\"source_id\":\"saturation\",\"target_relation\":\"Elapsed-time periodic forcing may explain residual oscillations shared across different input interventions.\",\"condition_to_check\":\"Compare oscillation phase across interventions; input-dependent phase or disappearance under alternating input would weaken this relation.\"}}",
+    "input_tokens": 2790,
+    "output_tokens": 343,
+    "batch_elapsed_seconds": 4.222109466791153,
+    "amortized_seconds": 4.222109466791153,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2790,
+      "completion_tokens": 343,
+      "total_tokens": 3133,
+      "completion_tokens_details": {
+        "reasoning_tokens": 218
+      }
+    },
+    "api_response_id": "resp_05e0e693f66d0e80016ae593ea1aa88196a6b7bd6a9ce035aa",
+    "wire_record": "wire/eval/0416_fcce7ce82d984cbc8be79e6ded9a9c6b"
+  }
+}

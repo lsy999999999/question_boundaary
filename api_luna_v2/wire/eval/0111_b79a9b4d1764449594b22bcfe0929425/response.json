@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431491769319752,
+  "http_status": 200,
+  "body": {
+    "id": "resp_05b2d9d900d9c3ed016ae597c181e48194bb95f0055e868e4c",
+    "object": "chat.completion",
+    "created": 1793431491,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow accumulated-history features give the lowest trajectory-level CV error; the state-only model has strongly correlated residuals. PRBS has the greatest prediction disagreement among plausible models.\",\"prediction\":\"After input switches, the output will retain a slowly decaying influence of earlier inputs, beyond what current input and state alone predict.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2569,
+      "completion_tokens": 191,
+      "total_tokens": 2760,
+      "completion_tokens_details": {
+        "reasoning_tokens": 106
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.12167495675385
+}

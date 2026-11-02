@@ -1,0 +1,412 @@
+{
+  "version": 1,
+  "candidates": {
+    "RNA-C1": {
+      "id": "RNA-C1",
+      "version": 1,
+      "target": "Explain the emergence and persistence of internal RNA-poor cavities as measured by the arithmetic mean per-droplet hollow-area ratio f(t), and make a mechanism-level prediction that can distinguish composition-linked demixing from a reaction-condition/carryover pathway.",
+      "known_relations": [
+        "Observed f_A(0,4,8,12,24 h) = 0.01487, 0.00544, 0.00444, 0.00406, 0.00446; f_B = 0.01381, 0.01592, 0.02393, 0.04028, 0.08918 (initial_measurements.json).",
+        "Observed non-reference DNA read fraction is 0.0500 among listed reads; total listed plus reference is 0.9966. Read fraction is not RNA yield or active-valence fraction (sequence_measurements.json; C01).",
+        "Observed endpoint hollow-area ratio differs across purified template-length fractions M, M+L, M+S (fraction_dev.json/E02); exact composition and matched carryover are absent.",
+        "Observed measured reference and variant RNA concentrations in dense and dilute phases yield tie-line-specific partition ratios (C04); these are endpoint measurements and do not determine cavity formation.",
+        "Observed tracking lacks persistent per-droplet cavity state and area trajectories (C03).",
+        "Interpretation: B condition is associated with the later increase in f; causal effect of amplification, template heterogeneity, and carryover remains unidentified."
+      ],
+      "hypotheses": [
+        {
+          "id": "H1",
+          "status": "new provisional hypothesis",
+          "statement": "If transcription produces two RNA populations with different effective interaction valence, their accumulating mixture can cross a composition-dependent coexistence boundary inside an initially RNA-rich condensate. Selective partitioning then enriches one population in the outer dense phase and stabilizes an internal RNA-poor phase; the hollow-area ratio rises when the local composition crosses the boundary. The novel bridge proposed here is composition-dependent internal demixing coupled to selective phase partitioning, rather than a direct inference from DNA length or read frequency.",
+          "status_note": "Untested hypothesis. No supplied evidence establishes that any listed sequence variant changes effective valence, RNA production, partitioning in the cavity, coexistence boundary, or image area."
+        },
+        {
+          "id": "H2",
+          "status": "alternative",
+          "statement": "Amplification-associated reaction carryover or another changed reaction condition alters transcription, ionic environment, or condensate organization and drives the hollow-area change without sequence composition being the causal mediator."
+        }
+      ],
+      "gaps": [
+        {
+          "id": "G1",
+          "status": "open",
+          "description": "No supported constitutive relation maps RNA species composition and tie-line-dependent partitioning to the onset, persistence, or area fraction of internal cavities."
+        },
+        {
+          "id": "G2",
+          "status": "open",
+          "description": "No matched measurement links template composition to transcribed RNA composition over time; DNA read frequencies cannot substitute for RNA concentrations."
+        },
+        {
+          "id": "G3",
+          "status": "open",
+          "description": "The image statistic has no validated mapping to phase volume, local concentration, or single-droplet cavity dynamics."
+        }
+      ],
+      "variables_units": [
+        {
+          "name": "t",
+          "meaning": "transcription time",
+          "units": "h"
+        },
+        {
+          "name": "f",
+          "meaning": "arithmetic mean over droplets of each droplet's hollow area divided by its filled area",
+          "units": "dimensionless"
+        },
+        {
+          "name": "x_V",
+          "meaning": "variant RNA mole or mass fraction in produced RNA; definition must be fixed to the measured assay",
+          "units": "dimensionless"
+        },
+        {
+          "name": "c_i^D",
+          "meaning": "concentration of RNA species i in dense phase",
+          "units": "ng/uL"
+        },
+        {
+          "name": "c_i^L",
+          "meaning": "concentration of RNA species i in dilute phase",
+          "units": "ng/uL"
+        },
+        {
+          "name": "K_i",
+          "meaning": "partition ratio c_i^D/c_i^L on a specified tie-line",
+          "units": "dimensionless"
+        },
+        {
+          "name": "phi",
+          "meaning": "internal RNA-poor phase volume fraction, latent and not measured",
+          "units": "dimensionless"
+        },
+        {
+          "name": "x_star",
+          "meaning": "hypothesized local mixture threshold for internal demixing",
+          "units": "dimensionless"
+        }
+      ],
+      "equations": [
+        "K_i = c_i^D / c_i^L when c_i^L > 0; undefined when the denominator is zero.",
+        "For a closed two-species equilibrium mixture only, x_V^D = (K_V x_V^L) / (K_V x_V^L + K_R (1 - x_V^L)); this is a compositional consequence of partition ratios, not a kinetic or cavity model.",
+        "H1 threshold statement: phi = 0 for x_V^D < x_star and phi > 0 may occur for x_V^D >= x_star. This is a deliberately minimal phenomenological hypothesis; no supplied data identify x_star or the function phi(x_V^D).",
+        "Observation mapping is unknown: f = h(phi, cavity geometry, droplet selection, segmentation) and cannot be set equal to phi without additional evidence."
+      ],
+      "parameters_ranges": [
+        {
+          "name": "K_R, K_V",
+          "range": "Use only the supplied tie-line-specific estimates and error rectangles in C04; do not pool tie-lines or interpret the rectangles as confidence intervals."
+        },
+        {
+          "name": "x_star",
+          "range": "[0,1], unestimated hypothesis parameter"
+        },
+        {
+          "name": "mapping h",
+          "range": "unknown; no numeric range supported"
+        }
+      ],
+      "initial_boundary_conditions": [
+        "At t=0 the observed group means are similar, but this does not establish identical microscopic state or composition.",
+        "For H1, initial local x_V^D is assumed below x_star only as a conditional scenario; this is not observed.",
+        "No time-resolved RNA production, phase volumes, phase fluxes, or cavity-specific concentration boundary conditions are supplied."
+      ],
+      "observation_mapping": [
+        "Observed f is a mean of object-level area ratios, not concentration, phase volume fraction, or thermodynamic order parameter.",
+        "C04 ng/uL phase concentrations cannot be directly converted to f without geometry, phase volumes, and spatially matched imaging.",
+        "Object counts and field SEM do not supply independent-preparation uncertainty."
+      ],
+      "alternatives": [
+        "H2 reaction carryover or altered reaction conditions change transcription or condensate organization without sequence mediation.",
+        "Population selection, droplet coalescence, or object detection changes aggregate f; C03 does not provide longitudinal state/area trajectories to test this.",
+        "Segmentation or sampling changes the measured f; supplied data do not quantify robustness to thresholds."
+      ],
+      "predictions": [
+        {
+          "id": "P1",
+          "status": "conditional discriminating prediction",
+          "statement": "At fixed reaction chemistry and total RNA production, increasing the measured variant RNA fraction across a threshold should increase the probability of cavity-bearing droplets or their object-level hollow-area ratio under H1; H2 predicts no systematic dependence on variant fraction once carryover and reaction conditions are matched.",
+          "measure": "Independently quantify transcribed RNA composition and per-droplet hollow-area ratio in a composition series, with matched carryover and independent preparations.",
+          "limitation": "No new physical experiment is available in this run; current endpoint length-fraction data are not a controlled composition series."
+        },
+        {
+          "id": "P2",
+          "status": "conditional consequence",
+          "statement": "If C04 tie-line partition ratios apply to the relevant mixture and both species are present, changing x_V^L can change x_V^D nonlinearly; this can shift a threshold x_star. The direction is conditional on the applicable tie-line and cannot be inferred by pooling the three tie-lines."
+        }
+      ],
+      "checks": [
+        "Dimensional check: K_i, x_V, x_star, phi, and f are dimensionless; concentrations in C04 share ng/uL units.",
+        "Zero-denominator check: variant K on tie-line 0 is undefined, not zero or infinity.",
+        "Limit check: if K_V = K_R and both species are present, the partition equation gives x_V^D = x_V^L; if x_V^L approaches 0 or 1, x_V^D approaches the same endpoint.",
+        "Balance/closure check: the partition equation is an equilibrium composition identity under a closed two-species assumption; it does not close time-dependent mass balance or predict cavities.",
+        "Numerical check: no new numerical calculation was performed in this leader reply; all listed values are supplied C01-C04 results."
+      ],
+      "evidence_conflicts": [
+        "Length-fraction endpoints are compatible with composition dependence but do not establish its cause; reaction carryover and exact RNA composition are unmeasured.",
+        "Tie-line partition ratios vary substantially and have broad marginal error rectangles; their tie-line conditions are not mapped to B's time course.",
+        "The 36/48 h C02 predictions differ by model form and are descriptive extrapolations only."
+      ],
+      "untested": [
+        "Whether the length variants produce RNA at comparable rates or persist in RNA.",
+        "Whether sequence differences change effective valence, phase partition, or internal coexistence.",
+        "Whether internal dark areas are an RNA-poor phase rather than another optical/structural state.",
+        "Whether increasing f reflects same-droplet cavity growth versus population and measurement effects.",
+        "Whether any target-specific literature directly supports or contradicts H1."
+      ],
+      "dissent": [],
+      "next_task": "Have the executor search the missing relation in pre-cutoff literature and return the closest supported mechanism, conditions, and a relation-specific limitation; retain H1 only as a hypothesis unless that evidence supplies a bridge.",
+      "author": "leader",
+      "reply": "L1"
+    }
+  },
+  "tasks": {
+    "T05": {
+      "id": "T05",
+      "candidate_id": "RNA-C1",
+      "gap_id": "G1",
+      "kind": "mechanism",
+      "status": "open",
+      "deliverable": "Find whether RNA mixture composition with species-specific partitioning has a supported route to internal demixing/cavity nucleation; distinguish direct evidence from analogy, specify assumptions and conditions, then refine or reject H1 and give one observable prediction that differs from carryover H2.",
+      "acceptance": "Return dated source IDs and the actual supported relation (not references-only); state full-text versus abstract support; explicitly assess applicability to internally cavitating RNA condensates; give a dimensionally coherent conditional derivation or state the missing constitutive relation; preserve H1/H2 disagreement and do not infer RNA concentrations from DNA reads.",
+      "evidence_refs": [
+        "C04",
+        "fraction_dev.json",
+        "C01",
+        "initial_measurements.json"
+      ],
+      "reason": "The principal missing link is the relation from composition-dependent partitioning to cavity formation; more descriptive time fitting cannot identify that mechanism."
+    }
+  },
+  "actor_events": [
+    {
+      "label": "L1",
+      "role": "leader",
+      "reply": {
+        "recognition": "uncertain; no specific study recognized from the supplied input",
+        "summary": "The supplied image statistic is the arithmetic mean of per-droplet hollow-area ratios f(t), not an area-weighted ratio and not a concentration. B rises from 0.01381 at 0 h to 0.08918 at 24 h while A falls from 0.01487 to about 0.004. Only two independent preparations per condition; fields and objects are not independent preparation replicates. C01 shows B DNA read heterogeneity (reference fraction 0.9466; listed other reads sum 0.0500; frequency total 0.9966), but repeated/rearranged sequence alignment is nonunique and DNA read fractions do not establish RNA composition or activity. C02 describes the observed trajectory but its extrapolations are model-dependent: B predicts f(36 h)=0.1207 and f(48 h)=0.1563 under rise-to-plateau versus 0.1239 and 0.1635 under a linear description; these are not mechanism evidence. E02/fraction_dev has M near zero, M+L about 0.0445, M+S about 0.0941 endpoint hollow-area fractions, but no precise mixture ratios, matched carryover, or RNA yields. C04 has species-specific phase partition ratios that vary by tie-line (reference K about 239-525 on defined lines; variant K about 176-9032), with variant K undefined on line 0 because both measured concentrations are zero. C04 lacks phase volumes, time-resolved yields/flux, cavity-matched concentrations, and a mapping from concentration to image area. C03 confirms no persistent same-droplet hollow-state/area trajectories. Proposed gap: the missing constitutive bridge from RNA mixture composition and selective phase partitioning to internal RNA-poor cavity nucleation and area fraction.",
+        "candidates": [
+          {
+            "id": "RNA-C1",
+            "version": 1,
+            "target": "Explain the emergence and persistence of internal RNA-poor cavities as measured by the arithmetic mean per-droplet hollow-area ratio f(t), and make a mechanism-level prediction that can distinguish composition-linked demixing from a reaction-condition/carryover pathway.",
+            "known_relations": [
+              "Observed f_A(0,4,8,12,24 h) = 0.01487, 0.00544, 0.00444, 0.00406, 0.00446; f_B = 0.01381, 0.01592, 0.02393, 0.04028, 0.08918 (initial_measurements.json).",
+              "Observed non-reference DNA read fraction is 0.0500 among listed reads; total listed plus reference is 0.9966. Read fraction is not RNA yield or active-valence fraction (sequence_measurements.json; C01).",
+              "Observed endpoint hollow-area ratio differs across purified template-length fractions M, M+L, M+S (fraction_dev.json/E02); exact composition and matched carryover are absent.",
+              "Observed measured reference and variant RNA concentrations in dense and dilute phases yield tie-line-specific partition ratios (C04); these are endpoint measurements and do not determine cavity formation.",
+              "Observed tracking lacks persistent per-droplet cavity state and area trajectories (C03).",
+              "Interpretation: B condition is associated with the later increase in f; causal effect of amplification, template heterogeneity, and carryover remains unidentified."
+            ],
+            "hypotheses": [
+              {
+                "id": "H1",
+                "status": "new provisional hypothesis",
+                "statement": "If transcription produces two RNA populations with different effective interaction valence, their accumulating mixture can cross a composition-dependent coexistence boundary inside an initially RNA-rich condensate. Selective partitioning then enriches one population in the outer dense phase and stabilizes an internal RNA-poor phase; the hollow-area ratio rises when the local composition crosses the boundary. The novel bridge proposed here is composition-dependent internal demixing coupled to selective phase partitioning, rather than a direct inference from DNA length or read frequency.",
+                "status_note": "Untested hypothesis. No supplied evidence establishes that any listed sequence variant changes effective valence, RNA production, partitioning in the cavity, coexistence boundary, or image area."
+              },
+              {
+                "id": "H2",
+                "status": "alternative",
+                "statement": "Amplification-associated reaction carryover or another changed reaction condition alters transcription, ionic environment, or condensate organization and drives the hollow-area change without sequence composition being the causal mediator."
+              }
+            ],
+            "gaps": [
+              {
+                "id": "G1",
+                "status": "open",
+                "description": "No supported constitutive relation maps RNA species composition and tie-line-dependent partitioning to the onset, persistence, or area fraction of internal cavities."
+              },
+              {
+                "id": "G2",
+                "status": "open",
+                "description": "No matched measurement links template composition to transcribed RNA composition over time; DNA read frequencies cannot substitute for RNA concentrations."
+              },
+              {
+                "id": "G3",
+                "status": "open",
+                "description": "The image statistic has no validated mapping to phase volume, local concentration, or single-droplet cavity dynamics."
+              }
+            ],
+            "variables_units": [
+              {
+                "name": "t",
+                "meaning": "transcription time",
+                "units": "h"
+              },
+              {
+                "name": "f",
+                "meaning": "arithmetic mean over droplets of each droplet's hollow area divided by its filled area",
+                "units": "dimensionless"
+              },
+              {
+                "name": "x_V",
+                "meaning": "variant RNA mole or mass fraction in produced RNA; definition must be fixed to the measured assay",
+                "units": "dimensionless"
+              },
+              {
+                "name": "c_i^D",
+                "meaning": "concentration of RNA species i in dense phase",
+                "units": "ng/uL"
+              },
+              {
+                "name": "c_i^L",
+                "meaning": "concentration of RNA species i in dilute phase",
+                "units": "ng/uL"
+              },
+              {
+                "name": "K_i",
+                "meaning": "partition ratio c_i^D/c_i^L on a specified tie-line",
+                "units": "dimensionless"
+              },
+              {
+                "name": "phi",
+                "meaning": "internal RNA-poor phase volume fraction, latent and not measured",
+                "units": "dimensionless"
+              },
+              {
+                "name": "x_star",
+                "meaning": "hypothesized local mixture threshold for internal demixing",
+                "units": "dimensionless"
+              }
+            ],
+            "equations": [
+              "K_i = c_i^D / c_i^L when c_i^L > 0; undefined when the denominator is zero.",
+              "For a closed two-species equilibrium mixture only, x_V^D = (K_V x_V^L) / (K_V x_V^L + K_R (1 - x_V^L)); this is a compositional consequence of partition ratios, not a kinetic or cavity model.",
+              "H1 threshold statement: phi = 0 for x_V^D < x_star and phi > 0 may occur for x_V^D >= x_star. This is a deliberately minimal phenomenological hypothesis; no supplied data identify x_star or the function phi(x_V^D).",
+              "Observation mapping is unknown: f = h(phi, cavity geometry, droplet selection, segmentation) and cannot be set equal to phi without additional evidence."
+            ],
+            "parameters_ranges": [
+              {
+                "name": "K_R, K_V",
+                "range": "Use only the supplied tie-line-specific estimates and error rectangles in C04; do not pool tie-lines or interpret the rectangles as confidence intervals."
+              },
+              {
+                "name": "x_star",
+                "range": "[0,1], unestimated hypothesis parameter"
+              },
+              {
+                "name": "mapping h",
+                "range": "unknown; no numeric range supported"
+              }
+            ],
+            "initial_boundary_conditions": [
+              "At t=0 the observed group means are similar, but this does not establish identical microscopic state or composition.",
+              "For H1, initial local x_V^D is assumed below x_star only as a conditional scenario; this is not observed.",
+              "No time-resolved RNA production, phase volumes, phase fluxes, or cavity-specific concentration boundary conditions are supplied."
+            ],
+            "observation_mapping": [
+              "Observed f is a mean of object-level area ratios, not concentration, phase volume fraction, or thermodynamic order parameter.",
+              "C04 ng/uL phase concentrations cannot be directly converted to f without geometry, phase volumes, and spatially matched imaging.",
+              "Object counts and field SEM do not supply independent-preparation uncertainty."
+            ],
+            "alternatives": [
+              "H2 reaction carryover or altered reaction conditions change transcription or condensate organization without sequence mediation.",
+              "Population selection, droplet coalescence, or object detection changes aggregate f; C03 does not provide longitudinal state/area trajectories to test this.",
+              "Segmentation or sampling changes the measured f; supplied data do not quantify robustness to thresholds."
+            ],
+            "predictions": [
+              {
+                "id": "P1",
+                "status": "conditional discriminating prediction",
+                "statement": "At fixed reaction chemistry and total RNA production, increasing the measured variant RNA fraction across a threshold should increase the probability of cavity-bearing droplets or their object-level hollow-area ratio under H1; H2 predicts no systematic dependence on variant fraction once carryover and reaction conditions are matched.",
+                "measure": "Independently quantify transcribed RNA composition and per-droplet hollow-area ratio in a composition series, with matched carryover and independent preparations.",
+                "limitation": "No new physical experiment is available in this run; current endpoint length-fraction data are not a controlled composition series."
+              },
+              {
+                "id": "P2",
+                "status": "conditional consequence",
+                "statement": "If C04 tie-line partition ratios apply to the relevant mixture and both species are present, changing x_V^L can change x_V^D nonlinearly; this can shift a threshold x_star. The direction is conditional on the applicable tie-line and cannot be inferred by pooling the three tie-lines."
+              }
+            ],
+            "checks": [
+              "Dimensional check: K_i, x_V, x_star, phi, and f are dimensionless; concentrations in C04 share ng/uL units.",
+              "Zero-denominator check: variant K on tie-line 0 is undefined, not zero or infinity.",
+              "Limit check: if K_V = K_R and both species are present, the partition equation gives x_V^D = x_V^L; if x_V^L approaches 0 or 1, x_V^D approaches the same endpoint.",
+              "Balance/closure check: the partition equation is an equilibrium composition identity under a closed two-species assumption; it does not close time-dependent mass balance or predict cavities.",
+              "Numerical check: no new numerical calculation was performed in this leader reply; all listed values are supplied C01-C04 results."
+            ],
+            "evidence_conflicts": [
+              "Length-fraction endpoints are compatible with composition dependence but do not establish its cause; reaction carryover and exact RNA composition are unmeasured.",
+              "Tie-line partition ratios vary substantially and have broad marginal error rectangles; their tie-line conditions are not mapped to B's time course.",
+              "The 36/48 h C02 predictions differ by model form and are descriptive extrapolations only."
+            ],
+            "untested": [
+              "Whether the length variants produce RNA at comparable rates or persist in RNA.",
+              "Whether sequence differences change effective valence, phase partition, or internal coexistence.",
+              "Whether internal dark areas are an RNA-poor phase rather than another optical/structural state.",
+              "Whether increasing f reflects same-droplet cavity growth versus population and measurement effects.",
+              "Whether any target-specific literature directly supports or contradicts H1."
+            ],
+            "dissent": [],
+            "next_task": "Have the executor search the missing relation in pre-cutoff literature and return the closest supported mechanism, conditions, and a relation-specific limitation; retain H1 only as a hypothesis unless that evidence supplies a bridge."
+          }
+        ],
+        "tasks": [
+          {
+            "id": "T05",
+            "candidate_id": "RNA-C1",
+            "gap_id": "G1",
+            "kind": "mechanism",
+            "status": "open",
+            "deliverable": "Find whether RNA mixture composition with species-specific partitioning has a supported route to internal demixing/cavity nucleation; distinguish direct evidence from analogy, specify assumptions and conditions, then refine or reject H1 and give one observable prediction that differs from carryover H2.",
+            "acceptance": "Return dated source IDs and the actual supported relation (not references-only); state full-text versus abstract support; explicitly assess applicability to internally cavitating RNA condensates; give a dimensionally coherent conditional derivation or state the missing constitutive relation; preserve H1/H2 disagreement and do not infer RNA concentrations from DNA reads.",
+            "evidence_refs": [
+              "C04",
+              "fraction_dev.json",
+              "C01",
+              "initial_measurements.json"
+            ],
+            "reason": "The principal missing link is the relation from composition-dependent partitioning to cavity formation; more descriptive time fitting cannot identify that mechanism."
+          }
+        ],
+        "requests": [
+          {
+            "type": "search",
+            "id": "S05",
+            "candidate_id": "RNA-C1",
+            "gap_id": "G1",
+            "missing_relation": "Whether species-specific RNA partitioning in a multicomponent condensate can drive an internal demixed phase or cavity, and under what assumptions composition controls onset or persistence.",
+            "variables": [
+              "RNA species composition (dimensionless fraction)",
+              "dense and dilute phase concentrations (ng/uL)",
+              "partition ratios (dimensionless)",
+              "internal phase fraction or cavity area (dimensionless)"
+            ],
+            "conditions": [
+              "RNA condensates",
+              "mixtures with differing interaction valence or sequence",
+              "pre-cutoff publications only",
+              "no target identity or post-cutoff accounts"
+            ],
+            "query": "RNA condensate multicomponent mixture selective partitioning internal phase separation cavity nucleation composition-dependent demixing",
+            "change_if_found": "If direct pre-cutoff work establishes a conditional composition-to-internal-demixing relation, revise H1 to adopt only that relation and test whether supplied conditions satisfy its assumptions. If it establishes the relation only in unlike systems, retain H1 as analogy-based hypothesis with explicit unmapped conditions. If no relevant relation appears, do not claim novelty or support; keep the constitutive bridge open."
+          }
+        ],
+        "literature_use": [],
+        "adjudication": null,
+        "final": null
+      },
+      "input_sha256": "094fc3e6fb01afa0ceb93f578db2be932e8c8e7fcfa49480d269253c123369ce",
+      "reply_sha256": "ad9bf8744d655b171a48eae3445dcbf3b3b6b1abf4beb0a4358a80ba112c89e1"
+    }
+  ],
+  "tools": [],
+  "literature_use": [],
+  "adjudications": [],
+  "opened": [
+    "case_brief.md",
+    "initial_measurements.json",
+    "sequence_measurements.json",
+    "fraction_dev.json",
+    "phase_measurements.json",
+    "mobility_dev.json"
+  ],
+  "counters": {
+    "replies": 1,
+    "search": 0,
+    "compute": 0,
+    "evidence": 0
+  },
+  "finals": [],
+  "reason": "actor reply L1"
+}

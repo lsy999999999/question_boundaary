@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793431755357763947,
+  "decision": {
+    "representation": "clock",
+    "experiment": "alternating",
+    "reason": "Clock has the strongest trajectory-level validation (NMSE 0.00128), substantially outperforming history alternatives. Residual correlation remains, so adequacy for unseen interventions is not established.",
+    "prediction": "Across alternating inputs, oscillations should remain aligned to elapsed time rather than shift with input history.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Elapsed-time periodic features predict a shared oscillatory component across distinct input interventions.",
+      "condition_to_check": "Phase shifts that track input history rather than elapsed time would falsify an independent clock."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the strongest trajectory-level validation (NMSE 0.00128), substantially outperforming history alternatives. Residual correlation remains, so adequacy for unseen interventions is not established.\",\"prediction\":\"Across alternating inputs, oscillations should remain aligned to elapsed time rather than shift with input history.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time periodic features predict a shared oscillatory component across distinct input interventions.\",\"condition_to_check\":\"Phase shifts that track input history rather than elapsed time would falsify an independent clock.\"}}",
+    "input_tokens": 3275,
+    "output_tokens": 126,
+    "batch_elapsed_seconds": 2.0509251868352294,
+    "amortized_seconds": 2.0509251868352294,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3275,
+      "completion_tokens": 126,
+      "total_tokens": 3401
+    },
+    "api_response_id": "resp_0a7f99186097749c016ae598c9f7a4819599e25dc22fcd7bcf",
+    "wire_record": "wire/eval/0281_9a15b7a2cd884567b05ed6cfc9cdf78f"
+  }
+}

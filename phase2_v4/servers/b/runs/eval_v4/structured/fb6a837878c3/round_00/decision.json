@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423808921606642,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "positive_pulse",
+    "reason": "Memory_slow has lowest NMSE and high residual correlation; positive_pulse shows its predictive power.",
+    "prediction": "Positive pulse will cause a delayed response with a long tail, consistent with slow memory accumulation.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "The system's response to a pulse should decay over multiple time constants, indicating storage of past states.",
+      "condition_to_check": "If the response quickly returns to baseline after pulse, storage is likely absent."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Memory_slow has lowest NMSE and high residual correlation; positive_pulse shows its predictive power.\",\n  \"prediction\": \"Positive pulse will cause a delayed response with a long tail, consistent with slow memory accumulation.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"The system's response to a pulse should decay over multiple time constants, indicating storage of past states.\",\n    \"condition_to_check\": \"If the response quickly returns to baseline after pulse, storage is likely absent.\"\n  }\n}",
+    "input_tokens": 3161,
+    "output_tokens": 134,
+    "batch_elapsed_seconds": 3.0255119809880853,
+    "amortized_seconds": 3.0255119809880853,
+    "peak_gpu_allocated_gb": 14.829248905181885,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

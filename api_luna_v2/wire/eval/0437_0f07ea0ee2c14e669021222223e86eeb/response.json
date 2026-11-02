@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432050878096725,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0a1823f58b0810a3016ae599ef820081968e9680b04c53c2f8",
+    "object": "chat.completion",
+    "created": 1793432050,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"history_all\",\"experiment\":\"alternating\",\"reason\":\"history_all has the lowest trajectory-level CV error (0.00593), modestly better than memory_clock (0.00783); persistent residual correlation means adequacy remains uncertain.\",\"prediction\":\"Under alternating input, history_all will predict trajectory changes more accurately than memory_clock, with structured residuals still possible.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and state history improves prediction beyond instantaneous state and input, consistent with a predictive storage-like effect.\",\"condition_to_check\":\"The relation is weakened if history features fail to improve held-out trajectories after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3495,
+      "completion_tokens": 303,
+      "total_tokens": 3798,
+      "completion_tokens_details": {
+        "reasoning_tokens": 162
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.0374498488381505
+}

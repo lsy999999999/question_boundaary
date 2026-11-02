@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431519832705129,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0735651f5542c4c5016ae597de070481949e62791214d98206",
+    "object": "chat.completion",
+    "created": 1793431519,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the best trajectory-level validation (0.00138) and substantially outperforms the state model; persistent post-input decay supports accumulated history, not an independent clock.\",\"prediction\":\"After irregular input switches, output will retain a smooth, decaying dependence on prior inputs rather than changing only with current input.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated input and output history predict finite relaxation after input returns to zero.\",\"condition_to_check\":\"With current input held at zero, test whether different prior inputs produce distinct, smoothly decaying outputs.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2825,
+      "completion_tokens": 136,
+      "total_tokens": 2961,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.5328322453424335
+}

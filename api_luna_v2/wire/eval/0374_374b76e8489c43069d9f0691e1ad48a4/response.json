@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431923087788327,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0c986c661594ff71016ae5996f757481979de6b88b60365ff7",
+    "object": "chat.completion",
+    "created": 1793431922,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"double_pulse\",\"reason\":\"Memory-based models substantially outperform state-only models. Multiscale memory has strong trajectory validation; memory_clock’s slight CV advantage does not establish an independent clock, and residual lag correlation remains.\",\"prediction\":\"The second pulse will produce a response shaped by residual history from the first pulse, differing from an isolated pulse response.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history may carry influence across the gap between pulses.\",\"condition_to_check\":\"Check whether first-pulse history predicts the second response beyond current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3476,
+      "completion_tokens": 317,
+      "total_tokens": 3793,
+      "completion_tokens_details": {
+        "reasoning_tokens": 184
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.533572191372514
+}

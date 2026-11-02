@@ -1,0 +1,100 @@
+{
+  "task_id": "7025f2a38ff9",
+  "split": "eval",
+  "family": "two_memory",
+  "seed": 33,
+  "method": "no_active",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "nonlinear_delay",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0029377429272095623,
+    "coefficients": [
+      0.000323,
+      4.0171098,
+      0.6764032,
+      0.0081908,
+      -0.0048055,
+      -14.9017468,
+      -1.7028124,
+      1.0448732,
+      -1.7834069,
+      -0.2243864,
+      0.0758455,
+      -0.4711535,
+      -1.5092207,
+      2.8158939,
+      1.5973435,
+      1.1399476,
+      2.1702346,
+      5.7409171,
+      2.2167902,
+      0.6090017,
+      -0.0036548,
+      0.1350329,
+      0.0017645,
+      0.0591102,
+      0.0058648
+    ]
+  },
+  "test": {
+    "test_nmse": 0.004672672242612277,
+    "test_mse": 0.000263157127964603,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 0.0004806293753989047,
+        "nmse": 0.007126763464717527
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.00020393910399263334,
+        "nmse": 0.0006803702071465958
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 0.0004206785391454832,
+        "nmse": 0.014284222206839984
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 2.4751647223665644e-05,
+        "nmse": 0.0003132210570715504
+      },
+      {
+        "action": "test_prbs",
+        "mse": 0.0003800429545414201,
+        "nmse": 0.00498527570020796
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 6.890114748551109e-05,
+        "nmse": 0.0006461808196900402
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": false,
+  "invalid_outputs": 2,
+  "generation_calls": 4,
+  "input_tokens": 14663,
+  "output_tokens": 425,
+  "generation_seconds_amortized": 10.227545894682407,
+  "elapsed_wall_seconds": 287.97549772262573,
+  "selected_actions": [
+    "prbs",
+    "ramp_reverse",
+    "double_pulse"
+  ],
+  "selected_representations": [
+    "memory_slow",
+    "memory_slow",
+    "nonlinear_delay",
+    "nonlinear_delay"
+  ],
+  "peak_gpu_allocated_gb": 14.995047092437744,
+  "peak_process_ram_gb": 5.02374267578125,
+  "inference_backend": "cuda",
+  "evaluation_after_commit_ns": 1793424073038092285
+}

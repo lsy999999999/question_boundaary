@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430513271962185,
+  "decision": {
+    "representation": "memory_fast",
+    "experiment": "alternating",
+    "reason": "memory_fast has much lower leave-trajectory-out error than the current state model and delay; alternating inputs can help distinguish accumulated history from lagged response.",
+    "prediction": "After rapid input switches, memory_fast predicts a smoother, history-dependent response than a pure delay model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "The observations support adding predictive history features, but do not establish a specific cross-domain relation.",
+      "condition_to_check": "Compare alternating-input forecasts with delay-model predictions and test whether accumulated history improves trajectory-level accuracy."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_fast\",\"experiment\":\"alternating\",\"reason\":\"memory_fast has much lower leave-trajectory-out error than the current state model and delay; alternating inputs can help distinguish accumulated history from lagged response.\",\"prediction\":\"After rapid input switches, memory_fast predicts a smoother, history-dependent response than a pure delay model.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The observations support adding predictive history features, but do not establish a specific cross-domain relation.\",\"condition_to_check\":\"Compare alternating-input forecasts with delay-model predictions and test whether accumulated history improves trajectory-level accuracy.\"}}",
+    "input_tokens": 2781,
+    "output_tokens": 239,
+    "batch_elapsed_seconds": 3.05886438023299,
+    "amortized_seconds": 3.05886438023299,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2781,
+      "completion_tokens": 239,
+      "total_tokens": 3020,
+      "completion_tokens_details": {
+        "reasoning_tokens": 113
+      }
+    },
+    "api_response_id": "resp_0112597b0bf2c267016ae593eee0108190a98a0a2010b7c835",
+    "wire_record": "wire/eval/0418_9a3e6515863645cfb421b84b7b234332"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793424114982088662,
+  "decision": {
+    "representation": "history_all",
+    "experiment": "prbs",
+    "reason": "History_all has the lowest CV NMSE, indicating it captures the most comprehensive dynamics.",
+    "prediction": "PRBS will reveal intricate patterns not captured by simpler models, confirming the need for a full history approach.",
+    "accept": true,
+    "mapping": {
+      "source_id": "history_all",
+      "target_relation": "The system's response to PRBS will show intricate patterns, indicating the need for a full history model.",
+      "condition_to_check": "Distinct responses to positive and negative inputs should be evident, ruling out symmetry."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"history_all\",\n  \"experiment\": \"prbs\",\n  \"reason\": \"History_all has the lowest CV NMSE, indicating it captures the most comprehensive dynamics.\",\n  \"prediction\": \"PRBS will reveal intricate patterns not captured by simpler models, confirming the need for a full history approach.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"history_all\",\n    \"target_relation\": \"The system's response to PRBS will show intricate patterns, indicating the need for a full history model.\",\n    \"condition_to_check\": \"Distinct responses to positive and negative inputs should be evident, ruling out symmetry.\"\n  }\n}",
+    "input_tokens": 4070,
+    "output_tokens": 138,
+    "batch_elapsed_seconds": 3.3100861134007573,
+    "amortized_seconds": 3.3100861134007573,
+    "peak_gpu_allocated_gb": 14.998802661895752,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

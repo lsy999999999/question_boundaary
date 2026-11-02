@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431886641422153,
+  "http_status": 200,
+  "body": {
+    "id": "resp_08af6079e11a6ae1016ae5994be5d48193a235297a571ba330",
+    "object": "chat.completion",
+    "created": 1793431886,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"prbs\",\"reason\":\"State_cubic remains best on trajectory-held-out validation (NMSE 0.00149); richer history models validate worse. Residual autocorrelation leaves adequacy uncertain, and PRBS has the largest predicted disagreement.\",\"prediction\":\"At matched current state and input, PRBS responses will show no reproducible dependence on prior input if state_cubic is adequate.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Instantaneous curvature fits best, but no added physical mechanism is established.\",\"condition_to_check\":\"Test whether PRBS responses depend reproducibly on prior input after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3469,
+      "completion_tokens": 212,
+      "total_tokens": 3681,
+      "completion_tokens_details": {
+        "reasoning_tokens": 70
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.211112310178578
+}

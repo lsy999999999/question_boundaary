@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793404690472385583,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "step_rest",
+    "reason": "Step rest shows complex dynamics; cubic term should capture nuances.",
+    "prediction": "Step rest will exhibit a clear, non-linear response with increased curvature.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Non-linear response to step input.",
+      "condition_to_check": "Linear response for step_rest does not match observed data."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"state_cubic\",\n  \"experiment\": \"step_rest\",\n  \"reason\": \"Step rest shows complex dynamics; cubic term should capture nuances.\",\n  \"prediction\": \"Step rest will exhibit a clear, non-linear response with increased curvature.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"none\",\n    \"target_relation\": \"Non-linear response to step input.\",\n    \"condition_to_check\": \"Linear response for step_rest does not match observed data.\"\n  }\n}",
+    "input_tokens": 2848,
+    "output_tokens": 108,
+    "batch_elapsed_seconds": 347.38796351943165,
+    "amortized_seconds": 86.84699087985791,
+    "peak_gpu_allocated_gb": 0.0,
+    "backend": "cpu-fp32",
+    "peak_process_ram_gb": 34.3332405090332,
+    "model_path": "/home/lsy/theory_discovery_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

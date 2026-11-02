@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430460656269449,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0fab8dba16a90c68016ae593b8deb88193ad1ee883ee23f603",
+    "object": "chat.completion",
+    "created": 1793430460,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"prbs\",\"reason\":\"Memory_clock has the lowest trajectory-level CV error (0.00163), far below the current state model (0.129); persistent post-input responses support history dependence, though clock terms may be confounded.\",\"prediction\":\"After PRBS input returns to zero, output will retain a history-dependent transient; matched current inputs at different elapsed times may differ.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The observations support accumulated history, but do not establish an independent clock or a specific cross-domain mechanism.\",\"condition_to_check\":\"Compare repeated PRBS runs and matched input histories at different elapsed times; clock-linked differences should persist beyond input-history effects.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2801,
+      "completion_tokens": 412,
+      "total_tokens": 3213,
+      "completion_tokens_details": {
+        "reasoning_tokens": 260
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.613404706120491
+}

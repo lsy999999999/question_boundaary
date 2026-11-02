@@ -1,0 +1,42 @@
+{
+  "time_ns": 1793431505962069627,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Memory models greatly outperform the state-only model in trajectory-level validation; memory_slow has the lowest CV error, while residual correlation indicates persistent unmodeled dynamics.",
+    "prediction": "Under PRBS input, slow accumulated history should predict output after input switches better than the state-only model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Finite-leakage storage is a plausible representation of the persistent post-input response.",
+      "condition_to_check": "At matched current input and visible state, accumulated history should predict subsequent output across PRBS segments."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory models greatly outperform the state-only model in trajectory-level validation; memory_slow has the lowest CV error, while residual correlation indicates persistent unmodeled dynamics.\",\"prediction\":\"Under PRBS input, slow accumulated history should predict output after input switches better than the state-only model.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Finite-leakage storage is a plausible representation of the persistent post-input response.\",\"condition_to_check\":\"At matched current input and visible state, accumulated history should predict subsequent output across PRBS segments.\"}}",
+    "input_tokens": 2807,
+    "output_tokens": 281,
+    "batch_elapsed_seconds": 3.3387342235073447,
+    "amortized_seconds": 3.3387342235073447,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2807,
+      "completion_tokens": 281,
+      "total_tokens": 3088,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 151
+      }
+    },
+    "api_response_id": "resp_0e94ee7fc7362678016ae597cf479c8190a553a6a7e2b3e45a",
+    "wire_record": "wire/eval/0121_7defbbe3221544afbe8ef696738dc50b"
+  }
+}

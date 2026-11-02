@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431702097704082,
+  "http_status": 200,
+  "body": {
+    "id": "resp_09e9db93cd1ec160016ae59892efa08190b539df309dd55b94",
+    "object": "chat.completion",
+    "created": 1793431701,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest trajectory-level validation error and predicts the observed post-input relaxation. Residual lag and remaining disagreement warrant another discriminating test.\",\"prediction\":\"After alternating inputs stop, output will retain a smooth, decaying dependence on the input history rather than immediately following current input.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated input and output history predict finite relaxation after input returns to zero.\",\"condition_to_check\":\"After alternating inputs cease, compare zero-input relaxation across different preceding input histories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3293,
+      "completion_tokens": 286,
+      "total_tokens": 3579,
+      "completion_tokens_details": {
+        "reasoning_tokens": 160
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.526425675489008
+}

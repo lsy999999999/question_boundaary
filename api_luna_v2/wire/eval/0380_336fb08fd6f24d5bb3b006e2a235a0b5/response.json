@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431931139811176,
+  "http_status": 200,
+  "body": {
+    "id": "resp_00d4f417b1d18eb1016ae599772cb881978dbc50ae673ee89c",
+    "object": "chat.completion",
+    "created": 1793431931,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest trajectory-level validation error; persistent relaxation supports input-driven history, while residual correlation and disagreement leave uncertainty about adequacy.\",\"prediction\":\"After rapid switches stop, output will retain a smooth, decaying dependence on prior inputs rather than immediately following the current input.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history predict finite relaxation after input returns to zero.\",\"condition_to_check\":\"Compare zero-input relaxation after distinct switching histories; similar immediate responses without history-dependent decay would contradict this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3490,
+      "completion_tokens": 368,
+      "total_tokens": 3858,
+      "completion_tokens_details": {
+        "reasoning_tokens": 237
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.7747580567374825
+}

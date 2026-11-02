@@ -1,0 +1,84 @@
+{
+  "task_id": "2e356a891a56",
+  "split": "eval",
+  "family": "delay",
+  "seed": 32,
+  "method": "retrieval",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_slow",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0030204325342641524,
+    "coefficients": [
+      -0.0017001,
+      -2.5208372,
+      0.9533999,
+      -3.9796896,
+      -9.4563836,
+      -9.7147695,
+      -18.1909944,
+      24.6388923,
+      35.5855196
+    ]
+  },
+  "test": {
+    "test_nmse": 0.0010856550746769287,
+    "test_mse": 5.954910151986577e-05,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 7.382882691104695e-05,
+        "nmse": 0.0012567729746545727
+      },
+      {
+        "action": "test_three_step",
+        "mse": 6.342625851563155e-05,
+        "nmse": 0.0002349518951683731
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 8.343464171049053e-05,
+        "nmse": 0.003038392495320308
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 2.0373851715683783e-05,
+        "nmse": 0.0003977829263363633
+      },
+      {
+        "action": "test_prbs",
+        "mse": 8.084331761301648e-05,
+        "nmse": 0.0012199882959953387
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 3.5387712653325294e-05,
+        "nmse": 0.00036604186058661575
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": true,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 11889,
+  "output_tokens": 683,
+  "generation_seconds_amortized": 14.140496531501412,
+  "elapsed_wall_seconds": 731.4749002456665,
+  "selected_actions": [
+    "prbs",
+    "prbs",
+    "alternating"
+  ],
+  "selected_representations": [
+    "memory_slow",
+    "memory_slow",
+    "memory_slow",
+    "memory_slow"
+  ],
+  "peak_gpu_allocated_gb": 0.0,
+  "peak_process_ram_gb": 0.08777236938476562,
+  "inference_backend": "third_party_api",
+  "evaluation_after_commit_ns": 1793432163552381520
+}

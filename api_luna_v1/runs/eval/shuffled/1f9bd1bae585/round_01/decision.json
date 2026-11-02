@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430626938443718,
+  "decision": {
+    "representation": "clock",
+    "experiment": "prbs",
+    "reason": "Clock has much lower trajectory-level CV error than alternatives and fits all observed interventions; PRBS tests it against history-based explanations under irregular input.",
+    "prediction": "The clock model predicts a repeatable elapsed-time component in the response despite the irregular input sequence.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Elapsed-time features predict well, but an independent external driver is not established.",
+      "condition_to_check": "Compare responses at matched elapsed times across distinct input histories."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has much lower trajectory-level CV error than alternatives and fits all observed interventions; PRBS tests it against history-based explanations under irregular input.\",\"prediction\":\"The clock model predicts a repeatable elapsed-time component in the response despite the irregular input sequence.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Elapsed-time features predict well, but an independent external driver is not established.\",\"condition_to_check\":\"Compare responses at matched elapsed times across distinct input histories.\"}}",
+    "input_tokens": 3250,
+    "output_tokens": 306,
+    "batch_elapsed_seconds": 4.305594016797841,
+    "amortized_seconds": 4.305594016797841,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3250,
+      "completion_tokens": 306,
+      "total_tokens": 3556,
+      "completion_tokens_details": {
+        "reasoning_tokens": 194
+      }
+    },
+    "api_response_id": "resp_0c241fe11359e736016ae5945f63208197af1afce14919008d",
+    "wire_record": "wire/eval/0460_c7c864b96d884a88816137b1057529d2"
+  }
+}

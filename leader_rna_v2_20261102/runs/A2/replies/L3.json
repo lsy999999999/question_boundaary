@@ -1,0 +1,201 @@
+{
+  "recognition": "I do not recognize a specific study with confidence.",
+  "summary": "Final selection is R01-interface-wetting-v3, an explicitly new but unconfirmed bridge hypothesis. The actual tool returns contain one abstract with only broad associative/segregative biomacromolecule phase-transition context, one broad crowding abstract, and two targeted searches with zero eligible sources; no retrieved source establishes wetting here or even supplies the requested generic criterion. Executor R3's conditional derivation is dimensionally consistent: replacing a P-V interface by two interfaces around a macroscopic intervening X layer gives Delta gamma = gamma_PX + gamma_XV - gamma_PV = -S_X, where S_X = gamma_PV - gamma_PX - gamma_XV; S_X >= 0 favors that replacement in interfacial free energy under that assumed geometry. This is conditional bookkeeping, not an executed numerical computation or retrieved theorem. It does not apply to ordinary molecular adsorption without a third phase. A putative X boundary/adjacent-dense calibrated signal ratio greater than one would support localization, while bulk demixing does not require it; incidental enrichment remains possible, so localization alone is not causal proof. The data do not identify X, its RNA abundance, the boundary topology, its interfacial energies, or cavity persistence at single-droplet resolution.",
+  "candidates": [
+    {
+      "id": "R01-interface-wetting-v3",
+      "target": "Explain formation and persistence of internal cavities while preserving f(t) as the arithmetic mean of segmented per-droplet area fractions, not concentration or phase volume.",
+      "known_relations": [
+        "E01: B mean empty-area fraction rises across 0, 4, 8, 12, 24 h; A falls to about 0.004-0.005 after 4 h. Seven fields per condition do not replace two independent preparations, and preparation-level uncertainty is unavailable.",
+        "E02: M, M+L, M+S endpoint medians are about 0.000028, 0.0445, 0.0941; distinct endpoint groups, not a causal mixture series or time course.",
+        "E03: motion summaries have unequal track counts/durations and no same-object cavity-state trajectories.",
+        "E04: three tie lines measure reference and variant RNA concentrations in dilute/dense phases but do not map to cavity contents or provide phase volumes or time-resolved yield.",
+        "E05: B reference DNA read fraction is 0.9466 with non-reference reads; DNA read frequencies do not determine transcript identity or RNA abundance.",
+        "S-L1-interface-wetting_S1 abstract: broad coupled associative/segregative transition context for multivalent biomacromolecules including nucleic acids; no boundary-wetting result.",
+        "S-L1-interface-wetting_S2 abstract: broad molecular-crowding review without this mechanism.",
+        "S-R1-wetting-thermodynamics: zero sources.",
+        "S-L2-generic-wetting-criterion: zero eligible sources; five records excluded as date/target/no-abstract."
+      ],
+      "hypotheses": [
+        {
+          "id": "H-interface-wetting",
+          "status": "new, untested hypothesis; RNA-system application unsupported by retrieved literature",
+          "statement": "A putative minority RNA species X may preferentially adsorb at an internal P-V boundary and alter its interfacial free energy, potentially stabilizing cavities. A distinct stronger complete-wetting subcase requires a macroscopic X-rich intervening phase; neither adsorption nor this phase topology is established.",
+          "assumptions": [
+            "A non-reference template yields a specific X transcript; DNA frequencies do not quantify its abundance.",
+            "The image dark region corresponds to a physical P-V boundary rather than an imaging or population artifact.",
+            "X is selectively enriched at that boundary and changes interfacial free energy.",
+            "Only for complete wetting, X forms a macroscopic interposed phase with well-defined pairwise interfaces."
+          ],
+          "equation": "For the macroscopic-layer subcase only, S_X = gamma_PV - gamma_PX - gamma_XV; S_X >= 0 conditionally favors replacing PV by PX and XV interfaces."
+        }
+      ],
+      "gaps": [
+        {
+          "id": "G-interface-link",
+          "status": "open; not resolved in this run",
+          "description": "No cavity-resolved X identity or boundary enrichment, relevant interfacial free energies, evidence for a macroscopic X layer, or mapping between tie-line phases and image cavities. The proposed causal link to cavity persistence remains untested."
+        }
+      ],
+      "variables_units": {
+        "f": "dimensionless mean of segmented per-droplet internal dark-area fractions",
+        "q_i": "dimensionless cavity area / filled droplet area for droplet i",
+        "C_phase,i": "separately measured phase RNA concentration, ng/uL",
+        "gamma_PV,gamma_PX,gamma_XV,S_X": "interfacial free energy or spreading coefficient, energy/area; values unavailable",
+        "R_boundary": "calibrated X signal per area at boundary divided by signal per area in adjacent dense phase; dimensionless proposed observable"
+      },
+      "equations": [
+        "f(t) = (1/N(t)) sum_i q_i(t), matching the reported arithmetic mean.",
+        "For a macroscopic interposed X layer, Delta gamma = gamma_PX + gamma_XV - gamma_PV = -S_X; S_X >= 0 conditionally favors the replacement in interfacial free energy. This condition does not apply to ordinary molecular adsorption absent a third phase.",
+        "If preferential adsorption stabilizes cavities, sequence-specific calibrated R_boundary > 1 is predicted relative to immediately adjacent dense phase, with enrichment associated with subsequent same-droplet persistence after controlling for adjacent bulk signal. Bulk demixing does not require this enrichment, but may allow incidental enrichment."
+      ],
+      "parameters_ranges": [
+        "No values/ranges for gamma, X abundance, adsorption, or R_boundary are supplied.",
+        "f is bounded by 0 and 1 by definition; it is not a concentration or wetting parameter."
+      ],
+      "initial_boundary_conditions": [
+        "A and B observed f values are similar and small at t=0; latent phase states and X abundance are unknown.",
+        "No initial phase volumes, cavity concentrations, or boundary conditions are measured."
+      ],
+      "observation_mapping": [
+        "Imaging maps each droplet to q_i and the mean f, without molecular identity or concentration calibration.",
+        "E04 maps separate tie-line samples to bulk phase concentrations, not cavity contents or a time course.",
+        "A discriminating measurement needs independently identified X and calibrated sequence-specific signal per area at boundary and adjacent dense phase in the same droplets; persistence requires longitudinal cavity labels."
+      ],
+      "alternatives": [
+        {
+          "id": "bulk-demixing",
+          "description": "Bulk compositional demixing or local production/consumption creates cavities without necessary selective X adsorption.",
+          "discriminator": "Does not require boundary enrichment, though incidental enrichment can occur."
+        },
+        {
+          "id": "carryover-or-reaction-condition",
+          "description": "Amplification-associated carryover or another reaction change alters transcription or phase behavior.",
+          "discriminator": "May change f without X-mediated adsorption; no matched control is supplied."
+        },
+        {
+          "id": "population-or-measurement",
+          "description": "Population changes, tracking selection, or segmentation affect the aggregate trend.",
+          "discriminator": "Current tracking has no cavity-state trajectories."
+        }
+      ],
+      "predictions": [
+        "Conditional localization prediction: if X adsorption occurs, validated sequence-specific R_boundary exceeds one in cavity-bearing B droplets. This distinguishes preferential localization from a bulk-demixing model that does not require it, but is not exclusive evidence.",
+        "Conditional persistence prediction: enrichment predicts later same-droplet cavity persistence after controlling for adjacent bulk X signal; E03 cannot test this.",
+        "No enrichment in a validated sensitive assay weakens the adsorption hypothesis; enrichment alone does not prove reduced interfacial free energy or causality.",
+        "The complete-wetting subcase additionally requires a macroscopic X layer and S_X >= 0; the available enrichment observable cannot establish either."
+      ],
+      "checks": [
+        "Dimensional check: all gamma and S_X terms are energy/area; f and R_boundary are dimensionless.",
+        "Energy comparison: Delta gamma = -S_X; equality is the marginal replacement boundary, and the inequality applies only to the stated macroscopic three-phase geometry.",
+        "Observation check: E04 bulk concentrations are not cavity concentrations; E05 DNA frequencies are not RNA abundance.",
+        "No numeric computation was run; no supplied evidence estimates gamma or S_X.",
+        "Literature check: S1 is broad abstract-only context; S2 is not mechanism-specific; S-R1 and S-L2 returned no eligible sources."
+      ],
+      "evidence_conflicts": [
+        "E02 is an endpoint association and does not establish an interfacial mechanism.",
+        "E04 has bulk phase endpoints but no cavity mapping.",
+        "No retrieved literature directly supports RNA internal wetting or validates the criterion in this retrieval."
+      ],
+      "untested": [
+        "Identity and abundance of transcribed X.",
+        "Boundary enrichment and any causal effect on interfacial free energy.",
+        "Existence of a macroscopic intervening layer.",
+        "Within-droplet persistence versus population/segmentation effects.",
+        "Amplification carryover and reaction-condition effects."
+      ],
+      "dissent": [
+        "Executor R3 regards the wetting mechanism as a coherent conditional hypothesis but weakly grounded: neither searches nor supplied data establish boundary adsorption, three-phase topology, or its causal role. Boundary enrichment supports localization only."
+      ],
+      "next_task": "No further tool budget is available in this run. If a future physical experiment becomes possible, identify a transcribed X, measure calibrated sequence-specific X localization at cavity boundary versus adjacent dense phase, and track the same droplets longitudinally; use a matched X perturbation or direct interfacial measurement to test causal wetting attribution."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T-L1-mechanism-bridge",
+      "candidate_id": "R01-interface-wetting-v3",
+      "gap_id": "G-interface-link",
+      "kind": "mechanism",
+      "status": "complete",
+      "deliverable": "Executor assessed the proposed interface bridge, defined the phase topology and conditional energy comparison, stated a discriminating localization/persistence prediction, and identified the minimum measurement.",
+      "acceptance": "Assessment deliverable complete. Hypothesis remains untested; DNA read frequencies are not used as RNA abundances; evidence and assumptions are separated.",
+      "evidence_refs": ["E01", "E02", "E03", "E04", "E05", "S-L1-interface-wetting_S1", "S-L1-interface-wetting_S2", "S-R1-wetting-thermodynamics"],
+      "reason": "The requested assessment is complete, while the mechanism itself remains unresolved."
+    },
+    {
+      "id": "T-L2-wetting-criterion-source",
+      "candidate_id": "R01-interface-wetting-v3",
+      "gap_id": "G-interface-link",
+      "kind": "mechanism",
+      "status": "complete",
+      "deliverable": "Executor assessed the returned date-filtered search and stated the conditional interfacial-energy comparison with its topology assumptions.",
+      "acceptance": "No retrieved source is claimed; adsorption is distinguished from a macroscopic intervening phase; RNA application remains untested.",
+      "evidence_refs": ["S-L2-generic-wetting-criterion"],
+      "reason": "The query returned no eligible source. The no-source result is the completed evidence assessment; no scientific claim was upgraded."
+    }
+  ],
+  "requests": [],
+  "literature_use": [
+    {
+      "source_id": "S-L1-interface-wetting_S1",
+      "action": "modify_as_hypothesis",
+      "relation": "The abstract describes coupled associative and segregative transitions in multivalent biomacromolecule solutions including nucleic acids, with relevance to biomolecular condensates; it does not describe internal wetting.",
+      "variables_units": "Qualitative phase-transition concepts; no quantitative variables or units in abstract.",
+      "conditions": "2023 review; abstract only; historical abstract text not independently archived.",
+      "impact_on_model_or_action": "Retain broad context only; no support for X adsorption, complete wetting, or cavity stabilization."
+    },
+    {
+      "source_id": "S-L1-interface-wetting_S2",
+      "action": "reject",
+      "relation": "The abstract reviews molecular crowding broadly and supplies no interface-wetting relation.",
+      "variables_units": "No mechanism-specific variables or units.",
+      "conditions": "2024 review; abstract only.",
+      "impact_on_model_or_action": "Not used as evidence for this candidate."
+    },
+    {
+      "source_id": "S-R1-wetting-thermodynamics",
+      "action": "reject",
+      "relation": "The date-filtered search returned zero sources.",
+      "variables_units": "No returned relation or units.",
+      "conditions": "Search result had no eligible records.",
+      "impact_on_model_or_action": "No literature validation or candidate change."
+    },
+    {
+      "source_id": "S-L2-generic-wetting-criterion",
+      "action": "reject",
+      "relation": "The date-filtered search returned zero eligible sources; five records were excluded for date/target/no-abstract.",
+      "variables_units": "No returned relation or units.",
+      "conditions": "Generic wetting criterion query; no usable result.",
+      "impact_on_model_or_action": "No literature validation; retain the energy comparison as conditional physical reasoning only."
+    }
+  ],
+  "adjudication": {
+    "task_id": "T-L2-wetting-criterion-source",
+    "decision": "complete",
+    "artifact_ids": ["R2", "S-L2-generic-wetting-criterion", "R3"],
+    "checks": [
+      "Actual search returned zero eligible sources, with five records excluded; no source-based formula claim is made.",
+      "Executor's conditional replacement derivation is dimensionally consistent and explicitly limited to a macroscopic third-phase layer.",
+      "No numeric computation was run, and no empirical wetting or causal claim is made.",
+      "R1 and R2 bounded assessment tasks are complete; the physical mechanism gap remains open."
+    ],
+    "remaining_gap": "G-interface-link remains open: molecular X identity/abundance, boundary localization, phase topology, interfacial energies, cavity mapping, causal role, and within-droplet persistence are unknown.",
+    "reason": "The bounded source-assessment task was answered by the no-eligible-source return and the executor's scoped interpretation. The candidate remains a hypothesis rather than an established explanation."
+  },
+  "final": {
+    "selected_candidate": "R01-interface-wetting-v3",
+    "question_and_reason": "Could product heterogeneity stabilize internal cavities through selective boundary adsorption? This is a concrete, testable bridge from a putative RNA species to cavity persistence, but current measurements do not identify that bridge.",
+    "increment": "Separated ordinary molecular adsorption from the stronger macroscopic complete-wetting subcase. The executor derived the interfacial replacement consequence and a boundary-localization prediction; searches supplied no direct or generic wetting source support.",
+    "new_hypotheses": [
+      "A putative minority RNA species X preferentially localizes at the internal P-V boundary and changes interfacial free energy, potentially affecting cavity persistence.",
+      "Only if X forms a macroscopic intervening phase does the three-interface spreading-coefficient criterion apply."
+    ],
+    "actual_derivation_or_computation": "No numerical computation was run. Conditional derivation: before insertion, the P-V interfacial free energy per area is gamma_PV; with a macroscopic X layer, the replacement cost is gamma_PX + gamma_XV. Thus Delta gamma = gamma_PX + gamma_XV - gamma_PV = -S_X for S_X = gamma_PV - gamma_PX - gamma_XV. Each term is energy/area, and S_X >= 0 favors this replacement under the assumed three-phase geometry. This is a conditional thermodynamic comparison, not a retrieved or measured result.",
+    "discriminating_prediction": "If X-mediated adsorption is responsible, validated sequence-specific calibrated X signal per area should be enriched at cavity boundaries relative to adjacent dense phase (R_boundary > 1) and predict subsequent same-droplet persistence after controlling for adjacent bulk signal. Bulk demixing does not require this pattern, though incidental enrichment is possible; enrichment supports localization but is not exclusive or causal proof. A validated absence weakens the adsorption hypothesis.",
+    "evidence_support_conflict_untested": "E01 supports the descriptive B increase (0.01381 to 0.08918 from 0 to 24 h) and A decline, but only two independent preparations are represented. E02 shows endpoint association across length fractions, not causality or a time course. E03 cannot resolve cavity-state persistence within droplets. E04 measures bulk tie-line concentrations without cavity mapping or phase volumes. E05 is DNA read frequency, not RNA abundance. S1 abstract gives broad phase-transition context only; S2 is not mechanism-specific; the two targeted wetting searches return no eligible sources. X identity, abundance, localization, interfacial energies, three-phase topology, causal effect, carryover, and measurement/population alternatives remain untested.",
+    "decision": "Close the two bounded assessment tasks and retain R01-interface-wetting-v3 as an unconfirmed, testable candidate. The data do not establish it as the explanation for cavity emergence or persistence.",
+    "dissent": "Executor R3 agrees the conditional mechanism is coherent enough to formulate, but emphasizes that no data or retrieved literature establishes RNA-specific internal wetting, that boundary enrichment alone establishes localization rather than tension reduction, and that causal persistence needs further evidence.",
+    "next_experiment": "If a future physical experiment is feasible, identify a transcribed X and measure calibrated sequence-specific X signal at cavity boundaries versus adjacent dense phase while tracking cavity state in the same droplets. A matched X perturbation or direct interfacial measurement is needed to attribute causal wetting.",
+    "limitations": "No eligible retrieval supports the generic criterion or its RNA application; no new physical measurements are available; interfacial energies and cavity-resolved composition are absent; no numerical computation was run. The conditional derivation does not establish that the observed dark regions are phase-separated cavities."
+  }
+}

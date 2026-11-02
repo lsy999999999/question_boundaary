@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430644495954526,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0d2d957b2ec33381016ae5947125cc819489dff847c9822c58",
+    "object": "chat.completion",
+    "created": 1793430644,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"memory_slow has substantially lower trajectory-level CV error than the current model; the alternating trajectory also shows persistent history-dependent response.\",\"prediction\":\"After the second pulse, the response will depend on the earlier pulse and decay more slowly than memory_fast predicts.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The predictive benefit of slow history features does not establish a specific cross-domain relation.\",\"condition_to_check\":\"Test whether double-pulse forecasts improve and whether the post-pulse tail retains dependence on the first pulse.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3246,
+      "completion_tokens": 302,
+      "total_tokens": 3548,
+      "completion_tokens_details": {
+        "reasoning_tokens": 176
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.408582780510187
+}

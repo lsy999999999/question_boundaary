@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793432179719229085,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "alternating",
+    "reason": "It has the lowest trajectory-held-out NMSE (0.00126), outperforming alternatives; residual lag-1 correlation is small, and diverse pulse, step, and ramp trajectories fit well. This supports predictive adequacy, not a proven mechanism.",
+    "prediction": "After input switches to zero, the response will retain fast and slow history-dependent components rather than follow current input alone.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated input history predicts persistent responses after input switches or returns to zero.",
+      "condition_to_check": "Weaken this relation if history adds no predictive value after controlling current input and visible state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest trajectory-held-out NMSE (0.00126), outperforming alternatives; residual lag-1 correlation is small, and diverse pulse, step, and ramp trajectories fit well. This supports predictive adequacy, not a proven mechanism.\",\"prediction\":\"After input switches to zero, the response will retain fast and slow history-dependent components rather than follow current input alone.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts persistent responses after input switches or returns to zero.\",\"condition_to_check\":\"Weaken this relation if history adds no predictive value after controlling current input and visible state.\"}}",
+    "input_tokens": 3746,
+    "output_tokens": 218,
+    "batch_elapsed_seconds": 3.3803890720009804,
+    "amortized_seconds": 3.3803890720009804,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3746,
+      "completion_tokens": 218,
+      "total_tokens": 3964,
+      "completion_tokens_details": {
+        "reasoning_tokens": 70
+      }
+    },
+    "api_response_id": "resp_0348d608705cdb5c016ae59a70ad408193801260c151816d53",
+    "wire_record": "wire/eval/0490_55f1a62de6ea43658a5c1c8d8f8dad8e"
+  }
+}

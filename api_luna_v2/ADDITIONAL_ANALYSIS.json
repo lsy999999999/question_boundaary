@@ -1,0 +1,84 @@
+{
+  "retrieval_over_plain": {
+    "left": "retrieval",
+    "right": "plain",
+    "paired_tasks": 24,
+    "left_wins": 6,
+    "geometric_nmse_ratio": 0.9459138485269231,
+    "descriptive_bootstrap_95_interval": [
+      0.783627008715191,
+      1.0699018609059459
+    ]
+  },
+  "model_over_history_cv": {
+    "plain": {
+      "left": "plain",
+      "right": "history_cv",
+      "paired_tasks": 24,
+      "left_wins": 11,
+      "geometric_nmse_ratio": 1.0082637316203753,
+      "descriptive_bootstrap_95_interval": [
+        0.8323424132650533,
+        1.272365272069442
+      ]
+    },
+    "retrieval": {
+      "left": "retrieval",
+      "right": "history_cv",
+      "paired_tasks": 24,
+      "left_wins": 10,
+      "geometric_nmse_ratio": 0.9537306267071459,
+      "descriptive_bootstrap_95_interval": [
+        0.8313232877298149,
+        1.0992354214707312
+      ]
+    },
+    "structured": {
+      "left": "structured",
+      "right": "history_cv",
+      "paired_tasks": 24,
+      "left_wins": 11,
+      "geometric_nmse_ratio": 1.0686269035269615,
+      "descriptive_bootstrap_95_interval": [
+        0.8584647801550578,
+        1.3693907833835437
+      ]
+    },
+    "no_active": {
+      "left": "no_active",
+      "right": "history_cv",
+      "paired_tasks": 24,
+      "left_wins": 14,
+      "geometric_nmse_ratio": 1.0403067565296014,
+      "descriptive_bootstrap_95_interval": [
+        0.8034609299965273,
+        1.3956152224924034
+      ]
+    },
+    "shuffled": {
+      "left": "shuffled",
+      "right": "history_cv",
+      "paired_tasks": 24,
+      "left_wins": 12,
+      "geometric_nmse_ratio": 0.964881996887521,
+      "descriptive_bootstrap_95_interval": [
+        0.7621824520911955,
+        1.2683993117545083
+      ]
+    }
+  },
+  "cv_ranking_totals": {
+    "luna": {
+      "minimum_choices": 458,
+      "calls": 480,
+      "revision_events": 65,
+      "revisions_to_current_minimum": 57
+    },
+    "qwen": {
+      "minimum_choices": 336,
+      "calls": 480,
+      "revision_events": 86,
+      "revisions_to_current_minimum": 53
+    }
+  }
+}

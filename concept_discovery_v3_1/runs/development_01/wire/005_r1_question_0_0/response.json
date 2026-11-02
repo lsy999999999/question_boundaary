@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793468135752591256,
+  "body": {
+    "id": "resp_0e68d68c7826bd50016ae626e295188193bf98afb77df04d51",
+    "object": "chat.completion",
+    "created": 1793468135,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"kind\":\"polarity\",\"purpose\":\"probe_relation\",\"target_ids\":[\"v3_r1\"],\"evidence_ids\":[\"relation_v3_r0_experiment_0_v3_r0_experiment_1\",\"outcome_0\",\"failure_v3_r0_experiment_0\",\"failure_v3_r0_experiment_1\"],\"rationale\":\"The current best model v3_r1 contains odd functions of x and an input-driven trace, so from reset it predicts polarity-reversed inputs will produce polarity-reversed output trajectories. The earlier polarity result supports this symmetry only for its tested schedules and was for v3_r0, not the current model; test the structural prediction on new schedules. Held-out failures for v3_r0 also caution against treating its fit as settled.\",\"claim\":\"For reset trials described by v3_r1, reversing the complete input schedule should reverse the output trajectory, including on schedules outside those previously observed.\",\"update_if_violated\":\"If polarity-paired trajectories depart from sign-reversed outputs beyond measurement-noise expectations, revise or reject the odd-symmetry relation for v3_r1 and fit candidate symmetry-breaking terms against held-out complete trajectories.\",\"amplitude_range\":[0.2,1.2],\"duration_range\":[1.0,4.0],\"scale\":1.5,\"tolerance_x\":0.04}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 4911,
+      "completion_tokens": 429,
+      "total_tokens": 5340,
+      "completion_tokens_details": {
+        "reasoning_tokens": 146
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 6.01634306833148
+}

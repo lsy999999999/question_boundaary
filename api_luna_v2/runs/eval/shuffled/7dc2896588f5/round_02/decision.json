@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431961803567175,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "slow_wave",
+    "reason": "Memory_multiscale improves held-out error over memory_slow, while memory_clock is only marginally better and adds elapsed-time periodic features. Slow_wave probes whether that gain reflects history or timing.",
+    "prediction": "During the slow wave, outputs at the same input will depend on prior input history; a repeatable elapsed-time pattern independent of history would instead favor clock features.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Pulse recovery and history-dependent forecasts are consistent with accumulated past influence that relaxes over time.",
+      "condition_to_check": "Compare matched input and visible output after different histories; no persistent predictive difference would weaken the storage relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"slow_wave\",\"reason\":\"Memory_multiscale improves held-out error over memory_slow, while memory_clock is only marginally better and adds elapsed-time periodic features. Slow_wave probes whether that gain reflects history or timing.\",\"prediction\":\"During the slow wave, outputs at the same input will depend on prior input history; a repeatable elapsed-time pattern independent of history would instead favor clock features.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Pulse recovery and history-dependent forecasts are consistent with accumulated past influence that relaxes over time.\",\"condition_to_check\":\"Compare matched input and visible output after different histories; no persistent predictive difference would weaken the storage relation.\"}}",
+    "input_tokens": 3482,
+    "output_tokens": 349,
+    "batch_elapsed_seconds": 4.232939889654517,
+    "amortized_seconds": 4.232939889654517,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3482,
+      "completion_tokens": 349,
+      "total_tokens": 3831,
+      "completion_tokens_details": {
+        "reasoning_tokens": 198
+      }
+    },
+    "api_response_id": "resp_001cd45fcc17eb28016ae599964b90819792d80da7a521a677",
+    "wire_record": "wire/eval/0397_b2d6298e93b34d4ea9297607d77e6329"
+  }
+}

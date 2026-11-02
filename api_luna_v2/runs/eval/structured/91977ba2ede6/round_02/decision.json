@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793432104186439748,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "double_pulse",
+    "reason": "memory_clock has the best leave-trajectory-out error by a wide margin, but residual autocorrelation remains and clock versus history effects are not separated. Double_pulse has the largest remaining disagreement between plausible models.",
+    "prediction": "After the second pulse ends, a recurring component at shared elapsed times would favor the clock model; a response varying with pulse history would favor history-only dynamics.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "The observations do not establish an independent elapsed-time driver rather than input-driven history.",
+      "condition_to_check": "Compare zero-input responses at matched elapsed times after distinct pulse histories."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"double_pulse\",\"reason\":\"memory_clock has the best leave-trajectory-out error by a wide margin, but residual autocorrelation remains and clock versus history effects are not separated. Double_pulse has the largest remaining disagreement between plausible models.\",\"prediction\":\"After the second pulse ends, a recurring component at shared elapsed times would favor the clock model; a response varying with pulse history would favor history-only dynamics.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The observations do not establish an independent elapsed-time driver rather than input-driven history.\",\"condition_to_check\":\"Compare zero-input responses at matched elapsed times after distinct pulse histories.\"}}",
+    "input_tokens": 3432,
+    "output_tokens": 316,
+    "batch_elapsed_seconds": 4.243404381908476,
+    "amortized_seconds": 4.243404381908476,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3432,
+      "completion_tokens": 316,
+      "total_tokens": 3748,
+      "completion_tokens_details": {
+        "reasoning_tokens": 174
+      }
+    },
+    "api_response_id": "resp_0397b498414dc2cc016ae59a24c7b88197acb1083e8d7359c4",
+    "wire_record": "wire/eval/0458_476519b3dd1a4b27a15d73f08717b146"
+  }
+}

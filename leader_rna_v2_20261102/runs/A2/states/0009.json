@@ -1,0 +1,917 @@
+{
+  "version": 9,
+  "candidates": {
+    "R01-interface-wetting-v1": {
+      "id": "R01-interface-wetting-v1",
+      "target": "Explain formation and persistence of internal cavities and generate a discriminating prediction; do not treat f(t) as a concentration.",
+      "known_relations": [
+        "E01: B mean empty-area fraction increases across 0, 4, 8, 12, 24 h; A falls to a low plateau-like value. There are seven fields per condition but only two independent preparations; field/object summaries do not provide preparation-level uncertainty.",
+        "E02: length-separated template fractions M, M+L, M+S have different single-endpoint cavity fractions (approximately 0.000028, 0.0445, 0.0941 as reported medians); this is association in a distinct endpoint preparation, not a causal mixture series or time course.",
+        "E03: motion summaries differ by condition but are affected by unequal track counts/durations and contain no same-object cavity area or appearance/disappearance labels.",
+        "E04: three measured tie lines contain reference and variant RNA concentrations in dilute/dense phases; measured concentrations do not map to cavities and lack phase volumes, B RNA proportions, or time-resolved yield.",
+        "E05: B has a 0.9466 reference DNA read fraction and listed non-reference reads; DNA frequencies do not determine RNA concentrations or expression proportions."
+      ],
+      "hypotheses": [
+        {
+          "id": "H-interface-wetting",
+          "status": "new hypothesis, untested",
+          "statement": "A minority RNA species X produced from a non-reference template preferentially adsorbs to the internal phase boundary and lowers its effective interfacial free energy. Once a cavity nucleates, this boundary enrichment reduces the energetic cost of maintaining it, so cavity persistence can increase even when the bulk dense phase remains connected.",
+          "assumptions": [
+            "At least one transcribed non-reference RNA species exists in B; not inferred quantitatively from DNA reads.",
+            "An internal phase boundary with distinguishable adjacent regions exists.",
+            "X has a measurable affinity for that boundary and sufficient availability; neither is established."
+          ],
+          "equation": "S_X = gamma_PV - (gamma_PX + gamma_XV); complete wetting is conditionally favored if S_X >= 0. gamma terms are interfacial free energies per area."
+        }
+      ],
+      "gaps": [
+        {
+          "id": "G-interface-link",
+          "status": "open / mechanism bridge missing",
+          "description": "No cavity-resolved RNA identity/composition or boundary enrichment measurement, no relevant interfacial tensions, and no mapping from measured tie-line concentrations to internal image cavities. Thus the wetting condition and its causal relevance are wholly untested."
+        }
+      ],
+      "variables_units": {
+        "f": "dimensionless arithmetic mean of segmented per-droplet empty-area fractions at each time",
+        "C_phase,i": "RNA concentration of species i in phase, ng/uL, measured only at supplied tie-line endpoints",
+        "Gamma_PV,Gamma_PX,Gamma_XV": "interfacial free energies per area, units not supplied",
+        "S_X": "spreading coefficient, interfacial free energy per area",
+        "E_X,boundary/E_X,adjacent": "dimensionless ratio of species-X signal per calibrated area at boundary versus adjacent dense phase; proposed observable, not measured"
+      },
+      "equations": [
+        "f(t) = (1/N(t)) sum_i q_i(t), where q_i is the segmented internal dark area divided by filled droplet area for droplet i; this is the supplied arithmetic mean convention.",
+        "S_X = gamma_PV - gamma_PX - gamma_XV; S_X >= 0 is the conditional complete-wetting criterion under the stated phase/interface convention. No gamma is measured.",
+        "Proposed discriminator: boundary enrichment ratio E_X,boundary/E_X,adjacent > 1 for interfacial adsorption; bulk-demixing alternative does not require this enrichment."
+      ],
+      "parameters_ranges": [
+        "No physical parameter values/ranges available for interfacial energies, X abundance, adsorption, or wetting threshold.",
+        "Observed f values are between 0 and 1 by definition; do not use them as concentrations or fit an interfacial parameter from them."
+      ],
+      "initial_boundary_conditions": [
+        "Observed starting f values are similar in A and B at 0 h; initial similarity alone does not establish identical latent composition or phase state.",
+        "No initial X abundance, cavity concentration, phase volume, or boundary condition is measured."
+      ],
+      "observation_mapping": [
+        "Image segmentation maps each droplet to q_i and then the reported mean f; it provides no molecular identity or concentration calibration.",
+        "Phase endpoint assay maps separately measured tie-line samples to C_phase,i; it is not a time series or cavity-specific assay.",
+        "A decisive wetting test would measure calibrated X signal at cavity boundary and neighboring dense region in the same droplets, with RNA identity established independently."
+      ],
+      "alternatives": [
+        {
+          "id": "bulk-demixing",
+          "description": "Cavity emerges from bulk compositional demixing or a local production/consumption gradient; a special boundary-affine X species is unnecessary.",
+          "discriminator": "Does not predict selective X enrichment at the cavity boundary as a necessary condition; it may still allow incidental enrichment."
+        },
+        {
+          "id": "carryover-or-reaction-condition",
+          "description": "Amplification-associated carryover or another altered reaction condition changes transcription or phase behavior.",
+          "discriminator": "Could change f without the proposed X species being the boundary-active cause; no matched carryover control is supplied."
+        },
+        {
+          "id": "population-or-measurement",
+          "description": "Changing droplet population, track selection, or image thresholding contributes to the aggregate trajectory.",
+          "discriminator": "Current tracking lacks cavity state trajectories and cannot exclude this explanation."
+        }
+      ],
+      "predictions": [
+        "Conditional prediction: if X-mediated wetting stabilizes cavities, boundary-to-adjacent-dense X enrichment should exceed one in cavity-bearing B droplets and should associate with persistence after controlling for local bulk X signal. This is not predicted as necessary by the bulk-demixing alternative.",
+        "A cavity-specific boundary enrichment result would support the bridge but would not by itself prove that X lowers interfacial free energy; direct perturbation or interfacial measurement would still be needed.",
+        "Absence of enrichment with a validated sensitive assay would weaken this specific wetting hypothesis while leaving bulk demixing and carryover explanations viable."
+      ],
+      "checks": [
+        "Units: f and enrichment ratio are dimensionless; each gamma and S has interfacial-energy-per-area units, so the spreading-coefficient subtraction is dimensionally consistent.",
+        "Limit: if gamma_PV = gamma_PX + gamma_XV then S_X = 0, the marginal wetting boundary; if X is absent, the hypothesis reduces to no X-mediated effect.",
+        "Evidence does not identify X, quantify its RNA abundance, establish complete wetting, or close a mass balance.",
+        "No actual computation has been run in this reply."
+      ],
+      "evidence_conflicts": [
+        "E02 supports a relationship between template-length fraction and endpoint f in separate preparations, but it does not establish an interfacial molecular mechanism.",
+        "E04 measures bulk coexisting-phase concentrations, not internal cavity contents; treating the dilute phase as the cavity would be an unsupported measurement equivalence.",
+        "Read frequencies are DNA measurements and cannot be used as RNA concentration fractions."
+      ],
+      "untested": [
+        "Identity and transcription abundance of the putative X species.",
+        "Boundary enrichment and interfacial energies.",
+        "Whether cavity persistence is within-droplet evolution rather than population/segmentation effects.",
+        "Whether amplification carryover or reaction conditions cause the phenotype."
+      ],
+      "dissent": [],
+      "next_task": "Executor: evaluate H-interface-wetting as a concrete bridge between candidate RNA heterogeneity and cavity persistence. Use the provided E01-E05 only plus eligible background if retrieved. Return a short mechanism diagram, check interface/phase definitions and assumptions, derive one conditional observable prediction that separates boundary wetting from bulk demixing, state what current evidence does and does not support, and identify the smallest discriminating measurement. Do not infer RNA composition from DNA read frequencies or call the hypothesis established.",
+      "version": 1,
+      "author": "leader",
+      "reply": "L1"
+    },
+    "R01-interface-wetting-v2": {
+      "id": "R01-interface-wetting-v2",
+      "target": "Explain formation and persistence of internal cavities and generate a discriminating prediction; preserve f(t) as the arithmetic mean of segmented per-droplet area fractions, not concentration or phase volume.",
+      "known_relations": [
+        "E01: B mean empty-area fraction increases across 0, 4, 8, 12, 24 h; A falls to about 0.004-0.005 after 4 h. Seven fields per condition do not replace the two independent preparations; no preparation-level uncertainty is supplied.",
+        "E02: length-separated template fractions M, M+L, M+S have different single-endpoint cavity fractions (reported medians approximately 0.000028, 0.0445, 0.0941); this is not a causal mixture series or time course.",
+        "E03: motion summaries differ, with unequal track counts/durations and no same-object cavity-state trajectories.",
+        "E04: three tie lines measure reference and variant RNA concentrations in dilute and dense phases, but do not map to internal cavity contents or provide phase volumes or time-resolved yield.",
+        "E05: B reference DNA read fraction is 0.9466, with listed non-reference reads; DNA read frequencies do not establish transcript identity or RNA abundance.",
+        "S-L1-interface-wetting_S1 abstract: broad review-level statement that associative and segregative transitions are relevant to multivalent biomolecular condensates, including nucleic acids; no internal-boundary wetting result.",
+        "S-L1-interface-wetting_S2 abstract: broad molecular-crowding review; no mechanism-specific relation."
+      ],
+      "hypotheses": [
+        {
+          "id": "H-interface-wetting",
+          "status": "new, untested, narrowed after executor review",
+          "statement": "A putative minority RNA species X may adsorb preferentially at the internal P-V boundary and alter its interfacial free energy, potentially stabilizing cavities. A stronger and distinct complete-wetting version requires a macroscopic X-rich interposed layer and S_X >= 0. Neither version is established by the supplied data. The adsorption version does not by itself imply a third bulk phase or satisfy the complete-wetting criterion.",
+          "assumptions": [
+            "A non-reference transcript X is produced; DNA read frequency cannot quantify its RNA abundance.",
+            "The dark internal region corresponds to a distinct phase boundary P-V rather than an imaging or population artifact.",
+            "X has boundary affinity and its adsorption changes interfacial free energy; both are unmeasured.",
+            "For the complete-wetting subcase only, an X-rich layer can be treated as a macroscopic intervening phase with well-defined pairwise interfaces."
+          ],
+          "equation": "For the macroscopic-layer subcase only, S_X = gamma_PV - gamma_PX - gamma_XV; S_X >= 0 is the proposed complete-wetting condition under this convention."
+        }
+      ],
+      "gaps": [
+        {
+          "id": "G-interface-link",
+          "status": "open / adsorption and phase-topology link missing",
+          "description": "No cavity-resolved molecular identity or boundary signal is measured; no relevant interfacial free energies or evidence of a macroscopic X-rich intervening phase is supplied. The image-to-phase mapping and causal link to cavity persistence remain unknown."
+        }
+      ],
+      "variables_units": {
+        "f": "dimensionless arithmetic mean of segmented per-droplet internal dark-area fractions",
+        "C_phase,i": "RNA concentration of species i in a separately measured tie-line phase, ng/uL",
+        "gamma_PV, gamma_PX, gamma_XV, S_X": "interfacial free energy or spreading coefficient, energy/area; no values supplied",
+        "R_boundary": "proposed calibrated X signal per area at cavity boundary divided by signal per area in immediately adjacent dense phase; dimensionless, not measured",
+        "q_i": "dimensionless segmented cavity area divided by filled droplet area for droplet i"
+      },
+      "equations": [
+        "f(t) = (1/N(t)) sum_i q_i(t), matching the supplied arithmetic mean statistic.",
+        "Macroscopic X-layer complete-wetting subcase: S_X = gamma_PV - gamma_PX - gamma_XV; S_X >= 0 under the stated convention. Do not apply this criterion to ordinary molecular adsorption without an intervening X-rich phase.",
+        "Proposed adsorption discriminator: R_boundary > 1 supports preferential boundary localization if sequence-specific signal and area calibration are valid. It does not alone demonstrate reduced gamma or wetting.",
+        "Persistence prediction requires a longitudinal association between boundary enrichment and subsequent cavity persistence in the same droplet; no such trajectories are available in E03."
+      ],
+      "parameters_ranges": [
+        "No values/ranges supplied for interfacial free energies, X abundance, adsorption, or cavity boundary enrichment.",
+        "f is bounded by 0 and 1 by definition; it is not a proxy concentration or wetting parameter."
+      ],
+      "initial_boundary_conditions": [
+        "A and B have similar small observed f at t=0; latent phase composition and X abundance are unknown.",
+        "No initial phase volumes, cavity concentrations, boundary state, or X-RNA abundance is supplied."
+      ],
+      "observation_mapping": [
+        "Imaging yields q_i and the mean f; it does not identify RNA molecules or concentrations.",
+        "E04 yields endpoint C_phase,i for separately measured coexisting bulk phases; it does not establish that the dilute endpoint corresponds to an image cavity.",
+        "A minimal adsorption test needs independent identification of transcribed X and calibrated sequence-specific signal per area at a cavity boundary versus the neighboring dense phase in the same droplet.",
+        "Testing persistence additionally requires subsequent cavity-state observations for that same droplet."
+      ],
+      "alternatives": [
+        {
+          "id": "bulk-demixing",
+          "description": "Bulk compositional demixing or local production/consumption creates cavities without a necessary selectively adsorbing X species.",
+          "discriminator": "Selective boundary enrichment is not required, although incidental enrichment is possible."
+        },
+        {
+          "id": "carryover-or-reaction-condition",
+          "description": "Amplification-associated carryover or another reaction change alters transcription or phase behavior.",
+          "discriminator": "Could alter f without X-mediated boundary adsorption; no carryover-matched control exists."
+        },
+        {
+          "id": "population-or-measurement",
+          "description": "Population changes, track selection, or segmentation contribute to the aggregate trend.",
+          "discriminator": "The supplied motion data have no cavity-state trajectories and cannot exclude this route."
+        }
+      ],
+      "predictions": [
+        "If the adsorption hypothesis is correct, validated sequence-specific X signal per area should be enriched at P-V boundaries relative to immediately adjacent dense phase in cavity-bearing B droplets; absence under a sensitive assay weakens this hypothesis.",
+        "Bulk demixing does not require this enrichment, though it may coexist with incidental localization; therefore enrichment discriminates localization but is not alone causal proof.",
+        "If boundary enrichment predicts subsequent same-droplet persistence after controlling for adjacent bulk X signal, that supports the proposed persistence link. This is a prospective prediction; available tracking cannot test it.",
+        "The complete-wetting subcase additionally predicts an X-rich intervening layer and S_X >= 0; neither condition can be inferred from the enrichment ratio alone."
+      ],
+      "checks": [
+        "Dimension check: each gamma and S_X is energy/area; the spreading-coefficient subtraction is consistent dimensionally.",
+        "Limit check: S_X = 0 is marginal under the stated convention; the criterion is scoped to a macroscopic third layer, not generic adsorption.",
+        "Measurement check: f is an image area statistic; E04 bulk phase concentration is not cavity concentration; E05 DNA frequency is not RNA abundance.",
+        "Literature check: returned S1 abstract is broad phase-transition context only; returned S2 is irrelevant to this mechanism; the targeted thermodynamics query returned zero sources."
+      ],
+      "evidence_conflicts": [
+        "E02 associates template-length fractions with endpoint f but does not establish a molecular boundary mechanism.",
+        "E04 demonstrates bulk two-phase concentration measurements, not the topology or composition of cavities.",
+        "S1 supports only general associative/segregative phase-transition context and cannot validate internal wetting."
+      ],
+      "untested": [
+        "Whether any candidate non-reference template is transcribed into a specific X RNA species.",
+        "Boundary enrichment, its causal effect on interfacial free energy, and whether an X-rich macroscopic layer exists.",
+        "Within-droplet cavity persistence versus population and segmentation effects.",
+        "Amplification carryover and reaction-condition effects."
+      ],
+      "dissent": [
+        "Executor distinguishes the supported conditional three-interface formula from the speculative RNA application; current evidence and retrieved abstracts do not directly support internal RNA wetting."
+      ],
+      "next_task": "Executor: use the L2 targeted search return to determine whether it supplies a trustworthy generic complete-wetting criterion and phase-topology convention. Report only retrieved support, preserve the distinction between molecular adsorption and a macroscopic intervening phase, and state whether any available evidence changes H-interface-wetting. No further RNA abundance inference or empirical wetting claim.",
+      "version": 1,
+      "author": "leader",
+      "reply": "L2"
+    }
+  },
+  "tasks": {
+    "T-L1-mechanism-bridge": {
+      "id": "T-L1-mechanism-bridge",
+      "candidate_id": "R01-interface-wetting-v1",
+      "gap_id": "G-interface-link",
+      "kind": "mechanism",
+      "status": "rework",
+      "deliverable": "Assess the interface-wetting bridge, its conditional discriminator, and minimum measurement.",
+      "acceptance": "Keep the hypothesis untested; do not infer RNA abundance from DNA reads; state phase/interface convention and units; distinguish support from assumptions.",
+      "evidence_refs": [
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E05",
+        "S-L1-interface-wetting_S1",
+        "S-L1-interface-wetting_S2"
+      ],
+      "reason": "The direct molecular link between template heterogeneity and cavity persistence remains unmeasured."
+    },
+    "T-L2-wetting-criterion-source": {
+      "id": "T-L2-wetting-criterion-source",
+      "candidate_id": "R01-interface-wetting-v2",
+      "gap_id": "G-interface-link",
+      "kind": "mechanism",
+      "status": "acceptance",
+      "deliverable": "Assess the eligible background search return for a generic complete-wetting relation and its phase-topology assumptions; report whether it changes the candidate or only leaves the criterion as conditional physical reasoning.",
+      "acceptance": "No source claim beyond returned text; separate molecular adsorption from macroscopic third-phase wetting; preserve all RNA-system application claims as hypotheses absent direct evidence.",
+      "evidence_refs": [
+        "S-L1-interface-wetting_S1",
+        "S-L1-interface-wetting_S2",
+        "S-R1-wetting-thermodynamics"
+      ],
+      "reason": "The prior broad search did not support wetting directly, and the targeted query returned no hits; a bounded source check may refine the thermodynamic statement without pretending to establish the RNA mechanism."
+    }
+  },
+  "actor_events": [
+    {
+      "label": "L1",
+      "role": "leader",
+      "reply": {
+        "recognition": "I do not recognize a specific study with confidence.",
+        "summary": "Target quantity remains f(t), the arithmetic mean of per-droplet segmented internal dark-area fractions (dimensionless), not concentration or a phase volume fraction; initial evidence has two independent preparations per condition, with fields/objects nested. B rises from 0.01381 at 0 h to 0.08918 at 24 h while A declines from 0.01487 to about 0.0045. Existing evidence supports candidate heterogeneity (reference DNA read fraction 0.9466; listed other reads total 0.0500), endpoint differences among template-length fractions, and coexistence of reference/variant RNA concentrations in dilute and dense phases. It does not map RNA identity or phase composition to cavity interiors/boundaries, nor connect those endpoints causally to B. New explicitly hypothetical bridge: a minority RNA species generated from altered templates preferentially wets an internal RNA-poor/RNA-rich interface, lowering interfacial free energy and stabilizing a cavity after nucleation. For phases P (surrounding dense RNA) and V (cavity), complete wetting by species X requires the spreading coefficient S_X = gamma_PV - (gamma_PX + gamma_XV) >= 0 under the specified three-interface convention; this is an unmeasured condition, not a result. Distinct alternative: bulk demixing or local production/consumption creates a cavity without selective interfacial enrichment; it predicts no X enrichment at the boundary relative to adjacent dense phase. E04 partition ratios and E02 endpoint fractions do not estimate S_X or establish X as the sequenced variants. Task executor to assess whether the proposed interface bridge is scientifically coherent, derive its conditional observable prediction and compare it with bulk-demixing alternatives using only supplied evidence and eligible background. No computation or search has yet been performed.",
+        "candidates": [
+          {
+            "id": "R01-interface-wetting-v1",
+            "target": "Explain formation and persistence of internal cavities and generate a discriminating prediction; do not treat f(t) as a concentration.",
+            "known_relations": [
+              "E01: B mean empty-area fraction increases across 0, 4, 8, 12, 24 h; A falls to a low plateau-like value. There are seven fields per condition but only two independent preparations; field/object summaries do not provide preparation-level uncertainty.",
+              "E02: length-separated template fractions M, M+L, M+S have different single-endpoint cavity fractions (approximately 0.000028, 0.0445, 0.0941 as reported medians); this is association in a distinct endpoint preparation, not a causal mixture series or time course.",
+              "E03: motion summaries differ by condition but are affected by unequal track counts/durations and contain no same-object cavity area or appearance/disappearance labels.",
+              "E04: three measured tie lines contain reference and variant RNA concentrations in dilute/dense phases; measured concentrations do not map to cavities and lack phase volumes, B RNA proportions, or time-resolved yield.",
+              "E05: B has a 0.9466 reference DNA read fraction and listed non-reference reads; DNA frequencies do not determine RNA concentrations or expression proportions."
+            ],
+            "hypotheses": [
+              {
+                "id": "H-interface-wetting",
+                "status": "new hypothesis, untested",
+                "statement": "A minority RNA species X produced from a non-reference template preferentially adsorbs to the internal phase boundary and lowers its effective interfacial free energy. Once a cavity nucleates, this boundary enrichment reduces the energetic cost of maintaining it, so cavity persistence can increase even when the bulk dense phase remains connected.",
+                "assumptions": [
+                  "At least one transcribed non-reference RNA species exists in B; not inferred quantitatively from DNA reads.",
+                  "An internal phase boundary with distinguishable adjacent regions exists.",
+                  "X has a measurable affinity for that boundary and sufficient availability; neither is established."
+                ],
+                "equation": "S_X = gamma_PV - (gamma_PX + gamma_XV); complete wetting is conditionally favored if S_X >= 0. gamma terms are interfacial free energies per area."
+              }
+            ],
+            "gaps": [
+              {
+                "id": "G-interface-link",
+                "status": "open / mechanism bridge missing",
+                "description": "No cavity-resolved RNA identity/composition or boundary enrichment measurement, no relevant interfacial tensions, and no mapping from measured tie-line concentrations to internal image cavities. Thus the wetting condition and its causal relevance are wholly untested."
+              }
+            ],
+            "variables_units": {
+              "f": "dimensionless arithmetic mean of segmented per-droplet empty-area fractions at each time",
+              "C_phase,i": "RNA concentration of species i in phase, ng/uL, measured only at supplied tie-line endpoints",
+              "Gamma_PV,Gamma_PX,Gamma_XV": "interfacial free energies per area, units not supplied",
+              "S_X": "spreading coefficient, interfacial free energy per area",
+              "E_X,boundary/E_X,adjacent": "dimensionless ratio of species-X signal per calibrated area at boundary versus adjacent dense phase; proposed observable, not measured"
+            },
+            "equations": [
+              "f(t) = (1/N(t)) sum_i q_i(t), where q_i is the segmented internal dark area divided by filled droplet area for droplet i; this is the supplied arithmetic mean convention.",
+              "S_X = gamma_PV - gamma_PX - gamma_XV; S_X >= 0 is the conditional complete-wetting criterion under the stated phase/interface convention. No gamma is measured.",
+              "Proposed discriminator: boundary enrichment ratio E_X,boundary/E_X,adjacent > 1 for interfacial adsorption; bulk-demixing alternative does not require this enrichment."
+            ],
+            "parameters_ranges": [
+              "No physical parameter values/ranges available for interfacial energies, X abundance, adsorption, or wetting threshold.",
+              "Observed f values are between 0 and 1 by definition; do not use them as concentrations or fit an interfacial parameter from them."
+            ],
+            "initial_boundary_conditions": [
+              "Observed starting f values are similar in A and B at 0 h; initial similarity alone does not establish identical latent composition or phase state.",
+              "No initial X abundance, cavity concentration, phase volume, or boundary condition is measured."
+            ],
+            "observation_mapping": [
+              "Image segmentation maps each droplet to q_i and then the reported mean f; it provides no molecular identity or concentration calibration.",
+              "Phase endpoint assay maps separately measured tie-line samples to C_phase,i; it is not a time series or cavity-specific assay.",
+              "A decisive wetting test would measure calibrated X signal at cavity boundary and neighboring dense region in the same droplets, with RNA identity established independently."
+            ],
+            "alternatives": [
+              {
+                "id": "bulk-demixing",
+                "description": "Cavity emerges from bulk compositional demixing or a local production/consumption gradient; a special boundary-affine X species is unnecessary.",
+                "discriminator": "Does not predict selective X enrichment at the cavity boundary as a necessary condition; it may still allow incidental enrichment."
+              },
+              {
+                "id": "carryover-or-reaction-condition",
+                "description": "Amplification-associated carryover or another altered reaction condition changes transcription or phase behavior.",
+                "discriminator": "Could change f without the proposed X species being the boundary-active cause; no matched carryover control is supplied."
+              },
+              {
+                "id": "population-or-measurement",
+                "description": "Changing droplet population, track selection, or image thresholding contributes to the aggregate trajectory.",
+                "discriminator": "Current tracking lacks cavity state trajectories and cannot exclude this explanation."
+              }
+            ],
+            "predictions": [
+              "Conditional prediction: if X-mediated wetting stabilizes cavities, boundary-to-adjacent-dense X enrichment should exceed one in cavity-bearing B droplets and should associate with persistence after controlling for local bulk X signal. This is not predicted as necessary by the bulk-demixing alternative.",
+              "A cavity-specific boundary enrichment result would support the bridge but would not by itself prove that X lowers interfacial free energy; direct perturbation or interfacial measurement would still be needed.",
+              "Absence of enrichment with a validated sensitive assay would weaken this specific wetting hypothesis while leaving bulk demixing and carryover explanations viable."
+            ],
+            "checks": [
+              "Units: f and enrichment ratio are dimensionless; each gamma and S has interfacial-energy-per-area units, so the spreading-coefficient subtraction is dimensionally consistent.",
+              "Limit: if gamma_PV = gamma_PX + gamma_XV then S_X = 0, the marginal wetting boundary; if X is absent, the hypothesis reduces to no X-mediated effect.",
+              "Evidence does not identify X, quantify its RNA abundance, establish complete wetting, or close a mass balance.",
+              "No actual computation has been run in this reply."
+            ],
+            "evidence_conflicts": [
+              "E02 supports a relationship between template-length fraction and endpoint f in separate preparations, but it does not establish an interfacial molecular mechanism.",
+              "E04 measures bulk coexisting-phase concentrations, not internal cavity contents; treating the dilute phase as the cavity would be an unsupported measurement equivalence.",
+              "Read frequencies are DNA measurements and cannot be used as RNA concentration fractions."
+            ],
+            "untested": [
+              "Identity and transcription abundance of the putative X species.",
+              "Boundary enrichment and interfacial energies.",
+              "Whether cavity persistence is within-droplet evolution rather than population/segmentation effects.",
+              "Whether amplification carryover or reaction conditions cause the phenotype."
+            ],
+            "dissent": [],
+            "next_task": "Executor: evaluate H-interface-wetting as a concrete bridge between candidate RNA heterogeneity and cavity persistence. Use the provided E01-E05 only plus eligible background if retrieved. Return a short mechanism diagram, check interface/phase definitions and assumptions, derive one conditional observable prediction that separates boundary wetting from bulk demixing, state what current evidence does and does not support, and identify the smallest discriminating measurement. Do not infer RNA composition from DNA read frequencies or call the hypothesis established."
+          }
+        ],
+        "tasks": [
+          {
+            "id": "T-L1-mechanism-bridge",
+            "candidate_id": "R01-interface-wetting-v1",
+            "gap_id": "G-interface-link",
+            "kind": "mechanism",
+            "status": "assigned",
+            "deliverable": "Evaluate whether preferential RNA boundary wetting is a coherent new bridge hypothesis; define phases/interfaces, derive a conditional boundary-enrichment prediction versus bulk demixing, and recommend the smallest discriminating measurement. Clearly separate supplied evidence, background relations, and new assumptions.",
+            "acceptance": "No unmeasured tension, RNA identity, or concentration is presented as fact; no DNA-to-RNA abundance inference; formula and units checked; prediction has a distinct alternative; limits of E02/E04 are explicit.",
+            "evidence_refs": [
+              "E01",
+              "E02",
+              "E03",
+              "E04",
+              "E05"
+            ],
+            "reason": "Prior rounds supplied descriptive kinetics, template-fraction endpoints, motion summaries and bulk tie-line endpoints but left the molecular connection to an internal cavity unobserved. This task targets that missing relation and yields a discriminating measurement rather than another time-only fit."
+          }
+        ],
+        "requests": [
+          {
+            "type": "search",
+            "id": "S-L1-interface-wetting",
+            "candidate_id": "R01-interface-wetting-v1",
+            "gap_id": "G-interface-link",
+            "missing_relation": "Whether RNA coacervate or condensate systems support selective wetting/adsorption of a molecular species at an internal phase boundary, and what observables distinguish interfacial wetting from bulk demixing.",
+            "variables": [
+              "interfacial free energy per area",
+              "boundary versus bulk species enrichment",
+              "RNA condensate phases"
+            ],
+            "conditions": "RNA-rich condensates or coacervates with internal RNA-poor domains; background published on or before 2025-05-12; exclude target identity and later accounts.",
+            "query": "RNA condensate coacervate internal interface wetting preferential adsorption phase boundary interfacial tension",
+            "change_if_found": "Adopt only the directly supported generic relation and its stated conditions; modify the interface definitions or discriminator if the literature indicates different phase topology. If no directly relevant evidence is found, keep wetting as a clearly labeled new hypothesis and report no literature support."
+          }
+        ],
+        "literature_use": [],
+        "adjudication": null,
+        "final": null
+      },
+      "input_sha256": "ee67229ba9e823f52d488aa4de355b1f527911cdf38391be7757fe313093f137",
+      "reply_sha256": "8ef2c48e5d9cc1d08f665de2070431bbe5f2b0a223cb62d4076a6da6163bbe02"
+    },
+    {
+      "label": "R1_ready",
+      "role": "executor",
+      "reply": {
+        "recognition": "uncertain; I do not recognize a specific study with confidence.",
+        "summary": "Mechanism diagram: non-reference template (identity and RNA yield unknown) -> putative RNA species X -> preferential adsorption at the P-V internal boundary -> reduced effective interfacial free-energy cost -> conditional cavity persistence. Here P is the surrounding RNA-rich phase and V the RNA-poor cavity phase; X is a proposed interfacial layer, not a measured third bulk phase. For a macroscopic X layer between P and V, S_X = gamma_PV - gamma_PX - gamma_XV; S_X >= 0 is the complete-wetting criterion under this three-interface convention. Each gamma and S_X has units of energy/area. The relation is conditional physical reasoning, not evidence that wetting occurs here. The measured observable prediction is a calibrated, sequence-specific boundary/adjacent-dense X signal ratio greater than 1 among cavity-bearing droplets, associated with persistence after conditioning on local bulk signal. Bulk demixing does not require selective boundary enrichment, though incidental enrichment is possible. Smallest discriminating measurement: establish the transcribed X identity, then quantify its signal per calibrated area at cavity boundaries versus immediately adjacent dense phase in the same droplets while tracking cavity persistence. E01 reports only a population mean area fraction; E02 associates template fractions with a distinct endpoint; E03 lacks cavity-state trajectories; E04 measures bulk tie-line endpoints without mapping them to cavity interiors; E05 DNA read fractions do not determine RNA abundance. The returned S1 abstract supports only the broad relevance of coupled associative and segregative transitions in multivalent proteins/nucleic acids; it says nothing about internal RNA interfaces, selective wetting, or the proposed enrichment test. S2 is a broad crowding review and offers no direct support for this mechanism.",
+        "candidates": [],
+        "tasks": [
+          {
+            "id": "T-L1-mechanism-bridge",
+            "candidate_id": "R01-interface-wetting-v1",
+            "gap_id": "G-interface-link",
+            "kind": "mechanism",
+            "status": "in_progress",
+            "deliverable": "Assess the interface-wetting bridge, its conditional discriminator, and minimum measurement.",
+            "acceptance": "Keep the hypothesis untested; do not infer RNA abundance from DNA reads; state phase/interface convention and units; distinguish support from assumptions.",
+            "evidence_refs": [
+              "E01",
+              "E02",
+              "E03",
+              "E04",
+              "E05",
+              "S-L1-interface-wetting_S1",
+              "S-L1-interface-wetting_S2"
+            ],
+            "reason": "The direct molecular link between template heterogeneity and cavity persistence remains unmeasured."
+          }
+        ],
+        "requests": [
+          {
+            "type": "search",
+            "id": "S-R1-wetting-thermodynamics",
+            "candidate_id": "R01-interface-wetting-v1",
+            "gap_id": "G-interface-link",
+            "missing_relation": "The thermodynamic criterion for complete wetting of a P-V interface by a third component X, and whether RNA coacervate or biomolecular condensate studies directly measure boundary enrichment as evidence for this mechanism.",
+            "variables": [
+              "gamma_PV, gamma_PX, gamma_XV: interfacial free energies per area",
+              "X boundary and adjacent-phase concentration or calibrated signal",
+              "phase topology and wetting state"
+            ],
+            "conditions": "Background first published on or before 2025-05-12; generic three-phase wetting theory and RNA/coacervate or biomolecular-condensate evidence; exclude target identity and later accounts.",
+            "query": "three phase complete wetting spreading coefficient interfacial tensions RNA coacervate condensate preferential adsorption boundary enrichment",
+            "change_if_found": "Use only directly supported relation, sign convention, and experimental conditions. Correct the formula or phase topology if a relevant source supports a different convention. If only generic wetting theory is found, keep transfer to RNA condensates explicitly hypothetical."
+          }
+        ],
+        "literature_use": [
+          {
+            "source_id": "S-L1-interface-wetting_S1",
+            "action": "modify_as_hypothesis",
+            "relation": "The abstract describes coupled associative and segregative phase transitions in multivalent biomacromolecule solutions, including proteins and nucleic acids. It does not report internal boundary wetting or a cavity mechanism.",
+            "variables_units": "Multivalent proteins/nucleic acids and phase-transition processes; no quantitative variables or units in abstract.",
+            "conditions": "Review abstract only; first published 2023-03-07; historical abstract text not independently archived.",
+            "impact_on_model_or_action": "Supports broad phase-transition context only; does not validate S_X, selective adsorption, or transfer to this system. Keep H-interface-wetting a new, untested hypothesis."
+          },
+          {
+            "source_id": "S-L1-interface-wetting_S2",
+            "action": "reject",
+            "relation": "The abstract concerns molecular crowding broadly and provides no relation about selective wetting at an RNA internal interface.",
+            "variables_units": "No mechanism-specific variables or units in abstract.",
+            "conditions": "Review abstract only; first published 2024-03-11.",
+            "impact_on_model_or_action": "No support for the proposed mechanism or discriminator; do not use it as evidence."
+          }
+        ],
+        "adjudication": null,
+        "final": null
+      },
+      "input_sha256": "99c0271303734f82aa94219c2ea1eb7ce4985f2004e1606dccb58a30a592588c",
+      "reply_sha256": "65ac825e45ed095e5d01585be77059aa7a6adcbdd1c2b6fcf037478104fe3222"
+    },
+    {
+      "label": "L2",
+      "role": "leader",
+      "reply": {
+        "recognition": "I do not recognize a specific study with confidence.",
+        "summary": "The executor completed T-L1-mechanism-bridge. It defined P as the surrounding RNA-rich phase, V as the RNA-poor cavity phase, and X as a proposed species; crucially, X would need to form a macroscopic interposed layer for the three-interface spreading coefficient S_X = gamma_PV - gamma_PX - gamma_XV to be the complete-wetting criterion. All gamma and S terms have units of energy/area. Molecular adsorption and boundary enrichment alone do not establish a separate X-rich phase, complete wetting, or a reduction in interfacial free energy. E01-E05 do not identify transcribed X or measure its cavity-boundary enrichment. The search return S-L1-interface-wetting_S1 only supports broad coupled associative/segregative phase-transition context for multivalent proteins and nucleic acids; it gives no internal RNA boundary-wetting result. S2 is not mechanism-relevant; a second targeted search returned no records. I therefore revise the hypothesis to distinguish adsorption from macroscopic complete wetting and keep both untested. The discriminating observation remains calibrated, sequence-specific boundary enrichment relative to adjacent dense phase, but it supports adsorption only and would not alone prove tension reduction or cavity stabilization. I assign a narrow follow-up to verify the generic three-phase criterion and its phase-topology assumptions from eligible background.",
+        "candidates": [
+          {
+            "id": "R01-interface-wetting-v2",
+            "target": "Explain formation and persistence of internal cavities and generate a discriminating prediction; preserve f(t) as the arithmetic mean of segmented per-droplet area fractions, not concentration or phase volume.",
+            "known_relations": [
+              "E01: B mean empty-area fraction increases across 0, 4, 8, 12, 24 h; A falls to about 0.004-0.005 after 4 h. Seven fields per condition do not replace the two independent preparations; no preparation-level uncertainty is supplied.",
+              "E02: length-separated template fractions M, M+L, M+S have different single-endpoint cavity fractions (reported medians approximately 0.000028, 0.0445, 0.0941); this is not a causal mixture series or time course.",
+              "E03: motion summaries differ, with unequal track counts/durations and no same-object cavity-state trajectories.",
+              "E04: three tie lines measure reference and variant RNA concentrations in dilute and dense phases, but do not map to internal cavity contents or provide phase volumes or time-resolved yield.",
+              "E05: B reference DNA read fraction is 0.9466, with listed non-reference reads; DNA read frequencies do not establish transcript identity or RNA abundance.",
+              "S-L1-interface-wetting_S1 abstract: broad review-level statement that associative and segregative transitions are relevant to multivalent biomolecular condensates, including nucleic acids; no internal-boundary wetting result.",
+              "S-L1-interface-wetting_S2 abstract: broad molecular-crowding review; no mechanism-specific relation."
+            ],
+            "hypotheses": [
+              {
+                "id": "H-interface-wetting",
+                "status": "new, untested, narrowed after executor review",
+                "statement": "A putative minority RNA species X may adsorb preferentially at the internal P-V boundary and alter its interfacial free energy, potentially stabilizing cavities. A stronger and distinct complete-wetting version requires a macroscopic X-rich interposed layer and S_X >= 0. Neither version is established by the supplied data. The adsorption version does not by itself imply a third bulk phase or satisfy the complete-wetting criterion.",
+                "assumptions": [
+                  "A non-reference transcript X is produced; DNA read frequency cannot quantify its RNA abundance.",
+                  "The dark internal region corresponds to a distinct phase boundary P-V rather than an imaging or population artifact.",
+                  "X has boundary affinity and its adsorption changes interfacial free energy; both are unmeasured.",
+                  "For the complete-wetting subcase only, an X-rich layer can be treated as a macroscopic intervening phase with well-defined pairwise interfaces."
+                ],
+                "equation": "For the macroscopic-layer subcase only, S_X = gamma_PV - gamma_PX - gamma_XV; S_X >= 0 is the proposed complete-wetting condition under this convention."
+              }
+            ],
+            "gaps": [
+              {
+                "id": "G-interface-link",
+                "status": "open / adsorption and phase-topology link missing",
+                "description": "No cavity-resolved molecular identity or boundary signal is measured; no relevant interfacial free energies or evidence of a macroscopic X-rich intervening phase is supplied. The image-to-phase mapping and causal link to cavity persistence remain unknown."
+              }
+            ],
+            "variables_units": {
+              "f": "dimensionless arithmetic mean of segmented per-droplet internal dark-area fractions",
+              "C_phase,i": "RNA concentration of species i in a separately measured tie-line phase, ng/uL",
+              "gamma_PV, gamma_PX, gamma_XV, S_X": "interfacial free energy or spreading coefficient, energy/area; no values supplied",
+              "R_boundary": "proposed calibrated X signal per area at cavity boundary divided by signal per area in immediately adjacent dense phase; dimensionless, not measured",
+              "q_i": "dimensionless segmented cavity area divided by filled droplet area for droplet i"
+            },
+            "equations": [
+              "f(t) = (1/N(t)) sum_i q_i(t), matching the supplied arithmetic mean statistic.",
+              "Macroscopic X-layer complete-wetting subcase: S_X = gamma_PV - gamma_PX - gamma_XV; S_X >= 0 under the stated convention. Do not apply this criterion to ordinary molecular adsorption without an intervening X-rich phase.",
+              "Proposed adsorption discriminator: R_boundary > 1 supports preferential boundary localization if sequence-specific signal and area calibration are valid. It does not alone demonstrate reduced gamma or wetting.",
+              "Persistence prediction requires a longitudinal association between boundary enrichment and subsequent cavity persistence in the same droplet; no such trajectories are available in E03."
+            ],
+            "parameters_ranges": [
+              "No values/ranges supplied for interfacial free energies, X abundance, adsorption, or cavity boundary enrichment.",
+              "f is bounded by 0 and 1 by definition; it is not a proxy concentration or wetting parameter."
+            ],
+            "initial_boundary_conditions": [
+              "A and B have similar small observed f at t=0; latent phase composition and X abundance are unknown.",
+              "No initial phase volumes, cavity concentrations, boundary state, or X-RNA abundance is supplied."
+            ],
+            "observation_mapping": [
+              "Imaging yields q_i and the mean f; it does not identify RNA molecules or concentrations.",
+              "E04 yields endpoint C_phase,i for separately measured coexisting bulk phases; it does not establish that the dilute endpoint corresponds to an image cavity.",
+              "A minimal adsorption test needs independent identification of transcribed X and calibrated sequence-specific signal per area at a cavity boundary versus the neighboring dense phase in the same droplet.",
+              "Testing persistence additionally requires subsequent cavity-state observations for that same droplet."
+            ],
+            "alternatives": [
+              {
+                "id": "bulk-demixing",
+                "description": "Bulk compositional demixing or local production/consumption creates cavities without a necessary selectively adsorbing X species.",
+                "discriminator": "Selective boundary enrichment is not required, although incidental enrichment is possible."
+              },
+              {
+                "id": "carryover-or-reaction-condition",
+                "description": "Amplification-associated carryover or another reaction change alters transcription or phase behavior.",
+                "discriminator": "Could alter f without X-mediated boundary adsorption; no carryover-matched control exists."
+              },
+              {
+                "id": "population-or-measurement",
+                "description": "Population changes, track selection, or segmentation contribute to the aggregate trend.",
+                "discriminator": "The supplied motion data have no cavity-state trajectories and cannot exclude this route."
+              }
+            ],
+            "predictions": [
+              "If the adsorption hypothesis is correct, validated sequence-specific X signal per area should be enriched at P-V boundaries relative to immediately adjacent dense phase in cavity-bearing B droplets; absence under a sensitive assay weakens this hypothesis.",
+              "Bulk demixing does not require this enrichment, though it may coexist with incidental localization; therefore enrichment discriminates localization but is not alone causal proof.",
+              "If boundary enrichment predicts subsequent same-droplet persistence after controlling for adjacent bulk X signal, that supports the proposed persistence link. This is a prospective prediction; available tracking cannot test it.",
+              "The complete-wetting subcase additionally predicts an X-rich intervening layer and S_X >= 0; neither condition can be inferred from the enrichment ratio alone."
+            ],
+            "checks": [
+              "Dimension check: each gamma and S_X is energy/area; the spreading-coefficient subtraction is consistent dimensionally.",
+              "Limit check: S_X = 0 is marginal under the stated convention; the criterion is scoped to a macroscopic third layer, not generic adsorption.",
+              "Measurement check: f is an image area statistic; E04 bulk phase concentration is not cavity concentration; E05 DNA frequency is not RNA abundance.",
+              "Literature check: returned S1 abstract is broad phase-transition context only; returned S2 is irrelevant to this mechanism; the targeted thermodynamics query returned zero sources."
+            ],
+            "evidence_conflicts": [
+              "E02 associates template-length fractions with endpoint f but does not establish a molecular boundary mechanism.",
+              "E04 demonstrates bulk two-phase concentration measurements, not the topology or composition of cavities.",
+              "S1 supports only general associative/segregative phase-transition context and cannot validate internal wetting."
+            ],
+            "untested": [
+              "Whether any candidate non-reference template is transcribed into a specific X RNA species.",
+              "Boundary enrichment, its causal effect on interfacial free energy, and whether an X-rich macroscopic layer exists.",
+              "Within-droplet cavity persistence versus population and segmentation effects.",
+              "Amplification carryover and reaction-condition effects."
+            ],
+            "dissent": [
+              "Executor distinguishes the supported conditional three-interface formula from the speculative RNA application; current evidence and retrieved abstracts do not directly support internal RNA wetting."
+            ],
+            "next_task": "Executor: use the L2 targeted search return to determine whether it supplies a trustworthy generic complete-wetting criterion and phase-topology convention. Report only retrieved support, preserve the distinction between molecular adsorption and a macroscopic intervening phase, and state whether any available evidence changes H-interface-wetting. No further RNA abundance inference or empirical wetting claim."
+          }
+        ],
+        "tasks": [
+          {
+            "id": "T-L1-mechanism-bridge",
+            "candidate_id": "R01-interface-wetting-v2",
+            "gap_id": "G-interface-link",
+            "kind": "mechanism",
+            "status": "complete",
+            "deliverable": "Executor defined the P-V interface, candidate X layer, spreading-coefficient condition for a macroscopic layer, calibrated boundary-enrichment discriminator, alternative, and minimum measurement.",
+            "acceptance": "Met: hypothesis remains untested; DNA reads are not treated as RNA abundance; units and phase convention are explicit; supplied evidence and assumptions are distinguished; executor notes enrichment does not prove tension reduction.",
+            "evidence_refs": [
+              "E01",
+              "E02",
+              "E03",
+              "E04",
+              "E05",
+              "S-L1-interface-wetting_S1",
+              "S-L1-interface-wetting_S2",
+              "S-R1-wetting-thermodynamics"
+            ],
+            "reason": "Executor delivered the requested mechanism assessment. The remaining scientific uncertainty is whether the generic wetting relation is properly sourced and whether this mechanism applies to the measured internal cavities."
+          },
+          {
+            "id": "T-L2-wetting-criterion-source",
+            "candidate_id": "R01-interface-wetting-v2",
+            "gap_id": "G-interface-link",
+            "kind": "mechanism",
+            "status": "assigned",
+            "deliverable": "Assess the eligible background search return for a generic complete-wetting relation and its phase-topology assumptions; report whether it changes the candidate or only leaves the criterion as conditional physical reasoning.",
+            "acceptance": "No source claim beyond returned text; separate molecular adsorption from macroscopic third-phase wetting; preserve all RNA-system application claims as hypotheses absent direct evidence.",
+            "evidence_refs": [
+              "S-L1-interface-wetting_S1",
+              "S-L1-interface-wetting_S2",
+              "S-R1-wetting-thermodynamics"
+            ],
+            "reason": "The prior broad search did not support wetting directly, and the targeted query returned no hits; a bounded source check may refine the thermodynamic statement without pretending to establish the RNA mechanism."
+          }
+        ],
+        "requests": [
+          {
+            "type": "search",
+            "id": "S-L2-generic-wetting-criterion",
+            "candidate_id": "R01-interface-wetting-v2",
+            "gap_id": "G-interface-link",
+            "missing_relation": "A source-grounded generic condition for complete wetting of a P-V interface by a macroscopic third phase X, including the meaning and sign convention of its spreading coefficient; this does not concern RNA evidence specifically.",
+            "variables": [
+              "gamma_PV",
+              "gamma_PX",
+              "gamma_XV",
+              "intervening-phase topology",
+              "spreading coefficient"
+            ],
+            "conditions": "Background first published on or before 2025-05-12; generic three-phase wetting thermodynamics; do not search target identity.",
+            "query": "complete wetting spreading coefficient gamma alpha beta third phase interfacial free energies condition",
+            "change_if_found": "Correct or qualify the equation and its topology/sign convention if the returned source supports a different definition; if the source is absent or abstract-only without the relation, retain the criterion only as explicitly conditional physical reasoning and do not treat this as RNA-specific support."
+          }
+        ],
+        "literature_use": [
+          {
+            "source_id": "S-L1-interface-wetting_S1",
+            "action": "modify_as_hypothesis",
+            "relation": "The abstract describes coupled associative and segregative transitions in multivalent biomacromolecule solutions including nucleic acids, with relevance to biomolecular condensates; it does not describe internal interfaces or wetting.",
+            "variables_units": "Qualitative phase-transition concepts; no quantitative variables or units in abstract.",
+            "conditions": "2023 review; abstract only; historical abstract text was not independently archived.",
+            "impact_on_model_or_action": "Retain only broad phase-transition context; no support for boundary adsorption, complete wetting, or cavity stabilization in this RNA case."
+          },
+          {
+            "source_id": "S-L1-interface-wetting_S2",
+            "action": "reject",
+            "relation": "The abstract reviews molecular crowding generally and supplies no interface-wetting relation.",
+            "variables_units": "No mechanism-specific variables or units in abstract.",
+            "conditions": "2024 review; abstract only.",
+            "impact_on_model_or_action": "Do not use as evidence for this candidate."
+          },
+          {
+            "source_id": "S-R1-wetting-thermodynamics",
+            "action": "followup",
+            "relation": "The targeted search for generic wetting thermodynamics and RNA/condensate evidence returned no sources.",
+            "variables_units": "No returned relation or units.",
+            "conditions": "Date-filtered search returned zero records.",
+            "impact_on_model_or_action": "Does not validate the formula or RNA application; use the one remaining search to check a generic criterion, without implying direct RNA evidence."
+          }
+        ],
+        "adjudication": {
+          "task_id": "T-L1-mechanism-bridge",
+          "decision": "complete",
+          "artifact_ids": [
+            "R1_ready",
+            "S-L1-interface-wetting",
+            "S-R1-wetting-thermodynamics"
+          ],
+          "checks": [
+            "Executor supplied the requested phase/interface definitions, conditional equation, units, discriminating observable, and minimum measurement.",
+            "Executor explicitly states boundary enrichment does not prove reduced interfacial free energy.",
+            "No claim of empirical wetting or RNA abundance from DNA reads is made."
+          ],
+          "remaining_gap": "G-interface-link remains open: no molecularly resolved cavity-boundary measurement or system-specific interfacial thermodynamics; the literature search is abstract-limited and not RNA-interface-specific.",
+          "reason": "The assigned assessment deliverable is complete, while the mechanism itself is untested."
+        },
+        "final": null
+      },
+      "protocol_errors": [
+        {
+          "task_id": "T-L1-mechanism-bridge",
+          "error": "Task identity changed; update rejected. Keep stable candidate_id/gap_id/kind or explicitly create a new task with prior linkage."
+        },
+        {
+          "error": "adjudication object received; wrapped as one-element list without modifying scientific content"
+        }
+      ],
+      "input_sha256": "379173dab5fd601a77136dae5ffe8ba09d82fc0250b7c7d6e464db0465d4ae82",
+      "reply_sha256": "e93d4aac791dff4a8953111b074189f7ac526cf8d4f8627aac02060f97c7f664"
+    }
+  ],
+  "tools": [
+    {
+      "id": "S-L1-interface-wetting",
+      "type": "search",
+      "candidate_id": "R01-interface-wetting-v1",
+      "gap_id": "G-interface-link",
+      "request": {
+        "type": "search",
+        "id": "S-L1-interface-wetting",
+        "candidate_id": "R01-interface-wetting-v1",
+        "gap_id": "G-interface-link",
+        "missing_relation": "Whether RNA coacervate or condensate systems support selective wetting/adsorption of a molecular species at an internal phase boundary, and what observables distinguish interfacial wetting from bulk demixing.",
+        "variables": [
+          "interfacial free energy per area",
+          "boundary versus bulk species enrichment",
+          "RNA condensate phases"
+        ],
+        "conditions": "RNA-rich condensates or coacervates with internal RNA-poor domains; background published on or before 2025-05-12; exclude target identity and later accounts.",
+        "query": "RNA condensate coacervate internal interface wetting preferential adsorption phase boundary interfacial tension",
+        "change_if_found": "Adopt only the directly supported generic relation and its stated conditions; modify the interface definitions or discriminator if the literature indicates different phase topology. If no directly relevant evidence is found, keep wetting as a clearly labeled new hypothesis and report no literature support."
+      },
+      "result": {
+        "status": "returned",
+        "sources": [
+          {
+            "id": "S-L1-interface-wetting_S1",
+            "title": "Phase Transitions of Associative Biomacromolecules.",
+            "doi": "10.1021/acs.chemrev.2c00814",
+            "pmid": "36881934",
+            "first_publication_date": "2023-03-07",
+            "retrieval_time": "2026-11-02T06:39:50.710281+00:00",
+            "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+            "original_evidence": "Multivalent proteins and nucleic acids, collectively referred to as multivalent associative biomacromolecules, provide the driving forces for the formation and compositional regulation of biomolecular condensates. Here, we review the key concepts of phase transitions of aqueous solutions of associative biomacromolecules, specifically proteins that include folded domains and intrinsically disordered regions. The phase transitions of these systems come under the rubric of coupled associative and segregative transitions. The concepts underlying these processes are presented, and their relevance to biomolecular condensates is discussed.",
+            "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+            "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+          },
+          {
+            "id": "S-L1-interface-wetting_S2",
+            "title": "Molecular Crowding: The History and Development of a Scientific Paradigm.",
+            "doi": "10.1021/acs.chemrev.3c00615",
+            "pmid": "38466779",
+            "first_publication_date": "2024-03-11",
+            "retrieval_time": "2026-11-02T06:39:50.710354+00:00",
+            "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+            "original_evidence": "It is now generally accepted that macromolecules do not act in isolation but \"live\" in a crowded environment, that is, an environment populated by numerous different molecules. The field of molecular crowding has its origins in the far 80s but became accepted only by the end of the 90s. In the present issue, we discuss various aspects that are influenced by crowding and need to consider its effects. This Review is meant as an introduction to the theme and an analysis of the evolution of the crowding concept through time from colloidal and polymer physics to a more biological perspective. We introduce themes that will be more thoroughly treated in other Reviews of the present issue. In our intentions, each Review may stand by itself, but the complete collection has the aspiration to provide different but complementary perspectives to propose a more holistic view of molecular crowding.",
+            "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+            "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+          }
+        ],
+        "excluded": [
+          {
+            "id": "34245338",
+            "reason": "date/target/no-abstract"
+          }
+        ],
+        "hit_count": 3,
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=RNA+condensate+coacervate+internal+interface+wetting+preferential+adsorption+phase+boundary+interfacial+tension+AND+FIRST_PDATE%3A%5B1900-01-01+TO+2025-05-12%5D&format=json&pageSize=5&resultType=core",
+        "raw_sha256": "9fa6ac55e2896cb01294248d0e6e8b2924d2db6dda8470b07e70bfe6933e3456",
+        "knowledge_limit": "No full-text formulas/units are inferred from the abstract. Refine or request a known historical source if needed."
+      }
+    },
+    {
+      "id": "S-R1-wetting-thermodynamics",
+      "type": "search",
+      "candidate_id": "R01-interface-wetting-v1",
+      "gap_id": "G-interface-link",
+      "request": {
+        "type": "search",
+        "id": "S-R1-wetting-thermodynamics",
+        "candidate_id": "R01-interface-wetting-v1",
+        "gap_id": "G-interface-link",
+        "missing_relation": "The thermodynamic criterion for complete wetting of a P-V interface by a third component X, and whether RNA coacervate or biomolecular condensate studies directly measure boundary enrichment as evidence for this mechanism.",
+        "variables": [
+          "gamma_PV, gamma_PX, gamma_XV: interfacial free energies per area",
+          "X boundary and adjacent-phase concentration or calibrated signal",
+          "phase topology and wetting state"
+        ],
+        "conditions": "Background first published on or before 2025-05-12; generic three-phase wetting theory and RNA/coacervate or biomolecular-condensate evidence; exclude target identity and later accounts.",
+        "query": "three phase complete wetting spreading coefficient interfacial tensions RNA coacervate condensate preferential adsorption boundary enrichment",
+        "change_if_found": "Use only directly supported relation, sign convention, and experimental conditions. Correct the formula or phase topology if a relevant source supports a different convention. If only generic wetting theory is found, keep transfer to RNA condensates explicitly hypothetical."
+      },
+      "result": {
+        "status": "returned",
+        "sources": [],
+        "excluded": [],
+        "hit_count": 0,
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=three+phase+complete+wetting+spreading+coefficient+interfacial+tensions+RNA+coacervate+condensate+preferential+adsorption+boundary+enrichment+AND+FIRST_PDATE%3A%5B1900-01-01+TO+2025-05-12%5D&format=json&pageSize=5&resultType=core",
+        "raw_sha256": "b989ed4a8450fbd1f9c7a0696dbf8b8d175436f7150c5d01a5e7fdc9ee398ed5",
+        "knowledge_limit": "No full-text formulas/units are inferred from the abstract. Refine or request a known historical source if needed."
+      }
+    },
+    {
+      "id": "S-L2-generic-wetting-criterion",
+      "type": "search",
+      "candidate_id": "R01-interface-wetting-v2",
+      "gap_id": "G-interface-link",
+      "request": {
+        "type": "search",
+        "id": "S-L2-generic-wetting-criterion",
+        "candidate_id": "R01-interface-wetting-v2",
+        "gap_id": "G-interface-link",
+        "missing_relation": "A source-grounded generic condition for complete wetting of a P-V interface by a macroscopic third phase X, including the meaning and sign convention of its spreading coefficient; this does not concern RNA evidence specifically.",
+        "variables": [
+          "gamma_PV",
+          "gamma_PX",
+          "gamma_XV",
+          "intervening-phase topology",
+          "spreading coefficient"
+        ],
+        "conditions": "Background first published on or before 2025-05-12; generic three-phase wetting thermodynamics; do not search target identity.",
+        "query": "complete wetting spreading coefficient gamma alpha beta third phase interfacial free energies condition",
+        "change_if_found": "Correct or qualify the equation and its topology/sign convention if the returned source supports a different definition; if the source is absent or abstract-only without the relation, retain the criterion only as explicitly conditional physical reasoning and do not treat this as RNA-specific support."
+      },
+      "result": {
+        "status": "returned",
+        "sources": [],
+        "excluded": [
+          {
+            "id": "34245338",
+            "reason": "date/target/no-abstract"
+          },
+          {
+            "id": "21847795",
+            "reason": "date/target/no-abstract"
+          },
+          {
+            "id": "PMC1913985",
+            "reason": "date/target/no-abstract"
+          },
+          {
+            "id": "PMC1914006",
+            "reason": "date/target/no-abstract"
+          },
+          {
+            "id": "PMC1913989",
+            "reason": "date/target/no-abstract"
+          }
+        ],
+        "hit_count": 5,
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=complete+wetting+spreading+coefficient+gamma+alpha+beta+third+phase+interfacial+free+energies+condition+AND+FIRST_PDATE%3A%5B1900-01-01+TO+2025-05-12%5D&format=json&pageSize=5&resultType=core",
+        "raw_sha256": "f3eb0bb2cc67cf0e58a625e2f314427da6cf7b9dce72e4a98ed1a2c74be7feaf",
+        "knowledge_limit": "No full-text formulas/units are inferred from the abstract. Refine or request a known historical source if needed."
+      }
+    }
+  ],
+  "literature_use": [
+    {
+      "source_id": "S-L1-interface-wetting_S1",
+      "action": "modify_as_hypothesis",
+      "relation": "The abstract describes coupled associative and segregative phase transitions in multivalent biomacromolecule solutions, including proteins and nucleic acids. It does not report internal boundary wetting or a cavity mechanism.",
+      "variables_units": "Multivalent proteins/nucleic acids and phase-transition processes; no quantitative variables or units in abstract.",
+      "conditions": "Review abstract only; first published 2023-03-07; historical abstract text not independently archived.",
+      "impact_on_model_or_action": "Supports broad phase-transition context only; does not validate S_X, selective adsorption, or transfer to this system. Keep H-interface-wetting a new, untested hypothesis."
+    },
+    {
+      "source_id": "S-L1-interface-wetting_S2",
+      "action": "reject",
+      "relation": "The abstract concerns molecular crowding broadly and provides no relation about selective wetting at an RNA internal interface.",
+      "variables_units": "No mechanism-specific variables or units in abstract.",
+      "conditions": "Review abstract only; first published 2024-03-11.",
+      "impact_on_model_or_action": "No support for the proposed mechanism or discriminator; do not use it as evidence."
+    },
+    {
+      "source_id": "S-L1-interface-wetting_S1",
+      "action": "modify_as_hypothesis",
+      "relation": "The abstract describes coupled associative and segregative transitions in multivalent biomacromolecule solutions including nucleic acids, with relevance to biomolecular condensates; it does not describe internal interfaces or wetting.",
+      "variables_units": "Qualitative phase-transition concepts; no quantitative variables or units in abstract.",
+      "conditions": "2023 review; abstract only; historical abstract text was not independently archived.",
+      "impact_on_model_or_action": "Retain only broad phase-transition context; no support for boundary adsorption, complete wetting, or cavity stabilization in this RNA case."
+    },
+    {
+      "source_id": "S-L1-interface-wetting_S2",
+      "action": "reject",
+      "relation": "The abstract reviews molecular crowding generally and supplies no interface-wetting relation.",
+      "variables_units": "No mechanism-specific variables or units in abstract.",
+      "conditions": "2024 review; abstract only.",
+      "impact_on_model_or_action": "Do not use as evidence for this candidate."
+    },
+    {
+      "source_id": "S-R1-wetting-thermodynamics",
+      "action": "followup",
+      "relation": "The targeted search for generic wetting thermodynamics and RNA/condensate evidence returned no sources.",
+      "variables_units": "No returned relation or units.",
+      "conditions": "Date-filtered search returned zero records.",
+      "impact_on_model_or_action": "Does not validate the formula or RNA application; use the one remaining search to check a generic criterion, without implying direct RNA evidence."
+    }
+  ],
+  "adjudications": [
+    {
+      "task_id": "T-L1-mechanism-bridge",
+      "decision": "complete",
+      "artifact_ids": [
+        "R1_ready",
+        "S-L1-interface-wetting",
+        "S-R1-wetting-thermodynamics"
+      ],
+      "checks": [
+        "Executor supplied the requested phase/interface definitions, conditional equation, units, discriminating observable, and minimum measurement.",
+        "Executor explicitly states boundary enrichment does not prove reduced interfacial free energy.",
+        "No claim of empirical wetting or RNA abundance from DNA reads is made."
+      ],
+      "remaining_gap": "G-interface-link remains open: no molecularly resolved cavity-boundary measurement or system-specific interfacial thermodynamics; the literature search is abstract-limited and not RNA-interface-specific.",
+      "reason": "The assigned assessment deliverable is complete, while the mechanism itself is untested.",
+      "formal_gate": false,
+      "formal_gate_reason": "task/artifact/leader missing",
+      "reply": "L2"
+    }
+  ],
+  "opened": [
+    "case_brief.md",
+    "initial_measurements.json",
+    "sequence_measurements.json",
+    "fraction_dev.json",
+    "phase_measurements.json",
+    "mobility_dev.json"
+  ],
+  "counters": {
+    "replies": 3,
+    "search": 3,
+    "compute": 0,
+    "evidence": 0
+  },
+  "finals": [],
+  "reason": "external search return S-L2-generic-wetting-criterion"
+}

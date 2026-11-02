@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430500095694362,
+  "http_status": 200,
+  "body": {
+    "id": "resp_035d81011c0ddd97016ae593e032b08195b683ac57f93c4a35",
+    "object": "chat.completion",
+    "created": 1793430500,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest trajectory-level CV error by far (0.00139), while the current state model performs poorly and has strongly correlated residuals. Alternating inputs challenge clock versus history-based fits.\",\"prediction\":\"At matching elapsed times, the alternating-input response will retain a repeatable component not explained by current input or accumulated history.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Elapsed-time features predict well, but the observations do not establish an independent external driver.\",\"condition_to_check\":\"Compare repeatable responses at matched elapsed times across distinct input histories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2789,
+      "completion_tokens": 401,
+      "total_tokens": 3190,
+      "completion_tokens_details": {
+        "reasoning_tokens": 268
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.95667111966759
+}

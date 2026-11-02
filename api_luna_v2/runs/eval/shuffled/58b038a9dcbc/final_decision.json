@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793432317775184125,
+  "decision": {
+    "representation": "clock",
+    "experiment": "slow_wave",
+    "reason": "Clock has the lowest leave-trajectory-out NMSE by a wide margin and has forecast alternating, PRBS, and double-pulse trajectories accurately. Residual lag correlation remains, but alternatives validate substantially worse.",
+    "prediction": "Across unseen input sequences, oscillations should remain aligned with elapsed time rather than shift with input history.",
+    "accept": true,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "A shared elapsed-time driver is a predictive explanation for the strong clock-feature fit, not proof of an independent mechanism.",
+      "condition_to_check": "At matched elapsed times across different input histories, oscillations should remain aligned; shifts with pulse timing would contradict this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"slow_wave\",\"reason\":\"Clock has the lowest leave-trajectory-out NMSE by a wide margin and has forecast alternating, PRBS, and double-pulse trajectories accurately. Residual lag correlation remains, but alternatives validate substantially worse.\",\"prediction\":\"Across unseen input sequences, oscillations should remain aligned with elapsed time rather than shift with input history.\",\"accept\":true,\"mapping\":{\"source_id\":\"saturation\",\"target_relation\":\"A shared elapsed-time driver is a predictive explanation for the strong clock-feature fit, not proof of an independent mechanism.\",\"condition_to_check\":\"At matched elapsed times across different input histories, oscillations should remain aligned; shifts with pulse timing would contradict this relation.\"}}",
+    "input_tokens": 3657,
+    "output_tokens": 146,
+    "batch_elapsed_seconds": 2.4312075674533844,
+    "amortized_seconds": 2.4312075674533844,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3657,
+      "completion_tokens": 146,
+      "total_tokens": 3803
+    },
+    "api_response_id": "resp_04a673f47489cc30016ae59afc1d088193bf57ccdc8a57ad89",
+    "wire_record": "wire/eval/0548_769c02da6ff745c8b9a6249a0e6b9ac4"
+  }
+}

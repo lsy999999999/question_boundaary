@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430478322495939,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Memory_slow has the lowest leave-trajectory-out error (0.00195), far below the current state model (0.03378); persistent post-pulse responses also support history dependence.",
+    "prediction": "After matching current input and output, differing prior PRBS sequences will produce different subsequent outputs.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Accumulated past influence may persist after the input returns to zero.",
+      "condition_to_check": "Test whether history predicts output after controlling current input and visible state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the lowest leave-trajectory-out error (0.00195), far below the current state model (0.03378); persistent post-pulse responses also support history dependence.\",\"prediction\":\"After matching current input and output, differing prior PRBS sequences will produce different subsequent outputs.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Accumulated past influence may persist after the input returns to zero.\",\"condition_to_check\":\"Test whether history predicts output after controlling current input and visible state.\"}}",
+    "input_tokens": 2804,
+    "output_tokens": 301,
+    "batch_elapsed_seconds": 4.91520631685853,
+    "amortized_seconds": 4.91520631685853,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2804,
+      "completion_tokens": 301,
+      "total_tokens": 3105,
+      "completion_tokens_details": {
+        "reasoning_tokens": 176
+      }
+    },
+    "api_response_id": "resp_0fcf3970fc2b03c0016ae593ca6b14819583322e06e03daf45",
+    "wire_record": "wire/eval/0405_6934e21082f2493789de38e6d408356f"
+  }
+}

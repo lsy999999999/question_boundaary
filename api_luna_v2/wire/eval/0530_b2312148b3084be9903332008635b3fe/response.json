@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793432284934575328,
+  "http_status": 200,
+  "body": {
+    "id": "resp_050c9f75d3360ce2016ae59adab550819785304679137ad173",
+    "object": "chat.completion",
+    "created": 1793432284,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"slow_wave\",\"reason\":\"Slow memory has the best trajectory-held-out NMSE (0.00288), well below alternatives. PRBS and alternating forecasts improved on testing, but residual lag correlation means adequacy for unseen interventions is not established.\",\"prediction\":\"After input returns to zero, output will retain a decaying influence of prior input, with slow-history features predicting it better than instantaneous state alone.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history predicts persistent influence after the input changes.\",\"condition_to_check\":\"Falsified if prior input history adds no predictive value after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3656,
+      "completion_tokens": 144,
+      "total_tokens": 3800
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.4487309362739325
+}

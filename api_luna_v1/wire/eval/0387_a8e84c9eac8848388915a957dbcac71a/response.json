@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430445499307843,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0837487e07728d0c016ae593aa4bbc81948ec466bc50336ab1",
+    "object": "chat.completion",
+    "created": 1793430445,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest trajectory-level CV NMSE (0.0013), far below memory-only models. Similar late oscillations across interventions are consistent with elapsed-time forcing, but competing clock and history models remain plausible.\",\"prediction\":\"After input switches stop, oscillations should continue with phase aligned to elapsed time across different interventions.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A shared elapsed-time driver could explain persistent oscillations across interventions.\",\"condition_to_check\":\"Compare zero-input oscillations across interventions; aligned phase supports a clock, while input-dependent decay weakens it.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2809,
+      "completion_tokens": 297,
+      "total_tokens": 3106,
+      "completion_tokens_details": {
+        "reasoning_tokens": 160
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.179858146235347
+}

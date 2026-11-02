@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423843311779291,
+  "decision": {
+    "representation": "clock",
+    "experiment": "positive_pulse",
+    "reason": "Clock terms show low NMSE and high prediction variance for positive pulse.",
+    "prediction": "Positive pulse will phase shift according to clock frequency.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Persistent residuals align with elapsed time, suggesting an external clock.",
+      "condition_to_check": "Residuals should change sign for opposite input polarity."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"clock\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Clock terms show low NMSE and high prediction variance for positive pulse.\",\n  \"prediction\": \"Positive pulse will phase shift according to clock frequency.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"external_clock\",\n    \"target_relation\": \"Persistent residuals align with elapsed time, suggesting an external clock.\",\n    \"condition_to_check\": \"Residuals should change sign for opposite input polarity.\"\n  }\n}",
+    "input_tokens": 3157,
+    "output_tokens": 110,
+    "batch_elapsed_seconds": 2.5190408043563366,
+    "amortized_seconds": 2.5190408043563366,
+    "peak_gpu_allocated_gb": 14.834887027740479,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

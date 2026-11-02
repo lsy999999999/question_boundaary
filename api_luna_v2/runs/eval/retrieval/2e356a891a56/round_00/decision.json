@@ -1,0 +1,38 @@
+{
+  "time_ns": 1793431529633165932,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Slow accumulated-history features have the best trajectory-level validation (CV NMSE 0.0019), far below the current state model; PRBS has the greatest disagreement among plausible alternatives.",
+    "prediction": "After input switches, output will retain a history-dependent tail that decays over seconds, rather than responding only to current input and state.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow accumulated-history features have the best trajectory-level validation (CV NMSE 0.0019), far below the current state model; PRBS has the greatest disagreement among plausible alternatives.\",\"prediction\":\"After input switches, output will retain a history-dependent tail that decays over seconds, rather than responding only to current input and state.\",\"accept\":false}",
+    "input_tokens": 2568,
+    "output_tokens": 206,
+    "batch_elapsed_seconds": 3.776593679562211,
+    "amortized_seconds": 3.776593679562211,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2568,
+      "completion_tokens": 206,
+      "total_tokens": 2774,
+      "prompt_tokens_details": {
+        "cached_tokens": 2432
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 116
+      }
+    },
+    "api_response_id": "resp_04e25bce2925d928016ae597e715e88195ae5c53c85afa5983",
+    "wire_record": "wire/eval/0142_03ed9a7b83f649f7b1c6dd7d6e715904"
+  }
+}

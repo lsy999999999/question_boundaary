@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793430326414393450,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "ramp_reverse",
+    "reason": "Memory_slow has the lowest trajectory-held-out error, substantially outperforming other candidates; the observed recovery and irregular-input trajectories support persistent history dependence. No available evidence justifies added clock or nonlinear features.",
+    "prediction": "After input reversal, output will retain a history-dependent response and relax gradually rather than changing immediately with the current input.",
+    "accept": true,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"ramp_reverse\",\"reason\":\"Memory_slow has the lowest trajectory-held-out error, substantially outperforming other candidates; the observed recovery and irregular-input trajectories support persistent history dependence. No available evidence justifies added clock or nonlinear features.\",\"prediction\":\"After input reversal, output will retain a history-dependent response and relax gradually rather than changing immediately with the current input.\",\"accept\":true}",
+    "input_tokens": 3294,
+    "output_tokens": 88,
+    "batch_elapsed_seconds": 2.5724446466192603,
+    "amortized_seconds": 2.5724446466192603,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3294,
+      "completion_tokens": 88,
+      "total_tokens": 3382
+    },
+    "api_response_id": "resp_0af4d2af64e62656016ae593349ab08196babd2a466b69579a",
+    "wire_record": "wire/eval/0330_796ef5d36d964d70b836f7cd16474ad2"
+  }
+}

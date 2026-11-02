@@ -1,0 +1,969 @@
+
+
+ Stereotypic beliefs dominate reversal learning | Scientific Reports
+
+ Skip to main content
+
+Thank you for visiting nature.com. You are using a browser version with limited support for CSS. To obtain
+ the best experience, we recommend you use a more up to date browser (or turn off compatibility mode in
+ Internet Explorer). In the meantime, to ensure continued support, we are displaying the site without styles
+ and JavaScript.
+
+Advertisement
+
+ View all journals
+
+ Saved research
+
+ Search
+
+ Account
+
+ Log in
+
+ Content
+ Explore content
+
+ About the journal
+
+ Publish with us
+
+ Sign up for alerts
+
+ RSS feed
+
+nature
+
+scientific reports
+
+articles
+
+ article
+
+ Stereotypic beliefs dominate reversal learning
+
+ Download PDF
+
+ Download PDF
+
+Article
+
+ Open access
+
+Published: 07 August 2026
+
+Stereotypic beliefs dominate reversal learning
+
+McLean G. Morgan1, 
+
+Marius Golubickis2, 
+
+Parnian Jalalian3, 
+
+Yadvi Sharma3, 
+
+Esther S. Selvaraj3, 
+
+Nicholas O. Rule1 & 
+
+…
+
+C. Neil Macrae3 
+Show authors
+
+ Scientific Reports
+ volume 16, Article number: 24478 (2026) Cite this article
+
+ Save article
+
+ View saved research
+
+1038 Accesses
+
+2 Altmetric
+
+Metrics details
+
+Abstract
+
+Counterstereotypic knowledge acquisition may undermine discriminatory thinking. However, researchers do not yet know how readily people procure stereotype-related information (i.e., stereotypic vs. counterstereotypic). Accordingly, we employed a probabilistic reversal-learning task in combination with computational modeling to explore the dynamics of person learning when targets exhibited both stereotypic and counterstereotypic behavior (i.e., food choices; women prefer salads, men favor burgers). We expected that stereotypic (vs. counterstereotypic) outcomes would dominate reversal learning, reflecting the potency of stereotype-based presumptions. Behavioral and computational analyses corroborated this prediction. First, participants learned stereotypic outcomes faster and more accurately than counterstereotypic outcomes. Second, participants were more likely to repeat stereotypic than counterstereotypic responses following positive reinforcement. Third, model estimates revealed that participants adjusted their choices following contingency reversals more slowly when newly reinforced outcomes were counterstereotypic rather than stereotypic. Collectively, these findings underscore the power of stereotypes and speak to the challenges of belief updating in daily life.
+
+Similar content being viewed by others
+
+ Shared sensitivity to data distribution during learning in humans and transformer networks
+
+ Article
+ Open access
+ 23 December 2025
+
+ Contribution of amygdala to dynamic model arbitration under uncertainty
+
+ Article
+ Open access
+ 28 November 2025
+
+ Human learning of probability distributions is biased toward moderate structural complexity
+
+ Article
+ Open access
+ 08 August 2026
+
+Explore related subjects
+
+ Discover the latest articles and news in related subjects.
+
+ Human behaviour
+
+ Psychology
+
+Gender inequities pervade aspects of daily life despite longstanding awareness of the costs of gender stereotyping1,2. From circumscribed educational and sporting ambitions to unfair practices and outcomes in the workplace, stereotyped beliefs about the sexes continue to impede gender equality. Indeed, the World Economic Forum reports a global gender gap in income parity of 32.5%, with this disparity reducing at the rate of only 0.1% per year3. The underrepresentation of women in STEM (Science, Technology, Engineering, and Mathematics) fields and professions evidences this gender imparity in operation. Women comprise only 21% of the students studying engineering, technology, and computing disciplines in universities4. The problem therefore could not be more obvious. Gender-typed beliefs perpetuate a societal landscape that diminishes opportunity while simultaneously fostering discrimination, intolerance, and inequality1,2.
+
+Efforts addressing the damages of the gender gap center on developing and implementing interventions with the promise of eliminating or reducing this disparity5,6,7,8. Attempts to overcome gender stereotypes typically intervene in the direct experiences and media portrayals through which people acquire these beliefs1,2. Operationally, these interventions have adopted a common approach. Researchers expose participants to counterstereotypes (i.e., role models; ambitious women, nurturing men) utilizing cartoons, job advertisements, and infomercials in the hope that their gender-typed beliefs will be undermined via relearning7,8. The efficacy of these interventions has been mixed at best. Although some evidence suggests that counterstereotypes can weaken gender-related attitudes9,10,11, these effects tend to be short-lived, with role-aspirants failing to internalize the desirable characteristics of the role models.
+
+The assumption that people are receptive to the acquisition (i.e., learning) of counterstereotypic knowledge drives attempts to mitigate stereotyping7,8. Whether this is the case, however, remains uncertain because this issue has attracted only limited empirical attention. The few studies that have been undertaken affirm the impact of stereotype-incongruency (vs. stereotype-congruency). For example, person-related knowledge is acquired more readily when it violates rather than confirms established gender-typed beliefs in the context of associative learning12,13, a finding that fits with predictive accounts of social cognition14,15,16. When sensory experiences and prior expectations (i.e., predictions) mismatch, extant stereotype-related beliefs potentially require updating, an activity that is supported by the enhanced processing of expectancy-discrepant material.
+
+Experiments employing probabilistic selection tasks suggest that stereotype-incongruency enhances learning12,13. Falbén et al. investigated the ease of gender-typed information acquisition, presenting participants with pairs of faces consisting of a female and male target. Their task was to learn which person in each pair was most likely to enjoy ballet or boxing over numerus choice selections. Thus, on a trial-by-trial basis, the selected target comprised either a stereotype (i.e., female + ballet, male + boxing) or counterstereotype (i.e., female + boxing, male + ballet). Feedback on each trial indicated whether the selection was correct or incorrect but, critically, this information was probabilistic (i.e., the correct option was not always rewarded, and the incorrect option was not always punished)17,18. Structured in this way, stereotype-based associative learning was examined under conditions of uncertainty12,13.
+
+Falbén et al. confirmed the epistemic power of prediction errors by applying computational modeling (i.e., Reinforcement Learning Drift Diffusion Model [RL-DDM] analysis) to establish how gender stereotypes influence learning14,15. Specifically, participants learned counterstereotypic pairs (e.g., women who enjoy boxing) faster than expected ones (e.g., men who enjoy boxing)12,13. Although this finding has encouraging implications for stereotype-reducing interventions7,8, the status of the reported learning effect warrants additional consideration. Probabilistic selection tasks are limited in that they overlook the nuanced and dynamic nature of stereotype learning, instead probing knowledge acquisition in which targets are characterized by fixed stereotype-related qualities (e.g., an individual enjoys ballet or boxing, but not both)12,13. As such, it remains unclear how learning would unfold when individuals display a combination of stereotypic and counterstereotypic characteristics, a commonplace occurrence in everyday life15,19,20,21.
+
+Gender stereotypes are probabilistic beliefs about the sexes that imply that women (or men) are more likely to display certain attributes than others, not that they exclusively possess these qualities23,24. For example, a woman may appear nurturing (i.e., high-probability stereotypic characteristic) on some occasions, but ambitious (i.e., low-probability counterstereotypic characteristic) on others. Similarly, a man may order a beer (i.e., high-probability stereotypic outcome) in some social settings, but a mocktail (i.e., low-probability counterstereotypic outcome) in other contexts. It is therefore theoretically and practically important to understand how associative learning progresses when targets exhibit both expected (i.e., stereotypic) and unexpected (i.e., counterstereotypic) behavior7,8, as is routinely the case during interpersonal exchanges. Under such conditions, contrasting previous research12,13, we suspect that the presence of confirmatory stereotype-related material may offset the effects of person-related incongruency24, such that stereotypic (vs. counterstereotypic) outcomes dominate learning.
+
+Current research
+
+To function effectively in a complex world, people require the flexibility to adjust their behavior in the face of changing environmental circumstances (e.g., stimulus-response reward contingencies). Experimental research has explored such cognitive dexterity using reversal-learning tasks25. In these tasks, individuals are trained to discriminate between two stimuli (e.g., shapes, fractals), one of which is rewarded when selected, the other of which is not (i.e., selection is accompanied by punishment). Crucially, once learning is established (i.e., reached a specified criterion), the outcomes linked with the stimuli (i.e., reward & punishment) are reversed without warning and participants must acquire the new association. As such, a reward-learning process that integrates prior expectancies with positive (and negative) experiences underpins reversal-learning processes to guide performance. Methodologically, the association between stimuli and outcomes can be deterministic or probabilistic, and multiple reversals are commonplace during a testing session. Learning tasks of this kind are informative because they assess people’s ability to override previously acquired responses, an essential ability in a challenging social world19,20.
+
+The current research explores how gender stereotypes influence the procurement of person-related knowledge using a probabilistic reversal-learning task and computational modeling. Extending previous work focusing on targets characterized by either stereotypic or counterstereotypic information12,13, here we investigated associative learning among individuals displaying both expected and unexpected behavior pertaining to an interesting expression of gender-typed beliefs: culinary preferences. Gender stereotypes maintain that women and men have distinct gastronomic predilections reflecting overgeneralized assumptions about eating habits. For instance, whereas women stereotypically prefer vegetables, whole grains, and generally healthier options, men stereotypically favor red meat, pizza, and calorie-laden items26,27. Thus, at the level of probabilistic beliefs, gender stereotypes advance the prediction that, when dining, women should be more likely (but not exclusively) to order quinoa (i.e., expected choice) than steak (i.e., unexpected choice), with the opposite selection preferred by men. Foods therefore serve as an ideal stimulus through which stereotypic and counterstereotypic choices can pair with genders during a probabilistic reversal-learning task: Sometimes a person may select the expected (high-probability) option, or the unexpected (low-probability) alternative.
+
+In the current task, participants learned which of two foodstuffs—a stereotypic and a counterstereotypic option—a woman and a man ordered over the course of multiple trials (i.e., choice selections). Participants received probabilistic feedback after each choice selection, indicating whether the response was correct or incorrect. Crucially, without notification, stimulus-reward contingencies reversed during the task such that the previously nonreinforced (i.e., infrequently rewarded) target-food pairing became reinforced (i.e., frequently rewarded)25. Specifically, the target would switch from ordering a stereotypic to a counterstereotypic item (or vice versa); e.g., a man with an apparent fondness for heavy meat dishes would abruptly begin selecting a string of salads. In this way, we established the characteristics of stereotype-based learning via numerous reversals. Reversal-learning tasks are useful because they probe people’s sensitivity to positive and negative feedback, given the overarching objective of selecting favorable actions28. Specifically, learning tendencies that emerge during the task indicate how frequently people repeat choice selections following positive feedback (i.e., win-stay) or switch selections after negative feedback (i.e., lose-shift), thereby yielding insights into the flexibility of learning25.
+
+Given their pivotal role in the generation of person-related predictions15,21, we expected gender stereotypes to affect reversal learning in a particular way. Capturing the stability of stereotype-based beliefs19,20, we expected participants to acquire stereotype-consistent (vs. stereotype-inconsistent) information rapidly and accurately, and to persist with stereotypic compared to counterstereotypic choice selections following positive feedback (i.e., win-stay), but switch from counterstereotypic to stereotypic selections after negative feedback (i.e., lose-shift). In other words, we expected stereotype-consistent beliefs to dominate reversal learning29.
+
+We undertook an additional computational analysis to explore the mechanisms underpinning associative learning12,13. This analytic approach provides a fine-grained examination of belief updating over time by disentangling the specific learning processes that sustain or reduce stereotype-based responding. Specifically, we estimated parameters that capture the speed of participants’ learning from positive and negative feedback, their reluctance (or otherwise) to alter a response following a switch in the reinforced target-food pairing (i.e., decisional inertia), and the consistency with which they chose the higher (vs. lower) reward-related option30,31. Prior to the probabilistic learning task, we conducted a preliminary study to identify gender-typed foods for inclusion in the experiment. We report all measures, manipulations, and exclusions in the studies reported below.
+
+Study 1: identifying gender-typed foods
+
+Powerful associations exist between gender and food26,27. We first used media depictions and estimates of culinary preferences to identify gender-typed foodstuffs for use as stimuli in the probabilistic reversal-learning task.
+
+Method
+
+Materials
+
+ We obtained the first 50 publicly available images of foods using standardized search terms (i.e., “women eating” & “men eating”) on Google Images. Of the 50 pictures in each set, 38 images portrayed women eating stereotypically feminine foods and 30 images depicted men consuming stereotypically masculine foods27. We selected the most frequently pictured item in each set (i.e., salad and burger, respectively; see Fig. 1) to be rated for gender-associated preferences.
+
+Fig. 1
+
+Full size image
+
+Gender-typed foods (salad = female, burger = male).
+
+Participants
+
+ We recruited 65 participants using Prolific Academic (http://www.prolific.co), excluding one (female) for failing to complete the task (final N = 64; 24 female, 40 male; Mage = 40.66 years, SD = 13.71). This sample size afforded 80% power to detect an effect size of d = 0.35 or greater in a paired samples t-test with a 5% false-positive rate. Participants received compensation at the rate of £9 (∼$11) per hour. Participants provided informed consent before the experiment began and the protocol was reviewed and approved by the Social Sciences, Humanities and Education Research Ethics Board at the University of Toronto.
+
+Procedure
+
+ After providing informed consent, participants viewed either the picture of the burger or the picture of the salad, then viewed the other item (salad or burger); trial order was random. Participants were randomly assigned to estimate how many men or women ordered each of the items in response to the question, “One hundred people ordered this dish at a restaurant, how many were women (men)?” in both trials.
+
+Results
+
+We subtracted participants’ estimates of how many women ordered each food item from 100 to create uniform ordered-by-men scores for every participant. We then submitted the scores for burgers and salads to a paired samples t-test. Results showed that participants expected more men to order a burger (M = 66.92, SD = 14.66) than a salad (M = 27.05, SD = 17.32), t(63) = 11.50, p < .001, d = 2.48,Footnote 1 confirming the gender-typed status of the foodstuffs and, thus, their suitability for inclusion in the probabilistic reversal-learning task.
+
+Study 2: stereotypes and probabilistic reversal learning
+
+Method
+
+Participants and design
+
+ We recruited 64 participants from Prolific Academic (38 female, 26 male; Mage = 24.08 years, SD = 2.45) with normal or corrected-to-normal visual acuity, excluding four (female) participants who demonstrated no learning during the task (final N = 60). Each participant received compensation at the rate of £9 (∼$11) per hour. Participants provided informed consent before the experiment began and the protocol was reviewed and approved by the Ethics Committee at the School of Psychology, University of Aberdeen. All methods were performed in accordance with the relevant guidelines and regulations. The experiment had a single factor (Reinforced Target: stereotypical or counterstereotypical) repeated-measures design. Based on previous research on stereotype-related learning12,13, an a priori power calculation for an effect of Reinforced Target indicated that 60 participants afforded 80% power to detect a medium-to-large effect size (dz = 0.60; PANGEA v0.2).
+
+Stimulus materials and procedure
+
+ Participants completed a modified Probabilistic Reversal-learning Task32 using Inquisit Web. Participants viewed two faces on each trial (1 female, 1 male) paired with either a stereotypically feminine (i.e., salad) or stereotypically masculine (i.e., burger) foodstuff (see Fig. 2). Over numerous trials with accompanying feedback, we assessed the flexibility with which participants learned person-food associations. Prior to beginning, we informed participants that, on each trial, they would see an image of a meal alongside two individuals, and that their task was to decide which person was most likely to have ordered the item (e.g., Who ordered the salad? ). Probabilistic feedback was provided following each response. When the correct (i.e., rewarded) face was selected, a smiley face appeared and a point (+ 1) was gained. In contrast, an incorrect (i.e., punished) selection was accompanied by a sad face and the loss of a point (-1). Specifically, the probabilistically reinforced target delivered a reward (i.e., smiley face) on 80% of trials and a punishment (i.e., sad face) on the remaining 20%. Participants were told that performance would be judged on the basis of the total number of points accumulated during the task. Although they were informed the feedback would be probabilistic, they were not told the exact probabilities or that those probabilities would reverse. This point-based system served as an incentive for participants to maintain vigilant attention throughout the task and allowed them to adapt their decision-making strategies in response to the shifting contingencies.
+
+Fig. 2
+
+Full size image
+
+Examples of experimental trials (left panel = correct response; right panel = incorrect response). Face stimuli were obtained from the Chicago Face Database and are reproduced here with permission, in accordance with the database’s usage guidelines.
+
+Participants selected faces by pressing the appropriate button on the keyboard (“E” for the face on the left side of the screen, “I” for the face on the right). The same faces appeared throughout the task, and feedback following each selection came via an arrow and schematic face (i.e., a green “smiley” face for correct [reward] and a red “sad” face for incorrect [loss]). Crucially, we assigned an 80% probability of reward and a 20% probability of loss to one of the faces (e.g., female) — probabilities that flipped (i.e., 80% probability of loss and 20% probability of reward) for the other face (e.g., male). Once the participant reached the learning criterion (randomly determined at 8 to 12 consecutive reinforced responses including probabilistic errors32, we reversed these probabilities, making the previously less frequently rewarded option more likely to be rewarded. Only through reaching this learning criterion would the probabilities reverse, thus ensuring that participants had truly learned the original association before exposing them to a new one. Assignment to either the feminine-typed or masculine-typed food condition was counterbalanced across the sample. Thus, participants learned stereotypical pairings (i.e., female + salad, male + burger) on some trials and counterstereotypical pairings on others (i.e., female + burger, male + salad). We counterbalanced the reinforcement sequence across participants: half commenced the task with reward of stereotypical pairings, and half with reward of counterstereotypical pairings. We selected Caucasian, median attractiveness faces from the Chicago Face Database33.
+
+Each trial began with a fixation cross appearing at the center of the screen that remained for 50 ms. The stimuli were then presented for 2000 ms, within which period a response had to be made (if a response was not offered, a “too late” message appeared). The feedback arrow appeared above the selected face and the feedback cartoon face between the stimuli, both remaining onscreen for 500 ms. The points earned during the task appeared beneath the stimuli. The inter-trial interval was 3000 ms; face location and meaning of the response keys were counterbalanced across the sample. The learning task lasted 8 min, after which participants where thanked and debriefed.
+
+Results
+
+Behavioral measures
+
+ We examined three fundamental trial-by-trial performance measures to assess whether stereotype-based beliefs modulated performance on the probabilistic reversal-learning task. First, rich-choices—trials in which participants selected the face with the higher probability of yielding a positive outcome. Second, win-stay choices—trials in which participants repeated their previous selection following a positive outcome. Third, lose-shift choices—trials in which participants switched their selection after receiving negative feedback. A binomial generalized linear mixed model was used to investigate the influence of Reinforced Target (stereotypic or counterstereotypic) on performance. In this model, Reinforced Target was treated as a fixed effect and participants as random intercepts. The analysis was conducted using the R package lme434.
+
+Rich-choices. Participants exhibited higher accuracy when stereotypic (cf. counterstereotypic) pairings were reinforced (b = 0.11, SE = 0.05, z = 2.21, p = .027; see Fig. 3).
+
+Win-stay. Participants were more likely to repeat their previous choice following a positive outcome when stereotypic compared to counterstereotypic pairings were reinforced (b = 0.21, SE = 0.09, z = 2.31, p = .021).
+
+Lose-shift. Participants were no more likely to shift their response after receiving negative feedback when either pairing was reinforced (b = 0.04, SE = 0.08, z = 0.46, p = .643).
+
+Fig. 3
+
+Full size image
+
+Behavioral measures in the probabilistic reversal-learning task: A rich-choices; B win-stay; and C lose-shift.
+
+Computational modeling analysis
+
+ We next applied several hierarchical Bayesian models to the data using the hBayesDM package in R to explore the latent processes underlying performance during the probabilistic reversal-learning task35. We compared three candidate models, each capturing different assumptions about learning dynamics and biases in decision-making (see Table 1). We performed model estimation using Markov chain Monte Carlo (MCMC) sampling via Stan with each model fitted to the trial-by-trial behavioral data under a common hierarchical framework. We specified 4,000 total iterations per chain in each model run, of which the first 1,000 iterations served as warm-up and 4 independent chains ensured convergence and reliable parameter estimates.
+
+Fictitious Update Model. This model is predicated on the assumption that decision-making is underpinned by two interrelated processes: dynamic learning based on feedback and a baseline decisional bias that persists independently of that learning36. The model estimates a single learning rate (η) alongside an indecision-point parameter (α). The learning rate quantifies how rapidly participants update expected values in response to observed outcomes, thereby reflecting their overall sensitivity to feedback. In contrast, the indecision-point parameter captures participants’ baseline bias or preference in decision-making, independent of their learning from feedback. Conceptually, α defines the threshold at which two competing choices are equally attractive, thus reflecting an intrinsic bias or predisposition favoring one option over the other. Based on HBayesDM coding34, positive values indicate a predisposition toward the reinforced target, whereas negative values reveal a bias toward the non-reinforced alternative. A higher (vs. smaller) indecision point thus indicates a stronger bias toward a specific choice, meaning that participants require greater evidence favoring the alternative option before switching. In reversal-learning tasks, indecision-point estimates frequently take negative values. Importantly, negative α values do not imply an initial bias toward non-reinforced responding. Rather, they reflect decisional inertia following contingency reversals (i.e., a lag in disengaging from the previously reinforced option before updating to the newly reinforced association). Thus, differences in α should be interpreted comparatively whereby more negative values indicate greater resistance to updating following reversals. By integrating these parameters, the model provides a nuanced framework for understanding the cognitive mechanisms that underpin reinforcement learning.
+
+Reward-Punishment Model. This model dissociates learning rates for reward and punishment, and captures the possibility that individuals update their expectations asymmetrically in response to positive and negative outcomes37. In this framework, separate learning rate parameters reflect how quickly the expected value adjusts following a win versus a loss. For instance, higher reward-learning relative to punishment-learning would indicate that a participant is more responsive to positive rather than negative feedback, thereby revealing a basic bias in reinforcement learning.
+
+Experience-Weighted Attraction Model. Extending the Reward-Punishment model, this model estimates an additional experience decay parameter (ρ). The decay factor modulates the influence of past experiences on current value estimates, effectively weighing outcomes more heavily as a function of their recency. In this model, the attractiveness of each option is updated as a combination of immediate feedback (reflected in the learning rate) together with the decaying influence of accumulated prior outcomes37.
+
+Alongside these learning parameters, each model retains an inverse temperature parameter (β) that indicates the deterministic versus stochastic nature of choices via a softmax function. Higher β values imply that small differences in expected value translate into highly consistent (i.e., deterministic) choices whereas lower values suggest a greater degree of randomness in decision-making. Model comparison was conducted using information criteria (e.g., Widely Applicable Information Criterion [WAIC] and Leave-One-Out Information Criterion [LOOIC]) whereby lower values indicating superior predictive performance. This revealed that the Fictitious Update Model yielded the best fit (Ȓ = 1.004).
+
+It is important to note that model selection reflected relative rather than absolute fit. Thus, although the fictitious update model provided the best fit to participants’ behavior, this result should not be taken to imply that asymmetric learning from positive versus negative feedback or the decay of past experiences play no role in reinforcement learning more broadly. Rather, in the current task, a parsimonious model that captured a general sensitivity to feedback (η) alongside a decisional bias (α) sufficed to account for task performance.
+
+Table 1 Model comparisons.
+Full size table
+
+To provide further support for the best-fitting model, we conducted a Posterior Predictive Check (PPC) by generating simulated responses from each participant’s posterior parameter estimates and comparing these values to the observed data to further evaluate the best-fitting model31,38. Specifically, we used participants’ MCMC-derived parameter draws to compute predicted responses for each trial, averaged these predictions to obtain a single mean value per participant, then calculated both the Pearson correlation coefficient and root mean squared error (RMSE) between the observed and simulated data. We observed robust model fit in both stereotypical, r = .846 (RMSE = 0.041) and counterstereotypical, r = .963 (RMSE = 0.032) conditions (see Fig. 4).
+
+Fig. 4
+
+Full size image
+
+Comparison of observed and simulated mean accuracy for each subject for Stereotypical (left panel) and Counterstereotypical (right panel) conditions. The red reference line indicates a perfect match between observed and simulated data.
+
+Examination of the posterior distributions of the best-fitting model yielded differences in parameter estimates as a function of Reinforced Target. Specifically, the learning rate (η) was higher for stereotypic compared to counterstereotypic choices, pBayes(stereotype > counter-stereotype) = 0.203, BF10 = 4 (see Fig. 5). Additionally, moderate evidence suggested that the indecision point (α) was higher under stereotypic compared to counterstereotypic conditions, pBayes(stereotype > counter‐stereotype) = 0.145, BF10 = 6, thereby revealing the stickiness (i.e., stability) of stereotype-based beliefs. No meaningful evidence was observed for differences in the inverse temperature parameter (β), suggesting that the overall consistency of choices did not vary as a function of Reinforced Target. Participants therefore learned stereotypic pairings faster than counterstereotypic pairings and demonstrated bias toward selecting the stereotypical pairs.
+
+Fig. 5
+
+Full size image
+
+Posterior parameter distributions of the fictitious update model: A Learning Rate; B Indecision Point; and C Inverse Temperature.
+
+Discussion
+
+Here, we demonstrated the effect of probabilistic gender-typed beliefs on reversal learning when individuals exhibit both expected (i.e., stereotype-consistent) and unexpected (i.e., stereotype-inconsistent) behavior. Specifically, participants learned stereotypic (cf. counterstereotypic) outcomes more accurately and were more likely to repeat stereotypic responses (i.e., win-stay) following positive reinforcement. An additional computational analysis showed that participants learned stereotypic outcomes faster than counterstereotypic outcomes and that stereotype-consistent responses were anchored by a more stable baseline compared to stereotype-inconsistent responses. Thus, the current results challenge previous work showing that incongruency facilitates the acquisition of person knowledge12,13 and underscore both the potency of stereotypic beliefs and the lure of stereotype-consistent outcomes during reversal learning24,29,39.
+
+Building upon previous research, the current computational results yield valuable insights into the pathways through which stereotype-based beliefs influence associative learning12,13. Comparing several hierarchical Bayesian models, the Fictitious Update Model best fit the observed data36.Footnote 2 Analysis of the model parameters revealed that, although differences in learning rates (η) modestly favored stereotype-consistent (vs. stereotype-inconsistent) updating, the disparity in indecision points (α) was substantial. Capturing an initial preference (i.e., prior bias) toward either the reinforced or non-reinforced choice during decision-making, the indecision point quantifies the threshold of uncertainty at which participants adjust their behavior. Interestingly, the analysis returned negative indecision points in both the stereotypic and counterstereotypic conditions, indicating that participants held an initial bias against the reinforced choices regardless of their stereotypical status.
+
+As outlined previously, negative indecision-point values reflect inertia following contingency reversals rather than pre-existing response biases. That is, participants tended to persist with the previously reinforced choice before updating to the new association. Crucially, this lag was stronger when the newly reinforced option was counterstereotypical, aligning with the idea that stereotype-consistent learning resists change more than stereotype-inconsistent learning does. Thus, although the indecision parameter was negative overall, this pattern supports reversal-learning tasks in which participants show inertia, continuing to favor the previously reinforced option for some time after contingencies switch. What matters in the present context is that stereotype-consistent choices attenuated this inertia, highlighting the privileged status of stereotypical associations in learning40,41. One conceptual consideration is that, although the indecision parameter reflects adjustment following contingency reversals, the initial learning block does not involve a prior association. In the current hierarchical modeling framework, α is estimated across the full sequence of trials and thus captures overall resistance to updating following changes in reinforcement structure rather than reversal-specific inertia alone. Whereas this approach is standard in reversal-learning models, future work could isolate post-reversal epochs to more precisely estimate reversal-contingent decisional inertia.
+
+The observed computational findings align closely with the behavioral results. Participants demonstrated higher accuracy and more pronounced win-stay behavior when reinforcement targeted stereotypic compared to counterstereotypic associations. In contrast, no significant difference in lose-shift behavior was observed, suggesting similar sensitivity to negative feedback irrespective of the reinforced target. Again, this indicates that belief confirmation was the prominent driver during reversal learning15,21. Collectively, these integrated computational and behavioral findings inform understanding of how stereotype-based beliefs influence associative learning. Higher accuracy and robust win-stay responses for stereotypic outcomes occur because participants faced only mild resistance to stereotype-consistent reinforcement. Conversely, impaired learning for counterstereotypic outcomes reflected participants’ greater resistance to forming and maintaining counterstereotypical associations. From a practical standpoint, these findings confirm that stereotype-based beliefs are psychologically privileged, easily reinforced, and difficult to revise15,19,20,21. This implies that updating or eliminating stereotypical thinking (and responding) should be a challenging enterprise, an observation with important implications for interventions designed to mitigate this cognitive practice5,6,7,8.
+
+Echoing the current empirical findings, inspection of the available literature substantiates the contention that undermining stereotypic beliefs is no easy matter. Although counterstereotypes in the form of role models (e.g., female engineers, male nurses) are widely touted as a critical resource in the quest to reduce stereotyping, their effects are underwhelming. Whereas counterstereotypic individuals are often construed in a non-stereotypic manner, problematically, the expectancy-discrepant attributes, characteristics, and proclivities they possess rarely get generalized to the wider group7,8. Instead, counterstereotypes are portrayed as exceptions to the rule and subtyped (i.e., placed in a separate sub-category of the group) with the result that overarching stereotype-based beliefs remain intact42. That subtyping is a favored tactic for dealing with expectancy-discrepant individuals has ramifications for prior work demonstrating that counterstereotypes accelerate associative learning12,13. Specifically, although counterstereotypic knowledge may be easy to acquire under certain conditions, persons characterized exclusively in this way will almost certainly be subtyped, thus exerting no meaningful influence on the contents of stereotype-related beliefs42. From a predictive processing perspective, counterstereotypic information (i.e., prediction errors) cannot be utilized to update stereotypic presumptions once an association is siloed in a separate representational space15,21.
+
+Here, participants learned about female and male targets who exhibited both counterstereotypic and stereotypic culinary choices in a task setting where expectancy-discrepant individuals would be less amenable to subtyping. Indeed, participants saw varied food selections within individual targets, allowing them to draw on category-based expectations without easily dismissing incongruent individuals as exceptions. In other words, because people naturally eat a variety of things (albeit generally tending towards some favorites), targets could not be characterized as group-related outliers. Significantly, removing participants’ capacity to subtype altered the products of associative learning completely: Rather than knowledge acquisition being speeded for counterstereotypic material12,13, stereotypic outcomes now exerted the greatest influence on task performance24. That is, when subtyping was difficult, the benefits of person-incongruency disappeared once targets displayed a combination of stereotypic and counterstereotypic characteristics. Again, this underscores stereotype-based beliefs’ general resistance to modification or change, and illustrates another cognitive pathway through which stereotypes can be maintained, at least in the context of reversal learning. In the presence of confirmatory material, the impact of stereotype-discrepant information diminishes when subtyping is difficult.
+
+The dominance of stereotype-consistent (vs. stereotype-inconsistent) outcomes during reversal learning speaks to the functional benefits of stereotyping19,20,43. Aside from economizing information processing and response generation44,45,46, stereotypes also serve as repositories of group-related knowledge through which predictions regarding the likely characteristics of individuals can be generated—forecasts that shape impression formation and social interaction15,21. To serve this latter function, stereotype-based beliefs must necessarily be stable, enduring, and adjusted only in the face of repeated disconfirmation15,43,47. In no small part, this stability derives from the sticky character of pre-existing stereotype-based (i.e., category-attribute) associations, a stickiness that renders stereotypic beliefs resistant to modification, susceptible to confirmation, difficult to ignore, and highly influential during learning and decision-making12,13,24,29,39,48.
+
+The resilience of stereotypic beliefs in the face of discrepant information raises an interesting question. What key features should an intervention possess to increase its chances of success in stereotype mitigation5,6,7,8? This matter is especially pertinent given recent attempts to use artificial intelligence (AI) to combat stereotypes39,49. Although people often position AI as a tool to counteract biases, they paradoxically project their own stereotypes onto it50. Future research should thus seek to better understand how researchers can design AI to attenuate stereotyping without triggering resistance or reinforcing the very biases it seeks to challenge. One key consideration for interventions is balance. To reform people’s biases, AI should neither aggressively challenge stereotypes nor passively mirror them. Rather, it should subtly guide users away from baseline stereotypes without provoking defensiveness. Intervention researchers may be able to manipulate AI models to introduce counterstereotypical perspectives in a way that feels organic (rather than forced) by carefully adapting how these models interact with users. Unlike single-shot interventions in classrooms or media portrayals, repeated interactions with AI allow for gradual shifts in stereotype-based beliefs via the accumulated effects of counterstereotypic information49.
+
+Human-based interventions leveraging both repeated exposure and reinforcement ought to complement such AI-based stereotype interventions. Given the present findings that counterstereotypic information is learned more slowly and is less likely to guide subsequent behavior, interventions that distribute counterstereotypic evidence across time may be particularly effective. For instance, future interventions may introduce mentoring programs in which mentors exhibit counterstereotypic behavior across many interactions. Such programs may challenge stereotype-based beliefs by gradually recalibrating established stereotypic expectations rather than relying on idiosyncratic disconfirming examples. The results of the current work suggest that longitudinal human-based interventions such as these may hold great promise for ameliorating the pernicious consequences of stereotyping.
+
+The current findings provide initial evidence for how stereotype-based beliefs influence reversal learning. Though promising, several limitations suggest important avenues for future investigation. First, do differences in the contents of stereotypic beliefs affect the processes that underpin learning? Here, we explored a relatively inert facet of stereotyping: gender-typed culinary choices. Though food stereotypes provide an ecologically valid, stable, and casual domain in which to test the uptake of stereotypic and counterstereotypic information, it remains to be seen whether comparable effects would emerge for other stereotype-related contents (e.g., possessions, hobbies, personality characteristics). For example, individuals commonly exhibit stereotype-related behaviors indicative of personality traits that vary in desirability (e.g., aggressive, understanding). Because valence plays a prominent role in both stereotyping and probabilistic learning, interesting asymmetries may emerge when stereotypic and counterstereotypic information diverge in evaluative tone28,51,52.
+
+Importantly, we purposefully selected gender-stereotyped food choices as a casual domain to examine how individuals learn stereotypic and counterstereotypic information. This decision allowed us to examine the uptake of stereotypic and counterstereotypic information without triggering participants’ concerns about social desirability, thereby eliminating what would otherwise have been uncontrollable noise. However, the possibility remains that belief-updating functions differently in less casual, more socially consequential domains. For instance, people stereotype men and women as competent and warm, respectively53, leading to professional disadvantages for women54. If these consequential stereotypes tie to relatively immutable social norms, counterstereotypic information may be even more difficult to integrate. As a result, the increased uptake and stickiness of stereotypic information observed in the present work may be amplified when stereotypes concern traits with greater social consequences.
+
+Second, in addition to the content of stereotypes, consideration should also be given to the targets to whom information relates. Aligning with prior work on probabilistic learning, we employed only a single female and male target here12. It would therefore be useful to establish that the current findings extend to other individuals. In this regard, the facial appearance of group members also merits attention because it affects knowledge acquisition. Specifically, goodness-of-category fit (e.g., high femininity vs. low femininity) can moderate the speed of learning both stereotype-consistent and stereotype-inconsistent information13. Facial typicality thus warrants further consideration in the context of probabilistic reversal learning. Moreover, the current investigation also overlooked the extent to which basic individual differences (i.e., levels of sexism, gender identification) influence knowledge acquisition. From the perspective of predictive processing, strength of stereotype endorsement may moderate the construal of expected and unexpected information (i.e., the surprisal value of information); future work should thus explore its impact on learning outcomes15,21.
+
+Third and last, we did not examine how individual-level differences related to the rate at which people learn and unlearn stereotypes. For instance, men report that stereotyping is more acceptable than women do, and are more likely to use social categories (e.g., gender) when forming person inferences55. Perhaps this greater utilization of social categories will leave men more resistant to counterstereotypic information, whereas women will more ably adapt to unexpected information. Future research should examine the extent to which gender and other demographic differences (e.g., race, age) relate to learning rate.
+
+Acknowledging the perils and pitfalls of stereotypical thinking, considerable efforts have been expended developing interventions with the promise of reducing this unwelcome practice5,6,7,8. Although these tactics commonly rely on counterstereotypes to overcome existing stereotyped beliefs, surprisingly little is known about the ease with which stereotypic and counterstereotypic person-related information can be procured. Utilizing a reversal-learning task in which targets exhibited both expected and unexpected behavior12,13, the current results were revealing and sobering. Put simply, stereotyped beliefs about gender created a cognitive inertia in which confirmatory (vs. dis-confirmatory) outcomes were preferred, and thus advantaged, during learning. This associative stickiness undoubtedly serves as a fundamental barrier to stereotype change.
+
+Data availability
+
+Data are available at https://osf.io/mx9u4/.
+
+Notes
+
+ Naturally, calculating complementary ordered-by-women scores shows that participants expected more women to order a salad (M = 72.95, SD = 17.32) than a burger (M = 33.08, SD = 14.66), t(63) = -11.50, p < .001, d = 2.48.
+
+ Importantly, although the superior fit of the fictitious update model suggests that the estimated parameters are interpretable within this framework, it does not guarantee that they represent the only processes operating. Instead, it identifies the dominant drivers of behavior in the current paradigm while leaving open the possibility that different conditions or task structures may reveal additional operations.
+
+References
+
+Diekman, A. B. & Eagly, A. H. Stereotypes and dynamic constructs: Women and men of the past, present, and future. Pers. Soc. Psychol. Bull. 26, 1171–1188 (2000).
+
+Article 
+
+ Google Scholar 
+
+Heilman, M. E., Caleo, S. & Manzi, F. Women at work: Pathways from gender stereotypes to gender bias and discrimination. Annu. Rev. Organ. Psychol. Organ. Behav. 11, 165–192 (2024).
+
+Article 
+
+ Google Scholar 
+
+World Economic Forum. Global gender gap: Insight Report. (2024).
+
+Higher Education Statistics Agency. Higher education student statistics: UK, 2020/21 – Subjects studied [Data set]. UK Government. (2022). https://www.gov.uk/government/statistics/higher-education-student-statistics-uk-202021-subjects-studied
+
+Fitzgerald, C., Martin, A., Berner, D. & Hurst, S. Interventions designed to reduce implicit prejudices and implicit stereotypes in real world contexts: A systematic review. BMC Psychol. 7, 1–12 (2019).
+
+Article 
+
+ Google Scholar 
+
+Lai, C. K. et al. Reducing implicit racial preferences: I. A comparative investigation of 17 interventions. J. Exp. Psychol. Gen. 143, 1765–1785 (2014).
+
+Article 
+ PubMed 
+
+ Google Scholar 
+
+Morgenroth, T., Ryan, M. K. & Peters, K. The motivational theory of role modeling: How role models influence role aspirants’ goals. Rev. Gen. Psychol. 19, 465–483 (2015).
+
+Article 
+
+ Google Scholar 
+
+Olsson, M. & Martiny, S. E. Does exposure to counterstereotypical role models influence girls’ and women’s gender stereotypes and career choices? A review of social psychological research. Front. Psychol. 9, 1–12 (2018).
+
+Article 
+
+ Google Scholar 
+
+Dasgupta, N. & Asgari, S. Seeing is believing: Exposure to counterstereotypic women leaders and its effect on the malleability of automatic gender stereotyping. J. Exp. Soc. Psychol. 40, 642–658 (2004).
+
+Article 
+
+ Google Scholar 
+
+DennehyT.C. & DasguptaN. Female peer mentors early in college increase women’s positive academic experiences and retention in engineering. Proc. Natl. Acad. Sci. 114, 5964–5969 (2017).
+
+Article 
+ ADS 
+ CAS 
+ PubMed 
+ PubMed Central 
+
+ Google Scholar 
+
+Rosenberg-Kima, R. B., Baylor, A. L., Plant, E. A. & Doerr, C. E. Interface agents as social models for female students: The effect of agent visual presence and appearance on female students’ attitudes and beliefs. Comput. Hum. Behav. 24, 2741–2756 (2008).
+
+Article 
+
+ Google Scholar 
+
+Falbén, J. K., Golubickis, M., Tsamadi, D., Persson, L. M. & Macrae, C. N. The power of the unexpected: Prediction errors enhance stereotype-based learning. Cognition 235, 105386 (2023).
+
+Article 
+ PubMed 
+
+ Google Scholar 
+
+Golubickis, M. et al. Facial misfits accelerate stereotype-based associative learning. Sci. Rep. 14, 19320 (2024).
+
+Article 
+ ADS 
+ CAS 
+ PubMed 
+ PubMed Central 
+
+ Google Scholar 
+
+Clark, A. Whatever next? Predictive brains, situated agents, and the future of cognitive science. Behav. Brain Sci. 36, 181–253 (2013).
+
+Article 
+ PubMed 
+
+ Google Scholar 
+
+Hinton, P. Implicit stereotypes and the predictive brain: cognition and culture in biased person perception. Palgrave Commun. 3, 1–9 (2017).
+
+Article 
+
+ Google Scholar 
+
+Otten, M., Seth, A. K. & Pinto, Y. A social Bayesian brain: How social knowledge can shape visual perception. Brain Cogn. 112, 69–77 (2017).
+
+Article 
+ PubMed 
+
+ Google Scholar 
+
+Frank, M. J., Seeberger, L. C. & O’Reilly, R. C. By carrot or by stick: Cognitive reinforcement learning in Parkinsonism. Science 306, 1940–1943 (2004).
+
+Article 
+ ADS 
+ CAS 
+ PubMed 
+
+ Google Scholar 
+
+Frank, M. J., Moustafa, A. A., Haughey, H. M., Curran, T. & Hutchinson, K. E. Genetic triple dissociation reveals multiple roles for dopamine in reinforcement learning. Proc. Natl. Acad. Sci. 104, 16311–16316 (2007).
+
+Freeman, J. B. & Ambady, N. A dynamic interactive theory of person construal. Psychol. Rev. 118, 247–279 (2011).
+
+Article 
+ PubMed 
+
+ Google Scholar 
+
+Macrae, C. N. & Bodenhausen, G. V. Social cognition: Thinking categorically about others. Annu. Rev. Psychol. 51, 93–120 (2000).
+
+Article 
+ CAS 
+ PubMed 
+
+ Google Scholar 
+
+Villiger, D. Stereotypes and self-fulfilling prophecies in the Bayesian brain. Inquiry, 1–25 (2023).
+
+Brigham, J. C. Ethnic stereotypes. Psychol. Bull. 76, 15–38 (1971).
+
+Article 
+
+ Google Scholar 
+
+McCauley, C. & Stitt, C. L. An individual and quantitative measure of stereotypes. J. Per Soc. Psychol. 36, 929–940 (1978).
+
+Article 
+
+ Google Scholar 
+
+Falbén, J. K. et al. Predictably confirmatory: The influence of stereotypes during decisional processing. Q. J. Exp. Psychol. 72, 2437–2451 (2019).
+
+Article 
+
+ Google Scholar 
+
+Izquierdo, A., Brigman, J. L., Radke, A. K., Rudebeck, P. H. & Holmes, A. The neural basis of reversal learning: An updated perspective. Neuroscience 345, 12–26 (2017).
+
+Article 
+ CAS 
+ PubMed 
+
+ Google Scholar 
+
+Cairns, K., Johnston, J. & Baumann, S. Caring about food: Doing gender in the foodie kitchen. Gender & Society 24, 591–615 .
+
+Cavazza, N., Guidetti, M. & Butera, F. Ingredients of gender-based stereotypes about food. Indirect influence of food type, portion size and presentation on gendered intentions to eat. Appetite 91, 266–272 (2015).
+
+Article 
+ PubMed 
+
+ Google Scholar 
+
+Sutton, R. S. & Barto, A. G. Reinforcement learning: An introduction (MIT Press, 1998).
+
+Derreumaux, Y. et al. Stereotypes disrupt probabilistic category learning. J. Exp. Psychol. Gen. 152, 1622–1638 (2023).
+
+Article 
+ PubMed 
+
+ Google Scholar 
+
+Fontanesi, L., Gluth, S., Spektor, M. S. & Rieskamp, J. A reinforcement learning diffusion decision model for value-based decisions. Psychon Bull. Rev. 26, 1099–1121 (2019).
+
+Article 
+ PubMed 
+ PubMed Central 
+
+ Google Scholar 
+
+Pedersen, M. L. & Frank, M. J. Simultaneous hierarchical Bayesian parameter estimation for reinforcement learning and drift diffusion models: A tutorial and links to neural data. Comput. Brain Behav. 3, 458–471 (2020).
+
+Article 
+ PubMed 
+ PubMed Central 
+
+ Google Scholar 
+
+Cools, R., Clark, L., Owen, A. M. & Robbins, T. W. Defining the neural mechanisms of probabilistic reversal learning using event-related functional magnetic resonance imaging. J. Neurosci. 22, 4563–4567 (2002).
+
+Article 
+ CAS 
+ PubMed 
+ PubMed Central 
+
+ Google Scholar 
+
+Ma, D. S., Correll, J. & Wittenbrink, B. The Chicago face database: A free stimulus set of faces and norming data. Behav. Res. Methods. 47, 1122–1135 (2015).
+
+Article 
+ PubMed 
+
+ Google Scholar 
+
+Pinheiro, J., Bates, D., Rebroy, S. & Sarkar, D. & R Development Core Team. nlme: Linear and nonlinear mixed effects models. Vienna, Austria: The Comprehensive R Archive Network (2015).
+
+ Google Scholar 
+
+Ahn, K. H., Palmer, R. & Steinschneider, S. A hierarchical Bayesian model for regionalized seasonal forecasts: Application to low flows in the northeastern United States. Water Resour. Res. 53, 503–521 (2017).
+
+Article 
+ ADS 
+
+ Google Scholar 
+
+Gläscher, J., Hampton, A. N. & O’Doherty, J. P. Determining a role for ventromedial prefrontal cortex in encoding action-based value signals during reward-related decision making. Cereb. Cortex. 19, 483–495 (2009).
+
+Article 
+ PubMed 
+
+ Google Scholar 
+
+den Ouden, H. E. et al. Dissociable effects of dopamine and serotonin on reversal learning. Neuron 80, 1090–1100 (2013).
+
+Article 
+
+ Google Scholar 
+
+Wiecki, T. V., Sofer, I. & Frank, M. J. HDDM: Hierarchical Bayesian estimation of the drift-diffusion model in Python. Front. Neuroinform. 7, 1–10 (2013).
+
+Article 
+
+ Google Scholar 
+
+Gelpi, R. A., Tang, Y., Jackson, E. C. & Cunningham, W. A. Social coordination perpetuates stereotypic expectations and behaviors across generations in deep multiagent reinforcement learning. PNAS Nexus. 4, pgaf076 (2025).
+
+Article 
+ PubMed 
+ PubMed Central 
+
+ Google Scholar 
+
+Cox, W. T. L., Xie, X. & Devine, P. G. Untested assumptions perpetuate stereotyping: Learning in the absence of evidence. J. Exp. Soc. Psychol. 102, 104380 (2022).
+
+Article 
+ PubMed 
+ PubMed Central 
+
+ Google Scholar 
+
+Nickerson, R. S. Conformation bias: A ubiquitous phenomenon in many guides. Rev. Gen. Psychol. 2, 175–220 (1998).
+
+Article 
+
+ Google Scholar 
+
+Richards, Z. & Hewstone, M. Subtyping and subgrouping: Processes for the prevention and promotion of stereotype change. Pers. Soc. Psychol. Rev. 5, 52–73 (2001).
+
+Article 
+
+ Google Scholar 
+
+Gershman, S. J. & Cikara, M. Structure learning principles of stereotype change. Psychon Bull. Rev. 30, 1273–1293 (2023).
+
+Article 
+ PubMed 
+
+ Google Scholar 
+
+Gilbert, D. T. & Hixon, J. G. The trouble of thinking: Activation and application of stereotypic beliefs. J. Per Soc. Psychol. 60, 509–517 (1991).
+
+Article 
+
+ Google Scholar 
+
+Macrae, C. N., Milne, A. B. & Bodenhausen, G. V. Stereotypes as energy-saving devices: A peek inside the cognitive toolbox. J. Per Soc. Psychol. 66, 37–47 (1994).
+
+Article 
+
+ Google Scholar 
+
+Tsamadi, D. et al. Stereotype-based priming without stereotype activation: A tale of two priming tasks. Q. J. Exp. Psychol. 73, 1939–1948 (2020).
+
+Article 
+
+ Google Scholar 
+
+Charlesworth, T. E. S., Nishanth, S., Hatzenbuehler, M. L. & Banaji, M. R. Identifying and predicting stereotype change in large language corpora: 72 groups, 115 years (1900–2015), and four text sources. J. Per Soc. Psychol. 125, 969–990 (2023).
+
+Article 
+
+ Google Scholar 
+
+Allidina, S. & Cunningham, W. A. Avoidance begets avoidance: A computational account of negative stereotype persistence. J. Exp. Psychol. Gen. 150, 2078–2099 (2021).
+
+Article 
+ PubMed 
+
+ Google Scholar 
+
+Hermann, E., De Freitas, J. & Puntoni, S. Reducing prejudice with counter-stereotypical AI. Cons Psychol. Rev. 8, 75–86 (2024).
+
+Article 
+
+ Google Scholar 
+
+Craiut, M. V. & Iancu, I. Is technology gender neutral? A systematic literature review on gender stereotypes attached to artificial intelligence. Hum. Tech. 18, 297–315 (2022).
+
+Article 
+
+ Google Scholar 
+
+Dayan, P. & Balleine, B. W. Reward, motivation, and reinforcement learning. Neuron 36, 285–298 (2002).
+
+Article 
+ CAS 
+ PubMed 
+
+ Google Scholar 
+
+Nicolas, G. & Fiske, S. T. Valence biases and emergence in the stereotype content of intersecting social categories. J. Exp. Psycho Gen. 152, 2520–2543 (2023).
+
+Article 
+
+ Google Scholar 
+
+Martin, A. E. & Slepian, M. L. The primacy of gender: Gendered cognition underlies the big two dimensions of social cognition. Pers. Psych Sci. 16, 1143–1158 (2021).
+
+Article 
+
+ Google Scholar 
+
+Liebenow, H. A., Boucher, K. L. & Cassidy, B. S. Understanding evaluations of Kamala Harris in 2020: Political ideology qualifies perceived communality effects when communal cues are present. Psychol. Women Q. 46, 399–419 (2022).
+
+Article 
+
+ Google Scholar 
+
+Carter, J. D., Hall, J. A., Carney, D. R. & Rosip, J. C. Individual differences in the acceptance of stereotyping. J. Res. Pers. 40, 1103–1118 (2006).
+
+Article 
+
+ Google Scholar 
+
+Download references
+
+Funding
+
+This work was supported by the Social Sciences and Humanities Research and Natural Sciences and Engineering Research Councils of Canada.
+
+Author information
+
+Authors and Affiliations
+
+Department of Psychology, University of Toronto, 100 St. George Street, Toronto, ON, M5S 3G3, Canada
+
+McLean G. Morgan & Nicholas O. Rule
+
+Department of Cognitive Sciences, United Arab Emirates University, Al Ain, UAE
+
+Marius Golubickis
+
+School of Psychology, University of Aberdeen, Aberdeen, Scotland, UK
+
+Parnian Jalalian, Yadvi Sharma, Esther S. Selvaraj & C. Neil Macrae
+
+Authors
+McLean G. Morgan
+
+View author publications
+
+Search author on:PubMed Google Scholar
+
+Marius Golubickis
+
+View author publications
+
+Search author on:PubMed Google Scholar
+
+Parnian Jalalian
+
+View author publications
+
+Search author on:PubMed Google Scholar
+
+Yadvi Sharma
+
+View author publications
+
+Search author on:PubMed Google Scholar
+
+Esther S. Selvaraj
+
+View author publications
+
+Search author on:PubMed Google Scholar
+
+Nicholas O. Rule
+
+View author publications
+
+Search author on:PubMed Google Scholar
+
+C. Neil Macrae
+
+View author publications
+
+Search author on:PubMed Google Scholar
+
+Contributions
+
+Conceptualization (MGM, MG, CNM), Funding acquisition (MGM, NOR), Software (MGM, PJ), Data collection (MGM, MG), Formal analysis (MGM [S1], MG [S2], PJ [S2]), Visualization (MG, PJ), Writing – original draft (MGM, MG, ESS, CNM), Writing – review and editing (MGM, MG, PJ, YS, ESS, NOR, CNM).
+
+Corresponding authors
+
+Correspondence to
+ McLean G. Morgan or Marius Golubickis.
+
+Ethics declarations
+
+Competing interests
+
+The authors declare no competing interests.
+
+Additional information
+
+Publisher’s note
+
+Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.
+
+Rights and permissions
+
+Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. You do not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+
+Reprints and permissions
+
+About this article
+
+Cite this article
+
+Morgan, M.G., Golubickis, M., Jalalian, P. et al. Stereotypic beliefs dominate reversal learning.
+ Sci Rep 16, 24478 (2026). https://doi.org/10.1038/s41598-026-48064-7
+
+Download citation
+
+Received: 28 April 2025
+
+Accepted: 06 April 2026
+
+Published: 07 August 2026
+
+Version of record: 07 August 2026
+
+DOI: https://doi.org/10.1038/s41598-026-48064-7
+
+Share this article
+
+Anyone you share the following link with will be able to read this content:
+Get shareable link
+
+Sorry, a shareable link is not currently available for this article.
+
+Copy shareable link to clipboard
+
+ Provided by the Springer Nature SharedIt content-sharing initiative
+
+Keywords
+
+stereotypes
+
+learning
+
+decision-making
+
+cognitive flexibility
+
+computational modeling
+
+ Download PDF
+
+Advertisement
+
+Explore content
+
+ Research articles
+
+ News & Comment
+
+ Collections
+
+ Subjects
+
+ Follow us on Facebook
+
+ Follow us on X
+
+ Sign up for alerts
+
+ RSS feed
+
+About the journal
+
+ About Scientific Reports
+
+ Contact
+
+ Editors
+
+ Journal policies
+
+ Guide to referees
+
+ Calls for Papers
+
+ Editor's Choice
+
+ Journal highlights
+
+ Open Access Fees and Funding
+
+Publish with us
+
+ For authors
+
+ Language editing services
+
+ Open access funding
+
+ Submit manuscript
+
+Search
+
+ Search articles by subject, keyword or author
+
+ Show results from
+
+ All journals
+ This journal
+
+ Search
+
+ Advanced search
+
+Quick links
+
+Explore articles by subject
+
+Find a job
+
+Guide to authors
+
+Editorial policies
+
+ Scientific Reports
+
+ (Sci Rep)
+
+ ISSN 2045-2322 (online)
+
+nature.com footer links
+
+About Nature Portfolio
+
+About us
+
+Press releases
+
+Press office
+
+Contact us
+
+Discover content
+
+Journals A-Z
+
+Articles by subject
+
+protocols.io
+
+Nature Index
+
+Publishing policies
+
+Nature portfolio policies
+
+Open access
+
+Author & Researcher services
+
+Reprints & permissions
+
+Research data
+
+Language editing
+
+Scientific editing
+
+Nature Masterclasses
+
+Research Solutions
+
+Libraries & institutions
+
+Librarian service & tools
+
+Librarian portal
+
+Open research
+
+Recommend to library
+
+Advertising & partnerships
+
+Advertising
+
+Partnerships & Services
+
+Media kits
+
+Branded
+ content
+
+Professional development
+
+Nature Awards
+
+Nature Careers
+
+Nature 
+ Conferences
+
+Regional websites
+
+Nature Africa
+
+Nature China
+
+Nature India
+
+Nature Japan
+
+Nature Middle East
+
+Privacy
+ Policy
+
+Use
+ of cookies
+
+ Your privacy choices/Manage cookies
+
+Legal
+ notice
+
+Accessibility
+ statement
+
+Terms & Conditions
+
+Your US state privacy rights
+
+Withdrawal from contracts here
+
+© 2026 Springer Nature Limited
+
+ Close banner
+
+ Close
+
+Sign up for the Nature Briefing newsletter — what matters in science, free to your inbox daily.
+
+ Email address
+
+ Sign up
+
+ I agree my information will be processed in accordance with the Nature and Springer Nature Limited Privacy Policy.
+
+ Close banner
+
+ Close
+
+ Get the most important science stories of the day, free in your inbox.
+ Sign up for Nature Briefing
+

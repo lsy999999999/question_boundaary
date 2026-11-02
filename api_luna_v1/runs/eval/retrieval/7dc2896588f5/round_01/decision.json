@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793430019150861385,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "prbs",
+    "reason": "Memory models strongly outperform state-only fits. Multiscale memory improves cross-validation over the current model with fewer coefficients than saturating_memory; PRBS probes irregular reversals.",
+    "prediction": "After PRBS input switches, output will lag and retain history across multiple timescales rather than track the current input immediately.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"Memory models strongly outperform state-only fits. Multiscale memory improves cross-validation over the current model with fewer coefficients than saturating_memory; PRBS probes irregular reversals.\",\"prediction\":\"After PRBS input switches, output will lag and retain history across multiple timescales rather than track the current input immediately.\",\"accept\":false}",
+    "input_tokens": 2970,
+    "output_tokens": 223,
+    "batch_elapsed_seconds": 4.302825239486992,
+    "amortized_seconds": 4.302825239486992,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2970,
+      "completion_tokens": 223,
+      "total_tokens": 3193,
+      "completion_tokens_details": {
+        "reasoning_tokens": 137
+      }
+    },
+    "api_response_id": "resp_0a429bab0a84b800016ae591ffae9c81958a9fc8c125a64a99",
+    "wire_record": "wire/eval/0171_613b406ef1324ac6bba35d6e3a6314e8"
+  }
+}

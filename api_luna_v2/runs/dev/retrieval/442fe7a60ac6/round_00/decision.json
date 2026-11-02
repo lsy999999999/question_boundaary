@@ -1,0 +1,38 @@
+{
+  "time_ns": 1793431186580278275,
+  "decision": {
+    "representation": "state",
+    "experiment": "alternating",
+    "reason": "State has the lowest trajectory-level CV error and low residual autocorrelation; added memory and clock features generalize worse. Alternating input has the greatest prediction disagreement.",
+    "prediction": "Under rapid input switches, the state model predicts responses from current state and input alone; systematic history-dependent deviations would falsify this choice.",
+    "accept": true,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"State has the lowest trajectory-level CV error and low residual autocorrelation; added memory and clock features generalize worse. Alternating input has the greatest prediction disagreement.\",\"prediction\":\"Under rapid input switches, the state model predicts responses from current state and input alone; systematic history-dependent deviations would falsify this choice.\",\"accept\":true}",
+    "input_tokens": 2564,
+    "output_tokens": 268,
+    "batch_elapsed_seconds": 5.008726453408599,
+    "amortized_seconds": 5.008726453408599,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2564,
+      "completion_tokens": 268,
+      "total_tokens": 2832,
+      "prompt_tokens_details": {
+        "cached_tokens": 2432
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 185
+      }
+    },
+    "api_response_id": "resp_0e9ad257929b8677016ae5968fb9448190980073121a29776a",
+    "wire_record": "wire/dev/0002_ea9dbf76633548e8b918e06796debec1"
+  }
+}

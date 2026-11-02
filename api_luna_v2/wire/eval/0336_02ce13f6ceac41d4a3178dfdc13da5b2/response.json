@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431853042751198,
+  "http_status": 200,
+  "body": {
+    "id": "resp_095bb92b88ac68aa016ae5992a0e7081979758b9bd0b6b64ca",
+    "object": "chat.completion",
+    "created": 1793431852,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"prbs\",\"reason\":\"It has the lowest trajectory-level CV error by a substantial margin, though residual lag-1 correlation indicates remaining structure. PRBS has the greatest disagreement among plausible models.\",\"prediction\":\"At matched current inputs, outputs will differ with prior history; saturating_memory will predict PRBS trajectories better than memory_slow.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The predictive fit supports nonlinear accumulated-history features, but does not establish a specific physical mechanism.\",\"condition_to_check\":\"Compare held-out PRBS predictions against memory-only models and check whether residual lag remains.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3265,
+      "completion_tokens": 257,
+      "total_tokens": 3522,
+      "completion_tokens_details": {
+        "reasoning_tokens": 121
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.8317450871691108
+}

@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793429619929137446,
+  "decision": {
+    "representation": "clock",
+    "experiment": "alternating",
+    "reason": "Clock has the lowest trajectory-held-out error by a wide margin. Similar late negative drift across observed inputs suggests elapsed-time structure, but memory_clock remains plausible.",
+    "prediction": "If clock forcing matters, late output features should recur at similar elapsed times despite alternating input; memory_clock may instead track input history.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Elapsed-time periodic features predict shared residual structure across different input interventions.",
+      "condition_to_check": "Compare late outputs at matched elapsed times across alternating and other inputs; input-dependent changes would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest trajectory-held-out error by a wide margin. Similar late negative drift across observed inputs suggests elapsed-time structure, but memory_clock remains plausible.\",\"prediction\":\"If clock forcing matters, late output features should recur at similar elapsed times despite alternating input; memory_clock may instead track input history.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time periodic features predict shared residual structure across different input interventions.\",\"condition_to_check\":\"Compare late outputs at matched elapsed times across alternating and other inputs; input-dependent changes would weaken this relation.\"}}",
+    "input_tokens": 2792,
+    "output_tokens": 284,
+    "batch_elapsed_seconds": 4.002520961686969,
+    "amortized_seconds": 4.002520961686969,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2792,
+      "completion_tokens": 284,
+      "total_tokens": 3076,
+      "completion_tokens_details": {
+        "reasoning_tokens": 153
+      }
+    },
+    "api_response_id": "resp_017c4b1b0ce77794016ae59070f2d08190b37e70ff33aac666",
+    "wire_record": "wire/dev/0011_fa3064497c0145dd8a15291c2b92b01a"
+  }
+}

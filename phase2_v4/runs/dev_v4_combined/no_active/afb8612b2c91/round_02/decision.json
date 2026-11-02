@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423739234180840,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "alternating",
+    "reason": "Alternating inputs stress memory and nonlinearity.",
+    "prediction": "Alternating will show slower convergence compared to state-only model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Storage should cause slower response convergence during alternating inputs.",
+      "condition_to_check": "Convergence rate should be slower than with a single pulse."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"alternating\",\n  \"reason\": \"Alternating inputs stress memory and nonlinearity.\",\n  \"prediction\": \"Alternating will show slower convergence compared to state-only model.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Storage should cause slower response convergence during alternating inputs.\",\n    \"condition_to_check\": \"Convergence rate should be slower than with a single pulse.\"\n  }\n}",
+    "input_tokens": 3827,
+    "output_tokens": 107,
+    "batch_elapsed_seconds": 2.6119535882025957,
+    "amortized_seconds": 2.6119535882025957,
+    "peak_gpu_allocated_gb": 14.952060222625732,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.029041290283203,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

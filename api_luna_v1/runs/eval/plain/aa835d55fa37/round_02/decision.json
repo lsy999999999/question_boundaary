@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793430201831784275,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "double_pulse",
+    "reason": "Memory_clock has the best trajectory-level CV NMSE by a wide margin, but residual lag-1 correlation remains. Double_pulse has the largest disagreement among untested experiments and probes repeated-input response.",
+    "prediction": "The second pulse will expose any history-dependent mismatch; memory_clock should predict it more accurately than history_all if its advantage generalizes.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"double_pulse\",\"reason\":\"Memory_clock has the best trajectory-level CV NMSE by a wide margin, but residual lag-1 correlation remains. Double_pulse has the largest disagreement among untested experiments and probes repeated-input response.\",\"prediction\":\"The second pulse will expose any history-dependent mismatch; memory_clock should predict it more accurately than history_all if its advantage generalizes.\",\"accept\":false}",
+    "input_tokens": 2788,
+    "output_tokens": 182,
+    "batch_elapsed_seconds": 3.461749218404293,
+    "amortized_seconds": 3.461749218404293,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2788,
+      "completion_tokens": 182,
+      "total_tokens": 2970,
+      "completion_tokens_details": {
+        "reasoning_tokens": 90
+      }
+    },
+    "api_response_id": "resp_05646e679390a385016ae592b752e8819392e629aebe07278c",
+    "wire_record": "wire/eval/0270_c93f84027546471f884ccdf869f8c6a2"
+  }
+}

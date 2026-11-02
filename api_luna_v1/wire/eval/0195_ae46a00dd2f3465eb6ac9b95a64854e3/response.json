@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430069410835065,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0f5e2f19d573b935016ae59233375081939606c17bb8b29d9d",
+    "object": "chat.completion",
+    "created": 1793430069,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"Memory_multiscale has the best trajectory-level CV error; its advantage over memory_clock is small, and residual lag and pulse tails leave some uncertainty.\",\"prediction\":\"After irregular input switches, output will show a decaying history-dependent tail rather than depend only on the current input.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Finite-relaxation accumulated history predicts output dependence on past input beyond current input and visible state.\",\"condition_to_check\":\"The relation is weakened if past input adds no predictive value after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3270,
+      "completion_tokens": 228,
+      "total_tokens": 3498,
+      "completion_tokens_details": {
+        "reasoning_tokens": 95
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 7.921991841867566
+}

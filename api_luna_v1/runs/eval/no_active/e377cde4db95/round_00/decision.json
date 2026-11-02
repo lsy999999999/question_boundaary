@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430422974272268,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "memory_slow has the lowest leave-trajectory-out error (0.00195), far below the state model, and the high residual autocorrelation supports history dependence. PRBS has the greatest disagreement among plausible models.",
+    "prediction": "After input switches, output will retain a smooth, decaying dependence on prior input rather than respond only to the current state and input.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated past input predicts lingering output after the input returns to zero, consistent with a leaky stored influence.",
+      "condition_to_check": "Check whether prior input improves prediction after controlling current input and visible state; absence of that effect would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest leave-trajectory-out error (0.00195), far below the state model, and the high residual autocorrelation supports history dependence. PRBS has the greatest disagreement among plausible models.\",\"prediction\":\"After input switches, output will retain a smooth, decaying dependence on prior input rather than respond only to the current state and input.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past input predicts lingering output after the input returns to zero, consistent with a leaky stored influence.\",\"condition_to_check\":\"Check whether prior input improves prediction after controlling current input and visible state; absence of that effect would weaken this relation.\"}}",
+    "input_tokens": 2827,
+    "output_tokens": 269,
+    "batch_elapsed_seconds": 3.4825779870152473,
+    "amortized_seconds": 3.4825779870152473,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2827,
+      "completion_tokens": 269,
+      "total_tokens": 3096,
+      "completion_tokens_details": {
+        "reasoning_tokens": 113
+      }
+    },
+    "api_response_id": "resp_0a73f7ecdbd6c5fe016ae5939422d48197bcf9c817a805e00a",
+    "wire_record": "wire/eval/0375_b95ace427c3546e0b8edbe4892c68799"
+  }
+}

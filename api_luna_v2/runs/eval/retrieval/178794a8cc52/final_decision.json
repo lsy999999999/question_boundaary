@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793432178170841428,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "prbs",
+    "reason": "It has the lowest leave-trajectory-out NMSE, narrowly outperforming saturating memory, and substantially improves on state-only models. Residual lag correlation leaves some uncertainty.",
+    "prediction": "After input switches, output will retain a history-dependent component that cannot be explained by current input and state alone.",
+    "accept": true,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"It has the lowest leave-trajectory-out NMSE, narrowly outperforming saturating memory, and substantially improves on state-only models. Residual lag correlation leaves some uncertainty.\",\"prediction\":\"After input switches, output will retain a history-dependent component that cannot be explained by current input and state alone.\",\"accept\":true}",
+    "input_tokens": 3288,
+    "output_tokens": 189,
+    "batch_elapsed_seconds": 4.515545307658613,
+    "amortized_seconds": 4.515545307658613,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3288,
+      "completion_tokens": 189,
+      "total_tokens": 3477,
+      "completion_tokens_details": {
+        "reasoning_tokens": 106
+      }
+    },
+    "api_response_id": "resp_0fd170fc60d260da016ae59a6f81f0819080ed45e9c8e18368",
+    "wire_record": "wire/eval/0487_cabbf3a3b29b4d20a2d4971fb09b1430"
+  }
+}

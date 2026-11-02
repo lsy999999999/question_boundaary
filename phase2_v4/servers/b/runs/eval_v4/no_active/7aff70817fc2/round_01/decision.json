@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423882350382218,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "double_pulse",
+    "reason": "Double_pulse tests multiple amplitude and duration effects.",
+    "prediction": "Response will show reduced amplitude at high input levels compared to linear models.",
+    "accept": true,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Response amplitude decreases at high states.",
+      "condition_to_check": "Compare double_pulse responses to single positive and negative pulses."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"double_pulse\",\n  \"reason\": \"Double_pulse tests multiple amplitude and duration effects.\",\n  \"prediction\": \"Response will show reduced amplitude at high input levels compared to linear models.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"Response amplitude decreases at high states.\",\n    \"condition_to_check\": \"Compare double_pulse responses to single positive and negative pulses.\"\n  }\n}",
+    "input_tokens": 3645,
+    "output_tokens": 107,
+    "batch_elapsed_seconds": 2.5631544664502144,
+    "amortized_seconds": 2.5631544664502144,
+    "peak_gpu_allocated_gb": 14.91956090927124,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

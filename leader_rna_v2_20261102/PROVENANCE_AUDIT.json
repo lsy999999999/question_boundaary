@@ -1,0 +1,561 @@
+{
+  "trace_reconstructable": true,
+  "clean_live_ingestion": false,
+  "recovered_races": [
+    {
+      "run": "B1",
+      "label": "L1",
+      "reason": "Root ingested before actor finished; actor subsequently revised file. Both final file and hash-exact ingested bytes preserved.",
+      "recovery": "evaluation/provenance_recovered/B1_L1_ingested.json"
+    }
+  ],
+  "runs": [
+    {
+      "run": "A1",
+      "counters": {
+        "replies": 6,
+        "search": 3,
+        "compute": 1,
+        "evidence": 0
+      },
+      "frozen": true,
+      "successful_computations": 1,
+      "failed_or_blocked_tools": [],
+      "search_source_counts": [
+        0,
+        0,
+        5
+      ],
+      "literature_use_records": 8,
+      "protocol_errors": [
+        {
+          "reply": "L3",
+          "errors": [
+            {
+              "error": "adjudication object received; wrapped as one-element list without modifying scientific content"
+            }
+          ]
+        }
+      ],
+      "adjudications": [
+        {
+          "task_id": "T05",
+          "decision": "complete",
+          "artifact_ids": [
+            "S06",
+            "C_RNA_G1_PARTITION",
+            "R3"
+          ],
+          "checks": [
+            "Eligible search returned five abstract-only sources; dates are within cutoff. S06_S2 concerns charged condensate models including disordered ssRNA and reports broad phase-behavior effects, not internal cavities.",
+            "S06_S4 is an HP1/DNA analogy; S06_S1 is review context. No result directly bridges RNA composition to cavity nucleation.",
+            "C_RNA_G1_PARTITION returncode 0; checks for [0,1] bounds, endpoints, and equal-K identity passed. Line 0 variant K remains undefined.",
+            "Partition computation is conditional equilibrium composition arithmetic and does not map to image f or confirm H1."
+          ],
+          "remaining_gap": "G1 remains open: no constitutive composition-to-internal-cavity relation is established; G2/G3 also remain open.",
+          "reason": "The task asked for an assessment and conditional consequence, both delivered. Completion refers to the assessment deliverable, not mechanistic validation.",
+          "formal_gate": false,
+          "formal_gate_reason": "task/artifact/leader missing",
+          "reply": "L3"
+        }
+      ],
+      "task_statuses": {
+        "T05": "rework"
+      }
+    },
+    {
+      "run": "A2",
+      "counters": {
+        "replies": 6,
+        "search": 3,
+        "compute": 0,
+        "evidence": 0
+      },
+      "frozen": true,
+      "successful_computations": 0,
+      "failed_or_blocked_tools": [],
+      "search_source_counts": [
+        2,
+        0,
+        0
+      ],
+      "literature_use_records": 14,
+      "protocol_errors": [
+        {
+          "reply": "L2",
+          "errors": [
+            {
+              "task_id": "T-L1-mechanism-bridge",
+              "error": "Task identity changed; update rejected. Keep stable candidate_id/gap_id/kind or explicitly create a new task with prior linkage."
+            },
+            {
+              "error": "adjudication object received; wrapped as one-element list without modifying scientific content"
+            }
+          ]
+        },
+        {
+          "reply": "R3",
+          "errors": [
+            {
+              "error": "adjudication object received; wrapped as one-element list without modifying scientific content"
+            }
+          ]
+        },
+        {
+          "reply": "L3",
+          "errors": [
+            {
+              "task_id": "T-L1-mechanism-bridge",
+              "error": "Task identity changed; update rejected. Keep stable candidate_id/gap_id/kind or explicitly create a new task with prior linkage."
+            },
+            {
+              "task_id": "T-L2-wetting-criterion-source",
+              "error": "Task identity changed; update rejected. Keep stable candidate_id/gap_id/kind or explicitly create a new task with prior linkage."
+            },
+            {
+              "error": "adjudication object received; wrapped as one-element list without modifying scientific content"
+            }
+          ]
+        }
+      ],
+      "adjudications": [
+        {
+          "task_id": "T-L1-mechanism-bridge",
+          "decision": "complete",
+          "artifact_ids": [
+            "R1_ready",
+            "S-L1-interface-wetting",
+            "S-R1-wetting-thermodynamics"
+          ],
+          "checks": [
+            "Executor supplied the requested phase/interface definitions, conditional equation, units, discriminating observable, and minimum measurement.",
+            "Executor explicitly states boundary enrichment does not prove reduced interfacial free energy.",
+            "No claim of empirical wetting or RNA abundance from DNA reads is made."
+          ],
+          "remaining_gap": "G-interface-link remains open: no molecularly resolved cavity-boundary measurement or system-specific interfacial thermodynamics; the literature search is abstract-limited and not RNA-interface-specific.",
+          "reason": "The assigned assessment deliverable is complete, while the mechanism itself is untested.",
+          "formal_gate": false,
+          "formal_gate_reason": "task/artifact/leader missing",
+          "reply": "L2"
+        },
+        {
+          "task_id": "T-L2-wetting-criterion-source",
+          "decision": "complete",
+          "artifact_ids": [
+            "R2",
+            "S-L2-generic-wetting-criterion"
+          ],
+          "checks": [
+            "Search returned no eligible sources and no relation can be attributed to it.",
+            "Three-interface energy comparison and sign are stated with the required phase topology and units.",
+            "Molecular adsorption is distinguished from a macroscopic intervening phase.",
+            "No DNA-to-RNA abundance inference or empirical wetting claim is made."
+          ],
+          "remaining_gap": "G-interface-link remains open: no identity-resolved boundary measurement, system-specific interfacial energies, or evidence that a macroscopic X layer exists; causal relevance to cavity persistence is unknown.",
+          "reason": "The assigned source-assessment task is complete, but the mechanism remains an unconfirmed hypothesis.",
+          "formal_gate": false,
+          "formal_gate_reason": "task/artifact/leader missing",
+          "reply": "R3"
+        },
+        {
+          "task_id": "T-L2-wetting-criterion-source",
+          "decision": "complete",
+          "artifact_ids": [
+            "R2",
+            "S-L2-generic-wetting-criterion",
+            "R3"
+          ],
+          "checks": [
+            "Actual search returned zero eligible sources, with five records excluded; no source-based formula claim is made.",
+            "Executor's conditional replacement derivation is dimensionally consistent and explicitly limited to a macroscopic third-phase layer.",
+            "No numeric computation was run, and no empirical wetting or causal claim is made.",
+            "R1 and R2 bounded assessment tasks are complete; the physical mechanism gap remains open."
+          ],
+          "remaining_gap": "G-interface-link remains open: molecular X identity/abundance, boundary localization, phase topology, interfacial energies, cavity mapping, causal role, and within-droplet persistence are unknown.",
+          "reason": "The bounded source-assessment task was answered by the no-eligible-source return and the executor's scoped interpretation. The candidate remains a hypothesis rather than an established explanation.",
+          "formal_gate": false,
+          "formal_gate_reason": "task/artifact/leader missing",
+          "reply": "L3"
+        }
+      ],
+      "task_statuses": {
+        "T-L1-mechanism-bridge": "acceptance",
+        "T-L2-wetting-criterion-source": "rework"
+      }
+    },
+    {
+      "run": "B1",
+      "counters": {
+        "replies": 6,
+        "search": 3,
+        "compute": 0,
+        "evidence": 0
+      },
+      "frozen": true,
+      "successful_computations": 0,
+      "failed_or_blocked_tools": [],
+      "search_source_counts": [
+        5,
+        5,
+        5
+      ],
+      "literature_use_records": 18,
+      "protocol_errors": [],
+      "adjudications": [
+        {
+          "task_id": "B1-T2",
+          "decision": "complete",
+          "artifact_ids": [
+            "B1-S2_S1",
+            "B1-S2_S2",
+            "B1-S2_S3",
+            "B1-S2_S4",
+            "B1-S2_S5"
+          ],
+          "checks": [
+            "Five returned abstracts reviewed; the broker search reported 12 hits, so conclusions are limited to the returned five.",
+            "Publication dates are all before 2025-05-12; each result is abstract-only.",
+            "No returned abstract directly reports RNA-RNA internal demixing in one RNA-rich dense phase.",
+            "H1 remains an explicitly unverified transfer hypothesis; no study answer or target-specific mechanism is asserted."
+          ],
+          "remaining_gap": "Direct RNA-RNA composition domains and mapping to an internal cavity remain unestablished.",
+          "reason": "The assigned literature-assessment deliverable is complete, but its result is negative for direct support and leaves the scientific gap open.",
+          "formal_gate": false,
+          "formal_gate_reason": "task/artifact/leader missing",
+          "reply": "L2"
+        },
+        {
+          "task_id": "B1-T1",
+          "decision": "complete",
+          "artifact_ids": [
+            "B1-S1_S3",
+            "B1-S1_S4"
+          ],
+          "checks": [
+            "Dates precede the cutoff and evidence is abstract-only.",
+            "The protein-RNA relation is not presented as established RNA-RNA demixing.",
+            "The missing local-composition and cavity bridge remains open."
+          ],
+          "remaining_gap": "No local RNA composition measurement or mapping from the analogy to cavity formation.",
+          "reason": "The assigned first-search assessment was completed with its transfer limits preserved.",
+          "formal_gate": false,
+          "formal_gate_reason": "task/artifact/leader missing",
+          "reply": "L3"
+        },
+        {
+          "task_id": "B1-T2",
+          "decision": "complete",
+          "artifact_ids": [
+            "B1-S2_S1",
+            "B1-S2_S2",
+            "B1-S2_S3",
+            "B1-S2_S4",
+            "B1-S2_S5"
+          ],
+          "checks": [
+            "Five supplied abstracts reviewed from 12 hits; no claim that all hits were assessed.",
+            "No direct RNA-RNA internal-demixing result was found in supplied abstracts.",
+            "Abstract-only and protein-RNA limitations retained."
+          ],
+          "remaining_gap": "Direct RNA-RNA demixing and cavity mapping remain unsupported.",
+          "reason": "The assigned second-search interpretation is complete and does not close the mechanism gap.",
+          "formal_gate": false,
+          "formal_gate_reason": "task/artifact/leader missing",
+          "reply": "L3"
+        },
+        {
+          "task_id": "B1-T3",
+          "decision": "complete",
+          "artifact_ids": [
+            "B1-S3_S1",
+            "B1-S3_S2",
+            "B1-S3_S3",
+            "B1-S3_S4",
+            "B1-S3_S5"
+          ],
+          "checks": [
+            "Five supplied abstracts reviewed from 385 hits; conclusions restricted to these returned items.",
+            "All five dates precede 2025-05-12 and scopes are abstract-only.",
+            "No compute result exists; the free-energy criterion is an algebraic derivation only.",
+            "Candidate preserves measurement ambiguity, causal alternatives and executor dissent."
+          ],
+          "remaining_gap": "RNA-RNA internal demixing, within-droplet species composition, causal route and later-time observation mapping remain unresolved.",
+          "reason": "The final search assessment and final candidate decision are complete; H1 remains a provisional testable hypothesis rather than a confirmed explanation.",
+          "formal_gate": false,
+          "formal_gate_reason": "task/artifact/leader missing",
+          "reply": "L3"
+        }
+      ],
+      "task_statuses": {
+        "B1-T1": "rework",
+        "B1-T2": "rework",
+        "B1-T3": "rework"
+      }
+    },
+    {
+      "run": "B2",
+      "counters": {
+        "replies": 6,
+        "search": 3,
+        "compute": 1,
+        "evidence": 0
+      },
+      "frozen": true,
+      "successful_computations": 1,
+      "failed_or_blocked_tools": [],
+      "search_source_counts": [
+        0,
+        4,
+        2
+      ],
+      "literature_use_records": 20,
+      "protocol_errors": [
+        {
+          "reply": "L2",
+          "errors": [
+            {
+              "task_id": "T_mix_internal_domain_literature",
+              "error": "Task identity changed; update rejected. Keep stable candidate_id/gap_id/kind or explicitly create a new task with prior linkage."
+            }
+          ]
+        },
+        {
+          "reply": "R2",
+          "errors": [
+            {
+              "task_id": "T_mix_internal_domain_literature",
+              "error": "Task identity changed; update rejected. Keep stable candidate_id/gap_id/kind or explicitly create a new task with prior linkage."
+            }
+          ]
+        },
+        {
+          "reply": "R3",
+          "errors": [
+            {
+              "task_id": "T_mix_internal_domain_literature",
+              "error": "Task identity changed; update rejected. Keep stable candidate_id/gap_id/kind or explicitly create a new task with prior linkage."
+            },
+            {
+              "error": "adjudication object received; wrapped as one-element list without modifying scientific content"
+            }
+          ]
+        },
+        {
+          "reply": "L3",
+          "errors": [
+            {
+              "error": "adjudication object received; wrapped as one-element list without modifying scientific content"
+            }
+          ]
+        }
+      ],
+      "adjudications": [
+        {
+          "task_id": "T_mix_internal_domain_literature",
+          "decision": "complete",
+          "artifact_ids": [
+            "S_internal_domains_rna_condensates_S1",
+            "S_internal_domains_rna_condensates_S2",
+            "S_multiphase_wetting_domains_S1",
+            "S_multiphase_wetting_domains_S2",
+            "S_multiphase_wetting_domains_S3",
+            "S_multiphase_wetting_domains_S4",
+            "C05",
+            "RNA_mix_partition_cavity_v4"
+          ],
+          "checks": [
+            "All returned usable sources are treated as abstract-only; no full-text quantitative claims are inferred.",
+            "S2 describes coexisting nucleolar subphases and composition-associated pH organization, but does not specify internal cavities in engineered RNA condensates.",
+            "C05 returncode 0, stderr empty; illustrative parameter grid and matched-rate comparison actually executed.",
+            "ODE dimensions, fixed-driver solution, threshold and zero-formation limits and q bounds were checked; matched rates make q trajectories non-identifying.",
+            "Image q remains distinct from concentration or volume fraction; DNA read fractions are not treated as RNA fractions."
+          ],
+          "remaining_gap": "G_mix_to_internal_domain remains open: the link from RNA species composition/partition to cavity nucleation and persistence under target conditions is unmeasured and unsupported by retrieved abstracts.",
+          "reason": "Literature-review acceptance criteria are met and the conditional derivation is checked. Completion applies only to T_mix_internal_domain_literature, not to empirical or mechanistic closure.",
+          "formal_gate": false,
+          "formal_gate_reason": "task/artifact/leader missing",
+          "reply": "R3"
+        },
+        {
+          "task_id": "T_mix_internal_domain_literature",
+          "decision": "complete",
+          "artifact_ids": [
+            "S_multiphase_wetting_domains_S1",
+            "S_multiphase_wetting_domains_S2",
+            "S_multiphase_wetting_domains_S3",
+            "S_multiphase_wetting_domains_S4",
+            "S_internal_domains_rna_condensates_S1",
+            "S_internal_domains_rna_condensates_S2",
+            "C05",
+            "RNA_mix_partition_cavity_v5",
+            "R3"
+          ],
+          "checks": [
+            "All usable literature was treated as abstract-only.",
+            "S_internal_domains_rna_condensates_S2 supports coexisting nucleolar subphases, but not internal cavities in engineered RNA droplets.",
+            "C05 returncode 0 and stderr empty; illustrative grid and matched-rate comparison ran, with no fit to observed q.",
+            "Analytic fixed-driver solution, dimensions, threshold/zero-formation limits and q bound are consistent; matched effective rates make the two driver models observationally equivalent.",
+            "q remains an image-derived area fraction; DNA read fractions are not RNA abundance."
+          ],
+          "remaining_gap": "G_mix_to_internal_domain remains open: no evidence directly links RNA mixture/partitioning to cavity nucleation and persistence under target conditions.",
+          "reason": "The literature-review acceptance criteria are met and computation was checked. This does not close the physical mechanism or establish empirical causality.",
+          "formal_gate": false,
+          "formal_gate_reason": "task/artifact/leader missing",
+          "reply": "L3"
+        }
+      ],
+      "task_statuses": {
+        "T_mix_internal_domain_literature": "rework"
+      }
+    },
+    {
+      "run": "C1",
+      "counters": {
+        "replies": 6,
+        "search": 2,
+        "compute": 2,
+        "evidence": 0
+      },
+      "frozen": true,
+      "successful_computations": 2,
+      "failed_or_blocked_tools": [],
+      "search_source_counts": [
+        2,
+        2
+      ],
+      "literature_use_records": 10,
+      "protocol_errors": [
+        {
+          "reply": "L3",
+          "errors": [
+            {
+              "error": "adjudication object received; wrapped as one-element list without modifying scientific content"
+            }
+          ]
+        }
+      ],
+      "adjudications": [
+        {
+          "task_id": "T1-derive-selective-phase-bridge",
+          "decision": "complete",
+          "artifact_ids": [
+            "C1-lever-rule-sensitivity",
+            "C2-lever-rule-limits",
+            "S1-internal-phase-partition",
+            "S2-rna-compartment-wetting"
+          ],
+          "checks": [
+            "C1 and C2 returned executed with returncode 0; conclusions were limited to their stated conditional/synthetic scopes.",
+            "C1 dimensions and mass reconstruction checked; tie-line compatibility and uncertainty-envelope limits inspected.",
+            "C2 equal-K and identical-phase limits agree with the lever-rule non-identifiability interpretation; its unexecuted nonzero-numerator degenerate case remains explicit.",
+            "Both literature searches returned abstract-only background, no direct evidence of internal RNA-poor cavities or wetting in this system.",
+            "The predicted phase volume is not equated to f; DNA read fractions are not interpreted as RNA concentrations."
+          ],
+          "remaining_gap": "Whether B cavities are compositionally distinct internal phases, whether E04 endpoints apply to them, what interfacial conditions produce the morphology, and whether composition rather than aging/carryover causes f(t) remain unidentified.",
+          "reason": "The bounded derivation, actual computations, background extraction and discriminating prediction are complete. The unresolved empirical mechanism is reported as a limitation and next-experiment target, not falsely closed.",
+          "formal_gate": true,
+          "formal_gate_reason": "mechanism formal artifact gate passed",
+          "reply": "L3"
+        }
+      ],
+      "task_statuses": {
+        "T1-derive-selective-phase-bridge": "completed"
+      }
+    },
+    {
+      "run": "C2",
+      "counters": {
+        "replies": 6,
+        "search": 2,
+        "compute": 1,
+        "evidence": 0
+      },
+      "frozen": true,
+      "successful_computations": 1,
+      "failed_or_blocked_tools": [],
+      "search_source_counts": [
+        5,
+        0
+      ],
+      "literature_use_records": 12,
+      "protocol_errors": [
+        {
+          "reply": "L2",
+          "errors": [
+            {
+              "error": "adjudication object received; wrapped as one-element list without modifying scientific content"
+            }
+          ]
+        },
+        {
+          "reply": "L3",
+          "errors": [
+            {
+              "error": "adjudication object received; wrapped as one-element list without modifying scientific content"
+            }
+          ]
+        }
+      ],
+      "adjudications": [
+        {
+          "task_id": "T-C2-L1-selectivity",
+          "decision": "complete",
+          "artifact_ids": [
+            "C2L1-alpha"
+          ],
+          "checks": [
+            "Broker result status executed, return code 0; output parses as JSON.",
+            "Tie-line 0 variant K remains undefined; positive tie-line concentrations produce dimensionless K and alpha.",
+            "Tie-line 1 alpha interval [4.769,300.647] and tie-line 2 [0.0422,2.661] are disjoint; only tie-line 1 is wholly above one, while tie-line 2 overlaps one.",
+            "Rectangular error propagation is not a confidence interval and does not provide joint coverage.",
+            "Tie-line index is not treated as composition; no bulk concentration or alpha is mapped to image f.",
+            "The calculation does not close G1: assay-matched composition response and cavity bridge remain untested."
+          ],
+          "remaining_gap": "Determine whether alpha changes with measured RNA loading under fixed reaction chemistry and whether that change predicts internal cavity composition/morphology; distinguish carryover and observation alternatives.",
+          "reason": "The requested calculation and conditional test are complete. The endpoint data show differing selectivity ranges under stated assumptions but do not identify loading dependence, mechanism, or causality.",
+          "formal_gate": true,
+          "formal_gate_reason": "mechanism formal artifact gate passed",
+          "reply": "L2"
+        },
+        {
+          "task_id": "T-C2-L3-internal-domain-search",
+          "decision": "complete",
+          "artifact_ids": [
+            "C2L3-internal-domains",
+            "C2L2-domain-literature_S1",
+            "C2L2-domain-literature_S5"
+          ],
+          "checks": [
+            "C2L1-alpha status is executed with return code 0; no other computation is claimed.",
+            "C2L2 search returned abstract-only records; S1 supports external/coexisting interface wetting under two-RNA/PEG conditions, not internal cavities; S5 is a protein-client analogy.",
+            "C2L3 focused search returned zero sources; this is not interpreted as proof of literature absence.",
+            "Executor R3 dissent that the internal-cavity transfer is unsupported is preserved.",
+            "The selected candidate retains a measurable prediction distinct from carryover/reaction-state alternative, while G1 remains unresolved."
+          ],
+          "remaining_gap": "Determine whether measured RNA loading changes species-specific partition/interface enrichment under fixed chemistry and whether that change predicts internal cavity composition and morphology; distinguish carryover and observation-level alternatives.",
+          "reason": "The assigned focused search was returned and interpreted with its limits. The mechanism itself is not complete or confirmed; the final decision keeps H1 as a transfer hypothesis and H0 viable.",
+          "formal_gate": false,
+          "formal_gate_reason": "task/artifact/leader missing",
+          "reply": "L3"
+        }
+      ],
+      "task_statuses": {
+        "T-C2-L1-selectivity": "acceptance",
+        "T-C2-L2-domain-literature": "acceptance",
+        "T-C2-L3-internal-domain-search": "rework"
+      }
+    }
+  ],
+  "total_research_replies": 36,
+  "total_searches": 16,
+  "total_compute_requests": 5,
+  "material_hash": "ccb2c1034967abebf72afc56e8f147dc4c5a22c5937dc0b884d310e8de21665c",
+  "extra_model_reviews": 0,
+  "model_retries": 0,
+  "limitations": [
+    "Formal provenance checks do not establish scientific correctness",
+    "actor tool obedience is instruction based; full model-provider inference trace/token usage unavailable",
+    "the shared output schema itself encourages construction in all arms; comparison only tests added scheduling paragraph",
+    "broker intake format repair applied consistently; original code hash and patch record retained"
+  ]
+}

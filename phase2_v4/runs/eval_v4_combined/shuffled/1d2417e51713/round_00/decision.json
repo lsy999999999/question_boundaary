@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423793386725188,
+  "decision": {
+    "representation": "state",
+    "experiment": "positive_pulse",
+    "reason": "Current state model has low NMSE but shows slight disagreement on positive pulse.",
+    "prediction": "Positive pulse will cause a delayed response compared to negative pulse due to potential storage effects.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Delayed response to positive pulse indicates storage mechanism.",
+      "condition_to_check": "If response to positive pulse is delayed relative to negative pulse."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"state\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Current state model has low NMSE but shows slight disagreement on positive pulse.\",\n  \"prediction\": \"Positive pulse will cause a delayed response compared to negative pulse due to potential storage effects.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Delayed response to positive pulse indicates storage mechanism.\",\n    \"condition_to_check\": \"If response to positive pulse is delayed relative to negative pulse.\"\n  }\n}",
+    "input_tokens": 3163,
+    "output_tokens": 115,
+    "batch_elapsed_seconds": 2.6364455986768007,
+    "amortized_seconds": 2.6364455986768007,
+    "peak_gpu_allocated_gb": 14.829248905181885,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024013519287109,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

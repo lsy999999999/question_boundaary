@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793430392870465830,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "ramp_reverse",
+    "reason": "Memory_clock has the lowest leave-trajectory-out NMSE (0.0040), well below history_all (0.0532); its errors remain low across tested interventions despite residual autocorrelation.",
+    "prediction": "Across resets, ramp_reverse will show elapsed-time modulation beyond accumulated input history, with memory_clock forecasting better than history_all.",
+    "accept": true,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"ramp_reverse\",\"reason\":\"Memory_clock has the lowest leave-trajectory-out NMSE (0.0040), well below history_all (0.0532); its errors remain low across tested interventions despite residual autocorrelation.\",\"prediction\":\"Across resets, ramp_reverse will show elapsed-time modulation beyond accumulated input history, with memory_clock forecasting better than history_all.\",\"accept\":true}",
+    "input_tokens": 3256,
+    "output_tokens": 87,
+    "batch_elapsed_seconds": 2.542942699044943,
+    "amortized_seconds": 2.542942699044943,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3256,
+      "completion_tokens": 87,
+      "total_tokens": 3343
+    },
+    "api_response_id": "resp_0b7d65605e9f7168016ae5937773b08193a7eef6c26bd7e8d2",
+    "wire_record": "wire/eval/0362_d340c6b15e924cb68e0bf2aa7a68428a"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429888078790332,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0e3488bafc9314e5016ae5917d4f40819486b854c790feffe1",
+    "object": "chat.completion",
+    "created": 1793429888,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"alternating\",\"reason\":\"State_cubic has the lowest trajectory-level CV NMSE (0.00213), while memory candidates do not improve it. Residual autocorrelation and disagreement on alternating inputs leave unseen interventions uncertain.\",\"prediction\":\"Alternating input will produce trajectory deviations from the state_cubic prediction if unmodeled history effects matter.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2251,
+      "completion_tokens": 201,
+      "total_tokens": 2452,
+      "completion_tokens_details": {
+        "reasoning_tokens": 115
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.8655346874147654
+}

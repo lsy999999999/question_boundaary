@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793429881165238960,
+  "decision": {
+    "representation": "clock",
+    "experiment": "prbs",
+    "reason": "Clock has the lowest trajectory-held-out NMSE, though its improvement over state is small. Residual lag correlation leaves adequacy uncertain; PRBS offers the largest disagreement among plausible models.",
+    "prediction": "Under PRBS, clock predicts a component tied to elapsed time; this component should recur at the same times across resets despite different input histories.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Clock features improve prediction slightly, but do not establish an independent external driver.",
+      "condition_to_check": "Compare reset-aligned PRBS trajectories; reject the clock account if residual structure follows input history rather than elapsed time."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has the lowest trajectory-held-out NMSE, though its improvement over state is small. Residual lag correlation leaves adequacy uncertain; PRBS offers the largest disagreement among plausible models.\",\"prediction\":\"Under PRBS, clock predicts a component tied to elapsed time; this component should recur at the same times across resets despite different input histories.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Clock features improve prediction slightly, but do not establish an independent external driver.\",\"condition_to_check\":\"Compare reset-aligned PRBS trajectories; reject the clock account if residual structure follows input history rather than elapsed time.\"}}",
+    "input_tokens": 2804,
+    "output_tokens": 401,
+    "batch_elapsed_seconds": 5.429896171204746,
+    "amortized_seconds": 5.429896171204746,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2804,
+      "completion_tokens": 401,
+      "total_tokens": 3205,
+      "completion_tokens_details": {
+        "reasoning_tokens": 259
+      }
+    },
+    "api_response_id": "resp_05e65a4efd3402b9016ae59174ceb08193822f64a85d473b57",
+    "wire_record": "wire/eval/0089_5253f429d6dd465da000afbd2065e2a2"
+  }
+}

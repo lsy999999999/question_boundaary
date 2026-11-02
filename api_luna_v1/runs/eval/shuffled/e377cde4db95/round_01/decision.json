@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430611713650806,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "alternating",
+    "reason": "It has the lowest leave-trajectory-out NMSE, but residual lag-1 correlation and higher PRBS error leave uncertainty; alternating best separates the plausible memory variants.",
+    "prediction": "After input switches, outputs will retain a history-dependent tail rather than depend only on current input and output.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "A leaky accumulated influence can persist after input changes or returns to zero.",
+      "condition_to_check": "Test whether input history predicts output after controlling current input and visible output."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest leave-trajectory-out NMSE, but residual lag-1 correlation and higher PRBS error leave uncertainty; alternating best separates the plausible memory variants.\",\"prediction\":\"After input switches, outputs will retain a history-dependent tail rather than depend only on current input and output.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A leaky accumulated influence can persist after input changes or returns to zero.\",\"condition_to_check\":\"Test whether input history predicts output after controlling current input and visible output.\"}}",
+    "input_tokens": 3257,
+    "output_tokens": 323,
+    "batch_elapsed_seconds": 4.199929212220013,
+    "amortized_seconds": 4.199929212220013,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3257,
+      "completion_tokens": 323,
+      "total_tokens": 3580,
+      "completion_tokens_details": {
+        "reasoning_tokens": 198
+      }
+    },
+    "api_response_id": "resp_021b7732e2c37f38016ae5945043c881979e6f66c5ae1cfca6",
+    "wire_record": "wire/eval/0454_cd97a707efa9439d99cd973af0a8f02d"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430074133497411,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "alternating",
+    "reason": "Memory_slow has the lowest leave-trajectory-out error by a wide margin, and pulse responses show multi-second carryover. Alternating has the greatest remaining disagreement among plausible models.",
+    "prediction": "After input switches, output will retain a history-dependent component that relaxes over seconds, even when current input reverses.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated input and output history can carry past influence forward with finite relaxation.",
+      "condition_to_check": "At matched current input and output, differing prior inputs should predict different subsequent outputs."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest leave-trajectory-out error by a wide margin, and pulse responses show multi-second carryover. Alternating has the greatest remaining disagreement among plausible models.\",\"prediction\":\"After input switches, output will retain a history-dependent component that relaxes over seconds, even when current input reverses.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history can carry past influence forward with finite relaxation.\",\"condition_to_check\":\"At matched current input and output, differing prior inputs should predict different subsequent outputs.\"}}",
+    "input_tokens": 3262,
+    "output_tokens": 245,
+    "batch_elapsed_seconds": 3.444129442796111,
+    "amortized_seconds": 3.444129442796111,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3262,
+      "completion_tokens": 245,
+      "total_tokens": 3507,
+      "completion_tokens_details": {
+        "reasoning_tokens": 113
+      }
+    },
+    "api_response_id": "resp_02ef0e051b22bb58016ae5923770c8819090c26e81febab5de",
+    "wire_record": "wire/eval/0199_39fdeeeedb3e45aaac84c738de2a7ce4"
+  }
+}

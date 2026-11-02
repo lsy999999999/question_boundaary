@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431526270160304,
+  "http_status": 200,
+  "body": {
+    "id": "resp_08f2c0de02e25c2e016ae597e405408197bed6c500d5b78c24",
+    "object": "chat.completion",
+    "created": 1793431526,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"alternating\",\"reason\":\"Memory_multiscale has the lowest trajectory-level CV NMSE (0.00152), far below the current state model (0.0343); persistent post-pulse relaxation supports history dependence. Alternating inputs best distinguish the plausible memory variants.\",\"prediction\":\"After rapid input reversals, the output will retain history-dependent tails that a current-state-only model misses.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence can persist after input returns to zero, with leakage producing relaxation.\",\"condition_to_check\":\"At matched current input and output, test whether prior input sequence predicts subsequent output; absence of this effect weakens the relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2808,
+      "completion_tokens": 152,
+      "total_tokens": 2960,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.0538573190569878
+}

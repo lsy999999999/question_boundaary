@@ -1,0 +1,84 @@
+{
+  "task_id": "afb8612b2c91",
+  "split": "dev",
+  "family": "memory",
+  "seed": 201,
+  "method": "shuffled",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_slow",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0018162703280637765,
+    "coefficients": [
+      -0.0003708,
+      -0.6904353,
+      0.9892846,
+      1.0813164,
+      -0.7470924,
+      -0.126344,
+      -0.9545605,
+      -0.0769921,
+      0.7116026
+    ]
+  },
+  "test": {
+    "test_nmse": 0.000534104051038902,
+    "test_mse": 5.313331563374154e-05,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 3.494458113735011e-05,
+        "nmse": 0.0005216574758601518
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.0001290886806859885,
+        "nmse": 0.0004594625396756838
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 1.718817694870191e-05,
+        "nmse": 0.0005683622594906751
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 5.461070609118523e-05,
+        "nmse": 0.0007072626854927753
+      },
+      {
+        "action": "test_prbs",
+        "mse": 3.525730128066278e-05,
+        "nmse": 0.0004725714075686623
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 4.771044765856072e-05,
+        "nmse": 0.0004753079381454636
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": true,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 13135,
+  "output_tokens": 1356,
+  "generation_seconds_amortized": 17.89285248797387,
+  "elapsed_wall_seconds": 157.3363995552063,
+  "selected_actions": [
+    "prbs",
+    "alternating",
+    "prbs"
+  ],
+  "selected_representations": [
+    "memory_slow",
+    "memory_slow",
+    "memory_slow",
+    "memory_slow"
+  ],
+  "peak_gpu_allocated_gb": 0.0,
+  "peak_process_ram_gb": 0.08777236938476562,
+  "inference_backend": "third_party_api",
+  "evaluation_after_commit_ns": 1793431329608910499
+}

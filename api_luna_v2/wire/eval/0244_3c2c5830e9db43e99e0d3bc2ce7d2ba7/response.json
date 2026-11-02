@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431687300569347,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0bd289e5b064f0b4016ae5988329ec8193ae03227106c79032",
+    "object": "chat.completion",
+    "created": 1793431687,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"prbs\",\"reason\":\"State_cubic has the lowest trajectory-level CV NMSE (0.00166); memory alternatives validate worse, and the alternating forecast error was low. PRBS probes varied input histories.\",\"prediction\":\"Across irregular input switches, state_cubic will predict responses without a consistent residual dependence on earlier inputs.\",\"accept\":true,\"mapping\":{\"source_id\":\"transport\",\"target_relation\":\"Responses flatten at larger state magnitudes, consistent with weakened response, though this does not establish a capacity mechanism.\",\"condition_to_check\":\"Compare predictions across positive and negative amplitudes; systematic history-dependent PRBS residuals would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3268,
+      "completion_tokens": 347,
+      "total_tokens": 3615,
+      "completion_tokens_details": {
+        "reasoning_tokens": 206
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.641995173878968
+}

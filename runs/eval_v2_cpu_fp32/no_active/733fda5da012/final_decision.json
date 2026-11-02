@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793412307697017720,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "step_rest",
+    "reason": "Multiscale memory performs well across various inputs.",
+    "prediction": "Step input should yield a sustained response with slower decay.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Persistent response after input ends due to accumulated past states.",
+      "condition_to_check": "Delayed response magnitude and decay rate post-step."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_multiscale\",\n  \"experiment\": \"step_rest\",\n  \"reason\": \"Multiscale memory performs well across various inputs.\",\n  \"prediction\": \"Step input should yield a sustained response with slower decay.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Persistent response after input ends due to accumulated past states.\",\n    \"condition_to_check\": \"Delayed response magnitude and decay rate post-step.\"\n  }\n}",
+    "input_tokens": 2924,
+    "output_tokens": 106,
+    "batch_elapsed_seconds": 338.155160675291,
+    "amortized_seconds": 84.53879016882274,
+    "peak_gpu_allocated_gb": 0.0,
+    "backend": "cpu-fp32",
+    "peak_process_ram_gb": 34.99223709106445,
+    "model_path": "/home/lsy/theory_discovery_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

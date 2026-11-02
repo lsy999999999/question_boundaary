@@ -1,0 +1,561 @@
+{
+  "scope": "All 32 structured/shuffled development generations, including 8 final choices. Single unblinded assistant review; no_active excluded.",
+  "rubric": {
+    "relation_aligned": "Agreement with the card text actually supplied under the cited ID; not target-mechanism validation.",
+    "insufficient_or_conflicting": "Answer relation absent from, or conflicts with, the cited supplied text.",
+    "none": "No card cited."
+  },
+  "counts": {
+    "structured": {
+      "none": 9,
+      "relation_aligned": 7
+    },
+    "shuffled": {
+      "none": 13,
+      "insufficient_or_conflicting": 2,
+      "relation_aligned": 1
+    }
+  },
+  "records": [
+    {
+      "method": "structured",
+      "task_id": "442fe7a60ac6",
+      "round": 0,
+      "record": "runs/dev/structured/442fe7a60ac6/request_00_1793429607127750869.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "No cross-domain relation is established by these observations.",
+        "condition_to_check": "Check whether identical current state and input predict different outputs after different input histories."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "442fe7a60ac6",
+      "round": 1,
+      "record": "runs/dev/structured/442fe7a60ac6/request_01_1793429626304186633.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "No cross-domain relation is established by these observations.",
+        "condition_to_check": "Check whether identical current state and input predict different outputs after different input histories."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "442fe7a60ac6",
+      "round": 2,
+      "record": "runs/dev/structured/442fe7a60ac6/request_02_1793429648236058481.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "No cross-domain relation is established by the available evidence.",
+        "condition_to_check": "Check whether matched current state and input yield different outputs after rising versus falling input histories."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "442fe7a60ac6",
+      "round": 3,
+      "record": "runs/dev/structured/442fe7a60ac6/request_03_1793429670216662225.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "No cross-domain relation is established by the available observations.",
+        "condition_to_check": "Check whether matched current state and input produce different outputs after different input histories."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "950f039e72fa",
+      "round": 0,
+      "record": "runs/dev/structured/950f039e72fa/request_00_1793429619928791833.json",
+      "declared_mapping": {
+        "source_id": "external_clock",
+        "target_relation": "Elapsed-time periodic features predict shared residual structure across different input interventions.",
+        "condition_to_check": "Compare late outputs at matched elapsed times across alternating and other inputs; input-dependent changes would weaken this relation."
+      },
+      "supplied_card": {
+        "id": "external_clock",
+        "domain": "seasonal and periodically driven systems",
+        "structure": "A shared unobserved driver tied to elapsed time can generate persistent residuals without endogenous memory.",
+        "conditions": "Compare different input interventions aligned in elapsed time.",
+        "failure": "A decaying impulse response or input-driven oscillation is not sufficient evidence for an independent clock."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Relation agrees with the supplied card text; this does not establish the mechanism in the target.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "950f039e72fa",
+      "round": 1,
+      "record": "runs/dev/structured/950f039e72fa/request_01_1793429639718317603.json",
+      "declared_mapping": {
+        "source_id": "external_clock",
+        "target_relation": "Shared elapsed-time features may predict residual structure across different input interventions.",
+        "condition_to_check": "Compare PRBS output with other trajectories at matched times; input-dependent residuals would weaken this relation."
+      },
+      "supplied_card": {
+        "id": "external_clock",
+        "domain": "seasonal and periodically driven systems",
+        "structure": "A shared unobserved driver tied to elapsed time can generate persistent residuals without endogenous memory.",
+        "conditions": "Compare different input interventions aligned in elapsed time.",
+        "failure": "A decaying impulse response or input-driven oscillation is not sufficient evidence for an independent clock."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Relation agrees with the supplied card text; this does not establish the mechanism in the target.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "950f039e72fa",
+      "round": 2,
+      "record": "runs/dev/structured/950f039e72fa/request_02_1793429665110161330.json",
+      "declared_mapping": {
+        "source_id": "external_clock",
+        "target_relation": "Shared elapsed-time features may predict residual structure across different input interventions.",
+        "condition_to_check": "Compare double-pulse output with other trajectories at matched times; input-dependent late features would weaken this relation."
+      },
+      "supplied_card": {
+        "id": "external_clock",
+        "domain": "seasonal and periodically driven systems",
+        "structure": "A shared unobserved driver tied to elapsed time can generate persistent residuals without endogenous memory.",
+        "conditions": "Compare different input interventions aligned in elapsed time.",
+        "failure": "A decaying impulse response or input-driven oscillation is not sufficient evidence for an independent clock."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Relation agrees with the supplied card text; this does not establish the mechanism in the target.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "950f039e72fa",
+      "round": 3,
+      "record": "runs/dev/structured/950f039e72fa/request_03_1793429683774405029.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "No independent external clock is established by predictive fit alone.",
+        "condition_to_check": "A clock relation would be weakened if matched-time features shift systematically with input history."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "afb8612b2c91",
+      "round": 0,
+      "record": "runs/dev/structured/afb8612b2c91/request_00_1793429615418046387.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Accumulated past influence with finite relaxation is consistent with the improved slow-memory predictive representation.",
+        "condition_to_check": "Under PRBS, test whether past-input history predicts output after controlling current input and visible state."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Relation agrees with the supplied card text; this does not establish the mechanism in the target.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "afb8612b2c91",
+      "round": 1,
+      "record": "runs/dev/structured/afb8612b2c91/request_01_1793429634894708268.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Finite-relaxation memory features predict accumulated past-input effects beyond current input and visible state.",
+        "condition_to_check": "Test whether alternating-input residuals depend on prior input history after controlling current input and visible state."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Relation agrees with the supplied card text; this does not establish the mechanism in the target.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "afb8612b2c91",
+      "round": 2,
+      "record": "runs/dev/structured/afb8612b2c91/request_02_1793429657194073339.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Finite-relaxation memory features predict accumulated past-input effects beyond current input and visible state.",
+        "condition_to_check": "Compare the two pulse responses after controlling for current input and visible state; no residual difference would weaken this relation."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Relation agrees with the supplied card text; this does not establish the mechanism in the target.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "afb8612b2c91",
+      "round": 3,
+      "record": "runs/dev/structured/afb8612b2c91/request_03_1793429678195688174.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Finite-relaxation accumulated history is supported as a predictive feature, but the best validated timescales are fast.",
+        "condition_to_check": "The history feature should predict output after controlling current input and visible state; absence of that effect weakens this relation."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Relation agrees with the supplied card text; this does not establish the mechanism in the target.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "c2295bc59be5",
+      "round": 0,
+      "record": "runs/dev/structured/c2295bc59be5/request_00_1793429611462731122.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "The improved fit supports adding instantaneous curvature, but does not establish a saturation mechanism.",
+        "condition_to_check": "Compare responses across amplitudes and signs; reject curvature if it fails to improve held-out trajectories."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "c2295bc59be5",
+      "round": 1,
+      "record": "runs/dev/structured/c2295bc59be5/request_01_1793429630471761398.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "The evidence favors instantaneous nonlinear curvature; it does not establish storage or a separate saturation mechanism.",
+        "condition_to_check": "Compare ramp-up and ramp-down responses at matched states and inputs; persistent differences would falsify an instantaneous-only account."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "c2295bc59be5",
+      "round": 2,
+      "record": "runs/dev/structured/c2295bc59be5/request_02_1793429652630770157.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "Instantaneous curvature is supported comparatively, but no mechanism card is justified by these fits.",
+        "condition_to_check": "Reject the model if PRBS residuals show reproducible dependence on past inputs after accounting for current state and input."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "c2295bc59be5",
+      "round": 3,
+      "record": "runs/dev/structured/c2295bc59be5/request_03_1793429673751593183.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "Instantaneous nonlinear curvature predicts better here, but the evidence does not establish a distinct physical mechanism.",
+        "condition_to_check": "Reject this representation if held-out interventions show reproducible history-dependent residuals after accounting for current state and input."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "442fe7a60ac6",
+      "round": 0,
+      "record": "runs/dev/shuffled/442fe7a60ac6/request_00_1793429688784983650.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "No cross-domain mechanism is established by the current predictive comparisons.",
+        "condition_to_check": "A repeatable history-dependent offset at matched state and input would challenge the state-only representation."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "442fe7a60ac6",
+      "round": 1,
+      "record": "runs/dev/shuffled/442fe7a60ac6/request_01_1793429713722927601.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "No cross-domain mechanism is established by the predictive comparisons.",
+        "condition_to_check": "A repeatable offset at matched state and input would challenge the state-only representation."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "442fe7a60ac6",
+      "round": 2,
+      "record": "runs/dev/shuffled/442fe7a60ac6/request_02_1793429735775064543.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "No cross-domain mechanism is established by the predictive comparisons.",
+        "condition_to_check": "A repeatable offset at matched state and input would challenge the state-only representation."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "442fe7a60ac6",
+      "round": 3,
+      "record": "runs/dev/shuffled/442fe7a60ac6/request_03_1793429755649376024.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "No cross-domain mechanism is established by these predictive comparisons.",
+        "condition_to_check": "A repeatable response offset at matched state and input would challenge the state-only representation."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "950f039e72fa",
+      "round": 0,
+      "record": "runs/dev/shuffled/950f039e72fa/request_00_1793429708255398763.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "The clock representation captures elapsed-time dependence, but the observations do not establish an independent external driver.",
+        "condition_to_check": "Compare alternating-input trajectories at matched elapsed times; persistent aligned variation would support clock dependence."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "950f039e72fa",
+      "round": 1,
+      "record": "runs/dev/shuffled/950f039e72fa/request_01_1793429729931049575.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "Elapsed-time features predict well, but this does not establish an independent external driver.",
+        "condition_to_check": "Compare PRBS observations with predictions at matched elapsed times; systematic history-linked deviations would challenge clock dependence."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "950f039e72fa",
+      "round": 2,
+      "record": "runs/dev/shuffled/950f039e72fa/request_02_1793429752383732614.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "Elapsed-time features predict well, but the observations do not establish an independent external driver.",
+        "condition_to_check": "Compare the second-pulse response with clock and memory predictions; systematic dependence on the first pulse beyond elapsed time would challenge clock."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "950f039e72fa",
+      "round": 3,
+      "record": "runs/dev/shuffled/950f039e72fa/request_03_1793429766942217028.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "Elapsed-time features predict well, but the evidence does not establish an independent external driver.",
+        "condition_to_check": "Systematic prediction errors that track prior input history across matched elapsed times would challenge the clock representation."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "afb8612b2c91",
+      "round": 0,
+      "record": "runs/dev/shuffled/afb8612b2c91/request_00_1793429700901322638.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Accumulated past influence predicts a response beyond current input and visible state; this is a representation-level relation, not proof of physical storage.",
+        "condition_to_check": "Test whether history predicts PRBS responses after controlling current input and visible state; no added predictive effect would falsify this relation."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "An effect can arrive after a travel time; a lag can differ from a smooth accumulation of history.",
+        "conditions": "Response timing should persist across different input shapes.",
+        "failure": "A slow sensor or a distributed relaxation can resemble a pure delay."
+      },
+      "relation_alignment_review": "insufficient_or_conflicting",
+      "review_note": "The text actually supplied under storage describes travel time and lag; the answer instead describes accumulated influence and finite relaxation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "afb8612b2c91",
+      "round": 1,
+      "record": "runs/dev/shuffled/afb8612b2c91/request_01_1793429725392085869.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "The history-based fit is predictive, but the observations do not establish a specific cross-domain mechanism.",
+        "condition_to_check": "If alternating responses are predicted by current input and visible state alone, the added-history relation is weakened."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "afb8612b2c91",
+      "round": 2,
+      "record": "runs/dev/shuffled/afb8612b2c91/request_02_1793429747235946622.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "History-based features predict responses, but observations do not establish a specific cross-domain mechanism.",
+        "condition_to_check": "If the second-pulse response is explained by current input and visible state alone, the added-history relation is weakened."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "afb8612b2c91",
+      "round": 3,
+      "record": "runs/dev/shuffled/afb8612b2c91/request_03_1793429763381930324.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Accumulated past influence predicts response beyond current input and visible state, consistent with a predictive storage relation.",
+        "condition_to_check": "The relation is weakened if history adds no predictive effect after controlling current input and visible state."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "An effect can arrive after a travel time; a lag can differ from a smooth accumulation of history.",
+        "conditions": "Response timing should persist across different input shapes.",
+        "failure": "A slow sensor or a distributed relaxation can resemble a pure delay."
+      },
+      "relation_alignment_review": "insufficient_or_conflicting",
+      "review_note": "The text actually supplied under storage describes travel time and lag; the answer instead describes accumulated influence and finite relaxation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "c2295bc59be5",
+      "round": 0,
+      "record": "runs/dev/shuffled/c2295bc59be5/request_00_1793429694319945126.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "No cross-domain relation is sufficiently supported by these observations.",
+        "condition_to_check": "Compare response magnitude across input amplitudes and test whether curvature predicts held-out trajectories."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "c2295bc59be5",
+      "round": 1,
+      "record": "runs/dev/shuffled/c2295bc59be5/request_01_1793429719779363698.json",
+      "declared_mapping": {
+        "source_id": "transport",
+        "target_relation": "Curvature is consistent with weaker growth at large response magnitudes, though it does not establish limited capacity.",
+        "condition_to_check": "Compare positive and negative amplitude responses and test whether ramp reversal adds history dependence beyond state_cubic."
+      },
+      "supplied_card": {
+        "id": "transport",
+        "domain": "transport and communication",
+        "structure": "Growth and response can weaken at large state magnitudes because of limited capacity.",
+        "conditions": "Compare responses across positive and negative amplitudes; determine whether history is necessary in addition to curvature.",
+        "failure": "A visually flattening trajectory also occurs in a linear stable system approaching equilibrium."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Relation agrees with the supplied card text; this does not establish the mechanism in the target.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "c2295bc59be5",
+      "round": 2,
+      "record": "runs/dev/shuffled/c2295bc59be5/request_02_1793429741871292156.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "No cross-domain relation is sufficiently supported by these observations.",
+        "condition_to_check": "Check whether PRBS responses show systematic history-dependent residuals beyond state_cubic predictions."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "shuffled",
+      "task_id": "c2295bc59be5",
+      "round": 3,
+      "record": "runs/dev/shuffled/c2295bc59be5/request_03_1793429759180728814.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "No cross-domain mechanism is established by predictive validation alone.",
+        "condition_to_check": "Test for systematic held-out residuals after matching current state and input across different histories."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; mechanism assertion is not inferred from a none citation.",
+      "target_mechanism_validated_by_review": false
+    }
+  ]
+}

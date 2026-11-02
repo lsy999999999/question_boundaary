@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430468503503575,
+  "http_status": 200,
+  "body": {
+    "id": "resp_09f9ea421d6eadbc016ae593c143988195b1aa25cb8390b161",
+    "object": "chat.completion",
+    "created": 1793430468,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the best trajectory-held-out error (0.00138), far below the state model (0.109); PRBS has the greatest disagreement among plausible alternatives.\",\"prediction\":\"Under PRBS input, the slow-memory model predicts a residual response after input switches that differs from history_all and memory_clock forecasts.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No bibliography card is clearly justified by the model comparison alone.\",\"condition_to_check\":\"Test whether PRBS responses follow the slow-memory forecast on held-out trajectories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2802,
+      "completion_tokens": 341,
+      "total_tokens": 3143,
+      "completion_tokens_details": {
+        "reasoning_tokens": 211
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.917033338919282
+}

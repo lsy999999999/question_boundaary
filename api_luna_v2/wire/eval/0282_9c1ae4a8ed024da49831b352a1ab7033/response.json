@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431756918810644,
+  "http_status": 200,
+  "body": {
+    "id": "resp_089392cadf404607016ae598ca40f48190a8ef9d49f45a93ef",
+    "object": "chat.completion",
+    "created": 1793431756,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest trajectory-level CV NMSE (0.00417), far below memory_fast (0.01687); substantial residual lag also indicates the current model is inadequate.\",\"prediction\":\"After irregular input switches, slow accumulated history will produce persistent, smoother responses than a fast-memory model predicts.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2963,
+      "completion_tokens": 198,
+      "total_tokens": 3161,
+      "completion_tokens_details": {
+        "reasoning_tokens": 113
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.492337856441736
+}

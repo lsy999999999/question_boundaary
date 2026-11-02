@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430004250993305,
+  "http_status": 200,
+  "body": {
+    "id": "resp_06874f51281d27fb016ae591f15ec88190a0c9faa51cb6ff8a",
+    "object": "chat.completion",
+    "created": 1793430004,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"ramp_reverse\",\"reason\":\"State has the lowest trajectory-level CV error; memory and clock alternatives do not improve it. Residual lag correlation leaves some uncertainty, so a ramp reversal is a useful probe.\",\"prediction\":\"At matched current state and input, ramp and reverse phases will show no systematic difference in subsequent output.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No added history or clock relation is supported by validation.\",\"condition_to_check\":\"Reject the state model if matched state-input conditions show reproducible phase-dependent outputs.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3247,
+      "completion_tokens": 259,
+      "total_tokens": 3506,
+      "completion_tokens_details": {
+        "reasoning_tokens": 137
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 8.482802230864763
+}

@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793432132983281091,
+  "decision": {
+    "representation": "memory_fast",
+    "experiment": "prbs",
+    "reason": "memory_fast has the lowest trajectory-held-out error. The state model’s residual lag-1 correlation suggests remaining temporal dependence, though prior intervention forecast errors were low.",
+    "prediction": "After matching current state and input, residuals will vary systematically with recent input or state history, especially over subsecond timescales.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Fast accumulated history may carry recent input influence forward with finite relaxation.",
+      "condition_to_check": "Reject if recent-history features do not improve held-out intervention predictions beyond noise."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_fast\",\"experiment\":\"prbs\",\"reason\":\"memory_fast has the lowest trajectory-held-out error. The state model’s residual lag-1 correlation suggests remaining temporal dependence, though prior intervention forecast errors were low.\",\"prediction\":\"After matching current state and input, residuals will vary systematically with recent input or state history, especially over subsecond timescales.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Fast accumulated history may carry recent input influence forward with finite relaxation.\",\"condition_to_check\":\"Reject if recent-history features do not improve held-out intervention predictions beyond noise.\"}}",
+    "input_tokens": 3693,
+    "output_tokens": 125,
+    "batch_elapsed_seconds": 2.6243823813274503,
+    "amortized_seconds": 2.6243823813274503,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3693,
+      "completion_tokens": 125,
+      "total_tokens": 3818
+    },
+    "api_response_id": "resp_070f52a98da4e55c016ae59a4350c08196bf0b4c905780fdb3",
+    "wire_record": "wire/eval/0471_0ab5372c9dec47e0bd75b69c3ed47da2"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431660814286936,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0c61c80982ed0f30016ae5986a18ec8196a22940602f9cefb6",
+    "object": "chat.completion",
+    "created": 1793431660,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"memory_slow has the lowest leave-trajectory-out NMSE (0.00141), well below alternatives; residual lag-1 correlation is low, and pulse responses persist after input returns to zero.\",\"prediction\":\"After rapid input reversals, the response will reflect accumulated history and relax smoothly, rather than follow only current input or a fixed delay.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Responses persist after input returns to zero, consistent with accumulated past influence that relaxes over time.\",\"condition_to_check\":\"At matched current input and visible state, no history-dependent response would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3300,
+      "completion_tokens": 248,
+      "total_tokens": 3548,
+      "completion_tokens_details": {
+        "reasoning_tokens": 104
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 6.922118422575295
+}

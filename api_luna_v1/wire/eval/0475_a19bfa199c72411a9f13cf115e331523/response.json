@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430669158144167,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0ad0164cf06d495d016ae5948985208195a30b9f55deee26bc",
+    "object": "chat.completion",
+    "created": 1793430669,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"prbs\",\"reason\":\"memory_clock has the lowest trajectory-held-out error, but residual lag-1 correlation remains high. The alternating forecast was accurate, yet it does not establish generalization to irregular inputs.\",\"prediction\":\"Under PRBS input, memory_clock should outperform history_all and residual oscillations should recur at matching elapsed times across resets.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Elapsed-time features improve prediction, but current observations do not establish an independent periodic driver.\",\"condition_to_check\":\"Repeat PRBS from reset and test whether residual oscillations recur at matching elapsed times.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3244,
+      "completion_tokens": 322,
+      "total_tokens": 3566,
+      "completion_tokens_details": {
+        "reasoning_tokens": 188
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.364140926860273
+}

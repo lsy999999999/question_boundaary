@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793429673918559655,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "double_pulse",
+    "reason": "State_cubic has the lowest trajectory-level CV error (0.00123), substantially outperforming history-rich alternatives; recent forecast errors are also small, though residual lag correlation leaves some uncertainty.",
+    "prediction": "Repeated pulses will be predicted primarily from current state and input, with no reproducible extra dependence on the earlier pulse after conditioning on them.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Instantaneous nonlinear curvature predicts better here, but the evidence does not establish a distinct physical mechanism.",
+      "condition_to_check": "Reject this representation if held-out interventions show reproducible history-dependent residuals after accounting for current state and input."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state_cubic\",\"experiment\":\"double_pulse\",\"reason\":\"State_cubic has the lowest trajectory-level CV error (0.00123), substantially outperforming history-rich alternatives; recent forecast errors are also small, though residual lag correlation leaves some uncertainty.\",\"prediction\":\"Repeated pulses will be predicted primarily from current state and input, with no reproducible extra dependence on the earlier pulse after conditioning on them.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Instantaneous nonlinear curvature predicts better here, but the evidence does not establish a distinct physical mechanism.\",\"condition_to_check\":\"Reject this representation if held-out interventions show reproducible history-dependent residuals after accounting for current state and input.\"}}",
+    "input_tokens": 3689,
+    "output_tokens": 146,
+    "batch_elapsed_seconds": 2.4656506022438407,
+    "amortized_seconds": 2.4656506022438407,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3689,
+      "completion_tokens": 146,
+      "total_tokens": 3835
+    },
+    "api_response_id": "resp_097ed5390e21ef7d016ae590a80ef48195a33e54f200e39abb",
+    "wire_record": "wire/dev/0043_ed43ea4896be4f9f8d625682e03ff326"
+  }
+}

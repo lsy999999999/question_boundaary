@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793424020529130185,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "step_rest",
+    "reason": "Memory_slow fits well across various inputs and has low CV NMSE.",
+    "prediction": "Step input will show gradual increase followed by slow decay.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Persistent state after input removal indicates storage.",
+      "condition_to_check": "Recovery time constant should be longer than input duration."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"step_rest\",\n  \"reason\": \"Memory_slow fits well across various inputs and has low CV NMSE.\",\n  \"prediction\": \"Step input will show gradual increase followed by slow decay.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Persistent state after input removal indicates storage.\",\n    \"condition_to_check\": \"Recovery time constant should be longer than input duration.\"\n  }\n}",
+    "input_tokens": 3729,
+    "output_tokens": 107,
+    "batch_elapsed_seconds": 2.602204419672489,
+    "amortized_seconds": 2.602204419672489,
+    "peak_gpu_allocated_gb": 14.94890546798706,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430111758267107,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0b25dafdd6845477016ae5925cf8308194855f1c0a8bd7e102",
+    "object": "chat.completion",
+    "created": 1793430111,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has far lower leave-trajectory-out error than history-only alternatives and previously forecast alternating inputs well. Residual autocorrelation remains, so PRBS tests whether irregular input history explains the remaining structure.\",\"prediction\":\"After PRBS input ends, oscillation phase will align with elapsed time across repeats despite differing input histories.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time periodic forcing may explain oscillations shared across differently driven trajectories.\",\"condition_to_check\":\"Compare post-input oscillation phase across PRBS repeats and against the clock model.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3236,
+      "completion_tokens": 245,
+      "total_tokens": 3481,
+      "completion_tokens_details": {
+        "reasoning_tokens": 115
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.9070316441357136
+}

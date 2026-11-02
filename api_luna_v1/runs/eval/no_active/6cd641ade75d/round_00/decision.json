@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430452828274036,
+  "decision": {
+    "representation": "memory_fast",
+    "experiment": "alternating",
+    "reason": "memory_fast has the lowest leave-trajectory-out NMSE by a wide margin, while the current model’s residuals are strongly autocorrelated; alternating input best separates it from delay.",
+    "prediction": "After input switches, memory_fast predicts smoother, input-history-dependent responses than a pure delay model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "",
+      "condition_to_check": ""
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_fast\",\"experiment\":\"alternating\",\"reason\":\"memory_fast has the lowest leave-trajectory-out NMSE by a wide margin, while the current model’s residuals are strongly autocorrelated; alternating input best separates it from delay.\",\"prediction\":\"After input switches, memory_fast predicts smoother, input-history-dependent responses than a pure delay model.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"\",\"condition_to_check\":\"\"}}",
+    "input_tokens": 2804,
+    "output_tokens": 226,
+    "batch_elapsed_seconds": 3.431177446618676,
+    "amortized_seconds": 3.431177446618676,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2804,
+      "completion_tokens": 226,
+      "total_tokens": 3030,
+      "completion_tokens_details": {
+        "reasoning_tokens": 129
+      }
+    },
+    "api_response_id": "resp_061667c7ae806ab6016ae593b2331881978c039392450e9414",
+    "wire_record": "wire/eval/0393_ced68b7bb84840b495ad97acd29bedd7"
+  }
+}

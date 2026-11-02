@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430680381351098,
+  "decision": {
+    "representation": "state",
+    "experiment": "double_pulse",
+    "reason": "State has the lowest leave-trajectory-out error; added memory and clock features perform worse, and prior alternating and slow-wave forecasts were accurate. Residual autocorrelation leaves a limited history test worthwhile.",
+    "prediction": "The second pulse will follow the same state-dependent response as the first, with no additional reproducible offset from prior input history.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Visible state and input predict the observed response; no independent storage relation is established.",
+      "condition_to_check": "Compare pulse responses at matched visible state and input; a reproducible history-dependent difference would challenge this model."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"double_pulse\",\"reason\":\"State has the lowest leave-trajectory-out error; added memory and clock features perform worse, and prior alternating and slow-wave forecasts were accurate. Residual autocorrelation leaves a limited history test worthwhile.\",\"prediction\":\"The second pulse will follow the same state-dependent response as the first, with no additional reproducible offset from prior input history.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Visible state and input predict the observed response; no independent storage relation is established.\",\"condition_to_check\":\"Compare pulse responses at matched visible state and input; a reproducible history-dependent difference would challenge this model.\"}}",
+    "input_tokens": 3477,
+    "output_tokens": 266,
+    "batch_elapsed_seconds": 3.256134709343314,
+    "amortized_seconds": 3.256134709343314,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3477,
+      "completion_tokens": 266,
+      "total_tokens": 3743,
+      "completion_tokens_details": {
+        "reasoning_tokens": 125
+      }
+    },
+    "api_response_id": "resp_0ebeb5e3882975a9016ae59495d4388197b612ad7f7f2d3ee2",
+    "wire_record": "wire/eval/0478_58e7481470a74f7791a4534163d22ac4"
+  }
+}

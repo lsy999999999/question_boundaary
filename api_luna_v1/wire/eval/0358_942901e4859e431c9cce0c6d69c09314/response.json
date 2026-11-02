@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793430387336339454,
+  "http_status": 200,
+  "body": {
+    "id": "resp_080391dc5c7d9878016ae5937164a8819482f679be29c87034",
+    "object": "chat.completion",
+    "created": 1793430387,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory models sharply improve leave-trajectory-out error over the state-only model, while memory_slow has the lowest candidate error. Residual lag supports history dependence, not a specific physical mechanism.\",\"prediction\":\"After input switches, output will retain a smooth, decaying dependence on earlier inputs rather than respond only to the current input.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history can predict output after current input and visible state are controlled.\",\"condition_to_check\":\"On PRBS segments with matched current input and output, earlier input history should predict subsequent output; failure weakens this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2830,
+      "completion_tokens": 143,
+      "total_tokens": 2973
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.9669245379045606
+}

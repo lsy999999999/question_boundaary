@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793430405701926645,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0c00aaa58027c886016ae593841ebc81939689c25f0ca12fe8",
+    "object": "chat.completion",
+    "created": 1793430405,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"It has the lowest trajectory-held-out NMSE (0.00288), substantially outperforming alternatives. Prior interventions were forecast accurately, though residual lag-1 correlation leaves some uncertainty about adequacy.\",\"prediction\":\"Following input switches or return to zero, output will retain a slowly decaying dependence on prior input.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated input history predicts lingering output after input changes.\",\"condition_to_check\":\"No lingering dependence on prior input after controlling current input and visible state would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3679,
+      "completion_tokens": 127,
+      "total_tokens": 3806
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.761702603660524
+}

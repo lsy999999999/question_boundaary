@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431608043233855,
+  "http_status": 200,
+  "body": {
+    "id": "resp_028aedef4bcce3a1016ae59834cae0819481a87a51d67790a5",
+    "object": "chat.completion",
+    "created": 1793431607,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"memory_clock has the lowest leave-trajectory-out error (0.0031), far below state (0.4335); residual memory and elapsed-time effects are both represented.\",\"prediction\":\"Under alternating input, memory_clock predicts output will depend on elapsed-time phase as well as accumulated input history.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history provides a predictive carryover beyond current input and state.\",\"condition_to_check\":\"Test whether history predicts output after controlling current input, visible state, and elapsed-time phase.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2808,
+      "completion_tokens": 268,
+      "total_tokens": 3076,
+      "completion_tokens_details": {
+        "reasoning_tokens": 139
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.022978324443102
+}

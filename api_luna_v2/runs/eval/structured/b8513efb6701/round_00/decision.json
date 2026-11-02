@@ -1,0 +1,42 @@
+{
+  "time_ns": 1793431570916086349,
+  "decision": {
+    "representation": "clock",
+    "experiment": "alternating",
+    "reason": "Clock has the lowest trajectory-level validation error (0.00128), while the state model has strongly correlated residuals. Post-pulse oscillations appear across interventions at similar elapsed times.",
+    "prediction": "After alternating input ends, oscillations will remain approximately aligned in elapsed-time phase with those following other interventions.",
+    "accept": true,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Elapsed-time periodic forcing may explain oscillations shared across differently driven trajectories.",
+      "condition_to_check": "Compare post-input oscillation phase across interventions; differing phases would weaken the independent-clock explanation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest trajectory-level validation error (0.00128), while the state model has strongly correlated residuals. Post-pulse oscillations appear across interventions at similar elapsed times.\",\"prediction\":\"After alternating input ends, oscillations will remain approximately aligned in elapsed-time phase with those following other interventions.\",\"accept\":true,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time periodic forcing may explain oscillations shared across differently driven trajectories.\",\"condition_to_check\":\"Compare post-input oscillation phase across interventions; differing phases would weaken the independent-clock explanation.\"}}",
+    "input_tokens": 2786,
+    "output_tokens": 378,
+    "batch_elapsed_seconds": 5.126839231699705,
+    "amortized_seconds": 5.126839231699705,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2786,
+      "completion_tokens": 378,
+      "total_tokens": 3164,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 248
+      }
+    },
+    "api_response_id": "resp_0e328615162852e4016ae5980e9e608190af9d7817271bc093",
+    "wire_record": "wire/eval/0168_4b7a0f77f49241b783cabad129d481d9"
+  }
+}

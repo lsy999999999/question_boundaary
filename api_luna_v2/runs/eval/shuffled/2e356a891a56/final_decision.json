@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793432298101569698,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "slow_wave",
+    "reason": "It has the lowest trajectory-level CV error (0.00302), substantially below alternatives. Residual autocorrelation remains, so adequacy for unseen interventions is not established.",
+    "prediction": "After input returns to zero, outputs will retain a history-dependent difference that decays over several seconds.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Slow accumulated-history features improve prediction, but the data do not establish a specific cross-domain mechanism.",
+      "condition_to_check": "Check whether history predicts output beyond current input and visible state on independent trajectories."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"slow_wave\",\"reason\":\"It has the lowest trajectory-level CV error (0.00302), substantially below alternatives. Residual autocorrelation remains, so adequacy for unseen interventions is not established.\",\"prediction\":\"After input returns to zero, outputs will retain a history-dependent difference that decays over several seconds.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Slow accumulated-history features improve prediction, but the data do not establish a specific cross-domain mechanism.\",\"condition_to_check\":\"Check whether history predicts output beyond current input and visible state on independent trajectories.\"}}",
+    "input_tokens": 3624,
+    "output_tokens": 127,
+    "batch_elapsed_seconds": 2.272586790844798,
+    "amortized_seconds": 2.272586790844798,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3624,
+      "completion_tokens": 127,
+      "total_tokens": 3751
+    },
+    "api_response_id": "resp_0159e6e79a5b3e65016ae59ae8a5fc8195b04531619e561a33",
+    "wire_record": "wire/eval/0536_5ec9b4164d8d4d8bbb73290dc4e4abee"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431660532337788,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0dbe45793a7f1ff6016ae5986a1a008190a8a802812a7d3327",
+    "object": "chat.completion",
+    "created": 1793431660,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest trajectory-level CV NMSE (0.00390), substantially below the current memory_clock (0.00727). Long post-pulse tails support slow history dependence; alternating probes remaining model disagreement.\",\"prediction\":\"After an input switch, output will retain a history-dependent response that decays over seconds, including when current input is zero.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2955,
+      "completion_tokens": 239,
+      "total_tokens": 3194,
+      "completion_tokens_details": {
+        "reasoning_tokens": 143
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.6914498917758465
+}

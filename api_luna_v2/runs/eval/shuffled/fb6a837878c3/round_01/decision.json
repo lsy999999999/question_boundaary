@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431708514814393,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "alternating",
+    "reason": "memory_slow has the lowest trajectory-level CV error; alternating input has the greatest predicted disagreement among plausible memory models and tests persistent history under rapid switches.",
+    "prediction": "After switches, memory_slow will predict output better than faster-memory or saturating alternatives, with residuals depending on accumulated history.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Finite-leakage storage represents accumulated input history that can influence output after the input changes.",
+      "condition_to_check": "At matched current input and visible state, accumulated history should predict subsequent output across alternating segments."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"memory_slow has the lowest trajectory-level CV error; alternating input has the greatest predicted disagreement among plausible memory models and tests persistent history under rapid switches.\",\"prediction\":\"After switches, memory_slow will predict output better than faster-memory or saturating alternatives, with residuals depending on accumulated history.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Finite-leakage storage represents accumulated input history that can influence output after the input changes.\",\"condition_to_check\":\"At matched current input and visible state, accumulated history should predict subsequent output across alternating segments.\"}}",
+    "input_tokens": 3264,
+    "output_tokens": 321,
+    "batch_elapsed_seconds": 4.287304821424186,
+    "amortized_seconds": 4.287304821424186,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3264,
+      "completion_tokens": 321,
+      "total_tokens": 3585,
+      "completion_tokens_details": {
+        "reasoning_tokens": 187
+      }
+    },
+    "api_response_id": "resp_07a58ebf6b196407016ae598994df4819587a14794e3928107",
+    "wire_record": "wire/eval/0257_2cc9093863504cff8ddff8b2529da3e3"
+  }
+}

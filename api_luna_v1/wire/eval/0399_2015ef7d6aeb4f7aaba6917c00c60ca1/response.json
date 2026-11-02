@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793430463976417926,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0e051417861df1d8016ae593bdf354819487a8ce1e39e9f9d5",
+    "object": "chat.completion",
+    "created": 1793430463,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"alternating\",\"reason\":\"Memory_multiscale has the lowest trajectory-held-out NMSE (0.00152), far below state (0.03427); persistent post-pulse responses support history dependence. Alternating inputs best probe fast versus slow memory.\",\"prediction\":\"After rapid reversals, output will retain a history-dependent lag; the multiscale model predicts this better than a current-state-only model.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history predicts persistence after input returns to zero, consistent with finite relaxation.\",\"condition_to_check\":\"Persistence should remain predictable across input shapes after controlling current input and visible output.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2808,
+      "completion_tokens": 148,
+      "total_tokens": 2956
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.7095620054751635
+}

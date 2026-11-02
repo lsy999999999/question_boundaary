@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430096109346215,
+  "http_status": 200,
+  "body": {
+    "id": "resp_041c564ef87b322c016ae5924ced38819489145fd596394012",
+    "object": "chat.completion",
+    "created": 1793430096,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"prbs\",\"reason\":\"Memory_clock has the lowest trajectory-level CV NMSE, but residual lag-1 correlation remains and PRBS has high disagreement between plausible representations, making it informative.\",\"prediction\":\"Under PRBS, memory_clock will predict the trajectory more accurately than history_all, with smaller structured residuals.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2643,
+      "completion_tokens": 262,
+      "total_tokens": 2905,
+      "completion_tokens_details": {
+        "reasoning_tokens": 183
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.330698276869953
+}

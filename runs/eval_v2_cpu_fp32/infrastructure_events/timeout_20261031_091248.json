@@ -1,0 +1,46 @@
+{
+  "recorded_at": "2026-10-31T09:21:16.109632+08:00",
+  "status": {
+    "updated_at": "2026-10-31T09:12:48+08:00",
+    "stage": "failed",
+    "error": "TimeoutError('A worker exceeded its stage time limit')",
+    "action": "Inspect logs; completed checkpoints are preserved."
+  },
+  "worker_registry": [
+    {
+      "process": 2629894,
+      "label": "state_fixed_history_cv",
+      "gpu": null,
+      "log": "/home/lsy/theory_discovery_20261031/runs/eval_v2_cpu_fp32/worker_state_fixed_history_cv.log",
+      "started": 1793387565.3963041,
+      "methods": [
+        "state_fixed",
+        "history_cv"
+      ]
+    },
+    {
+      "process": 2629895,
+      "label": "plain_retrieval_structured_no_active",
+      "gpu": null,
+      "log": "/home/lsy/theory_discovery_20261031/runs/eval_v2_cpu_fp32/worker_plain_retrieval_structured_no_active.log",
+      "started": 1793387565.396633,
+      "methods": [
+        "plain",
+        "retrieval",
+        "structured",
+        "no_active"
+      ]
+    }
+  ],
+  "requests_preserved": 332,
+  "completed": {
+    "state_fixed": 24,
+    "history_cv": 24,
+    "plain": 24,
+    "retrieval": 24,
+    "structured": 24,
+    "no_active": 0
+  },
+  "recovery": "Resume unchanged cpu-fp32 checkpoints with existing on-disk supervisor and twelve-hour stage limit",
+  "source_hashes_verified": true
+}

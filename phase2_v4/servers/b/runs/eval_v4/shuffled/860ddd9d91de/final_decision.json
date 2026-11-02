@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793424061902402503,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "ramp_reverse",
+    "reason": "Memory_slow fits well and shows high variance for pulses and step inputs.",
+    "prediction": "Ramp reverse will show a delayed and attenuated response compared to step rest.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Delayed and attenuated response indicates storage with finite timescale.",
+      "condition_to_check": "No significant response difference between ramp and step inputs rules out storage."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"ramp_reverse\",\n  \"reason\": \"Memory_slow fits well and shows high variance for pulses and step inputs.\",\n  \"prediction\": \"Ramp reverse will show a delayed and attenuated response compared to step rest.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Delayed and attenuated response indicates storage with finite timescale.\",\n    \"condition_to_check\": \"No significant response difference between ramp and step inputs rules out storage.\"\n  }\n}",
+    "input_tokens": 3942,
+    "output_tokens": 119,
+    "batch_elapsed_seconds": 2.910697728395462,
+    "amortized_seconds": 2.910697728395462,
+    "peak_gpu_allocated_gb": 14.991199016571045,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024013519287109,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431520760139741,
+  "http_status": 200,
+  "body": {
+    "id": "resp_087e2d53ad23c2ef016ae597dd98748193bfb187f1c5202007",
+    "object": "chat.completion",
+    "created": 1793431520,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"prbs\",\"reason\":\"Memory_clock has the lowest trajectory-level CV error (0.00163), far below state (0.129). PRBS has the greatest prediction disagreement among plausible models and can test the revised fit.\",\"prediction\":\"Under PRBS, memory_clock will predict trajectory changes that memory_slow alone misses; systematic residuals aligned across repeats would challenge its clock component.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is established by these predictive fits alone.\",\"condition_to_check\":\"Compare PRBS forecasts with observations across repeats, especially for residuals that track elapsed time rather than input history.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2801,
+      "completion_tokens": 303,
+      "total_tokens": 3104,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 160
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.470742696896195
+}

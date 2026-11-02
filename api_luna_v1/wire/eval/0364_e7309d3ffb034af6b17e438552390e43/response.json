@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430396814027104,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0d44bad79dcf02ae016ae59379b4408190814dd05ec0c3c5e5",
+    "object": "chat.completion",
+    "created": 1793430396,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"prbs\",\"reason\":\"Memory_clock has the lowest trajectory-held-out error (0.00163), far below the state model (0.129); persistent post-input responses also support history dependence.\",\"prediction\":\"After irregular input switches, the output will retain a history-dependent response after the input returns to zero.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence predicts output beyond current input and visible state.\",\"condition_to_check\":\"After controlling current input and state, test whether past input improves prediction during post-input decay.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2824,
+      "completion_tokens": 295,
+      "total_tokens": 3119,
+      "completion_tokens_details": {
+        "reasoning_tokens": 170
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.287260673940182
+}

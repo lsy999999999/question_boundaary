@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793430526641648931,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0e115cbc77a164ac016ae593fcfa2c8194a38bf5a1febc455f",
+    "object": "chat.completion",
+    "created": 1793430526,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"double_pulse\",\"reason\":\"Memory_multiscale has the lowest trajectory-level CV error; memory_clock is close but adds clock features without a meaningful validation gain. Residual lag correlation warrants another test.\",\"prediction\":\"The second pulse will produce a different response from the first because residual influence from the first pulse persists after input returns to zero.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history may predict output after input returns to zero.\",\"condition_to_check\":\"Test whether the first pulse predicts the second-pulse response after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3297,
+      "completion_tokens": 132,
+      "total_tokens": 3429
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.7202722234651446
+}

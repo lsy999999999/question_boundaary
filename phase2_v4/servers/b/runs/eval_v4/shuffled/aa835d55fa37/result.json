@@ -1,0 +1,112 @@
+{
+  "task_id": "aa835d55fa37",
+  "split": "eval",
+  "family": "memory_clock",
+  "seed": 33,
+  "method": "shuffled",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "history_all",
+    "ridge": 1e-05,
+    "cv_nmse": 0.009305135806584123,
+    "coefficients": [
+      0.0559608,
+      4.0942403,
+      0.3162695,
+      -0.0272501,
+      -0.2602363,
+      -12.8651697,
+      -1.2738256,
+      1.030881,
+      -0.5642007,
+      -0.2032253,
+      -0.1963858,
+      0.0446919,
+      -0.2660055,
+      0.6586233,
+      -0.059957,
+      0.8940787,
+      2.8020629,
+      -3.2938184,
+      3.2343638,
+      -1.0825485,
+      -0.4232552,
+      0.6042427,
+      -0.3097233,
+      5.4369531,
+      2.4452717,
+      0.5138004,
+      -0.0552474,
+      0.3162695,
+      -0.0095845,
+      0.0400327,
+      0.0118012,
+      0.0139996,
+      -0.0006642,
+      0.3373688,
+      0.0360075,
+      0.0129423,
+      -0.003672
+    ]
+  },
+  "test": {
+    "test_nmse": 0.027217272066747174,
+    "test_mse": 0.002219234912112953,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 0.003410120625100398,
+        "nmse": 0.05688111899755203
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.001650088313970545,
+        "nmse": 0.006154960783370529
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 0.0033054046238244986,
+        "nmse": 0.047262322494823754
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 0.0007689392745190332,
+        "nmse": 0.01098506444143401
+      },
+      {
+        "action": "test_prbs",
+        "mse": 0.003161165871575098,
+        "nmse": 0.03235993783352928
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 0.0010196907636881444,
+        "nmse": 0.009660227849773448
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": true,
+  "invalid_outputs": 4,
+  "generation_calls": 4,
+  "input_tokens": 14273,
+  "output_tokens": 446,
+  "generation_seconds_amortized": 10.64849756564945,
+  "elapsed_wall_seconds": 332.3449659347534,
+  "selected_actions": [
+    "positive_pulse",
+    "negative_pulse",
+    "double_pulse"
+  ],
+  "selected_representations": [
+    "memory_clock",
+    "memory_clock",
+    "memory_clock",
+    "history_all"
+  ],
+  "peak_gpu_allocated_gb": 14.991199016571045,
+  "peak_process_ram_gb": 5.024013519287109,
+  "inference_backend": "cuda",
+  "evaluation_after_commit_ns": 1793424118555164383
+}

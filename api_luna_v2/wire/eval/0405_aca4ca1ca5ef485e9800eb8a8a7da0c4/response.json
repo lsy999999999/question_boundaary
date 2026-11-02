@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431976730100703,
+  "http_status": 200,
+  "body": {
+    "id": "resp_087f089f74859e78016ae599a63c648190a37969600fff890a",
+    "object": "chat.completion",
+    "created": 1793431976,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock strongly outperforms alternatives in trajectory-level validation, but residual lag correlation remains and shared elapsed-time features do not establish an independent external driver.\",\"prediction\":\"Despite rapid input switches, residual drift will recur at similar elapsed times rather than consistently following each switch.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Elapsed-time features improve prediction, but current observations do not establish a distinct external-clock relation.\",\"condition_to_check\":\"Compare residual timing across interventions; reject shared elapsed-time effects if they shift systematically with input history.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3467,
+      "completion_tokens": 235,
+      "total_tokens": 3702,
+      "completion_tokens_details": {
+        "reasoning_tokens": 110
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.2394300885498524
+}

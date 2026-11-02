@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793431758298034332,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "prbs",
+    "reason": "It has the strongest trajectory-level cross-validation (NMSE 0.0030), but residual lag correlation remains high. PRBS has the largest remaining disagreement between plausible models.",
+    "prediction": "On irregular input switches, memory_clock should predict held-out trajectories more accurately than history_all, especially after reversals.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"prbs\",\"reason\":\"It has the strongest trajectory-level cross-validation (NMSE 0.0030), but residual lag correlation remains high. PRBS has the largest remaining disagreement between plausible models.\",\"prediction\":\"On irregular input switches, memory_clock should predict held-out trajectories more accurately than history_all, especially after reversals.\",\"accept\":false}",
+    "input_tokens": 2662,
+    "output_tokens": 217,
+    "batch_elapsed_seconds": 3.658192259259522,
+    "amortized_seconds": 3.658192259259522,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2662,
+      "completion_tokens": 217,
+      "total_tokens": 2879,
+      "completion_tokens_details": {
+        "reasoning_tokens": 134
+      }
+    },
+    "api_response_id": "resp_0c85b49b8b905723016ae598cb4e548196a27f1e42e60e3ae0",
+    "wire_record": "wire/eval/0285_599c8a53c5734e51b843b94eab9653cd"
+  }
+}

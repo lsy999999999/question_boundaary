@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429911979805185,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0e33e6a958e2873c016ae5919570788190be64b6528d0962eb",
+    "object": "chat.completion",
+    "created": 1793429911,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"Memory_multiscale has the lowest trajectory-held-out NMSE (0.00152), far below the state model, while strongly correlated residuals indicate persistent history effects. PRBS has high disagreement among plausible memory models.\",\"prediction\":\"After matched current inputs and visible states, PRBS trajectories will still differ according to prior input history; the candidate memory models will predict different transient responses.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2570,
+      "completion_tokens": 173,
+      "total_tokens": 2743,
+      "completion_tokens_details": {
+        "reasoning_tokens": 72
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.6498797088861465
+}

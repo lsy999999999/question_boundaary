@@ -1,0 +1,84 @@
+{
+  "task_id": "fae254e2b04e",
+  "split": "eval",
+  "family": "saturated_memory",
+  "seed": 0,
+  "method": "history_cv",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_slow",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0022592915244875975,
+    "coefficients": [
+      -0.0001572,
+      -0.3461041,
+      0.9794316,
+      1.0141178,
+      -1.8118145,
+      -0.3292866,
+      -2.2583179,
+      1.714782,
+      1.7452857
+    ]
+  },
+  "test": {
+    "test_nmse": 0.0038104339346442776,
+    "test_mse": 0.0005164216525125879,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 0.00014652087679023474,
+        "nmse": 0.0017269688769103672
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.0018692506969627879,
+        "nmse": 0.004807144947640567
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 0.0003521113645558718,
+        "nmse": 0.009830410356719216
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 0.0002049434354745223,
+        "nmse": 0.0020780095408314075
+      },
+      {
+        "action": "test_prbs",
+        "mse": 0.00018786562231034676,
+        "nmse": 0.0019625052122367336
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 0.0003378379189817647,
+        "nmse": 0.002457564673527376
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": null,
+  "invalid_outputs": 0,
+  "generation_calls": 0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "generation_seconds_amortized": 0,
+  "elapsed_wall_seconds": 3.5827276706695557,
+  "selected_actions": [
+    "alternating",
+    "alternating",
+    "prbs"
+  ],
+  "selected_representations": [
+    "memory_multiscale",
+    "saturating_memory",
+    "memory_slow",
+    "memory_slow"
+  ],
+  "peak_gpu_allocated_gb": 0.0,
+  "peak_process_ram_gb": 0.0,
+  "inference_backend": "numerical_baseline",
+  "evaluation_after_commit_ns": 1793387631571229126
+}

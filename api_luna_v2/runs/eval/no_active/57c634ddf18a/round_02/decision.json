@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793432045080471647,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "double_pulse",
+    "reason": "memory_clock has the lowest trajectory-level CV error, substantially outperforming history_all; recent forecast MSEs are low, though residual correlation and intervention errors leave unseen-intervention adequacy uncertain.",
+    "prediction": "After controlling for input history, any remaining oscillatory deviations should align by elapsed-time phase across interventions.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Elapsed-time features improve prediction, but the evidence does not establish an independent periodic driver.",
+      "condition_to_check": "Compare residual phase across interventions; inconsistent phases would weaken the clock interpretation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"double_pulse\",\"reason\":\"memory_clock has the lowest trajectory-level CV error, substantially outperforming history_all; recent forecast MSEs are low, though residual correlation and intervention errors leave unseen-intervention adequacy uncertain.\",\"prediction\":\"After controlling for input history, any remaining oscillatory deviations should align by elapsed-time phase across interventions.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Elapsed-time features improve prediction, but the evidence does not establish an independent periodic driver.\",\"condition_to_check\":\"Compare residual phase across interventions; inconsistent phases would weaken the clock interpretation.\"}}",
+    "input_tokens": 3473,
+    "output_tokens": 128,
+    "batch_elapsed_seconds": 2.5847005546092987,
+    "amortized_seconds": 2.5847005546092987,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3473,
+      "completion_tokens": 128,
+      "total_tokens": 3601
+    },
+    "api_response_id": "resp_0066f90141812c85016ae599eb6d748196ae7fdec535b6f0ce",
+    "wire_record": "wire/eval/0432_a088c2aada8044209e6fbc5716224459"
+  }
+}

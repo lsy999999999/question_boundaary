@@ -1,0 +1,42 @@
+{
+  "time_ns": 1793431567075219988,
+  "decision": {
+    "representation": "clock",
+    "experiment": "alternating",
+    "reason": "Clock has the lowest trajectory-level CV error (0.00128), far below memory_clock and history_all; shared post-input oscillations also support elapsed-time structure, but unseen interventions remain untested.",
+    "prediction": "After different input histories, output oscillations should recur at similar elapsed-time phases; alternating input should expose divergence from memory-only predictions.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Elapsed-time periodic features predict a shared oscillatory component across distinct input interventions.",
+      "condition_to_check": "Compare oscillation phase across interventions; phase tracking input history rather than elapsed time would falsify an independent clock."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest trajectory-level CV error (0.00128), far below memory_clock and history_all; shared post-input oscillations also support elapsed-time structure, but unseen interventions remain untested.\",\"prediction\":\"After different input histories, output oscillations should recur at similar elapsed-time phases; alternating input should expose divergence from memory-only predictions.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time periodic features predict a shared oscillatory component across distinct input interventions.\",\"condition_to_check\":\"Compare oscillation phase across interventions; phase tracking input history rather than elapsed time would falsify an independent clock.\"}}",
+    "input_tokens": 2809,
+    "output_tokens": 263,
+    "batch_elapsed_seconds": 3.904607068747282,
+    "amortized_seconds": 3.904607068747282,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2809,
+      "completion_tokens": 263,
+      "total_tokens": 3072,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 120
+      }
+    },
+    "api_response_id": "resp_01d7636698d3429b016ae5980bc950819791de533673b21995",
+    "wire_record": "wire/eval/0166_b86d6e7fb2f3497c9552d4442b3ddb31"
+  }
+}

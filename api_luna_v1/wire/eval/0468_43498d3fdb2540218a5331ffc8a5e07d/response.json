@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430648062930295,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0ae5208a720f5a08016ae5947505a88195a429ef8066d64fa8",
+    "object": "chat.completion",
+    "created": 1793430647,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"alternating\",\"reason\":\"Memory_multiscale has the lowest trajectory-held-out error (0.00162), slightly better than memory_slow and memory_clock. Residual lag and prior forecast failures leave adequacy uncertain.\",\"prediction\":\"Under rapid input reversals, post-input output will retain a history-dependent component whose decay differs from a single slow-timescale response.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past input and output influence can predict the persistent post-input response beyond current input.\",\"condition_to_check\":\"Test whether history improves post-input decay prediction after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3488,
+      "completion_tokens": 285,
+      "total_tokens": 3773,
+      "completion_tokens_details": {
+        "reasoning_tokens": 144
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.704498919658363
+}

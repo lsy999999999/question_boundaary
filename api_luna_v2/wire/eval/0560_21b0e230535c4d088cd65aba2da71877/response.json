@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432350780353173,
+  "http_status": 200,
+  "body": {
+    "id": "resp_060f23717bf441d8016ae59b1a6750819780e1395002650fa8",
+    "object": "chat.completion",
+    "created": 1793432350,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest trajectory-held-out NMSE by a wide margin and small forecast errors on alternating, PRBS, and double-pulse trials. Residual autocorrelation remains a limitation, but history_all validates substantially worse.\",\"prediction\":\"Across new input sequences, predictions should remain more accurate than memory-only models, though residuals may retain short-term correlation.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Elapsed-time features improve prediction, but the fits do not establish an independent periodic driver.\",\"condition_to_check\":\"Compare different input interventions at matched elapsed times and test whether periodic effects persist.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3664,
+      "completion_tokens": 363,
+      "total_tokens": 4027,
+      "completion_tokens_details": {
+        "reasoning_tokens": 223
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.142566293478012
+}

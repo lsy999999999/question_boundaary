@@ -1,0 +1,128 @@
+{
+  "recognition": "uncertain; no specific study can be confidently identified from the supplied, de-identified case",
+  "summary": "Reported empty-area fraction rises in B from 0.01381 at 0 h to 0.08918 at 24 h, while A declines from 0.01487 to about 0.004 (initial_measurements.json). This is a field-level image statistic. C03 directly checks t=0 and finds supplied values match the arithmetic mean of per-object ratios (A 0.01487245 vs summed-area ratio 0.01424891; B 0.01380909 vs 0.01849036), so case_brief.md pooled-area wording conflicts with the reported statistic; C03 says late-time values were not checked. C02 gives descriptive 36/48 h exponential predictions A 0.00427/0.00427 and B 0.12072/0.15632; B linear sensitivity predictions are 0.12387/0.16352, with no preparation-level interval. C04 partition ratios are large but have broad propagated marginal-error ranges and no local cavity mapping. DNA reads are not RNA concentrations: reference reads are 94.66%, and listed non-reference reads sum to 5.00% (C01 correction in round1_to4_replies; not 4.66%). Length-fraction endpoints differ (E02 / fraction_dev.json), but are one preparation and lack precise mixtures or RNA yield. E04 / phase_measurements.json gives three bulk coexisting-phase endpoints; it cannot map local cavity composition. Hypothesis H1: if two RNA species have sufficiently unfavorable mixing, their dense-phase composition field can become unstable and demix; an RNA-poor internal domain could then produce a segmented cavity. For dimensionless binary mixing free energy g(phi)=phi ln(phi)+(1-phi)ln(1-phi)+chi phi(1-phi), local instability requires g''(phi)=1/phi+1/(1-phi)-2chi<0, or chi>1/[2 phi(1-phi)] (at phi=0.5, chi>2). This is a conditional consequence, not an estimate: neither local phi nor chi is measured, and internal-domain geometry is an additional untested bridge. Discriminator: a true composition-demixing cavity should show a reproducible local RNA-species ratio difference between the cavity and surrounding dense material; a population/measurement explanation need not show that within-droplet contrast. Search requested for the missing relation and its conditions before extending this model.",
+  "candidates": [
+    {
+      "id": "B1-H1",
+      "target": "Explain whether the rising B empty-area statistic reflects formation of internal RNA-poor domains, and identify a composition-dependent mechanism that could produce them.",
+      "known_relations": [
+        "B reported field statistic increases 0-24 h and A decreases (initial_measurements.json); treatment does not identify cause.",
+        "Gel-purified template-length fractions have different endpoint empty-area summaries (E02 / fraction_dev.json); one preparation, no precise mixture, RNA yield, or time course.",
+        "E04 reports bulk reference and variant concentrations in dilute/dense phases for three tie-lines. Tie-line 0 has zero variant at both ends, so its partition ratio is undefined. These endpoints provide no spatial cavity composition or time-resolved B RNA mixture.",
+        "DNA read frequencies do not establish transcript abundance or RNA composition.",
+        "C03 confirms at t=0 that the supplied statistic equals the arithmetic mean of individual object ratios, not the ratio of summed areas; case_brief.md describes the latter. C03 did not check reserved late-time values."
+      ],
+      "hypotheses": [
+        {
+          "id": "H1",
+          "status": "new provisional hypothesis, unverified",
+          "statement": "If reference-like and variant/length-class RNAs mix unfavorably in the dense phase, a composition fluctuation can cross a demixing instability; a locally RNA-poor internal domain then appears as a cavity. Continued production or redistribution could increase its incidence, but this kinetic bridge is not established.",
+          "derived_consequence": "For the dimensionless binary mixing free energy g(phi)=phi ln(phi)+(1-phi)ln(1-phi)+chi phi(1-phi), g''(phi)=1/phi+1/(1-phi)-2chi. The homogeneous composition is locally unstable only when chi>1/[2 phi(1-phi)]; at phi=0.5 this is chi>2. No supplied measurement estimates phi or chi.",
+          "untested_bridge": "Bulk two-phase coexistence is not evidence of demixing inside a dense droplet, and a demixed RNA-poor domain is not automatically equivalent to the segmented dark cavity."
+        }
+      ],
+      "gaps": [
+        {
+          "id": "g_local_composition_demixing",
+          "status": "open",
+          "description": "Missing evidence that local RNA composition differs between cavity and surrounding dense material under the relevant transcription condition, and missing literature/conditions for composition-driven internal demixing in RNA condensates."
+        },
+        {
+          "id": "g_observation_mapping",
+          "status": "open",
+          "description": "Resolve whether f is a pooled area ratio or an arithmetic mean of per-droplet fractions; the two statistics have different weighting and can respond differently to population changes."
+        }
+      ],
+      "variables_units": {
+        "phi": "local fraction of one RNA species among the two modeled species; dimensionless, unmeasured",
+        "chi": "dimensionless effective unlike-species interaction parameter in the stated mean-field free energy; unmeasured",
+        "g": "dimensionless free energy per kBT under the stated model assumption",
+        "f": "reported image-derived empty-area fraction; dimensionless, measurement weighting unresolved",
+        "t": "hours",
+        "C_ref": "reference RNA concentration, ng/uL, available only for bulk E04 endpoints",
+        "C_var": "variant RNA concentration, ng/uL, available only for bulk E04 endpoints"
+      },
+      "equations": [
+        "g(phi)=phi ln(phi)+(1-phi)ln(1-phi)+chi phi(1-phi), 0<phi<1; assumed regular-solution model, not fitted.",
+        "g''(phi)=1/phi+1/(1-phi)-2chi; local spinodal condition g''<0, equivalently chi>1/[2 phi(1-phi)].",
+        "No equation currently maps the local composition field or domain geometry to the image statistic f(t); that mapping remains an explicit missing relation."
+      ],
+      "parameters_ranges": {
+        "chi": "No empirical range available; conditional instability threshold is 1/[2 phi(1-phi)] for 0<phi<1.",
+        "phi": "0<phi<1 by definition; relevant local and mean values unknown."
+      },
+      "initial_boundary_conditions": "No spatial initial condition, boundary condition, or reaction/transport rate is supplied. The instability calculation assumes a locally homogeneous binary mixture before a small composition perturbation; it makes no kinetic prediction.",
+      "observation_mapping": "A local RNA-poor domain would count as a cavity only if it yields a dark segmented region under the imaging/threshold protocol. C03 supports the arithmetic mean of per-object ratios at t=0, while case_brief.md states a pooled-area ratio; late-time mapping remains unchecked. E04 bulk concentrations and f cannot be equated; no local composition imaging, cavity volume, or calibrated intensity-to-concentration mapping is supplied.",
+      "alternatives": [
+        "Population composition or track/segmentation selection changes the field statistic while individual droplets need not acquire a new internal phase; prior tracking summary contains motion, not same-droplet cavity trajectories.",
+        "Amplification-associated carryover or another unmeasured reaction condition changes transcription or morphology without sequence-mixture-driven demixing; no matched carryover control is supplied.",
+        "A single dense phase with non-equilibrium production/transport gradients could yield dark regions without equilibrium composition demixing; no relevant spatial production or transport measurements are supplied."
+      ],
+      "predictions": [
+        "Conditional H1 prediction: cavity interiors and adjacent dense RNA material have different reference:variant (or length-class) RNA ratios, reproducibly within the same droplet; cavity onset should be restricted to compositions/conditions permitting the instability.",
+        "Population/measurement alternative: no required within-droplet species-ratio contrast; changes in droplet inclusion, weights, or segmentation can alter f.",
+        "Bulk E04 tie-line concentrations alone cannot discriminate these predictions."
+      ],
+      "checks": [
+        "Spinodal derivation is dimensionless and applies only to the explicitly assumed binary regular-solution free energy.",
+        "At phi=0.5, threshold chi>2; as phi approaches 0 or 1, the threshold diverges, consistent with the stated model's lack of instability at a pure-component boundary for finite chi.",
+        "No numerical fit, simulation, or estimate of chi/phi was performed.",
+        "Do not infer RNA abundance from DNA read fractions or equate image area fraction with concentration, volume fraction, or free energy."
+      ],
+      "evidence_conflicts": [
+        "C03 checks t=0 and confirms reported values are the arithmetic mean of per-object ratios, not summed dark area divided by summed filled area; case_brief.md describes the latter. Late-time values were not checked in C03.",
+        "Listed non-reference DNA read fractions total 5.00%, while a prior researcher_01 reply said 4.66%; leader_03 records the arithmetic correction. Use 5.00% for the listed reads, with total reference plus listed reads 99.66% and remaining 0.34% unaccounted/rounding."
+      ],
+      "untested": [
+        "Whether B-produced RNA contains the DNA-read variants in corresponding proportions.",
+        "Whether sequence/length classes have unfavorable mutual mixing under the actual transcription conditions.",
+        "Whether internal cavities are compositionally distinct phases or arise from gradients, population selection, or image processing.",
+        "How any local domains map to field-level f and its time course."
+      ],
+      "dissent": "Preserve the alternative that the rising aggregate statistic is caused by population weighting or measurement selection; available tracking does not report same-droplet cavity-state trajectories, and f weighting is confirmed for t=0 by C03 but conflicts with case_brief.md wording; later timepoints remain unchecked.",
+      "next_task": "Executor should retrieve pre-cutoff relation-oriented literature on conditions for composition-selective demixing within multicomponent RNA condensates and whether it predicts spatially distinct internal domains; then assess the stated prediction against the supplied limits without claiming the literature establishes this case."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "B1-T1",
+      "candidate_id": "B1-H1",
+      "gap_id": "g_local_composition_demixing",
+      "kind": "mechanism",
+      "status": "open",
+      "deliverable": "Assess the missing relation between multicomponent RNA partitioning and internal compositionally distinct domains using the returned pre-cutoff sources; extract source-supported variables, conditions, and limits; then state whether H1 should be retained, modified, or weakened and give a spatially discriminating prediction. Separately flag the f-definition conflict and do not use motion or bulk tie-line data as local composition evidence.",
+      "acceptance": "Cite returned evidence IDs and publication dates; distinguish abstract-level support from full-text support; explicitly separate established source relations from the new H1 bridge; do not search target identity or infer RNA composition from DNA reads; preserve alternatives and report if no suitable relation is found.",
+      "evidence_refs": [
+        "initial_measurements.json",
+        "fraction_dev.json",
+        "phase_measurements.json",
+        "mobility_dev.json",
+        "case_brief.md",
+        "leader_04",
+        "researcher_04"
+      ],
+      "reason": "The key missing edge is whether multicomponent composition can generate internal demixing domains under relevant conditions; a relation-oriented search can change the candidate's mechanism status before additional modeling."
+    }
+  ],
+  "requests": [
+    {
+      "type": "search",
+      "id": "B1-S1",
+      "candidate_id": "B1-H1",
+      "gap_id": "g_local_composition_demixing",
+      "missing_relation": "Conditions under which composition-selective interactions in a multicomponent RNA condensate produce internal, spatially distinct RNA-composition domains, rather than only partitioning between bulk dense and dilute phases.",
+      "variables": [
+        "RNA species sequence or length class",
+        "local composition fraction phi",
+        "dense-phase interaction or compatibility",
+        "internal-domain composition and location"
+      ],
+      "conditions": "Background first published on or before 2025-05-12; multicomponent RNA condensates; distinguish within-dense-phase demixing from ordinary dense/dilute partitioning; no target identity terms.",
+      "query": "multicomponent RNA condensate internal demixing compositionally distinct domains phase separation sequence length partitioning dense phase conditions",
+      "change_if_found": "If a source supports internal demixing under conditions that can be mapped to the measured RNA classes, retain H1 as a literature-motivated but case-untested hypothesis and sharpen its condition. If it supports only dense/dilute partitioning, weaken the internal-cavity bridge and keep bulk partitioning separate. If no qualifying relation is found, leave H1 explicitly ungrounded and prioritize alternatives."
+    }
+  ],
+  "literature_use": [],
+  "adjudication": [],
+  "final": null
+}

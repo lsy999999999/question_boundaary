@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430608001037062,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0c2be4e535fe088a016ae5944c83bc8195a0a3aab1ab2cc053",
+    "object": "chat.completion",
+    "created": 1793430607,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"double_pulse\",\"reason\":\"State has the lowest cross-validated NMSE, slightly better than memory_slow; added memory complexity is not supported by a validation gain. Residual lag correlation warrants further testing.\",\"prediction\":\"After controlling for current state and input, the second pulse will show no reproducible history-dependent response difference.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The state model is the most parsimonious predictive choice; current evidence does not justify a mechanism card.\",\"condition_to_check\":\"Reject this choice if the second pulse has reproducible residual dependence on prior input after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3511,
+      "completion_tokens": 368,
+      "total_tokens": 3879,
+      "completion_tokens_details": {
+        "reasoning_tokens": 228
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.296577154658735
+}

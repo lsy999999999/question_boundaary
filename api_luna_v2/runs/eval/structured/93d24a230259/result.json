@@ -1,0 +1,84 @@
+{
+  "task_id": "93d24a230259",
+  "split": "eval",
+  "family": "linear",
+  "seed": 31,
+  "method": "structured",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_fast",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0009889575785740551,
+    "coefficients": [
+      -0.0020387,
+      1.8850617,
+      0.9963035,
+      -9.0002463,
+      1.770396,
+      0.3008923,
+      -3.2706562,
+      1.8551469,
+      5.7024153
+    ]
+  },
+  "test": {
+    "test_nmse": 0.00024613880700413547,
+    "test_mse": 1.4861301688706112e-05,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 1.6778555517113966e-05,
+        "nmse": 0.00020621070470464007
+      },
+      {
+        "action": "test_three_step",
+        "mse": 1.25537443827075e-05,
+        "nmse": 3.452984603117599e-05
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 3.425132728341922e-05,
+        "nmse": 0.0009902324045445185
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 2.782736762681377e-06,
+        "nmse": 2.7438665733009732e-05
+      },
+      {
+        "action": "test_prbs",
+        "mse": 1.3625248560535875e-05,
+        "nmse": 0.00014971474975385845
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 9.17619762577873e-06,
+        "nmse": 6.87064712576102e-05
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": true,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 13240,
+  "output_tokens": 1054,
+  "generation_seconds_amortized": 22.72560142353177,
+  "elapsed_wall_seconds": 710.6824612617493,
+  "selected_actions": [
+    "alternating",
+    "slow_wave",
+    "double_pulse"
+  ],
+  "selected_representations": [
+    "state",
+    "state",
+    "state",
+    "memory_fast"
+  ],
+  "peak_gpu_allocated_gb": 0.0,
+  "peak_process_ram_gb": 0.08777236938476562,
+  "inference_backend": "third_party_api",
+  "evaluation_after_commit_ns": 1793432133157326265
+}

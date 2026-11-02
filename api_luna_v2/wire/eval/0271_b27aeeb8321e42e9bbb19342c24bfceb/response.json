@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431732326625581,
+  "http_status": 200,
+  "body": {
+    "id": "resp_075e90bffa8a289c016ae598b1507c8194b69bf9a2fe90e299",
+    "object": "chat.completion",
+    "created": 1793431732,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"memory_slow has the best candidate trajectory-level CV error (0.00390), outperforming current memory_clock (0.00727); substantial PRBS error and residual autocorrelation leave adequacy uncertain.\",\"prediction\":\"Alternating input will expose systematic timing or amplitude errors if slow accumulated history alone is insufficient.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The predictive fit supports slow history features but does not establish a specific cross-domain relation.\",\"condition_to_check\":\"Check whether alternating-input residuals persist after accounting for accumulated input and state history.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3268,
+      "completion_tokens": 314,
+      "total_tokens": 3582,
+      "completion_tokens_details": {
+        "reasoning_tokens": 181
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.698854925110936
+}

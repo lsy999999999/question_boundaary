@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793460038080369591,
+  "body": {
+    "id": "resp_05a4af93deee1157016ae6073e858c8194920f16b85153a4b8",
+    "object": "chat.completion",
+    "created": 1793460038,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"parent_id\":\"initial\",\"target_witnesses\":[\"r0_witness_0\"],\"concept\":\"decaying input memory\",\"explanation\":\"The current-state model does not account for the different observed slopes at approximately matched x with u=0. A compact alternative is that past input leaves a signed, decaying memory: longer positive input builds more positive z, which temporarily offsets the negative drift after input removal. This is a candidate explanation, not evidence that the witness requires a latent state; the witness is approximate and derivative estimates are noisy.\",\"analogy\":{\"domain\":\"linear relaxation systems\",\"relation\":\"a stored input response decays after the driving input is removed and continues to affect the observed variable\",\"mapping\":\"z is the signed stored response to u; p0 sets its decay rate; the z term contributes to dx/dt after u changes, alongside the direct effects of x and u\",\"breaks_when\":\"input history does not produce a reproducible difference in dx/dt at comparable x and u, or the memory does not decay approximately at a fixed rate\"},\"provenance\":\"model_knowledge_unverified\"},\"spec\":{\"parameters\":[{\"name\":\"p0\",\"lower\":0.05,\"initial\":0.8,\"upper\":3.0}],\"states\":[{\"name\":\"z0\",\"meaning\":\"Signed, exponentially decaying memory of past input; initialized at zero and driven by current u.\",\"rate\":\"u-p0*z0\"}],\"terms\":[\"1\",\"x\",\"u\",\"z0\"]},\"distinguishing_prediction\":\"At comparable x and u=0, a longer preceding positive-input exposure should leave a larger positive z0 and therefore a less negative dx/dt than a shorter exposure. Varying the duration of a positive pulse and then measuring the off-phase slope at matched x tests this against a model whose derivative depends only on current x and u.\",\"falsifier\":\"Repeated trajectories show no consistent dependence of off-phase slope on preceding input exposure after matching x and u, or show a dependence with the opposite sign that this additive memory term cannot represent.\",\"limitations\":\"The supplied witness only approximately matches x and is based on smoothed noisy derivatives. Time-varying drift, other hidden variables, or model error could also explain the discrepancy. This one-state extension is a testable candidate, not a validated mechanism.\"}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2652,
+      "completion_tokens": 829,
+      "total_tokens": 3481,
+      "completion_tokens_details": {
+        "reasoning_tokens": 352
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 8.825854170136154
+}

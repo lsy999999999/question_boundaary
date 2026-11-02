@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429626303112701,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0c5d56f767a10446016ae590773ba88196b4d29360197db511",
+    "object": "chat.completion",
+    "created": 1793429626,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"slow_wave\",\"reason\":\"The state model has the lowest leave-trajectory-out error; adding memory or clock features worsens validation. Residual autocorrelation leaves some uncertainty, so test a slow-wave input.\",\"prediction\":\"After accounting for current state and input, slow-wave residuals will show no persistent dependence on earlier input history.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is established by these observations.\",\"condition_to_check\":\"Check whether identical current state and input predict different outputs after different input histories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3238,
+      "completion_tokens": 290,
+      "total_tokens": 3528,
+      "completion_tokens_details": {
+        "reasoning_tokens": 168
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.105774155817926
+}

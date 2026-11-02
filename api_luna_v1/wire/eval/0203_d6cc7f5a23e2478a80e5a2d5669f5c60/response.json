@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430081325299536,
+  "http_status": 200,
+  "body": {
+    "id": "resp_04cb1934d62a218e016ae5923e3bd08194b556216596c5a7a2",
+    "object": "chat.completion",
+    "created": 1793430081,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the lowest trajectory-held-out NMSE (0.00417), substantially outperforming the current memory_fast model (0.01687); PRBS provides varied input history to test that advantage.\",\"prediction\":\"After input switches, output will retain a slower history-dependent carryover than memory_fast predicts.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2964,
+      "completion_tokens": 250,
+      "total_tokens": 3214,
+      "completion_tokens_details": {
+        "reasoning_tokens": 164
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.773526548407972
+}

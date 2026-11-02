@@ -1,0 +1,1211 @@
+{
+  "models": {
+    "initial": {
+      "spec": {
+        "parameters": [],
+        "states": [],
+        "terms": [
+          "1",
+          "x",
+          "u"
+        ]
+      },
+      "group_cv_nmse": 0.7883507723803278
+    },
+    "r0_b0": {
+      "spec": {
+        "parameters": [
+          {
+            "name": "p0",
+            "lower": 0.05,
+            "initial": 0.25,
+            "upper": 1.5
+          }
+        ],
+        "states": [
+          {
+            "name": "z0",
+            "meaning": "exponentially decaying trace of prior input, initialized to zero",
+            "rate": "u-p0*z0"
+          }
+        ],
+        "terms": [
+          "1",
+          "x",
+          "u",
+          "z0"
+        ]
+      },
+      "group_cv_nmse": 0.526758872983742
+    },
+    "r1_b1": {
+      "spec": {
+        "parameters": [
+          {
+            "name": "p0",
+            "lower": 0.05,
+            "initial": 0.8,
+            "upper": 3.0
+          }
+        ],
+        "states": [
+          {
+            "name": "z0",
+            "meaning": "Exponentially filtered history of the observed state x, initialized to zero; unlike the parent state, it is not directly driven by u.",
+            "rate": "x-p0*z0"
+          }
+        ],
+        "terms": [
+          "1",
+          "x",
+          "u",
+          "z0"
+        ]
+      },
+      "group_cv_nmse": 0.6970375425594153
+    },
+    "v3_r0": {
+      "spec": {
+        "parameters": [
+          {
+            "name": "p0",
+            "lower": 0.05,
+            "initial": 0.75,
+            "upper": 1.5
+          }
+        ],
+        "states": [
+          {
+            "name": "z0",
+            "meaning": "A decaying trace of prior input, initialized at zero; its physical interpretation is unverified.",
+            "rate": "u-p0*z0"
+          }
+        ],
+        "terms": [
+          "x",
+          "x**3",
+          "u",
+          "z0"
+        ]
+      },
+      "group_cv_nmse": 0.05282046865472561
+    },
+    "v3_r1": {
+      "spec": {
+        "parameters": [
+          {
+            "name": "p0",
+            "lower": 0.05,
+            "initial": 0.75,
+            "upper": 1.5
+          }
+        ],
+        "states": [
+          {
+            "name": "z0",
+            "meaning": "A decaying input trace, initialized at zero; physical interpretation is unverified.",
+            "rate": "u-p0*z0"
+          }
+        ],
+        "terms": [
+          "x",
+          "x**3",
+          "tanh(x)",
+          "u",
+          "z0"
+        ]
+      },
+      "group_cv_nmse": 0.007810311653794707
+    },
+    "v3_r2": {
+      "spec": {
+        "parameters": [
+          {
+            "name": "p0",
+            "lower": 0.05,
+            "initial": 0.75,
+            "upper": 1.5
+          }
+        ],
+        "states": [
+          {
+            "name": "z0",
+            "meaning": "A decaying input trace, initialized at zero; physical interpretation is unverified.",
+            "rate": "u-p0*z0"
+          }
+        ],
+        "terms": [
+          "x",
+          "x**3",
+          "tanh(x)",
+          "x*tanh(x)**2",
+          "u",
+          "z0"
+        ]
+      },
+      "group_cv_nmse": 0.012378316208052393
+    }
+  },
+  "evidence": [
+    {
+      "id": "failure:initial:3ace5a504824:v3_r0_experiment_1",
+      "kind": "group_held_out_trajectory",
+      "owner_model_id": "initial",
+      "fit_version": "3ace5a504824",
+      "observation": "v3_r0_experiment_1",
+      "rmse": 0.7991664268598092,
+      "samples_t_u_observed_predicted": [
+        [
+          6.300000000000001,
+          0.0,
+          -1.0242837487655903,
+          -1.8231530650830101
+        ],
+        [
+          6.4,
+          0.0,
+          -0.9962481476278725,
+          -1.8034554695793463
+        ],
+        [
+          6.5,
+          0.0,
+          -0.9878725200113082,
+          -1.783992131606924
+        ],
+        [
+          6.6000000000000005,
+          0.0,
+          -0.9675184784092297,
+          -1.764760265211948
+        ],
+        [
+          6.7,
+          0.0,
+          -0.9587348839767816,
+          -1.7457571175731275
+        ],
+        [
+          6.800000000000001,
+          0.0,
+          -0.9186352878017412,
+          -1.72697996860764
+        ]
+      ]
+    },
+    {
+      "id": "failure:initial:3ace5a504824:v3_r2_experiment_1",
+      "kind": "group_held_out_trajectory",
+      "owner_model_id": "initial",
+      "fit_version": "3ace5a504824",
+      "observation": "v3_r2_experiment_1",
+      "rmse": 0.7966757206185807,
+      "samples_t_u_observed_predicted": [
+        [
+          6.2,
+          0.0,
+          1.0955203045624229,
+          1.8887760099475501
+        ],
+        [
+          6.300000000000001,
+          0.0,
+          1.065848061900652,
+          1.8644256114577926
+        ],
+        [
+          6.4,
+          0.0,
+          1.0395959141562583,
+          1.8403690076785144
+        ],
+        [
+          6.5,
+          0.0,
+          1.0164175247656866,
+          1.8166026538902338
+        ],
+        [
+          6.6000000000000005,
+          0.0,
+          1.0009048364605204,
+          1.7931230481415514
+        ],
+        [
+          6.7,
+          0.0,
+          0.9749242005134535,
+          1.7699267307331399
+        ]
+      ]
+    },
+    {
+      "id": "failure:initial:3ace5a504824:v3_r0_experiment_0",
+      "kind": "group_held_out_trajectory",
+      "owner_model_id": "initial",
+      "fit_version": "3ace5a504824",
+      "observation": "v3_r0_experiment_0",
+      "rmse": 0.617692253852026,
+      "samples_t_u_observed_predicted": [
+        [
+          6.2,
+          0.0,
+          1.0553535979141548,
+          1.6635421880702328
+        ],
+        [
+          6.300000000000001,
+          0.0,
+          1.0155816936398707,
+          1.6417317931978639
+        ],
+        [
+          6.4,
+          0.0,
+          1.000296774240358,
+          1.6201866598141856
+        ],
+        [
+          6.5,
+          0.0,
+          0.9830248195241441,
+          1.5989035617668155
+        ],
+        [
+          6.6000000000000005,
+          0.0,
+          0.9589938836772363,
+          1.5778793121403487
+        ],
+        [
+          6.7,
+          0.0,
+          0.9400890893404203,
+          1.5571107627791527
+        ]
+      ]
+    },
+    {
+      "id": "grouped:initial",
+      "owner_model_id": "initial",
+      "kind": "adaptive_development_grouped_CV",
+      "group_cv_nmse": 0.7883507723803278
+    },
+    {
+      "id": "failure:r0_b0:387f4fa9901b:v3_r0_experiment_1",
+      "kind": "group_held_out_trajectory",
+      "owner_model_id": "r0_b0",
+      "fit_version": "387f4fa9901b",
+      "observation": "v3_r0_experiment_1",
+      "rmse": 0.6969477473839285,
+      "samples_t_u_observed_predicted": [
+        [
+          11.5,
+          0.0,
+          -0.7109060870643569,
+          -1.387706692882831
+        ],
+        [
+          11.600000000000001,
+          0.0,
+          -0.6967270753580195,
+          -1.3913291552305702
+        ],
+        [
+          11.700000000000001,
+          0.0,
+          -0.7084141887335085,
+          -1.3949963768748943
+        ],
+        [
+          11.8,
+          0.0,
+          -0.6982455834546633,
+          -1.398705893553398
+        ],
+        [
+          11.9,
+          0.0,
+          -0.6975925849518556,
+          -1.4024554141212453
+        ],
+        [
+          12.0,
+          0.0,
+          -0.68859769350976,
+          -1.406242808493734
+        ]
+      ]
+    },
+    {
+      "id": "failure:r0_b0:387f4fa9901b:v3_r2_experiment_1",
+      "kind": "group_held_out_trajectory",
+      "owner_model_id": "r0_b0",
+      "fit_version": "387f4fa9901b",
+      "observation": "v3_r2_experiment_1",
+      "rmse": 0.5717829039537162,
+      "samples_t_u_observed_predicted": [
+        [
+          11.5,
+          0.0,
+          0.7060186512283582,
+          1.2728124428809258
+        ],
+        [
+          11.600000000000001,
+          0.0,
+          0.7084960837012029,
+          1.2745741848215502
+        ],
+        [
+          11.700000000000001,
+          0.0,
+          0.7073091608216563,
+          1.2763879719509743
+        ],
+        [
+          11.8,
+          0.0,
+          0.7010131550555185,
+          1.2782507377516266
+        ],
+        [
+          11.9,
+          0.0,
+          0.7019401602350156,
+          1.2801596235822001
+        ],
+        [
+          12.0,
+          0.0,
+          0.7089428371379144,
+          1.28211196466647
+        ]
+      ]
+    },
+    {
+      "id": "failure:r0_b0:387f4fa9901b:v3_r0_experiment_0",
+      "kind": "group_held_out_trajectory",
+      "owner_model_id": "r0_b0",
+      "fit_version": "387f4fa9901b",
+      "observation": "v3_r0_experiment_0",
+      "rmse": 0.41850964606638874,
+      "samples_t_u_observed_predicted": [
+        [
+          11.5,
+          0.0,
+          0.6955800954539979,
+          1.1114187498246868
+        ],
+        [
+          11.600000000000001,
+          0.0,
+          0.6984057145528413,
+          1.1129174186250352
+        ],
+        [
+          11.700000000000001,
+          0.0,
+          0.7027014095361921,
+          1.114462850979247
+        ],
+        [
+          11.8,
+          0.0,
+          0.6983602708118208,
+          1.1160522951602085
+        ],
+        [
+          11.9,
+          0.0,
+          0.69519164045076,
+          1.1176831855765084
+        ],
+        [
+          12.0,
+          0.0,
+          0.6908125997851559,
+          1.1193531302554556
+        ]
+      ]
+    },
+    {
+      "id": "grouped:r0_b0",
+      "owner_model_id": "r0_b0",
+      "kind": "adaptive_development_grouped_CV",
+      "group_cv_nmse": 0.526758872983742
+    },
+    {
+      "id": "failure:r1_b1:b89d8609cb73:v3_r0_experiment_1",
+      "kind": "group_held_out_trajectory",
+      "owner_model_id": "r1_b1",
+      "fit_version": "b89d8609cb73",
+      "observation": "v3_r0_experiment_1",
+      "rmse": 0.8126255211295299,
+      "samples_t_u_observed_predicted": [
+        [
+          6.800000000000001,
+          0.0,
+          -0.9186352878017412,
+          -1.7411192860324896
+        ],
+        [
+          6.9,
+          0.0,
+          -0.9123763804586832,
+          -1.7275513590658436
+        ],
+        [
+          7.0,
+          0.0,
+          -0.9023061255875614,
+          -1.7141031687143926
+        ],
+        [
+          7.1000000000000005,
+          0.0,
+          -0.8960452157701815,
+          -1.7007736375475262
+        ],
+        [
+          7.2,
+          0.0,
+          -0.8735420068271479,
+          -1.6875617071030715
+        ],
+        [
+          7.300000000000001,
+          0.0,
+          -0.8670377558624082,
+          -1.6744663334904184
+        ]
+      ]
+    },
+    {
+      "id": "failure:r1_b1:b89d8609cb73:v3_r2_experiment_1",
+      "kind": "group_held_out_trajectory",
+      "owner_model_id": "r1_b1",
+      "fit_version": "b89d8609cb73",
+      "observation": "v3_r2_experiment_1",
+      "rmse": 0.7457822533797424,
+      "samples_t_u_observed_predicted": [
+        [
+          6.5,
+          0.0,
+          1.0164175247656866,
+          1.7616201700229888
+        ],
+        [
+          6.6000000000000005,
+          0.0,
+          1.0009048364605204,
+          1.7425072425580026
+        ],
+        [
+          6.7,
+          0.0,
+          0.9749242005134535,
+          1.7235862459471278
+        ],
+        [
+          6.800000000000001,
+          0.0,
+          0.9587829655317281,
+          1.7048552375433565
+        ],
+        [
+          6.9,
+          0.0,
+          0.9368666459648829,
+          1.6863123022118722
+        ],
+        [
+          7.0,
+          0.0,
+          0.9242765711625612,
+          1.6679555479421495
+        ]
+      ]
+    },
+    {
+      "id": "failure:r1_b1:b89d8609cb73:v3_r0_experiment_0",
+      "kind": "group_held_out_trajectory",
+      "owner_model_id": "r1_b1",
+      "fit_version": "b89d8609cb73",
+      "observation": "v3_r0_experiment_0",
+      "rmse": 0.588828535236487,
+      "samples_t_u_observed_predicted": [
+        [
+          6.6000000000000005,
+          0.0,
+          0.9589938836772363,
+          1.5487652671534329
+        ],
+        [
+          6.7,
+          0.0,
+          0.9400890893404203,
+          1.533711237678888
+        ],
+        [
+          6.800000000000001,
+          0.0,
+          0.9300587776732603,
+          1.5187902244356963
+        ],
+        [
+          6.9,
+          0.0,
+          0.9161452015662814,
+          1.5040009972965716
+        ],
+        [
+          7.0,
+          0.0,
+          0.9035361524728313,
+          1.4893423626723028
+        ],
+        [
+          7.1000000000000005,
+          0.0,
+          0.887660143393676,
+          1.4748131513891438
+        ]
+      ]
+    },
+    {
+      "id": "grouped:r1_b1",
+      "owner_model_id": "r1_b1",
+      "kind": "adaptive_development_grouped_CV",
+      "group_cv_nmse": 0.6970375425594153
+    },
+    {
+      "id": "failure:v3_r0:7cf423145cf9:v3_r2_experiment_1",
+      "kind": "group_held_out_trajectory",
+      "owner_model_id": "v3_r0",
+      "fit_version": "7cf423145cf9",
+      "observation": "v3_r2_experiment_1",
+      "rmse": 0.3189560374771958,
+      "samples_t_u_observed_predicted": [
+        [
+          4.3,
+          1.35,
+          2.161142564379484,
+          1.8483698282574677
+        ],
+        [
+          4.4,
+          1.35,
+          2.180846916543634,
+          1.851126212158358
+        ],
+        [
+          4.5,
+          0.0,
+          2.182959360062052,
+          1.8533137614270916
+        ],
+        [
+          4.6000000000000005,
+          0.0,
+          2.069225120217927,
+          1.7441616396150952
+        ],
+        [
+          4.7,
+          0.0,
+          1.963279532165546,
+          1.6484815303385532
+        ],
+        [
+          4.800000000000001,
+          0.0,
+          1.8645236427801848,
+          1.5638162657139503
+        ]
+      ]
+    },
+    {
+      "id": "failure:v3_r0:7cf423145cf9:v3_r0_experiment_0",
+      "kind": "group_held_out_trajectory",
+      "owner_model_id": "v3_r0",
+      "fit_version": "7cf423145cf9",
+      "observation": "v3_r0_experiment_0",
+      "rmse": 0.22664829092581654,
+      "samples_t_u_observed_predicted": [
+        [
+          4.2,
+          1.2,
+          1.965509794584407,
+          1.7548695913586378
+        ],
+        [
+          4.3,
+          1.2,
+          1.9762143044849099,
+          1.760775331894311
+        ],
+        [
+          4.4,
+          1.2,
+          2.0016230074864727,
+          1.7658974711396056
+        ],
+        [
+          4.5,
+          0.0,
+          2.0071435587089432,
+          1.770318266329996
+        ],
+        [
+          4.6000000000000005,
+          0.0,
+          1.9065361856824026,
+          1.6753180221589228
+        ],
+        [
+          4.7,
+          0.0,
+          1.820069391551244,
+          1.591336241762866
+        ]
+      ]
+    },
+    {
+      "id": "failure:v3_r0:7cf423145cf9:v3_r0_experiment_1",
+      "kind": "group_held_out_trajectory",
+      "owner_model_id": "v3_r0",
+      "fit_version": "7cf423145cf9",
+      "observation": "v3_r0_experiment_1",
+      "rmse": 0.22029101888681005,
+      "samples_t_u_observed_predicted": [
+        [
+          4.3,
+          -1.2,
+          -1.9711240574470545,
+          -1.76124763639023
+        ],
+        [
+          4.4,
+          -1.2,
+          -1.992258391585704,
+          -1.7663708055041971
+        ],
+        [
+          4.5,
+          0.0,
+          -2.008171004806776,
+          -1.7707916079188217
+        ],
+        [
+          4.6000000000000005,
+          0.0,
+          -1.9019005270448477,
+          -1.6758078950489406
+        ],
+        [
+          4.7,
+          0.0,
+          -1.8097378566085012,
+          -1.5918285333608366
+        ],
+        [
+          4.800000000000001,
+          0.0,
+          -1.7198505878060275,
+          -1.5170103677218414
+        ]
+      ]
+    },
+    {
+      "id": "grouped:v3_r0",
+      "owner_model_id": "v3_r0",
+      "kind": "adaptive_development_grouped_CV",
+      "group_cv_nmse": 0.05282046865472561
+    },
+    {
+      "id": "failure:v3_r1:7815bd98ece8:v3_r0_experiment_0",
+      "kind": "group_held_out_trajectory",
+      "owner_model_id": "v3_r1",
+      "fit_version": "7815bd98ece8",
+      "observation": "v3_r0_experiment_0",
+      "rmse": 0.08966999332791804,
+      "samples_t_u_observed_predicted": [
+        [
+          3.7,
+          1.2,
+          1.8606677154232092,
+          1.775596467064118
+        ],
+        [
+          3.8000000000000003,
+          1.2,
+          1.8871438105821632,
+          1.797430468265664
+        ],
+        [
+          3.9000000000000004,
+          1.2,
+          1.9121909765687402,
+          1.8183872660475418
+        ],
+        [
+          4.0,
+          1.2,
+          1.9300411484597535,
+          1.838527336926415
+        ],
+        [
+          4.1000000000000005,
+          1.2,
+          1.9466519228462935,
+          1.8579066809056393
+        ],
+        [
+          4.2,
+          1.2,
+          1.965509794584407,
+          1.8765771607676116
+        ]
+      ]
+    },
+    {
+      "id": "failure:v3_r1:7815bd98ece8:v3_r2_experiment_1",
+      "kind": "group_held_out_trajectory",
+      "owner_model_id": "v3_r1",
+      "fit_version": "7815bd98ece8",
+      "observation": "v3_r2_experiment_1",
+      "rmse": 0.0876997035933914,
+      "samples_t_u_observed_predicted": [
+        [
+          5.7,
+          0.0,
+          1.2655693727400086,
+          1.3541114856134535
+        ],
+        [
+          5.800000000000001,
+          0.0,
+          1.2247264795298172,
+          1.3134505014744196
+        ],
+        [
+          5.9,
+          0.0,
+          1.194336202229049,
+          1.275766610927128
+        ],
+        [
+          6.0,
+          0.0,
+          1.142428653330317,
+          1.2408407981447
+        ],
+        [
+          6.1000000000000005,
+          0.0,
+          1.123359579909645,
+          1.2084658369878944
+        ],
+        [
+          6.2,
+          0.0,
+          1.0955203045624229,
+          1.1784469802375017
+        ]
+      ]
+    },
+    {
+      "id": "failure:v3_r1:7815bd98ece8:v3_r0_experiment_1",
+      "kind": "group_held_out_trajectory",
+      "owner_model_id": "v3_r1",
+      "fit_version": "7815bd98ece8",
+      "observation": "v3_r0_experiment_1",
+      "rmse": 0.07880637839017947,
+      "samples_t_u_observed_predicted": [
+        [
+          4.0,
+          -1.2,
+          -1.9205439918539433,
+          -1.8389775730185745
+        ],
+        [
+          4.1000000000000005,
+          -1.2,
+          -1.9390358715506546,
+          -1.858369453084286
+        ],
+        [
+          4.2,
+          -1.2,
+          -1.9527878702504744,
+          -1.8770525010601014
+        ],
+        [
+          4.3,
+          -1.2,
+          -1.9711240574470545,
+          -1.8950747921423736
+        ],
+        [
+          4.4,
+          -1.2,
+          -1.992258391585704,
+          -1.9124808794087353
+        ],
+        [
+          4.5,
+          0.0,
+          -2.008171004806776,
+          -1.9293120703027606
+        ]
+      ]
+    },
+    {
+      "id": "grouped:v3_r1",
+      "owner_model_id": "v3_r1",
+      "kind": "adaptive_development_grouped_CV",
+      "group_cv_nmse": 0.007810311653794707
+    },
+    {
+      "id": "failure:v3_r2:91feb41a14b2:v3_r2_experiment_1",
+      "kind": "group_held_out_trajectory",
+      "owner_model_id": "v3_r2",
+      "fit_version": "91feb41a14b2",
+      "observation": "v3_r2_experiment_1",
+      "rmse": 0.09985790864782824,
+      "samples_t_u_observed_predicted": [
+        [
+          3.9000000000000004,
+          1.35,
+          2.084401333823671,
+          1.9926282783159783
+        ],
+        [
+          4.0,
+          1.35,
+          2.122866060848155,
+          2.011868001716599
+        ],
+        [
+          4.1000000000000005,
+          1.35,
+          2.1317158477099833,
+          2.0299871307271746
+        ],
+        [
+          4.2,
+          1.35,
+          2.13971011028572,
+          2.0470441279187783
+        ],
+        [
+          4.3,
+          1.35,
+          2.161142564379484,
+          2.063095035585777
+        ],
+        [
+          4.4,
+          1.35,
+          2.180846916543634,
+          2.0781935453405116
+        ]
+      ]
+    },
+    {
+      "id": "failure:v3_r2:91feb41a14b2:v3_r0_experiment_0",
+      "kind": "group_held_out_trajectory",
+      "owner_model_id": "v3_r2",
+      "fit_version": "91feb41a14b2",
+      "observation": "v3_r0_experiment_0",
+      "rmse": 0.08346846635839897,
+      "samples_t_u_observed_predicted": [
+        [
+          3.9000000000000004,
+          1.2,
+          1.9121909765687402,
+          1.8264395669531608
+        ],
+        [
+          4.0,
+          1.2,
+          1.9300411484597535,
+          1.8459128827853373
+        ],
+        [
+          4.1000000000000005,
+          1.2,
+          1.9466519228462935,
+          1.8644021541406401
+        ],
+        [
+          4.2,
+          1.2,
+          1.965509794584407,
+          1.8819546879562623
+        ],
+        [
+          4.3,
+          1.2,
+          1.9762143044849099,
+          1.8986155784000207
+        ],
+        [
+          4.4,
+          1.2,
+          2.0016230074864727,
+          1.9144278394143641
+        ]
+      ]
+    },
+    {
+      "id": "failure:v3_r2:91feb41a14b2:r0_experiment_1",
+      "kind": "group_held_out_trajectory",
+      "owner_model_id": "v3_r2",
+      "fit_version": "91feb41a14b2",
+      "observation": "r0_experiment_1",
+      "rmse": 0.07645167938643921,
+      "samples_t_u_observed_predicted": [
+        [
+          2.2,
+          0.0,
+          -0.5280788371336823,
+          -0.6084083516391081
+        ],
+        [
+          2.3000000000000003,
+          0.0,
+          -0.517934142706055,
+          -0.5958261496799276
+        ],
+        [
+          2.4000000000000004,
+          0.0,
+          -0.5040339502356428,
+          -0.584452112477575
+        ],
+        [
+          2.5,
+          0.0,
+          -0.49607642213415293,
+          -0.5741836860161421
+        ],
+        [
+          2.6,
+          0.0,
+          -0.4945325230633728,
+          -0.5649276285112425
+        ],
+        [
+          2.7,
+          0.0,
+          -0.4857057592917141,
+          -0.5565990853134845
+        ]
+      ]
+    },
+    {
+      "id": "grouped:v3_r2",
+      "owner_model_id": "v3_r2",
+      "kind": "adaptive_development_grouped_CV",
+      "group_cv_nmse": 0.012378316208052393
+    },
+    {
+      "id": "prospective:r0:initial",
+      "owner_model_id": "initial",
+      "kind": "prediction_committed_before_observation",
+      "nmse": [
+        1.0823361070274728,
+        1.760533976519378
+      ],
+      "question": "polarity",
+      "observed_relation_rms": 0.007766659026699184,
+      "noise_rms": 0.007071067811865476,
+      "predicted_relation_rms": 0.1613087522194228
+    },
+    {
+      "id": "prospective:r0:r0_b0",
+      "owner_model_id": "r0_b0",
+      "kind": "prediction_committed_before_observation",
+      "nmse": [
+        0.8089958460083532,
+        1.4580982009526304
+      ],
+      "question": "polarity",
+      "observed_relation_rms": 0.007766659026699184,
+      "noise_rms": 0.007071067811865476,
+      "predicted_relation_rms": 0.15378531344216217
+    },
+    {
+      "id": "prospective:r0:r1_b1",
+      "owner_model_id": "r1_b1",
+      "kind": "prediction_committed_before_observation",
+      "nmse": [
+        0.8167319832510158,
+        1.447081783588924
+      ],
+      "question": "polarity",
+      "observed_relation_rms": 0.007766659026699184,
+      "noise_rms": 0.007071067811865476,
+      "predicted_relation_rms": 0.1512708936030338
+    },
+    {
+      "id": "prospective:r0:v3_r0",
+      "owner_model_id": "v3_r0",
+      "kind": "prediction_committed_before_observation",
+      "nmse": [
+        0.09353656109507258,
+        0.09185857314398345
+      ],
+      "question": "polarity",
+      "observed_relation_rms": 0.007766659026699184,
+      "noise_rms": 0.007071067811865476,
+      "predicted_relation_rms": 0.0
+    },
+    {
+      "id": "prospective:r1:initial",
+      "owner_model_id": "initial",
+      "kind": "prediction_committed_before_observation",
+      "nmse": [
+        0.3180891862070808,
+        0.6233556864331334
+      ],
+      "question": "polarity",
+      "observed_relation_rms": 0.006928051083954317,
+      "noise_rms": 0.007071067811865476,
+      "predicted_relation_rms": 0.14498243251120588
+    },
+    {
+      "id": "prospective:r1:r0_b0",
+      "owner_model_id": "r0_b0",
+      "kind": "prediction_committed_before_observation",
+      "nmse": [
+        0.09390214846553498,
+        0.42211259196614914
+      ],
+      "question": "polarity",
+      "observed_relation_rms": 0.006928051083954317,
+      "noise_rms": 0.007071067811865476,
+      "predicted_relation_rms": 0.13704111007309722
+    },
+    {
+      "id": "prospective:r1:r1_b1",
+      "owner_model_id": "r1_b1",
+      "kind": "prediction_committed_before_observation",
+      "nmse": [
+        0.09807677168670036,
+        0.4155168000415188
+      ],
+      "question": "polarity",
+      "observed_relation_rms": 0.006928051083954317,
+      "noise_rms": 0.007071067811865476,
+      "predicted_relation_rms": 0.13467825389578733
+    },
+    {
+      "id": "prospective:r1:v3_r0",
+      "owner_model_id": "v3_r0",
+      "kind": "prediction_committed_before_observation",
+      "nmse": [
+        0.018946487350268753,
+        0.018796761617000484
+      ],
+      "question": "polarity",
+      "observed_relation_rms": 0.006928051083954317,
+      "noise_rms": 0.007071067811865476,
+      "predicted_relation_rms": 0.0
+    },
+    {
+      "id": "prospective:r1:v3_r1",
+      "owner_model_id": "v3_r1",
+      "kind": "prediction_committed_before_observation",
+      "nmse": [
+        0.005326406219890388,
+        0.005111618326497274
+      ],
+      "question": "polarity",
+      "observed_relation_rms": 0.006928051083954317,
+      "noise_rms": 0.007071067811865476,
+      "predicted_relation_rms": 0.0
+    },
+    {
+      "id": "prospective:r2:initial",
+      "owner_model_id": "initial",
+      "kind": "prediction_committed_before_observation",
+      "nmse": [
+        0.23361376598565392,
+        0.7477433281065231
+      ],
+      "question": "scaling",
+      "observed_relation_rms": 0.25962673872875874,
+      "noise_rms": 0.009013878188659973,
+      "predicted_relation_rms": 0.03271318638090383
+    },
+    {
+      "id": "prospective:r2:r0_b0",
+      "owner_model_id": "r0_b0",
+      "kind": "prediction_committed_before_observation",
+      "nmse": [
+        0.043867683339757414,
+        0.5112458126381327
+      ],
+      "question": "scaling",
+      "observed_relation_rms": 0.25962673872875874,
+      "noise_rms": 0.009013878188659973,
+      "predicted_relation_rms": 0.03101095102005328
+    },
+    {
+      "id": "prospective:r2:r1_b1",
+      "owner_model_id": "r1_b1",
+      "kind": "prediction_committed_before_observation",
+      "nmse": [
+        0.0494181313561944,
+        0.5154596871362059
+      ],
+      "question": "scaling",
+      "observed_relation_rms": 0.25962673872875874,
+      "noise_rms": 0.009013878188659973,
+      "predicted_relation_rms": 0.030472030799861063
+    },
+    {
+      "id": "prospective:r2:v3_r0",
+      "owner_model_id": "v3_r0",
+      "kind": "prediction_committed_before_observation",
+      "nmse": [
+        0.005752209161317958,
+        0.06172712666928405
+      ],
+      "question": "scaling",
+      "observed_relation_rms": 0.25962673872875874,
+      "noise_rms": 0.009013878188659973,
+      "predicted_relation_rms": 0.3728005563639759
+    },
+    {
+      "id": "prospective:r2:v3_r1",
+      "owner_model_id": "v3_r1",
+      "kind": "prediction_committed_before_observation",
+      "nmse": [
+        0.0034685444422279882,
+        0.01082590623132886
+      ],
+      "question": "scaling",
+      "observed_relation_rms": 0.25962673872875874,
+      "noise_rms": 0.009013878188659973,
+      "predicted_relation_rms": 0.2265037368982855
+    },
+    {
+      "id": "prospective:r2:v3_r2",
+      "owner_model_id": "v3_r2",
+      "kind": "prediction_committed_before_observation",
+      "nmse": [
+        0.0034041774598946267,
+        0.007177351424004374
+      ],
+      "question": "scaling",
+      "observed_relation_rms": 0.25962673872875874,
+      "noise_rms": 0.009013878188659973,
+      "predicted_relation_rms": 0.26212490925183785
+    }
+  ],
+  "scope": "Only V3.1 public development records, no hidden mechanism or sealed outcomes. One pair may favor a model with worse aggregate CV."
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429694659479831,
+  "http_status": 200,
+  "body": {
+    "id": "resp_042fdd8461fc2a94016ae590bb4a048197a1e53dd8ba0ee33f",
+    "object": "chat.completion",
+    "created": 1793429694,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"memory_slow has the lowest leave-trajectory-out error (0.00176); persistent post-pulse decay contradicts the current state-only model, while clock features do not improve validation.\",\"prediction\":\"The second pulse’s response will depend on the residual influence of the first pulse, even though the input has returned to zero between pulses.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated history with finite relaxation can carry past input influence into future predictions.\",\"condition_to_check\":\"At matched current input and visible output, vary the first pulse and test whether the second-pulse response changes.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2830,
+      "completion_tokens": 298,
+      "total_tokens": 3128,
+      "completion_tokens_details": {
+        "reasoning_tokens": 154
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.111699914559722
+}

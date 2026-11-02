@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793423938973989051,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "negative_pulse",
+    "reason": "Negative pulse has higher NMSE, suggesting different dynamics.",
+    "prediction": "Negative pulse will cause a delayed and damped response.",
+    "accept": false,
+    "mapping": {
+      "source_id": "memory_clock",
+      "target_relation": "The system responds with a delayed and damped reaction to negative pulses.",
+      "condition_to_check": "Check for delayed damping in response to negative inputs."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_clock\",\n  \"experiment\": \"negative_pulse\",\n  \"reason\": \"Negative pulse has higher NMSE, suggesting different dynamics.\",\n  \"prediction\": \"Negative pulse will cause a delayed and damped response.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"memory_clock\",\n    \"target_relation\": \"The system responds with a delayed and damped reaction to negative pulses.\",\n    \"condition_to_check\": \"Check for delayed damping in response to negative inputs.\"\n  }\n}",
+    "input_tokens": 3568,
+    "output_tokens": 110,
+    "batch_elapsed_seconds": 2.6338653350248933,
+    "amortized_seconds": 2.6338653350248933,
+    "peak_gpu_allocated_gb": 14.917911529541016,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

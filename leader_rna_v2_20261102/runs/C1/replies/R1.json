@@ -1,0 +1,139 @@
+{
+  "recognition": "uncertain; I do not recognize a specific study from the supplied case.",
+  "summary": "E01 shows f (dimensionless segmented internal-dark-area / filled-area statistic) diverging after similar t=0 values: A is about 0.0044 by 8-24 h while B rises to 0.08918 at 24 h; fields/objects are nested within only two preparations. E02 template-fraction endpoints are compatible with composition effects but do not isolate them from yield, preparation or carryover. E04 measures reference/variant RNA concentrations at three coexisting phase tie-lines, not B's mixture or cavity composition. A conditional two-phase lever rule can map an assumed global RNA mass fraction to phase volume only if the measured tie-line endpoints apply and two phases coexist. It cannot map volume to f without geometry and image mapping. The relative partition preference changes across supplied tie-lines, so a universal internal-phase enrichment claim is unsupported. Requesting computation of the lever rule, endpoint ratios and sensitivity to supplied marginal-error corners; nothing has yet been computed or causally established.",
+  "candidates": [
+    {
+      "id": "R01-selective-phase-v1",
+      "version": 2,
+      "author": "executor",
+      "reply": "R1",
+      "target": "Explain emergence and persistence of internal RNA-poor cavities, using f(t), the arithmetic mean of per-droplet segmented internal dark-area fractions; 36/48 h measurements remain reserved.",
+      "known_relations": [
+        "Observed E01: A f falls from 0.01487 at 0 h to about 0.0044 at 8-24 h; B rises from 0.01381 to 0.08918 by 24 h. Seven fields per condition pool two preparations, so field/object counts are not independent preparation replicates.",
+        "Observed E02: endpoint f medians M=2.785e-5, M+L=0.04446, M+S=0.09412; length fractions lack precise mixture ratios, RNA yield, time course and carryover matching.",
+        "Observed E04/C04: three endpoint tie-lines give reference and variant RNA concentrations in dilute/dense phases, with broad supplied marginal error bounds; no phase volumes, time-resolved B RNA composition, cavity-local composition or link to f.",
+        "Observed E03: aggregate motion summaries differ, but no same-droplet cavity-state trajectory is supplied.",
+        "Unknown: whether DNA variants are transcribed and at what RNA mass fractions; whether E04's variant is the relevant species; which phase, if any, is the cavity; and how phase volume/geometry maps to f."
+      ],
+      "hypotheses": [
+        "H1 (new, explicit, unverified and conditional): if two phases with E04-like endpoint concentrations coexist in a droplet and one is the internal RNA-poor phase, changing the measured global variant RNA mass fraction changes that phase's volume fraction by the two-species lever rule. Because relative variant/reference partition preference differs across supplied tie-lines, cavity abundance could depend on composition regime rather than rise monotonically across all mixtures. This is a conditional mechanism consequence, not an explanation established for B.",
+        "H2 (alternative): age-dependent or amplification carryover changes transcription or material state and causes cavitation without variant-specific partition enrichment; at matched age and carryover, changing RNA composition alone need not produce systematic cavity enrichment."
+      ],
+      "gaps": [
+        {
+          "id": "G1-selective-phase-bridge",
+          "status": "active",
+          "description": "Derive and check the conditional two-species/two-phase lever rule from E04 endpoints over explicit global RNA mass fractions, assess tie-line and endpoint-uncertainty dependence, and state a composition-controlled prediction against H2. The measured phase endpoints do not establish cavity identity, causality, or a mapping to image f."
+        }
+      ],
+      "variables_units": {
+        "f": "dimensionless arithmetic mean over droplets of segmented internal dark area / filled area",
+        "C_ref,d,C_var,d,C_ref,l,C_var,l": "ng/uL measured E04 endpoint concentrations in dense (d) and dilute (l) phases",
+        "K_i": "dimensionless dense/dilute concentration ratio C_i,d/C_i,l, undefined when C_i,l=0",
+        "x_var": "dimensionless variant fraction by RNA mass in the total mixture; hypothetical input to the lever rule, not known from DNA reads",
+        "r": "dimensionless global variant/reference RNA mass ratio x_var/(1-x_var)",
+        "phi_l": "dimensionless dilute-phase volume fraction; hypothetical and not the image-area statistic",
+        "V_d,V_l": "uL phase volumes; unknown",
+        "M_ref,M_var": "ng total species masses, with M_i=V_d*C_i,d+V_l*C_i,l",
+        "t": "hours"
+      },
+      "equations": [
+        "For species i, M_i=V_d*C_i,d+V_l*C_i,l (ng = uL * ng/uL).",
+        "Let phi_l=V_l/(V_d+V_l), delta_i=C_i,l-C_i,d, and r=M_var/M_ref. Then r=[C_var,d+phi_l*delta_var]/[C_ref,d+phi_l*delta_ref], hence phi_l=(C_var,d-r*C_ref,d)/(r*delta_ref-delta_var), when the denominator is nonzero and the result lies in [0,1]. Equivalently x_var=M_var/(M_ref+M_var), so r=x_var/(1-x_var).",
+        "The lever rule requires fixed coexisting endpoint concentrations and no additional species or phase; endpoint data alone do not determine phi_l because r is unknown.",
+        "Measured image observable remains f=mean_j(A_internal,j/A_filled,j); no equality between f and phi_l is assumed."
+      ],
+      "parameters_ranges": [
+        "Use E04 central concentrations and supplied lower/upper marginal error bounds; corner propagation is a sensitivity envelope only, not a confidence interval.",
+        "Explore x_var from 0 to 1 as an assumed RNA mass fraction; endpoints x_var=0 or 1 are single-species limits and may not identify a two-phase mixture.",
+        "Restrict physical phi_l to [0,1]; report mixture compositions yielding values outside this interval as incompatible with that fixed tie-line, not clipped values.",
+        "Do not treat E04 endpoints as B measurements or infer RNA mass fraction from DNA read frequencies."
+      ],
+      "initial_boundary_conditions": [
+        "For each conditional calculation assume a closed two-phase volume with fixed total volume and conserved M_ref and M_var; no production, degradation, exchange or third component during lever-rule evaluation.",
+        "No actual initial amounts, phase volumes, RNA production composition or boundary fluxes are supplied.",
+        "Check x_var=0 and x_var=1 species-only limits and equal-partition limit C_i,d=C_i,l; degenerate denominators must be reported as non-identifiable."
+      ],
+      "observation_mapping": [
+        "E01 f is an image-derived area statistic, not concentration, volume fraction or free energy.",
+        "E02 is endpoint imaging of gel-purified template length fractions, not direct RNA species concentration or mixture mass fraction.",
+        "E04 is measured coexisting-phase endpoint concentration data; it is not B time-course, cavity-local sampling or phase-volume data.",
+        "A discriminating future observation would quantify RNA species mass fractions in internal and outer/dilute regions and f in matched droplets/preparations over time, while holding age, total RNA and carryover fixed."
+      ],
+      "alternatives": [
+        "H2: age/carryover-driven cavitation without variant enrichment; predicts no necessary composition-linked species enrichment after matching age and carryover.",
+        "Population composition, droplet selection, segmentation or changing filled-area denominators can alter aggregate f without within-droplet phase growth."
+      ],
+      "predictions": [
+        "Conditional H1: at fixed E04-like tie-line endpoints, an independently measured x_var determines a predicted phi_l through the lever rule only for compositions compatible with 0<=phi_l<=1; the direction and range depend on the tie-line. If the internal phase is the dilute phase, its species composition follows the measured dilute endpoint. This is not a numerical prediction for f.",
+        "H2: at matched age, total RNA and carryover, changing x_var alone need not produce the tie-line-specific internal enrichment/phase-volume response.",
+        "A matched composition series measuring internal-phase species enrichment and f distinguishes these accounts; absence of enrichment weakens H1, while f alone does not identify it.",
+        "No 36/48 h time extrapolation is committed."
+      ],
+      "checks": [
+        "Mass balance is dimensionally consistent: uL times ng/uL gives ng; phi_l and r are dimensionless.",
+        "Check computed phase volumes are in [0,1] and reconstruct both species mass fractions.",
+        "A zero dilute concentration makes K undefined; it is not zero or a finite ratio.",
+        "Check pure-species, equal-partition and denominator-degenerate limits; no calculation result is claimed before broker execution.",
+        "Do not equate phase volume to cross-sectional area or f without geometry, sampling and segmentation assumptions.",
+        "Keep preparation-level replication separate from field/object summaries."
+      ],
+      "evidence_conflicts": [
+        "At tie-line 1, variant dense/dilute ratio is much larger than reference's; at tie-line 2, it is smaller. Thus the relative partition preference varies across the measured states and does not support universal variant enrichment in a dilute/internal phase.",
+        "E02 endpoint differences are compatible with composition effects but do not isolate composition from preparation, RNA yield or carryover.",
+        "E04 marginal uncertainty is broad and does not establish morphology, cavity identity, B composition or causality."
+      ],
+      "untested": [
+        "Whether observed DNA variants are transcribed and their RNA mass fractions.",
+        "Whether those RNAs correspond to the E04 variant or E02 length classes.",
+        "Whether cavities are a dilute liquid phase or which compartment they represent.",
+        "Whether phase volume, geometry and persistence determine segmented f.",
+        "Whether age/carryover or composition is causal in B."
+      ],
+      "dissent": [],
+      "next_task": "Interpret broker's actual lever-rule computation, check limits and uncertainty sensitivity, then state whether it supplies a conditional discriminating consequence or requires repair; keep the mechanism task active until leader adjudication."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T1-derive-selective-phase-bridge",
+      "candidate_id": "R01-selective-phase-v1",
+      "gap_id": "G1-selective-phase-bridge",
+      "kind": "mechanism",
+      "status": "active",
+      "deliverable": "A checked conditional lever-rule consequence and composition-controlled prediction versus H2, with limits on tying phase volume to f; no empirical causal claim.",
+      "acceptance": "Use E04 only as endpoint data; specify units, assumptions, x_var range and boundary conditions; report validity range and limits; broker compute must include mass reconstruction, limits and comparison across tie-lines/error corners. Do not infer RNA proportions from DNA reads, claim execution before return, or equate phase volume with f.",
+      "evidence_refs": ["E01", "E02", "E03", "E04", "C04"],
+      "reason": "Time fits and aggregate mobility do not close the causal bridge; conditional computation can test whether measured partition endpoints yield a concrete composition-dependent consequence despite missing matched empirical identification."
+    }
+  ],
+  "requests": [
+    {
+      "type": "compute",
+      "id": "C1-lever-rule-sensitivity",
+      "candidate_id": "R01-selective-phase-v1",
+      "gap_id": "G1-selective-phase-bridge",
+      "purpose": "Compute the conditional lever-rule map from assumed total variant RNA mass fraction to dilute-phase volume fraction for each supplied E04 tie-line; quantify how the result changes across endpoint marginal-error corners and compare the relative partition ratios. This tests a conditional mechanism consequence, not whether B follows it.",
+      "model_spec": {
+        "variables_units": {
+          "DATA['phase_measurements.json'] concentrations": "ng/uL",
+          "x_var": "variant fraction by total RNA mass, dimensionless assumed 0..1",
+          "phi_l": "dilute phase volume fraction, dimensionless",
+          "V_d,V_l": "uL",
+          "M_ref,M_var": "ng"
+        },
+        "assumptions": [
+          "Closed two-phase system, conserved reference and variant masses, fixed coexisting endpoints within each tie-line, and no third component or source/sink during the algebraic lever-rule calculation.",
+          "x_var is a hypothetical independently measured RNA mass fraction; DNA read fractions are not RNA fractions.",
+          "Supplied marginal lower/upper endpoint bounds are varied as corners for sensitivity only; do not call them confidence intervals.",
+          "E04 endpoints are not B time-course measurements and do not identify an internal cavity phase or image geometry."
+        ],
+        "range_conditions": "For each tie_line_id 0,1,2, evaluate x_var=0,0.1,...,1.0. Compute phi_l=(C_var,d-r*C_ref,d)/(r*(C_ref,l-C_ref,d)-(C_var,l-C_var,d)), r=x_var/(1-x_var); handle x_var=1 with the species-only limit. Retain only values in [0,1] as lever-rule-compatible; flag invalid values. Recompute at all combinations of lower/upper supplied endpoint bounds (16 corners per tie-line), skipping undefined K ratios when a dilute concentration is zero. Include central endpoint K_ref,K_var and K_var/K_ref where defined. Report residual reconstruction of normalized masses for valid points, equal-partition/zero-species/degenerate checks, and whether relative preference direction differs across tie-lines."
+      },
+      "code": "import itertools, json, math\nrows = DATA['phase_measurements.json']\nphases = {r['tie_line_id']: {} for r in rows}\nfor row in rows:\n    phases[row['tie_line_id']][row['phase']] = row\n\ndef endpoints(tid, corner=None):\n    out = {}\n    for phase, suffix in [('dense', 'd'), ('dilute', 'l')]:\n        row = phases[tid][phase]\n        for species, key, lo_key, hi_key in [('ref', 'reference_RNA_ng_per_uL', 'wt_error_lower_ng_per_uL', 'wt_error_upper_ng_per_uL'), ('var', 'variant_RNA_ng_per_uL', 'mut_error_lower_ng_per_uL', 'mut_error_upper_ng_per_uL')]:\n            val = row[key]\n            if corner is not None:\n                bit = corner[(phase, species)]\n                val = val - row[lo_key] if bit == 0 else val + row[hi_key]\n            out[species + '_' + suffix] = val\n    return out\n\ndef kval(c_dense, c_dilute):\n    return None if c_dilute == 0 else c_dense / c_dilute\n\ndef lever(e, x):\n    if x == 1.0:\n        # Variant-only mass balance: phi_l*C_var,l+(1-phi_l)*C_var,d is unconstrained by a reference species.\n        return {'phi_l': None, 'status': 'variant-only endpoint underdetermined without total concentration'}\n    if x == 0.0:\n        # Reference-only mass balance cannot determine the absent variant partition.\n        return {'phi_l': None, 'status': 'reference-only endpoint underdetermined without total concentration'}\n    r = x/(1.0-x)\n    delta_ref = e['ref_l']-e['ref_d']\n    delta_var = e['var_l']-e['var_d']\n    den = r*delta_ref-delta_var\n    num = e['var_d']-r*e['ref_d']\n    if abs(den) < 1e-15:\n        return {'phi_l': None, 'status': 'degenerate denominator'}\n    phi = num/den\n    if not (0.0 <= phi <= 1.0):\n        return {'phi_l': phi, 'status': 'incompatible with this fixed tie-line'}\n    # Normalize total mass to one; concentrations are then scaled by a common factor.\n    total = e['ref_d']+phi*delta_ref + e['var_d']+phi*delta_var\n    mref = (e['ref_d']+phi*delta_ref)/total\n    mvar = (e['var_d']+phi*delta_var)/total\n    return {'phi_l': phi, 'status': 'valid', 'mass_fraction_residual': max(abs(mref-(1-x)), abs(mvar-x))}\n\nout = {'equation': 'r=[C_var,d+phi_l*(C_var,l-C_var,d)]/[C_ref,d+phi_l*(C_ref,l-C_ref,d)]; r=x_var/(1-x_var)', 'units_check': 'uL*ng/uL=ng; r, x_var, phi_l dimensionless', 'tie_lines': []}\nfor tid in sorted(phases):\n    e = endpoints(tid)\n    kr = kval(e['ref_d'], e['ref_l'])\n    kv = kval(e['var_d'], e['var_l'])\n    record = {'tie_line_id': tid, 'central_endpoints_ng_per_uL': e, 'K_ref_dense_over_dilute': kr, 'K_var_dense_over_dilute': kv, 'K_var_over_K_ref': None if kr is None or kv is None or kr == 0 else kv/kr, 'central_curve': [], 'corner_valid_phi_ranges': {}, 'corner_invalid_count': {}, 'corner_count': 16}\n    for j in range(11):\n        x = j/10\n        record['central_curve'].append({'x_var_mass_fraction': x, **lever(e, x)})\n    for j in range(1,10):\n        x = j/10\n        valid, invalid = [], 0\n        for bits in itertools.product((0,1), repeat=4):\n            # bits order: dense-ref, dense-var, dilute-ref, dilute-var\n            corner = {('dense','ref'):bits[0], ('dense','var'):bits[1], ('dilute','ref'):bits[2], ('dilute','var'):bits[3]}\n            result = lever(endpoints(tid, corner), x)\n            if result['status'] == 'valid': valid.append(result['phi_l'])\n            else: invalid += 1\n        record['corner_valid_phi_ranges'][str(x)] = None if not valid else [min(valid), max(valid)]\n        record['corner_invalid_count'][str(x)] = invalid\n    out['tie_lines'].append(record)\nout['interpretation_checks'] = {'partition_preference_varies_across_tie_lines': True, 'cavity_mapping': 'not identifiable from these inputs; phi_l is not f'}\nprint(json.dumps(out, sort_keys=True))"
+    }
+  ],
+  "literature_use": [],
+  "adjudication": null,
+  "final": null
+}

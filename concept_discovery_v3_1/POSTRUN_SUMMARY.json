@@ -1,0 +1,128 @@
+{
+  "versions": {
+    "v3": {
+      "responses": 2,
+      "input_tokens": 6810,
+      "completion_tokens": 1054,
+      "reported_reasoning_tokens": 234,
+      "reasoning_detail_missing_responses": 1,
+      "request_seconds_sum": 13.135361741296947,
+      "wall_seconds": 33.325801005,
+      "completed_or_stopped_at": "2026-11-01T01:20:34.323862+08:00"
+    },
+    "v3_1": {
+      "responses": 10,
+      "input_tokens": 50206,
+      "completion_tokens": 6359,
+      "reported_reasoning_tokens": 2219,
+      "reasoning_detail_missing_responses": 1,
+      "request_seconds_sum": 76.89344463031739,
+      "wall_seconds": 448.355381492,
+      "completed_or_stopped_at": "2026-11-01T01:41:16.210134+08:00"
+    }
+  },
+  "evidence_ownership_flags": [
+    {
+      "round": 0,
+      "assessed_model": "r0_b0",
+      "failure_evidence_owner": "v3_r0",
+      "failure_evidence_ids": [
+        "failure_r0_experiment_1"
+      ],
+      "other_evidence_ids": [],
+      "assessment": {
+        "id": "r0_b0",
+        "status": "weakened",
+        "evidence_ids": [
+          "failure_r0_experiment_1"
+        ],
+        "reason": "The held-out trajectory has a persistent late-time prediction discrepancy when input is zero, which weakens this model's full-trajectory account. This failure does not by itself identify which model component is wrong."
+      }
+    },
+    {
+      "round": 1,
+      "assessed_model": "v3_r0",
+      "failure_evidence_owner": "v3_r1",
+      "failure_evidence_ids": [
+        "failure_v3_r0_experiment_0",
+        "failure_v3_r0_experiment_1"
+      ],
+      "other_evidence_ids": [
+        "outcome_0"
+      ],
+      "assessment": {
+        "id": "v3_r0",
+        "status": "weakened",
+        "evidence_ids": [
+          "failure_v3_r0_experiment_0",
+          "failure_v3_r0_experiment_1",
+          "outcome_0"
+        ],
+        "reason": "The two held-out trajectories show systematic underprediction at large positive and negative state values, despite the polarity relation being consistent with noise on the executed intervention schedules. The local symmetry observation does not resolve the trajectory-prediction failures."
+      }
+    },
+    {
+      "round": 2,
+      "assessed_model": "v3_r0",
+      "failure_evidence_owner": "v3_r1",
+      "failure_evidence_ids": [
+        "failure_v3_r0_experiment_0",
+        "failure_v3_r0_experiment_1"
+      ],
+      "other_evidence_ids": [
+        "outcome_0",
+        "outcome_1"
+      ],
+      "assessment": {
+        "id": "v3_r0",
+        "status": "weakened",
+        "evidence_ids": [
+          "failure_v3_r0_experiment_0",
+          "failure_v3_r0_experiment_1",
+          "outcome_0",
+          "outcome_1"
+        ],
+        "reason": "The held-out trajectory errors provide direct evidence of prediction failures, although the polarity intervention is consistent with its symmetry prediction on the executed schedules."
+      }
+    },
+    {
+      "round": 2,
+      "assessed_model": "v3_r2",
+      "failure_evidence_owner": "v3_r1",
+      "failure_evidence_ids": [
+        "failure_v3_r2_experiment_1"
+      ],
+      "other_evidence_ids": [
+        "outcome_2"
+      ],
+      "assessment": {
+        "id": "v3_r2",
+        "status": "weakened",
+        "evidence_ids": [
+          "failure_v3_r2_experiment_1",
+          "outcome_2"
+        ],
+        "reason": "The held-out trajectory failure is direct evidence of a prediction miss. Outcome_2's measured scaling departure is compatible with its nonlinear response, but does not erase that failure or decisively distinguish it from v3_r1."
+      }
+    }
+  ],
+  "sealed_scores": [
+    0.008610700493807175,
+    0.011521231189259764,
+    0.0144465941591834,
+    0.13607513160752543,
+    0.10556713494489248,
+    0.008671455768491685
+  ],
+  "sealed_mean": 0.04748204136052666,
+  "final_cv": {
+    "initial": 0.7883507723803278,
+    "r0_b0": 0.526758872983742,
+    "r1_b1": 0.6970375425594153,
+    "v3_r0": 0.05282046865472561,
+    "v3_r1": 0.007810311653794707,
+    "v3_r2": 0.012378316208052393
+  },
+  "compiled_design_rejections": 0,
+  "source_scope": "Post-run numerical and evidence-ownership review; original run unchanged"
+}

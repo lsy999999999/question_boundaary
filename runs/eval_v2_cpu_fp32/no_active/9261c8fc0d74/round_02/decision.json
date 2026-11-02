@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793411968957795748,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "positive_pulse",
+    "reason": "Cubic terms already fit pulse well; further test responsiveness.",
+    "prediction": "Positive pulse should cause faster, stronger response due to cubic term.",
+    "accept": true,
+    "mapping": {
+      "source_id": "nonlinear_response",
+      "target_relation": "Nonlinear response accelerates and amplifies with larger inputs.",
+      "condition_to_check": "Compare rise time and peak amplitude between linear and cubic models."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"state_cubic\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Cubic terms already fit pulse well; further test responsiveness.\",\n  \"prediction\": \"Positive pulse should cause faster, stronger response due to cubic term.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"nonlinear_response\",\n    \"target_relation\": \"Nonlinear response accelerates and amplifies with larger inputs.\",\n    \"condition_to_check\": \"Compare rise time and peak amplitude between linear and cubic models.\"\n  }\n}",
+    "input_tokens": 2721,
+    "output_tokens": 115,
+    "batch_elapsed_seconds": 327.9215944800526,
+    "amortized_seconds": 81.98039862001315,
+    "peak_gpu_allocated_gb": 0.0,
+    "backend": "cpu-fp32",
+    "peak_process_ram_gb": 34.59905242919922,
+    "model_path": "/home/lsy/theory_discovery_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432016787385585,
+  "http_status": 200,
+  "body": {
+    "id": "resp_06e9c8e2eb07a8d7016ae599ce4748819590aa6e6fb718a0bf",
+    "object": "chat.completion",
+    "created": 1793432016,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"history_all\",\"experiment\":\"alternating\",\"reason\":\"History_all has the lowest trajectory-held-out error, though only slightly below saturating_memory; residual lag correlation and modest improvement leave unseen-intervention adequacy uncertain.\",\"prediction\":\"Rapid input reversals will produce history-dependent output that differs from predictions based only on current input and state.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Past input history improves prediction beyond current input and visible state.\",\"condition_to_check\":\"At matched current inputs, test whether outputs differ with preceding input history; no difference would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3478,
+      "completion_tokens": 267,
+      "total_tokens": 3745,
+      "completion_tokens_details": {
+        "reasoning_tokens": 141
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.2057843571528792
+}

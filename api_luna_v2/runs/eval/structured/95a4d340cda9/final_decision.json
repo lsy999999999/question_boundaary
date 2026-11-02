@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793432322907266033,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "prbs",
+    "reason": "It has the lowest leave-trajectory-out error by a substantial margin, and observed reversals show history dependence. Residual autocorrelation cautions that adequacy for unseen interventions is not established.",
+    "prediction": "After matching current state and input, trajectories with different prior inputs will still differ; incremental response will weaken at larger magnitudes.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Saturating history features improve prediction, but available observations do not uniquely establish a saturation mechanism.",
+      "condition_to_check": "At matched histories, compare incremental responses across positive and negative amplitudes; absence of weakening challenges this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"prbs\",\"reason\":\"It has the lowest leave-trajectory-out error by a substantial margin, and observed reversals show history dependence. Residual autocorrelation cautions that adequacy for unseen interventions is not established.\",\"prediction\":\"After matching current state and input, trajectories with different prior inputs will still differ; incremental response will weaken at larger magnitudes.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Saturating history features improve prediction, but available observations do not uniquely establish a saturation mechanism.\",\"condition_to_check\":\"At matched histories, compare incremental responses across positive and negative amplitudes; absence of weakening challenges this relation.\"}}",
+    "input_tokens": 3702,
+    "output_tokens": 143,
+    "batch_elapsed_seconds": 2.5629493137821555,
+    "amortized_seconds": 2.5629493137821555,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3702,
+      "completion_tokens": 143,
+      "total_tokens": 3845
+    },
+    "api_response_id": "resp_0fbbc8821da42990016ae59b0105ac8195a55fc7eafdfd6b1e",
+    "wire_record": "wire/eval/0550_e65004f6a6ac4905b06d68ca0f3b5829"
+  }
+}

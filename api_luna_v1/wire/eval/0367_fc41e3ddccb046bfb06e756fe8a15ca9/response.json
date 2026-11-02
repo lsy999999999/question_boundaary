@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430405563062277,
+  "http_status": 200,
+  "body": {
+    "id": "resp_039a15d2713e3519016ae5938280948196a1c2e0a25a2ea76c",
+    "object": "chat.completion",
+    "created": 1793430405,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"alternating\",\"reason\":\"Memory_multiscale has the lowest leave-trajectory-out error (0.00152), substantially below the state model, and captures lingering post-input responses. Distinguishing memory variants still warrants testing.\",\"prediction\":\"During alternating input, responses will depend on accumulated history, so equal current inputs may produce different outputs at different points in the sequence.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history may carry predictive influence after the input returns to zero.\",\"condition_to_check\":\"Check whether past input predicts output during alternating trials after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2831,
+      "completion_tokens": 289,
+      "total_tokens": 3120,
+      "completion_tokens_details": {
+        "reasoning_tokens": 149
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.711934346705675
+}

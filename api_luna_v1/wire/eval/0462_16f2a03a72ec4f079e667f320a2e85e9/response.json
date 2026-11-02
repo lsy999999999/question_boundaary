@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430633218113638,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0c03f671a25f7129016ae594646e4881938d08bc24901bcfd4",
+    "object": "chat.completion",
+    "created": 1793430633,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has much lower trajectory-held-out NMSE (0.00126) than memory_clock (0.00304) or history_all (0.01965); PRBS has the greatest disagreement among plausible models.\",\"prediction\":\"Under PRBS input, residual oscillations will remain aligned to elapsed time rather than shift with input history.\",\"accept\":true,\"mapping\":{\"source_id\":\"saturation\",\"target_relation\":\"The clock fit supports a shared elapsed-time driver as a predictive relation, not a proven mechanism.\",\"condition_to_check\":\"Input-dependent phase shifts in the PRBS trajectory would weaken the clock representation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3243,
+      "completion_tokens": 371,
+      "total_tokens": 3614,
+      "completion_tokens_details": {
+        "reasoning_tokens": 233
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.604393211193383
+}

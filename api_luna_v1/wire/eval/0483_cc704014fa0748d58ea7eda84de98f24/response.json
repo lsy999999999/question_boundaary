@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430692556707284,
+  "http_status": 200,
+  "body": {
+    "id": "resp_03c68bb0bc68c7c0016ae594a1ab0c81949c6eb236a794c22c",
+    "object": "chat.completion",
+    "created": 1793430692,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has far lower trajectory-held-out error than alternatives and low errors across varied inputs, though modest residual autocorrelation leaves uncertainty.\",\"prediction\":\"After accounting for input, residual oscillations will recur at similar elapsed times across interventions.\",\"accept\":true,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"The clock model's strong held-out advantage is consistent with a shared elapsed-time driver, but does not establish one.\",\"condition_to_check\":\"Compare residual oscillations at aligned elapsed times across interventions; lack of recurrence would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3473,
+      "completion_tokens": 284,
+      "total_tokens": 3757,
+      "completion_tokens_details": {
+        "reasoning_tokens": 160
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.883379149250686
+}

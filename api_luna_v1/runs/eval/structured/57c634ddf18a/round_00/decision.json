@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793429979272896816,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "alternating",
+    "reason": "memory_clock has the lowest trajectory-level CV error; the clock-only model also improves substantially over state, while strong residual autocorrelation indicates missing dynamics.",
+    "prediction": "After different input histories, outputs will show a shared elapsed-time oscillation during zero input; absence of that alignment would weaken the clock contribution.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Elapsed-time periodic features improve prediction beyond state and memory terms, consistent with a shared time-dependent driver.",
+      "condition_to_check": "Compare zero-input output across interventions at matched elapsed times; no shared oscillation would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"memory_clock has the lowest trajectory-level CV error; the clock-only model also improves substantially over state, while strong residual autocorrelation indicates missing dynamics.\",\"prediction\":\"After different input histories, outputs will show a shared elapsed-time oscillation during zero input; absence of that alignment would weaken the clock contribution.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time periodic features improve prediction beyond state and memory terms, consistent with a shared time-dependent driver.\",\"condition_to_check\":\"Compare zero-input output across interventions at matched elapsed times; no shared oscillation would weaken this relation.\"}}",
+    "input_tokens": 2782,
+    "output_tokens": 325,
+    "batch_elapsed_seconds": 3.9835435273125768,
+    "amortized_seconds": 3.9835435273125768,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2782,
+      "completion_tokens": 325,
+      "total_tokens": 3107,
+      "completion_tokens_details": {
+        "reasoning_tokens": 187
+      }
+    },
+    "api_response_id": "resp_0c876897e89f726e016ae591d809b88195819bc9540d0196f2",
+    "wire_record": "wire/eval/0153_126be75fd79c456b837fd472eebb1c11"
+  }
+}

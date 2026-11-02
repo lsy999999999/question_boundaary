@@ -1,0 +1,42 @@
+{
+  "time_ns": 1793431591884971027,
+  "decision": {
+    "representation": "clock",
+    "experiment": "alternating",
+    "reason": "Clock has the lowest leave-trajectory-out error (0.002 versus 0.019 for history_all); alternating input offers a high-disagreement test against history-based alternatives.",
+    "prediction": "After controlling for input and visible state, oscillations should remain aligned to elapsed time across repeated alternating trials.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "A shared elapsed-time driver could explain the strong clock-feature fit without endogenous memory.",
+      "condition_to_check": "Compare repeated trials at matched elapsed times under different input histories; the relation fails if oscillations track history instead."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest leave-trajectory-out error (0.002 versus 0.019 for history_all); alternating input offers a high-disagreement test against history-based alternatives.\",\"prediction\":\"After controlling for input and visible state, oscillations should remain aligned to elapsed time across repeated alternating trials.\",\"accept\":false,\"mapping\":{\"source_id\":\"saturation\",\"target_relation\":\"A shared elapsed-time driver could explain the strong clock-feature fit without endogenous memory.\",\"condition_to_check\":\"Compare repeated trials at matched elapsed times under different input histories; the relation fails if oscillations track history instead.\"}}",
+    "input_tokens": 2790,
+    "output_tokens": 337,
+    "batch_elapsed_seconds": 4.279174433089793,
+    "amortized_seconds": 4.279174433089793,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2790,
+      "completion_tokens": 337,
+      "total_tokens": 3127,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 203
+      }
+    },
+    "api_response_id": "resp_038919c8fd87f7de016ae598244b988195aca1734ed110798a",
+    "wire_record": "wire/eval/0184_62f18e65b4454a4fad8a5fd5a45c3787"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "compute_id": "C03",
+  "request_source": "transcripts/researcher_03.md",
+  "availability": "Per-object snapshots have area and timepoint but no persistent per-droplet trajectory ID or merge/split/exit flags. Fig5 tracks lack area/state. Requested longitudinal cavity-state decomposition unavailable.",
+  "schemas": {
+    "Fig1f_per_object": [
+      "condition",
+      "image_ID",
+      "timepoint",
+      "label",
+      "area_filled",
+      "hollow area",
+      "area ratios",
+      "source_file"
+    ],
+    "Fig1f_plotted": [
+      "label",
+      "condition",
+      "timepoint",
+      "mean_droplet_count",
+      "sem_droplet_count",
+      "n_FOV",
+      "mean_area_ratio",
+      "sem_area_ratio",
+      "n_droplets"
+    ],
+    "Fig5c_per_object": [
+      "label",
+      "replicate",
+      "file",
+      "track_id",
+      "trajectory_uid",
+      "n_timepoints",
+      "max_sd_um2",
+      "final_sd_um2",
+      "used_in_figure"
+    ],
+    "Fig5d_per_object": [
+      "track_id",
+      "time",
+      "roi_x",
+      "roi_y",
+      "vacuole_x",
+      "vacuole_y",
+      "vector_x",
+      "vector_y",
+      "delta_vector_x",
+      "delta_vector_y",
+      "delta_roi_x",
+      "delta_roi_y",
+      "delta_time",
+      "delta_roi_length",
+      "delta_vector_length",
+      "cos_angle",
+      "source_file",
+      "replicate",
+      "field_of_view",
+      "track_uid",
+      "used_in_figure",
+      "excluded_reason"
+    ]
+  },
+  "definition_check": [
+    {
+      "condition": "A",
+      "time_h": 0,
+      "n_objects": 3490,
+      "arithmetic_mean_object_ratios": 0.01487244910910243,
+      "total_empty_over_total_filled": 0.014248914269010732
+    },
+    {
+      "condition": "B",
+      "time_h": 0,
+      "n_objects": 3158,
+      "arithmetic_mean_object_ratios": 0.01380908805109168,
+      "total_empty_over_total_filled": 0.01849035520401464
+    }
+  ],
+  "definition_note": "The supplied initial mean_area_ratio agrees with the arithmetic mean of individual object ratios, not the ratio of summed areas. Do not replace it by an area-weighted statistic. Only t=0 values used in this check; no reserved late-time measurements returned."
+}

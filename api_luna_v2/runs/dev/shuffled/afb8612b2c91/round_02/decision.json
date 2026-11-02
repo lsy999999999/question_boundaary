@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431273936513883,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Memory_slow has the lowest trajectory-level CV error, but residual autocorrelation and disagreement among memory candidates leave uncertainty about responses to irregular inputs.",
+    "prediction": "Under irregular switches, output will retain a smooth influence of prior inputs after the current input changes.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "The fit favors accumulated history but does not establish a specific cross-domain mechanism.",
+      "condition_to_check": "Compare the post-switch trajectory with fast-, slow-, and multiscale-memory predictions."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the lowest trajectory-level CV error, but residual autocorrelation and disagreement among memory candidates leave uncertainty about responses to irregular inputs.\",\"prediction\":\"Under irregular switches, output will retain a smooth influence of prior inputs after the current input changes.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The fit favors accumulated history but does not establish a specific cross-domain mechanism.\",\"condition_to_check\":\"Compare the post-switch trajectory with fast-, slow-, and multiscale-memory predictions.\"}}",
+    "input_tokens": 3449,
+    "output_tokens": 270,
+    "batch_elapsed_seconds": 3.4680170379579067,
+    "amortized_seconds": 3.4680170379579067,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3449,
+      "completion_tokens": 270,
+      "total_tokens": 3719,
+      "completion_tokens_details": {
+        "reasoning_tokens": 150
+      }
+    },
+    "api_response_id": "resp_0d76f683eed1cc95016ae596e724e48196a77bb3bda847a2df",
+    "wire_record": "wire/dev/0053_05e472bab40348e6abb2047e9f54bfaa"
+  }
+}

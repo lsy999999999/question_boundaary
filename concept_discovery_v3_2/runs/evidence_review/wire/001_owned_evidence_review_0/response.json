@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793469112884645881,
+  "body": {
+    "id": "resp_07b1385ed169d42a016ae62ab2d6e881949705441d38f62575",
+    "object": "chat.completion",
+    "created": 1793469112,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"updates\":[{\"id\":\"initial\",\"status\":\"weakened\",\"evidence_ids\":[\"grouped:initial\",\"prospective:r0:initial\"],\"reason\":\"分组CV误差高，极性预测与观测关系偏差明显。\"},{\"id\":\"r0_b0\",\"status\":\"weakened\",\"evidence_ids\":[\"grouped:r0_b0\",\"prospective:r2:r0_b0\"],\"reason\":\"分组CV较差；缩放关系预测远低于观测。\"},{\"id\":\"r1_b1\",\"status\":\"weakened\",\"evidence_ids\":[\"grouped:r1_b1\",\"prospective:r2:r1_b1\"],\"reason\":\"分组CV较差；缩放关系预测远低于观测。\"},{\"id\":\"v3_r0\",\"status\":\"active\",\"evidence_ids\":[\"grouped:v3_r0\",\"prospective:r2:v3_r0\"],\"reason\":\"分组CV较好，缩放关系预测接近观测；仅支持本开发范围。\"},{\"id\":\"v3_r1\",\"status\":\"active\",\"evidence_ids\":[\"grouped:v3_r1\",\"prospective:r2:v3_r1\"],\"reason\":\"分组CV与缩放预测表现较好，不据此推断物理解释。\"},{\"id\":\"v3_r2\",\"status\":\"active\",\"evidence_ids\":[\"grouped:v3_r2\",\"prospective:r2:v3_r2\"],\"reason\":\"分组CV较好，缩放关系预测接近观测；不据此作普遍结论。\"}],\"summary\":\"复杂V3模型在本开发记录中表现较好；早期模型表现较弱，结论限于当前分组与干预。\"}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 8206,
+      "completion_tokens": 620,
+      "total_tokens": 8826,
+      "completion_tokens_details": {
+        "reasoning_tokens": 249
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 8.045243587344885
+}

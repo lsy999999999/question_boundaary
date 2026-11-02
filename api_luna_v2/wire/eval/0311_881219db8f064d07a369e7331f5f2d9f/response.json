@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431799416467750,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0e00dd6b8fb50664016ae598f492748193be60e0213ad29e33",
+    "object": "chat.completion",
+    "created": 1793431799,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow remains best on trajectory-level CV, but PRBS error and residual lag correlation leave uncertainty about responses to rapid switches; alternatives validate worse.\",\"prediction\":\"After alternating input stops, output will retain a history-dependent tail beyond what current input and visible state predict.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A leaky accumulated input history may predict output after input returns to zero, consistent with a stored state.\",\"condition_to_check\":\"Control for current input and visible state; no predictive effect of past input would falsify this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3270,
+      "completion_tokens": 301,
+      "total_tokens": 3571,
+      "completion_tokens_details": {
+        "reasoning_tokens": 167
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 7.07404088973999
+}

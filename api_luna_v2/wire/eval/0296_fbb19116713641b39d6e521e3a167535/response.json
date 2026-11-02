@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431775692919336,
+  "http_status": 200,
+  "body": {
+    "id": "resp_02fbdc2d9f41a86e016ae598dcde008196b7e1f34990c35015",
+    "object": "chat.completion",
+    "created": 1793431775,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"ramp_reverse\",\"reason\":\"It has the lowest trajectory-held-out error, substantially outperforming simpler and clock-based models. Residual lag correlation and limited intervention coverage leave unseen-intervention adequacy uncertain.\",\"prediction\":\"After reversal, the output will depend on the preceding ramp history, not just the current input and state.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence predicts future output beyond current input and visible state.\",\"condition_to_check\":\"Compare output at matched inputs and states on opposite ramp directions; no persistent difference would weaken the storage relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3274,
+      "completion_tokens": 256,
+      "total_tokens": 3530,
+      "completion_tokens_details": {
+        "reasoning_tokens": 123
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.7774543073028326
+}

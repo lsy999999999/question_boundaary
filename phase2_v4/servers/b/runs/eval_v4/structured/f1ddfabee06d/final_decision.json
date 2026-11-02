@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793424110436036702,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Memory_slow fits well across various inputs and has low CV NMSE.",
+    "prediction": "PRBS input will show complex but consistent dynamics reflecting accumulated history.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Persistent state after input removal indicates storage.",
+      "condition_to_check": "Recovery time constant should be longer than input duration."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"prbs\",\n  \"reason\": \"Memory_slow fits well across various inputs and has low CV NMSE.\",\n  \"prediction\": \"PRBS input will show complex but consistent dynamics reflecting accumulated history.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Persistent state after input removal indicates storage.\",\n    \"condition_to_check\": \"Recovery time constant should be longer than input duration.\"\n  }\n}",
+    "input_tokens": 3890,
+    "output_tokens": 109,
+    "batch_elapsed_seconds": 2.6889985064044595,
+    "amortized_seconds": 2.6889985064044595,
+    "peak_gpu_allocated_gb": 14.991811275482178,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

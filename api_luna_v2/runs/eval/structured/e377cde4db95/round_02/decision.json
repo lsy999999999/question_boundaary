@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431973525442317,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "double_pulse",
+    "reason": "Slow memory has the lowest trajectory-held-out error (0.00333), but substantial residual lag and poorer PRBS/alternating fits leave adequacy uncertain. Double pulses probe retained history.",
+    "prediction": "The second pulse will produce a different response from the first because the first pulse's influence persists through the intervening rest.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Finite-timescale accumulated input history predicts output beyond the current input.",
+      "condition_to_check": "If the second-pulse response is unchanged after accounting for current input and state, the proposed stored-history relation is weakened."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"Slow memory has the lowest trajectory-held-out error (0.00333), but substantial residual lag and poorer PRBS/alternating fits leave adequacy uncertain. Double pulses probe retained history.\",\"prediction\":\"The second pulse will produce a different response from the first because the first pulse's influence persists through the intervening rest.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Finite-timescale accumulated input history predicts output beyond the current input.\",\"condition_to_check\":\"If the second-pulse response is unchanged after accounting for current input and state, the proposed stored-history relation is weakened.\"}}",
+    "input_tokens": 3471,
+    "output_tokens": 290,
+    "batch_elapsed_seconds": 4.036505171097815,
+    "amortized_seconds": 4.036505171097815,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3471,
+      "completion_tokens": 290,
+      "total_tokens": 3761,
+      "completion_tokens_details": {
+        "reasoning_tokens": 149
+      }
+    },
+    "api_response_id": "resp_0ae34cd18d34fa5e016ae599a238c881949c3a08d3e9943e84",
+    "wire_record": "wire/eval/0401_7a7275eb38da41ccbd268d5f9c7e2a72"
+  }
+}

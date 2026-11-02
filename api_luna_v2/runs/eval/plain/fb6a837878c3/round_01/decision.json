@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793431628971114889,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "alternating",
+    "reason": "memory_slow has the best trajectory-level cross-validation score, and its errors are low across all observed actions. Alternating input offers the largest predicted disagreement among plausible memory models.",
+    "prediction": "Responses will retain history-dependent deviations after rapid input switches; memory_slow should predict them better than memory_fast or state-only.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"memory_slow has the best trajectory-level cross-validation score, and its errors are low across all observed actions. Alternating input offers the largest predicted disagreement among plausible memory models.\",\"prediction\":\"Responses will retain history-dependent deviations after rapid input switches; memory_slow should predict them better than memory_fast or state-only.\",\"accept\":false}",
+    "input_tokens": 2676,
+    "output_tokens": 84,
+    "batch_elapsed_seconds": 2.08224256336689,
+    "amortized_seconds": 2.08224256336689,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2676,
+      "completion_tokens": 84,
+      "total_tokens": 2760
+    },
+    "api_response_id": "resp_0ffd34a1d5850347016ae5984b8a088194945091bf240a5419",
+    "wire_record": "wire/eval/0213_c860151369c24fbaa8f3e119476144a3"
+  }
+}

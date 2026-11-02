@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793432062138273096,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "prbs",
+    "reason": "It has the best trajectory-level CV error, but residual lag-1 correlation remains and forecast performance has not resolved whether remaining structure is memory or model misspecification. PRBS has the greatest disagreement among plausible models.",
+    "prediction": "Irregular reversals will produce responses that depend on accumulated input history, beyond the instantaneous input and state.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "The fitted representation uses saturating history features, but observations do not uniquely establish a saturation mechanism.",
+      "condition_to_check": "Compare incremental responses across amplitudes while controlling for history; consistent weakening would support the relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"prbs\",\"reason\":\"It has the best trajectory-level CV error, but residual lag-1 correlation remains and forecast performance has not resolved whether remaining structure is memory or model misspecification. PRBS has the greatest disagreement among plausible models.\",\"prediction\":\"Irregular reversals will produce responses that depend on accumulated input history, beyond the instantaneous input and state.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The fitted representation uses saturating history features, but observations do not uniquely establish a saturation mechanism.\",\"condition_to_check\":\"Compare incremental responses across amplitudes while controlling for history; consistent weakening would support the relation.\"}}",
+    "input_tokens": 3479,
+    "output_tokens": 294,
+    "batch_elapsed_seconds": 4.182430826127529,
+    "amortized_seconds": 4.182430826127529,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3479,
+      "completion_tokens": 294,
+      "total_tokens": 3773,
+      "completion_tokens_details": {
+        "reasoning_tokens": 151
+      }
+    },
+    "api_response_id": "resp_0ccdde573ae0a4a5016ae599fb5f988197803340cb703ce4eb",
+    "wire_record": "wire/eval/0441_4eb525f840d84192951f197c2f2511ef"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430476733673057,
+  "http_status": 200,
+  "body": {
+    "id": "resp_08a078613cfa3636016ae593c96c3c8194ac372d86df8b48d5",
+    "object": "chat.completion",
+    "created": 1793430476,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"memory_clock has the lowest trajectory-held-out NMSE (0.0031), far below state (0.4335); residual structure contradicts the current representation, though history_all remains plausible.\",\"prediction\":\"After input returns to zero, output will retain history-dependent variation, with a periodic component aligned to elapsed time.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history improves prediction beyond current state and input.\",\"condition_to_check\":\"Test whether history predicts output after controlling for current state and input across distinct interventions.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2808,
+      "completion_tokens": 297,
+      "total_tokens": 3105,
+      "completion_tokens_details": {
+        "reasoning_tokens": 166
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.9865745520219207
+}

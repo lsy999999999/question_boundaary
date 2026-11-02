@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430208912621852,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "slow_wave",
+    "reason": "Memory_multiscale has the lowest trajectory-level CV NMSE (0.001345), slightly below memory_clock and saturating_memory. Residual lag correlation and failed prior model selections leave adequacy uncertain.",
+    "prediction": "After the slow wave ends, the response will decay with history-dependent contributions on multiple timescales, not persist as an elapsed-time oscillation.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Post-input responses depend on past inputs, consistent with accumulated history having finite leakage.",
+      "condition_to_check": "Compare post-wave decay after distinct histories at matched elapsed times; absent history dependence would contradict this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"slow_wave\",\"reason\":\"Memory_multiscale has the lowest trajectory-level CV NMSE (0.001345), slightly below memory_clock and saturating_memory. Residual lag correlation and failed prior model selections leave adequacy uncertain.\",\"prediction\":\"After the slow wave ends, the response will decay with history-dependent contributions on multiple timescales, not persist as an elapsed-time oscillation.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Post-input responses depend on past inputs, consistent with accumulated history having finite leakage.\",\"condition_to_check\":\"Compare post-wave decay after distinct histories at matched elapsed times; absent history dependence would contradict this relation.\"}}",
+    "input_tokens": 3488,
+    "output_tokens": 307,
+    "batch_elapsed_seconds": 4.139839140698314,
+    "amortized_seconds": 4.139839140698314,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3488,
+      "completion_tokens": 307,
+      "total_tokens": 3795,
+      "completion_tokens_details": {
+        "reasoning_tokens": 159
+      }
+    },
+    "api_response_id": "resp_044f8437aa18ef09016ae592bd7e808194b820fab67cd9e884",
+    "wire_record": "wire/eval/0274_f14750c485fc419892391df72e1424c4"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423799293371263,
+  "decision": {
+    "representation": "state",
+    "experiment": "positive_pulse",
+    "reason": "Current state model has low NMSE but high prediction variance for positive pulse.",
+    "prediction": "Positive pulse will show higher variance in prediction compared to other actions.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Storage should show consistent response across different input shapes.",
+      "condition_to_check": "Consistent response to positive and negative pulses."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"state\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Current state model has low NMSE but high prediction variance for positive pulse.\",\n  \"prediction\": \"Positive pulse will show higher variance in prediction compared to other actions.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Storage should show consistent response across different input shapes.\",\n    \"condition_to_check\": \"Consistent response to positive and negative pulses.\"\n  }\n}",
+    "input_tokens": 3172,
+    "output_tokens": 109,
+    "batch_elapsed_seconds": 2.503458342514932,
+    "amortized_seconds": 2.503458342514932,
+    "peak_gpu_allocated_gb": 14.83484411239624,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

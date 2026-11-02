@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430017202281463,
+  "decision": {
+    "representation": "clock",
+    "experiment": "ramp_reverse",
+    "reason": "Clock has the lowest leave-trajectory-out error, but its advantage over state is slight and residual lag correlation remains; ramp_reverse best separates the plausible models by predicted trajectory.",
+    "prediction": "Clock predicts a component tied to elapsed time that does not reverse with the ramp; reject it if deviations instead track the input reversal.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Elapsed-time features improve prediction slightly, but do not establish an independent external driver.",
+      "condition_to_check": "Compare reset-aligned ramp_reverse observations; reject the clock account if residual structure follows input history rather than elapsed time."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"ramp_reverse\",\"reason\":\"Clock has the lowest leave-trajectory-out error, but its advantage over state is slight and residual lag correlation remains; ramp_reverse best separates the plausible models by predicted trajectory.\",\"prediction\":\"Clock predicts a component tied to elapsed time that does not reverse with the ramp; reject it if deviations instead track the input reversal.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Elapsed-time features improve prediction slightly, but do not establish an independent external driver.\",\"condition_to_check\":\"Compare reset-aligned ramp_reverse observations; reject the clock account if residual structure follows input history rather than elapsed time.\"}}",
+    "input_tokens": 3274,
+    "output_tokens": 283,
+    "batch_elapsed_seconds": 5.642931759357452,
+    "amortized_seconds": 5.642931759357452,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3274,
+      "completion_tokens": 283,
+      "total_tokens": 3557,
+      "completion_tokens_details": {
+        "reasoning_tokens": 144
+      }
+    },
+    "api_response_id": "resp_0ad8bfe91988bfdd016ae591fe7a5881979af72650fda3986f",
+    "wire_record": "wire/eval/0169_a03b1e34055c4d6fbff2a6f6e008a58e"
+  }
+}

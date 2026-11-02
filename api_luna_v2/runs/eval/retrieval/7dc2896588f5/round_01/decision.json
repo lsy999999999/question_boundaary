@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793431649174976531,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "prbs",
+    "reason": "Memory models fit far better than state-only models. Memory_multiscale modestly improves trajectory-level CV over memory_slow and can represent both fast and slow relaxation; PRBS has high predicted disagreement.",
+    "prediction": "Under irregular input switches, the output will retain history-dependent effects and distinguish at least one plausible memory representation.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"Memory models fit far better than state-only models. Memory_multiscale modestly improves trajectory-level CV over memory_slow and can represent both fast and slow relaxation; PRBS has high predicted disagreement.\",\"prediction\":\"Under irregular input switches, the output will retain history-dependent effects and distinguish at least one plausible memory representation.\",\"accept\":false}",
+    "input_tokens": 2986,
+    "output_tokens": 258,
+    "batch_elapsed_seconds": 4.611702881753445,
+    "amortized_seconds": 4.611702881753445,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2986,
+      "completion_tokens": 258,
+      "total_tokens": 3244,
+      "completion_tokens_details": {
+        "reasoning_tokens": 170
+      }
+    },
+    "api_response_id": "resp_037d7e0a274971ab016ae5985ed45c8194a23462495149e2fd",
+    "wire_record": "wire/eval/0228_82ed690b58c74bba8866b0f77f59f446"
+  }
+}

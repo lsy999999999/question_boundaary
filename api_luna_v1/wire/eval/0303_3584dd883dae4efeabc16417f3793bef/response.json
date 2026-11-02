@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430274087988203,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0fbb03abcdb08256016ae592ff83988190a6538eea8f599755",
+    "object": "chat.completion",
+    "created": 1793430274,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"double_pulse\",\"reason\":\"Clock has much lower trajectory-held-out error than alternatives and has forecast alternating and PRBS well. Residual lag correlation remains, so a distinct pulse pattern can test remaining structure.\",\"prediction\":\"After the pulses end, oscillation phase will remain aligned by elapsed time across repeats despite the different input history.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time periodic forcing predicts aligned oscillations across differing input interventions.\",\"condition_to_check\":\"Test whether post-pulse oscillation phase aligns by elapsed time across repeats; input-dependent phase would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3441,
+      "completion_tokens": 259,
+      "total_tokens": 3700,
+      "completion_tokens_details": {
+        "reasoning_tokens": 125
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.3872432177886367
+}

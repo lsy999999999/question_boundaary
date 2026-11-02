@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430017201556747,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0ad8bfe91988bfdd016ae591fe7a5881979af72650fda3986f",
+    "object": "chat.completion",
+    "created": 1793430017,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"ramp_reverse\",\"reason\":\"Clock has the lowest leave-trajectory-out error, but its advantage over state is slight and residual lag correlation remains; ramp_reverse best separates the plausible models by predicted trajectory.\",\"prediction\":\"Clock predicts a component tied to elapsed time that does not reverse with the ramp; reject it if deviations instead track the input reversal.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Elapsed-time features improve prediction slightly, but do not establish an independent external driver.\",\"condition_to_check\":\"Compare reset-aligned ramp_reverse observations; reject the clock account if residual structure follows input history rather than elapsed time.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3274,
+      "completion_tokens": 283,
+      "total_tokens": 3557,
+      "completion_tokens_details": {
+        "reasoning_tokens": 144
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.642931759357452
+}

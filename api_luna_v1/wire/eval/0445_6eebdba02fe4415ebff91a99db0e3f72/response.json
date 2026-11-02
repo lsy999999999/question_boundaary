@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430589383984056,
+  "http_status": 200,
+  "body": {
+    "id": "resp_069a141ef1fa4b6d016ae59439de748197a7b7cc245564e0d6",
+    "object": "chat.completion",
+    "created": 1793430589,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Slow-memory validation is strong and much better than state-only; saturating_memory improves CV only marginally with many more coefficients. Residual lag correlation still suggests the model is not fully adequate.\",\"prediction\":\"Following rapid input reversals, output will retain a slowly decaying influence of prior inputs after the current input changes.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Past input influence persists after input returns to zero and relaxes over time, consistent with a storage-like predictive relation.\",\"condition_to_check\":\"At matched current input and visible state, earlier input history should predict output; absence of this effect would weaken the relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3295,
+      "completion_tokens": 331,
+      "total_tokens": 3626,
+      "completion_tokens_details": {
+        "reasoning_tokens": 182
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.4876864505931735
+}

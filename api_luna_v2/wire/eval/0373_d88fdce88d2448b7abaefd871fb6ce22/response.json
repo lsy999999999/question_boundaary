@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431922340827717,
+  "http_status": 200,
+  "body": {
+    "id": "resp_03888bffe65f6eba016ae5996f26ac81909a9b97c11764d8ff",
+    "object": "chat.completion",
+    "created": 1793431922,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"ramp_reverse\",\"reason\":\"Saturating_memory has the lowest trajectory-level cross-validation error and performed well on observed interventions, but residual autocorrelation and disagreement on ramp_reverse leave uncertainty about reversal dynamics.\",\"prediction\":\"During reversal, the response will depend on the preceding ramp history, producing a path-dependent trajectory not captured by instantaneous state alone.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2820,
+      "completion_tokens": 208,
+      "total_tokens": 3028,
+      "completion_tokens_details": {
+        "reasoning_tokens": 121
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.7744612684473395
+}

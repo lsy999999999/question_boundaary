@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431591697060586,
+  "http_status": 200,
+  "body": {
+    "id": "resp_05f7cf552df68ab2016ae5982520e48195aad9bb37ab025e3c",
+    "object": "chat.completion",
+    "created": 1793431591,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Slow-memory has the lowest trajectory-level CV error, far below the state model, consistent with persistent post-input responses; alternating input can distinguish memory timescales.\",\"prediction\":\"After input switches or stops, output will retain a decaying influence of prior input rather than respond instantaneously.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts output after the current input returns to zero, consistent with finite relaxation.\",\"condition_to_check\":\"After controlling current input and state, prior input should predict a decaying output; no such effect would falsify this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2829,
+      "completion_tokens": 259,
+      "total_tokens": 3088,
+      "completion_tokens_details": {
+        "reasoning_tokens": 120
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.7162683866918087
+}

@@ -1,0 +1,36 @@
+{
+  "forecast_order_errors": [],
+  "forecast_hash_errors": [],
+  "evaluation_order_errors": [],
+  "mapping_source_id_audit": {
+    "structured": {
+      "decisions": 16,
+      "valid_source_id": 8,
+      "missing_mapping": 0,
+      "invalid_source_ids": {
+        "None": 4,
+        "8f719ea0d484": 3,
+        "a0149489bfd3": 1
+      },
+      "valid_source_id_rate": 0.5
+    },
+    "no_active": {
+      "decisions": 16,
+      "valid_source_id": 4,
+      "missing_mapping": 0,
+      "invalid_source_ids": {
+        "None": 2,
+        "8f719ea0d484": 2,
+        "a0149489bfd3": 4,
+        "70c1bd28d16d": 4
+      },
+      "valid_source_id_rate": 0.25
+    }
+  },
+  "fitting_calls_per_task_from_code_path": {
+    "state_fixed": 7,
+    "history_cv": 51,
+    "language_model_methods": 8
+  },
+  "scope": "Source id checks validate declared provenance only; mapping semantics require independent review. The original parser checked mapping fields but did not validate the source-id enum. These audit errors were not included in original invalid-output counts."
+}

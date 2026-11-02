@@ -1,0 +1,42 @@
+{
+  "time_ns": 1793431217304032173,
+  "decision": {
+    "representation": "clock",
+    "experiment": "alternating",
+    "reason": "Clock has the lowest leave-trajectory-out error by a wide margin. Similar late negative drift across different inputs is consistent with elapsed-time dependence, though unseen-intervention adequacy remains uncertain.",
+    "prediction": "After different input histories, output will show a similar elapsed-time-dependent drift when compared at the same times.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Elapsed-time features predict shared output variation across the observed input trajectories.",
+      "condition_to_check": "Compare output at matched elapsed times under alternating and other interventions; differing drift would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest leave-trajectory-out error by a wide margin. Similar late negative drift across different inputs is consistent with elapsed-time dependence, though unseen-intervention adequacy remains uncertain.\",\"prediction\":\"After different input histories, output will show a similar elapsed-time-dependent drift when compared at the same times.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time features predict shared output variation across the observed input trajectories.\",\"condition_to_check\":\"Compare output at matched elapsed times under alternating and other interventions; differing drift would weaken this relation.\"}}",
+    "input_tokens": 2815,
+    "output_tokens": 280,
+    "batch_elapsed_seconds": 4.059733237139881,
+    "amortized_seconds": 4.059733237139881,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2815,
+      "completion_tokens": 280,
+      "total_tokens": 3095,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 150
+      }
+    },
+    "api_response_id": "resp_00fb64748b06214f016ae596ae02288195b57a1afaa90bbab7",
+    "wire_record": "wire/dev/0021_aecb2c7b69ad4e28b0c5bbb14efc4b90"
+  }
+}

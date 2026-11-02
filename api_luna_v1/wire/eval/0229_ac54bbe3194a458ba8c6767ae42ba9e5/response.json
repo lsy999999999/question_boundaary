@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430128689318166,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0d6a51fdcf1d44b7016ae5926e00d48197906ee688e2ce7f0b",
+    "object": "chat.completion",
+    "created": 1793430128,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"alternating\",\"reason\":\"Saturating memory has the lowest trajectory-level CV error, but residual lag-1 correlation leaves uncertainty; alternating input has high disagreement among plausible models.\",\"prediction\":\"Rapid reversals will expose whether response depends on accumulated history beyond the current input and output.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Persistent post-input decay supports accumulated history with finite relaxation.\",\"condition_to_check\":\"At matched current input and output, different prior histories should predict distinct subsequent responses.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3262,
+      "completion_tokens": 249,
+      "total_tokens": 3511,
+      "completion_tokens_details": {
+        "reasoning_tokens": 132
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.385915762744844
+}

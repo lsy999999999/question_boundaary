@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793430159360199886,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "double_pulse",
+    "reason": "Memory models substantially outperform state-only models; multiscale history has near-best validated error with fewer coefficients than saturating_memory. Residual autocorrelation suggests dynamics remain unresolved.",
+    "prediction": "The second pulse will produce a different response from the first because accumulated history persists through the intervening rest.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"double_pulse\",\"reason\":\"Memory models substantially outperform state-only models; multiscale history has near-best validated error with fewer coefficients than saturating_memory. Residual autocorrelation suggests dynamics remain unresolved.\",\"prediction\":\"The second pulse will produce a different response from the first because accumulated history persists through the intervening rest.\",\"accept\":false}",
+    "input_tokens": 2810,
+    "output_tokens": 232,
+    "batch_elapsed_seconds": 3.5170744359493256,
+    "amortized_seconds": 3.5170744359493256,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2810,
+      "completion_tokens": 232,
+      "total_tokens": 3042,
+      "completion_tokens_details": {
+        "reasoning_tokens": 149
+      }
+    },
+    "api_response_id": "resp_0701f3884940e7b9016ae5928ce420819090f42dbfe067e7da",
+    "wire_record": "wire/eval/0248_71a31d508d4f4a24bc67f3e1c7d85a99"
+  }
+}

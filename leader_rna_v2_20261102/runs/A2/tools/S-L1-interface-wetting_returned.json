@@ -1,0 +1,60 @@
+{
+  "id": "S-L1-interface-wetting",
+  "type": "search",
+  "candidate_id": "R01-interface-wetting-v1",
+  "gap_id": "G-interface-link",
+  "request": {
+    "type": "search",
+    "id": "S-L1-interface-wetting",
+    "candidate_id": "R01-interface-wetting-v1",
+    "gap_id": "G-interface-link",
+    "missing_relation": "Whether RNA coacervate or condensate systems support selective wetting/adsorption of a molecular species at an internal phase boundary, and what observables distinguish interfacial wetting from bulk demixing.",
+    "variables": [
+      "interfacial free energy per area",
+      "boundary versus bulk species enrichment",
+      "RNA condensate phases"
+    ],
+    "conditions": "RNA-rich condensates or coacervates with internal RNA-poor domains; background published on or before 2025-05-12; exclude target identity and later accounts.",
+    "query": "RNA condensate coacervate internal interface wetting preferential adsorption phase boundary interfacial tension",
+    "change_if_found": "Adopt only the directly supported generic relation and its stated conditions; modify the interface definitions or discriminator if the literature indicates different phase topology. If no directly relevant evidence is found, keep wetting as a clearly labeled new hypothesis and report no literature support."
+  },
+  "result": {
+    "status": "returned",
+    "sources": [
+      {
+        "id": "S-L1-interface-wetting_S1",
+        "title": "Phase Transitions of Associative Biomacromolecules.",
+        "doi": "10.1021/acs.chemrev.2c00814",
+        "pmid": "36881934",
+        "first_publication_date": "2023-03-07",
+        "retrieval_time": "2026-11-02T06:39:50.710281+00:00",
+        "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+        "original_evidence": "Multivalent proteins and nucleic acids, collectively referred to as multivalent associative biomacromolecules, provide the driving forces for the formation and compositional regulation of biomolecular condensates. Here, we review the key concepts of phase transitions of aqueous solutions of associative biomacromolecules, specifically proteins that include folded domains and intrinsically disordered regions. The phase transitions of these systems come under the rubric of coupled associative and segregative transitions. The concepts underlying these processes are presented, and their relevance to biomolecular condensates is discussed.",
+        "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+        "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+      },
+      {
+        "id": "S-L1-interface-wetting_S2",
+        "title": "Molecular Crowding: The History and Development of a Scientific Paradigm.",
+        "doi": "10.1021/acs.chemrev.3c00615",
+        "pmid": "38466779",
+        "first_publication_date": "2024-03-11",
+        "retrieval_time": "2026-11-02T06:39:50.710354+00:00",
+        "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+        "original_evidence": "It is now generally accepted that macromolecules do not act in isolation but \"live\" in a crowded environment, that is, an environment populated by numerous different molecules. The field of molecular crowding has its origins in the far 80s but became accepted only by the end of the 90s. In the present issue, we discuss various aspects that are influenced by crowding and need to consider its effects. This Review is meant as an introduction to the theme and an analysis of the evolution of the crowding concept through time from colloidal and polymer physics to a more biological perspective. We introduce themes that will be more thoroughly treated in other Reviews of the present issue. In our intentions, each Review may stand by itself, but the complete collection has the aspiration to provide different but complementary perspectives to propose a more holistic view of molecular crowding.",
+        "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+        "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+      }
+    ],
+    "excluded": [
+      {
+        "id": "34245338",
+        "reason": "date/target/no-abstract"
+      }
+    ],
+    "hit_count": 3,
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=RNA+condensate+coacervate+internal+interface+wetting+preferential+adsorption+phase+boundary+interfacial+tension+AND+FIRST_PDATE%3A%5B1900-01-01+TO+2025-05-12%5D&format=json&pageSize=5&resultType=core",
+    "raw_sha256": "9fa6ac55e2896cb01294248d0e6e8b2924d2db6dda8470b07e70bfe6933e3456",
+    "knowledge_limit": "No full-text formulas/units are inferred from the abstract. Refine or request a known historical source if needed."
+  }
+}

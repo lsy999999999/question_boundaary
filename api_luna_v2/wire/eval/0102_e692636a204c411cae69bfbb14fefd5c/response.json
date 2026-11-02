@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431478334310653,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0ac583465e6ee331016ae597b3868c8195b2e70379eeae336b",
+    "object": "chat.completion",
+    "created": 1793431478,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"State has the lowest trajectory-held-out error, but residual autocorrelation and disagreement under alternating inputs leave adequacy uncertain; richer history models do not validate better.\",\"prediction\":\"Under rapid reversals, the observed response will differ systematically from the state model’s prediction if unresolved history matters.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No added storage relation is established beyond the current-state representation.\",\"condition_to_check\":\"Test whether alternating inputs produce reproducible residual dependence on prior input after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2798,
+      "completion_tokens": 281,
+      "total_tokens": 3079,
+      "completion_tokens_details": {
+        "reasoning_tokens": 158
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.453345944173634
+}

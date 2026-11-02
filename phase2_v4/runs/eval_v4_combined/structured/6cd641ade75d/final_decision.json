@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793424102897839622,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "prbs",
+    "reason": "PRBS tests complex, irregular input patterns; saturation should handle varying amplitudes.",
+    "prediction": "Saturating_memory will maintain low prediction variance under PRBS, showing robustness.",
+    "accept": true,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Nonlinear response weakens at large state magnitudes, indicating saturation limits.",
+      "condition_to_check": "If saturation limits predict future states accurately under PRBS, saturation is likely."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"prbs\",\n  \"reason\": \"PRBS tests complex, irregular input patterns; saturation should handle varying amplitudes.\",\n  \"prediction\": \"Saturating_memory will maintain low prediction variance under PRBS, showing robustness.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"Nonlinear response weakens at large state magnitudes, indicating saturation limits.\",\n    \"condition_to_check\": \"If saturation limits predict future states accurately under PRBS, saturation is likely.\"\n  }\n}",
+    "input_tokens": 4047,
+    "output_tokens": 130,
+    "batch_elapsed_seconds": 3.158251323737204,
+    "amortized_seconds": 3.158251323737204,
+    "peak_gpu_allocated_gb": 14.991811275482178,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

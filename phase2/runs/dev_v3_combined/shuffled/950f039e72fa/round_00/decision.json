@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793423427925977015,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "positive_pulse",
+    "reason": "Memory_clock shows best performance with positive_pulse and has a clock component.",
+    "prediction": "Positive pulse will cause a delayed response with a periodic modulation.",
+    "accept": false,
+    "mapping": {
+      "source_id": "clock",
+      "target_relation": "Response amplitude varies with elapsed time.",
+      "condition_to_check": "Check if response amplitude changes with input shape."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_clock\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Memory_clock shows best performance with positive_pulse and has a clock component.\",\n  \"prediction\": \"Positive pulse will cause a delayed response with a periodic modulation.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"clock\",\n    \"target_relation\": \"Response amplitude varies with elapsed time.\",\n    \"condition_to_check\": \"Check if response amplitude changes with input shape.\"\n  }\n}",
+    "input_tokens": 3009,
+    "output_tokens": 105,
+    "batch_elapsed_seconds": 2.4159610643982887,
+    "amortized_seconds": 2.4159610643982887,
+    "peak_gpu_allocated_gb": 14.803863048553467,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025005340576172,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

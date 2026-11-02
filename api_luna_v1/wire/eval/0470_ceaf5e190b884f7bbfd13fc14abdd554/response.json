@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430653097543988,
+  "http_status": 200,
+  "body": {
+    "id": "resp_07be2b78cd3912c8016ae594799c608196a44daf33a138bc69",
+    "object": "chat.completion",
+    "created": 1793430653,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"Memory_clock has the lowest candidate CV error (0.001635), modestly improving on memory_multiscale (0.001873); alternating input has high disagreement among plausible models.\",\"prediction\":\"At repeated equal inputs, outputs will depend on accumulated history and may also vary with elapsed-time phase.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history may predict output after the input changes or returns to zero.\",\"condition_to_check\":\"Compare outputs at matched current input and visible state; no remaining history effect would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3502,
+      "completion_tokens": 265,
+      "total_tokens": 3767,
+      "completion_tokens_details": {
+        "reasoning_tokens": 133
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.181758199818432
+}

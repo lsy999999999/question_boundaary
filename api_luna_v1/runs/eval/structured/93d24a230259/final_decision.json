@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793430325698474496,
+  "decision": {
+    "representation": "state",
+    "experiment": "prbs",
+    "reason": "State has the lowest leave-trajectory-out error, and its forecasts remained accurate across alternating, ramp-reversal, and slow-wave inputs. Added memory, clock, and nonlinear features worsen validation.",
+    "prediction": "Under a new input sequence, output evolution will be determined by current state and input, without systematic residual dependence on prior input history.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No added storage, delay, saturation, or external-clock relation is supported by the validation results.",
+      "condition_to_check": "Falsify if unseen interventions show reproducible prediction errors conditional on current state and input."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"prbs\",\"reason\":\"State has the lowest leave-trajectory-out error, and its forecasts remained accurate across alternating, ramp-reversal, and slow-wave inputs. Added memory, clock, and nonlinear features worsen validation.\",\"prediction\":\"Under a new input sequence, output evolution will be determined by current state and input, without systematic residual dependence on prior input history.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No added storage, delay, saturation, or external-clock relation is supported by the validation results.\",\"condition_to_check\":\"Falsify if unseen interventions show reproducible prediction errors conditional on current state and input.\"}}",
+    "input_tokens": 3673,
+    "output_tokens": 138,
+    "batch_elapsed_seconds": 2.3204642003402114,
+    "amortized_seconds": 2.3204642003402114,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3673,
+      "completion_tokens": 138,
+      "total_tokens": 3811
+    },
+    "api_response_id": "resp_0c4130285fb235f9016ae59334026081948a1fad9d06b9fbc1",
+    "wire_record": "wire/eval/0329_ab84e3f508664479b603857287248567"
+  }
+}

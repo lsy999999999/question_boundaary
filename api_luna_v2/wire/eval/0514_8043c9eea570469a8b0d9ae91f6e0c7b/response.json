@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432244869119572,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0a1cc815b8b4e62c016ae59ab2c2e08190b49b5928ba0c3377",
+    "object": "chat.completion",
+    "created": 1793432244,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"nonlinear_delay\",\"experiment\":\"prbs\",\"reason\":\"It has the lowest trajectory-level CV error (0.00292), narrowly beating memory_slow; however, strong residual lag and elevated PRBS error leave adequacy uncertain.\",\"prediction\":\"After PRBS input switches, output will retain a delayed, smoothed influence of preceding inputs rather than track the current input immediately.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Persistent post-input decay and predictive history features support accumulated past input influence with finite relaxation.\",\"condition_to_check\":\"Storage is unsupported if past input history adds no predictive value after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3714,
+      "completion_tokens": 212,
+      "total_tokens": 3926,
+      "completion_tokens_details": {
+        "reasoning_tokens": 74
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.754094373434782
+}

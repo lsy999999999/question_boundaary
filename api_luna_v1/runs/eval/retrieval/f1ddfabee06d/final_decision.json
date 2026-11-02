@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793430384468976041,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Memory_slow has the best trajectory-held-out score (0.00217), improving on saturating_memory (0.00333). The repeated PRBS forecast was accurate, but residual correlation leaves some uncertainty; added saturation is not supported by the comparative validation.",
+    "prediction": "Following irregular input switches, output will retain history-dependent carryover after input returns to zero, decaying over seconds.",
+    "accept": true,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the best trajectory-held-out score (0.00217), improving on saturating_memory (0.00333). The repeated PRBS forecast was accurate, but residual correlation leaves some uncertainty; added saturation is not supported by the comparative validation.\",\"prediction\":\"Following irregular input switches, output will retain history-dependent carryover after input returns to zero, decaying over seconds.\",\"accept\":true}",
+    "input_tokens": 3298,
+    "output_tokens": 99,
+    "batch_elapsed_seconds": 2.5711496211588383,
+    "amortized_seconds": 2.5711496211588383,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3298,
+      "completion_tokens": 99,
+      "total_tokens": 3397
+    },
+    "api_response_id": "resp_0e151a981880d6a9016ae5936ea29881908d134beee2160e5c",
+    "wire_record": "wire/eval/0357_bb2054d91f1f44a09f224dd2527965c4"
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "compute_id": "C02",
+  "request_source": "transcripts/researcher_02.md",
+  "training_data": "agent_visible/initial_measurements.json",
+  "fits": [
+    {
+      "condition": "A",
+      "model": "decay_to_plateau",
+      "parameters": {
+        "c_A": 0.004272848646415603,
+        "a_A": 0.014872582831928955,
+        "k_A_per_h": 0.5517275762002325
+      },
+      "internal_parameterization": {
+        "base": 0.004272848646415603,
+        "q": 0.01064521959766202,
+        "k": 0.5517275762002325
+      },
+      "parameterization_note": "A:c=base,a=c+(1-c)q. B:a=base,c=a+(1-a)q; base,q in [0,1],k>0. Same constrained family as requested.",
+      "training_times_h": [
+        0.0,
+        4.0,
+        8.0,
+        12.0,
+        24.0
+      ],
+      "observed": [
+        0.0148724491091024,
+        0.0054389893768169,
+        0.0044390495790911,
+        0.0040641907190291,
+        0.0044581874447536
+      ],
+      "fitted": [
+        0.014872582831928955,
+        0.005439244607053475,
+        0.004401198991167805,
+        0.004286972333014277,
+        0.004272867465616127
+      ],
+      "residual_pred_minus_obs": [
+        1.337228265549384e-07,
+        2.552302365756848e-07,
+        -3.785058792329498e-05,
+        0.00022278161398517696,
+        -0.00018531997913747312
+      ],
+      "sse": 8.540789222776095e-08,
+      "multistart": {
+        "n": 27,
+        "success_count": 27,
+        "min_sse": 8.540789222776095e-08,
+        "max_sse": 1.0370105553054408e-06
+      },
+      "predictions": [
+        {
+          "time_h": 36,
+          "empty_fraction": 0.004272848671491372,
+          "within_unit_interval": true
+        },
+        {
+          "time_h": 48,
+          "empty_fraction": 0.004272848646449015,
+          "within_unit_interval": true
+        }
+      ],
+      "limits": "Unweighted descriptive least squares; no preparation-level sampling intervals. Boundary parameters may be weakly identified."
+    },
+    {
+      "condition": "B",
+      "model": "rise_to_plateau",
+      "parameters": {
+        "a_B": 0.004628972477529629,
+        "c_B": 0.9999999999999993,
+        "k_B_per_h": 0.0034447371594638317
+      },
+      "internal_parameterization": {
+        "base": 0.004628972477529629,
+        "q": 0.9999999999999993,
+        "k": 0.0034447371594638317
+      },
+      "parameterization_note": "A:c=base,a=c+(1-c)q. B:a=base,c=a+(1-a)q; base,q in [0,1],k>0. Same constrained family as requested.",
+      "training_times_h": [
+        0.0,
+        4.0,
+        8.0,
+        12.0,
+        24.0
+      ],
+      "observed": [
+        0.0138090880510916,
+        0.0159150610393171,
+        0.0239331148418327,
+        0.0402799733501556,
+        0.0891834703945908
+      ],
+      "fitted": [
+        0.004628972477529629,
+        0.018250080957002344,
+        0.0316847920117164,
+        0.044935656388551855,
+        0.08361015619637907
+      ],
+      "residual_pred_minus_obs": [
+        -0.009180115573561971,
+        0.0023350199176852444,
+        0.007751677169883703,
+        0.004655683038396252,
+        -0.005573314198211735
+      ],
+      "sse": 0.00020255255461203717,
+      "multistart": {
+        "n": 27,
+        "success_count": 27,
+        "min_sse": 0.00020255255461203717,
+        "max_sse": 0.00020255255461203907
+      },
+      "predictions": [
+        {
+          "time_h": 36,
+          "empty_fraction": 0.12071856577647377,
+          "within_unit_interval": true
+        },
+        {
+          "time_h": 48,
+          "empty_fraction": 0.15632430259030514,
+          "within_unit_interval": true
+        }
+      ],
+      "limits": "Unweighted descriptive least squares; no preparation-level sampling intervals. Boundary parameters may be weakly identified."
+    }
+  ],
+  "linear_B": {
+    "condition": "B",
+    "model": "linear",
+    "parameters": {
+      "alpha": 0.004899726284504343,
+      "beta_per_h": 0.00330462658863471
+    },
+    "sse": 0.0001820500982146244,
+    "fitted": [
+      0.004899726284504343,
+      0.018118232639043184,
+      0.031336738993582025,
+      0.044555245348120866,
+      0.08421076441173739
+    ],
+    "residual_pred_minus_obs": [
+      -0.008909361766587257,
+      0.002203171599726085,
+      0.007403624151749326,
+      0.004275271997965263,
+      -0.004972705982853418
+    ],
+    "predictions": [
+      {
+        "time_h": 36,
+        "empty_fraction": 0.1238662834753539,
+        "within_unit_interval": true
+      },
+      {
+        "time_h": 48,
+        "empty_fraction": 0.16352180253897042,
+        "within_unit_interval": true
+      }
+    ],
+    "statistical_interval": null
+  },
+  "hidden_data_accessed": false
+}

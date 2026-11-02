@@ -1,0 +1,48 @@
+{
+  "parent_id": "r1_b0",
+  "target_witnesses": [
+    "r2_witness_0"
+  ],
+  "concept": "Post-input recovery state",
+  "explanation": "The focus comparison has similar, though not identical, x and u=0, but the estimated drift is much less negative after the longer, weaker input history in initial_2 than shortly after input removal in r1_experiment_0. That direction is not naturally explained by the parent’s fitted negative contribution from a positive residual input trace: more accumulated input trace would tend to make drift more negative. A competing compact account is that an internal recovery variable grows during zero-input periods and shifts drift in the positive direction. This is only a candidate: the witness is approximate and noisy, and pulse history, elapsed time, and x are not independently controlled here.",
+  "analogy": {
+    "domain": "recovery processes",
+    "relation": "a recovery variable accumulates while a driving condition is absent and modifies system response",
+    "mapping": "z0 is a bounded-by-decay operational trace of time spent with little input; its positive fitted contribution shifts dx/dt toward less-negative values during recovery",
+    "breaks_when": "recovery depends on input history during active stimulation, or on pulse amplitude and ordering in ways not captured by this zero-input accumulation"
+  },
+  "provenance": "model_knowledge_unverified",
+  "spec": {
+    "parameters": [
+      {
+        "name": "p0",
+        "lower": 0.05,
+        "initial": 0.5,
+        "upper": 2.0
+      }
+    ],
+    "states": [
+      {
+        "name": "z0",
+        "meaning": "Decaying accumulated recovery during intervals with little input; initialized to zero.",
+        "rate": "1-abs(u)-p0*z0"
+      }
+    ],
+    "terms": [
+      "1",
+      "x",
+      "u",
+      "z0"
+    ]
+  },
+  "distinguishing_prediction": "Use trials with matched x and u=0 but different durations since input was switched off, while independently varying the preceding pulse. This account predicts that drift shifts positively with accumulated zero-input recovery and relaxes according to p0; the parent input-trace account predicts a contribution tied to residual filtered input, which decays after input removal and has the parent’s fitted negative sign.",
+  "falsifier": "Across repeated trials with adequately matched x and u=0, drift does not increase with time spent at zero input, or changes instead consistently follow residual input history with the sign and relaxation predicted by the parent model.",
+  "limitations": "The proposed rate is a simple operational hypothesis, not an identified mechanism. Since abs(u) can exceed one for some inputs, the state need not be monotone or bounded under all allowed inputs; tests should use the supplied input magnitudes or otherwise check stability. Approximate matching and smoothed derivative estimates leave substantial ambiguity.",
+  "generation_records": [
+    {
+      "wire": "wire/006_r2_b0_0",
+      "valid": true
+    }
+  ],
+  "round": 2
+}

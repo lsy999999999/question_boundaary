@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431552068703852,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0c503fe99d12973a016ae597fc85d081958da2be5dcc7ed63a",
+    "object": "chat.completion",
+    "created": 1793431551,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow accumulated-history features give the lowest leave-trajectory-out NMSE (0.00097), substantially improving on the state-only model; PRBS probes varied input histories.\",\"prediction\":\"After input switches to zero, output will retain a history-dependent tail that decays over seconds.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence predicts persistent output after current input changes, consistent with finite-relaxation storage.\",\"condition_to_check\":\"Test whether history improves predictions across PRBS sequences after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2830,
+      "completion_tokens": 244,
+      "total_tokens": 3074,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 113
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.252481684088707
+}

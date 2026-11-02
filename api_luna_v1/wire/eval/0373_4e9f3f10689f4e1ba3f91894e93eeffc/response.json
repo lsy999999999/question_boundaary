@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793430416387312963,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0b3f921ab9343875016ae5938eee4c8194a79841496e600cab",
+    "object": "chat.completion",
+    "created": 1793430416,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow-memory has the lowest leave-trajectory-out error (0.00164) and substantially improves on the state model; persistent residuals support history dependence, not an independent clock.\",\"prediction\":\"After input switches, the output will relax smoothly and retain a history-dependent tail; PRBS should expose errors if slow memory is insufficient.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts finite-timescale persistence after current input changes.\",\"condition_to_check\":\"At matched current input and visible state, past input should still predict output; failure would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2829,
+      "completion_tokens": 137,
+      "total_tokens": 2966
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.178132032044232
+}

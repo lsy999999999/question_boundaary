@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431784102757480,
+  "http_status": 200,
+  "body": {
+    "id": "resp_01bad4eeb0ce981b016ae598e379348194b63bc4a4c00b55e0",
+    "object": "chat.completion",
+    "created": 1793431783,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"memory_slow has the lowest trajectory-level CV NMSE, but residual lag-1 correlation remains high. Alternating input has the greatest predicted disagreement among plausible representations.\",\"prediction\":\"After rapid reversals, the output will retain a slowly decaying dependence on earlier inputs, differing even when current input and visible state match.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Leaky accumulated past input can influence output after the input changes or returns to zero.\",\"condition_to_check\":\"Compare later outputs after distinct histories at matched current input and visible state; no difference would weaken the storage relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3271,
+      "completion_tokens": 291,
+      "total_tokens": 3562,
+      "completion_tokens_details": {
+        "reasoning_tokens": 149
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 6.198440793901682
+}

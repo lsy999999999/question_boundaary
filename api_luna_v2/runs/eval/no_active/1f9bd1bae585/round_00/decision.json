@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431558371580237,
+  "decision": {
+    "representation": "clock",
+    "experiment": "alternating",
+    "reason": "Clock has far lower leave-trajectory-out error than memory or instantaneous models; similar late-time drift across distinct inputs is consistent with elapsed-time effects, though not proof of an external driver.",
+    "prediction": "Residual oscillation or drift will recur at similar elapsed times despite rapid input switches.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Elapsed-time periodic features predict shared time-dependent effects across different input interventions.",
+      "condition_to_check": "Compare residual timing across interventions; reject if the pattern shifts with input history or fails to recur."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has far lower leave-trajectory-out error than memory or instantaneous models; similar late-time drift across distinct inputs is consistent with elapsed-time effects, though not proof of an external driver.\",\"prediction\":\"Residual oscillation or drift will recur at similar elapsed times despite rapid input switches.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time periodic features predict shared time-dependent effects across different input interventions.\",\"condition_to_check\":\"Compare residual timing across interventions; reject if the pattern shifts with input history or fails to recur.\"}}",
+    "input_tokens": 2812,
+    "output_tokens": 257,
+    "batch_elapsed_seconds": 3.7352550830692053,
+    "amortized_seconds": 3.7352550830692053,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2812,
+      "completion_tokens": 257,
+      "total_tokens": 3069,
+      "completion_tokens_details": {
+        "reasoning_tokens": 131
+      }
+    },
+    "api_response_id": "resp_04aea5766330f308016ae5980376ac8190b15e339291cfe0ac",
+    "wire_record": "wire/eval/0161_6f41c8238f7547aca50e1604104ba589"
+  }
+}

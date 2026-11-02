@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431259845635413,
+  "decision": {
+    "representation": "clock",
+    "experiment": "prbs",
+    "reason": "Clock has the lowest leave-trajectory-out error by a wide margin, but residual lag correlation and the prior forecast failure leave adequacy uncertain. PRBS can test against history-based alternatives.",
+    "prediction": "Under PRBS, clock predicts a shared elapsed-time-synchronized component, including a negative late-time offset, across irregular input histories.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "A shared elapsed-time component may explain time-aligned output features across distinct input interventions.",
+      "condition_to_check": "Compare PRBS with other trajectories at matched elapsed times; the relation is weakened if residual features instead track input history."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has the lowest leave-trajectory-out error by a wide margin, but residual lag correlation and the prior forecast failure leave adequacy uncertain. PRBS can test against history-based alternatives.\",\"prediction\":\"Under PRBS, clock predicts a shared elapsed-time-synchronized component, including a negative late-time offset, across irregular input histories.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A shared elapsed-time component may explain time-aligned output features across distinct input interventions.\",\"condition_to_check\":\"Compare PRBS with other trajectories at matched elapsed times; the relation is weakened if residual features instead track input history.\"}}",
+    "input_tokens": 3252,
+    "output_tokens": 356,
+    "batch_elapsed_seconds": 6.294769072905183,
+    "amortized_seconds": 6.294769072905183,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3252,
+      "completion_tokens": 356,
+      "total_tokens": 3608,
+      "completion_tokens_details": {
+        "reasoning_tokens": 213
+      }
+    },
+    "api_response_id": "resp_07a6db5c8f9dc4c1016ae596d7adc48194927e1857e53ebb9c",
+    "wire_record": "wire/dev/0044_cafa70ed459c4b559f667cc77344a686"
+  }
+}

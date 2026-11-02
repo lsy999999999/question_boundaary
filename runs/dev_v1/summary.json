@@ -1,0 +1,161 @@
+{
+  "split": "dev",
+  "complete": true,
+  "expected_tasks_per_method": 4,
+  "methods": {
+    "state_fixed": {
+      "n": 4,
+      "median_test_nmse": 0.029265050442359837,
+      "mean_test_nmse": 0.04470927528541976,
+      "test_nmse_below_0_1": 3,
+      "accepted": 2,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "generation_seconds_amortized": 0,
+      "peak_gpu_allocated_gb": 0.0,
+      "final_representations": {
+        "state": 4
+      }
+    },
+    "history_cv": {
+      "n": 4,
+      "median_test_nmse": 0.0003505656329197415,
+      "mean_test_nmse": 0.00040966967151984487,
+      "test_nmse_below_0_1": 4,
+      "accepted": 4,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "generation_seconds_amortized": 0,
+      "peak_gpu_allocated_gb": 0.0,
+      "final_representations": {
+        "memory_slow": 1,
+        "state": 1,
+        "clock": 1,
+        "state_cubic": 1
+      }
+    },
+    "plain": {
+      "n": 4,
+      "median_test_nmse": 0.05980654698042695,
+      "mean_test_nmse": 0.18300496861342133,
+      "test_nmse_below_0_1": 3,
+      "accepted": 3,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 16,
+      "input_tokens": 33175,
+      "output_tokens": 905,
+      "generation_seconds_amortized": 16.535067290533334,
+      "peak_gpu_allocated_gb": 16.042112827301025,
+      "final_representations": {
+        "nonlinear_delay": 4
+      }
+    },
+    "retrieval": {
+      "n": 4,
+      "median_test_nmse": 0.02249770215572302,
+      "mean_test_nmse": 0.048597842296134446,
+      "test_nmse_below_0_1": 3,
+      "accepted": 3,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 16,
+      "input_tokens": 38374,
+      "output_tokens": 1033,
+      "generation_seconds_amortized": 20.56870299158618,
+      "peak_gpu_allocated_gb": 16.3089919090271,
+      "final_representations": {
+        "memory_multiscale": 4
+      }
+    },
+    "structured": {
+      "n": 4,
+      "median_test_nmse": 0.031029226196541724,
+      "mean_test_nmse": 0.051534979692823786,
+      "test_nmse_below_0_1": 3,
+      "accepted": 3,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 16,
+      "input_tokens": 40201,
+      "output_tokens": 1736,
+      "generation_seconds_amortized": 28.41357090463862,
+      "peak_gpu_allocated_gb": 16.442917346954346,
+      "final_representations": {
+        "state_cubic": 3,
+        "memory_multiscale": 1
+      }
+    },
+    "no_active": {
+      "n": 4,
+      "median_test_nmse": 0.02191174395387942,
+      "mean_test_nmse": 0.04022682835312936,
+      "test_nmse_below_0_1": 3,
+      "accepted": 2,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 16,
+      "input_tokens": 40723,
+      "output_tokens": 1779,
+      "generation_seconds_amortized": 29.133726626634598,
+      "peak_gpu_allocated_gb": 16.470258235931396,
+      "final_representations": {
+        "state_cubic": 3,
+        "nonlinear_delay": 1
+      }
+    }
+  },
+  "total_results": 24,
+  "paired_comparisons": [
+    {
+      "left": "structured",
+      "right": "plain",
+      "paired_tasks": 4,
+      "left_wins": 4,
+      "geometric_nmse_ratio": 0.06305120121790617,
+      "descriptive_bootstrap_95_interval": [
+        0.008795847591305217,
+        0.45196940189717105
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "retrieval",
+      "paired_tasks": 4,
+      "left_wins": 2,
+      "geometric_nmse_ratio": 0.23262084672580455,
+      "descriptive_bootstrap_95_interval": [
+        0.0248092743320169,
+        2.1811382955928296
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "no_active",
+      "paired_tasks": 4,
+      "left_wins": 0,
+      "geometric_nmse_ratio": 1.5911419876105994,
+      "descriptive_bootstrap_95_interval": [
+        1.3030015628407936,
+        2.0858947943331922
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "history_cv",
+      "paired_tasks": 4,
+      "left_wins": 0,
+      "geometric_nmse_ratio": 16.549388598538428,
+      "descriptive_bootstrap_95_interval": [
+        1.6718239016864154,
+        163.8224353110163
+      ]
+    }
+  ]
+}

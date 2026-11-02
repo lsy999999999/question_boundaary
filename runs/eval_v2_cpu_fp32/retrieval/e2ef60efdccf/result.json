@@ -1,0 +1,90 @@
+{
+  "task_id": "e2ef60efdccf",
+  "split": "eval",
+  "family": "delay",
+  "seed": 2,
+  "method": "retrieval",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_multiscale",
+    "ridge": 1e-05,
+    "cv_nmse": 0.00240689445221027,
+    "coefficients": [
+      0.0008145,
+      1.6153501,
+      0.6625342,
+      -5.3454873,
+      -0.6873736,
+      1.0901846,
+      0.6742132,
+      -0.3127815,
+      -0.3905545,
+      -1.2246346,
+      1.4864809,
+      -0.6548691,
+      2.0471778,
+      2.1433935,
+      1.7001179
+    ]
+  },
+  "test": {
+    "test_nmse": 0.012599749265143253,
+    "test_mse": 0.0006181281811995369,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 0.0008305015416224096,
+        "nmse": 0.014098172063310956
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.00048727980403432807,
+        "nmse": 0.0017512858159822644
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 0.0012636804017127513,
+        "nmse": 0.043908031278921136
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 4.481340791502418e-05,
+        "nmse": 0.0008701882123756333
+      },
+      {
+        "action": "test_prbs",
+        "mse": 0.0008431657386156982,
+        "nmse": 0.01253455533439612
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 0.00023932819329701053,
+        "nmse": 0.002436262885873409
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": true,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 9606,
+  "output_tokens": 254,
+  "generation_seconds_amortized": 240.0669781768229,
+  "elapsed_wall_seconds": 5251.492812633514,
+  "selected_actions": [
+    "positive_pulse",
+    "negative_pulse",
+    "step_rest"
+  ],
+  "selected_representations": [
+    "memory_multiscale",
+    "memory_multiscale",
+    "memory_multiscale",
+    "memory_multiscale"
+  ],
+  "peak_gpu_allocated_gb": 0.0,
+  "peak_process_ram_gb": 34.08116149902344,
+  "inference_backend": "cpu-fp32",
+  "evaluation_after_commit_ns": 1793397699739213528
+}

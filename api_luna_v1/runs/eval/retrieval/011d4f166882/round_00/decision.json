@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793429911980467162,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "prbs",
+    "reason": "Memory_multiscale has the lowest trajectory-held-out NMSE (0.00152), far below the state model, while strongly correlated residuals indicate persistent history effects. PRBS has high disagreement among plausible memory models.",
+    "prediction": "After matched current inputs and visible states, PRBS trajectories will still differ according to prior input history; the candidate memory models will predict different transient responses.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"Memory_multiscale has the lowest trajectory-held-out NMSE (0.00152), far below the state model, while strongly correlated residuals indicate persistent history effects. PRBS has high disagreement among plausible memory models.\",\"prediction\":\"After matched current inputs and visible states, PRBS trajectories will still differ according to prior input history; the candidate memory models will predict different transient responses.\",\"accept\":false}",
+    "input_tokens": 2570,
+    "output_tokens": 173,
+    "batch_elapsed_seconds": 4.6498797088861465,
+    "amortized_seconds": 4.6498797088861465,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2570,
+      "completion_tokens": 173,
+      "total_tokens": 2743,
+      "completion_tokens_details": {
+        "reasoning_tokens": 72
+      }
+    },
+    "api_response_id": "resp_0e33e6a958e2873c016ae5919570788190be64b6528d0962eb",
+    "wire_record": "wire/eval/0107_c69c67f3ad05455798b7a02470385fbe"
+  }
+}

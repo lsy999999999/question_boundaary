@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793432304311321086,
+  "decision": {
+    "representation": "clock",
+    "experiment": "prbs",
+    "reason": "Clock has the strongest trajectory-level validation by a wide margin, and three distinct interventions produced low forecast error. Memory-clock and history-all are worse; residual lag correlation leaves some uncertainty.",
+    "prediction": "After input ends, oscillations will remain aligned by elapsed time across interventions rather than reset to the timing of the last pulse.",
+    "accept": true,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Shared elapsed-time periodic forcing is consistent with oscillations recurring across differently driven trajectories.",
+      "condition_to_check": "A reproducible phase shift tied to input timing rather than elapsed time would weaken the clock explanation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has the strongest trajectory-level validation by a wide margin, and three distinct interventions produced low forecast error. Memory-clock and history-all are worse; residual lag correlation leaves some uncertainty.\",\"prediction\":\"After input ends, oscillations will remain aligned by elapsed time across interventions rather than reset to the timing of the last pulse.\",\"accept\":true,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Shared elapsed-time periodic forcing is consistent with oscillations recurring across differently driven trajectories.\",\"condition_to_check\":\"A reproducible phase shift tied to input timing rather than elapsed time would weaken the clock explanation.\"}}",
+    "input_tokens": 3654,
+    "output_tokens": 134,
+    "batch_elapsed_seconds": 2.51215186342597,
+    "amortized_seconds": 2.51215186342597,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3654,
+      "completion_tokens": 134,
+      "total_tokens": 3788
+    },
+    "api_response_id": "resp_0969e76c7807621f016ae59aee892c81959c7e0a856e3ca849",
+    "wire_record": "wire/eval/0540_5d9d9a45950a45ccaf6c7d82aa035b02"
+  }
+}

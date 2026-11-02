@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793424099506480652,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "prbs",
+    "reason": "PRBS tests complex, non-repeating input patterns.",
+    "prediction": "Response should exhibit consistent saturation limits without oscillations.",
+    "accept": true,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Accumulated state should limit growth even with irregular inputs.",
+      "condition_to_check": "No overshoot or undershoot beyond expected limits."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"prbs\",\n  \"reason\": \"PRBS tests complex, non-repeating input patterns.\",\n  \"prediction\": \"Response should exhibit consistent saturation limits without oscillations.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"Accumulated state should limit growth even with irregular inputs.\",\n    \"condition_to_check\": \"No overshoot or undershoot beyond expected limits.\"\n  }\n}",
+    "input_tokens": 4002,
+    "output_tokens": 109,
+    "batch_elapsed_seconds": 2.7073012720793486,
+    "amortized_seconds": 2.7073012720793486,
+    "peak_gpu_allocated_gb": 14.991199016571045,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024013519287109,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

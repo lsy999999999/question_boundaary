@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431217303353116,
+  "http_status": 200,
+  "body": {
+    "id": "resp_00fb64748b06214f016ae596ae02288195b57a1afaa90bbab7",
+    "object": "chat.completion",
+    "created": 1793431217,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest leave-trajectory-out error by a wide margin. Similar late negative drift across different inputs is consistent with elapsed-time dependence, though unseen-intervention adequacy remains uncertain.\",\"prediction\":\"After different input histories, output will show a similar elapsed-time-dependent drift when compared at the same times.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time features predict shared output variation across the observed input trajectories.\",\"condition_to_check\":\"Compare output at matched elapsed times under alternating and other interventions; differing drift would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2815,
+      "completion_tokens": 280,
+      "total_tokens": 3095,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 150
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.059733237139881
+}

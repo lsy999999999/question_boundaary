@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793432245269534907,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "prbs",
+    "reason": "It has the lowest trajectory-level validation error, and prior alternating, PRBS, and double-pulse forecasts were accurate. Alternatives are close, but clock and saturation variants do not improve validation.",
+    "prediction": "After input returns to zero, multiscale memory will predict lingering output better than a state-only model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Lingering output after input stops is consistent with accumulated input history relaxing over multiple timescales.",
+      "condition_to_check": "At matched current input and visible state, differing prior inputs should predict different subsequent outputs."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"It has the lowest trajectory-level validation error, and prior alternating, PRBS, and double-pulse forecasts were accurate. Alternatives are close, but clock and saturation variants do not improve validation.\",\"prediction\":\"After input returns to zero, multiscale memory will predict lingering output better than a state-only model.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Lingering output after input stops is consistent with accumulated input history relaxing over multiple timescales.\",\"condition_to_check\":\"At matched current input and visible state, differing prior inputs should predict different subsequent outputs.\"}}",
+    "input_tokens": 3710,
+    "output_tokens": 135,
+    "batch_elapsed_seconds": 2.1911526741459966,
+    "amortized_seconds": 2.1911526741459966,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3710,
+      "completion_tokens": 135,
+      "total_tokens": 3845
+    },
+    "api_response_id": "resp_044dd25e281bb4a0016ae59ab377b081979703cca0c1949eda",
+    "wire_record": "wire/eval/0515_d4f48e41f2814c5a97b93d10fad114e6"
+  }
+}

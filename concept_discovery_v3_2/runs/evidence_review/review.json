@@ -1,0 +1,68 @@
+{
+  "time_ns": 1793469112884970145,
+  "value": {
+    "updates": [
+      {
+        "id": "initial",
+        "status": "weakened",
+        "evidence_ids": [
+          "grouped:initial",
+          "prospective:r0:initial"
+        ],
+        "reason": "分组CV误差高，极性预测与观测关系偏差明显。"
+      },
+      {
+        "id": "r0_b0",
+        "status": "weakened",
+        "evidence_ids": [
+          "grouped:r0_b0",
+          "prospective:r2:r0_b0"
+        ],
+        "reason": "分组CV较差；缩放关系预测远低于观测。"
+      },
+      {
+        "id": "r1_b1",
+        "status": "weakened",
+        "evidence_ids": [
+          "grouped:r1_b1",
+          "prospective:r2:r1_b1"
+        ],
+        "reason": "分组CV较差；缩放关系预测远低于观测。"
+      },
+      {
+        "id": "v3_r0",
+        "status": "active",
+        "evidence_ids": [
+          "grouped:v3_r0",
+          "prospective:r2:v3_r0"
+        ],
+        "reason": "分组CV较好，缩放关系预测接近观测；仅支持本开发范围。"
+      },
+      {
+        "id": "v3_r1",
+        "status": "active",
+        "evidence_ids": [
+          "grouped:v3_r1",
+          "prospective:r2:v3_r1"
+        ],
+        "reason": "分组CV与缩放预测表现较好，不据此推断物理解释。"
+      },
+      {
+        "id": "v3_r2",
+        "status": "active",
+        "evidence_ids": [
+          "grouped:v3_r2",
+          "prospective:r2:v3_r2"
+        ],
+        "reason": "分组CV较好，缩放关系预测接近观测；不据此作普遍结论。"
+      }
+    ],
+    "summary": "复杂V3模型在本开发记录中表现较好；早期模型表现较弱，结论限于当前分组与干预。"
+  },
+  "generation_records": [
+    {
+      "wire": "wire/001_owned_evidence_review_0",
+      "valid": true
+    }
+  ]
+}

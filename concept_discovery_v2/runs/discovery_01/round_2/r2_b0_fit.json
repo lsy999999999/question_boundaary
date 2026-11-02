@@ -1,0 +1,53 @@
+{
+  "spec": {
+    "parameters": [
+      {
+        "name": "p0",
+        "lower": 0.05,
+        "initial": 0.5,
+        "upper": 2.0
+      }
+    ],
+    "states": [
+      {
+        "name": "z0",
+        "meaning": "Decaying accumulated recovery during intervals with little input; initialized to zero.",
+        "rate": "1-abs(u)-p0*z0"
+      }
+    ],
+    "terms": [
+      "1",
+      "x",
+      "u",
+      "z0"
+    ]
+  },
+  "fit": {
+    "parameters": [
+      0.33759624424553286
+    ],
+    "coefficients": [
+      -0.029728600761209152,
+      -0.10585949055338395,
+      0.6091636610291993,
+      0.016063518544072997
+    ],
+    "solver": {
+      "success": true,
+      "nfev": 3,
+      "message": "`ftol` termination condition is satisfied."
+    },
+    "derivative_mse": 0.005348802060211814
+  },
+  "trajectory_cv_nmse": 3.26689909194807,
+  "fold_nmse": [
+    0.21406236853548574,
+    15.075268763887735,
+    1.0461927568972793,
+    0.3320726461143141,
+    5.786167459064791,
+    0.3255631319087349,
+    0.08896651722815478
+  ],
+  "complexity": 28
+}

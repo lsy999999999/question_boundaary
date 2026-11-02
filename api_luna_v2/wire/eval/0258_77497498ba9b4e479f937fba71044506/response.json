@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431708181999436,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0477945ea379a50d016ae59899500c8190a780aa464fb1a8f6",
+    "object": "chat.completion",
+    "created": 1793431708,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"memory_slow has the lowest trajectory-level CV error; PRBS forecasting was accurate, though residual lag correlation leaves possible structure unresolved.\",\"prediction\":\"During rapid switches, output will retain a smooth influence of prior inputs rather than responding only to the current input.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated input history predicts lingering output after switches, consistent with finite-leakage storage.\",\"condition_to_check\":\"If prior inputs add no predictive value after controlling current input and visible state, the storage relation is weakened.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3301,
+      "completion_tokens": 209,
+      "total_tokens": 3510,
+      "completion_tokens_details": {
+        "reasoning_tokens": 81
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.8052009800449014
+}

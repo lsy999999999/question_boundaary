@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793423455557194741,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "ramp_reverse",
+    "reason": "Memory_multiscale balanced fast and slow dynamics well in previous tests.",
+    "prediction": "Ramp will show a delayed and damped response, with distinct phases.",
+    "accept": true,
+    "mapping": {
+      "source_id": "memory_multiscale",
+      "target_relation": "Response amplitude decreases over time with input reversal.",
+      "condition_to_check": "Check if response amplitude decays after ramp input."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_multiscale\",\n  \"experiment\": \"ramp_reverse\",\n  \"reason\": \"Memory_multiscale balanced fast and slow dynamics well in previous tests.\",\n  \"prediction\": \"Ramp will show a delayed and damped response, with distinct phases.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"memory_multiscale\",\n    \"target_relation\": \"Response amplitude decreases over time with input reversal.\",\n    \"condition_to_check\": \"Check if response amplitude decays after ramp input.\"\n  }\n}",
+    "input_tokens": 3600,
+    "output_tokens": 117,
+    "batch_elapsed_seconds": 2.7953443126752973,
+    "amortized_seconds": 2.7953443126752973,
+    "peak_gpu_allocated_gb": 14.927255153656006,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025005340576172,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

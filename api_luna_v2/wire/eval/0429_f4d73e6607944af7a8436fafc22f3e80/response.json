@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432033592896983,
+  "http_status": 200,
+  "body": {
+    "id": "resp_06c8a54fed8bb090016ae599de174c8195a5c7da7bd7097d0a",
+    "object": "chat.completion",
+    "created": 1793432033,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"memory_slow still has the lowest trajectory-level CV NMSE; prior PRBS and alternating forecasts were accurate, but residual correlation leaves adequacy uncertain. A second pulse tests history dependence.\",\"prediction\":\"The second pulse will produce a different response from the first because the first pulse's influence has not fully decayed.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A leaky stored influence of past input can persist after input changes.\",\"condition_to_check\":\"Compare pulse responses at matched input and visible state; no history-dependent difference weakens this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3477,
+      "completion_tokens": 383,
+      "total_tokens": 3860,
+      "completion_tokens_details": {
+        "reasoning_tokens": 247
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.344169283285737
+}

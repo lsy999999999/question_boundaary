@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430639355777062,
+  "decision": {
+    "representation": "clock",
+    "experiment": "prbs",
+    "reason": "Clock has much lower leave-trajectory-out error than alternatives, but residual lag correlation and remaining plausible history models leave some uncertainty about unseen interventions.",
+    "prediction": "Oscillation phase will align more closely by elapsed time than by PRBS input switches.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Similar elapsed-time oscillations across interventions are consistent with a shared elapsed-time driver.",
+      "condition_to_check": "Input-locked phase shifts or disappearance of oscillations under PRBS would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has much lower leave-trajectory-out error than alternatives, but residual lag correlation and remaining plausible history models leave some uncertainty about unseen interventions.\",\"prediction\":\"Oscillation phase will align more closely by elapsed time than by PRBS input switches.\",\"accept\":false,\"mapping\":{\"source_id\":\"saturation\",\"target_relation\":\"Similar elapsed-time oscillations across interventions are consistent with a shared elapsed-time driver.\",\"condition_to_check\":\"Input-locked phase shifts or disappearance of oscillations under PRBS would weaken this relation.\"}}",
+    "input_tokens": 3238,
+    "output_tokens": 329,
+    "batch_elapsed_seconds": 4.10155241843313,
+    "amortized_seconds": 4.10155241843313,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3238,
+      "completion_tokens": 329,
+      "total_tokens": 3567,
+      "completion_tokens_details": {
+        "reasoning_tokens": 210
+      }
+    },
+    "api_response_id": "resp_0807b9e3bd482ec5016ae5946c05b88194970322a8b8a1f0bc",
+    "wire_record": "wire/eval/0465_65cbed1a0cad4e0c859a4760f1a873a2"
+  }
+}

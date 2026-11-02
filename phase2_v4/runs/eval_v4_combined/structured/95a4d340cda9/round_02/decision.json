@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793424017090039934,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "double_pulse",
+    "reason": "Double_pulse tests model's response to repeated inputs.",
+    "prediction": "Response to second pulse will be smaller than first due to saturation.",
+    "accept": true,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "State response weakens at high magnitudes due to saturation.",
+      "condition_to_check": "Compare response amplitudes for first and second pulses."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"double_pulse\",\n  \"reason\": \"Double_pulse tests model's response to repeated inputs.\",\n  \"prediction\": \"Response to second pulse will be smaller than first due to saturation.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"State response weakens at high magnitudes due to saturation.\",\n    \"condition_to_check\": \"Compare response amplitudes for first and second pulses.\"\n  }\n}",
+    "input_tokens": 3740,
+    "output_tokens": 112,
+    "batch_elapsed_seconds": 2.710637805983424,
+    "amortized_seconds": 2.710637805983424,
+    "peak_gpu_allocated_gb": 14.94890546798706,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

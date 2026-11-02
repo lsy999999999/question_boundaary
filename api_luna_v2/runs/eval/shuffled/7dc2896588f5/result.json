@@ -1,0 +1,84 @@
+{
+  "task_id": "7dc2896588f5",
+  "split": "eval",
+  "family": "memory",
+  "seed": 32,
+  "method": "shuffled",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_slow",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0007662605566327553,
+    "coefficients": [
+      0.0017443,
+      -0.6957738,
+      0.9780293,
+      0.5678691,
+      -1.2091872,
+      0.5822831,
+      -0.6863161,
+      1.0273009,
+      1.5946735
+    ]
+  },
+  "test": {
+    "test_nmse": 0.00013745339695001287,
+    "test_mse": 1.831404810746441e-05,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 1.4526363237068502e-05,
+        "nmse": 0.0001428288155033082
+      },
+      {
+        "action": "test_three_step",
+        "mse": 2.2578081283117603e-05,
+        "nmse": 3.840266085942612e-05
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 1.1706212415476882e-05,
+        "nmse": 0.00020638949455093337
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 2.6046107190534637e-05,
+        "nmse": 0.0002214515573177002
+      },
+      {
+        "action": "test_prbs",
+        "mse": 1.333200914637003e-05,
+        "nmse": 0.0001067503370389258
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 2.1695515372218814e-05,
+        "nmse": 0.00010889751642978342
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": true,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 13309,
+  "output_tokens": 1314,
+  "generation_seconds_amortized": 17.173499691300094,
+  "elapsed_wall_seconds": 831.1105704307556,
+  "selected_actions": [
+    "prbs",
+    "alternating",
+    "slow_wave"
+  ],
+  "selected_representations": [
+    "memory_slow",
+    "memory_slow",
+    "memory_multiscale",
+    "memory_slow"
+  ],
+  "peak_gpu_allocated_gb": 0.0,
+  "peak_process_ram_gb": 0.08777236938476562,
+  "inference_backend": "third_party_api",
+  "evaluation_after_commit_ns": 1793432259154016471
+}

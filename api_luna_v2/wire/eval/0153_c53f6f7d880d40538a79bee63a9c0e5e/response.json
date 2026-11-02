@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431549866814471,
+  "http_status": 200,
+  "body": {
+    "id": "resp_09a33cdcf9fa9b07016ae597fb311c81908164fbcaa87083e1",
+    "object": "chat.completion",
+    "created": 1793431549,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow-history memory has the lowest trajectory-held-out NMSE and substantially improves on the state-only model; PRBS has the greatest disagreement among plausible models.\",\"prediction\":\"After input switches, output will retain a history-dependent response that cannot be explained by current input and state alone.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history predicts persistent influence after the input changes.\",\"condition_to_check\":\"Test whether PRBS responses depend on prior input history after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2806,
+      "completion_tokens": 208,
+      "total_tokens": 3014,
+      "completion_tokens_details": {
+        "reasoning_tokens": 83
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.6669084802269936
+}

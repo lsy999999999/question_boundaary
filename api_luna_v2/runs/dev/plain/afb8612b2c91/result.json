@@ -1,0 +1,84 @@
+{
+  "task_id": "afb8612b2c91",
+  "split": "dev",
+  "family": "memory",
+  "seed": 201,
+  "method": "plain",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_fast",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0018429624897322175,
+    "coefficients": [
+      -0.0006039,
+      2.5722353,
+      0.9381031,
+      -8.2997254,
+      4.2472681,
+      0.9877485,
+      -3.0895996,
+      5.585356,
+      -2.7686181
+    ]
+  },
+  "test": {
+    "test_nmse": 0.0006184688293695604,
+    "test_mse": 3.979586578094691e-05,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 6.641419237424437e-05,
+        "nmse": 0.0009914401268415393
+      },
+      {
+        "action": "test_three_step",
+        "mse": 4.440394276689052e-05,
+        "nmse": 0.0001580459898332797
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 4.657672922942891e-05,
+        "nmse": 0.0015401549066856011
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 1.0472529626996769e-05,
+        "nmse": 0.00013562962206577165
+      },
+      {
+        "action": "test_prbs",
+        "mse": 5.205639006883183e-05,
+        "nmse": 0.0006977380750710919
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 1.8851410619289015e-05,
+        "nmse": 0.00018780425572007851
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": false,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 10701,
+  "output_tokens": 574,
+  "generation_seconds_amortized": 11.880791912786663,
+  "elapsed_wall_seconds": 136.98225474357605,
+  "selected_actions": [
+    "prbs",
+    "alternating",
+    "double_pulse"
+  ],
+  "selected_representations": [
+    "memory_slow",
+    "memory_slow",
+    "memory_slow",
+    "memory_fast"
+  ],
+  "peak_gpu_allocated_gb": 0.0,
+  "peak_process_ram_gb": 0.08777236938476562,
+  "inference_backend": "third_party_api",
+  "evaluation_after_commit_ns": 1793431309159014851
+}

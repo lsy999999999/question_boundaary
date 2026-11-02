@@ -1,0 +1,166 @@
+{
+  "split": "dev",
+  "complete": true,
+  "expected_tasks_per_method": 4,
+  "methods": {
+    "state_fixed": {
+      "n": 4,
+      "median_test_nmse": 0.029265050442359837,
+      "mean_test_nmse": 0.04470927528541976,
+      "test_nmse_below_0_1": 3,
+      "accepted": 2,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "generation_seconds_amortized": 0,
+      "peak_gpu_allocated_gb": 0.0,
+      "peak_process_ram_gb": 0.0,
+      "final_representations": {
+        "state": 4
+      }
+    },
+    "history_cv": {
+      "n": 4,
+      "median_test_nmse": 0.0003505656329197415,
+      "mean_test_nmse": 0.00040966967151984487,
+      "test_nmse_below_0_1": 4,
+      "accepted": 4,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "generation_seconds_amortized": 0,
+      "peak_gpu_allocated_gb": 0.0,
+      "peak_process_ram_gb": 0.0,
+      "final_representations": {
+        "memory_slow": 1,
+        "state": 1,
+        "clock": 1,
+        "state_cubic": 1
+      }
+    },
+    "plain": {
+      "n": 4,
+      "median_test_nmse": 0.05980654698042695,
+      "mean_test_nmse": 0.18300496861342133,
+      "test_nmse_below_0_1": 3,
+      "accepted": 3,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 16,
+      "input_tokens": 33174,
+      "output_tokens": 911,
+      "generation_seconds_amortized": 798.0217676823959,
+      "peak_gpu_allocated_gb": 0.0,
+      "peak_process_ram_gb": 32.773780822753906,
+      "final_representations": {
+        "nonlinear_delay": 4
+      }
+    },
+    "retrieval": {
+      "n": 4,
+      "median_test_nmse": 0.020900221121940916,
+      "mean_test_nmse": 0.047799101779243396,
+      "test_nmse_below_0_1": 3,
+      "accepted": 3,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 16,
+      "input_tokens": 38345,
+      "output_tokens": 1007,
+      "generation_seconds_amortized": 952.1795468521304,
+      "peak_gpu_allocated_gb": 0.0,
+      "peak_process_ram_gb": 33.3055534362793,
+      "final_representations": {
+        "memory_multiscale": 4
+      }
+    },
+    "structured": {
+      "n": 4,
+      "median_test_nmse": 0.02820797898952546,
+      "mean_test_nmse": 0.0466700516083348,
+      "test_nmse_below_0_1": 3,
+      "accepted": 3,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 16,
+      "input_tokens": 40279,
+      "output_tokens": 1722,
+      "generation_seconds_amortized": 1256.4275194657966,
+      "peak_gpu_allocated_gb": 0.0,
+      "peak_process_ram_gb": 33.58416748046875,
+      "final_representations": {
+        "state_cubic": 4
+      }
+    },
+    "no_active": {
+      "n": 4,
+      "median_test_nmse": 0.02191174395387942,
+      "mean_test_nmse": 0.04022682835312936,
+      "test_nmse_below_0_1": 3,
+      "accepted": 2,
+      "false_accepted": 0,
+      "invalid_outputs": 2,
+      "generation_calls": 16,
+      "input_tokens": 40679,
+      "output_tokens": 1665,
+      "generation_seconds_amortized": 1248.6377497729845,
+      "peak_gpu_allocated_gb": 0.0,
+      "peak_process_ram_gb": 33.63345718383789,
+      "final_representations": {
+        "state_cubic": 3,
+        "nonlinear_delay": 1
+      }
+    }
+  },
+  "total_results": 24,
+  "paired_comparisons": [
+    {
+      "left": "structured",
+      "right": "plain",
+      "paired_tasks": 4,
+      "left_wins": 4,
+      "geometric_nmse_ratio": 0.06051982861703299,
+      "descriptive_bootstrap_95_interval": [
+        0.008943190391773612,
+        0.4095462016781094
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "retrieval",
+      "paired_tasks": 4,
+      "left_wins": 3,
+      "geometric_nmse_ratio": 0.22922676910396902,
+      "descriptive_bootstrap_95_interval": [
+        0.026586036410196908,
+        1.9764101298564036
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "no_active",
+      "paired_tasks": 4,
+      "left_wins": 0,
+      "geometric_nmse_ratio": 1.5272609963886197,
+      "descriptive_bootstrap_95_interval": [
+        1.1952316298406886,
+        2.036393050880262
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "history_cv",
+      "paired_tasks": 4,
+      "left_wins": 0,
+      "geometric_nmse_ratio": 15.884965589137533,
+      "descriptive_bootstrap_95_interval": [
+        1.6998293000300582,
+        148.4455714250963
+      ]
+    }
+  ]
+}

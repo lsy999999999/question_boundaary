@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793431307547458072,
+  "decision": {
+    "representation": "state",
+    "experiment": "prbs",
+    "reason": "State has the lowest trajectory-held-out error, and its forecasts were accurate across alternating, slow-wave, and ramp-reversal inputs. Added memory, clock, and nonlinear features validate worse.",
+    "prediction": "For unseen input sequences, output will depend on current input and state, with no repeatable residual dependence on elapsed time or earlier inputs.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No mechanism relation is established by the predictive validation evidence.",
+      "condition_to_check": "Test whether unseen interventions produce systematic residual dependence on past input or elapsed time."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"prbs\",\"reason\":\"State has the lowest trajectory-held-out error, and its forecasts were accurate across alternating, slow-wave, and ramp-reversal inputs. Added memory, clock, and nonlinear features validate worse.\",\"prediction\":\"For unseen input sequences, output will depend on current input and state, with no repeatable residual dependence on elapsed time or earlier inputs.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No mechanism relation is established by the predictive validation evidence.\",\"condition_to_check\":\"Test whether unseen interventions produce systematic residual dependence on past input or elapsed time.\"}}",
+    "input_tokens": 3662,
+    "output_tokens": 127,
+    "batch_elapsed_seconds": 2.3954693656414747,
+    "amortized_seconds": 2.3954693656414747,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3662,
+      "completion_tokens": 127,
+      "total_tokens": 3789
+    },
+    "api_response_id": "resp_01a40486bf29378f016ae59709aab0819389c55514c7539ebc",
+    "wire_record": "wire/dev/0065_fb441afa98d448979aa6400acd792982"
+  }
+}

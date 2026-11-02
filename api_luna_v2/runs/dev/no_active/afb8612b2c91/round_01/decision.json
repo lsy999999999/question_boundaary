@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431243770657275,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "alternating",
+    "reason": "memory_slow has the lowest trajectory-level CV error, substantially outperforming fast, multiscale, and clock alternatives. Residual lag correlation remains, so adequacy is not established.",
+    "prediction": "After alternating inputs stop, output will retain a history-dependent tail that decays gradually rather than vanish immediately.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated input history predicts output after the input changes, with finite relaxation.",
+      "condition_to_check": "At matched current input and visible state, prior input should predict output, and that effect should decay."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"memory_slow has the lowest trajectory-level CV error, substantially outperforming fast, multiscale, and clock alternatives. Residual lag correlation remains, so adequacy is not established.\",\"prediction\":\"After alternating inputs stop, output will retain a history-dependent tail that decays gradually rather than vanish immediately.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts output after the input changes, with finite relaxation.\",\"condition_to_check\":\"At matched current input and visible state, prior input should predict output, and that effect should decay.\"}}",
+    "input_tokens": 3286,
+    "output_tokens": 260,
+    "batch_elapsed_seconds": 4.0494593847543,
+    "amortized_seconds": 4.0494593847543,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3286,
+      "completion_tokens": 260,
+      "total_tokens": 3546,
+      "completion_tokens_details": {
+        "reasoning_tokens": 126
+      }
+    },
+    "api_response_id": "resp_0015630ef28c4fc7016ae596c8a4448194b5575fcb345c5630",
+    "wire_record": "wire/dev/0036_e26f352dffdb40029b610ba616191c07"
+  }
+}

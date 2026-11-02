@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431228477680939,
+  "decision": {
+    "representation": "state",
+    "experiment": "ramp_reverse",
+    "reason": "The state model has the best leave-trajectory-out NMSE; added nonlinear, memory, and clock features all worsen validation. Residual autocorrelation alone does not justify added structure.",
+    "prediction": "After accounting for current state and input, ramp-reversal residuals should show no reproducible dependence on earlier input history.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No cross-domain mechanism is sufficiently supported by the current comparisons.",
+      "condition_to_check": "Reconsider if ramp-reversal trials show reproducible history-dependent residuals beyond measurement noise."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"ramp_reverse\",\"reason\":\"The state model has the best leave-trajectory-out NMSE; added nonlinear, memory, and clock features all worsen validation. Residual autocorrelation alone does not justify added structure.\",\"prediction\":\"After accounting for current state and input, ramp-reversal residuals should show no reproducible dependence on earlier input history.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain mechanism is sufficiently supported by the current comparisons.\",\"condition_to_check\":\"Reconsider if ramp-reversal trials show reproducible history-dependent residuals beyond measurement noise.\"}}",
+    "input_tokens": 3264,
+    "output_tokens": 248,
+    "batch_elapsed_seconds": 3.4680658420547843,
+    "amortized_seconds": 3.4680658420547843,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3264,
+      "completion_tokens": 248,
+      "total_tokens": 3512,
+      "completion_tokens_details": {
+        "reasoning_tokens": 118
+      }
+    },
+    "api_response_id": "resp_007aa9db21f6ca8e016ae596b9e5148195b61a173793e5271a",
+    "wire_record": "wire/dev/0025_a1d571a0351c4f26bd4360a0d45f79b1"
+  }
+}

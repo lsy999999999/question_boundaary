@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793429652631135178,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "prbs",
+    "reason": "State_cubic has the lowest trajectory-level CV error (0.00119), and its recent alternating and ramp-reverse forecast errors were small. Residual lag correlation leaves adequacy uncertain.",
+    "prediction": "Under PRBS input, state_cubic will predict the response without systematic residual patterns tied to earlier inputs.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Instantaneous curvature is supported comparatively, but no mechanism card is justified by these fits.",
+      "condition_to_check": "Reject the model if PRBS residuals show reproducible dependence on past inputs after accounting for current state and input."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state_cubic\",\"experiment\":\"prbs\",\"reason\":\"State_cubic has the lowest trajectory-level CV error (0.00119), and its recent alternating and ramp-reverse forecast errors were small. Residual lag correlation leaves adequacy uncertain.\",\"prediction\":\"Under PRBS input, state_cubic will predict the response without systematic residual patterns tied to earlier inputs.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Instantaneous curvature is supported comparatively, but no mechanism card is justified by these fits.\",\"condition_to_check\":\"Reject the model if PRBS residuals show reproducible dependence on past inputs after accounting for current state and input.\"}}",
+    "input_tokens": 3471,
+    "output_tokens": 273,
+    "batch_elapsed_seconds": 3.539231179282069,
+    "amortized_seconds": 3.539231179282069,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3471,
+      "completion_tokens": 273,
+      "total_tokens": 3744,
+      "completion_tokens_details": {
+        "reasoning_tokens": 133
+      }
+    },
+    "api_response_id": "resp_0a43ef75f1897427016ae59091da1c8195a0e377a135dbae19",
+    "wire_record": "wire/dev/0032_a1457f4c73044562b611f05e4a9093af"
+  }
+}

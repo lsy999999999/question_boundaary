@@ -1,0 +1,38 @@
+{
+  "time_ns": 1793431521837363093,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "memory_slow has the lowest trajectory-level CV NMSE (0.00190), far below the current state model, and PRBS has the greatest disagreement among plausible alternatives.",
+    "prediction": "Under PRBS, output will show history-dependent lag after input switches, which memory_slow will predict better than the state-only model.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest trajectory-level CV NMSE (0.00190), far below the current state model, and PRBS has the greatest disagreement among plausible alternatives.\",\"prediction\":\"Under PRBS, output will show history-dependent lag after input switches, which memory_slow will predict better than the state-only model.\",\"accept\":false}",
+    "input_tokens": 2257,
+    "output_tokens": 150,
+    "batch_elapsed_seconds": 2.6563487155362964,
+    "amortized_seconds": 2.6563487155362964,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2257,
+      "completion_tokens": 150,
+      "total_tokens": 2407,
+      "prompt_tokens_details": {
+        "cached_tokens": 2048
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 62
+      }
+    },
+    "api_response_id": "resp_0760bbd5884b0591016ae597e022f881979ed9d0ff0966250b",
+    "wire_record": "wire/eval/0136_df738f553b3c440bb34bb917bcfc8e19"
+  }
+}

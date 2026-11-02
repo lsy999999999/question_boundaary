@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431796911051340,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0a94d45b411ba22b016ae598f169dc8193a38c20b63681c1ba",
+    "object": "chat.completion",
+    "created": 1793431796,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"memory_slow has the best trajectory-level CV error (0.00417), substantially below memory_fast; persistent post-input decay supports testing slower accumulated history.\",\"prediction\":\"During rapid reversals, slow-history carryover will produce a different trajectory from fast-memory models, especially after input switches.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input influence may persist after input ends and relax over finite timescales.\",\"condition_to_check\":\"Slow-history features should improve predictions across input shapes; failure to do so would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3243,
+      "completion_tokens": 231,
+      "total_tokens": 3474,
+      "completion_tokens_details": {
+        "reasoning_tokens": 99
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 7.02882806956768
+}

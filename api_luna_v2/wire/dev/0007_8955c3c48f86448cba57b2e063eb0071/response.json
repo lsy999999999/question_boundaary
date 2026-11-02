@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431199097257085,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0145aec8cfedf053016ae5969bab0881979116c30371e511f1",
+    "object": "chat.completion",
+    "created": 1793431198,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"alternating\",\"reason\":\"State_cubic has the lowest trajectory-level CV error (0.0161 versus 0.0260 for state), while memory candidates perform substantially worse. Residual autocorrelation leaves adequacy uncertain.\",\"prediction\":\"Alternating switches should reveal whether predictions depend on input history beyond the current state and input.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is sufficiently supported by these observations.\",\"condition_to_check\":\"Compare matched current states and inputs reached through different alternating histories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2793,
+      "completion_tokens": 305,
+      "total_tokens": 3098,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 183
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.507014703005552
+}

@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431773796470708,
+  "decision": {
+    "representation": "clock",
+    "experiment": "alternating",
+    "reason": "Clock has far lower trajectory-level CV error than alternatives and predicts the observed elapsed-time pattern; the double-pulse forecast was accurate, but unseen intervention adequacy remains unconfirmed.",
+    "prediction": "Under alternating input, elapsed-time-aligned output variation will persist across input switches rather than be explained mainly by accumulated input history.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Elapsed-time features predict output variation beyond current input and state in the validated trajectories.",
+      "condition_to_check": "Reject if alternating-input residuals do not reproduce the elapsed-time pattern across interventions."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has far lower trajectory-level CV error than alternatives and predicts the observed elapsed-time pattern; the double-pulse forecast was accurate, but unseen intervention adequacy remains unconfirmed.\",\"prediction\":\"Under alternating input, elapsed-time-aligned output variation will persist across input switches rather than be explained mainly by accumulated input history.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time features predict output variation beyond current input and state in the validated trajectories.\",\"condition_to_check\":\"Reject if alternating-input residuals do not reproduce the elapsed-time pattern across interventions.\"}}",
+    "input_tokens": 3250,
+    "output_tokens": 349,
+    "batch_elapsed_seconds": 4.90409508254379,
+    "amortized_seconds": 4.90409508254379,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3250,
+      "completion_tokens": 349,
+      "total_tokens": 3599,
+      "completion_tokens_details": {
+        "reasoning_tokens": 217
+      }
+    },
+    "api_response_id": "resp_00125640caf03284016ae598d99b408197aefbb16f1b73d581",
+    "wire_record": "wire/eval/0293_35c54465904d4e859d8959d6f397a3fd"
+  }
+}

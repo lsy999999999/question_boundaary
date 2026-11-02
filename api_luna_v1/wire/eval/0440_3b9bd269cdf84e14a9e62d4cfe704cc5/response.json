@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430573482821750,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0bf52b22b425ba33016ae5942a88e08193ae2e6e52413959d3",
+    "object": "chat.completion",
+    "created": 1793430573,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"prbs\",\"reason\":\"State_cubic has the lowest leave-trajectory-out NMSE (0.00204), substantially better than saturating_memory (0.00614). Residual autocorrelation and limited intervention coverage leave adequacy uncertain.\",\"prediction\":\"Under PRBS input, state_cubic will predict the response without a systematic history-dependent residual after accounting for current state and input.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is established by these trajectory comparisons.\",\"condition_to_check\":\"Check whether PRBS residuals depend on prior input after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3255,
+      "completion_tokens": 322,
+      "total_tokens": 3577,
+      "completion_tokens_details": {
+        "reasoning_tokens": 184
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.99344352632761
+}

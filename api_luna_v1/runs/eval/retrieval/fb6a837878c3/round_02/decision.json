@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793430150437159208,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "double_pulse",
+    "reason": "Slow-memory has the lowest leave-trajectory-out error, and both PRBS and alternating experiments support its predictive performance. A second separated pulse tests whether the response depends on accumulated history.",
+    "prediction": "The second pulse will produce a response shaped by residual effects from the first pulse, even after the input returns to zero.",
+    "accept": true,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"Slow-memory has the lowest leave-trajectory-out error, and both PRBS and alternating experiments support its predictive performance. A second separated pulse tests whether the response depends on accumulated history.\",\"prediction\":\"The second pulse will produce a response shaped by residual effects from the first pulse, even after the input returns to zero.\",\"accept\":true}",
+    "input_tokens": 3112,
+    "output_tokens": 85,
+    "batch_elapsed_seconds": 2.284689418040216,
+    "amortized_seconds": 2.284689418040216,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3112,
+      "completion_tokens": 85,
+      "total_tokens": 3197
+    },
+    "api_response_id": "resp_078b96c87e33328b016ae592851cfc8195815a8f3935806ce7",
+    "wire_record": "wire/eval/0244_6279d5a1f07d429a8679b86900e5c173"
+  }
+}

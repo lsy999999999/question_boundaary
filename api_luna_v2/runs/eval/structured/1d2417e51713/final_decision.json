@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793432147829595796,
+  "decision": {
+    "representation": "state",
+    "experiment": "slow_wave",
+    "reason": "State has the lowest leave-trajectory-out error; every added memory, clock, delay, or nonlinear representation performs worse. Prior PRBS, alternating, and slow-wave forecasts also had low errors.",
+    "prediction": "On unseen inputs, output will be adequately predicted from current state and input, without repeatable residual dependence on elapsed time or past inputs.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "",
+      "condition_to_check": "Check whether unseen-trajectory residuals systematically depend on past inputs or elapsed time after conditioning on current state and input."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"slow_wave\",\"reason\":\"State has the lowest leave-trajectory-out error; every added memory, clock, delay, or nonlinear representation performs worse. Prior PRBS, alternating, and slow-wave forecasts also had low errors.\",\"prediction\":\"On unseen inputs, output will be adequately predicted from current state and input, without repeatable residual dependence on elapsed time or past inputs.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"\",\"condition_to_check\":\"Check whether unseen-trajectory residuals systematically depend on past inputs or elapsed time after conditioning on current state and input.\"}}",
+    "input_tokens": 3633,
+    "output_tokens": 126,
+    "batch_elapsed_seconds": 3.0281589068472385,
+    "amortized_seconds": 3.0281589068472385,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3633,
+      "completion_tokens": 126,
+      "total_tokens": 3759
+    },
+    "api_response_id": "resp_0b39c55c94ae102b016ae59a51c7448197bae588c571c02c4b",
+    "wire_record": "wire/eval/0476_f8b3360225b042dda2a62adc1c84fff5"
+  }
+}

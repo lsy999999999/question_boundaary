@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423865693380079,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "double_pulse",
+    "reason": "Slow memory shows best cross-validation; test with two pulses.",
+    "prediction": "Two pulses should produce a biphasic response with distinct peaks.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Storage should show distinct responses to each pulse.",
+      "condition_to_check": "No significant overlap between pulse-induced responses."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"double_pulse\",\n  \"reason\": \"Slow memory shows best cross-validation; test with two pulses.\",\n  \"prediction\": \"Two pulses should produce a biphasic response with distinct peaks.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Storage should show distinct responses to each pulse.\",\n    \"condition_to_check\": \"No significant overlap between pulse-induced responses.\"\n  }\n}",
+    "input_tokens": 3655,
+    "output_tokens": 105,
+    "batch_elapsed_seconds": 2.532019693404436,
+    "amortized_seconds": 2.532019693404436,
+    "peak_gpu_allocated_gb": 14.91956090927124,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

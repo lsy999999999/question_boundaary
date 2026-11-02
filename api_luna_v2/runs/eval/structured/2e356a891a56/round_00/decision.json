@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431549869029251,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Slow-history memory has the lowest trajectory-held-out NMSE and substantially improves on the state-only model; PRBS has the greatest disagreement among plausible models.",
+    "prediction": "After input switches, output will retain a history-dependent response that cannot be explained by current input and state alone.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated input and output history predicts persistent influence after the input changes.",
+      "condition_to_check": "Test whether PRBS responses depend on prior input history after controlling current input and visible state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow-history memory has the lowest trajectory-held-out NMSE and substantially improves on the state-only model; PRBS has the greatest disagreement among plausible models.\",\"prediction\":\"After input switches, output will retain a history-dependent response that cannot be explained by current input and state alone.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history predicts persistent influence after the input changes.\",\"condition_to_check\":\"Test whether PRBS responses depend on prior input history after controlling current input and visible state.\"}}",
+    "input_tokens": 2806,
+    "output_tokens": 208,
+    "batch_elapsed_seconds": 3.6669084802269936,
+    "amortized_seconds": 3.6669084802269936,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2806,
+      "completion_tokens": 208,
+      "total_tokens": 3014,
+      "completion_tokens_details": {
+        "reasoning_tokens": 83
+      }
+    },
+    "api_response_id": "resp_09a33cdcf9fa9b07016ae597fb311c81908164fbcaa87083e1",
+    "wire_record": "wire/eval/0153_c53f6f7d880d40538a79bee63a9c0e5e"
+  }
+}

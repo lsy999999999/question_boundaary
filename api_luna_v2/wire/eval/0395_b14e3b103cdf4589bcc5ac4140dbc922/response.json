@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431959610728102,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0a65a0432463f440016ae59994b37c8193bd61d6bfe6abfb70",
+    "object": "chat.completion",
+    "created": 1793431959,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"memory_slow has the lowest trajectory-level CV error, substantially outperforming state-only models. Residual lag correlation and disagreement among memory candidates leave uncertainty about response to separated pulses.\",\"prediction\":\"The second positive pulse will produce a response influenced by the lingering effect of the first pulse, even after the input returns to zero.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history can persist and influence later response over finite relaxation timescales.\",\"condition_to_check\":\"Compare the second pulse with the first at matched input; no predictive effect of the first pulse's history would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3486,
+      "completion_tokens": 252,
+      "total_tokens": 3738,
+      "completion_tokens_details": {
+        "reasoning_tokens": 105
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.105929386802018
+}

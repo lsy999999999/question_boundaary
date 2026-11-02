@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430257278871159,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "prbs",
+    "reason": "Memory_multiscale improves trajectory-held-out NMSE over memory_slow (0.001516 vs. 0.001723); residual lag remains substantial, and PRBS has the greatest disagreement among plausible models.",
+    "prediction": "Under PRBS, multiscale memory will predict history-dependent responses after switches that differ from single-timescale memory predictions.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated past influence with multiple relaxation timescales is a predictive relation supported by memory-model validation.",
+      "condition_to_check": "PRBS forecasts should improve over state-only predictions after controlling current input and visible state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"Memory_multiscale improves trajectory-held-out NMSE over memory_slow (0.001516 vs. 0.001723); residual lag remains substantial, and PRBS has the greatest disagreement among plausible models.\",\"prediction\":\"Under PRBS, multiscale memory will predict history-dependent responses after switches that differ from single-timescale memory predictions.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence with multiple relaxation timescales is a predictive relation supported by memory-model validation.\",\"condition_to_check\":\"PRBS forecasts should improve over state-only predictions after controlling current input and visible state.\"}}",
+    "input_tokens": 3481,
+    "output_tokens": 238,
+    "batch_elapsed_seconds": 3.220973721705377,
+    "amortized_seconds": 3.220973721705377,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3481,
+      "completion_tokens": 238,
+      "total_tokens": 3719,
+      "completion_tokens_details": {
+        "reasoning_tokens": 92
+      }
+    },
+    "api_response_id": "resp_0bef891e843edef6016ae592eed8248193a82b1d9c5a501900",
+    "wire_record": "wire/eval/0295_93e538e0e8ea4e21a9216892f26f3e7b"
+  }
+}

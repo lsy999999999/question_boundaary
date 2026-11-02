@@ -1,0 +1,72 @@
+{
+  "time_ns": 1793470535012787319,
+  "value": {
+    "parent_id": "v3_r2",
+    "evidence_ids": [
+      "scope:v3_r2:e399d52c79e0",
+      "failure:v3_r2:e399d52c79e0:promoted_v3_sealed_3",
+      "failure:v3_r2:e399d52c79e0:promoted_v3_sealed_4",
+      "failure:v3_r2:e399d52c79e0:promoted_v3_sealed_2"
+    ],
+    "concept": "The current model fits many trajectories, but its input-history trace does not adequately capture some reversal schedules; test a second decaying trace driven by input changes.",
+    "reason": "The existing model has low group-CV NMSE (0.0211), yet its promoted sealed trajectories 3 and 4 exceed the .05 threshold and show substantial late-time prediction errors; trajectory 2 also exceeds the threshold. In contrast, trajectories 0, 1, and 5 are below threshold, including trajectory 5 with four reversals. This motivates testing whether a second input-history state helps, without treating reversal count alone as causal or sufficient.",
+    "operation": "revise",
+    "spec": {
+      "parameters": [
+        {
+          "name": "p0",
+          "lower": 0.05,
+          "initial": 0.8,
+          "upper": 1.5
+        },
+        {
+          "name": "p1",
+          "lower": 0.05,
+          "initial": 0.5,
+          "upper": 1.5
+        }
+      ],
+      "states": [
+        {
+          "name": "z0",
+          "meaning": "A decaying trace of input level; interpretation is unverified.",
+          "rate": "u-p0*z0"
+        },
+        {
+          "name": "z1",
+          "meaning": "A second decaying trace of changes in input level; interpretation is unverified.",
+          "rate": "(u-z0)-p1*z1"
+        }
+      ],
+      "terms": [
+        "x",
+        "x**3",
+        "tanh(x)",
+        "x*tanh(x)**2",
+        "u",
+        "z0",
+        "z1"
+      ]
+    },
+    "observable_consequence": "If the added trace captures a missing input-history effect, refitting should reduce whole-trajectory error especially on schedules resembling promoted_v3_sealed_2, _3, and _4, while preserving low error on _0, _1, and _5. Failure to improve held-out trajectories, or degradation on the currently well-fit schedules, would argue against this revision.",
+    "analogy": {
+      "domain": "linear filtering",
+      "relation": "A cascade of decaying traces can represent input history at more than one timescale.",
+      "mapping": "The input drives z0, and the difference between the input and z0 drives z1; both enter the fitted x-rate.",
+      "failure_condition": "This analogy is only a model-form proposal; it fails as an explanation if the added state does not improve grouped held-out trajectory predictions."
+    },
+    "provenance": "model_knowledge_unverified",
+    "limitations": "The promoted trajectories are development data, not fresh confirmation. Several high-error rows coexist with low-error rows at similar reversal counts, so the added state is a testable hypothesis rather than an established mechanism.",
+    "boundary": {
+      "model_id": "v3_r2",
+      "status": "no_supported_boundary",
+      "reason": "不能从现有行支持可靠的单特征阈值：高误差出现在反转数为2的 sealed_3、sealed_4，但反转数为0的 sealed_1及反转数为3或4的 sealed_0、sealed_5均为低误差；仅用峰值、面积或其他单一描述量也无法清楚分开这些高低误差行。证据 scope:v3_r2:e399d52c79e0 显示模型既有低误差也有高误差轨迹，failure:v3_r2:e399d52c79e0:promoted_v3_sealed_2 进一步表明失败并不局限于反转数为2。因此不提出无充分依据的边界。"
+    }
+  },
+  "generation_records": [
+    {
+      "wire": "wire/001_r0_proposal_0",
+      "valid": true
+    }
+  ]
+}

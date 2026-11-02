@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793429678193594649,
+  "http_status": 200,
+  "body": {
+    "id": "resp_08ea3412f6c3bf67016ae590ac51688196bf1bdfa6f808d492",
+    "object": "chat.completion",
+    "created": 1793429678,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_fast\",\"experiment\":\"slow_wave\",\"reason\":\"Memory_fast has the lowest trajectory-level CV error (0.00184) and comparable forecast errors; memory_slow is slightly worse, while multiscale and clock variants do not improve validation. Residual autocorrelation leaves some uncertainty.\",\"prediction\":\"After input changes, predicted output will retain a short-lived history-dependent component that decays over roughly seconds.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Finite-relaxation accumulated history is supported as a predictive feature, but the best validated timescales are fast.\",\"condition_to_check\":\"The history feature should predict output after controlling current input and visible state; absence of that effect weakens this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3693,
+      "completion_tokens": 152,
+      "total_tokens": 3845
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.073558366857469
+}

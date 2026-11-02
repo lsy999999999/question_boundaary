@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431771177829513,
+  "http_status": 200,
+  "body": {
+    "id": "resp_09d56ed0216782fb016ae598d8404c81958f431693b0d9cbe2",
+    "object": "chat.completion",
+    "created": 1793431771,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"double_pulse\",\"reason\":\"Its leave-trajectory-out NMSE (0.00253) is substantially lower than alternatives, consistent with history dependence and nonlinear response; unseen-intervention adequacy remains uncertain.\",\"prediction\":\"The second pulse will produce a different peak from the first because accumulated history changes the response.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated history predicts later output beyond current input and state, as represented by the best cross-validated model.\",\"condition_to_check\":\"Falsified if double-pulse responses are predicted without history-dependent effects after controlling current input and state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3280,
+      "completion_tokens": 316,
+      "total_tokens": 3596,
+      "completion_tokens_details": {
+        "reasoning_tokens": 177
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.777920765802264
+}

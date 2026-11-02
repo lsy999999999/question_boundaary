@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793432219908338714,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "prbs",
+    "reason": "State_cubic has the best leave-trajectory-out score (0.001582), and prior intervention forecast errors were low. Memory alternatives validate worse, though residual autocorrelation leaves some uncertainty.",
+    "prediction": "At matched current state and input, responses should not systematically differ by input history.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Validation favors nonlinear instantaneous response but establishes no specific mechanism relation.",
+      "condition_to_check": "Check whether matched-state, matched-input responses differ systematically across trajectories."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state_cubic\",\"experiment\":\"prbs\",\"reason\":\"State_cubic has the best leave-trajectory-out score (0.001582), and prior intervention forecast errors were low. Memory alternatives validate worse, though residual autocorrelation leaves some uncertainty.\",\"prediction\":\"At matched current state and input, responses should not systematically differ by input history.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Validation favors nonlinear instantaneous response but establishes no specific mechanism relation.\",\"condition_to_check\":\"Check whether matched-state, matched-input responses differ systematically across trajectories.\"}}",
+    "input_tokens": 3670,
+    "output_tokens": 223,
+    "batch_elapsed_seconds": 3.1221456648781896,
+    "amortized_seconds": 3.1221456648781896,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3670,
+      "completion_tokens": 223,
+      "total_tokens": 3893,
+      "completion_tokens_details": {
+        "reasoning_tokens": 103
+      }
+    },
+    "api_response_id": "resp_071a48acc6701705016ae59a998d248196afc580c2a5beb6a6",
+    "wire_record": "wire/eval/0505_281740002375443896df9ceb6ad85afe"
+  }
+}

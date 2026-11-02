@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432003712711384,
+  "http_status": 200,
+  "body": {
+    "id": "resp_067b0b0d4d6091dc016ae599bfa6848196ab764f6fcac362a6",
+    "object": "chat.completion",
+    "created": 1793432003,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has much lower trajectory-level CV error than alternatives, and prior pulse forecasts were accurate. PRBS tests it under irregular input, where history-based alternatives may diverge.\",\"prediction\":\"Elapsed-time-aligned output variation will persist under irregular input and follow the clock model more closely than history-based predictions.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time features predict output variation across validated interventions beyond current input and state.\",\"condition_to_check\":\"Reject if PRBS output lacks the predicted elapsed-time pattern or is better explained by input history.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3456,
+      "completion_tokens": 360,
+      "total_tokens": 3816,
+      "completion_tokens_details": {
+        "reasoning_tokens": 229
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.052768954075873
+}

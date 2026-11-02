@@ -1,0 +1,102 @@
+{
+  "split": "dev",
+  "seeds": [
+    101
+  ],
+  "rounds": 3,
+  "batch_size": 4,
+  "max_new_tokens": 384,
+  "model": "/home/lsy/theory_discovery_20261031/models/Qwen2.5-7B-Instruct",
+  "source_hashes": {
+    "discovery/__init__.py": "afa6dd801fa48add8fff77add54a2dcbd1156d1b87e048cb30c141b57be3ad18",
+    "discovery/llm.py": "6d44dee59532354e5e3361f974d128eb9e894468f4a77ca6110146cf09b8ce92",
+    "discovery/models.py": "ce207e705918c50f74ef79f2f45b2ea366c57a7825238636c68bb329a458cad6",
+    "discovery/report.py": "9e7e6c963b578703302296faedbfdf2d740ee9f6df2573a52c1b8cb273a2bccf",
+    "discovery/runner.py": "da92a13298a9b76ddc0556dbb4e132a9eca1ac68705bf42863de964b4b31c691",
+    "discovery/world.py": "eb299df8d467cc40e1fdac27cc44bd8212092258571b5d1010d1a45f1a9ffb48"
+  },
+  "python": "3.12.2 | packaged by conda-forge | (main, Feb 16 2024, 20:50:58) [GCC 12.3.0]",
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "tasks": [
+    {
+      "task_id": "8f719ea0d484",
+      "split": "dev",
+      "family": "linear",
+      "seed": 101,
+      "params": {
+        "a": 0.7323716163116597,
+        "c": 0.9658459311637023,
+        "gain": 0.3329721609893954,
+        "c_fast": 1.6626895438224036,
+        "c_slow": 0.219476384658294,
+        "delay": 1.6615072916861782,
+        "cubic": 0.6222335027611052,
+        "clock_amp": 0.3832440305731362,
+        "clock_freq": 0.4,
+        "clock_phase": 1.7790709504968447
+      }
+    },
+    {
+      "task_id": "fe43464220e6",
+      "split": "dev",
+      "family": "cubic",
+      "seed": 101,
+      "params": {
+        "a": 0.7006626829955709,
+        "c": 0.6184044516234192,
+        "gain": 0.386228985561411,
+        "c_fast": 2.5114953637642796,
+        "c_slow": 0.2870989628017616,
+        "delay": 0.6386835471929073,
+        "cubic": 0.6219647160172119,
+        "clock_amp": 0.2845035587883299,
+        "clock_freq": 1.6,
+        "clock_phase": -2.6059011572728403
+      }
+    },
+    {
+      "task_id": "70c1bd28d16d",
+      "split": "dev",
+      "family": "memory",
+      "seed": 101,
+      "params": {
+        "a": 1.3446398155533286,
+        "c": 0.4382771934975498,
+        "gain": 0.3858095883084248,
+        "c_fast": 1.9625219281650035,
+        "c_slow": 0.3297496745584825,
+        "delay": 0.6716735810578162,
+        "cubic": 0.35187189886041725,
+        "clock_amp": 0.19708867513101358,
+        "clock_freq": 0.4,
+        "clock_phase": 0.6606710539141183
+      }
+    },
+    {
+      "task_id": "a0149489bfd3",
+      "split": "dev",
+      "family": "clock",
+      "seed": 101,
+      "params": {
+        "a": 1.2199795587538527,
+        "c": 0.7795668607588097,
+        "gain": 0.3004981384325862,
+        "c_fast": 1.9500050251017256,
+        "c_slow": 0.22306470565678166,
+        "delay": 1.0335490345801317,
+        "cubic": 0.45658835355494765,
+        "clock_amp": 0.20313658175207927,
+        "clock_freq": 0.8,
+        "clock_phase": -1.5214312318257404
+      }
+    }
+  ],
+  "acceptance_cv_threshold": 0.05,
+  "failure_test_nmse_threshold": 0.1,
+  "initial_experiments": [
+    "positive_pulse",
+    "negative_pulse",
+    "step_rest"
+  ],
+  "test_actions_hidden_from_agent": true
+}

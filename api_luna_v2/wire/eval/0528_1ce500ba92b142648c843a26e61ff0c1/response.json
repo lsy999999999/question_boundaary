@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793432278000602253,
+  "http_status": 200,
+  "body": {
+    "id": "resp_02ed939b02f0af9e016ae59ad4598881948ec6c1cf1149b847",
+    "object": "chat.completion",
+    "created": 1793432277,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the strongest trajectory-level validation (NMSE 0.00103), substantially outperforming memory_clock and history_all. Residual correlation remains, so adequacy for unseen interventions is not established.\",\"prediction\":\"Oscillations should recur at similar elapsed-time phases across input histories; phase shifts tied to input history would contradict this prediction.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time periodic features capture a shared oscillatory component across distinct input interventions.\",\"condition_to_check\":\"A phase shift tracking input history rather than elapsed time would falsify the clock relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3697,
+      "completion_tokens": 135,
+      "total_tokens": 3832
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.2159595591947436
+}

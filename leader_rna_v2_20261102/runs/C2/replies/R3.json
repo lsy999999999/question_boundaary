@@ -1,0 +1,185 @@
+{
+  "recognition": "uncertain; no specific study independently recognized",
+  "summary": "The executed C2L1-alpha computation gives alpha=37.863 [4.769,300.647] at tie-line 1 and 0.335 [0.0422,2.661] at tie-line 2; these are rectangular propagations of marginal measurement bounds, not confidence intervals. Tie-line 0 variant K is undefined. The two ranges do not overlap, conditionally indicating different endpoint selectivities if assay conditions are comparable, but tie-line identity does not establish composition ordering or a loading response. The broad background search returned an abstract on two-RNA/PEG interfacial wetting (C2L2-domain-literature_S1); a focused search for internal RNA domains/cavities returned zero sources (C2L3-internal-domains). No supplied abstract establishes RNA internal cavities or maps bulk alpha to the image statistic f.",
+  "candidates": [
+    {
+      "id": "RNA-C2-selectivity-cavity-v1",
+      "version": 5,
+      "parent_version": 4,
+      "author": "executor",
+      "reply": "R3",
+      "target": "Mechanism linking RNA composition and phase partitioning to internal RNA-poor cavity appearance and persistence; f(t) is the arithmetic mean of object-level empty-area ratios.",
+      "known_relations": [
+        "B f rises from 0.01381 at 0 h to 0.08918 at 24 h; A is about 0.0044 at 8-24 h. Fields and objects are not independent preparation replicates (initial_measurements.json).",
+        "B contains non-reference DNA reads, but DNA read fractions do not establish corresponding RNA abundance or its time course (C01).",
+        "Single-preparation length fractions show endpoint f values M near zero, M+L 0.04446, M+S 0.09412; carryover and treatment are unmatched (E02).",
+        "C04/C2L1-alpha: tie-line 0 variant K undefined; tie-line 1 alpha=37.863 with rectangular marginal bounds [4.769,300.647]; tie-line 2 alpha=0.335 with bounds [0.0422,2.661]. Tie-line 1 and 2 ranges are disjoint, but not confidence intervals and not evidence of loading response because composition ordering and assay comparability are unspecified.",
+        "C2L2-domain-literature_S1 abstract reports purine-rich RNA scaffolds in two-RNA/PEG condensates and weaker-binding pyrimidine-rich adsorbents that wet interfaces of coexisting scaffold phases. It does not report internal cavities or a mapping to f.",
+        "C2L3-internal-domains returned zero sources for the focused query; this is a search result, not proof that no such literature exists.",
+        "Available case tracking has displacement, not persistent cavity histories (C03)."
+      ],
+      "hypotheses": [
+        {
+          "id": "H1",
+          "status": "new, explicitly speculative bridge hypothesis",
+          "statement": "If one transcribed species behaves as a scaffold and another as a weaker-binding adsorbent, composition-dependent adsorption/wetting at interfaces inside a scaffold-rich RNA network could stabilize RNA-poor internal domains that appear as cavities. This extends the external/coexisting-phase interface relation reported for a different two-RNA/PEG system to internal domains in the present transcribing condensate. Neither case species roles nor internal cavity formation is established. At fixed reaction chemistry, measured RNA loading should change species-resolved interface enrichment and, if the bridge is correct, cavity incidence/area."
+        },
+        {
+          "id": "H0",
+          "status": "meaningful alternative",
+          "statement": "The measured phase endpoints are not comparable to the imaging reaction or its mixture range; cavities instead arise from amplification carryover or another reaction-state change independently of composition-driven domains. Constant selectivity under matched conditions remains possible."
+        }
+      ],
+      "gaps": [
+        {
+          "id": "G1",
+          "status": "active",
+          "description": "Determine whether measured RNA composition changes partitioning or interface wetting under matched conditions and whether that predicts internal cavities. Neither the composition response nor the cavity mapping is identified."
+        },
+        {
+          "id": "G2",
+          "status": "open",
+          "description": "No mapping from bulk phase concentrations/volumes or interfacial enrichment to image f, and no causal separation from carryover or population/measurement alternatives."
+        }
+      ],
+      "variables_units": {
+        "Cr_dilute": "reference RNA concentration in dilute phase, ng/uL",
+        "Cr_dense": "reference RNA concentration in dense phase, ng/uL",
+        "Cv_dilute": "variant RNA concentration in dilute phase, ng/uL",
+        "Cv_dense": "variant RNA concentration in dense phase, ng/uL",
+        "K_ref": "Cr_dense/Cr_dilute, dimensionless",
+        "K_variant": "Cv_dense/Cv_dilute, dimensionless when defined",
+        "alpha": "K_variant/K_ref, dimensionless relative selectivity",
+        "x_v_over_r": "measured variant/reference RNA loading ratio, dimensionless",
+        "Gamma": "species-specific interfacial surface excess, amount per area; not measured",
+        "f": "image-derived arithmetic mean of object-level empty-area ratios, dimensionless"
+      },
+      "equations": [
+        "K_ref=Cr_dense/Cr_dilute; K_variant=Cv_dense/Cv_dilute; alpha=K_variant/K_ref.",
+        "A possible interface measurement is Gamma_i=integral_over_interface(c_i(local)-c_i(bulk reference)) dz; no concentration profile, interfacial thickness, or surface excess is supplied, so this is a measurement definition, not an evaluated law.",
+        "At dense-phase volume fraction phi, dense-phase variant mass fraction=phi*Cv_dense/[phi*Cv_dense+(1-phi)*Cv_dilute]; it is not f and requires phase volumes.",
+        "Conditional prediction: at fixed chemistry and controlled x_v_over_r, a scaffold/adsorbent pair predicts composition-dependent interface enrichment/wetting. Cavity incidence/area should covary with loading only if the proposed internal-domain bridge holds."
+      ],
+      "parameters_ranges": [
+        "Tie-line 1 alpha point estimate 37.863; rectangular marginal bounds [4.769,300.647].",
+        "Tie-line 2 alpha point estimate 0.335; rectangular marginal bounds [0.0422,2.661], overlapping alpha=1.",
+        "These are not confidence intervals and provide no joint coverage; tie-line 0 variant K is undefined.",
+        "No numeric interaction strength, interfacial excess, cavity threshold, or phase volume is supplied."
+      ],
+      "initial_boundary_conditions": "Phase endpoint and RNA loading initial conditions are unspecified. Imaging starts with similar small f. No local cavity concentration or interface condition is measured.",
+      "observation_mapping": "f is a segmented image area statistic, not concentration, phase volume, mass fraction, interfacial excess, or free energy. Phase endpoint concentrations yield bulk partition ratios only under their measurement conditions. Literature abstract measurements do not provide a mapping to this f.",
+      "alternatives": [
+        "H0: constant selectivity or non-transferable endpoint data; cavities instead reflect carryover or another reaction-state change.",
+        "Population shifts, object weighting, or segmentation may change summary f without same-droplet cavity formation.",
+        "S1 wetting may be specific to its reported purine-rich/pyrimidine-rich RNA and PEG conditions; transfer to these four-arm RNA products is unestablished."
+      ],
+      "predictions": [
+        "H1: in a fixed-chemistry, assay-matched RNA loading series, species-resolved interface enrichment/wetting should vary with measured x_v_over_r; cavity incidence/area should covary if internal wetting drives the cavities. Measure phase volumes and use fixed imaging rules.",
+        "H0: matching carryover/reaction state explains cavity differences without requiring interface enrichment or alpha to vary with RNA loading.",
+        "The existing phase endpoints conditionally differ in selectivity but cannot test either prediction because loading order, assay matching, phase volumes, local interface composition, and longitudinal cavity state are missing."
+      ],
+      "checks": [
+        "K and alpha are dimensionless; concentration units are ng/uL.",
+        "Do not divide by zero or label tie-line 0 variant K zero or infinite.",
+        "Rectangular bounds are not confidence intervals; do not infer joint coverage.",
+        "Do not infer composition order from tie-line index.",
+        "Do not equate alpha, interfacial enrichment, dense-phase mass fraction, or f.",
+        "Use preparation as the independent replication level, not fields or objects.",
+        "Search returning zero hits does not establish absence of relevant literature."
+      ],
+      "evidence_conflicts": [
+        "S1 provides abstract-level evidence of interfacial wetting in a synthetic two-RNA/PEG system, not internal cavities; case species roles and conditions are unknown.",
+        "S5 is an abstract on a protein client modulating GAR1-RNA condensates, not direct evidence for RNA-only internal cavities.",
+        "Focused C2L3 search returned zero results; its query coverage is limited.",
+        "Tie-line 1 and 2 alpha ranges are disjoint, but assay comparability and composition order are unknown; tie-line 2 overlaps unity.",
+        "E02 length-fraction differences are single-preparation, unbalanced, and lack carryover matching."
+      ],
+      "untested": [
+        "Whether DNA variants produce corresponding RNA species and their abundance over time.",
+        "Whether case RNA species have scaffold/adsorbent roles under the case conditions.",
+        "Whether species enrich at internal interfaces and create cavities.",
+        "Whether cavities persist within individual droplets.",
+        "Whether carryover, reaction state, population shifts, or measurement choices explain the phenotype."
+      ],
+      "dissent": "The wetting relation is a plausible mechanistic module for H1, but internal cavities and transfer to the case are not demonstrated. The focused search adds no direct evidence. I do not adjudicate H1 over H0.",
+      "next_task": "For a decisive assay, hold reaction chemistry and carryover constant while varying measured RNA mixture loading. Measure species-resolved RNA abundance, dense/dilute concentrations and volumes, interface enrichment, and longitudinal per-droplet cavity area/state using fixed segmentation. Include carryover-matched controls and independent preparations."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T-C2-L1-selectivity",
+      "candidate_id": "RNA-C2-selectivity-cavity-v1",
+      "gap_id": "G1",
+      "kind": "mechanism",
+      "status": "complete",
+      "deliverable": "Partition calculation interpreted.",
+      "acceptance": "Tie-line 0 undefined; actual alpha and rectangular bounds reported; no composition order inferred; f mapping remains unverified.",
+      "evidence_refs": [
+        "C2L1-alpha",
+        "C04",
+        "phase_measurements.json"
+      ],
+      "reason": "The broker computation returned successfully and all arithmetic interpretation checks are represented in the candidate."
+    },
+    {
+      "id": "T-C2-L2-domain-literature",
+      "candidate_id": "RNA-C2-selectivity-cavity-v1",
+      "gap_id": "G1",
+      "kind": "mechanism",
+      "status": "complete",
+      "deliverable": "Interpret abstract search and refine H1 as a transfer hypothesis.",
+      "acceptance": "S1 restricted to reported RNA/PEG interfacial wetting; S5 marked as protein-client analogy; no cavity claim imported.",
+      "evidence_refs": [
+        "C2L2-domain-literature_S1",
+        "C2L2-domain-literature_S5"
+      ],
+      "reason": "Abstract support was extracted within its conditions; mechanism gap remains open."
+    },
+    {
+      "id": "T-C2-L3-internal-domain-search",
+      "candidate_id": "RNA-C2-selectivity-cavity-v1",
+      "gap_id": "G1",
+      "kind": "mechanism",
+      "status": "complete",
+      "deliverable": "Inspect focused background search for internal RNA domain/cavity evidence.",
+      "acceptance": "Report the zero-source search result and limit its interpretation.",
+      "evidence_refs": [
+        "C2L3-internal-domains"
+      ],
+      "reason": "Search returned zero sources; this does not prove absence of literature but supplies no direct support here."
+    }
+  ],
+  "requests": [],
+  "literature_use": [
+    {
+      "source_id": "C2L2-domain-literature_S1",
+      "action": "modify_as_hypothesis",
+      "relation": "In synthetic condensates with two RNA types plus PEG, purine-rich RNAs are reported as phase-separating scaffolds through heterotypic interactions; weaker-binding pyrimidine-rich RNAs adsorb to and wet interfaces of coexisting scaffold phases. Abstract also reports simulated orientational preferences and interfacial motion anisotropy.",
+      "variables_units": "Two RNA species and relative interaction roles; quantitative concentrations/units absent from supplied abstract.",
+      "conditions": "Synthetic two-RNA/PEG condensates; abstract only; no internal cavities or quantitative phase concentrations stated.",
+      "impact_on_model_or_action": "Supports testing a scaffold/adsorbent interface-wetting module, not case-specific RNA roles, internal cavities, or alpha-to-f mapping."
+    },
+    {
+      "source_id": "C2L2-domain-literature_S5",
+      "action": "alternative",
+      "relation": "SMN protein client is reported to modulate GAR1-RNA condensate architecture through competitive RNA interactions; E134K changes affinity/modulation.",
+      "variables_units": "Protein-client/RNA interaction; quantitative concentrations/units absent.",
+      "conditions": "GAR1-RNA in vitro and cellular context; abstract only; not a two-RNA mixture.",
+      "impact_on_model_or_action": "Retained as a competition analogy, not direct support for RNA-only internal cavities."
+    }
+  ],
+  "adjudication": null,
+  "final": {
+    "selected_candidate": "RNA-C2-selectivity-cavity-v1",
+    "question_and_reason": "Can composition-dependent RNA partitioning and interface wetting create persistent internal RNA-poor cavities in the transcribing condensate? This is the most concrete mechanism gap because the case has image trajectories, phase endpoints, and length-fraction endpoints, but no matched link among RNA composition, interfaces, and cavity state.",
+    "increment": "Formulated an explicit wetting-mediated internal-domain hypothesis with a distinct carryover/constant-selectivity alternative. Interpreted measured partition arithmetic and two background searches without overclaiming abstracts.",
+    "new_hypotheses": "H1: conditional on one case RNA acting as scaffold and another as weaker-binding adsorbent, composition-dependent wetting at internal interfaces stabilizes RNA-poor domains that appear as cavities. H0: carryover/reaction-state change explains cavities without composition-dependent wetting; phase endpoints may not transfer.",
+    "actual_derivation_or_computation": "Executed C2L1-alpha: alpha=K_variant/K_ref, where each K is dense/dilute concentration. At tie-line 1 alpha=37.863 with rectangular marginal bounds [4.769,300.647]; at tie-line 2 alpha=0.335 with bounds [0.0422,2.661]; tie-line 0 variant K undefined. Units cancel, so alpha is dimensionless. The intervals are disjoint, but this comparison assumes assay comparability; tie-line index does not establish composition order and bounds are not confidence intervals. No second computation was run.",
+    "discriminating_prediction": "In a fixed-chemistry, carryover-matched series spanning directly measured RNA loading, H1 predicts species-resolved interface enrichment/wetting will change with loading and cavity incidence/area will covary under fixed imaging rules; H0 predicts carryover/reaction-state matching explains the cavity phenotype without requiring that loading-interface-cavity relationship.",
+    "evidence_support_conflict_untested": "Support: C2L1-alpha endpoint calculation; E02 single-preparation length-fraction endpoint differences; S1 abstract reports interfacial wetting in a different two-RNA/PEG system. Conflict/limits: tie-lines are not a controlled composition series; tie-line 2 bounds overlap unity; S1 reports no internal cavities; focused C2L3 query returned zero sources; C03 lacks longitudinal cavity state; DNA read fractions do not give RNA abundance; carryover is unmeasured.",
+    "decision": "The arithmetic and literature-review tasks are complete. The main mechanism gap G1 is unresolved; retain H1 as a candidate hypothesis and do not claim causal confirmation or reject H0.",
+    "dissent": "Interface wetting is a plausible module, but the extension from external/coexisting interfaces to internal cavities in this transcription system is unsupported. Zero search hits are not evidence of absence.",
+    "next_experiment": "Use fixed reaction chemistry with carryover-matched controls and a measured RNA mixture-loading series. Quantify RNA species in both phases and at interfaces, phase volumes, and longitudinal per-droplet cavity area/state across independent preparations with fixed segmentation.",
+    "limitations": "Only one broker computation was executed. Phase endpoint bounds are rectangular marginal bounds, not statistical intervals; no composition-time series, phase volumes, local cavity concentrations, causal controls, or longitudinal cavity tracks are available. Literature results are abstracts, and the focused query returned zero hits."
+  }
+}

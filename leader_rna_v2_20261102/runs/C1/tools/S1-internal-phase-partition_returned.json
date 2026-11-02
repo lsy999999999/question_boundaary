@@ -1,0 +1,61 @@
+{
+  "id": "S1-internal-phase-partition",
+  "type": "search",
+  "candidate_id": "R01-selective-phase-v1",
+  "gap_id": "G1-selective-phase-bridge",
+  "request": {
+    "type": "search",
+    "id": "S1-internal-phase-partition",
+    "candidate_id": "R01-selective-phase-v1",
+    "gap_id": "G1-selective-phase-bridge",
+    "missing_relation": "Whether multicomponent RNA condensates or coacervates can form compositionally distinct coexisting phases with preferential partitioning that is physically capable of creating an internal RNA-poor compartment, and what thermodynamic or wetting conditions are required.",
+    "variables": [
+      "RNA species composition",
+      "dense/dilute phase concentrations",
+      "internal versus outer compartment identity",
+      "phase wetting or interfacial preference"
+    ],
+    "conditions": "Background first published on or before 2025-05-12; exclude target identity and post-cutoff accounts. Search general RNA coacervate/condensate compartmentalization and multiphase organization, not the specific case.",
+    "query": "RNA coacervate condensate multiphase compartmentalization internal compartments preferential partitioning wetting RNA species",
+    "change_if_found": "If qualified literature directly supports internal compartment formation by compositionally distinct RNA-rich/RNA-poor coexisting phases under stated conditions, add that relation as bounded background support and retain the required untested mapping to this case. If only general phase coexistence or protein-only examples are found, do not use them as evidence that this RNA case forms cavities; retain H1 strictly as a hypothesis or revise toward an alternative mechanism."
+  },
+  "result": {
+    "status": "returned",
+    "sources": [
+      {
+        "id": "S1-internal-phase-partition_S1",
+        "title": "Molecular Crowding: The History and Development of a Scientific Paradigm.",
+        "doi": "10.1021/acs.chemrev.3c00615",
+        "pmid": "38466779",
+        "first_publication_date": "2024-03-11",
+        "retrieval_time": "2026-11-02T07:02:05.564185+00:00",
+        "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+        "original_evidence": "It is now generally accepted that macromolecules do not act in isolation but \"live\" in a crowded environment, that is, an environment populated by numerous different molecules. The field of molecular crowding has its origins in the far 80s but became accepted only by the end of the 90s. In the present issue, we discuss various aspects that are influenced by crowding and need to consider its effects. This Review is meant as an introduction to the theme and an analysis of the evolution of the crowding concept through time from colloidal and polymer physics to a more biological perspective. We introduce themes that will be more thoroughly treated in other Reviews of the present issue. In our intentions, each Review may stand by itself, but the complete collection has the aspiration to provide different but complementary perspectives to propose a more holistic view of molecular crowding.",
+        "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+        "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+      },
+      {
+        "id": "S1-internal-phase-partition_S2",
+        "title": "RNA: The Unsuspected Conductor in the Orchestra of Macromolecular Crowding.",
+        "doi": "10.1021/acs.chemrev.3c00575",
+        "pmid": "38579177",
+        "first_publication_date": "2024-04-05",
+        "retrieval_time": "2026-11-02T07:02:05.564253+00:00",
+        "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+        "original_evidence": "This comprehensive Review delves into the chemical principles governing RNA-mediated crowding events, commonly referred to as granules or biological condensates. We explore the pivotal role played by RNA sequence, structure, and chemical modifications in these processes, uncovering their correlation with crowding phenomena under physiological conditions. Additionally, we investigate instances where crowding deviates from its intended function, leading to pathological consequences. By deepening our understanding of the delicate balance that governs molecular crowding driven by RNA and its implications for cellular homeostasis, we aim to shed light on this intriguing area of research. Our exploration extends to the methodologies employed to decipher the composition and structural intricacies of RNA granules, offering a comprehensive overview of the techniques used to characterize them, including relevant computational approaches. Through two detailed examples highlighting the significance of noncoding RNAs,  NEAT1  and  XIST , in the formation of phase-separated assemblies and their influence on the cellular landscape, we emphasize their crucial role in cellular organization and function. By elucidating the chemical underpinnings of RNA-mediated molecular crowding, investigating the role of modifications, structures, and composition of RNA granules, and exploring both physiological and aberrant phase separation phenomena, this Review provides a multifaceted understanding of the intriguing world of RNA-mediated biological condensates.",
+        "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+        "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+      }
+    ],
+    "excluded": [
+      {
+        "id": "34245338",
+        "reason": "date/target/no-abstract"
+      }
+    ],
+    "hit_count": 3,
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=RNA+coacervate+condensate+multiphase+compartmentalization+internal+compartments+preferential+partitioning+wetting+RNA+species+AND+FIRST_PDATE%3A%5B1900-01-01+TO+2025-05-12%5D&format=json&pageSize=5&resultType=core",
+    "raw_sha256": "4d54e0c5c3b78978565a720d600eba6cd4c1af7fe2ea7a7b4222135773f6d5ee",
+    "knowledge_limit": "No full-text formulas/units are inferred from the abstract. Refine or request a known historical source if needed."
+  }
+}

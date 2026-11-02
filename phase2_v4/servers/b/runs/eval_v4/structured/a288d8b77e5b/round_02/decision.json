@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423963579916769,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "ramp_reverse",
+    "reason": "Saturating terms capture nonlinearities; ramp reverse tests accumulation limits.",
+    "prediction": "Response to ramp reverse will show reduced magnitude at high states.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Response magnitude decreases with increasing input duration.",
+      "condition_to_check": "Reduced response during ramp reverse compared to step rest."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"ramp_reverse\",\n  \"reason\": \"Saturating terms capture nonlinearities; ramp reverse tests accumulation limits.\",\n  \"prediction\": \"Response to ramp reverse will show reduced magnitude at high states.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"Response magnitude decreases with increasing input duration.\",\n    \"condition_to_check\": \"Reduced response during ramp reverse compared to step rest.\"\n  }\n}",
+    "input_tokens": 3805,
+    "output_tokens": 112,
+    "batch_elapsed_seconds": 2.734776849858463,
+    "amortized_seconds": 2.734776849858463,
+    "peak_gpu_allocated_gb": 14.94869089126587,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

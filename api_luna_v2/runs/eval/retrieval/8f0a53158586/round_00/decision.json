@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793431512123574007,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Slow-memory cross-validation error is lowest by a wide margin, while highly correlated residuals under the current state model indicate persistent history dependence. PRBS gives the largest prediction disagreement among plausible models.",
+    "prediction": "After controlling current input and state, PRBS responses will retain a slow history-dependent component that the state-only model misses.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow-memory cross-validation error is lowest by a wide margin, while highly correlated residuals under the current state model indicate persistent history dependence. PRBS gives the largest prediction disagreement among plausible models.\",\"prediction\":\"After controlling current input and state, PRBS responses will retain a slow history-dependent component that the state-only model misses.\",\"accept\":false}",
+    "input_tokens": 2564,
+    "output_tokens": 86,
+    "batch_elapsed_seconds": 2.455758106894791,
+    "amortized_seconds": 2.455758106894791,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2564,
+      "completion_tokens": 86,
+      "total_tokens": 2650,
+      "prompt_tokens_details": {
+        "cached_tokens": 2432
+      }
+    },
+    "api_response_id": "resp_0fd6263eca51d8f3016ae597d69ce08195a61bf96bae3a4933",
+    "wire_record": "wire/eval/0129_76e06cc247b6452fbee059b2c8500ae8"
+  }
+}

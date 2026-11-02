@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793423814828873820,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "positive_pulse",
+    "reason": "Memory_clock has lowest NMSE and high prediction variance for positive_pulse.",
+    "prediction": "Positive pulse will show distinct phase shift and amplitude modulation.",
+    "accept": false,
+    "mapping": {
+      "source_id": "memory_clock",
+      "target_relation": "Persistent phase shift and amplitude modulation indicate external clock influence.",
+      "condition_to_check": "No change in response shape without input."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_clock\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Memory_clock has lowest NMSE and high prediction variance for positive_pulse.\",\n  \"prediction\": \"Positive pulse will show distinct phase shift and amplitude modulation.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"memory_clock\",\n    \"target_relation\": \"Persistent phase shift and amplitude modulation indicate external clock influence.\",\n    \"condition_to_check\": \"No change in response shape without input.\"\n  }\n}",
+    "input_tokens": 3179,
+    "output_tokens": 108,
+    "batch_elapsed_seconds": 2.4784897631034255,
+    "amortized_seconds": 2.4784897631034255,
+    "peak_gpu_allocated_gb": 14.834887027740479,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423706095235960,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "positive_pulse",
+    "reason": "Memory_slow has lower NMSE and better handles past inputs.",
+    "prediction": "Positive pulse will show slower recovery compared to state model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Persistent effects should decay more slowly than immediate response.",
+      "condition_to_check": "Slower recovery indicates storage rather than just curvature."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Memory_slow has lower NMSE and better handles past inputs.\",\n  \"prediction\": \"Positive pulse will show slower recovery compared to state model.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Persistent effects should decay more slowly than immediate response.\",\n    \"condition_to_check\": \"Slower recovery indicates storage rather than just curvature.\"\n  }\n}",
+    "input_tokens": 3151,
+    "output_tokens": 106,
+    "batch_elapsed_seconds": 2.836140419356525,
+    "amortized_seconds": 2.836140419356525,
+    "peak_gpu_allocated_gb": 14.827783107757568,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.017097473144531,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

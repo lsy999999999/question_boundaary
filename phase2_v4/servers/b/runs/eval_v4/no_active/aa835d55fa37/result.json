@@ -1,0 +1,112 @@
+{
+  "task_id": "aa835d55fa37",
+  "split": "eval",
+  "family": "memory_clock",
+  "seed": 33,
+  "method": "no_active",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "history_all",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0038127479881360743,
+    "coefficients": [
+      0.0504387,
+      3.8500877,
+      0.5456345,
+      -0.012451,
+      -0.1671411,
+      -12.7410839,
+      -0.6832365,
+      1.1330554,
+      -0.7023407,
+      -0.2471422,
+      -0.1662976,
+      0.0645063,
+      0.0207361,
+      0.5972318,
+      -0.324346,
+      0.731582,
+      3.0373375,
+      -2.3355144,
+      2.3935139,
+      -1.0142323,
+      0.0106639,
+      0.4156757,
+      -0.4210338,
+      4.903891,
+      2.20007,
+      0.5485696,
+      -0.0311773,
+      -0.0291019,
+      -0.0088262,
+      0.0533401,
+      0.0091102,
+      0.0121916,
+      -0.0003166,
+      0.3556684,
+      0.0289699,
+      0.0109609,
+      0.0022689
+    ]
+  },
+  "test": {
+    "test_nmse": 0.0030253891749601482,
+    "test_mse": 0.00024822835459221857,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 0.0003318058049112864,
+        "nmse": 0.005534550694282774
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.00018872229902321805,
+        "nmse": 0.0007039492005372558
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 0.0004154721470934982,
+        "nmse": 0.005940627801515519
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 9.604376705728674e-05,
+        "nmse": 0.0013720810020821177
+      },
+      {
+        "action": "test_prbs",
+        "mse": 0.00035197146504047127,
+        "nmse": 0.0036030297651577356
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 0.00010535464442755094,
+        "nmse": 0.0009980965861854844
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": true,
+  "invalid_outputs": 4,
+  "generation_calls": 4,
+  "input_tokens": 14644,
+  "output_tokens": 464,
+  "generation_seconds_amortized": 11.045324486680329,
+  "elapsed_wall_seconds": 332.54327845573425,
+  "selected_actions": [
+    "prbs",
+    "ramp_reverse",
+    "double_pulse"
+  ],
+  "selected_representations": [
+    "memory_clock",
+    "history_all",
+    "memory_clock",
+    "history_all"
+  ],
+  "peak_gpu_allocated_gb": 14.998802661895752,
+  "peak_process_ram_gb": 5.02374267578125,
+  "inference_backend": "cuda",
+  "evaluation_after_commit_ns": 1793424118804675749
+}

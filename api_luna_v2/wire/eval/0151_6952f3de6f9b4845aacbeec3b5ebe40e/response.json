@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431540716086334,
+  "http_status": 200,
+  "body": {
+    "id": "resp_03ab8fb174c1a106016ae597f23dec819580a0a434e598e17d",
+    "object": "chat.completion",
+    "created": 1793431540,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow accumulated-history features have the lowest trajectory-held-out error (0.00195), far below the state-only model; residual correlation also indicates unmodeled persistence.\",\"prediction\":\"After input switches, output will retain a smooth, slowly decaying history-dependent component rather than changing only with current input.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence is represented as a finite-timescale state that can predict output beyond current input and visible state.\",\"condition_to_check\":\"Under PRBS, test whether history predicts output after controlling current input and state; absence of this effect would weaken the relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2804,
+      "completion_tokens": 233,
+      "total_tokens": 3037,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 87
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.841098207049072
+}

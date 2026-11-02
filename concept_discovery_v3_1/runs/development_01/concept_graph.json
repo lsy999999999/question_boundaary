@@ -1,0 +1,568 @@
+{
+  "nodes": {
+    "initial": {
+      "concept": "current-state linear explanation",
+      "spec": {
+        "parameters": [],
+        "states": [],
+        "terms": [
+          "1",
+          "x",
+          "u"
+        ]
+      },
+      "status": "weakened",
+      "origin": "initial baseline"
+    },
+    "r0_b0": {
+      "concept": "Slow input-history memory",
+      "spec": {
+        "parameters": [
+          {
+            "name": "p0",
+            "lower": 0.05,
+            "initial": 0.25,
+            "upper": 1.5
+          }
+        ],
+        "states": [
+          {
+            "name": "z0",
+            "meaning": "exponentially decaying trace of prior input, initialized to zero",
+            "rate": "u-p0*z0"
+          }
+        ],
+        "terms": [
+          "1",
+          "x",
+          "u",
+          "z0"
+        ]
+      },
+      "status": "weakened",
+      "origin": "previous recorded Luna proposal"
+    },
+    "r1_b0": {
+      "concept": "Decaying input-history trace",
+      "spec": {
+        "parameters": [
+          {
+            "name": "p0",
+            "lower": 0.05,
+            "initial": 0.25,
+            "upper": 1.5
+          }
+        ],
+        "states": [
+          {
+            "name": "z0",
+            "meaning": "Exponentially decaying trace of prior input, initialized to zero",
+            "rate": "u-p0*z0"
+          }
+        ],
+        "terms": [
+          "1",
+          "x",
+          "u",
+          "z0"
+        ]
+      },
+      "status": "merged_duplicate",
+      "origin": "previous recorded Luna proposal"
+    },
+    "r1_b1": {
+      "concept": "Output-history adaptation",
+      "spec": {
+        "parameters": [
+          {
+            "name": "p0",
+            "lower": 0.05,
+            "initial": 0.8,
+            "upper": 3.0
+          }
+        ],
+        "states": [
+          {
+            "name": "z0",
+            "meaning": "Exponentially filtered history of the observed state x, initialized to zero; unlike the parent state, it is not directly driven by u.",
+            "rate": "x-p0*z0"
+          }
+        ],
+        "terms": [
+          "1",
+          "x",
+          "u",
+          "z0"
+        ]
+      },
+      "status": "weakened",
+      "origin": "previous recorded Luna proposal"
+    },
+    "v3_r0": {
+      "parent_id": "r0_b0",
+      "evidence_ids": [
+        "failure_r0_experiment_1",
+        "relation_r0_experiment_0_r2_experiment_1"
+      ],
+      "concept": "Odd state-dependent response with a decaying input-history trace",
+      "reason": "The held-out trajectory for r0_b0 has a substantial late-time mismatch after the input returns to zero: the observed state remains near -0.55 while the prediction is near -0.29 (failure_r0_experiment_1). The measured polarity relation is consistent with a sign reversal within the expected noise scale (relation_r0_experiment_0_r2_experiment_1). Revise the existing memory model to remove its small intercept and allow an odd cubic state contribution, which can represent state-dependent relaxation while preserving sign symmetry.",
+      "operation": "revise",
+      "spec": {
+        "parameters": [
+          {
+            "name": "p0",
+            "lower": 0.05,
+            "initial": 0.75,
+            "upper": 1.5
+          }
+        ],
+        "states": [
+          {
+            "name": "z0",
+            "meaning": "A decaying trace of prior input, initialized at zero; its physical interpretation is unverified.",
+            "rate": "u-p0*z0"
+          }
+        ],
+        "terms": [
+          "x",
+          "x**3",
+          "u",
+          "z0"
+        ]
+      },
+      "observable_consequence": "On held-out schedules, the revised model should better capture late-time state values after input cessation than the current r0_b0 fit, while predictions for polarity-reversed schedules should approximately reverse sign.",
+      "analogy": {
+        "domain": "Odd nonlinear response models",
+        "relation": "An odd state-dependent term allows the rate of change to vary with state magnitude without introducing a preferred sign.",
+        "mapping": "The candidate uses x and x**3 alongside the existing input-history trace z0; this is a modeling analogy, not a claim about the underlying mechanism.",
+        "failure_condition": "The analogy would be inadequate if held-out residuals remain large, polarity reversal fails beyond the observed noise scale, or the cubic term does not improve grouped held-out trajectory prediction."
+      },
+      "provenance": "model_knowledge_unverified",
+      "limitations": "This is a hypothesis motivated by the supplied held-out mismatch and local polarity observation. The supplied evidence does not establish cubic dynamics or universal sign symmetry, and no revised fit or cross-validation result is provided.",
+      "status": "weakened"
+    },
+    "v3_r1": {
+      "parent_id": "v3_r0",
+      "evidence_ids": [
+        "failure_v3_r0_experiment_0",
+        "failure_v3_r0_experiment_1",
+        "relation_v3_r0_experiment_0_v3_r0_experiment_1",
+        "outcome_0"
+      ],
+      "concept": "Odd state-dependent response with a saturating correction to the cubic state term",
+      "reason": "The current model underpredicts the magnitude of the held-out trajectories around t=4.3–4.8 for both input polarities, by roughly 0.3 in x, so its high-|x| response is insufficiently flexible on those trajectories (failure_v3_r0_experiment_0; failure_v3_r0_experiment_1). The polarity comparison, including the intervention outcome, is consistent with odd symmetry at the measurement-noise scale for the tested inputs (relation_v3_r0_experiment_0_v3_r0_experiment_1; outcome_0). Add an odd, bounded state term while retaining the existing input-history state and cubic term. This is a model revision to test against complete held-out schedules, not a claim of universal symmetry.",
+      "operation": "revise",
+      "spec": {
+        "parameters": [
+          {
+            "name": "p0",
+            "lower": 0.05,
+            "initial": 0.75,
+            "upper": 1.5
+          }
+        ],
+        "states": [
+          {
+            "name": "z0",
+            "meaning": "A decaying input trace, initialized at zero; physical interpretation is unverified.",
+            "rate": "u-p0*z0"
+          }
+        ],
+        "terms": [
+          "x",
+          "x**3",
+          "tanh(x)",
+          "u",
+          "z0"
+        ]
+      },
+      "observable_consequence": "If the additional bounded odd state dependence captures the held-out discrepancy, refitting should reduce complete-trajectory held-out error, particularly near the large-|x| portion of the trajectories, while preserving approximately polarity-reversed predictions on tested paired schedules.",
+      "analogy": {
+        "domain": "nonlinear response modeling",
+        "relation": "A bounded odd correction supplements a polynomial approximation when its response at larger state magnitudes is inadequate.",
+        "mapping": "The existing x and x**3 terms remain, while tanh(x) provides a bounded odd contribution to dx/dt; z0 retains the parent model's input-history term.",
+        "failure_condition": "The revision is unsupported if grouped held-out trajectories do not improve, or if the fitted bounded term does not address the high-|x| residuals without degrading other schedules."
+      },
+      "provenance": "model_knowledge_unverified",
+      "limitations": "The evidence is limited to the supplied schedules and held-out failures. The residuals motivate added flexibility but do not identify a unique mechanism; the bounded correction must be evaluated by fitting, since optimizer success and generalization are not guaranteed.",
+      "status": "active"
+    },
+    "v3_r2": {
+      "parent_id": "v3_r1",
+      "evidence_ids": [
+        "failure_v3_r1_experiment_1",
+        "outcome_1"
+      ],
+      "concept": "Odd state-dependent response with an additional saturating odd correction",
+      "reason": "The current model underpredicts the magnitude of the negative trajectory in the held-out failure, by roughly 0.065–0.09 across the reported samples (failure_v3_r1_experiment_1). A term x*tanh(x)**2 is odd in x, so it can adjust the response magnitude at larger |x| while preserving the model's reset polarity symmetry. The polarity comparison for v3_r1 is consistent with that symmetry at the noise scale on the tested schedules (outcome_1); this is evidence for the tested inputs, not a universal law.",
+      "operation": "revise",
+      "spec": {
+        "parameters": [
+          {
+            "name": "p0",
+            "lower": 0.05,
+            "initial": 0.75,
+            "upper": 1.5
+          }
+        ],
+        "states": [
+          {
+            "name": "z0",
+            "meaning": "A decaying input trace, initialized at zero; physical interpretation is unverified.",
+            "rate": "u-p0*z0"
+          }
+        ],
+        "terms": [
+          "x",
+          "x**3",
+          "tanh(x)",
+          "x*tanh(x)**2",
+          "u",
+          "z0"
+        ]
+      },
+      "observable_consequence": "If the additional odd correction addresses the held-out discrepancy, refitting should reduce trajectory error for schedules reaching larger |x|, while predictions for reset polarity-reversed inputs should remain sign-reversed. Check both consequences on held-out complete input schedules.",
+      "analogy": {
+        "domain": "odd nonlinear response curves",
+        "relation": "An odd saturating correction changes response magnitude with state amplitude without introducing a polarity preference.",
+        "mapping": "The measured state x is the curve argument, and x*tanh(x)**2 is the proposed odd correction to the fitted rate.",
+        "failure_condition": "The proposal is unsupported if held-out trajectory prediction does not improve, or if polarity-paired outputs depart from sign reversal beyond measurement noise."
+      },
+      "provenance": "model_knowledge_unverified",
+      "limitations": "The proposed term is a testable model revision, not an identified mechanism. Evidence comes from a limited set of schedules; the added term may be redundant with existing terms or fail to generalize.",
+      "status": "weakened"
+    }
+  },
+  "aliases": {
+    "r1_b0": "r0_b0"
+  },
+  "events": [
+    {
+      "kind": "exact_structure_merge",
+      "id": "r1_b0",
+      "into": "r0_b0"
+    },
+    {
+      "kind": "Luna_evidence_assessment",
+      "round": 0,
+      "previous_status": "active",
+      "id": "v3_r0",
+      "status": "weakened",
+      "evidence_ids": [
+        "failure_v3_r0_experiment_0",
+        "failure_v3_r0_experiment_1",
+        "outcome_0"
+      ],
+      "reason": "The model has substantial held-out trajectory errors on both positive and negative input schedules, so its current full-trajectory predictions are incomplete. However, the executed polarity intervention is consistent with odd symmetry at the measured noise scale. Retain that relation as local evidence, not a universal law."
+    },
+    {
+      "kind": "Luna_evidence_assessment",
+      "round": 0,
+      "previous_status": "active",
+      "id": "r0_b0",
+      "status": "weakened",
+      "evidence_ids": [
+        "failure_r0_experiment_1"
+      ],
+      "reason": "The held-out trajectory has a persistent late-time prediction discrepancy when input is zero, which weakens this model's full-trajectory account. This failure does not by itself identify which model component is wrong."
+    },
+    {
+      "kind": "Luna_evidence_assessment",
+      "round": 1,
+      "previous_status": "active",
+      "id": "v3_r1",
+      "status": "weakened",
+      "evidence_ids": [
+        "failure_v3_r1_experiment_1",
+        "outcome_1"
+      ],
+      "reason": "The model has strong group-held-out performance (group_cv_nmse 0.00878), and outcome_1 supports polarity reversal at the noise scale on the executed schedules. However, its held-out trajectory failure shows systematic underprediction at large negative state values under sustained negative input (observed about -1.68 to -1.81 versus predicted about -1.62 to -1.72). This limits confidence in its trajectory accuracy outside the better-predicted range; the failure does not refute the locally observed polarity relation."
+    },
+    {
+      "kind": "Luna_evidence_assessment",
+      "round": 1,
+      "previous_status": "weakened",
+      "id": "v3_r0",
+      "status": "weakened",
+      "evidence_ids": [
+        "failure_v3_r0_experiment_0",
+        "failure_v3_r0_experiment_1",
+        "outcome_0"
+      ],
+      "reason": "The two held-out trajectories show systematic underprediction at large positive and negative state values, despite the polarity relation being consistent with noise on the executed intervention schedules. The local symmetry observation does not resolve the trajectory-prediction failures."
+    },
+    {
+      "kind": "Luna_evidence_assessment",
+      "round": 2,
+      "previous_status": "active",
+      "id": "initial",
+      "status": "weakened",
+      "evidence_ids": [
+        "outcome_0",
+        "outcome_1"
+      ],
+      "reason": "On both executed interventions, its prediction NMSEs are substantially higher than those of the nonlinear history models, indicating poor full-trajectory prediction on these schedules."
+    },
+    {
+      "kind": "Luna_evidence_assessment",
+      "round": 2,
+      "previous_status": "weakened",
+      "id": "r0_b0",
+      "status": "weakened",
+      "evidence_ids": [
+        "outcome_0",
+        "outcome_1"
+      ],
+      "reason": "Its intervention prediction errors remain much larger than those of v3_r0 and v3_r1; this weakens its predictive account without ruling out input-history effects."
+    },
+    {
+      "kind": "Luna_evidence_assessment",
+      "round": 2,
+      "previous_status": "active",
+      "id": "r1_b1",
+      "status": "weakened",
+      "evidence_ids": [
+        "outcome_0",
+        "outcome_1"
+      ],
+      "reason": "Its full-trajectory predictions on both interventions are poor relative to the v3 models."
+    },
+    {
+      "kind": "Luna_evidence_assessment",
+      "round": 2,
+      "previous_status": "weakened",
+      "id": "v3_r0",
+      "status": "weakened",
+      "evidence_ids": [
+        "failure_v3_r0_experiment_0",
+        "failure_v3_r0_experiment_1",
+        "outcome_0",
+        "outcome_1"
+      ],
+      "reason": "The held-out trajectory errors provide direct evidence of prediction failures, although the polarity intervention is consistent with its symmetry prediction on the executed schedules."
+    },
+    {
+      "kind": "Luna_evidence_assessment",
+      "round": 2,
+      "previous_status": "weakened",
+      "id": "v3_r1",
+      "status": "active",
+      "evidence_ids": [
+        "outcome_1",
+        "outcome_2"
+      ],
+      "reason": "Its polarity prediction matches the measured relation at the noise scale in outcome_1. Outcome_2 shows a substantial departure from proportional scaling, as expected by both v3_r1 and v3_r2; the intervention does not clearly distinguish them."
+    },
+    {
+      "kind": "Luna_evidence_assessment",
+      "round": 2,
+      "previous_status": "active",
+      "id": "v3_r2",
+      "status": "weakened",
+      "evidence_ids": [
+        "failure_v3_r2_experiment_1",
+        "outcome_2"
+      ],
+      "reason": "The held-out trajectory failure is direct evidence of a prediction miss. Outcome_2's measured scaling departure is compatible with its nonlinear response, but does not erase that failure or decisively distinguish it from v3_r1."
+    }
+  ],
+  "episodes": [
+    {
+      "id": "outcome_0",
+      "round": 0,
+      "question": {
+        "kind": "polarity",
+        "purpose": "probe_relation",
+        "target_ids": [
+          "v3_r0"
+        ],
+        "evidence_ids": [
+          "relation_r0_experiment_0_r2_experiment_1",
+          "failure_initial_1",
+          "failure_initial_2",
+          "failure_r0_experiment_1"
+        ],
+        "rationale": "The current best model v3_r0 has only odd-in-state and odd-in-input terms, with a trace driven linearly by u, so it predicts polarity symmetry from reset. The supplied polarity comparison is consistent with this relation at the noise scale, but only for the tested inputs. The held-out failures show the earlier active models can miss trajectory behavior, so test the current model's structural prediction rather than relying on obsolete x/u-only comparisons.",
+        "claim": "For reset trials, the v3_r0 input-output prediction is odd under polarity reversal: applying -u(t) should produce the negative of the trajectory under u(t), including beyond the previously observed input schedules.",
+        "update_if_violated": "If the paired trajectories differ beyond measurement-noise expectations, revise or reject the odd-symmetry assumption in v3_r0; consider adding terms that break polarity symmetry and evaluate them on held-out complete trajectories.",
+        "amplitude_range": [
+          0.2,
+          1.2
+        ],
+        "duration_range": [
+          1.0,
+          4.0
+        ],
+        "scale": 1.5,
+        "tolerance_x": 0.04
+      },
+      "prediction_nmse": {
+        "initial": [
+          1.0823361070274728,
+          1.760533976519378
+        ],
+        "r0_b0": [
+          0.8089958460083532,
+          1.4580982009526304
+        ],
+        "r1_b1": [
+          0.8167319832510158,
+          1.447081783588924
+        ],
+        "v3_r0": [
+          0.09353656109507258,
+          0.09185857314398345
+        ]
+      },
+      "actual_conditions_met": true,
+      "relation_rms": 0.007766659026699184,
+      "expected_noise_rms": 0.007071067811865476,
+      "relation_result": "consistent_at_noise_scale",
+      "predicted_relation_rms": {
+        "initial": 0.1613087522194228,
+        "r0_b0": 0.15378531344216217,
+        "r1_b1": 0.1512708936030338,
+        "v3_r0": 0.0
+      },
+      "interpretation": "Descriptive evidence for these executed inputs, not a universal law or significance certificate."
+    },
+    {
+      "id": "outcome_1",
+      "round": 1,
+      "question": {
+        "kind": "polarity",
+        "purpose": "probe_relation",
+        "target_ids": [
+          "v3_r1"
+        ],
+        "evidence_ids": [
+          "relation_v3_r0_experiment_0_v3_r0_experiment_1",
+          "outcome_0",
+          "failure_v3_r0_experiment_0",
+          "failure_v3_r0_experiment_1"
+        ],
+        "rationale": "The current best model v3_r1 contains odd functions of x and an input-driven trace, so from reset it predicts polarity-reversed inputs will produce polarity-reversed output trajectories. The earlier polarity result supports this symmetry only for its tested schedules and was for v3_r0, not the current model; test the structural prediction on new schedules. Held-out failures for v3_r0 also caution against treating its fit as settled.",
+        "claim": "For reset trials described by v3_r1, reversing the complete input schedule should reverse the output trajectory, including on schedules outside those previously observed.",
+        "update_if_violated": "If polarity-paired trajectories depart from sign-reversed outputs beyond measurement-noise expectations, revise or reject the odd-symmetry relation for v3_r1 and fit candidate symmetry-breaking terms against held-out complete trajectories.",
+        "amplitude_range": [
+          0.2,
+          1.2
+        ],
+        "duration_range": [
+          1.0,
+          4.0
+        ],
+        "scale": 1.5,
+        "tolerance_x": 0.04
+      },
+      "prediction_nmse": {
+        "initial": [
+          0.3180891862070808,
+          0.6233556864331334
+        ],
+        "r0_b0": [
+          0.09390214846553498,
+          0.42211259196614914
+        ],
+        "r1_b1": [
+          0.09807677168670036,
+          0.4155168000415188
+        ],
+        "v3_r0": [
+          0.018946487350268753,
+          0.018796761617000484
+        ],
+        "v3_r1": [
+          0.005326406219890388,
+          0.005111618326497274
+        ]
+      },
+      "actual_conditions_met": true,
+      "relation_rms": 0.006928051083954317,
+      "expected_noise_rms": 0.007071067811865476,
+      "relation_result": "consistent_at_noise_scale",
+      "predicted_relation_rms": {
+        "initial": 0.14498243251120588,
+        "r0_b0": 0.13704111007309722,
+        "r1_b1": 0.13467825389578733,
+        "v3_r0": 0.0,
+        "v3_r1": 0.0
+      },
+      "interpretation": "Descriptive evidence for these executed inputs, not a universal law or significance certificate."
+    },
+    {
+      "id": "outcome_2",
+      "round": 2,
+      "question": {
+        "kind": "scaling",
+        "purpose": "discriminate",
+        "target_ids": [
+          "v3_r1",
+          "v3_r2"
+        ],
+        "evidence_ids": [
+          "outcome_1",
+          "failure_v3_r1_experiment_1"
+        ],
+        "rationale": "The two active models encode different state-dependent response terms: v3_r1 includes x, x**3, and tanh(x), whereas v3_r2 adds x*tanh(x)**2. Their held-out group NMSE values differ (0.00878 versus 0.01503), so a scaled-input comparison can test whether their predicted departures from proportional response separate on a new schedule. The prior polarity result for v3_r1 is consistent with symmetry only on its tested inputs and does not resolve this difference.",
+        "claim": "For at least one searched input schedule, scaling the input by the chosen factor produces a response whose trajectory differs between v3_r1 and v3_r2 by more than the requested tolerance.",
+        "update_if_violated": "If no adequate separation is found, do not treat that as evidence that the models are equivalent; revise the scaling question or probe a different input regime. If observed trajectories favor one model, update its support using complete-trajectory held-out prediction rather than the latent-variable labels.",
+        "amplitude_range": [
+          0.2,
+          0.9
+        ],
+        "duration_range": [
+          1.0,
+          4.0
+        ],
+        "scale": 1.5,
+        "tolerance_x": 0.04
+      },
+      "prediction_nmse": {
+        "initial": [
+          0.23361376598565392,
+          0.7477433281065231
+        ],
+        "r0_b0": [
+          0.043867683339757414,
+          0.5112458126381327
+        ],
+        "r1_b1": [
+          0.0494181313561944,
+          0.5154596871362059
+        ],
+        "v3_r0": [
+          0.005752209161317958,
+          0.06172712666928405
+        ],
+        "v3_r1": [
+          0.0034685444422279882,
+          0.01082590623132886
+        ],
+        "v3_r2": [
+          0.0034041774598946267,
+          0.007177351424004374
+        ]
+      },
+      "actual_conditions_met": true,
+      "relation_rms": 0.25962673872875874,
+      "expected_noise_rms": 0.009013878188659973,
+      "relation_result": "deviation_above_noise_scale",
+      "predicted_relation_rms": {
+        "initial": 0.03271318638090383,
+        "r0_b0": 0.03101095102005328,
+        "r1_b1": 0.030472030799861063,
+        "v3_r0": 0.3728005563639759,
+        "v3_r1": 0.2265037368982855,
+        "v3_r2": 0.26212490925183785
+      },
+      "interpretation": "Descriptive evidence for these executed inputs, not a universal law or significance certificate."
+    }
+  ],
+  "final": {
+    "selected_id": "v3_r1",
+    "reason": "在现有候选中，v3_r1 的组级完整轨迹交叉验证误差最低（group_cv_nmse=0.007810；证据集摘要中的模型拟合记录），低于 v3_r0（0.052821）和 v3_r2（0.012378）。新干预 outcome_1 中，v3_r1 对两条极性配对轨迹的预测 NMSE 为 0.005326、0.005112，实测极性关系误差 0.006928 与预期噪声 RMS 0.007071 相符；这只支持该关系在所测输入上的表现。outcome_2 显示缩放关系偏离噪声尺度（RMS 0.259627，预期 0.009014），但这说明响应并非简单比例缩放，不能单独证明 v3_r1 优于 v3_r2。",
+    "what_changed": "新证据没有推翻 v3_r1 的局部极性对称预测：outcome_1 的配对轨迹关系与噪声尺度相容。outcome_2 则表明所测缩放输入下存在明显非比例响应，且 v3_r1 与 v3_r2 对该关系的预测都非零；因此不应把响应简化为线性比例，也不能据此将两个模型视为等价。继续选择 v3_r1，依据是其现有组级留出表现更好，而非把潜变量 z0 当成已确认的物理实体。",
+    "unresolved": "证据仅涉及有限的重置试验和输入范围；极性关系不是普遍定律。outcome_2 的关系偏离噪声尺度，但并未给出足以独立判定哪个候选更准确的完整模型比较结果。v3_r1 在其他留出轨迹上的失配与参数/结构不确定性仍需后续验证。"
+  }
+}

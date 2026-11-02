@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431476225641488,
+  "http_status": 200,
+  "body": {
+    "id": "resp_04990e9396b24310016ae597b0f91c8193b7ab98862424dde6",
+    "object": "chat.completion",
+    "created": 1793431476,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"State has the best trajectory-level validation score, but substantial residual autocorrelation and disagreement under alternating input leave its adequacy uncertain.\",\"prediction\":\"Alternating input should reveal whether responses depend only on current state and input or retain additional history.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No mechanism relation is established by current validation evidence.\",\"condition_to_check\":\"Check whether alternating-input residuals remain structured after accounting for current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2798,
+      "completion_tokens": 266,
+      "total_tokens": 3064,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 157
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.620881773531437
+}

@@ -1,0 +1,215 @@
+{
+  "split": "dev",
+  "complete": true,
+  "expected_tasks_per_method": 4,
+  "methods": {
+    "state_fixed": {
+      "n": 4,
+      "median_test_nmse": 0.02568840987812766,
+      "mean_test_nmse": 0.06133693786741706,
+      "test_nmse_below_0_1": 3,
+      "accepted": 2,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "generation_seconds_amortized": 0,
+      "peak_gpu_allocated_gb": 0.0,
+      "peak_process_ram_gb": 0.0,
+      "final_representations": {
+        "state": 4
+      },
+      "tasks_with_revision": 0
+    },
+    "history_cv": {
+      "n": 4,
+      "median_test_nmse": 0.0004029339101778715,
+      "mean_test_nmse": 0.00040790343159430423,
+      "test_nmse_below_0_1": 4,
+      "accepted": 4,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "generation_seconds_amortized": 0,
+      "peak_gpu_allocated_gb": 0.0,
+      "peak_process_ram_gb": 0.0,
+      "final_representations": {
+        "state": 1,
+        "clock": 1,
+        "memory_slow": 1,
+        "state_cubic": 1
+      },
+      "tasks_with_revision": 0
+    },
+    "plain": {
+      "n": 4,
+      "median_test_nmse": 0.0008335451338669953,
+      "mean_test_nmse": 0.0012704274395010271,
+      "test_nmse_below_0_1": 4,
+      "accepted": 4,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 16,
+      "input_tokens": 48140,
+      "output_tokens": 976,
+      "generation_seconds_amortized": 31.673551828600466,
+      "peak_gpu_allocated_gb": 14.862669944763184,
+      "peak_process_ram_gb": 5.016998291015625,
+      "final_representations": {
+        "memory_multiscale": 1,
+        "memory_clock": 1,
+        "memory_slow": 1,
+        "saturating_memory": 1
+      },
+      "tasks_with_revision": 2
+    },
+    "retrieval": {
+      "n": 4,
+      "median_test_nmse": 0.0006753891892603627,
+      "mean_test_nmse": 0.0011913494671977108,
+      "test_nmse_below_0_1": 4,
+      "accepted": 4,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 16,
+      "input_tokens": 53109,
+      "output_tokens": 961,
+      "generation_seconds_amortized": 25.07087520789355,
+      "peak_gpu_allocated_gb": 14.920419216156006,
+      "peak_process_ram_gb": 5.019771575927734,
+      "final_representations": {
+        "memory_multiscale": 1,
+        "memory_clock": 1,
+        "memory_slow": 1,
+        "saturating_memory": 1
+      },
+      "tasks_with_revision": 2
+    },
+    "structured": {
+      "n": 4,
+      "median_test_nmse": 0.001713294243926676,
+      "mean_test_nmse": 0.0017762619847943271,
+      "test_nmse_below_0_1": 4,
+      "accepted": 4,
+      "false_accepted": 0,
+      "invalid_outputs": 3,
+      "generation_calls": 16,
+      "input_tokens": 57934,
+      "output_tokens": 1791,
+      "generation_seconds_amortized": 43.291876977309585,
+      "peak_gpu_allocated_gb": 14.990030288696289,
+      "peak_process_ram_gb": 5.0277862548828125,
+      "final_representations": {
+        "memory_multiscale": 2,
+        "memory_slow": 1,
+        "saturating_memory": 1
+      },
+      "tasks_with_revision": 3
+    },
+    "no_active": {
+      "n": 4,
+      "median_test_nmse": 0.0011271179759403736,
+      "mean_test_nmse": 0.0013076718960684398,
+      "test_nmse_below_0_1": 4,
+      "accepted": 4,
+      "false_accepted": 0,
+      "invalid_outputs": 2,
+      "generation_calls": 16,
+      "input_tokens": 58641,
+      "output_tokens": 1747,
+      "generation_seconds_amortized": 42.22516788542271,
+      "peak_gpu_allocated_gb": 14.99066686630249,
+      "peak_process_ram_gb": 5.029041290283203,
+      "final_representations": {
+        "state_cubic": 1,
+        "memory_clock": 1,
+        "memory_slow": 1,
+        "saturating_memory": 1
+      },
+      "tasks_with_revision": 2
+    },
+    "shuffled": {
+      "n": 4,
+      "median_test_nmse": 0.0005505114410377318,
+      "mean_test_nmse": 0.0011289105930863954,
+      "test_nmse_below_0_1": 4,
+      "accepted": 4,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 16,
+      "input_tokens": 57922,
+      "output_tokens": 1795,
+      "generation_seconds_amortized": 43.32343765348196,
+      "peak_gpu_allocated_gb": 14.990144729614258,
+      "peak_process_ram_gb": 5.017097473144531,
+      "final_representations": {
+        "memory_multiscale": 1,
+        "memory_clock": 1,
+        "memory_slow": 1,
+        "saturating_memory": 1
+      },
+      "tasks_with_revision": 2
+    }
+  },
+  "total_results": 28,
+  "paired_comparisons": [
+    {
+      "left": "structured",
+      "right": "plain",
+      "paired_tasks": 4,
+      "left_wins": 1,
+      "geometric_nmse_ratio": 1.223420140991722,
+      "descriptive_bootstrap_95_interval": [
+        0.6861431008094483,
+        2.668776329247284
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "retrieval",
+      "paired_tasks": 4,
+      "left_wins": 0,
+      "geometric_nmse_ratio": 1.3870881418922643,
+      "descriptive_bootstrap_95_interval": [
+        1.0,
+        2.668776329247284
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "shuffled",
+      "paired_tasks": 4,
+      "left_wins": 0,
+      "geometric_nmse_ratio": 1.5102462580494926,
+      "descriptive_bootstrap_95_interval": [
+        1.0,
+        3.4446357536637913
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "no_active",
+      "paired_tasks": 4,
+      "left_wins": 0,
+      "geometric_nmse_ratio": 1.4678058805455034,
+      "descriptive_bootstrap_95_interval": [
+        1.0742454518816573,
+        2.00555105836399
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "history_cv",
+      "paired_tasks": 4,
+      "left_wins": 1,
+      "geometric_nmse_ratio": 3.053372624606179,
+      "descriptive_bootstrap_95_interval": [
+        1.2131879270872594,
+        7.684781703258621
+      ]
+    }
+  ]
+}

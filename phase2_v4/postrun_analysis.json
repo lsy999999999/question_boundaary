@@ -1,0 +1,49 @@
+{
+  "card_control_agreement": {
+    "same_final_rep": 18,
+    "same_action_sequence": 16,
+    "same_test_score_within_1e_12": 13,
+    "structured_wins_strict": 4,
+    "shuffled_wins_strict": 7
+  },
+  "additional_paired_comparisons": [
+    {
+      "left": "retrieval",
+      "right": "plain",
+      "paired_tasks": 24,
+      "left_wins": 4,
+      "geometric_nmse_ratio": 1.2520613650202108,
+      "descriptive_bootstrap_95_interval": [
+        0.929721388321444,
+        1.8411528718759969
+      ]
+    },
+    {
+      "left": "plain",
+      "right": "history_cv",
+      "paired_tasks": 24,
+      "left_wins": 9,
+      "geometric_nmse_ratio": 1.596491790168884,
+      "descriptive_bootstrap_95_interval": [
+        0.9381127638264259,
+        3.142285370009597
+      ]
+    }
+  ],
+  "generation_totals": {
+    "generation_calls": 480,
+    "input_tokens": 1650777,
+    "output_tokens": 43555,
+    "generation_seconds_amortized": 1101.7266813600436
+  },
+  "parse_error_type_counts": {
+    "invalid_mapping_source_id": 45,
+    "invalid_experiment": 4
+  },
+  "timing": {
+    "gpu_start": "2026-10-31T13:16:35+08:00",
+    "gpu_completed": "2026-10-31T13:22:17+08:00",
+    "wall_seconds": 342
+  },
+  "memory_note": "GPU figures are torch allocated per process in GiB; process RAM peak per worker; baselines not instrumented."
+}

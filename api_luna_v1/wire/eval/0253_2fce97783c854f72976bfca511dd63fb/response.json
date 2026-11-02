@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793430169142075151,
+  "http_status": 200,
+  "body": {
+    "id": "resp_089eb3d66e6fac10016ae5929763208194bfc8b64bc7d782bd",
+    "object": "chat.completion",
+    "created": 1793430169,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"double_pulse\",\"reason\":\"State has the lowest held-out NMSE, narrowly beating clock, and clock’s advantage did not persist after PRBS. Residual correlation still warrants caution, so adequacy is uncertain.\",\"prediction\":\"After each pulse ends, output should decay according to its current state; matching states and inputs should yield matching predictions regardless of elapsed time.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The observations do not establish an independent clock or a predictive effect of hidden accumulated history.\",\"condition_to_check\":\"Reject the state model if double-pulse responses differ at matched state and input, or show systematic residual structure.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3485,
+      "completion_tokens": 141,
+      "total_tokens": 3626
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.5024659233167768
+}

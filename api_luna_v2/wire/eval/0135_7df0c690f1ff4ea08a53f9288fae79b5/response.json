@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431522391845312,
+  "http_status": 200,
+  "body": {
+    "id": "resp_041681ceeca73992016ae597df43ec8197be77be044306d827",
+    "object": "chat.completion",
+    "created": 1793431522,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"alternating\",\"reason\":\"Memory multiscale has the lowest leave-trajectory-out error and substantially improves on the state model; persistent post-input responses support history dependence, though competing memory forms remain uncertain.\",\"prediction\":\"After rapid input reversals, output will retain a history-dependent lag that a model using only current state and input misses.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts lingering output after the input returns to zero, consistent with finite relaxation.\",\"condition_to_check\":\"At matched current input and visible state, test whether differing prior inputs predict different subsequent outputs.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2808,
+      "completion_tokens": 258,
+      "total_tokens": 3066,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 120
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.646693262271583
+}

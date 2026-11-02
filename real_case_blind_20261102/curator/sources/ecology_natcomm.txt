@@ -1,0 +1,983 @@
+
+
+ Robust coexistence in competitive ecological communities | Nature Communications
+
+ Skip to main content
+
+Thank you for visiting nature.com. You are using a browser version with limited support for CSS. To obtain
+ the best experience, we recommend you use a more up to date browser (or turn off compatibility mode in
+ Internet Explorer). In the meantime, to ensure continued support, we are displaying the site without styles
+ and JavaScript.
+
+Advertisement
+
+ View all journals
+
+ Saved research
+
+ Search
+
+ Account
+
+ Log in
+
+ Content
+ Explore content
+
+ About the journal
+
+ Publish with us
+
+ Sign up for alerts
+
+ RSS feed
+
+nature
+
+nature communications
+
+articles
+
+ article
+
+ Robust coexistence in competitive ecological communities
+
+ Download PDF
+
+ Download PDF
+
+Article
+
+ Open access
+
+Published: 11 February 2026
+
+Robust coexistence in competitive ecological communities
+
+Pablo Lechón-Alonso1, 
+
+Srilena Kundu 
+ ORCID: orcid.org/0000-0002-6092-38491,2,3, 
+
+Paula Lemos-Costa1,4, 
+
+José A. Capitán 
+ ORCID: orcid.org/0000-0002-6245-00885 & 
+
+…
+
+Stefano Allesina 
+ ORCID: orcid.org/0000-0003-0313-83741,6 
+Show authors
+
+ Nature Communications
+ volume 17, Article number: 2637 (2026) Cite this article
+
+ Save article
+
+ View saved research
+
+5340 Accesses
+
+7 Citations
+
+12 Altmetric
+
+Metrics details
+
+Abstract
+
+Darwin already recognized that competition is fiercest among conspecifics, a principle that later made intraspecific competition central to ecological theory through concepts such as niche differentiation and limiting similarity. Beyond shaping coexistence, strong intraspecific competition can also stabilize community dynamics by ensuring that populations return to equilibrium after disturbance. Here we investigate a more fundamental question: how intraspecific competition influences the very existence of a steady state (feasibility) in large random ecological communities dominated by competition. We show that, in analogy with classical results on stability, there is a critical level of intraspecific competition above which a feasible steady state is guaranteed to exist. We derive a general expression for the probability of feasibility and prove that, asymptotically (as species number grows), the transition to stability occurs before the transition to feasibility with probability one. Thus, in large competitive communities, any feasible equilibrium is automatically stable. This ordering persists even when many species in the initial pool cannot coexist and extinctions occur: the dynamics prune the community, shifting feasibility and stability thresholds but never reversing their order. These results imply that large competitive communities generically converge to a globally stable equilibrium, making sustained oscillations or chaos unlikely—consistent with experimental observations.
+
+Similar content being viewed by others
+
+ Stabilizing effects of biodiversity arise from species-specific dynamics rather than interspecific interactions in grasslands
+
+ Article
+
+ 11 July 2025
+
+ Small rainfall changes drive substantial changes in plant coexistence
+
+ Article
+
+ 02 November 2022
+
+ Spatio-temporal eco-evolutionary dynamics of prey-predator systems with defended and undefended prey
+
+ Article
+ Open access
+ 01 December 2025
+
+Explore related subjects
+
+ Discover the latest articles and news in related subjects.
+
+ Community ecology
+
+ Ecological modelling
+
+ Population dynamics
+
+ Theoretical ecology
+
+ Coexistence Mechanisms in Ecological Communities
+
+Introduction
+
+The notions of intraspecific competition and population self-regulation play a central role in ecological theory, leading to foundational concepts such as limiting similarity and niche differentiation1,2,3,4,5,6. They also are crucial for coexistence: for example, May7 showed that ecological dynamics can be stabilized by imposing sufficiently strong intraspecific competition, and that for large systems with random species interactions the stability transition is universal (independent of the probability distribution used to model interactions) and sharp (always achieved at the same critical value of intraspecific competition). Importantly, the existence of an equilibrium (feasibility) is a necessary condition for coexistence. Further, results on stability can dramatically change when accounting for feasibility. The first contribution to this problem can be traced back to a response to May’s work on stability8, showing that in competitive Lotka-Volterra models with random interactions the probability of stability, conditioned on the presence of a feasible equilibrium, does increase, rather than decrease with system size. Since then, significant advances have been gradually accumulating in the literature9,10,11,12,13,14,15 (Supplementary Note 3, Sec. 2). However, the progress on the study of feasibility has yet to match that reached for stability7,16,17,18. Here we show that accounting for feasibility is key to determining the expected dynamics of large competitive systems.
+
+We compute the probability that a system would display a feasible equilibrium given its level of intraspecific competition, size, and the statistics on the random distribution of species interactions. We show that the transition to feasibility is universal, as for stability, but is not sharp—thereby extending, generalizing and refining previous results8,9,12,14,19,20,21,22. More importantly, we show that, in large random competitive systems, when we increase the strength of intraspecific competition, the transition to stability precedes that to feasibility8,9,20. Therefore, in these large systems feasibility implies stability. This result holds even when the initial pool of species cannot coexist, and extinctions ensue. That is, during ecological dynamics, species extinctions will alter the values for the stability and feasibility thresholds, but not their ordering. Differently from May, who focused on local asymptotic stability of an equilibrium, here we consider the stronger criterion of global stability—robust coexistence in which populations rebound from any perturbation short of extinction.
+
+Overall, these findings have far-reaching implications for the ecological dynamics of large random competitive ecosystems. They rule out coexistence through limit cycles or chaos23,24, and instead indicate that the community dynamics converge to a highly-robust equilibrium, such that (1) any perturbation short of extinction would be buffered, (2) the community resists invasions, and (3) it can be assembled from the ground up25,26.
+
+Results
+
+Stability and feasibility thresholds
+
+We consider the Generalized Lotka-Volterra27,28,29,30 (GLV) model for n interacting populations: 
+
+$${\dot{x}}_{i}={x}_{i}{r}_{i}\left(1-\mathop{\sum }\limits_{j}{A}_{ij}{x}_{j}\right)\,,$$
+
+ (1)
+
+ where intrinsic growth rates ri are organized in the vector r, and interactions Aij in the matrix A. We say that Eq. (1) has a feasible (i.e., biologically attainable) equilibrium whenever there is a x⋆ > 0 such that \({\dot{x}}_{i}=0\) for all populations, and that such a feasible equilibrium is asymptotically stable if dynamics return to it following a perturbation.
+
+Following May7, we model A as the sum of two matrices, A = αI + B, where B collects the inter-specific interactions (Bij, i ≠ j). I is the identity matrix, and α≥0 the intraspecific competition in the system, assumed to be the same for all species (relaxing this assumption does not change the results, see Supplementary Note 3, Sec. 9).
+
+Now we consider increasing α from zero to an arbitrary large positive value, and track the effects of this change on coexistence. We denote αS as the level of intraspecific competition that is sufficient to guarantee the (global) stability of an equilibrium (Methods, and Supplementary Note 1, Sec. 3). Importantly, for any α≥αS stability is maintained, i.e., once surpassed this threshold, dynamics always converge to a globally stable equilibrium. Here we ask whether, in analogy to stability, there exist a critical level αF that a) guarantees the existence of a positive equilibrium, and b) further increasing α≥αF retains the feasibility of the equilibrium. In particular, we want to probe the relationship between αF and αS.
+
+We start with a toy example (Fig. 1, n = 6, see Supplementary Note 3 and Supplementary Fig. 3 for an example with two populations), illustrating the effect of increasing α on feasibility and stability. We first sample a baseline interaction matrix B, and compute the thresholds for stability, αS, and feasibility, αF (Methods, and Supplementary Note 1, Sec. 3, and Supplementary Note 2, Sec. 4), marked in Fig. 1 with green and yellow triangles, respectively. We then construct three interaction matrices A that differ only in their intraspecific competition values, αI, αII, and αIII (Fig. 1). For each system, we integrate the dynamics in Eq. (1) from two different initial conditions (Fig. 1 bottom panels, solid vs. dashed lines), revealing three qualitatively distinct dynamical regimes. System I (Fig. 1, left) undergoes extinctions and displays alternative stable states, indicating that the coexistence equilibrium is not feasible, and the resulting sub-community equilibrium is not globally stable (indeed, neither stability nor feasibility thresholds have been surpassed, since αI < αS < αF). System II (Fig. 1, middle), also displays extinctions (as there is no feasible equilibrium), but starting from different initial conditions no longer leads to different outcomes, because the equilibrium of the sub-community is globally stable (αS < αII < αF, and see Supplementary Note 1, Sec. 3). Finally, system III (Fig. 1, right), exhibits all populations coexisting stably (αS < αF < αIII). From this single realization, we can see that stability is achieved before feasibility. Next, we show that this is the case for large random ecological communities (but see Supplementary Note 2, Sec. 3 for results on small or arbitrary competitive systems).
+
+Fig. 1: Three dynamical scenarios arising in an example random competitive community with six species.
+
+Full size image
+
+We consider the dynamics for a GLV model with A = αI + B (Eq. (1)), with B being the same across the three systems, and intraspecific competition α taking three different values (αI, αII, and αIII). The three matrices (panels I, II, and III), with the same off-diagonal coefficients and increasingly strong diagonal coefficients, are shown as tile plots above the arrow (darker colors reflect stronger competition). By increasing α from αI to αIII, we observe distinct dynamical behaviors emerging as α surpasses the stability (αS) and feasibility (αF) thresholds. First, when αI < αS < αF, initializing the population densities (colors) at different values (linetypes) leads to extinctions, and a different set of coexisting populations (priority effects or alternative stable states): the equilibrium is not feasible and the set of surviving species depends on the initial conditions. Second, when αS < αII < αF, the equilibrium is not feasible, but the same populations go extinct irrespective of initial conditions (in this case, the green population), while the remaining populations converge to a stable equilibrium (Supplementary Note 1, Sec. 3). Third, when αS < αF < αIII, a feasible equilibrium exists, and is globally stable. See Supplementary Fig. 3 for an example with two populations.
+
+Feasibility implies robust coexistence almost surely
+
+For each unstable matrix B, we can always find a critical level αS such that for any α < αS the matrix A = αI + B is unstable, and for any value α≥αS it is stable (Supplementary Note 1, Sec. 3). Tracking the existence of an equilibrium as α increases is more complicated: for feasibility, we need (αI + B)x = 1 to have a positive solution. As shown in Fig. 2a, when increasing α, a positive solution can appear or disappear several times; however, we prove that, for any B, a critical value αF ensures a) that (αFI + B)x = 1 has a positive solution, and b) that further increasing α > αF maintains the positivity of the solution (Supplementary Note 2, Sec. 3).
+
+Fig. 2: While low-dimensional systems may gain and lose feasibility multiple times, high-dimensional systems exhibit a single transition to feasibility, and feasibility almost always implies stability.
+
+Full size image
+
+a Bifurcation diagram of equilibrium abundances as a function of intraspecific competition α. Shaded regions correspond to parameter values where no feasible equilibrium exists, while unshaded regions mark feasibility. For a system with four populations (colors), we see that when α = 0 no feasible solution of (αI + B)x = 1 exists; as α increases, feasible equilibria can appear and disappear multiple times, but for sufficiently large α≥αF feasibility is always guaranteed (Supplementary Note 2, Sec. 3). b–d Results from simulations across many system sizes. For each n, we sample many random interaction matrices with entries drawn in correlated pairs from a bivariate normal distribution with mean 0, unit variance, and correlation ρ (colors), and calculate both feasibility and stability thresholds. b The average number of transitions in and out of feasibility (y-axis) decreases with n and converges to one, indicating that for large systems feasibility is excluded below the feasibility threshold αF and guaranteed above it. c Normalized thresholds \({\widetilde{\alpha }}_{F}={\alpha }_{F}/\sqrt{n-1}\) and \({\widetilde{\alpha }}_{S}={\alpha }_{S}/\sqrt{n-1}\) as a function of n. While \({\widetilde{\alpha }}_{S}\) converges to a constant, \({\widetilde{\alpha }}_{F}\) grows without bound. Triangles mark \({\widetilde{\alpha }}_{S}\) for n = 103, also shown in Fig. 3. d Probability that feasibility comes before stability \(P\left({\alpha }_{F} < {\alpha }_{S}\right)\) as a function of n, i.e. the chance that a feasible but unstable equilibrium exists. This probability decreases rapidly with system size.
+
+Moreover, Fig. 2b shows that, as the size of the community increases, the number of transitions in and out of feasibility converges to one; asymptotically (i.e., as n → ∞), αF behaves as αS, with feasibility precluded below αF and guaranteed above it. Simulations also give us a qualitative understanding of the behavior of αF and αS as the number of populations in the system increases: Fig. 2c shows that, once properly normalized to account for matrix size (\({\widetilde{\alpha }}_{S}={\alpha }_{S}/\sqrt{n-1}\)), the threshold for stability converges to a constant, while that for feasibility (\({\widetilde{\alpha }}_{F}={\alpha }_{F}/\sqrt{n-1}\)) keeps increasing with no saturation. Consequently (Fig. 2d), asymptotically we have αF > αS. Next, we show how these results can be derived mathematically.
+
+In order to mathematically formalize the patterns from the toy example and auxiliary simulations (Figs. 1 and 2), we focus on the ensemble of large random ecosystems where each pair of interactions (Bij, Bji), with i ≠ j is sampled from any bivariate distribution with mean μ > 0, variance σ2, and correlation ρ (Supplementary Note 3, Sec. 1); and the diagonal elements Bii = 0. We call these systems competitive whenever r > 0 (i.e., all populations can grow in isolation), and ∑jBij > 0 for every population i (i.e., each population has, on average, a negative effect on the growth of the other populations). We compute the probability pF that one such random system of size n will have a feasible equilibrium as a function of α.
+
+We begin by noting two simplifications that can be made without loss of generality (Methods). First, feasibility is unchanged if we subtract from each column of B its mean, obtaining a matrix C with zero column sums. This means that the absolute strength of competition is irrelevant: increasing the competitive effect of a given population on all others by the same amount does not alter whether the equilibrium is feasible. Thus, we may restrict attention to the canonical system 
+
+$${\dot{y}}_{i}={y}_{i}{r}_{i}\left(1-\alpha {y}_{i}-\mathop{\sum }\limits_{j}{C}_{ij}{y}_{j}\right),$$
+
+ (2)
+
+ with C centered in this way. Second, varying α is equivalent to rescaling the variance σ2 of the distribution of species interactions, so we may fix σ2 = 1 for convenience. Together, these reductions yield a simplified yet fully general representation of the competitive system, which we adopt for the analysis below.
+
+For any model in which populations are statistically equivalent (i.e., there is no a priori structure making some populations behave differently from the rest), the distribution of the equilibrium values, y⋆, has always the same mean and correlation structure (Methods). Moreover, when n is large, we can assume the components of y⋆ to be approximately normally distributed9 and uncorrelated (“Methods”, and Supplementary Note 3, Sec. 7). Then, the probability of feasibility can be taken as the product of the probabilities that each component is positive, and can thus be written as the cumulative distribution function of a standard normal distribution, raised to the nth power (Supplementary Note 3, Sec. 7): 
+
+$${p}_{F}(\alpha )\approx \Phi {\left(\frac{1}{\alpha {\sigma }_{{{{\bf{y}}}}^{\star }}}\right)}^{n}\,\,.$$
+
+ (3)
+
+As long as populations are statistically equivalent, more complex models, e.g., with higher-order correlations or network structure, will follow the same expression, but with a different \({\sigma }_{{{{\bf{y}}}}^{\star }}\). Computing the variance \({\sigma }_{{{{\bf{y}}}}^{\star }}^{2}\) (which in general depends on n, α, and ρ) is sufficient to approximate the probability of feasibility. In our case, we use the theory of resolvents31 (see Supplementary Notes 3.8 and 3.10 for an alternative method based on iterative solutions) to approximate the variance for any ρ, obtaining: 
+
+$$\frac{1}{{(\alpha {\sigma }_{{{{\bf{y}}}}^{\star }})}^{2}}\approx \frac{{\alpha }^{2}+\alpha \sqrt{{\alpha }^{2}-4\rho (n-1)}}{2(n-1)}-(1+\rho )\,\,.$$
+
+ (4)
+
+Substituting this expression into Eq. (3), we obtain an extremely accurate analytical approximation of the probability of feasibility (Fig. 3, black curves): the probability pF(α) is vanishingly small when α = 0 (Supplementary Note 3, Sec. 3), and increases smoothly to 1 with increasing α. Eq. (4) shows that the details of the distribution of interactions (Fig. 3, linetypes), once accounted for the correlation (Fig. 3, colors), are irrelevant when the system is large. This means that asymptotically, the curve describing the probability of feasibility is universal. Interestingly, exactly as a negative correlation between interaction strengths improves the chance of stability16, it also increases the probability of feasibility21. Contrary to current expectations14, the effect of the pairwise correlation ρ on the probability of feasibility remains significant for large systems (n = 1000 in Fig. 3). Additionally, the transition to feasibility also remains smooth compared to stability (Fig. 3, and Supplementary Fig. 10, see Supplementary Note 3, Sec. 8 for a detailed discussion) for large systems.
+
+Fig. 3: In large systems, feasible equilibria are stable with high probability.
+
+Full size image
+
+Probability of feasibility for a given level of intraspecific competition (we plot \(\widetilde{\alpha }=\alpha /\sqrt{(n-1)}\), x-axis) for systems of size n = 1000. We sample entries from distributions (line types) whose marginals are either normal, uniform, or “discrete” (coefficients take positive or negative values with equal probability, see Supplementary Note 4). The curves for different distributions collapse to the same curve, illustrating that results are asymptotically universal (i.e., the higher moments of the distribution have no effect). However, even for such large matrices, the effect of the correlation (line colors) is noticeable. For each choice of correlation, the value α = αS at which the stability of a feasible equilibrium is guaranteed is marked by a triangle: note that a negative ρ increases both the probability of feasibility and stability for any α, and a positive ρ decreases it16. Moreover, the probability of feasibility at αS is negligible. The black solid lines represent the analytical expectations obtained by approximating the variance using resolvents (Eqs. (3) and (4)).
+
+Importantly, our calculations show that for large systems the amount of self-regulation required for feasibility is high enough (i.e., αS < αF) to yield global stability (as argued before9,14,20,32,33). Then, a feasible system will be stable with probability 1, and thus pF(α) measures the probability of coexistence for a large, random competitive system. These results have profound implications for dynamics. Competitive GLV systems can give rise to any type of dynamics, including limit cycles (when n≥3) and chaos (n≥4)23,24. Importantly, however, non-equilibrium coexistence still requires the existence of a feasible equilibrium25. But we have seen that feasibility generically implies global stability, and therefore non-equilibrium coexistence is precluded.
+
+When the system is not feasible, extinctions will ensue, pruning the original pool of species to a subsystem with different thresholds for feasibility and stability (Fig. 2c). As such, in principle, any type of dynamics could be observed. Next, we show that, despite the change in values of αS and αF caused by extinctions, the ordering αS < αF is maintained almost surely, provided that n is large. As a result, dynamics still converge to stable equilibria even when feasibility is not attained for the initial species pool.
+
+Robust coexistence emerges through community dynamics
+
+So far, we have investigated how coexistence is affected by increasing α. However, intraspecific competition models the effects of a species on itself. As such, when species are lost to extinction, the level of intraspecific competition should not be affected: the coefficients on the diagonal do not change when the matrix is pruned of the populations that have gone extinct. Thus, we turn our attention to a pool of n populations where we fix α < αS < αF (analogous to system I in Fig. 1), and consider “top-down assembly” (where all the species in the pool are introduced in the environment at the same time, Fig. 4a). Since we are below the feasibility threshold, some populations go extinct and, as a result, αF and αS changes (both values depend on n; Fig. 2c). We re-compute their values every time an extinction occurs (plotted in Fig. 4b), and find that their initial ordering is maintained throughout assembly. Consequently, the initial species pool traverses the dynamical states illustrated in Fig. 1: I  → II  → III, converging to a globally stable equilibrium after ecological dynamics have elapsed. Furthermore, we show (Supplementary Note 3, Sec. 12) that the same equilibrium can be achieved via “bottom-up assembly”, through successive invasions26.
+
+Fig. 4: Community dynamics lead to robust coexistence.
+
+Full size image
+
+a We initialize a community with n = 50 populations and random interactions, setting intraspecific competition below the feasibility threshold (α = αF/2, black line, middle panel); then, there is no feasible equilibrium, and extinctions are guaranteed (grey lines, top panel); note that for this simulation intraspecific competition is also below the stability threshold (α < αS < αF), and thus we are in phase I of Fig. 4. b As populations are lost to extinction, the values of αS and αF (green and yellow lines respectively, middle panel) for the surviving sub-community change. As the number of extinctions mounts, αS crosses α (dashed green line, top and middle panels), and thus the system transitions to case II. Extinctions continue until αF falls below α (dashed yellow line), and the system transitions to phase III. The extant populations coexist at a globally stable equilibrium, and those that went extinct since during phase II cannot re-invade the system. c The ratio αF/αS is plotted as a function of time for many random realizations (individual trajectories in gray, average in black) of the communities with the same statistics as in the example. The ratio is always above 1, meaning that the relationship αF > αS maintains through the dynamics in all simulations.
+
+To confirm that these observations are a generic feature, we plot the ratio αF/αS when we run the same simulation in the previous example for many draws of random systems with the same characteristics (Fig. 4c). We see that the ratio is kept above one, implying that the relationship αS < αF is maintained throughout the dynamics for all the simulations. This shows that, with high probability, the dynamical outcome of large random competitive systems is always the same: a sub-set of the species pool will coexist robustly at an equilibrium that is characterized by αS < αF < α; the equilibrium is stable, and the last few populations to go extinct (if started in phase I), or all the extinct populations (if started in phase II) cannot re-invade the system.
+
+Discussion
+
+Ecological dynamics can be extremely complex, with populations’ trajectories oscillating regularly or chaotically. The Generalized Lotka-Volterra model for multiple competitors embodies this complexity: for less than three competitors, trajectories always converge to steady states; for three or more species, one can observe cyclic dynamics; four or more competitors can coexist via nonperiodic, chaotic oscillations. Importantly, to ensure the long-term coexistence of the populations there must exist a feasible equilibrium: a choice of positive densities at which all populations, if unperturbed, could remain indefinitely. Here, we ask what types of dynamics arise when the number of competitors is large and interactions are chosen at random: we derive the probability of feasibility, and in doing so, notice that as intraspecific interaction is increased, the transition to stability always precedes that for feasibility when the system is large. As a consequence, feasible systems will be stable. Importantly, all the results in this paper are true in probability. That is, while the probability of finding feasible but unstable systems is never exactly zero, it becomes vanishingly small with system size.
+
+Intraspecific competition models the fact that each species has access to private resources or regulating factors that are species-specific; as such, it plays an important role in niche differentiation, and sets a limit to niche similarity1,2,3,4,5,6. Our results show that, to ensure feasibility, one had to postulate a level of niche differentiation that is sufficient to guarantee stability. This observation reinforces the notion that, in competitive systems, feasibility is key for coexistence5,8,22,34. This is in analogy with consumer-resource models35, as well as in GLV models with symmetric interactions produced by niche overlap or species’ similarity36, for which stability is guaranteed, and thus feasibility determines coexistence26,37. Thus, our results predict that mechanisms that decrease effective niche overlap-whether metabolic, spatial, or trait-based-push the system past the feasibility threshold αF. While direct empirical test of these patterns is out of the scope of this work, it is an exciting avenue for future research. For example, in microbial systems, one could quantify metabolic overlap from shared nutrient uptake profiles or genome-encoded pathways, and use this measure to estimate how reductions in overlap map onto the effective self-regulation needed to surpass the feasibility threshold.
+
+As a consequence, we have shown that, when the number of competitors is large, trajectories converge to stable steady states with high probability, ensuring the robust coexistence of the extant competitors. These findings are in line with empirical results: experimenting with organisms at the same trophic level (for which competition is believed to be the dominant mode of interaction) often results in equilibrium dynamics38,39,40,41,42,43, while sustained cycles and chaos are typically associated with predator-prey systems and structured populations44,45,46,47,48,49.
+
+Recently, it has been shown50 that a dynamical phase characteristic of persistent fluctuations can arise for the high-diversity, high-interaction strength limit in bacterial systems dominated by competitive interactions. Furthermore, this observation mirrors dynamical phases arising in a GLV model with dispersal. Crucially, these findings hinge on the presence of constant immigration—without it, irrespective of interaction strength, robust coexistence emerges for large communities (see Fig. S1 in ref. 50 for results when n = 50). As such, our findings are not in contradiction with these previous results50—including constant immigration for all species precludes extinctions, thereby preventing the system from relaxing to the equilibria studied here. Therefore, the results presented can be used to form an expectation for isolated systems in which populations can go extinct, or systems in which immigration is rare. For open systems in which immigration is widespread, outcomes could depart severely from what presented here.
+
+In summary, we have shown that, for large competitive communities with random coefficients following the GLV model, the probability of non-equilibrium coexistence is negligible—feasible systems are almost surely stable, and thus chaos or limit cycles will not be observed. Moreover, coexistence via stable equilibria emerges through community dynamics. In conclusion, when considering the subset of coexisting populations, we find that each population rebounds from perturbations, that the community cannot be invaded and can be built through successive invasions—the hallmark of robust coexistence4,6.
+
+Methods
+
+A canonical form for competitive systems
+
+We consider the competitive GLV system in Eq. (1), with r > 0, A = αI + B and BT1 > 0. We can further decompose the matrix A = αI + C + 1mT, where C is the matrix obtained by subtracting from each column of B its (positive) mean, and m > 0 is a vector containing the column means. We can write the solution of (αI + C + 1mT)x⋆ = 1 as a function of the solution of the simpler system (αI + C)y⋆ = 1 (Supplementary Note 2, Sec. 1), finding: 
+
+$${{\bf{x}}}^{\star }=\frac{1}{1+{{{\bf{m}}}}^{T}{{{\bf{y}}}}^{\star }}{{{\bf{y}}}}^{\star }\,.$$
+
+Thus, x⋆ is related to y⋆ through multiplication by the scalar 1/(1 + mTy⋆). As such, we have a feasible equilibrium x⋆ > 0 when either a) y⋆ > 0 (i.e., y⋆ is feasible, and because \({{{\bf{m}}}}^{T}{{{\bf{y}}}}^{\star }={\sum }_{j}{m}_{j}{y}_{j}^{\star }\) is the sum of products of nonnegative values, then the constant of proportionality is also positive), or, b) y⋆ < 0 and mTy⋆ < − 1 (i.e., all the components of y⋆ are negative, and sufficiently large to make the constant of proportionality negative as well). However, the average of y⋆ is positive (Supplementary Note 2, Sec. 1), thereby ruling out case b). We conclude that x⋆ is feasible if and only if y⋆ is feasible. Because infinitely many competitive matrices B will map into the same C, we say that this is the canonical matrix of interactions for the competitive system. Although increasing the strength of competition μ does not affect feasibility, it decreases equilibrium abundance values. As such, increasing μ too much will result in very low abundances, which could lead to extinctions in real systems where stochasticity plays a factor.
+
+Equivalence between α and σ
+
+Consider a matrix of interactions C, such that the variance of Cij is σ2. We show that there exists a rescaled system with the same feasibility properties, a different α, and a scaled interaction matrix such that σ2 = 1. The equilibrium for the system is 
+
+$${{{\bf{y}}}}^{\star }={(\alpha I+C)}^{-1}{{\bf{1}}}\,={\left(\alpha I+\sigma \widetilde{C}\right)}^{-1}\,{{\bf{1}}}\,=\frac{1}{\sigma }{\left(\widetilde{\alpha }I+\widetilde{C}\right)}^{-1}\,{{\bf{1}}}\,.$$
+
+Setting z = σy⋆ we have that \(\,{{\bf{z}}}\,={(\widetilde{\alpha }I+\widetilde{C})}^{-1}\,{{\bf{1}}}\), where \(\widetilde{\alpha }=\alpha /\sigma\) and \({\widetilde{C}}_{ij}\) have unit variance. Since σ > 0, then z > 0 ⇔ y⋆ > 0. Therefore, varying σ (i.e., the variance of the interaction matrix) is equivalent to varying intraspecific competition α. Without loss of generality, we can fix σ2 = 1 and study solely the effect of α.
+
+Intraspecific competition guaranteeing global stability
+
+The Wigner semicircular law for symmetric matrices with i.i.d. entries with mean zero and variance 1/n, \({Q}_{ij}={Q}_{ji} \sim Z(0,\frac{1}{n})\), states that, as n → ∞, the eigenvalues of Q are contained in the semicircle centered at 0 with radius 2 almost surely. Because Q is symmetric, all its eigenvalues are real, and we can write 
+
+$$-2\le {\lambda }_{min}(Q)\le {\lambda }_{max}(Q)\le 2$$
+
+We consider a random interaction matrix \(B\in {{\mathbb{R}}}^{n\times n}\) with \({\mathbb{E}}[{B}_{ij}]=0\), \({\mathbb{V}}({B}_{ij})=1\), and \({\mathbb{Cor}}({B}_{ij},{B}_{ji})=\rho\), and introduce intraspecific competition via A = αI + B. A standard argument based on Lyapunov functions (see Supplementary Note 1, Sec. 3) shows that global stability of the coexistence equilibrium is guaranteed by the positive definiteness of the symmetric part of A, 
+
+$$\frac{1}{2}\left(A+{A}^{T}\right)\succ 0\,\,\,\iff \,\,\,\alpha I+\frac{1}{2}(B+{B}^{T})\succ 0.$$
+
+ Let \(H:=\frac{1}{2}(B+{B}^{T})\), then, \({\mathbb{E}}({H}_{ij})=0\), and \({\mathbb{V}}({H}_{ij})=\frac{1}{2}(1+\rho )\). As such, the eigenvalue 
+
+$${\lambda }_{min}\left(\frac{H}{\sqrt{\frac{1}{2}n(1+\rho )}}\right)\ge -2\,\,\iff \,\,{\lambda }_{min}(H)\ge -\sqrt{2n(1+\rho )}.$$
+
+Therefore, positive definiteness of A + AT is guaranteed as long as intraspecific competition is above the threshold \({\alpha }_{S}=\sqrt{2n(1+\rho )}\).
+
+Intraspecific competition guaranteeing feasibility
+
+One can show that, in competitive systems, there exists a level of intraspecific competition at which the feasibility of the equilibrium is guaranteed, and further strengthening intraspecific competition retains feasibility (Supplementary Note 2, Sec. 2). We denote this critical level as αF. To find this value for a given matrix of interaction strengths B, we consider the eigenvalues of several matrices derived from B (or, equivalently, C, Supplementary Note 2, Sec. 3). In particular, consider the real, positive eigenvalues of  − C = 1mT − B, and call α0 the largest value such that the components of the solution (α0I + C)y⋆ = 1 diverge to  ± ∞ (if it exists, otherwise α0 = 0). Then, we form n matrices Qi, each of size n − 1. Each Qi is obtained as the sum of two matrices, \({Q}_{i}=\,{\rm{1}}{({{\rm{b}}}^{(i)})}^{T}-{B}^{(i)}\), where b(i) is the ith row of matrix B with the ith element removed, and B(i) is the matrix B with the ith row and the ith column removed. Denote as αi the maximum real eigenvalue of Qi (if it exists, otherwise αi = 0). Finally, we have that the value αF that guarantees the feasibility of the system is \({\alpha }_{F}=\max \{{\alpha }_{0},{\alpha }_{1},{\alpha }_{2},\ldots,{\alpha }_{n}\}\).
+
+Interestingly, the value of intraspecific competition sufficient to guarantee the global stability of any feasible equilibrium is also an eigenvalue, this time the largest positive eigenvalue of  − (B + BT)/2 (see above, and Supplementary Note 1, Sec. 3).
+
+Distribution of y
+ ⋆ for systems with random parameters
+
+For random models in which populations are statistically equivalent (Supplementary Note 3, Sec. 1), we have that the expectations \({\mathbb{E}}({y}_{i}^{\star })={\mathbb{E}}({y}_{j}^{\star })\), the variances \({\mathbb{V}}({y}_{i}^{\star })={\mathbb{V}}({y}_{j}^{\star })={\sigma }_{{{{\bf{y}}}}^{\star }}^{2}\), and the correlation \({\mathbb{Cor}}({y}_{i}^{\star },{y}_{j}^{\star })\) is the same for all pairs. Note that the sum of the components of y⋆ is fixed: 1Ty⋆ = n/α, and therefore the mean correlation must be negative; because it has to be the same for all pairs, it is exactly \({\mathbb{Cor}}({y}_{i}^{\star },{y}_{j}^{\star })=-1/(n-1)\), as shown also by calculating it explicitly (Supplementary Note 3, Sec. 7). Moreover, if one approximates the distribution of y⋆ as a multivariate normal distribution, finding the unknown variance (which will depend on the exact definition of the model, the statistics of the distribution, etc.) is sufficient to approximate the probability, by either ignoring the correlation between the components (because for large n it is negligible), or by computing an integral over the positive orthant (Supplementary Note 3, Sec. 7).
+
+Data availability
+
+No data was used in this work
+
+Code availability
+
+Code to reproduce all findings is available at https://doi.org/10.5281/zenodo.17742734.
+
+References
+
+MacArthur, R. & Levins, R. The limiting similarity, convergence, and divergence of coexisting species. Am. Naturalist 101, 377–385 (1967).
+
+Article 
+
+ Google Scholar 
+
+Abrams, P. The theory of limiting similarity. Annu. Rev. Ecol. Syst. 14, 359–376 (1983).
+
+Article 
+
+ Google Scholar 
+
+Yodzis, P. The stability of real ecosystems. Nature 289, 674–676 (1981).
+
+Article 
+ ADS 
+
+ Google Scholar 
+
+Chesson, P. General theory of competitive coexistence in spatially-varying environments. Theor. Popul. Biol. 58, 211–237 (2000).
+
+Article 
+ CAS 
+ PubMed 
+
+ Google Scholar 
+
+Barabás, G., Michalska-Smith, M. J. & Allesina, S. Self-regulation and the stability of large ecological networks. Nat. Ecol. Evolut. 1, 1870–1875 (2017).
+
+Article 
+
+ Google Scholar 
+
+Barabás, G., D’Andrea, R. & Stump, S. M. Chesson’s coexistence theory. Ecol. Monogr. 88, 277–303 (2018).
+
+Article 
+
+ Google Scholar 
+
+May, R. M. Will a large complex system be stable? Nature 238, 413–414 (1972).
+
+Article 
+ ADS 
+ CAS 
+ PubMed 
+
+ Google Scholar 
+
+Roberts, A. The stability of a feasible random ecosystem. Nature 251, 607–608 (1974).
+
+Article 
+ ADS 
+
+ Google Scholar 
+
+Stone, L. Some problems of community ecology: processes, patterns and species persistence in ecosystems. Ph.D. thesis, Monash University (1988).
+
+Gilpin, M. E. Stability of feasible predator-prey systems. Nature 254, 137–139 (1975).
+
+Article 
+ ADS 
+
+ Google Scholar 
+
+Goh, B. & Jennings, L. Feasibility and stability in randomly assembled Lotka-Volterra models. Ecol. Model. 3, 63–71 (1977).
+
+Article 
+
+ Google Scholar 
+
+Stone, L. The Google matrix controls the stability of structured ecological and biological networks. Nat. Commun. 7, 12857 (2016).
+
+Article 
+ ADS 
+ CAS 
+ PubMed 
+ PubMed Central 
+
+ Google Scholar 
+
+Song, C., Rohr, R. P. & Saavedra, S. A guideline to study the feasibility domain of multi-trophic and changing ecological communities. J. Theor. Biol. 450, 30–36 (2018).
+
+Article 
+ ADS 
+ MathSciNet 
+ PubMed 
+
+ Google Scholar 
+
+Bizeul, P. & Najim, J. Positive solutions for large random linear systems. Proc. Am. Math. Soc. 149, 2333–2348 (2021).
+
+Article 
+ MathSciNet 
+
+ Google Scholar 
+
+AlAdwani, M. & Saavedra, S. Feasibility conditions of ecological models: Unfolding links between model parameters. Ecol. Model. 466, 109900 (2022).
+
+Article 
+
+ Google Scholar 
+
+Allesina, S. & Tang, S. Stability criteria for complex ecosystems. Nature 483, 205–208 (2012).
+
+Article 
+ ADS 
+ CAS 
+ PubMed 
+
+ Google Scholar 
+
+Metz, F. L., Neri, I. & Rogers, T. Spectral theory of sparse non-hermitian random matrices. J. Phys. A Math. Theor. 52, 434003 (2019).
+
+Article 
+ MathSciNet 
+
+ Google Scholar 
+
+Poley, L., Galla, T. & Baron, J. W. Eigenvalue spectra of finely structured random matrices. Phys. Rev. E 109, 064301 (2024).
+
+Article 
+ ADS 
+ MathSciNet 
+ CAS 
+ PubMed 
+
+ Google Scholar 
+
+Stone, L. The feasibility and stability of large complex biological networks: a random matrix approach. Sci. Rep. 8, 1–12 (2018).
+
+Article 
+ ADS 
+ CAS 
+
+ Google Scholar 
+
+Clenet, M., El Ferchichi, H. & Najim, J. Equilibrium in a large Lotka–Volterra system with pairwise correlated interactions. Stoch. Process. Appl. 153, 423–444 (2022).
+
+Article 
+ MathSciNet 
+
+ Google Scholar 
+
+Liu, X., Constable, G. W. & Pitchford, J. W. Feasibility and stability in large Lotka Volterra systems with interaction structure. Phys. Rev. E 107, 054301 (2023).
+
+Article 
+ ADS 
+ MathSciNet 
+ CAS 
+ PubMed 
+
+ Google Scholar 
+
+Marcus, S., Turner, A. M. & Bunin, G. Extinctions as a vestige of instability: the geometry of stability and feasibility. J. Theor. Biol. 608, 112141 (2025).
+
+Smale, S. On the differential equations of species in competition. J. Math. Biol. 3, 5–7 (1976).
+
+Article 
+ MathSciNet 
+ CAS 
+ PubMed 
+
+ Google Scholar 
+
+Vano, J., Wildenberg, J., Anderson, M., Noel, J. & Sprott, J. Chaos in low-dimensional Lotka–Volterra models of competition. Nonlinearity 19, 2391 (2006).
+
+Article 
+ ADS 
+ MathSciNet 
+
+ Google Scholar 
+
+Hofbauer, J. & Sigmund, K.Evolutionary games and population dynamics (Cambridge University Press, 1998).
+
+Serván, C. A. & Allesina, S. Tractable models of ecological assembly. Ecol. Lett. 24, 1029–1037 (2021).
+
+Article 
+ PubMed 
+
+ Google Scholar 
+
+Lotka, A. J. Analytical note on certain rhythmic relations in organic systems. Proc. Natl. Acad. Sci. USA 6, 410–415 (1920).
+
+Article 
+ ADS 
+ CAS 
+ PubMed 
+ PubMed Central 
+
+ Google Scholar 
+
+Volterra, V. Fluctuations in the abundance of a species considered mathematically. Nature 118, 558–560 (1926).
+
+Article 
+ ADS 
+
+ Google Scholar 
+
+Lotka, A. J. Elements of physical biology (Williams & Wilkins, 1925).
+
+Volterra, V. Leçons sur la théorie mathématique de la Lutte pour la Vie. Gauthier-Villars, Paris (1931).
+
+Alt, J. & Krüger, T. Local elliptic law. Bernoulli 28, 886–909 (2022).
+
+Article 
+ MathSciNet 
+
+ Google Scholar 
+
+Dougoud, M., Vinckenbosch, L., Rohr, R. P., Bersier, L.-F. & Mazza, C. The feasibility of equilibria in large ecosystems: A primary but neglected concept in the complexity-stability debate. PLOS Comput. Biol. 14, 1–18 (2018).
+
+Article 
+
+ Google Scholar 
+
+Pettersson, S., Savage, V. M. & Jacobi, M. N. Stability of ecosystems enhanced by species-interaction constraints. Phys. Rev. E 102, 062405 (2020).
+
+Article 
+ ADS 
+ MathSciNet 
+ CAS 
+ PubMed 
+
+ Google Scholar 
+
+Rozdilsky, I. D. & Stone, L. Complexity can enhance stability in competitive systems. Ecol. Lett. 4, 397–400 (2001).
+
+Article 
+
+ Google Scholar 
+
+MacArthur, R. Species packing and competitive equilibrium for many species. Theor. Popul. Biol. 1, 1–11 (1970).
+
+Article 
+ CAS 
+ PubMed 
+
+ Google Scholar 
+
+Serván, C. A., Capitán, J. A., Miller, Z. R. & Allesina, S. Effects of phylogeny on coexistence in model communities. Am. Naturalist 205, E34–E48 (2025).
+
+Article 
+
+ Google Scholar 
+
+Serván, C. A., Capitán, J. A., Grilli, J., Morrison, K. E. & Allesina, S. Coexistence of many species in random ecosystems. Nat. Ecol. Evolut. 2, 1237–1242 (2018).
+
+Article 
+
+ Google Scholar 
+
+Tilman, D. Resource competition between plankton algae: an experimental and theoretical approach. Ecology 58, 338–348 (1977).
+
+Article 
+ CAS 
+
+ Google Scholar 
+
+Dybzinski, R. & Tilman, D. Resource use patterns predict long-term outcomes of plant competition for nutrients and light. Am. Naturalist 170, 305–318 (2007).
+
+Article 
+
+ Google Scholar 
+
+Burson, A., Stomp, M., Mekkes, L. & Huisman, J. Stable coexistence of equivalent nutrient competitors through niche differentiation in the light spectrum. Ecology 100, e02873 (2019).
+
+Article 
+ PubMed 
+ PubMed Central 
+
+ Google Scholar 
+
+Bittleston, L. S., Gralka, M., Leventhal, G. E., Mizrahi, I. & Cordero, O. X. Context-dependent dynamics lead to the assembly of functionally distinct microbial communities. Nat. Commun. 11, 1440 (2020).
+
+Article 
+ ADS 
+ CAS 
+ PubMed 
+ PubMed Central 
+
+ Google Scholar 
+
+Chang, C.-Y., Bajić, D., Vila, J. C., Estrela, S. & Sanchez, A. Emergent coexistence in multispecies microbial communities. Science 381, 343–348 (2023).
+
+Article 
+ ADS 
+ CAS 
+ PubMed 
+
+ Google Scholar 
+
+Lee, K. K. et al. Functional regimes define soil microbiome response to environmental change. Nature Published online: 16 July 2025 (2025).
+
+Fussmann, G. F., Ellner, S. P., Shertzer, K. W. & Hairston Jr, N. G. Crossing the Hopf bifurcation in a live predator-prey system. Science 290, 1358–1360 (2000).
+
+Article 
+ ADS 
+ CAS 
+ PubMed 
+
+ Google Scholar 
+
+Yoshida, T., Jones, L. E., Ellner, S. P., Fussmann, G. F. & Hairston Jr, N. G. Rapid evolution drives ecological dynamics in a predator–prey system. Nature 424, 303–306 (2003).
+
+Article 
+ ADS 
+ CAS 
+ PubMed 
+
+ Google Scholar 
+
+Becks, L., Hilker, F. M., Malchow, H., Jürgens, K. & Arndt, H. Experimental demonstration of chaos in a microbial food web. Nature 435, 1226–1229 (2005).
+
+Article 
+ ADS 
+ CAS 
+ PubMed 
+
+ Google Scholar 
+
+Becks, L. & Arndt, H. Transitions from stable equilibria to chaos, and back, in an experimental food web. Ecology 89, 3222–3226 (2008).
+
+Article 
+ PubMed 
+
+ Google Scholar 
+
+Benincà, E. et al. Chaos in a long-term experiment with a plankton community. Nature 451, 822–825 (2008).
+
+Article 
+ ADS 
+ PubMed 
+
+ Google Scholar 
+
+Blasius, B., Rudolf, L., Weithoff, G., Gaedke, U. & Fussmann, G. F. Long-term cyclic persistence in an experimental predator–prey system. Nature 577, 226–230 (2020).
+
+Article 
+ ADS 
+ CAS 
+ PubMed 
+
+ Google Scholar 
+
+Hu, J., Amor, D. R., Barbier, M., Bunin, G. & Gore, J. Emergent phases of ecological diversity and dynamics mapped in microcosms. Science 378, 85–89 (2022).
+
+Article 
+ ADS 
+ CAS 
+ PubMed 
+
+ Google Scholar 
+
+Download references
+
+Acknowledgements
+
+A. Skwara, Z.R. Miller, and C. Serván for discussion. This research was supported in part by grants from the NSF (DMS-2235451) and Simons Foundation (MPS-NITMB-00005320) to the NSF-Simons National Institute for Theory and Mathematics in Biology (NITMB). JAC acknowledges financial support from grant PRIORITY (PID2021-127202NB-C22), funded by MCIN/AEI/10.13039/501100011033 and “ERDF. A way of making Europe”. We acknowledge the University of Chicago’s Research Computing Center for their support of this work.
+
+Author information
+
+Authors and Affiliations
+
+Department of Ecology & Evolution, University of Chicago, Chicago, IL, USA
+
+Pablo Lechón-Alonso, Srilena Kundu, Paula Lemos-Costa & Stefano Allesina
+
+Helmholtz Institute for Functional Marine Biodiversity at the University of Oldenburg (HIFMB), Oldenburg, Germany
+
+Srilena Kundu
+
+Alfred-Wegener Institute, Helmholtz Center for Polar and Marine Research, Bremerhaven, Germany
+
+Srilena Kundu
+
+Departamento de Ecologia, Instituto de Biociências, Universidade de São Paulo, São Paulo, Brazil
+
+Paula Lemos-Costa
+
+Complex Systems Group, Department of Applied Mathematics, Universidad Politécnica de Madrid, Madrid, Spain
+
+José A. Capitán
+
+Northwestern Institute on Complex Systems, Northwestern University, Evanston, IL, USA
+
+Stefano Allesina
+
+Authors
+Pablo Lechón-Alonso
+
+View author publications
+
+Search author on:PubMed Google Scholar
+
+Srilena Kundu
+
+View author publications
+
+Search author on:PubMed Google Scholar
+
+Paula Lemos-Costa
+
+View author publications
+
+Search author on:PubMed Google Scholar
+
+José A. Capitán
+
+View author publications
+
+Search author on:PubMed Google Scholar
+
+Stefano Allesina
+
+View author publications
+
+Search author on:PubMed Google Scholar
+
+Contributions
+
+S.A. conceived and designed the study. P.L.A. and S.A. drafted the manuscript. P.L.A. drafted the code and the figures. S.A. and J.A.C. performed the derivations; J.A.C. derived the approximation using resolvents; S.A. derived those based on iterative solutions and small-rank perturbations. P.L.A, S.K., P.L.C., J.A.C. and S.A. contributed to the mathematical derivations, the implementation of the code, edited the manuscript, and discussed and interpreted the results.
+
+Corresponding author
+
+Correspondence to
+ Stefano Allesina.
+
+Ethics declarations
+
+Competing interests
+
+The authors declare no competing interests.
+
+Peer review
+
+Peer review information
+
+Nature Communications thanks Shaopeng Wang, who co-reviewed with Danping Wu, and the other anonymous reviewer(s) for their contribution to the peer review of this work. A peer review file is available.
+
+Additional information
+
+Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.
+
+Supplementary information
+
+Supplementary Information (download PDF )
+
+Peer Review file (download PDF )
+
+Rights and permissions
+
+Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. You do not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+
+Reprints and permissions
+
+About this article
+
+Cite this article
+
+Lechón-Alonso, P., Kundu, S., Lemos-Costa, P. et al. Robust coexistence in competitive ecological communities.
+ Nat Commun 17, 2637 (2026). https://doi.org/10.1038/s41467-026-69151-3
+
+Download citation
+
+Received: 27 May 2025
+
+Accepted: 22 January 2026
+
+Published: 11 February 2026
+
+Version of record: 20 March 2026
+
+DOI: https://doi.org/10.1038/s41467-026-69151-3
+
+Share this article
+
+Anyone you share the following link with will be able to read this content:
+Get shareable link
+
+Sorry, a shareable link is not currently available for this article.
+
+Copy shareable link to clipboard
+
+ Provided by the Springer Nature SharedIt content-sharing initiative
+
+ Download PDF
+
+Advertisement
+
+Explore content
+
+ Research articles
+
+ Reviews & Analysis
+
+ News & Comment
+
+ Videos
+
+ Collections
+
+ Subjects
+
+ Follow us on Facebook
+
+ Follow us on X
+
+ Sign up for alerts
+
+ RSS feed
+
+About the journal
+
+ Aims & Scope
+
+ Journal Information
+
+ Editors
+
+ Open Access Fees and Funding
+
+ Calls for Papers
+
+ Editorial Values Statement
+
+ Journal Metrics
+
+ Editors' Highlights
+
+ Contact
+
+ Editorial policies
+
+ Top Articles
+
+Publish with us
+
+ For authors
+
+ For Reviewers
+
+ Language editing services
+
+ Open access funding
+
+ Submit manuscript
+
+Search
+
+ Search articles by subject, keyword or author
+
+ Show results from
+
+ All journals
+ This journal
+
+ Search
+
+ Advanced search
+
+Quick links
+
+Explore articles by subject
+
+Find a job
+
+Guide to authors
+
+Editorial policies
+
+ Nature Communications
+
+ (Nat Commun)
+
+ ISSN 2041-1723 (online)
+
+nature.com footer links
+
+About Nature Portfolio
+
+About us
+
+Press releases
+
+Press office
+
+Contact us
+
+Discover content
+
+Journals A-Z
+
+Articles by subject
+
+protocols.io
+
+Nature Index
+
+Publishing policies
+
+Nature portfolio policies
+
+Open access
+
+Author & Researcher services
+
+Reprints & permissions
+
+Research data
+
+Language editing
+
+Scientific editing
+
+Nature Masterclasses
+
+Research Solutions
+
+Libraries & institutions
+
+Librarian service & tools
+
+Librarian portal
+
+Open research
+
+Recommend to library
+
+Advertising & partnerships
+
+Advertising
+
+Partnerships & Services
+
+Media kits
+
+Branded
+ content
+
+Professional development
+
+Nature Awards
+
+Nature Careers
+
+Nature 
+ Conferences
+
+Regional websites
+
+Nature Africa
+
+Nature China
+
+Nature India
+
+Nature Japan
+
+Nature Middle East
+
+Privacy
+ Policy
+
+Use
+ of cookies
+
+ Your privacy choices/Manage cookies
+
+Legal
+ notice
+
+Accessibility
+ statement
+
+Terms & Conditions
+
+Your US state privacy rights
+
+Withdrawal from contracts here
+
+© 2026 Springer Nature Limited
+
+ Close banner
+
+ Close
+
+Sign up for the Nature Briefing newsletter — what matters in science, free to your inbox daily.
+
+ Email address
+
+ Sign up
+
+ I agree my information will be processed in accordance with the Nature and Springer Nature Limited Privacy Policy.
+
+ Close banner
+
+ Close
+
+ Get the most important science stories of the day, free in your inbox.
+ Sign up for Nature Briefing
+

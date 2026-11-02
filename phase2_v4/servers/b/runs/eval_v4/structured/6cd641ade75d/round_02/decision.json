@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793424013550365601,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "ramp_reverse",
+    "reason": "Saturating memory combines fast and slow dynamics with nonlinearities, better fitting complex signals.",
+    "prediction": "Ramp reverse will show reduced prediction variance compared to simpler models due to nonlinear saturation effects.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Nonlinear response weakens at large state magnitudes, indicating saturation limits.",
+      "condition_to_check": "If saturation limits predict future states accurately during ramp reversals, saturation is likely."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"ramp_reverse\",\n  \"reason\": \"Saturating memory combines fast and slow dynamics with nonlinearities, better fitting complex signals.\",\n  \"prediction\": \"Ramp reverse will show reduced prediction variance compared to simpler models due to nonlinear saturation effects.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"Nonlinear response weakens at large state magnitudes, indicating saturation limits.\",\n    \"condition_to_check\": \"If saturation limits predict future states accurately during ramp reversals, saturation is likely.\"\n  }\n}",
+    "input_tokens": 3816,
+    "output_tokens": 134,
+    "batch_elapsed_seconds": 3.205965328030288,
+    "amortized_seconds": 3.205965328030288,
+    "peak_gpu_allocated_gb": 14.94890546798706,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793398775042962260,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "positive_pulse",
+    "reason": "Cubic terms improve fit for nonlinear responses; pulse tests their necessity.",
+    "prediction": "Positive pulse will show increased nonlinearity in higher-order terms.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Nonlinear response in state derivatives.",
+      "condition_to_check": "Significant change in NMSE between linear and cubic models."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"state_cubic\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Cubic terms improve fit for nonlinear responses; pulse tests their necessity.\",\n  \"prediction\": \"Positive pulse will show increased nonlinearity in higher-order terms.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"none\",\n    \"target_relation\": \"Nonlinear response in state derivatives.\",\n    \"condition_to_check\": \"Significant change in NMSE between linear and cubic models.\"\n  }\n}",
+    "input_tokens": 2044,
+    "output_tokens": 110,
+    "batch_elapsed_seconds": 270.0122609687969,
+    "amortized_seconds": 67.50306524219923,
+    "peak_gpu_allocated_gb": 0.0,
+    "backend": "cpu-fp32",
+    "peak_process_ram_gb": 34.08116149902344,
+    "model_path": "/home/lsy/theory_discovery_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

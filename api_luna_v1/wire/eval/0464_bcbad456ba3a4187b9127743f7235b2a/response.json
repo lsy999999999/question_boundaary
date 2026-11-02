@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430638017628496,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0a57d61d676ac681016ae5946be264819087dc6e3984e3fd0a",
+    "object": "chat.completion",
+    "created": 1793430637,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"memory_slow has the lowest leave-trajectory-out error and low residual lag; state-only models fail substantially. Existing pulse and reversal trajectories support predictive history dependence.\",\"prediction\":\"After rapid input reversals, output will retain a smooth, decaying influence from earlier inputs rather than track only the current input.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts output beyond current input, consistent with finite relaxation.\",\"condition_to_check\":\"With current input and output matched, earlier input history should predict subsequent output; failure weakens this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3512,
+      "completion_tokens": 228,
+      "total_tokens": 3740,
+      "completion_tokens_details": {
+        "reasoning_tokens": 93
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.838039144873619
+}

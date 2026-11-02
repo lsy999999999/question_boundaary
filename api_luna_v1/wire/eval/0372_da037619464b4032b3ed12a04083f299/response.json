@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430417437339609,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0605788d7863a582016ae5938f261481938cfb7e3d65fec68a",
+    "object": "chat.completion",
+    "created": 1793430417,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"prbs\",\"reason\":\"State has the lowest leave-trajectory-out error and low residual autocorrelation; added memory, clock, and nonlinear terms do not improve validation. PRBS has the greatest prediction disagreement among plausible models.\",\"prediction\":\"Under PRBS, state predictions should track input-driven responses without systematic residual patterns tied to elapsed time or earlier inputs.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is supported by these observations.\",\"condition_to_check\":\"Check whether PRBS residuals depend on elapsed time or past inputs after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2807,
+      "completion_tokens": 216,
+      "total_tokens": 3023,
+      "completion_tokens_details": {
+        "reasoning_tokens": 85
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 8.418873647227883
+}

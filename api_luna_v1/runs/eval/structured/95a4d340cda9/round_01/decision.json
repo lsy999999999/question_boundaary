@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430128690896963,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "alternating",
+    "reason": "Saturating memory has the lowest trajectory-level CV error, but residual lag-1 correlation leaves uncertainty; alternating input has high disagreement among plausible models.",
+    "prediction": "Rapid reversals will expose whether response depends on accumulated history beyond the current input and output.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Persistent post-input decay supports accumulated history with finite relaxation.",
+      "condition_to_check": "At matched current input and output, different prior histories should predict distinct subsequent responses."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"alternating\",\"reason\":\"Saturating memory has the lowest trajectory-level CV error, but residual lag-1 correlation leaves uncertainty; alternating input has high disagreement among plausible models.\",\"prediction\":\"Rapid reversals will expose whether response depends on accumulated history beyond the current input and output.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Persistent post-input decay supports accumulated history with finite relaxation.\",\"condition_to_check\":\"At matched current input and output, different prior histories should predict distinct subsequent responses.\"}}",
+    "input_tokens": 3262,
+    "output_tokens": 249,
+    "batch_elapsed_seconds": 3.385915762744844,
+    "amortized_seconds": 3.385915762744844,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3262,
+      "completion_tokens": 249,
+      "total_tokens": 3511,
+      "completion_tokens_details": {
+        "reasoning_tokens": 132
+      }
+    },
+    "api_response_id": "resp_0d6a51fdcf1d44b7016ae5926e00d48197906ee688e2ce7f0b",
+    "wire_record": "wire/eval/0229_ac54bbe3194a458ba8c6767ae42ba9e5"
+  }
+}

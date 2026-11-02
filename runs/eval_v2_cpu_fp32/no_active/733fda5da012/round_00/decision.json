@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793406016972474892,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "positive_pulse",
+    "reason": "Current NMSE suggests underfitting; multiscale memory may capture more dynamics.",
+    "prediction": "Positive pulse should elicit a delayed response with slower decay compared to state-only model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Persistent response after input ends due to accumulated past states.",
+      "condition_to_check": "Delayed response magnitude and decay rate post-pulse."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_multiscale\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Current NMSE suggests underfitting; multiscale memory may capture more dynamics.\",\n  \"prediction\": \"Positive pulse should elicit a delayed response with slower decay compared to state-only model.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Persistent response after input ends due to accumulated past states.\",\n    \"condition_to_check\": \"Delayed response magnitude and decay rate post-pulse.\"\n  }\n}",
+    "input_tokens": 2066,
+    "output_tokens": 119,
+    "batch_elapsed_seconds": 281.7187234899029,
+    "amortized_seconds": 70.42968087247573,
+    "peak_gpu_allocated_gb": 0.0,
+    "backend": "cpu-fp32",
+    "peak_process_ram_gb": 34.3332405090332,
+    "model_path": "/home/lsy/theory_discovery_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

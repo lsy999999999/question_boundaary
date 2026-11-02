@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793432277376951066,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Slow memory has the lowest trajectory-held-out NMSE (0.00323), outperforming fast and multiscale alternatives. Remaining residual correlation cautions against claiming adequacy for unseen interventions.",
+    "prediction": "After input switches to zero, output will retain a history-dependent component that decays over seconds.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Finite-timescale accumulated input history predicts output beyond current input and visible state.",
+      "condition_to_check": "The relation is weakened if history adds no predictive effect after controlling current input and state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow memory has the lowest trajectory-held-out NMSE (0.00323), outperforming fast and multiscale alternatives. Remaining residual correlation cautions against claiming adequacy for unseen interventions.\",\"prediction\":\"After input switches to zero, output will retain a history-dependent component that decays over seconds.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Finite-timescale accumulated input history predicts output beyond current input and visible state.\",\"condition_to_check\":\"The relation is weakened if history adds no predictive effect after controlling current input and state.\"}}",
+    "input_tokens": 3695,
+    "output_tokens": 128,
+    "batch_elapsed_seconds": 2.6475252099335194,
+    "amortized_seconds": 2.6475252099335194,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3695,
+      "completion_tokens": 128,
+      "total_tokens": 3823
+    },
+    "api_response_id": "resp_04b92cbb099dd782016ae59ad3acfc81948c1692714c801463",
+    "wire_record": "wire/eval/0527_9dac70f95d774c6792a5f989aaa1abae"
+  }
+}

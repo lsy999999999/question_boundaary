@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793431310063708052,
+  "decision": {
+    "representation": "memory_fast",
+    "experiment": "ramp_reverse",
+    "reason": "Memory_fast has the lowest leave-trajectory-out NMSE (0.00184), narrowly outperforming memory_slow; memory-based models substantially outperform state-only models. Residual lag correlation leaves some uncertainty.",
+    "prediction": "After input changes, trajectories will retain a history-dependent response that relaxes over a few seconds, rather than changing instantaneously.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_fast\",\"experiment\":\"ramp_reverse\",\"reason\":\"Memory_fast has the lowest leave-trajectory-out NMSE (0.00184), narrowly outperforming memory_slow; memory-based models substantially outperform state-only models. Residual lag correlation leaves some uncertainty.\",\"prediction\":\"After input changes, trajectories will retain a history-dependent response that relaxes over a few seconds, rather than changing instantaneously.\",\"accept\":false}",
+    "input_tokens": 3288,
+    "output_tokens": 200,
+    "batch_elapsed_seconds": 3.172607833519578,
+    "amortized_seconds": 3.172607833519578,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3288,
+      "completion_tokens": 200,
+      "total_tokens": 3488,
+      "completion_tokens_details": {
+        "reasoning_tokens": 108
+      }
+    },
+    "api_response_id": "resp_0bb3e4365d22269b016ae5970b20dc8194a6d6bca4e7194a98",
+    "wire_record": "wire/dev/0067_d95a99de1d224a56a681411d1376159b"
+  }
+}

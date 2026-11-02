@@ -1,0 +1,107 @@
+{
+  "split": "dev",
+  "seeds": [
+    201
+  ],
+  "rounds": 3,
+  "batch_size": 1,
+  "max_new_tokens": 512,
+  "model": "/home/lsy/theory_discovery_20261031/models/Qwen2.5-7B-Instruct",
+  "source_hashes": {
+    "discovery/__init__.py": "afa6dd801fa48add8fff77add54a2dcbd1156d1b87e048cb30c141b57be3ad18",
+    "discovery/llm.py": "5eb8a51bf457d5cee70070091789dc1ad59a65b052ea4a6c8514a80f44670c99",
+    "discovery/models.py": "2750c7d76428da39c6ffc64473b747be85f9b14828c989f76bf9899e52967066",
+    "discovery/report.py": "cd9fe3ca4df84e4277b8727ac678eec28d0757f829ef84653e126c16e4c73bf2",
+    "discovery/runner.py": "e4d19c21681f63120ca1c90cda3c776a3890e400ac1a162750cdef666b687608",
+    "discovery/world.py": "eb299df8d467cc40e1fdac27cc44bd8212092258571b5d1010d1a45f1a9ffb48"
+  },
+  "backend": "cuda",
+  "threads": 4,
+  "python": "3.12.2 | packaged by conda-forge | (main, Feb 16 2024, 20:50:58) [GCC 12.3.0]",
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "tasks": [
+    {
+      "task_id": "442fe7a60ac6",
+      "split": "dev",
+      "family": "linear",
+      "seed": 201,
+      "params": {
+        "a": 1.0576695911145781,
+        "c": 0.8433262455638455,
+        "gain": 0.3705542514779667,
+        "c_fast": 2.508795675829969,
+        "c_slow": 0.30876968817331557,
+        "delay": 0.6598152835108253,
+        "cubic": 0.42002825116143067,
+        "clock_amp": 0.2391194110211726,
+        "clock_freq": 1.6,
+        "clock_phase": 2.7253521119980704
+      }
+    },
+    {
+      "task_id": "c2295bc59be5",
+      "split": "dev",
+      "family": "cubic",
+      "seed": 201,
+      "params": {
+        "a": 0.7384358870184434,
+        "c": 0.8246194819001713,
+        "gain": 0.6035992279827007,
+        "c_fast": 2.597927208225134,
+        "c_slow": 0.2661657276443551,
+        "delay": 0.48642874047021034,
+        "cubic": 0.7907271544840686,
+        "clock_amp": 0.29665939203206465,
+        "clock_freq": 0.4,
+        "clock_phase": 2.7651014339903144
+      }
+    },
+    {
+      "task_id": "afb8612b2c91",
+      "split": "dev",
+      "family": "memory",
+      "seed": 201,
+      "params": {
+        "a": 1.143227508179223,
+        "c": 0.35464998823710525,
+        "gain": 0.35615814831102727,
+        "c_fast": 2.0511589166108832,
+        "c_slow": 0.16970227142231442,
+        "delay": 1.1618127369236189,
+        "cubic": 0.4631845894748166,
+        "clock_amp": 0.3540481081349114,
+        "clock_freq": 0.4,
+        "clock_phase": -2.5108117570860573
+      }
+    },
+    {
+      "task_id": "950f039e72fa",
+      "split": "dev",
+      "family": "clock",
+      "seed": 201,
+      "params": {
+        "a": 1.099034736382754,
+        "c": 0.4031122376764727,
+        "gain": 0.4082042609944836,
+        "c_fast": 1.7583541138297787,
+        "c_slow": 0.2568356955925656,
+        "delay": 1.0848091636106871,
+        "cubic": 0.36896606001756577,
+        "clock_amp": 0.19669487366160207,
+        "clock_freq": 0.4,
+        "clock_phase": 0.7549614551830315
+      }
+    }
+  ],
+  "acceptance_cv_threshold": 0.05,
+  "failure_test_nmse_threshold": 0.1,
+  "initial_experiments": [
+    "positive_pulse",
+    "negative_pulse",
+    "step_rest"
+  ],
+  "test_actions_hidden_from_agent": true,
+  "protocol_version": "v3-evidence-revision",
+  "agent_fits_per_task": 52,
+  "card_permutation": "cyclic bundle shift by one for shuffled; same card ids/domains"
+}

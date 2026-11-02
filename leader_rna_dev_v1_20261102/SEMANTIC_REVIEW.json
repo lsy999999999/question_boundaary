@@ -1,0 +1,68 @@
+{
+  "reviewer": "coordinator, already aware of the target paper and all development data",
+  "scope": "Manual review of the twelve preserved actor replies; not blinded scoring or a replicated efficacy estimate.",
+  "milestones": [
+    {
+      "id": "M1",
+      "status": "partial",
+      "finding": "Two candidate paths (template/product heterogeneity and amplification carryover) were retained with unknown links identified. The released observations did not distinguish the paths; matched interventions were unavailable. No executed discriminating mechanistic test.",
+      "evidence": ["transcripts/researcher_01.md", "transcripts/researcher_04.md"]
+    },
+    {
+      "id": "M2",
+      "status": "not_achieved",
+      "finding": "Closed descriptive time functions were fitted. The mechanistic balance equations retain undefined source, loss and exchange functions and lack phase-volume and observation closure; no executable mechanistic model of cavity emergence.",
+      "evidence": ["transcripts/researcher_02.md", "transcripts/researcher_04.md", "transcripts/researcher_06_final.md"]
+    },
+    {
+      "id": "M3",
+      "status": "achieved",
+      "finding": "Five requested computation jobs completed: sequence alignment, time fits, source-schema/measurement-definition check, partition ratios, retrospective time fits. The schema check is availability/measurement work, not a physical discovery computation.",
+      "evidence": ["computations/C01_result.json", "computations/C02_result.json", "computations/C03_result.json", "computations/C04_result.json", "computations/C05_result.json"]
+    },
+    {
+      "id": "M4",
+      "status": "achieved_for_descriptive_models_only",
+      "finding": "The researcher specified families, constraints and equal-weight objective; coordinator executed multistart fitting. No mechanistic coefficients fitted, no profile-likelihood analysis performed. Boundary behavior and window sensitivity were noticed.",
+      "evidence": ["transcripts/researcher_02.md", "computations/C02_result.json", "computations/C05_result.json"]
+    },
+    {
+      "id": "M5",
+      "status": "partial",
+      "finding": "Two-compartment balance and cancellation of exchange upon summing were written, and measured partition ratios calculated. No dynamical onset threshold, stability criterion, phase diagram, critical radius or derived concentration-to-area prediction.",
+      "evidence": ["transcripts/researcher_04.md", "computations/C04_result.json"]
+    },
+    {
+      "id": "M6",
+      "status": "partial",
+      "finding": "Model limitations and two factual errors were explicitly revised. A linear comparator was retained and final model choice changed; there was no new mechanistic structure in response to the observed limitations. Errors corrected by coordinator feedback remain in original replies.",
+      "evidence": ["transcripts/researcher_01.md", "transcripts/researcher_03.md", "transcripts/researcher_04.md", "transcripts/leader_06_final.md"]
+    },
+    {
+      "id": "M7",
+      "status": "executed",
+      "finding": "Four final numeric commitments frozen before scoring the within-run reserved 36/48h measurements. Coverage 4/4. Mean absolute error 0.590276 percentage points; B48 error 1.989891 percentage points. No predeclared accuracy threshold and no independent new-data claim.",
+      "evidence": ["curator/FINAL_COMMITMENT.json", "RESULTS.json"]
+    },
+    {
+      "id": "M8",
+      "status": "full_mechanism_not_recovered",
+      "finding": "No sequence-to-functional-connectivity calculation, no coupled production/exchange/slow-diffusion concentration-gradient model, no local spinodal-instability derivation, no quantitative cavity-onset condition. Generic phase partition and balance alone do not recover the publication's mechanism.",
+      "evidence": ["transcripts/researcher_04.md", "transcripts/researcher_06_final.md"]
+    }
+  ],
+  "specific_errors_and_changes": [
+    {"source":"transcripts/researcher_01.md", "issue":"Variant read fractions incorrectly summed as 4.66%; actual listed sum 5.00% and total 99.66%.", "correction":"C01 coordinator feedback; acknowledged in leader_03 and final researcher response."},
+    {"source":"transcripts/leader_02.md", "issue":"Called length-fraction phenotype endpoints precise template-proportion measurements.", "correction":"Coordinator clarified E02 definitions; later replies corrected."},
+    {"source":"transcripts/researcher_03.md", "issue":"Introduced sum(A_i q_i)/sum(A_i), a different estimand from the supplied arithmetic object mean.", "correction":"C03 source check established the actual statistic; researcher_04 explicitly corrected it."},
+    {"source":"transcripts/leader_04.md", "issue":"Overgeneralized lack of persistent IDs: area snapshots lack longitudinal IDs but motion tracks have them.", "correction":"Coordinator clarified table-specific availability; final researcher response distinguished them."},
+    {"source":"transcripts/researcher_05.md", "issue":"Suggested retaining B model uncertainty without selecting a single point forecast yet.", "correction":"Leader_06 explicitly chose B linear conditional forecast, and final researcher adopted it before scoring; choice not attributed to the researcher alone."}
+  ],
+  "planner_behavior": {
+    "literature_queries_requested": 0,
+    "open_mechanistic_parameters_detected": true,
+    "constitutive_relations_derived_or_retrieved": false,
+    "illustrative_mechanistic_simulation_requested": false,
+    "observation": "The leader moved from unclosed mechanism to descriptive curve comparison and final prediction. The presence of 44 method cards did not itself trigger knowledge retrieval or constructive closure. This is one development observation, not a general causal conclusion."
+  }
+}

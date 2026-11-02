@@ -1,0 +1,96 @@
+{
+  "task_id": "950f039e72fa",
+  "split": "dev",
+  "family": "clock",
+  "seed": 201,
+  "method": "no_active",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_clock",
+    "ridge": 1e-05,
+    "cv_nmse": 0.00265975027634364,
+    "coefficients": [
+      0.04165,
+      2.0171741,
+      1.0336438,
+      -7.4612436,
+      0.6922292,
+      0.2759104,
+      -1.8690582,
+      -2.7696871,
+      -2.7639183,
+      -3.0243981,
+      1.4795498,
+      2.4236913,
+      2.6939791,
+      3.3574681,
+      2.8665887,
+      1.256232,
+      0.0049454,
+      0.0006462,
+      -0.0509888,
+      -0.0052732,
+      -0.0057274
+    ]
+  },
+  "test": {
+    "test_nmse": 0.0018181104409142987,
+    "test_mse": 0.0001618922721395186,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 0.0001553785053443738,
+        "nmse": 0.0013581338534426883
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.00019313076728794153,
+        "nmse": 0.0005018772292600576
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 0.000398431455133686,
+        "nmse": 0.006916260946426188
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 7.64138500054738e-05,
+        "nmse": 0.0006408286683615632
+      },
+      {
+        "action": "test_prbs",
+        "mse": 0.00010336310090568141,
+        "nmse": 0.0008758602114751072
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 4.4635954159955076e-05,
+        "nmse": 0.000615701736520189
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": true,
+  "invalid_outputs": 1,
+  "generation_calls": 4,
+  "input_tokens": 14671,
+  "output_tokens": 460,
+  "generation_seconds_amortized": 10.935689595527947,
+  "elapsed_wall_seconds": 55.853554248809814,
+  "selected_actions": [
+    "prbs",
+    "ramp_reverse",
+    "double_pulse"
+  ],
+  "selected_representations": [
+    "memory_clock",
+    "memory_clock",
+    "memory_clock",
+    "memory_clock"
+  ],
+  "peak_gpu_allocated_gb": 14.99066686630249,
+  "peak_process_ram_gb": 5.029041290283203,
+  "inference_backend": "cuda",
+  "evaluation_after_commit_ns": 1793423758260589602
+}

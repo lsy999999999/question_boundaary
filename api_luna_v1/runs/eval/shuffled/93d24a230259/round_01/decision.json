@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430548899498754,
+  "decision": {
+    "representation": "state",
+    "experiment": "slow_wave",
+    "reason": "State has the lowest leave-trajectory-out error; added memory, clock, and nonlinear features do not improve validation. Residual autocorrelation warrants further testing.",
+    "prediction": "Under slow-wave input, output will remain predictable from current state and input, without a reproducible history-dependent offset.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Observed relaxation is captured adequately by the visible state; no independent mechanism relation is established.",
+      "condition_to_check": "At matched current input and output, test whether prior input history predicts a reproducible difference."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"slow_wave\",\"reason\":\"State has the lowest leave-trajectory-out error; added memory, clock, and nonlinear features do not improve validation. Residual autocorrelation warrants further testing.\",\"prediction\":\"Under slow-wave input, output will remain predictable from current state and input, without a reproducible history-dependent offset.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Observed relaxation is captured adequately by the visible state; no independent mechanism relation is established.\",\"condition_to_check\":\"At matched current input and output, test whether prior input history predicts a reproducible difference.\"}}",
+    "input_tokens": 3261,
+    "output_tokens": 384,
+    "batch_elapsed_seconds": 4.595096823759377,
+    "amortized_seconds": 4.595096823759377,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3261,
+      "completion_tokens": 384,
+      "total_tokens": 3645,
+      "completion_tokens_details": {
+        "reasoning_tokens": 256
+      }
+    },
+    "api_response_id": "resp_0e247777899c1cb8016ae59410fc6c8197985b027ffb5e73bb",
+    "wire_record": "wire/eval/0430_babb37ea3f7742f1b43975f80cf6a7d0"
+  }
+}

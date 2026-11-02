@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430445500075805,
+  "decision": {
+    "representation": "clock",
+    "experiment": "alternating",
+    "reason": "Clock has the lowest trajectory-level CV NMSE (0.0013), far below memory-only models. Similar late oscillations across interventions are consistent with elapsed-time forcing, but competing clock and history models remain plausible.",
+    "prediction": "After input switches stop, oscillations should continue with phase aligned to elapsed time across different interventions.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "A shared elapsed-time driver could explain persistent oscillations across interventions.",
+      "condition_to_check": "Compare zero-input oscillations across interventions; aligned phase supports a clock, while input-dependent decay weakens it."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest trajectory-level CV NMSE (0.0013), far below memory-only models. Similar late oscillations across interventions are consistent with elapsed-time forcing, but competing clock and history models remain plausible.\",\"prediction\":\"After input switches stop, oscillations should continue with phase aligned to elapsed time across different interventions.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A shared elapsed-time driver could explain persistent oscillations across interventions.\",\"condition_to_check\":\"Compare zero-input oscillations across interventions; aligned phase supports a clock, while input-dependent decay weakens it.\"}}",
+    "input_tokens": 2809,
+    "output_tokens": 297,
+    "batch_elapsed_seconds": 4.179858146235347,
+    "amortized_seconds": 4.179858146235347,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2809,
+      "completion_tokens": 297,
+      "total_tokens": 3106,
+      "completion_tokens_details": {
+        "reasoning_tokens": 160
+      }
+    },
+    "api_response_id": "resp_0837487e07728d0c016ae593aa4bbc81948ec466bc50336ab1",
+    "wire_record": "wire/eval/0387_a8e84c9eac8848388915a957dbcac71a"
+  }
+}

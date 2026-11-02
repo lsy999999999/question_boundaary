@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430550515501589,
+  "http_status": 200,
+  "body": {
+    "id": "resp_00104b135b88b8ca016ae59414008c8193bc778e3b88dc309f",
+    "object": "chat.completion",
+    "created": 1793430550,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Slow memory has the lowest trajectory-held-out error, but residual lag correlation and weaker PRBS performance leave possible misspecification; alternating input best separates plausible memory forms.\",\"prediction\":\"After rapid input reversals, output will retain a decaying dependence on earlier inputs rather than track only the current input and state.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Finite-leakage accumulated history is consistent with persistent post-input tails and improved slow-memory validation.\",\"condition_to_check\":\"The relation is weakened if prior input adds no predictive value after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3288,
+      "completion_tokens": 254,
+      "total_tokens": 3542,
+      "completion_tokens_details": {
+        "reasoning_tokens": 116
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.263005849905312
+}

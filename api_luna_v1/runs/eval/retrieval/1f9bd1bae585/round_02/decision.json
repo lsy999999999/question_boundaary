@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793430208240245244,
+  "decision": {
+    "representation": "clock",
+    "experiment": "double_pulse",
+    "reason": "Clock has much lower trajectory-held-out error than alternatives, and prior alternating and PRBS tests improved its validation. A second pulse at a different time can probe whether predictions depend on elapsed time beyond input history.",
+    "prediction": "After accounting for both pulses, any remaining oscillation should align to elapsed time across resets, rather than shift with the second pulse.",
+    "accept": true,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"double_pulse\",\"reason\":\"Clock has much lower trajectory-held-out error than alternatives, and prior alternating and PRBS tests improved its validation. A second pulse at a different time can probe whether predictions depend on elapsed time beyond input history.\",\"prediction\":\"After accounting for both pulses, any remaining oscillation should align to elapsed time across resets, rather than shift with the second pulse.\",\"accept\":true}",
+    "input_tokens": 3101,
+    "output_tokens": 246,
+    "batch_elapsed_seconds": 4.096054343506694,
+    "amortized_seconds": 4.096054343506694,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3101,
+      "completion_tokens": 246,
+      "total_tokens": 3347,
+      "completion_tokens_details": {
+        "reasoning_tokens": 154
+      }
+    },
+    "api_response_id": "resp_0a1a3f9592a60838016ae592bd25dc8194ad13f0e9b47ddb1e",
+    "wire_record": "wire/eval/0273_c34e5252b1514233831d90566892ee4c"
+  }
+}

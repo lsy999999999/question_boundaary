@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430472798835456,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0c08d69885f7042a016ae593c5d2b08193a025f1952a1b7fc7",
+    "object": "chat.completion",
+    "created": 1793430472,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest leave-trajectory-out error (0.00164), far below the current state model; persistent post-input responses also support history dependence.\",\"prediction\":\"After PRBS switches, output will retain a slow, input-history-dependent response even when current input is zero.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain card relation is established by these trajectory fits.\",\"condition_to_check\":\"Check whether PRBS responses are predicted across held-out trajectories without systematic residual structure.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2806,
+      "completion_tokens": 271,
+      "total_tokens": 3077,
+      "completion_tokens_details": {
+        "reasoning_tokens": 147
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.685788451693952
+}

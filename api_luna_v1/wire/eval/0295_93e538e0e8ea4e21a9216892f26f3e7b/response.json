@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430257277159102,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0bef891e843edef6016ae592eed8248193a82b1d9c5a501900",
+    "object": "chat.completion",
+    "created": 1793430257,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"Memory_multiscale improves trajectory-held-out NMSE over memory_slow (0.001516 vs. 0.001723); residual lag remains substantial, and PRBS has the greatest disagreement among plausible models.\",\"prediction\":\"Under PRBS, multiscale memory will predict history-dependent responses after switches that differ from single-timescale memory predictions.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence with multiple relaxation timescales is a predictive relation supported by memory-model validation.\",\"condition_to_check\":\"PRBS forecasts should improve over state-only predictions after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3481,
+      "completion_tokens": 238,
+      "total_tokens": 3719,
+      "completion_tokens_details": {
+        "reasoning_tokens": 92
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.220973721705377
+}

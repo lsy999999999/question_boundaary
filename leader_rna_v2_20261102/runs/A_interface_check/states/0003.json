@@ -1,0 +1,75 @@
+{
+  "version": 3,
+  "candidates": {},
+  "tasks": {
+    "fixture": {
+      "id": "fixture",
+      "candidate_id": "fixture",
+      "gap_id": "ratio",
+      "kind": "auxiliary_fit",
+      "status": "clarification"
+    }
+  },
+  "actor_events": [],
+  "tools": [
+    {
+      "id": "fixture_search",
+      "type": "search",
+      "candidate_id": "fixture",
+      "gap_id": "ratio",
+      "request": {
+        "type": "search",
+        "id": "fixture_search",
+        "candidate_id": "fixture",
+        "gap_id": "ratio",
+        "missing_relation": "historical background on diffusion inside a spherical domain",
+        "variables": "position,time,diffusivity",
+        "conditions": "confined Brownian diffusion, not RNA",
+        "query": "TITLE_ABS:(diffusion AND sphere)",
+        "change_if_found": "integration test only; no scientific feedback to experiment"
+      },
+      "result": {
+        "status": "failed",
+        "reason": "curl: (6) Could not resolve host: www.ebi.ac.uk\n"
+      }
+    },
+    {
+      "id": "fixture_calc",
+      "type": "compute",
+      "candidate_id": "fixture",
+      "gap_id": "ratio",
+      "request": {
+        "type": "compute",
+        "id": "fixture_calc",
+        "candidate_id": "fixture",
+        "gap_id": "ratio",
+        "purpose": "recompute existing V1 C04 request, zero scientific invention",
+        "model_spec": "ratio and rectangular marginal error propagation, undefined 0/0",
+        "code": "import json\nrows=DATA['phase_measurements.json']\ng={(r['tie_line_id'],r['phase']):r for r in rows}\nout=[]\nfor tie in range(3):\n for label,col,prefix in [('reference','reference_RNA_ng_per_uL','wt'),('variant','variant_RNA_ng_per_uL','mut')]:\n  d,l=g[tie,'dense'],g[tie,'dilute']\n  den=l[col]\n  lo=(d[col]-d[prefix+'_error_lower_ng_per_uL'])/(den+l[prefix+'_error_upper_ng_per_uL']) if den else None\n  hi=(d[col]+d[prefix+'_error_upper_ng_per_uL'])/(den-l[prefix+'_error_lower_ng_per_uL']) if den else None\n  out.append(dict(tie_line_id=tie,species=label,partition_ratio=d[col]/den if den else None,interval=[lo,hi] if den else None))\nprint(json.dumps(out))\n"
+      },
+      "result": {
+        "status": "failed",
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"/Applications/ideas/research/1031_question_boundary/leader_rna_v2_20261102/runs/A_interface_check/tools/fixture_calc/executed.py\", line 4, in <module>\n    rows=DATA['phase_measurements.json']\n         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'phase_measurements.json'\n",
+        "code_sha256": "177df42fbbbd3ada3bc3a821bad7ab69090d262c309532df198ce3575c42432f",
+        "data_sha256": "014ce243d05525d5f31b2b859bb1e20cbf6017f91e2af1479730998dcbf558e2",
+        "scope": "Unmodified executor code, broker prepends DATA. Conditional simulation unless model says and evidence supports otherwise."
+      }
+    }
+  ],
+  "literature_use": [],
+  "adjudications": [],
+  "opened": [
+    "case_brief.md",
+    "initial_measurements.json"
+  ],
+  "counters": {
+    "replies": 0,
+    "search": 1,
+    "compute": 1,
+    "evidence": 0
+  },
+  "finals": [],
+  "reason": "tool return fixture_calc"
+}

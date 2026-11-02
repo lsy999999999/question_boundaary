@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793430411439156888,
+  "http_status": 200,
+  "body": {
+    "id": "resp_016bbfd4df399c80016ae59389a4b88194839085264217043c",
+    "object": "chat.completion",
+    "created": 1793430411,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"slow_wave\",\"reason\":\"It has the lowest trajectory-held-out NMSE (0.00131), slightly outperforming saturating_memory and memory_clock; prior PRBS forecasts also support history dependence, though residual lag leaves some uncertainty.\",\"prediction\":\"After input changes, the predicted response will depend on accumulated history across timescales, not only the current input and state.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Finite-relaxation accumulated influence is a useful predictive relation, consistent with memory models outperforming state-only models.\",\"condition_to_check\":\"The history-based advantage should persist across held-out interventions after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3673,
+      "completion_tokens": 146,
+      "total_tokens": 3819
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.628662091679871
+}

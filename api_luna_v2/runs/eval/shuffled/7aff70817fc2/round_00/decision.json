@@ -1,0 +1,42 @@
+{
+  "time_ns": 1793431500320089842,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "alternating",
+    "reason": "It has the lowest leave-trajectory-out error (0.00351) and improves on state_cubic, while residual lag correlation suggests remaining dynamics; unseen adequacy is uncertain.",
+    "prediction": "Rapid input reversals will produce responses that depend on recent accumulated history, not only the current state and input.",
+    "accept": false,
+    "mapping": {
+      "source_id": "transport",
+      "target_relation": "Saturating response features represent weakening growth as state magnitude increases, consistent with a capacity-limited response.",
+      "condition_to_check": "Compare responses across amplitudes; persistent flattening beyond instantaneous curvature would support this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest leave-trajectory-out error (0.00351) and improves on state_cubic, while residual lag correlation suggests remaining dynamics; unseen adequacy is uncertain.\",\"prediction\":\"Rapid input reversals will produce responses that depend on recent accumulated history, not only the current state and input.\",\"accept\":false,\"mapping\":{\"source_id\":\"transport\",\"target_relation\":\"Saturating response features represent weakening growth as state magnitude increases, consistent with a capacity-limited response.\",\"condition_to_check\":\"Compare responses across amplitudes; persistent flattening beyond instantaneous curvature would support this relation.\"}}",
+    "input_tokens": 2804,
+    "output_tokens": 331,
+    "batch_elapsed_seconds": 5.033571844920516,
+    "amortized_seconds": 5.033571844920516,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2804,
+      "completion_tokens": 331,
+      "total_tokens": 3135,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 193
+      }
+    },
+    "api_response_id": "resp_0967a506be082f34016ae597c80d288195a6927fc775840661",
+    "wire_record": "wire/eval/0114_d0ac7cc8497d452f8fecd2b7787a7143"
+  }
+}

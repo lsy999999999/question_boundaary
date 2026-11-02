@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431519834052613,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "memory_slow has the best trajectory-level validation (0.00138) and substantially outperforms the state model; persistent post-input decay supports accumulated history, not an independent clock.",
+    "prediction": "After irregular input switches, output will retain a smooth, decaying dependence on prior inputs rather than changing only with current input.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Slow accumulated input and output history predict finite relaxation after input returns to zero.",
+      "condition_to_check": "With current input held at zero, test whether different prior inputs produce distinct, smoothly decaying outputs."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the best trajectory-level validation (0.00138) and substantially outperforms the state model; persistent post-input decay supports accumulated history, not an independent clock.\",\"prediction\":\"After irregular input switches, output will retain a smooth, decaying dependence on prior inputs rather than changing only with current input.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated input and output history predict finite relaxation after input returns to zero.\",\"condition_to_check\":\"With current input held at zero, test whether different prior inputs produce distinct, smoothly decaying outputs.\"}}",
+    "input_tokens": 2825,
+    "output_tokens": 136,
+    "batch_elapsed_seconds": 3.5328322453424335,
+    "amortized_seconds": 3.5328322453424335,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2825,
+      "completion_tokens": 136,
+      "total_tokens": 2961,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      }
+    },
+    "api_response_id": "resp_0735651f5542c4c5016ae597de070481949e62791214d98206",
+    "wire_record": "wire/eval/0134_55881d761b964ff7bead5de449576c65"
+  }
+}

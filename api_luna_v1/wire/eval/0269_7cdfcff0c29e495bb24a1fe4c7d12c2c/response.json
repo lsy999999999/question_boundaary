@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430203425706474,
+  "http_status": 200,
+  "body": {
+    "id": "resp_02eb1bb090d1a8cc016ae592b7084c8194b0fad059b93f1a82",
+    "object": "chat.completion",
+    "created": 1793430203,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"double_pulse\",\"reason\":\"Memory models generalize far better than state-only models. Multiscale history has the best trajectory-level error among these, though memory_clock is nearly tied and plausible alternatives still disagree.\",\"prediction\":\"The second pulse will produce a different response from the first because accumulated history persists between pulses.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history predict a lingering response after input returns to zero.\",\"condition_to_check\":\"Compare responses to the two pulses; no history-dependent difference after controlling input would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3475,
+      "completion_tokens": 354,
+      "total_tokens": 3829,
+      "completion_tokens_details": {
+        "reasoning_tokens": 222
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.117717174813151
+}

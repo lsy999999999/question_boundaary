@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793430405880886662,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "It has the lowest trajectory-held-out NMSE (0.00288), substantially outperforming alternatives. Prior interventions were forecast accurately, though residual lag-1 correlation leaves some uncertainty about adequacy.",
+    "prediction": "Following input switches or return to zero, output will retain a slowly decaying dependence on prior input.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Slow accumulated input history predicts lingering output after input changes.",
+      "condition_to_check": "No lingering dependence on prior input after controlling current input and visible state would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"It has the lowest trajectory-held-out NMSE (0.00288), substantially outperforming alternatives. Prior interventions were forecast accurately, though residual lag-1 correlation leaves some uncertainty about adequacy.\",\"prediction\":\"Following input switches or return to zero, output will retain a slowly decaying dependence on prior input.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated input history predicts lingering output after input changes.\",\"condition_to_check\":\"No lingering dependence on prior input after controlling current input and visible state would weaken this relation.\"}}",
+    "input_tokens": 3679,
+    "output_tokens": 127,
+    "batch_elapsed_seconds": 2.761702603660524,
+    "amortized_seconds": 2.761702603660524,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3679,
+      "completion_tokens": 127,
+      "total_tokens": 3806
+    },
+    "api_response_id": "resp_0c00aaa58027c886016ae593841ebc81939689c25f0ca12fe8",
+    "wire_record": "wire/eval/0369_99fb657edeb34855bdfa30e1d00095e7"
+  }
+}

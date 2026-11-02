@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430523082505929,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "ramp_reverse",
+    "reason": "Saturating memory has the lowest leave-trajectory-out error; strong residual autocorrelation and post-pulse decay also contradict a state-only model.",
+    "prediction": "After reversal, the output will retain a history-dependent tail; its magnitude will grow less than proportionally at larger input amplitudes.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Accumulated input history predicts persistent post-pulse effects beyond current state and input.",
+      "condition_to_check": "At matched current state and input, different prior ramps should yield different outputs; no difference would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"ramp_reverse\",\"reason\":\"Saturating memory has the lowest leave-trajectory-out error; strong residual autocorrelation and post-pulse decay also contradict a state-only model.\",\"prediction\":\"After reversal, the output will retain a history-dependent tail; its magnitude will grow less than proportionally at larger input amplitudes.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Accumulated input history predicts persistent post-pulse effects beyond current state and input.\",\"condition_to_check\":\"At matched current state and input, different prior ramps should yield different outputs; no difference would weaken this relation.\"}}",
+    "input_tokens": 2804,
+    "output_tokens": 312,
+    "batch_elapsed_seconds": 9.18321247305721,
+    "amortized_seconds": 9.18321247305721,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2804,
+      "completion_tokens": 312,
+      "total_tokens": 3116,
+      "completion_tokens_details": {
+        "reasoning_tokens": 175
+      }
+    },
+    "api_response_id": "resp_05ff07447ed9bbdd016ae593f7ba1881958df4d09aae71b341",
+    "wire_record": "wire/eval/0420_95b418037d6b453f82de31cf06185a96"
+  }
+}

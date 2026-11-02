@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431467512421148,
+  "http_status": 200,
+  "body": {
+    "id": "resp_09fc93c754f4fad1016ae597a81b7881949f081d7610ce0edb",
+    "object": "chat.completion",
+    "created": 1793431467,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has the lowest trajectory-held-out error, but its improvement over state is small; richer memory and nonlinear models validate worse. PRBS has the greatest disagreement among plausible models.\",\"prediction\":\"Under PRBS input, clock and state predictions should diverge most; a repeatable elapsed-time pattern across input histories would favor clock.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No independent elapsed-time driver is established; the small clock-model advantage alone does not justify this relation.\",\"condition_to_check\":\"Compare repeatable residual patterns at matched elapsed times across distinct input histories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2827,
+      "completion_tokens": 231,
+      "total_tokens": 3058,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 96
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.01695073954761
+}

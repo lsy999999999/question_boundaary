@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429881163480766,
+  "http_status": 200,
+  "body": {
+    "id": "resp_05e65a4efd3402b9016ae59174ceb08193822f64a85d473b57",
+    "object": "chat.completion",
+    "created": 1793429881,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has the lowest trajectory-held-out NMSE, though its improvement over state is small. Residual lag correlation leaves adequacy uncertain; PRBS offers the largest disagreement among plausible models.\",\"prediction\":\"Under PRBS, clock predicts a component tied to elapsed time; this component should recur at the same times across resets despite different input histories.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Clock features improve prediction slightly, but do not establish an independent external driver.\",\"condition_to_check\":\"Compare reset-aligned PRBS trajectories; reject the clock account if residual structure follows input history rather than elapsed time.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2804,
+      "completion_tokens": 401,
+      "total_tokens": 3205,
+      "completion_tokens_details": {
+        "reasoning_tokens": 259
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.429896171204746
+}

@@ -1,0 +1,1237 @@
+{
+  "version": 10,
+  "candidates": {
+    "B1-H1": {
+      "id": "B1-H1",
+      "target": "Explain whether the rising B image-derived empty-area statistic reflects formation of internal RNA-poor domains, and identify a composition-dependent mechanism that could produce such domains.",
+      "known_relations": [
+        "Reported B statistic rises from 0.01381 at 0 h to 0.08918 at 24 h; A falls from 0.01487 to 0.00446 (initial_measurements.json). This is an association with condition, not a causal effect of amplification.",
+        "C03 t=0 definition check: reported value equals arithmetic mean of per-object area ratios, not total dark area divided by total filled area. case_brief.md describes the latter; C03 did not check reserved late-time values.",
+        "Gel-purified length fractions differ at endpoint: M median field mean 0.000028, M+L 0.04446, M+S 0.09412 (fraction_dev.json). This is one preparation with no exact mixture, RNA yield, time course, or matched carryover control.",
+        "C01 gives 94.66% reference DNA reads; listed non-reference reads sum to 5.00%, and total listed reads are 99.66%. Read frequencies do not establish transcript abundance, RNA composition, or active valence.",
+        "C04 shows bulk dense/dilute partition ratios vary across tie-lines and species (reference K about 239-525 on nonzero tie-lines; variant K about 176-9032). Propagated marginal-error ranges are broad; tie-line 0 variant ratio is undefined. These are not cavity-local measurements or a B time series.",
+        "C02 gives time-only extrapolations: B exponential 36/48 h 0.12072/0.15632; B linear 0.12387/0.16352. No preparation-level prediction interval; these are descriptive and do not explain mechanism.",
+        "B1-S2_S3 (2021-02-08; abstract only) reports ternary PLP/RRP/RNA competition producing PLP-rich and RRP-RNA phases, with engulfment morphology depending on RNA:RRP stoichiometry and interaction hierarchy. This is protein-RNA organization, not evidence for RNA-RNA demixing.",
+        "B1-S2_S5 (2021-06-16; abstract only) reviews internal architectures in dynamic/reactive condensates but specifies no RNA-RNA mechanism, condition, or spatial composition signature.",
+        "B1-S2_S4 (2023-03-07; abstract only) reviews associative/segregative protein and nucleic-acid transitions without the needed RNA-RNA condition; B1-S2_S2 (2022-10-01; abstract only) discusses PAR versus RNA generally; B1-S2_S1 (2023-01-25; abstract only) reports crowder-driven phase-boundary crossing in a model protein condensate while internal molecular arrangement is relatively insensitive. None directly tests H1."
+      ],
+      "hypotheses": [
+        {
+          "id": "H1",
+          "status": "retained as a new, unverified transfer hypothesis; the second search did not find direct RNA-RNA support",
+          "statement": "If reference-like and variant/length-class RNAs mix unfavorably in the dense phase, a composition fluctuation can cross a demixing instability; a locally RNA-poor internal domain could then appear as a cavity. Continued production or redistribution might increase its incidence, but the kinetic and image-mapping bridges are unestablished.",
+          "derived_consequence": "Under the assumed dimensionless binary regular-solution free energy g(phi)=phi ln(phi)+(1-phi)ln(1-phi)+chi phi(1-phi), g''=1/phi+1/(1-phi)-2chi; local instability requires chi>1/[2phi(1-phi)], or chi>2 at phi=0.5. No supplied measurement estimates phi or chi.",
+          "evidence_update": "The returned abstracts support only broad internal architecture and a distinct protein-RNA multiphase analogy. They do not establish demixing between RNA species, RNA-poor cavities, or the present transcription conditions."
+        }
+      ],
+      "gaps": [
+        {
+          "id": "g_local_composition_demixing",
+          "status": "open",
+          "description": "No direct evidence yet that two RNA species or length classes demix within one relevant dense RNA phase, or that any such internal domain is the segmented RNA-poor cavity. B1-S2 contained no direct relation in the five returned abstracts."
+        },
+        {
+          "id": "g_observation_mapping",
+          "status": "open",
+          "description": "The reported statistic is verified as the arithmetic mean of per-object ratios at t=0, while case_brief.md states a pooled-area ratio. Later timepoint mapping remains unchecked; population interpretations must respect this distinction."
+        }
+      ],
+      "variables_units": {
+        "phi": "local fraction of one of two modeled RNA species; dimensionless and unmeasured",
+        "chi": "dimensionless effective unlike-species interaction parameter under the assumed model; unmeasured",
+        "g": "dimensionless free energy per kBT under the stated model assumption",
+        "f": "reported image-derived empty-area fraction; dimensionless; t=0 object-mean mapping confirmed by C03, later mapping unchecked",
+        "t": "hours",
+        "C_ref": "bulk reference RNA concentration, ng/uL, available only for E04 endpoints",
+        "C_var": "bulk variant RNA concentration, ng/uL, available only for E04 endpoints"
+      },
+      "equations": [
+        "g(phi)=phi ln(phi)+(1-phi)ln(1-phi)+chi phi(1-phi), 0<phi<1; assumed regular-solution model, not fitted.",
+        "g''(phi)=1/phi+1/(1-phi)-2chi; local spinodal condition g''<0, equivalently chi>1/[2phi(1-phi)].",
+        "No supplied equation maps local composition/domain geometry to f(t), and no dynamic equation is closed."
+      ],
+      "parameters_ranges": {
+        "chi": "No empirical range. Conditional instability threshold is 1/[2phi(1-phi)] for 0<phi<1.",
+        "phi": "0<phi<1 by definition; actual local and mean compositions unknown."
+      },
+      "initial_boundary_conditions": "No spatial initial condition, boundary condition, production/transport rates, or local composition data supplied. The spinodal criterion assumes a homogeneous binary mixture with a small perturbation; it makes no kinetic prediction.",
+      "observation_mapping": "A local RNA-poor region would count as a cavity only if it produces a dark segmented region under the image protocol. C03 verifies the reported t=0 value is an arithmetic mean of object ratios; case_brief.md describes a pooled-area statistic, and late-time mapping is unchecked. E04 bulk concentrations are not local cavity concentrations or area/volume fractions.",
+      "alternatives": [
+        "Population or measurement selection changes which droplets contribute to f without composition-demixing within individual droplets; tracking does not contain same-droplet cavity area/state histories.",
+        "Amplification-associated carryover or another reaction condition changes transcription or morphology; no matched-carryover control exists.",
+        "A single dense phase with non-equilibrium production/transport gradients produces dark regions without equilibrium RNA-RNA demixing; spatial production and transport are unmeasured.",
+        "Environmental or crowder-like changes can move a phase boundary without changing internal molecular arrangement, as a distinct model-protein abstract suggests; transfer to this RNA system is not established."
+      ],
+      "predictions": [
+        "If H1 is correct, cavity interior and adjacent dense material should show a reproducible within-droplet reference:variant or length-class ratio contrast; changing RNA-class mixture at matched total RNA and reaction conditions should alter cavity occurrence or morphology. This is a future discriminating prediction, not an observed result.",
+        "Population/measurement selection does not require a within-droplet species-ratio contrast; f may change through inclusion or object weighting.",
+        "Bulk E04 tie-lines cannot distinguish H1 from the alternatives."
+      ],
+      "checks": [
+        "The spinodal derivation is dimensionless and valid only under the assumed binary regular-solution model.",
+        "At phi=0.5 the threshold is chi>2; as phi approaches 0 or 1 it diverges for finite chi.",
+        "No fit, simulation, or estimate of chi or phi was run.",
+        "No RNA abundance is inferred from DNA-read frequencies; image area fraction is not treated as concentration, volume fraction, or free energy.",
+        "B1-S2 sources are abstracts only. S3 gives protein-RNA competition; S5 general internal architecture; S4 broad associative/segregative framing; S2 PAR/RNA review; S1 crowder effect in a protein model. None supplies an RNA-RNA internal-demixing condition or cavity mapping.",
+        "The t=0 f mapping is checked by C03; do not claim the same check for later times."
+      ],
+      "evidence_conflicts": [
+        "case_brief.md describes total dark area divided by total filled area; C03 shows that at t=0 the supplied values instead equal the arithmetic mean of individual object ratios. C03 checked only t=0, so late-time aggregation remains unverified.",
+        "Listed non-reference read fractions sum to 5.00%, not 4.66%; reference plus listed reads sum to 99.66%, leaving 0.34% unaccounted or due to rounding."
+      ],
+      "untested": [
+        "Whether B transcripts contain DNA read variants in corresponding proportions.",
+        "Whether sequence/length classes have unfavorable mutual mixing under the actual transcription conditions.",
+        "Whether cavities are compositionally distinct phases or result from gradients, population selection, or image processing.",
+        "Whether local domains map to the reported f(t), particularly after t=0.",
+        "Whether the abstract-level RNA/protein condensate analogies apply to the present system."
+      ],
+      "dissent": "Preserve the population/measurement alternative. Same-droplet cavity trajectories are unavailable, and the statistic definition mismatch is only resolved for t=0. Returned literature has not established H1's RNA-RNA or cavity bridge.",
+      "next_task": "Use the final available search for direct RNA-RNA interaction/condensation evidence and extract its conditions. If it again returns only protein-RNA or general architecture, keep H1 explicitly speculative and prioritize the observable/local-composition gap rather than adding unsupported model detail.",
+      "version": 3,
+      "author": "leader",
+      "reply": "L2"
+    }
+  },
+  "tasks": {
+    "B1-T1": {
+      "id": "B1-T1",
+      "candidate_id": "B1-H1",
+      "gap_id": "g_local_composition_demixing",
+      "kind": "mechanism",
+      "status": "acceptance",
+      "deliverable": "Interpreted the returned relation-oriented abstracts, updated H1 and its spatial prediction, and retained the case-specific bridge as open.",
+      "acceptance": "Source IDs and dates cited; abstract-only scope distinguished from full-text support; source result separated from the new transfer hypothesis; local-composition, measurement-mapping and alternative explanations retained.",
+      "evidence_refs": [
+        "B1-S1_S3",
+        "B1-S1_S4",
+        "initial_measurements.json",
+        "fraction_dev.json",
+        "phase_measurements.json",
+        "mobility_dev.json",
+        "case_brief.md"
+      ],
+      "reason": "The returned sources support composition-dependent organization in a protein-RNA ternary system but do not resolve the target RNA-RNA cavity mechanism."
+    },
+    "B1-T2": {
+      "id": "B1-T2",
+      "candidate_id": "B1-H1",
+      "gap_id": "g_local_composition_demixing",
+      "kind": "mechanism",
+      "status": "acceptance",
+      "deliverable": "Interpreted the second targeted search against the specific RNA-RNA internal-demixing question and updated H1 without overextending abstract evidence.",
+      "acceptance": "Sources and dates listed; retrieved five abstracts distinguished from direct support; no false implication that 12 returned hits were all evaluated; local-composition and cavity bridge remain open.",
+      "evidence_refs": [
+        "B1-S2_S1",
+        "B1-S2_S2",
+        "B1-S2_S3",
+        "B1-S2_S4",
+        "B1-S2_S5"
+      ],
+      "reason": "The five supplied abstracts do not establish RNA-RNA demixing within one RNA-rich dense phase or its mapping to internal cavities."
+    },
+    "B1-T3": {
+      "id": "B1-T3",
+      "candidate_id": "B1-H1",
+      "gap_id": "g_local_composition_demixing",
+      "kind": "mechanism",
+      "status": "acceptance",
+      "deliverable": "Interpret the final relation-oriented search for RNA-RNA interactions or RNA-only condensation, stating source-supported conditions, whether it supplies direct support for the RNA-RNA premise, and what remains missing between any domain and the image cavity.",
+      "acceptance": "Use only the returned sources, cite source IDs and dates, distinguish abstracts from full text and direct RNA-RNA evidence from protein-RNA analogy; preserve H1 as speculative unless direct evidence supports the relation; do not infer case mechanism from source recognition or DNA reads.",
+      "evidence_refs": [
+        "B1-S3"
+      ],
+      "reason": "The prior search found broad condensate architecture and protein-RNA phase separation but no direct RNA-RNA relation; one search remains."
+    }
+  },
+  "actor_events": [
+    {
+      "label": "L1",
+      "role": "leader",
+      "reply": {
+        "recognition": "uncertain; no specific study can be confidently identified from the supplied, de-identified case",
+        "summary": "Reported empty-area fraction rises in B from 0.01381 at 0 h to 0.08918 at 24 h, while A declines from 0.01487 to about 0.004 (initial_measurements.json). This is a field-level image statistic; case_brief.md describes a segmented area ratio, whereas prior leader notes call it an arithmetic mean of per-droplet fractions. Preserve this measurement-definition conflict until resolved. DNA reads are not RNA concentrations: reference reads are 94.66%, and listed non-reference reads sum to 5.00% (C01 correction in round1_to4_replies; not 4.66%). Length-fraction endpoints differ (E02 / fraction_dev.json), but are one preparation and lack precise mixtures or RNA yield. E04 / phase_measurements.json gives three bulk coexisting-phase endpoints; it cannot map local cavity composition. Hypothesis H1: if two RNA species have sufficiently unfavorable mixing, their dense-phase composition field can become unstable and demix; an RNA-poor internal domain could then produce a segmented cavity. For dimensionless binary mixing free energy g(phi)=phi ln(phi)+(1-phi)ln(1-phi)+chi phi(1-phi), local instability requires g''(phi)=1/phi+1/(1-phi)-2chi<0, or chi>1/[2 phi(1-phi)] (at phi=0.5, chi>2). This is a conditional consequence, not an estimate: neither local phi nor chi is measured, and internal-domain geometry is an additional untested bridge. Discriminator: a true composition-demixing cavity should show a reproducible local RNA-species ratio difference between the cavity and surrounding dense material; a population/measurement explanation need not show that within-droplet contrast. Search requested for the missing relation and its conditions before extending this model.",
+        "candidates": [
+          {
+            "id": "B1-H1",
+            "target": "Explain whether the rising B empty-area statistic reflects formation of internal RNA-poor domains, and identify a composition-dependent mechanism that could produce them.",
+            "known_relations": [
+              "B reported field statistic increases 0-24 h and A decreases (initial_measurements.json); treatment does not identify cause.",
+              "Gel-purified template-length fractions have different endpoint empty-area summaries (E02 / fraction_dev.json); one preparation, no precise mixture, RNA yield, or time course.",
+              "E04 reports bulk reference and variant concentrations in dilute/dense phases for three tie-lines. Tie-line 0 has zero variant at both ends, so its partition ratio is undefined. These endpoints provide no spatial cavity composition or time-resolved B RNA mixture.",
+              "DNA read frequencies do not establish transcript abundance or RNA composition.",
+              "The reported f measurement mapping has an unresolved conflict between the case brief's area-ratio definition and prior notes' per-droplet arithmetic-mean description."
+            ],
+            "hypotheses": [
+              {
+                "id": "H1",
+                "status": "new provisional hypothesis, unverified",
+                "statement": "If reference-like and variant/length-class RNAs mix unfavorably in the dense phase, a composition fluctuation can cross a demixing instability; a locally RNA-poor internal domain then appears as a cavity. Continued production or redistribution could increase its incidence, but this kinetic bridge is not established.",
+                "derived_consequence": "For the dimensionless binary mixing free energy g(phi)=phi ln(phi)+(1-phi)ln(1-phi)+chi phi(1-phi), g''(phi)=1/phi+1/(1-phi)-2chi. The homogeneous composition is locally unstable only when chi>1/[2 phi(1-phi)]; at phi=0.5 this is chi>2. No supplied measurement estimates phi or chi.",
+                "untested_bridge": "Bulk two-phase coexistence is not evidence of demixing inside a dense droplet, and a demixed RNA-poor domain is not automatically equivalent to the segmented dark cavity."
+              }
+            ],
+            "gaps": [
+              {
+                "id": "g_local_composition_demixing",
+                "status": "open",
+                "description": "Missing evidence that local RNA composition differs between cavity and surrounding dense material under the relevant transcription condition, and missing literature/conditions for composition-driven internal demixing in RNA condensates."
+              },
+              {
+                "id": "g_observation_mapping",
+                "status": "open",
+                "description": "Resolve whether f is a pooled area ratio or an arithmetic mean of per-droplet fractions; the two statistics have different weighting and can respond differently to population changes."
+              }
+            ],
+            "variables_units": {
+              "phi": "local fraction of one RNA species among the two modeled species; dimensionless, unmeasured",
+              "chi": "dimensionless effective unlike-species interaction parameter in the stated mean-field free energy; unmeasured",
+              "g": "dimensionless free energy per kBT under the stated model assumption",
+              "f": "reported image-derived empty-area fraction; dimensionless, measurement weighting unresolved",
+              "t": "hours",
+              "C_ref": "reference RNA concentration, ng/uL, available only for bulk E04 endpoints",
+              "C_var": "variant RNA concentration, ng/uL, available only for bulk E04 endpoints"
+            },
+            "equations": [
+              "g(phi)=phi ln(phi)+(1-phi)ln(1-phi)+chi phi(1-phi), 0<phi<1; assumed regular-solution model, not fitted.",
+              "g''(phi)=1/phi+1/(1-phi)-2chi; local spinodal condition g''<0, equivalently chi>1/[2 phi(1-phi)].",
+              "No equation currently maps the local composition field or domain geometry to the image statistic f(t); that mapping remains an explicit missing relation."
+            ],
+            "parameters_ranges": {
+              "chi": "No empirical range available; conditional instability threshold is 1/[2 phi(1-phi)] for 0<phi<1.",
+              "phi": "0<phi<1 by definition; relevant local and mean values unknown."
+            },
+            "initial_boundary_conditions": "No spatial initial condition, boundary condition, or reaction/transport rate is supplied. The instability calculation assumes a locally homogeneous binary mixture before a small composition perturbation; it makes no kinetic prediction.",
+            "observation_mapping": "A local RNA-poor domain would count as a cavity only if it yields a dark segmented region under the imaging/threshold protocol. E04 bulk concentrations and f cannot be equated; no local composition imaging, cavity volume, or calibrated intensity-to-concentration mapping is supplied. Resolve the f aggregation definition before using a population model.",
+            "alternatives": [
+              "Population composition or track/segmentation selection changes the field statistic while individual droplets need not acquire a new internal phase; prior tracking summary contains motion, not same-droplet cavity trajectories.",
+              "Amplification-associated carryover or another unmeasured reaction condition changes transcription or morphology without sequence-mixture-driven demixing; no matched carryover control is supplied.",
+              "A single dense phase with non-equilibrium production/transport gradients could yield dark regions without equilibrium composition demixing; no relevant spatial production or transport measurements are supplied."
+            ],
+            "predictions": [
+              "Conditional H1 prediction: cavity interiors and adjacent dense RNA material have different reference:variant (or length-class) RNA ratios, reproducibly within the same droplet; cavity onset should be restricted to compositions/conditions permitting the instability.",
+              "Population/measurement alternative: no required within-droplet species-ratio contrast; changes in droplet inclusion, weights, or segmentation can alter f.",
+              "Bulk E04 tie-line concentrations alone cannot discriminate these predictions."
+            ],
+            "checks": [
+              "Spinodal derivation is dimensionless and applies only to the explicitly assumed binary regular-solution free energy.",
+              "At phi=0.5, threshold chi>2; as phi approaches 0 or 1, the threshold diverges, consistent with the stated model's lack of instability at a pure-component boundary for finite chi.",
+              "No numerical fit, simulation, or estimate of chi/phi was performed.",
+              "Do not infer RNA abundance from DNA read fractions or equate image area fraction with concentration, volume fraction, or free energy."
+            ],
+            "evidence_conflicts": [
+              "case_brief.md defines the supplied quantity as segmented dark area divided by total filled droplet area; prior leader_04 says it is the arithmetic mean of per-droplet fractions and explicitly distinguishes that from an area-weighted ratio. Maintain both definitions as a conflict pending source-level clarification.",
+              "Listed non-reference DNA read fractions total 5.00%, while a prior researcher_01 reply said 4.66%; leader_03 records the arithmetic correction. Use 5.00% for the listed reads, with total reference plus listed reads 99.66% and remaining 0.34% unaccounted/rounding."
+            ],
+            "untested": [
+              "Whether B-produced RNA contains the DNA-read variants in corresponding proportions.",
+              "Whether sequence/length classes have unfavorable mutual mixing under the actual transcription conditions.",
+              "Whether internal cavities are compositionally distinct phases or arise from gradients, population selection, or image processing.",
+              "How any local domains map to field-level f and its time course."
+            ],
+            "dissent": "Preserve the alternative that the rising aggregate statistic is caused by population weighting or measurement selection; available tracking does not report same-droplet cavity-state trajectories, and f's weighting definition conflicts across supplied materials.",
+            "next_task": "Executor should retrieve pre-cutoff relation-oriented literature on conditions for composition-selective demixing within multicomponent RNA condensates and whether it predicts spatially distinct internal domains; then assess the stated prediction against the supplied limits without claiming the literature establishes this case."
+          }
+        ],
+        "tasks": [
+          {
+            "id": "B1-T1",
+            "candidate_id": "B1-H1",
+            "gap_id": "g_local_composition_demixing",
+            "kind": "mechanism",
+            "status": "open",
+            "deliverable": "Assess the missing relation between multicomponent RNA partitioning and internal compositionally distinct domains using the returned pre-cutoff sources; extract source-supported variables, conditions, and limits; then state whether H1 should be retained, modified, or weakened and give a spatially discriminating prediction. Separately flag the f-definition conflict and do not use motion or bulk tie-line data as local composition evidence.",
+            "acceptance": "Cite returned evidence IDs and publication dates; distinguish abstract-level support from full-text support; explicitly separate established source relations from the new H1 bridge; do not search target identity or infer RNA composition from DNA reads; preserve alternatives and report if no suitable relation is found.",
+            "evidence_refs": [
+              "initial_measurements.json",
+              "fraction_dev.json",
+              "phase_measurements.json",
+              "mobility_dev.json",
+              "case_brief.md",
+              "leader_04",
+              "researcher_04"
+            ],
+            "reason": "The key missing edge is whether multicomponent composition can generate internal demixing domains under relevant conditions; a relation-oriented search can change the candidate's mechanism status before additional modeling."
+          }
+        ],
+        "requests": [
+          {
+            "type": "search",
+            "id": "B1-S1",
+            "candidate_id": "B1-H1",
+            "gap_id": "g_local_composition_demixing",
+            "missing_relation": "Conditions under which composition-selective interactions in a multicomponent RNA condensate produce internal, spatially distinct RNA-composition domains, rather than only partitioning between bulk dense and dilute phases.",
+            "variables": [
+              "RNA species sequence or length class",
+              "local composition fraction phi",
+              "dense-phase interaction or compatibility",
+              "internal-domain composition and location"
+            ],
+            "conditions": "Background first published on or before 2025-05-12; multicomponent RNA condensates; distinguish within-dense-phase demixing from ordinary dense/dilute partitioning; no target identity terms.",
+            "query": "multicomponent RNA condensate internal demixing compositionally distinct domains phase separation sequence length partitioning dense phase conditions",
+            "change_if_found": "If a source supports internal demixing under conditions that can be mapped to the measured RNA classes, retain H1 as a literature-motivated but case-untested hypothesis and sharpen its condition. If it supports only dense/dilute partitioning, weaken the internal-cavity bridge and keep bulk partitioning separate. If no qualifying relation is found, leave H1 explicitly ungrounded and prioritize alternatives."
+          }
+        ],
+        "literature_use": [],
+        "adjudication": [],
+        "final": null
+      },
+      "input_sha256": "7931c3e21033ff2e16bd17ef7100a153267e834632065e81ed5ccda32d8fa394",
+      "reply_sha256": "fb7ab0e44fd7f3023b32754e8da00d7f3687e600505ec4c8ae5a2ee934eb3bde"
+    },
+    {
+      "label": "R1",
+      "role": "executor",
+      "reply": {
+        "recognition": "No specific recognition of the target study. B1-S1_S4 is assessed only from the supplied returned abstract and metadata.",
+        "summary": "The returned evidence changes H1 from wholly ungrounded to an analogy-motivated but still unverified hypothesis. B1-S1_S4 (2021-02-08; abstract only) reports composition-dependent multiphasic morphology in a ternary PLP/RRP/RNA system: competition for RRP yields homotypic PLP and heterotypic RRP-RNA phases, and RNA:RRP stoichiometry and interaction hierarchy determine engulfment morphology. This establishes that composition and interaction hierarchy can govern spatial organization in that protein-RNA system; it does not establish RNA-RNA demixing, an RNA-poor cavity, or the kinetic bridge in the present droplets. B1-S1_S3 (2023-03-07; abstract-only review) gives broad associative/segregative transition context without the needed conditions. The case still shows only a condition-level rise in B empty-area fraction from 0.01381 at 0 h to 0.08918 at 24 h versus A falling from 0.01487 to 0.00446; fields/objects are not independent preparation replicates, and the statistic definition is conflicted. E02 endpoints and E04 bulk coexistence data do not demonstrate within-droplet composition or explain the time trend. The regular-solution spinodal remains a conditional model consequence, not an estimate or evidence of the mechanism.",
+        "candidates": [
+          {
+            "id": "B1-H1",
+            "target": "Explain whether the rising B empty-area statistic reflects formation of internal RNA-poor domains, and identify a composition-dependent mechanism that could produce them.",
+            "known_relations": [
+              "B reported field statistic increases 0-24 h and A decreases (initial_measurements.json); treatment does not identify cause.",
+              "Gel-purified template-length fractions have different endpoint empty-area summaries (E02 / fraction_dev.json); one preparation, no precise mixture, RNA yield, or time course.",
+              "E04 reports bulk reference and variant concentrations in dilute/dense phases for three tie-lines. Tie-line 0 has zero variant at both ends, so its partition ratio is undefined. These endpoints provide no spatial cavity composition or time-resolved B RNA mixture.",
+              "DNA read frequencies do not establish transcript abundance or RNA composition.",
+              "The reported f measurement mapping has an unresolved conflict between the case brief's area-ratio definition and prior notes' per-droplet arithmetic-mean description.",
+              "B1-S1_S4 (abstract, 2021-02-08) reports that in a ternary PLP/RRP/RNA system competition for a shared partner produces RNA-induced demixing into homotypic PLP-rich and heterotypic RRP-RNA phases; RNA:RRP stoichiometry and interaction hierarchy determine non-, partial-, or complete-engulfing morphologies. This supports composition-sensitive spatial organization in a protein-RNA system, not demixing between two RNA species or formation of RNA-poor cavities in the present transcription droplets."
+            ],
+            "hypotheses": [
+              {
+                "id": "H1",
+                "status": "retained as an explicitly new, unverified transfer hypothesis; returned abstract evidence motivates composition-sensitive morphology by analogy but does not establish the RNA-RNA or cavity bridge",
+                "statement": "If reference-like and variant/length-class RNAs mix unfavorably in the dense phase, a composition fluctuation can cross a demixing instability; a locally RNA-poor internal domain then appears as a cavity. Continued production or redistribution could increase its incidence, but this kinetic bridge is not established.",
+                "derived_consequence": "For the dimensionless binary mixing free energy g(phi)=phi ln(phi)+(1-phi)ln(1-phi)+chi phi(1-phi), g''(phi)=1/phi+1/(1-phi)-2chi. The homogeneous composition is locally unstable only when chi>1/[2 phi(1-phi)]; at phi=0.5 this is chi>2. No supplied measurement estimates phi or chi.",
+                "untested_bridge": "The returned study is a ternary protein/protein/RNA system. Transfer to two RNA classes in a protein-free or differently composed transcribing droplet is unsupported. Its coexisting phases and engulfment morphologies are not evidence that the dark regions here are cavities, are RNA-poor, or arise by the same mechanism."
+              }
+            ],
+            "gaps": [
+              {
+                "id": "g_local_composition_demixing",
+                "status": "open",
+                "description": "Still missing evidence that reference-like and variant/length-class RNAs themselves demix within the relevant dense phase, and that such a domain maps to an internal RNA-poor cavity. B1-S1_S4 supports composition-dependent spatial organization only in a PLP/RRP/RNA ternary system; B1-S1_S3 gives broad associative-biomacromolecule background. Neither abstract establishes the needed RNA-RNA relation or case-specific conditions."
+              },
+              {
+                "id": "g_observation_mapping",
+                "status": "open",
+                "description": "Resolve whether f is a pooled area ratio or an arithmetic mean of per-droplet fractions; the two statistics have different weighting and can respond differently to population changes."
+              }
+            ],
+            "variables_units": {
+              "phi": "local fraction of one RNA species among the two modeled species; dimensionless, unmeasured",
+              "chi": "dimensionless effective unlike-species interaction parameter in the stated mean-field free energy; unmeasured",
+              "g": "dimensionless free energy per kBT under the stated model assumption",
+              "f": "reported image-derived empty-area fraction; dimensionless, measurement weighting unresolved",
+              "t": "hours",
+              "C_ref": "reference RNA concentration, ng/uL, available only for bulk E04 endpoints",
+              "C_var": "variant RNA concentration, ng/uL, available only for bulk E04 endpoints"
+            },
+            "equations": [
+              "g(phi)=phi ln(phi)+(1-phi)ln(1-phi)+chi phi(1-phi), 0<phi<1; assumed regular-solution model, not fitted.",
+              "g''(phi)=1/phi+1/(1-phi)-2chi; local spinodal condition g''<0, equivalently chi>1/[2 phi(1-phi)].",
+              "No equation currently maps the local composition field or domain geometry to the image statistic f(t); that mapping remains an explicit missing relation."
+            ],
+            "parameters_ranges": {
+              "chi": "No empirical range available; conditional instability threshold is 1/[2 phi(1-phi)] for 0<phi<1.",
+              "phi": "0<phi<1 by definition; relevant local and mean values unknown."
+            },
+            "initial_boundary_conditions": "No spatial initial condition, boundary condition, or reaction/transport rate is supplied. The instability calculation assumes a locally homogeneous binary mixture before a small composition perturbation; it makes no kinetic prediction.",
+            "observation_mapping": "A local RNA-poor domain would count as a cavity only if it yields a dark segmented region under the imaging/threshold protocol. E04 bulk concentrations and f cannot be equated; no local composition imaging, cavity volume, or calibrated intensity-to-concentration mapping is supplied. Resolve the f aggregation definition before using a population model.",
+            "alternatives": [
+              "Population composition or track/segmentation selection changes the field statistic while individual droplets need not acquire a new internal phase; prior tracking summary contains motion, not same-droplet cavity trajectories.",
+              "Amplification-associated carryover or another unmeasured reaction condition changes transcription or morphology without sequence-mixture-driven demixing; no matched carryover control is supplied.",
+              "A single dense phase with non-equilibrium production/transport gradients could yield dark regions without equilibrium composition demixing; no relevant spatial production or transport measurements are supplied."
+            ],
+            "predictions": [
+              "Conditional H1 prediction, sharpened by the analogy: if RNA composition-selective interactions drive cavities, cavity interior and adjacent dense material should show a reproducible within-droplet reference:variant or length-class ratio contrast; changing the RNA-class mixture at matched total RNA and reaction conditions should alter cavity occurrence or morphology. The returned literature does not establish that such a contrast or response occurs here.",
+              "Population/measurement alternative: no required within-droplet species-ratio contrast; changes in droplet inclusion, weights, or segmentation can alter f.",
+              "Bulk E04 tie-line concentrations alone cannot discriminate these predictions."
+            ],
+            "checks": [
+              "Spinodal derivation is dimensionless and applies only to the explicitly assumed binary regular-solution free energy.",
+              "At phi=0.5, threshold chi>2; as phi approaches 0 or 1, the threshold diverges, consistent with the stated model's lack of instability at a pure-component boundary for finite chi.",
+              "No numerical fit, simulation, or estimate of chi/phi was performed.",
+              "Do not infer RNA abundance from DNA read fractions or equate image area fraction with concentration, volume fraction, or free energy.",
+              "B1-S1_S4 is abstract-only evidence: its stated result is for competition between PLP and RNA for shared RRP, with stoichiometry/hierarchy affecting multiphasic morphology; no numerical thresholds, RNA-RNA interaction parameter, or internal-cavity mechanism can be extracted.",
+              "B1-S1_S3 abstract provides general phase-transition framing for associative proteins/nucleic acids but does not specify internal RNA-RNA demixing conditions.",
+              "No returned source resolves the observation-statistic definition conflict or converts bulk tie-line values into local cavity composition."
+            ],
+            "evidence_conflicts": [
+              "case_brief.md defines the supplied quantity as segmented dark area divided by total filled droplet area; prior leader_04 says it is the arithmetic mean of per-droplet fractions and explicitly distinguishes that from an area-weighted ratio. Maintain both definitions as a conflict pending source-level clarification.",
+              "Listed non-reference DNA read fractions total 5.00%, while a prior researcher_01 reply said 4.66%; leader_03 records the arithmetic correction. Use 5.00% for the listed reads, with total reference plus listed reads 99.66% and remaining 0.34% unaccounted/rounding."
+            ],
+            "untested": [
+              "Whether B-produced RNA contains the DNA-read variants in corresponding proportions.",
+              "Whether sequence/length classes have unfavorable mutual mixing under the actual transcription conditions.",
+              "Whether internal cavities are compositionally distinct phases or arise from gradients, population selection, or image processing.",
+              "How any local domains map to field-level f and its time course."
+            ],
+            "dissent": "Preserve the alternative that the rising aggregate statistic is caused by population weighting or measurement selection; available tracking does not report same-droplet cavity-state trajectories, and f's weighting definition conflicts across supplied materials.",
+            "next_task": "Obtain targeted pre-cutoff literature on RNA-RNA or sequence/length-dependent composition domains inside RNA-rich condensates; evaluate whether reported conditions and spatial signatures support the specific cavity bridge. Keep the local-composition gap open unless a direct relation is found.",
+            "version": 2,
+            "author": "executor",
+            "reply": "R1"
+          }
+        ],
+        "tasks": [
+          {
+            "id": "B1-T1",
+            "candidate_id": "B1-H1",
+            "gap_id": "g_local_composition_demixing",
+            "kind": "mechanism",
+            "status": "complete",
+            "deliverable": "Interpreted the returned relation-oriented abstracts, updated H1 and its spatial prediction, and retained the case-specific bridge as open.",
+            "acceptance": "Source IDs and dates cited; abstract-only scope distinguished from full-text support; source result separated from the new transfer hypothesis; local-composition, measurement-mapping and alternative explanations retained.",
+            "evidence_refs": [
+              "B1-S1_S3",
+              "B1-S1_S4",
+              "initial_measurements.json",
+              "fraction_dev.json",
+              "phase_measurements.json",
+              "mobility_dev.json",
+              "case_brief.md"
+            ],
+            "reason": "The returned sources support composition-dependent organization in a protein-RNA ternary system but do not resolve the target RNA-RNA cavity mechanism."
+          },
+          {
+            "id": "B1-T2",
+            "candidate_id": "B1-H1",
+            "gap_id": "g_local_composition_demixing",
+            "kind": "mechanism",
+            "status": "open",
+            "deliverable": "Assess direct pre-cutoff evidence for RNA-RNA or sequence/length-class composition domains inside RNA-rich condensates, including spatial signatures and conditions.",
+            "acceptance": "Use returned source evidence only; distinguish RNA-RNA demixing from protein-RNA multiphase behavior and bulk dense/dilute partitioning; update or weaken H1 without asserting unsupported cavity identity.",
+            "evidence_refs": [
+              "B1-S2"
+            ],
+            "reason": "The first search found an informative protein-RNA analogy but no direct RNA-RNA relation."
+          }
+        ],
+        "requests": [
+          {
+            "type": "search",
+            "id": "B1-S2",
+            "candidate_id": "B1-H1",
+            "gap_id": "g_local_composition_demixing",
+            "missing_relation": "Whether two RNA species or sequence/length classes can form compositionally distinct domains within one RNA-rich dense condensate, and the conditions and spatial signatures that distinguish this from protein-RNA multiphase organization or ordinary dense/dilute partitioning.",
+            "variables": [
+              "RNA species or sequence/length class",
+              "local RNA composition fraction",
+              "dense-phase composition and interaction specificity",
+              "within-condensate domain location and morphology"
+            ],
+            "conditions": "Background first published on or before 2025-05-12; RNA-RNA or RNA-species composition domains within RNA-rich condensates; no target identity terms; distinguish internal dense-phase domains from bulk partitioning and protein-RNA-only ternary systems.",
+            "query": "RNA RNA sequence dependent demixing compositionally distinct domains inside RNA condensate dense phase spatial organization",
+            "change_if_found": "If a source directly reports RNA-RNA or RNA-species compositional domains within a dense RNA condensate under interpretable conditions, retain H1 with those conditions as a stronger mechanistic analogue while keeping the case-specific cavity bridge untested. If sources show only protein-RNA multiphase organization or dense/dilute partitioning, continue to treat H1 as a speculative transfer and prioritize alternatives."
+          }
+        ],
+        "literature_use": [
+          {
+            "source_id": "B1-S1_S4",
+            "action": "modify_as_hypothesis",
+            "relation": "In a ternary PLP/RRP/RNA system, PLP and RNA compete for RRP, producing homotypic PLP-rich and heterotypic RRP-RNA phases; RNA:RRP stoichiometry and interaction hierarchy determine non-, partial-, or complete-engulfing morphologies.",
+            "variables_units": "PLP, RRP and RNA identities; RNA:RRP stoichiometry (dimensionless but no numerical values supplied); phase composition and engulfment morphology (qualitative).",
+            "conditions": "Abstract-only report; ternary protein/protein/RNA system. Transfer to RNA-only or RNA-class demixing in transcribing droplets is a new unverified hypothesis.",
+            "impact_on_model_or_action": "Motivates retaining composition-sensitive spatial organization as an analogy and sharpening a within-droplet species-ratio prediction; does not close g_local_composition_demixing or validate cavity formation."
+          },
+          {
+            "source_id": "B1-S1_S3",
+            "action": "followup",
+            "relation": "Review frames associative biomacromolecule phase transitions involving proteins and nucleic acids as coupled associative and segregative transitions; abstract does not specify internal RNA-RNA demixing or its conditions.",
+            "variables_units": "Proteins and nucleic acids; no quantitative variables or units in the abstract.",
+            "conditions": "Abstract-only review, published 2023-03-07; broad background only.",
+            "impact_on_model_or_action": "Provides general framing but no direct mechanism evidence; request a more targeted RNA-RNA search."
+          },
+          {
+            "source_id": "B1-S1_S2",
+            "action": "alternative",
+            "relation": "In a model protein condensate, steric crowder repulsion shifts a near-critical system across a phase boundary while molecular arrangement within the resulting condensate is reported as relatively insensitive to crowder concentration and molecular weight.",
+            "variables_units": "Protein/crowder concentrations and crowder molecular weight; abstract gives no values or units.",
+            "conditions": "Abstract-only model biomolecular condensate with polymeric crowder; not an RNA-RNA system.",
+            "impact_on_model_or_action": "Supports caution that changing phase boundary or environment need not imply a changed internal arrangement; it does not explain this case."
+          }
+        ],
+        "adjudication": [],
+        "final": null
+      },
+      "input_sha256": "676f2613727d48e7c3013863d36aa075142ba90a696b0c260a385d375fed2943",
+      "reply_sha256": "e04fe8999f22a6524063403d5d66ea6445e43605cdaea78ef2e20e63daefff70"
+    },
+    {
+      "label": "L2",
+      "role": "leader",
+      "reply": {
+        "recognition": "uncertain; no specific study can be confidently identified from the supplied, de-identified case",
+        "summary": "B1-S2 returned 5 abstracts from 12 hits; none reports RNA-RNA or sequence/length-class demixing within one dense RNA-rich phase. B1-S2_S3 (2021-02-08) repeats the ternary PLP/RRP/RNA analogy: RNA and PLP compete for shared RRP, and stoichiometry/interaction hierarchy affect engulfment morphology. B1-S2_S5 (2021-06-16) says condensates can have internal architectures, but gives no mechanism or RNA-RNA condition. B1-S2_S4 is broad associative/segregative phase-transition framing; B1-S2_S2 discusses PAR versus RNA generally; B1-S2_S1 reports a protein/crowder phase-boundary shift with internal arrangement relatively insensitive to crowder conditions. All are abstract-only, so none closes the local-composition-to-cavity gap. Retain H1 only as an explicitly unverified transfer hypothesis. Its conditional regular-solution consequence remains g''(phi)=1/phi+1/(1-phi)-2chi<0, i.e. chi>1/[2phi(1-phi)] (chi>2 at phi=0.5), with no measured phi or chi. C03 confirms the t=0 supplied statistic equals arithmetic mean of per-object ratios, not ratio of summed areas (A 0.01487245 versus 0.01424891; B 0.01380909 versus 0.01849036); case_brief.md wording conflicts, and C03 did not check later values. C02 time-only 36/48 h fits are descriptive, not mechanistic: B exponential 0.12072/0.15632 versus linear 0.12387/0.16352, no preparation-level intervals. E04 partition ratios do not measure local cavity composition. No new computation was run.",
+        "candidates": [
+          {
+            "id": "B1-H1",
+            "target": "Explain whether the rising B image-derived empty-area statistic reflects formation of internal RNA-poor domains, and identify a composition-dependent mechanism that could produce such domains.",
+            "known_relations": [
+              "Reported B statistic rises from 0.01381 at 0 h to 0.08918 at 24 h; A falls from 0.01487 to 0.00446 (initial_measurements.json). This is an association with condition, not a causal effect of amplification.",
+              "C03 t=0 definition check: reported value equals arithmetic mean of per-object area ratios, not total dark area divided by total filled area. case_brief.md describes the latter; C03 did not check reserved late-time values.",
+              "Gel-purified length fractions differ at endpoint: M median field mean 0.000028, M+L 0.04446, M+S 0.09412 (fraction_dev.json). This is one preparation with no exact mixture, RNA yield, time course, or matched carryover control.",
+              "C01 gives 94.66% reference DNA reads; listed non-reference reads sum to 5.00%, and total listed reads are 99.66%. Read frequencies do not establish transcript abundance, RNA composition, or active valence.",
+              "C04 shows bulk dense/dilute partition ratios vary across tie-lines and species (reference K about 239-525 on nonzero tie-lines; variant K about 176-9032). Propagated marginal-error ranges are broad; tie-line 0 variant ratio is undefined. These are not cavity-local measurements or a B time series.",
+              "C02 gives time-only extrapolations: B exponential 36/48 h 0.12072/0.15632; B linear 0.12387/0.16352. No preparation-level prediction interval; these are descriptive and do not explain mechanism.",
+              "B1-S2_S3 (2021-02-08; abstract only) reports ternary PLP/RRP/RNA competition producing PLP-rich and RRP-RNA phases, with engulfment morphology depending on RNA:RRP stoichiometry and interaction hierarchy. This is protein-RNA organization, not evidence for RNA-RNA demixing.",
+              "B1-S2_S5 (2021-06-16; abstract only) reviews internal architectures in dynamic/reactive condensates but specifies no RNA-RNA mechanism, condition, or spatial composition signature.",
+              "B1-S2_S4 (2023-03-07; abstract only) reviews associative/segregative protein and nucleic-acid transitions without the needed RNA-RNA condition; B1-S2_S2 (2022-10-01; abstract only) discusses PAR versus RNA generally; B1-S2_S1 (2023-01-25; abstract only) reports crowder-driven phase-boundary crossing in a model protein condensate while internal molecular arrangement is relatively insensitive. None directly tests H1."
+            ],
+            "hypotheses": [
+              {
+                "id": "H1",
+                "status": "retained as a new, unverified transfer hypothesis; the second search did not find direct RNA-RNA support",
+                "statement": "If reference-like and variant/length-class RNAs mix unfavorably in the dense phase, a composition fluctuation can cross a demixing instability; a locally RNA-poor internal domain could then appear as a cavity. Continued production or redistribution might increase its incidence, but the kinetic and image-mapping bridges are unestablished.",
+                "derived_consequence": "Under the assumed dimensionless binary regular-solution free energy g(phi)=phi ln(phi)+(1-phi)ln(1-phi)+chi phi(1-phi), g''=1/phi+1/(1-phi)-2chi; local instability requires chi>1/[2phi(1-phi)], or chi>2 at phi=0.5. No supplied measurement estimates phi or chi.",
+                "evidence_update": "The returned abstracts support only broad internal architecture and a distinct protein-RNA multiphase analogy. They do not establish demixing between RNA species, RNA-poor cavities, or the present transcription conditions."
+              }
+            ],
+            "gaps": [
+              {
+                "id": "g_local_composition_demixing",
+                "status": "open",
+                "description": "No direct evidence yet that two RNA species or length classes demix within one relevant dense RNA phase, or that any such internal domain is the segmented RNA-poor cavity. B1-S2 contained no direct relation in the five returned abstracts."
+              },
+              {
+                "id": "g_observation_mapping",
+                "status": "open",
+                "description": "The reported statistic is verified as the arithmetic mean of per-object ratios at t=0, while case_brief.md states a pooled-area ratio. Later timepoint mapping remains unchecked; population interpretations must respect this distinction."
+              }
+            ],
+            "variables_units": {
+              "phi": "local fraction of one of two modeled RNA species; dimensionless and unmeasured",
+              "chi": "dimensionless effective unlike-species interaction parameter under the assumed model; unmeasured",
+              "g": "dimensionless free energy per kBT under the stated model assumption",
+              "f": "reported image-derived empty-area fraction; dimensionless; t=0 object-mean mapping confirmed by C03, later mapping unchecked",
+              "t": "hours",
+              "C_ref": "bulk reference RNA concentration, ng/uL, available only for E04 endpoints",
+              "C_var": "bulk variant RNA concentration, ng/uL, available only for E04 endpoints"
+            },
+            "equations": [
+              "g(phi)=phi ln(phi)+(1-phi)ln(1-phi)+chi phi(1-phi), 0<phi<1; assumed regular-solution model, not fitted.",
+              "g''(phi)=1/phi+1/(1-phi)-2chi; local spinodal condition g''<0, equivalently chi>1/[2phi(1-phi)].",
+              "No supplied equation maps local composition/domain geometry to f(t), and no dynamic equation is closed."
+            ],
+            "parameters_ranges": {
+              "chi": "No empirical range. Conditional instability threshold is 1/[2phi(1-phi)] for 0<phi<1.",
+              "phi": "0<phi<1 by definition; actual local and mean compositions unknown."
+            },
+            "initial_boundary_conditions": "No spatial initial condition, boundary condition, production/transport rates, or local composition data supplied. The spinodal criterion assumes a homogeneous binary mixture with a small perturbation; it makes no kinetic prediction.",
+            "observation_mapping": "A local RNA-poor region would count as a cavity only if it produces a dark segmented region under the image protocol. C03 verifies the reported t=0 value is an arithmetic mean of object ratios; case_brief.md describes a pooled-area statistic, and late-time mapping is unchecked. E04 bulk concentrations are not local cavity concentrations or area/volume fractions.",
+            "alternatives": [
+              "Population or measurement selection changes which droplets contribute to f without composition-demixing within individual droplets; tracking does not contain same-droplet cavity area/state histories.",
+              "Amplification-associated carryover or another reaction condition changes transcription or morphology; no matched-carryover control exists.",
+              "A single dense phase with non-equilibrium production/transport gradients produces dark regions without equilibrium RNA-RNA demixing; spatial production and transport are unmeasured.",
+              "Environmental or crowder-like changes can move a phase boundary without changing internal molecular arrangement, as a distinct model-protein abstract suggests; transfer to this RNA system is not established."
+            ],
+            "predictions": [
+              "If H1 is correct, cavity interior and adjacent dense material should show a reproducible within-droplet reference:variant or length-class ratio contrast; changing RNA-class mixture at matched total RNA and reaction conditions should alter cavity occurrence or morphology. This is a future discriminating prediction, not an observed result.",
+              "Population/measurement selection does not require a within-droplet species-ratio contrast; f may change through inclusion or object weighting.",
+              "Bulk E04 tie-lines cannot distinguish H1 from the alternatives."
+            ],
+            "checks": [
+              "The spinodal derivation is dimensionless and valid only under the assumed binary regular-solution model.",
+              "At phi=0.5 the threshold is chi>2; as phi approaches 0 or 1 it diverges for finite chi.",
+              "No fit, simulation, or estimate of chi or phi was run.",
+              "No RNA abundance is inferred from DNA-read frequencies; image area fraction is not treated as concentration, volume fraction, or free energy.",
+              "B1-S2 sources are abstracts only. S3 gives protein-RNA competition; S5 general internal architecture; S4 broad associative/segregative framing; S2 PAR/RNA review; S1 crowder effect in a protein model. None supplies an RNA-RNA internal-demixing condition or cavity mapping.",
+              "The t=0 f mapping is checked by C03; do not claim the same check for later times."
+            ],
+            "evidence_conflicts": [
+              "case_brief.md describes total dark area divided by total filled area; C03 shows that at t=0 the supplied values instead equal the arithmetic mean of individual object ratios. C03 checked only t=0, so late-time aggregation remains unverified.",
+              "Listed non-reference read fractions sum to 5.00%, not 4.66%; reference plus listed reads sum to 99.66%, leaving 0.34% unaccounted or due to rounding."
+            ],
+            "untested": [
+              "Whether B transcripts contain DNA read variants in corresponding proportions.",
+              "Whether sequence/length classes have unfavorable mutual mixing under the actual transcription conditions.",
+              "Whether cavities are compositionally distinct phases or result from gradients, population selection, or image processing.",
+              "Whether local domains map to the reported f(t), particularly after t=0.",
+              "Whether the abstract-level RNA/protein condensate analogies apply to the present system."
+            ],
+            "dissent": "Preserve the population/measurement alternative. Same-droplet cavity trajectories are unavailable, and the statistic definition mismatch is only resolved for t=0. Returned literature has not established H1's RNA-RNA or cavity bridge.",
+            "next_task": "Use the final available search for direct RNA-RNA interaction/condensation evidence and extract its conditions. If it again returns only protein-RNA or general architecture, keep H1 explicitly speculative and prioritize the observable/local-composition gap rather than adding unsupported model detail.",
+            "version": 3,
+            "author": "leader",
+            "reply": "L2"
+          }
+        ],
+        "tasks": [
+          {
+            "id": "B1-T2",
+            "candidate_id": "B1-H1",
+            "gap_id": "g_local_composition_demixing",
+            "kind": "mechanism",
+            "status": "complete",
+            "deliverable": "Interpreted the second targeted search against the specific RNA-RNA internal-demixing question and updated H1 without overextending abstract evidence.",
+            "acceptance": "Sources and dates listed; retrieved five abstracts distinguished from direct support; no false implication that 12 returned hits were all evaluated; local-composition and cavity bridge remain open.",
+            "evidence_refs": [
+              "B1-S2_S1",
+              "B1-S2_S2",
+              "B1-S2_S3",
+              "B1-S2_S4",
+              "B1-S2_S5"
+            ],
+            "reason": "The five supplied abstracts do not establish RNA-RNA demixing within one RNA-rich dense phase or its mapping to internal cavities."
+          },
+          {
+            "id": "B1-T3",
+            "candidate_id": "B1-H1",
+            "gap_id": "g_local_composition_demixing",
+            "kind": "mechanism",
+            "status": "open",
+            "deliverable": "Interpret the final relation-oriented search for RNA-RNA interactions or RNA-only condensation, stating source-supported conditions, whether it supplies direct support for the RNA-RNA premise, and what remains missing between any domain and the image cavity.",
+            "acceptance": "Use only the returned sources, cite source IDs and dates, distinguish abstracts from full text and direct RNA-RNA evidence from protein-RNA analogy; preserve H1 as speculative unless direct evidence supports the relation; do not infer case mechanism from source recognition or DNA reads.",
+            "evidence_refs": [
+              "B1-S3"
+            ],
+            "reason": "The prior search found broad condensate architecture and protein-RNA phase separation but no direct RNA-RNA relation; one search remains."
+          }
+        ],
+        "requests": [
+          {
+            "type": "search",
+            "id": "B1-S3",
+            "candidate_id": "B1-H1",
+            "gap_id": "g_local_composition_demixing",
+            "missing_relation": "Whether direct RNA-RNA interactions or RNA-only condensation can produce sequence/length-dependent compositionally distinct domains within an RNA-rich condensate, with a spatial signature distinct from ordinary dense/dilute partitioning.",
+            "variables": [
+              "RNA species and sequence/length class",
+              "RNA-RNA interaction or multivalency",
+              "dense-phase species composition",
+              "within-condensate domain location and composition"
+            ],
+            "conditions": "First publication on or before 2025-05-12; direct RNA-RNA or RNA-only systems preferred; exclude target identity; distinguish true within-dense-phase domains from protein-RNA multiphase systems and bulk phase partitioning.",
+            "query": "RNA RNA interactions RNA-only condensate phase separation sequence dependent composition domains dense phase multivalent RNA",
+            "change_if_found": "If returned evidence directly shows RNA-RNA interactions or RNA-only condensation with compositionally distinct internal domains and interpretable sequence/length conditions, retain H1 with those conditions as a stronger analogy but keep cavity identity untested. If evidence is only homotypic RNA condensation without internal composition domains, it supports the RNA-RNA premise only weakly and does not close the gap. If results remain protein-RNA or general, keep H1 speculative and focus on missing local composition and observation mapping."
+          }
+        ],
+        "literature_use": [
+          {
+            "source_id": "B1-S2_S1",
+            "action": "alternative",
+            "relation": "Abstract reports steric polymeric crowding shifts a near-critical model protein condensate across a phase boundary, while internal molecular arrangement is relatively insensitive to crowder concentration and molecular weight.",
+            "variables_units": "Protein/crowder concentrations and crowder molecular weight; abstract supplies no quantitative units or values.",
+            "conditions": "Model protein condensate with polymeric crowder; abstract only; not an RNA-RNA system.",
+            "impact_on_model_or_action": "Warns that an environmental phase-boundary shift need not entail altered internal molecular arrangement; does not explain the RNA case."
+          },
+          {
+            "source_id": "B1-S2_S2",
+            "action": "followup",
+            "relation": "Review discusses PAR and RNA as polymeric nucleic-acid scaffolds with potentially distinct roles in condensate organization and dynamic restructuring; abstract gives no RNA-RNA internal-domain condition.",
+            "variables_units": "PAR and RNA; no quantitative variables or units in abstract.",
+            "conditions": "Abstract-only review, first published 2022-10-01; broad background.",
+            "impact_on_model_or_action": "Does not directly support H1; retain only as context for nucleic-acid-dependent organization."
+          },
+          {
+            "source_id": "B1-S2_S3",
+            "action": "modify_as_hypothesis",
+            "relation": "In ternary PLP/RRP/RNA condensates, PLP and RNA compete for RRP, producing homotypic PLP-rich and heterotypic RRP-RNA phases; RNA:RRP stoichiometry and interaction hierarchy affect engulfment morphology.",
+            "variables_units": "PLP, RRP, RNA; RNA:RRP stoichiometry dimensionless, no numerical values in abstract.",
+            "conditions": "Abstract-only 2021-02-08 report in a ternary protein/protein/RNA system; transfer to RNA-RNA demixing is unsupported.",
+            "impact_on_model_or_action": "Retain composition-sensitive spatial organization as analogy only; no local RNA-RNA or cavity evidence."
+          },
+          {
+            "source_id": "B1-S2_S4",
+            "action": "followup",
+            "relation": "Review frames associative protein/nucleic-acid phase transitions as coupled associative and segregative transitions.",
+            "variables_units": "Proteins and nucleic acids; no quantitative variables or units in abstract.",
+            "conditions": "Abstract-only review, first published 2023-03-07; broad conceptual scope.",
+            "impact_on_model_or_action": "Insufficient to establish RNA-RNA domains; motivates no parameter transfer."
+          },
+          {
+            "source_id": "B1-S2_S5",
+            "action": "followup",
+            "relation": "Review states that physical and chemical processes can generate internal condensate architectures in dynamic, reactive mixtures of proteins and nucleic acids.",
+            "variables_units": "Proteins, nucleic acids and architecture; no quantitative variables or units in abstract.",
+            "conditions": "Abstract-only review, first published 2021-06-16; mechanism and species not specified in the returned abstract.",
+            "impact_on_model_or_action": "Supports existence of internal architectures in general, not the proposed RNA-RNA composition mechanism or cavity identity."
+          }
+        ],
+        "adjudication": [
+          {
+            "task_id": "B1-T2",
+            "decision": "complete",
+            "artifact_ids": [
+              "B1-S2_S1",
+              "B1-S2_S2",
+              "B1-S2_S3",
+              "B1-S2_S4",
+              "B1-S2_S5"
+            ],
+            "checks": [
+              "Five returned abstracts reviewed; the broker search reported 12 hits, so conclusions are limited to the returned five.",
+              "Publication dates are all before 2025-05-12; each result is abstract-only.",
+              "No returned abstract directly reports RNA-RNA internal demixing in one RNA-rich dense phase.",
+              "H1 remains an explicitly unverified transfer hypothesis; no study answer or target-specific mechanism is asserted."
+            ],
+            "remaining_gap": "Direct RNA-RNA composition domains and mapping to an internal cavity remain unestablished.",
+            "reason": "The assigned literature-assessment deliverable is complete, but its result is negative for direct support and leaves the scientific gap open."
+          }
+        ],
+        "final": null
+      },
+      "protocol_errors": [],
+      "input_sha256": "323f5383f7593c1d36a6268f6c1c90c817384a2d055431b0d825f9bdad580a67",
+      "reply_sha256": "7d1a027fa61b57b19a704ace9c6ecc506276cf61084878c4627b1aefb8f6f465"
+    },
+    {
+      "label": "R2",
+      "role": "executor",
+      "reply": {
+        "id": "B1-H1",
+        "target": "Explain whether the rising B image-derived empty-area statistic reflects formation of internal RNA-poor domains, and identify a composition-dependent mechanism that could produce such domains.",
+        "known_relations": [
+          "Reported B statistic rises from 0.01381 at 0 h to 0.08918 at 24 h; A falls from 0.01487 to 0.00446 (initial_measurements.json). This is an association with condition, not a causal effect of amplification.",
+          "C03 t=0 definition check: reported value equals arithmetic mean of per-object area ratios, not total dark area divided by total filled area. case_brief.md describes the latter; C03 did not check reserved late-time values.",
+          "Gel-purified length fractions differ at endpoint: M median field mean 0.000028, M+L 0.04446, M+S 0.09412 (fraction_dev.json). This is one preparation with no exact mixture, RNA yield, time course, or matched carryover control.",
+          "C01 gives 94.66% reference DNA reads; listed non-reference reads sum to 5.00%, and total listed reads are 99.66%. Read frequencies do not establish transcript abundance, RNA composition, or active valence.",
+          "C04 shows bulk dense/dilute partition ratios vary across tie-lines and species (reference K about 239-525 on nonzero tie-lines; variant K about 176-9032). Propagated marginal-error ranges are broad; tie-line 0 variant ratio is undefined. These are not cavity-local measurements or a B time series.",
+          "C02 gives time-only extrapolations: B exponential 36/48 h 0.12072/0.15632; B linear 0.12387/0.16352. No preparation-level prediction interval; these are descriptive and do not explain mechanism.",
+          "B1-S2_S3 (2021-02-08; abstract only) reports ternary PLP/RRP/RNA competition producing PLP-rich and RRP-RNA phases, with engulfment morphology depending on RNA:RRP stoichiometry and interaction hierarchy. This is protein-RNA organization, not evidence for RNA-RNA demixing.",
+          "B1-S2_S5 (2021-06-16; abstract only) reviews internal architectures in dynamic/reactive condensates but specifies no RNA-RNA mechanism, condition, or spatial composition signature.",
+          "B1-S2_S4 (2023-03-07; abstract only) reviews associative/segregative protein and nucleic-acid transitions without the needed RNA-RNA condition; B1-S2_S2 (2022-10-01; abstract only) discusses PAR versus RNA generally; B1-S2_S1 (2023-01-25; abstract only) reports crowder-driven phase-boundary crossing in a model protein condensate while internal molecular arrangement is relatively insensitive. None directly tests H1.",
+          "B1-S3 returned five abstracts from 385 matching records; only the five supplied abstracts were evaluated. B1-S3_S1 (2025-01-16) describes site-specific and chemically specific interactions as determinants of condensate composition, but gives no RNA-RNA or internal-domain result. B1-S3_S2 (2025-03-13) concerns protein-polyelectrolyte interactions and protein engineering. B1-S3_S3 (2025-03-31) broadly describes protein/nucleic-acid LLPS. B1-S3_S4 (2025-05-03) names multiphases among condensate-artificial-cell research frontiers. B1-S3_S5 (2025-03-25) concerns condensate mechanics and liquid-solid transitions. All are abstract-only; none supplies direct evidence for RNA-RNA demixing within one RNA-rich dense phase or a cavity mapping."
+        ],
+        "hypotheses": [
+          {
+            "id": "H1",
+            "status": "retained as a new, explicitly speculative transfer hypothesis; the final search returned no direct RNA-RNA internal-demixing evidence",
+            "statement": "If reference-like and variant/length-class RNAs mix unfavorably in the dense phase, a composition fluctuation can cross a demixing instability; a locally RNA-poor internal domain could then appear as a cavity. Continued production or redistribution might increase its incidence, but the kinetic and image-mapping bridges are unestablished.",
+            "derived_consequence": "Under the assumed dimensionless binary regular-solution free energy g(phi)=phi ln(phi)+(1-phi)ln(1-phi)+chi phi(1-phi), g''=1/phi+1/(1-phi)-2chi; local instability requires chi>1/[2phi(1-phi)], or chi>2 at phi=0.5. No supplied measurement estimates phi or chi.",
+            "evidence_update": "The five supplied B1-S3 abstracts (search hit_count 385) concern condensate composition generally, protein-polyelectrolyte interactions, broad LLPS, multiphase research frontiers, and mechanics. They do not report direct RNA-RNA demixing within an RNA-rich dense phase, sequence/length-class internal domains, or RNA-poor cavities. Only the five supplied abstracts were assessed; the other hits were not evaluated."
+          }
+        ],
+        "gaps": [
+          {
+            "id": "g_local_composition_demixing",
+            "status": "open",
+            "description": "Still no direct evidence that two RNA species or length classes demix within one relevant dense RNA phase, or that an internal composition domain is the segmented RNA-poor cavity. B1-S1 through B1-S3 supplied abstracts provide general condensate context or protein-RNA analogies, not the direct RNA-RNA relation or case-specific conditions."
+          },
+          {
+            "id": "g_observation_mapping",
+            "status": "open",
+            "description": "The reported statistic is verified as the arithmetic mean of per-object ratios at t=0, while case_brief.md states a pooled-area ratio. Later timepoint mapping remains unchecked; population interpretations must respect this distinction."
+          }
+        ],
+        "variables_units": {
+          "phi": "local fraction of one of two modeled RNA species; dimensionless and unmeasured",
+          "chi": "dimensionless effective unlike-species interaction parameter under the assumed model; unmeasured",
+          "g": "dimensionless free energy per kBT under the stated model assumption",
+          "f": "reported image-derived empty-area fraction; dimensionless; t=0 object-mean mapping confirmed by C03, later mapping unchecked",
+          "t": "hours",
+          "C_ref": "bulk reference RNA concentration, ng/uL, available only for E04 endpoints",
+          "C_var": "bulk variant RNA concentration, ng/uL, available only for E04 endpoints"
+        },
+        "equations": [
+          "g(phi)=phi ln(phi)+(1-phi)ln(1-phi)+chi phi(1-phi), 0<phi<1; assumed regular-solution model, not fitted.",
+          "g''(phi)=1/phi+1/(1-phi)-2chi; local spinodal condition g''<0, equivalently chi>1/[2phi(1-phi)].",
+          "No supplied equation maps local composition/domain geometry to f(t), and no dynamic equation is closed."
+        ],
+        "parameters_ranges": {
+          "chi": "No empirical range. Conditional instability threshold is 1/[2phi(1-phi)] for 0<phi<1.",
+          "phi": "0<phi<1 by definition; actual local and mean compositions unknown."
+        },
+        "initial_boundary_conditions": "No spatial initial condition, boundary condition, production/transport rates, or local composition data supplied. The spinodal criterion assumes a homogeneous binary mixture with a small perturbation; it makes no kinetic prediction.",
+        "observation_mapping": "A local RNA-poor region would count as a cavity only if it produces a dark segmented region under the image protocol. C03 verifies the reported t=0 value is an arithmetic mean of object ratios; case_brief.md describes a pooled-area statistic, and late-time mapping is unchecked. E04 bulk concentrations are not local cavity concentrations or area/volume fractions.",
+        "alternatives": [
+          "Population or measurement selection changes which droplets contribute to f without composition-demixing within individual droplets; tracking does not contain same-droplet cavity area/state histories.",
+          "Amplification-associated carryover or another reaction condition changes transcription or morphology; no matched-carryover control exists.",
+          "A single dense phase with non-equilibrium production/transport gradients produces dark regions without equilibrium RNA-RNA demixing; spatial production and transport are unmeasured.",
+          "Environmental or crowder-like changes can move a phase boundary without changing internal molecular arrangement, as a distinct model-protein abstract suggests; transfer to this RNA system is not established."
+        ],
+        "predictions": [
+          "If H1 is correct, cavity interior and adjacent dense material should show a reproducible within-droplet reference:variant or length-class ratio contrast; changing RNA-class mixture at matched total RNA and reaction conditions should alter cavity occurrence or morphology. This is a future discriminating prediction, not an observed result.",
+          "Population/measurement selection does not require a within-droplet species-ratio contrast; f may change through inclusion or object weighting.",
+          "Bulk E04 tie-lines cannot distinguish H1 from the alternatives."
+        ],
+        "checks": [
+          "The spinodal derivation is dimensionless and valid only under the assumed binary regular-solution model.",
+          "At phi=0.5 the threshold is chi>2; as phi approaches 0 or 1 it diverges for finite chi.",
+          "No fit, simulation, or estimate of chi or phi was run.",
+          "No RNA abundance is inferred from DNA-read frequencies; image area fraction is not treated as concentration, volume fraction, or free energy.",
+          "B1-S2 sources are abstracts only. S3 gives protein-RNA competition; S5 general internal architecture; S4 broad associative/segregative framing; S2 PAR/RNA review; S1 crowder effect in a protein model. None supplies an RNA-RNA internal-demixing condition or cavity mapping.",
+          "The t=0 f mapping is checked by C03; do not claim the same check for later times.",
+          "B1-S3 has 385 search hits, but only five abstracts were returned and assessed; no claim is made about the unreviewed hits.",
+          "B1-S3_S1 through B1-S3_S5 are abstract-only and none establishes direct RNA-RNA internal demixing or cavity identity.",
+          "The literature searches do not resolve local composition, the time-dependent mechanism, or the f aggregation conflict; no new model parameter is estimated."
+        ],
+        "evidence_conflicts": [
+          "case_brief.md describes total dark area divided by total filled area; C03 shows that at t=0 the supplied values instead equal the arithmetic mean of individual object ratios. C03 checked only t=0, so late-time aggregation remains unverified.",
+          "Listed non-reference read fractions sum to 5.00%, not 4.66%; reference plus listed reads sum to 99.66%, leaving 0.34% unaccounted or due to rounding."
+        ],
+        "untested": [
+          "Whether B transcripts contain DNA read variants in corresponding proportions.",
+          "Whether sequence/length classes have unfavorable mutual mixing under the actual transcription conditions.",
+          "Whether cavities are compositionally distinct phases or result from gradients, population selection, or image processing.",
+          "Whether local domains map to the reported f(t), particularly after t=0.",
+          "Whether the abstract-level RNA/protein condensate analogies apply to the present system.",
+          "Whether any direct RNA-RNA internal-demixing literature exists among unreviewed search hits; the five returned abstracts do not establish it."
+        ],
+        "dissent": "Preserve the population/measurement alternative. Same-droplet cavity trajectories are unavailable, the statistic mismatch is resolved only at t=0, and three searches have not established the RNA-RNA or cavity bridge.",
+        "next_task": {
+          "recognition": "No specific recognition of the target study or the five returned sources beyond their supplied titles and abstracts.",
+          "summary": "The final relation-oriented search B1-S3 returned five abstracts from 385 hits; only the five abstracts in the input were evaluated. B1-S3_S1 (2025-01-16) reviews site-specific and chemically specific recruitment in condensates; S2 (2025-03-13) reviews protein-polyelectrolyte interactions; S3 (2025-03-31) broadly discusses protein/nucleic-acid LLPS; S4 (2025-05-03) identifies multiphases as a research frontier; S5 (2025-03-25) reviews condensate mechanics. These are abstract-level background, not direct evidence for RNA-RNA demixing inside one RNA-rich dense phase. No direct sequence/length-class internal-domain or cavity relation was found in the supplied returns. H1 remains an explicitly new, speculative transfer hypothesis. The conditional spinodal result remains a consequence of an assumed regular-solution model, with phi and chi unmeasured. The case-specific bridge, local composition, kinetic explanation, and image mapping remain untested; the t=0 f mapping conflict is resolved only for t=0 according to C03.",
+          "candidates": [
+            "Prioritize the unresolved observable and local-composition gap: establish the image statistic aggregation definition across time and obtain a within-droplet species-composition signature before adding mechanistic detail. Literature in the five final returned abstracts did not directly support RNA-RNA internal demixing."
+          ],
+          "tasks": [
+            {
+              "id": "B1-T3",
+              "candidate_id": "B1-H1",
+              "gap_id": "g_local_composition_demixing",
+              "kind": "mechanism",
+              "status": "complete",
+              "deliverable": "Interpreted the final returned search for the RNA-RNA internal-demixing relation and updated candidate status and limitations.",
+              "acceptance": "Cited all five supplied source IDs and dates; distinguished abstract-only broad context from direct RNA-RNA evidence; did not imply that all 385 hits were evaluated; retained the local-composition and cavity bridge as open.",
+              "evidence_refs": [
+                "B1-S3_S1",
+                "B1-S3_S2",
+                "B1-S3_S3",
+                "B1-S3_S4",
+                "B1-S3_S5"
+              ],
+              "reason": "None of the five returned abstracts directly reports RNA-RNA internal demixing or maps such a domain to an internal image cavity."
+            }
+          ],
+          "requests": [],
+          "literature_use": [
+            {
+              "source_id": "B1-S3_S1",
+              "action": "followup",
+              "relation": "Review proposes that site-specific interactions at structured interfaces and chemically specific complementary interactions without persistent bound-state structures help determine condensate composition.",
+              "variables_units": "Interaction specificity and condensate composition; abstract provides no quantitative units or RNA-RNA conditions.",
+              "conditions": "Abstract-only review, first published 2025-01-16; general condensates.",
+              "impact_on_model_or_action": "Supports broad plausibility that interaction specificity can affect composition, but supplies no evidence for RNA-RNA demixing or internal cavity formation."
+            },
+            {
+              "source_id": "B1-S3_S2",
+              "action": "reject",
+              "relation": "Review concerns protein-polyelectrolyte interactions, protein modifications, and engineered protein-polyelectrolyte materials.",
+              "variables_units": "Protein structure, charge, charge patterning and polyelectrolyte interactions; no quantitative values in abstract.",
+              "conditions": "Abstract-only review, first published 2025-03-13; protein-polyelectrolyte focus.",
+              "impact_on_model_or_action": "Does not support the direct RNA-RNA relation and is not transferable as evidence for the proposed RNA-only mixture."
+            },
+            {
+              "source_id": "B1-S3_S3",
+              "action": "followup",
+              "relation": "Review describes LLPS as segregation of biomolecules, primarily proteins and nucleic acids, into condensed liquid-like droplets under specific conditions.",
+              "variables_units": "Proteins and nucleic acids; no composition or spatial-domain quantities in abstract.",
+              "conditions": "Abstract-only review, first published 2025-03-31; broad cancer biology framing.",
+              "impact_on_model_or_action": "General background only; no RNA-RNA internal-domain or cavity condition."
+            },
+            {
+              "source_id": "B1-S3_S4",
+              "action": "followup",
+              "relation": "Perspective identifies interfaces, active systems, multiphases, aging, and in silico tools as converging condensate/artificial-cell research areas.",
+              "variables_units": "Qualitative research themes only.",
+              "conditions": "Abstract-only perspective, first published 2025-05-03; before the cutoff.",
+              "impact_on_model_or_action": "Mentions multiphases but provides no mechanism or direct result applicable to H1."
+            },
+            {
+              "source_id": "B1-S3_S5",
+              "action": "alternative",
+              "relation": "Review describes condensate material properties, external force response, mechanics, and liquid-solid transitions.",
+              "variables_units": "Material state, force response and relaxation time are mentioned qualitatively; no relevant values in abstract.",
+              "conditions": "Abstract-only review, first published 2025-03-25; condensate mechanobiology.",
+              "impact_on_model_or_action": "No support for RNA-RNA internal demixing; mechanics remains an untested broad alternative context, not an explanation of these cavities."
+            }
+          ],
+          "adjudication": [],
+          "final": null
+        },
+        "version": 4,
+        "author": "executor",
+        "reply": "R2"
+      },
+      "protocol_errors": [],
+      "input_sha256": "f227486bdde78f4042ee5a30fe3b388302c9b6d332a81f3cb3e6b2dd491bb012",
+      "reply_sha256": "fec1b3fd55cc32eeb6039bc2f283158f60d43cec9071807b8e0f44e5a70a87f9"
+    }
+  ],
+  "tools": [
+    {
+      "id": "B1-S1",
+      "type": "search",
+      "candidate_id": "B1-H1",
+      "gap_id": "g_local_composition_demixing",
+      "request": {
+        "type": "search",
+        "id": "B1-S1",
+        "candidate_id": "B1-H1",
+        "gap_id": "g_local_composition_demixing",
+        "missing_relation": "Conditions under which composition-selective interactions in a multicomponent RNA condensate produce internal, spatially distinct RNA-composition domains, rather than only partitioning between bulk dense and dilute phases.",
+        "variables": [
+          "RNA species sequence or length class",
+          "local composition fraction phi",
+          "dense-phase interaction or compatibility",
+          "internal-domain composition and location"
+        ],
+        "conditions": "Background first published on or before 2025-05-12; multicomponent RNA condensates; distinguish within-dense-phase demixing from ordinary dense/dilute partitioning; no target identity terms.",
+        "query": "multicomponent RNA condensate internal demixing compositionally distinct domains phase separation sequence length partitioning dense phase conditions",
+        "change_if_found": "If a source supports internal demixing under conditions that can be mapped to the measured RNA classes, retain H1 as a literature-motivated but case-untested hypothesis and sharpen its condition. If it supports only dense/dilute partitioning, weaken the internal-cavity bridge and keep bulk partitioning separate. If no qualifying relation is found, leave H1 explicitly ungrounded and prioritize alternatives."
+      },
+      "result": {
+        "status": "returned",
+        "sources": [
+          {
+            "id": "B1-S1_S1",
+            "title": "Biomolecular condensates as stress sensors and modulators of bacterial signaling.",
+            "doi": "10.1371/journal.ppat.1012413",
+            "pmid": "39146259",
+            "first_publication_date": "2024-08-15",
+            "retrieval_time": "2026-11-02T06:41:14.789157+00:00",
+            "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+            "original_evidence": "Microbes exhibit remarkable adaptability to environmental fluctuations. Signaling mechanisms, such as two-component systems and secondary messengers, have long been recognized as critical for sensing and responding to environmental cues. However, recent research has illuminated the potential of a physical adaptation mechanism in signaling-phase separation, which may represent a ubiquitous mechanism for compartmentalizing biochemistry within the cytoplasm in the context of bacteria that frequently lack membrane-bound organelles. This review considers the broader prospect that phase separation may play critical roles as rapid stress sensing and response mechanisms within pathogens. It is well established that weak multivalent interactions between disordered regions, coiled-coils, and other structured domains can form condensates via phase separation and be regulated by specific environmental parameters in some cases. The process of phase separation itself acts as a responsive sensor, influenced by changes in protein concentration, posttranslational modifications, temperature, salts, pH, and oxidative stresses. This environmentally triggered phase separation can, in turn, regulate the functions of recruited biomolecules, providing a rapid response to stressful conditions. As examples, we describe biochemical pathways organized by condensates that are essential for cell physiology and exhibit signaling features. These include proteins that organize and modify the chromosome (Dps, Hu, SSB), regulate the decay, and modification of RNA (RNase E, Hfq, Rho, RNA polymerase), those involved in signal transduction (PopZ, PodJ, and SpmX) and stress response (aggresomes and polyphosphate granules). We also summarize the potential of proteins within pathogens to function as condensates and the potential and challenges in targeting biomolecular condensates for next-generation antimicrobial therapeutics. Together, this review illuminates the emerging significance of biomolecular condensates in microbial signaling, stress responses, and regulation of cell physiology and provides a framework for microbiologists to consider the function of biomolecular condensates in microbial adaptation and response to diverse environmental conditions.",
+            "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+            "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+          },
+          {
+            "id": "B1-S1_S2",
+            "title": "Macromolecular Crowding Is Surprisingly Unable to Deform the Structure of a Model Biomolecular Condensate.",
+            "doi": "10.3390/biology12020181",
+            "pmid": "36829460",
+            "first_publication_date": "2023-01-25",
+            "retrieval_time": "2026-11-02T06:41:14.789237+00:00",
+            "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+            "original_evidence": "The crowded interior of a living cell makes performing experiments on simpler in vitro systems attractive. Although these reveal interesting phenomena, their biological relevance can be questionable. A topical example is the phase separation of intrinsically disordered proteins into biomolecular condensates, which is proposed to underlie the membrane-less compartmentalization of many cellular functions. How a cell reliably controls biochemical reactions in compartments open to the compositionally-varying cytoplasm is an important question for understanding cellular homeostasis. Computer simulations are often used to study the phase behavior of model biomolecular condensates, but the number of relevant parameters increases as the number of protein components increases. It is unfeasible to exhaustively simulate such models for all parameter combinations, although interesting phenomena are almost certainly hidden in their high-dimensional parameter space. Here, we have studied the phase behavior of a model biomolecular condensate in the presence of a polymeric crowding agent. We used a novel compute framework to execute dozens of simultaneous simulations spanning the protein/crowder concentration space. We then combined the results into a graphical representation for human interpretation, which provided an efficient way to search the model's high-dimensional parameter space. We found that steric repulsion from the crowder drives a near-critical system across the phase boundary, but the molecular arrangement within the resulting biomolecular condensate is rather insensitive to the crowder concentration and molecular weight. We propose that a cell may use the local cytoplasmic concentration to assist the formation of biomolecular condensates, while relying on the dense phase to reliably provide a stable, structured, fluid milieu for cellular biochemistry despite being open to its changing environment.",
+            "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+            "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+          },
+          {
+            "id": "B1-S1_S3",
+            "title": "Phase Transitions of Associative Biomacromolecules.",
+            "doi": "10.1021/acs.chemrev.2c00814",
+            "pmid": "36881934",
+            "first_publication_date": "2023-03-07",
+            "retrieval_time": "2026-11-02T06:41:14.789241+00:00",
+            "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+            "original_evidence": "Multivalent proteins and nucleic acids, collectively referred to as multivalent associative biomacromolecules, provide the driving forces for the formation and compositional regulation of biomolecular condensates. Here, we review the key concepts of phase transitions of aqueous solutions of associative biomacromolecules, specifically proteins that include folded domains and intrinsically disordered regions. The phase transitions of these systems come under the rubric of coupled associative and segregative transitions. The concepts underlying these processes are presented, and their relevance to biomolecular condensates is discussed.",
+            "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+            "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+          },
+          {
+            "id": "B1-S1_S4",
+            "title": "Sequence-encoded and composition-dependent protein-RNA interactions control multiphasic condensate morphologies.",
+            "doi": "10.1038/s41467-021-21089-4",
+            "pmid": "33558506",
+            "first_publication_date": "2021-02-08",
+            "retrieval_time": "2026-11-02T06:41:14.789244+00:00",
+            "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+            "original_evidence": "Multivalent protein-protein and protein-RNA interactions are the drivers of biological phase separation. Biomolecular condensates typically contain a dense network of multiple proteins and RNAs, and their competing molecular interactions play key roles in regulating the condensate composition and structure. Employing a ternary system comprising of a prion-like polypeptide (PLP), arginine-rich polypeptide (RRP), and RNA, we show that competition between the PLP and RNA for a single shared partner, the RRP, leads to RNA-induced demixing of PLP-RRP condensates into stable coexisting phases-homotypic PLP condensates and heterotypic RRP-RNA condensates. The morphology of these biphasic condensates (non-engulfing/ partial engulfing/ complete engulfing) is determined by the RNA-to-RRP stoichiometry and the hierarchy of intermolecular interactions, providing a glimpse of the broad range of multiphasic patterns that are accessible to these condensates. Our findings provide a minimal set of physical rules that govern the composition and spatial organization of multicomponent and multiphasic biomolecular condensates.",
+            "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+            "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+          },
+          {
+            "id": "B1-S1_S5",
+            "title": "Biological Phase Separation and Biomolecular Condensates in Plants.",
+            "doi": "10.1146/annurev-arplant-081720-015238",
+            "pmid": "33684296",
+            "first_publication_date": "2021-03-08",
+            "retrieval_time": "2026-11-02T06:41:14.789247+00:00",
+            "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+            "original_evidence": "A surge in research focused on understanding the physical principles governing the formation, properties, and function of membraneless compartments has occurred over the past decade. Compartments such as the nucleolus, stress granules, and nuclear speckles have been designated as biomolecular condensates to describe their shared property of spatially concentrating biomolecules. Although this research has historically been carried out in animal and fungal systems, recent work has begun to explore whether these same principles are relevant in plants. Effectively understanding and studying biomolecular condensates require interdisciplinary expertise that spans cell biology, biochemistry, and condensed matter physics and biophysics. As such, some involved concepts may be unfamiliar to any given individual. This review focuses on introducing concepts essential to the study of biomolecular condensates and phase separation for biologists seeking to carry out research in this area and further examines aspects of biomolecular condensates that are relevant to plant systems.",
+            "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+            "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+          }
+        ],
+        "excluded": [],
+        "hit_count": 7,
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=multicomponent+RNA+condensate+internal+demixing+compositionally+distinct+domains+phase+separation+sequence+length+partitioning+dense+phase+conditions+AND+FIRST_PDATE%3A%5B1900-01-01+TO+2025-05-12%5D&format=json&pageSize=5&resultType=core",
+        "raw_sha256": "9a4d6626a0a90b6d4cb38849cea4e7f87f9b2c26a627b299292d859f3c53c07a",
+        "knowledge_limit": "No full-text formulas/units are inferred from the abstract. Refine or request a known historical source if needed."
+      }
+    },
+    {
+      "id": "B1-S2",
+      "type": "search",
+      "candidate_id": "B1-H1",
+      "gap_id": "g_local_composition_demixing",
+      "request": {
+        "type": "search",
+        "id": "B1-S2",
+        "candidate_id": "B1-H1",
+        "gap_id": "g_local_composition_demixing",
+        "missing_relation": "Whether two RNA species or sequence/length classes can form compositionally distinct domains within one RNA-rich dense condensate, and the conditions and spatial signatures that distinguish this from protein-RNA multiphase organization or ordinary dense/dilute partitioning.",
+        "variables": [
+          "RNA species or sequence/length class",
+          "local RNA composition fraction",
+          "dense-phase composition and interaction specificity",
+          "within-condensate domain location and morphology"
+        ],
+        "conditions": "Background first published on or before 2025-05-12; RNA-RNA or RNA-species composition domains within RNA-rich condensates; no target identity terms; distinguish internal dense-phase domains from bulk partitioning and protein-RNA-only ternary systems.",
+        "query": "RNA RNA sequence dependent demixing compositionally distinct domains inside RNA condensate dense phase spatial organization",
+        "change_if_found": "If a source directly reports RNA-RNA or RNA-species compositional domains within a dense RNA condensate under interpretable conditions, retain H1 with those conditions as a stronger mechanistic analogue while keeping the case-specific cavity bridge untested. If sources show only protein-RNA multiphase organization or dense/dilute partitioning, continue to treat H1 as a speculative transfer and prioritize alternatives."
+      },
+      "result": {
+        "status": "returned",
+        "sources": [
+          {
+            "id": "B1-S2_S1",
+            "title": "Macromolecular Crowding Is Surprisingly Unable to Deform the Structure of a Model Biomolecular Condensate.",
+            "doi": "10.3390/biology12020181",
+            "pmid": "36829460",
+            "first_publication_date": "2023-01-25",
+            "retrieval_time": "2026-11-02T06:44:14.964471+00:00",
+            "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+            "original_evidence": "The crowded interior of a living cell makes performing experiments on simpler in vitro systems attractive. Although these reveal interesting phenomena, their biological relevance can be questionable. A topical example is the phase separation of intrinsically disordered proteins into biomolecular condensates, which is proposed to underlie the membrane-less compartmentalization of many cellular functions. How a cell reliably controls biochemical reactions in compartments open to the compositionally-varying cytoplasm is an important question for understanding cellular homeostasis. Computer simulations are often used to study the phase behavior of model biomolecular condensates, but the number of relevant parameters increases as the number of protein components increases. It is unfeasible to exhaustively simulate such models for all parameter combinations, although interesting phenomena are almost certainly hidden in their high-dimensional parameter space. Here, we have studied the phase behavior of a model biomolecular condensate in the presence of a polymeric crowding agent. We used a novel compute framework to execute dozens of simultaneous simulations spanning the protein/crowder concentration space. We then combined the results into a graphical representation for human interpretation, which provided an efficient way to search the model's high-dimensional parameter space. We found that steric repulsion from the crowder drives a near-critical system across the phase boundary, but the molecular arrangement within the resulting biomolecular condensate is rather insensitive to the crowder concentration and molecular weight. We propose that a cell may use the local cytoplasmic concentration to assist the formation of biomolecular condensates, while relying on the dense phase to reliably provide a stable, structured, fluid milieu for cellular biochemistry despite being open to its changing environment.",
+            "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+            "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+          },
+          {
+            "id": "B1-S2_S2",
+            "title": "A sePARate phase? Poly(ADP-ribose) versus RNA in the organization of biomolecular condensates.",
+            "doi": "10.1093/nar/gkac866",
+            "pmid": "36243979",
+            "first_publication_date": "2022-10-01",
+            "retrieval_time": "2026-11-02T06:44:14.964477+00:00",
+            "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+            "original_evidence": "Condensates are biomolecular assemblies that concentrate biomolecules without the help of membranes. They are morphologically highly versatile and may emerge via distinct mechanisms. Nucleic acids-DNA, RNA and poly(ADP-ribose) (PAR) play special roles in the process of condensate organization. These polymeric scaffolds provide multiple specific and nonspecific interactions during nucleation and 'development' of macromolecular assemblages. In this review, we focus on condensates formed with PAR. We discuss to what extent the literature supports the phase separation origin of these structures. Special attention is paid to similarities and differences between PAR and RNA in the process of dynamic restructuring of condensates during their functioning.",
+            "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+            "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+          },
+          {
+            "id": "B1-S2_S3",
+            "title": "Sequence-encoded and composition-dependent protein-RNA interactions control multiphasic condensate morphologies.",
+            "doi": "10.1038/s41467-021-21089-4",
+            "pmid": "33558506",
+            "first_publication_date": "2021-02-08",
+            "retrieval_time": "2026-11-02T06:44:14.964481+00:00",
+            "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+            "original_evidence": "Multivalent protein-protein and protein-RNA interactions are the drivers of biological phase separation. Biomolecular condensates typically contain a dense network of multiple proteins and RNAs, and their competing molecular interactions play key roles in regulating the condensate composition and structure. Employing a ternary system comprising of a prion-like polypeptide (PLP), arginine-rich polypeptide (RRP), and RNA, we show that competition between the PLP and RNA for a single shared partner, the RRP, leads to RNA-induced demixing of PLP-RRP condensates into stable coexisting phases-homotypic PLP condensates and heterotypic RRP-RNA condensates. The morphology of these biphasic condensates (non-engulfing/ partial engulfing/ complete engulfing) is determined by the RNA-to-RRP stoichiometry and the hierarchy of intermolecular interactions, providing a glimpse of the broad range of multiphasic patterns that are accessible to these condensates. Our findings provide a minimal set of physical rules that govern the composition and spatial organization of multicomponent and multiphasic biomolecular condensates.",
+            "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+            "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+          },
+          {
+            "id": "B1-S2_S4",
+            "title": "Phase Transitions of Associative Biomacromolecules.",
+            "doi": "10.1021/acs.chemrev.2c00814",
+            "pmid": "36881934",
+            "first_publication_date": "2023-03-07",
+            "retrieval_time": "2026-11-02T06:44:14.964484+00:00",
+            "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+            "original_evidence": "Multivalent proteins and nucleic acids, collectively referred to as multivalent associative biomacromolecules, provide the driving forces for the formation and compositional regulation of biomolecular condensates. Here, we review the key concepts of phase transitions of aqueous solutions of associative biomacromolecules, specifically proteins that include folded domains and intrinsically disordered regions. The phase transitions of these systems come under the rubric of coupled associative and segregative transitions. The concepts underlying these processes are presented, and their relevance to biomolecular condensates is discussed.",
+            "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+            "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+          },
+          {
+            "id": "B1-S2_S5",
+            "title": "Higher-order organization of biomolecular condensates.",
+            "doi": "10.1098/rsob.210137",
+            "pmid": "34129784",
+            "first_publication_date": "2021-06-16",
+            "retrieval_time": "2026-11-02T06:44:14.964486+00:00",
+            "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+            "original_evidence": "A guiding principle of biology is that biochemical reactions must be organized in space and time. One way this spatio-temporal organization is achieved is through liquid-liquid phase separation (LLPS), which generates biomolecular condensates. These condensates are dynamic and reactive, and often contain a complex mixture of proteins and nucleic acids. In this review, we discuss how underlying physical and chemical processes generate internal condensate architectures. We then outline the diverse condensate architectures that are observed in biological systems. Finally, we discuss how specific condensate organization is critical for specific biological functions.",
+            "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+            "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+          }
+        ],
+        "excluded": [],
+        "hit_count": 12,
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=RNA+RNA+sequence+dependent+demixing+compositionally+distinct+domains+inside+RNA+condensate+dense+phase+spatial+organization+AND+FIRST_PDATE%3A%5B1900-01-01+TO+2025-05-12%5D&format=json&pageSize=5&resultType=core",
+        "raw_sha256": "d70bc9fc820da420acd01b9a12f63c5ea97cf5eddd234af6a45605451f5bc5b1",
+        "knowledge_limit": "No full-text formulas/units are inferred from the abstract. Refine or request a known historical source if needed."
+      }
+    },
+    {
+      "id": "B1-S3",
+      "type": "search",
+      "candidate_id": "B1-H1",
+      "gap_id": "g_local_composition_demixing",
+      "request": {
+        "type": "search",
+        "id": "B1-S3",
+        "candidate_id": "B1-H1",
+        "gap_id": "g_local_composition_demixing",
+        "missing_relation": "Whether direct RNA-RNA interactions or RNA-only condensation can produce sequence/length-dependent compositionally distinct domains within an RNA-rich condensate, with a spatial signature distinct from ordinary dense/dilute partitioning.",
+        "variables": [
+          "RNA species and sequence/length class",
+          "RNA-RNA interaction or multivalency",
+          "dense-phase species composition",
+          "within-condensate domain location and composition"
+        ],
+        "conditions": "First publication on or before 2025-05-12; direct RNA-RNA or RNA-only systems preferred; exclude target identity; distinguish true within-dense-phase domains from protein-RNA multiphase systems and bulk phase partitioning.",
+        "query": "RNA RNA interactions RNA-only condensate phase separation sequence dependent composition domains dense phase multivalent RNA",
+        "change_if_found": "If returned evidence directly shows RNA-RNA interactions or RNA-only condensation with compositionally distinct internal domains and interpretable sequence/length conditions, retain H1 with those conditions as a stronger analogy but keep cavity identity untested. If evidence is only homotypic RNA condensation without internal composition domains, it supports the RNA-RNA premise only weakly and does not close the gap. If results remain protein-RNA or general, keep H1 speculative and focus on missing local composition and observation mapping."
+      },
+      "result": {
+        "status": "returned",
+        "sources": [
+          {
+            "id": "B1-S3_S1",
+            "title": "Molecular determinants of condensate composition.",
+            "doi": "10.1016/j.molcel.2024.12.021",
+            "pmid": "39824169",
+            "first_publication_date": "2025-01-16",
+            "retrieval_time": "2026-11-02T06:50:18.218043+00:00",
+            "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+            "original_evidence": "Cells use membraneless compartments to organize their interiors, and recent research has begun to uncover the molecular principles underlying their assembly. Here, we explore how site-specific and chemically specific interactions shape the properties and functions of condensates. Site-specific recruitment involves precise interactions at specific sites driven by partially or fully structured interfaces. In contrast, chemically specific recruitment is driven by complementary chemical interactions without the requirement for a persistent bound-state structure. We propose that site-specific and chemically specific interactions work together to determine the composition of condensates, facilitate biochemical reactions, and regulate enzymatic activities linked to metabolism, signaling, and gene expression. Characterizing the composition of condensates requires novel experimental and computational tools to identify and manipulate the molecular determinants guiding condensate recruitment. Advancing this research will deepen our understanding of how condensates regulate cellular functions, providing valuable insights into cellular physiology and organization.",
+            "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+            "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+          },
+          {
+            "id": "B1-S3_S2",
+            "title": "Engineering Protein-Polyelectrolyte Interactions for Cellular Applications.",
+            "doi": "10.1146/annurev-chembioeng-100722-105929",
+            "pmid": "40081990",
+            "first_publication_date": "2025-03-13",
+            "retrieval_time": "2026-11-02T06:50:18.218048+00:00",
+            "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+            "original_evidence": "Protein-polyelectrolyte interactions are fundamental interactions in biology that occur at every length scale, from protein-DNA complexes to phase-separated organelles. They drive processes ranging from gene transcription and DNA synthesis to viral assembly. Protein engineering is a powerful way to modulate these interactions, both to probe endogenous function and to engineer novel interactions between species. In this review, we consider the various noncovalent interactions that govern the formation and behavior of these complexes, and we discuss how protein modifications such as changes to structure, charge, and charge patterning affect them. We highlight recent examples where engineering changes to protein-polyelectrolyte interactions have helped elucidate biological function, and we then focus on recent efforts toward de novo material design of synthetic biomolecular condensates and functional nanoassemblies.",
+            "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+            "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+          },
+          {
+            "id": "B1-S3_S3",
+            "title": "Liquid-liquid phase separation in cell physiology and cancer biology: recent advances and therapeutic implications.",
+            "doi": "10.3389/fonc.2025.1540427",
+            "pmid": "40231263",
+            "first_publication_date": "2025-03-31",
+            "retrieval_time": "2026-11-02T06:50:18.218052+00:00",
+            "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+            "original_evidence": "Liquid-liquid phase separation (LLPS) is a pivotal biophysical phenomenon that plays a critical role in cellular organization and has garnered significant attention in the fields of molecular mechanism and pathophysiology of cancer. This dynamic process involves the spontaneous segregation of biomolecules, primarily proteins and nucleic acids, into condensed, liquid-like droplets under specific conditions. LLPS drives the formation of biomolecular condensates, which are crucial for various cellular functions. Increasing evidences link alterations in LLPS to the onset and progression of various diseases, particularly cancer. This review explores the diverse roles of LLPS in cancer, highlighting its underlying molecular mechanisms and far-reaching implications. We examine how dysregulated LLPS contributes to cancer development by influencing key processes such as genomic instability, metabolism, and immune evasion. Furthermore, we discuss emerging therapeutic strategies aimed at modulating LLPS, underscoring their potential to revolutionize cancer treatment.",
+            "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+            "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+          },
+          {
+            "id": "B1-S3_S4",
+            "title": "Converging frontiers in biomolecular condensate and synthetic cell research.",
+            "doi": "10.1038/s44385-025-00019-9",
+            "pmid": "42032061",
+            "first_publication_date": "2025-05-03",
+            "retrieval_time": "2026-11-02T06:50:18.218054+00:00",
+            "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+            "original_evidence": "Biomolecular condensate and artificial cell research, though distinct in origin, share a focus on studying and mimicking (sub)cellular compartments. Identifying converging frontiers offers opportunities to advance both fields. Possibilities arise in areas where the condensate structure-function relationship is most prevalent. This includes interfaces, active systems, multiphases, aging, and applying in silico tools. This perspective aims to provide insight in how recent developments can drive convergence of the fields.",
+            "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+            "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+          },
+          {
+            "id": "B1-S3_S5",
+            "title": "The mechanobiology of biomolecular condensates.",
+            "doi": "10.1063/5.0236610",
+            "pmid": "40160200",
+            "first_publication_date": "2025-03-25",
+            "retrieval_time": "2026-11-02T06:50:18.218058+00:00",
+            "scope": "abstract only; historical publication metadata verified, historical abstract text version not independently archived",
+            "original_evidence": "The central goal of mechanobiology is to understand how the mechanical forces and material properties of organelles, cells, and tissues influence biological processes and functions. Since the first description of biomolecular condensates, it was hypothesized that they obtain material properties that are tuned to their functions inside cells. Thus, they represent an intriguing playground for mechanobiology. The idea that biomolecular condensates exhibit diverse and adaptive material properties highlights the need to understand how different material states respond to external forces and whether these responses are linked to their physiological roles within the cell. For example, liquids buffer and dissipate, while solids store and transmit mechanical stress, and the relaxation time of a viscoelastic material can act as a mechanical frequency filter. Hence, a liquid-solid transition of a condensate in the force transmission pathway can determine how mechanical signals are transduced within and in-between cells, affecting differentiation, neuronal network dynamics, and behavior to external stimuli. Here, we first review our current understanding of the molecular drivers and how rigidity phase transitions are set forth in the complex cellular environment. We will then summarize the technical advancements that were necessary to obtain insights into the rich and fascinating mechanobiology of condensates, and finally, we will highlight recent examples of physiological liquid-solid transitions and their connection to specific cellular functions. Our goal is to provide a comprehensive summary of the field on how cells harness and regulate condensate mechanics to achieve specific functions.",
+            "relation_variables_conditions": "Executor must extract from original evidence; no broker scientific synthesis",
+            "usable_for": "Background candidate relations only; transfer to this RNA system requires executor conditions and a marked bridge hypothesis"
+          }
+        ],
+        "excluded": [],
+        "hit_count": 385,
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=RNA+RNA+interactions+RNA-only+condensate+phase+separation+sequence+dependent+composition+domains+dense+phase+multivalent+RNA+AND+FIRST_PDATE%3A%5B1900-01-01+TO+2025-05-12%5D&format=json&pageSize=5&resultType=core",
+        "raw_sha256": "ad8d270e017bb0bc13b0f7de95fb474d9410926b3f2e826be7e561da1fae015d",
+        "knowledge_limit": "No full-text formulas/units are inferred from the abstract. Refine or request a known historical source if needed."
+      }
+    }
+  ],
+  "literature_use": [
+    {
+      "source_id": "B1-S1_S4",
+      "action": "modify_as_hypothesis",
+      "relation": "In a ternary PLP/RRP/RNA system, PLP and RNA compete for RRP, producing homotypic PLP-rich and heterotypic RRP-RNA phases; RNA:RRP stoichiometry and interaction hierarchy determine non-, partial-, or complete-engulfing morphologies.",
+      "variables_units": "PLP, RRP and RNA identities; RNA:RRP stoichiometry (dimensionless but no numerical values supplied); phase composition and engulfment morphology (qualitative).",
+      "conditions": "Abstract-only report; ternary protein/protein/RNA system. Transfer to RNA-only or RNA-class demixing in transcribing droplets is a new unverified hypothesis.",
+      "impact_on_model_or_action": "Motivates retaining composition-sensitive spatial organization as an analogy and sharpening a within-droplet species-ratio prediction; does not close g_local_composition_demixing or validate cavity formation."
+    },
+    {
+      "source_id": "B1-S1_S3",
+      "action": "followup",
+      "relation": "Review frames associative biomacromolecule phase transitions involving proteins and nucleic acids as coupled associative and segregative transitions; abstract does not specify internal RNA-RNA demixing or its conditions.",
+      "variables_units": "Proteins and nucleic acids; no quantitative variables or units in the abstract.",
+      "conditions": "Abstract-only review, published 2023-03-07; broad background only.",
+      "impact_on_model_or_action": "Provides general framing but no direct mechanism evidence; request a more targeted RNA-RNA search."
+    },
+    {
+      "source_id": "B1-S1_S2",
+      "action": "alternative",
+      "relation": "In a model protein condensate, steric crowder repulsion shifts a near-critical system across a phase boundary while molecular arrangement within the resulting condensate is reported as relatively insensitive to crowder concentration and molecular weight.",
+      "variables_units": "Protein/crowder concentrations and crowder molecular weight; abstract gives no values or units.",
+      "conditions": "Abstract-only model biomolecular condensate with polymeric crowder; not an RNA-RNA system.",
+      "impact_on_model_or_action": "Supports caution that changing phase boundary or environment need not imply a changed internal arrangement; it does not explain this case."
+    },
+    {
+      "source_id": "B1-S2_S1",
+      "action": "alternative",
+      "relation": "Abstract reports steric polymeric crowding shifts a near-critical model protein condensate across a phase boundary, while internal molecular arrangement is relatively insensitive to crowder concentration and molecular weight.",
+      "variables_units": "Protein/crowder concentrations and crowder molecular weight; abstract supplies no quantitative units or values.",
+      "conditions": "Model protein condensate with polymeric crowder; abstract only; not an RNA-RNA system.",
+      "impact_on_model_or_action": "Warns that an environmental phase-boundary shift need not entail altered internal molecular arrangement; does not explain the RNA case."
+    },
+    {
+      "source_id": "B1-S2_S2",
+      "action": "followup",
+      "relation": "Review discusses PAR and RNA as polymeric nucleic-acid scaffolds with potentially distinct roles in condensate organization and dynamic restructuring; abstract gives no RNA-RNA internal-domain condition.",
+      "variables_units": "PAR and RNA; no quantitative variables or units in abstract.",
+      "conditions": "Abstract-only review, first published 2022-10-01; broad background.",
+      "impact_on_model_or_action": "Does not directly support H1; retain only as context for nucleic-acid-dependent organization."
+    },
+    {
+      "source_id": "B1-S2_S3",
+      "action": "modify_as_hypothesis",
+      "relation": "In ternary PLP/RRP/RNA condensates, PLP and RNA compete for RRP, producing homotypic PLP-rich and heterotypic RRP-RNA phases; RNA:RRP stoichiometry and interaction hierarchy affect engulfment morphology.",
+      "variables_units": "PLP, RRP, RNA; RNA:RRP stoichiometry dimensionless, no numerical values in abstract.",
+      "conditions": "Abstract-only 2021-02-08 report in a ternary protein/protein/RNA system; transfer to RNA-RNA demixing is unsupported.",
+      "impact_on_model_or_action": "Retain composition-sensitive spatial organization as analogy only; no local RNA-RNA or cavity evidence."
+    },
+    {
+      "source_id": "B1-S2_S4",
+      "action": "followup",
+      "relation": "Review frames associative protein/nucleic-acid phase transitions as coupled associative and segregative transitions.",
+      "variables_units": "Proteins and nucleic acids; no quantitative variables or units in abstract.",
+      "conditions": "Abstract-only review, first published 2023-03-07; broad conceptual scope.",
+      "impact_on_model_or_action": "Insufficient to establish RNA-RNA domains; motivates no parameter transfer."
+    },
+    {
+      "source_id": "B1-S2_S5",
+      "action": "followup",
+      "relation": "Review states that physical and chemical processes can generate internal condensate architectures in dynamic, reactive mixtures of proteins and nucleic acids.",
+      "variables_units": "Proteins, nucleic acids and architecture; no quantitative variables or units in abstract.",
+      "conditions": "Abstract-only review, first published 2021-06-16; mechanism and species not specified in the returned abstract.",
+      "impact_on_model_or_action": "Supports existence of internal architectures in general, not the proposed RNA-RNA composition mechanism or cavity identity."
+    }
+  ],
+  "adjudications": [
+    {
+      "task_id": "B1-T2",
+      "decision": "complete",
+      "artifact_ids": [
+        "B1-S2_S1",
+        "B1-S2_S2",
+        "B1-S2_S3",
+        "B1-S2_S4",
+        "B1-S2_S5"
+      ],
+      "checks": [
+        "Five returned abstracts reviewed; the broker search reported 12 hits, so conclusions are limited to the returned five.",
+        "Publication dates are all before 2025-05-12; each result is abstract-only.",
+        "No returned abstract directly reports RNA-RNA internal demixing in one RNA-rich dense phase.",
+        "H1 remains an explicitly unverified transfer hypothesis; no study answer or target-specific mechanism is asserted."
+      ],
+      "remaining_gap": "Direct RNA-RNA composition domains and mapping to an internal cavity remain unestablished.",
+      "reason": "The assigned literature-assessment deliverable is complete, but its result is negative for direct support and leaves the scientific gap open.",
+      "formal_gate": false,
+      "formal_gate_reason": "task/artifact/leader missing",
+      "reply": "L2"
+    }
+  ],
+  "opened": [
+    "case_brief.md",
+    "initial_measurements.json",
+    "sequence_measurements.json",
+    "fraction_dev.json",
+    "phase_measurements.json",
+    "mobility_dev.json"
+  ],
+  "counters": {
+    "replies": 4,
+    "search": 3,
+    "compute": 0,
+    "evidence": 0
+  },
+  "finals": [],
+  "reason": "actor reply R2"
+}

@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423805570268734,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "positive_pulse",
+    "reason": "Saturating_memory has lowest NMSE and high variance for positive_pulse.",
+    "prediction": "Response will flatten at high amplitudes, unlike linear models.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Response amplitude decreases at high states.",
+      "condition_to_check": "Compare positive and negative pulse responses."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Saturating_memory has lowest NMSE and high variance for positive_pulse.\",\n  \"prediction\": \"Response will flatten at high amplitudes, unlike linear models.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"Response amplitude decreases at high states.\",\n    \"condition_to_check\": \"Compare positive and negative pulse responses.\"\n  }\n}",
+    "input_tokens": 3179,
+    "output_tokens": 108,
+    "batch_elapsed_seconds": 2.480785518884659,
+    "amortized_seconds": 2.480785518884659,
+    "peak_gpu_allocated_gb": 14.83484411239624,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

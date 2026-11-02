@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431274386129491,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0adab12c88f1d3a7016ae596e7ba148197b0fbfba8d29c2896",
+    "object": "chat.completion",
+    "created": 1793431274,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest trajectory-level CV error, but residual lag correlation remains substantial, so adequacy is not established. Alternating input offers strong disagreement among plausible history models.\",\"prediction\":\"After alternating input stops, output will retain a prior-input-dependent tail that decays gradually; its shape may expose remaining model error.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history has predictive influence after input changes, with finite relaxation.\",\"condition_to_check\":\"At matched current input and visible state, test whether prior input predicts output and whether that effect decays.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3502,
+      "completion_tokens": 247,
+      "total_tokens": 3749,
+      "completion_tokens_details": {
+        "reasoning_tokens": 110
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.378845098428428
+}

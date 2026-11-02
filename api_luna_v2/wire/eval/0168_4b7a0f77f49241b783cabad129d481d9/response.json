@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431570913550438,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0e328615162852e4016ae5980e9e608190af9d7817271bc093",
+    "object": "chat.completion",
+    "created": 1793431570,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest trajectory-level validation error (0.00128), while the state model has strongly correlated residuals. Post-pulse oscillations appear across interventions at similar elapsed times.\",\"prediction\":\"After alternating input ends, oscillations will remain approximately aligned in elapsed-time phase with those following other interventions.\",\"accept\":true,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time periodic forcing may explain oscillations shared across differently driven trajectories.\",\"condition_to_check\":\"Compare post-input oscillation phase across interventions; differing phases would weaken the independent-clock explanation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2786,
+      "completion_tokens": 378,
+      "total_tokens": 3164,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 248
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.126839231699705
+}

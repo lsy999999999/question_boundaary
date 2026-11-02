@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793432005449515955,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0f02845eb5c36484016ae599c377dc81908c226bf75ad2525b",
+    "object": "chat.completion",
+    "created": 1793432005,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest trajectory-held-out NMSE (0.00230), substantially below history_all and simpler models; prior ramp-reverse forecast error was also low, though unseen-intervention adequacy is not established.\",\"prediction\":\"After rapid reversals, the response will depend on accumulated history and show amplitude-dependent flattening, beyond effects explained by current input and state.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated history predicts later output beyond current input and visible state in the best validated representation.\",\"condition_to_check\":\"Falsified if alternating-input responses show no history-dependent effect after controlling current input and state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3497,
+      "completion_tokens": 148,
+      "total_tokens": 3645
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.2963424753397703
+}

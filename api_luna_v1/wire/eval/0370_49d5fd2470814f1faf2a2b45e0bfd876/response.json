@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793430410598903017,
+  "http_status": 200,
+  "body": {
+    "id": "resp_04e4913667d57eec016ae593885f648197a6bab9e93715b509",
+    "object": "chat.completion",
+    "created": 1793430410,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the lowest leave-trajectory-out error (0.00138), far below state (0.109); persistent post-input decay supports accumulated history, not an independent clock.\",\"prediction\":\"After irregular PRBS input ends, output will retain a slowly decaying, history-dependent response rather than immediately tracking zero.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated input and output history predict a finite relaxation after the input returns to zero.\",\"condition_to_check\":\"Test whether post-input response depends on prior input history after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2825,
+      "completion_tokens": 136,
+      "total_tokens": 2961
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.0418839268386364
+}

@@ -1,0 +1,2382 @@
+{
+  "split": "eval",
+  "comparisons": {
+    "plain": {
+      "luna_summary": {
+        "n": 24,
+        "median_test_nmse": 0.0004968203542834255,
+        "mean_test_nmse": 0.0007640411466481109,
+        "test_nmse_below_0_1": 24,
+        "accepted": 24,
+        "false_accepted": 0,
+        "invalid_outputs": 0,
+        "generation_calls": 96,
+        "input_tokens": 256823,
+        "output_tokens": 12324,
+        "generation_seconds_amortized": 308.503329526633,
+        "peak_gpu_allocated_gb": 0.0,
+        "peak_process_ram_gb": 0.08777236938476562,
+        "final_representations": {
+          "memory_multiscale": 3,
+          "state": 3,
+          "clock": 3,
+          "memory_slow": 6,
+          "memory_clock": 3,
+          "saturating_memory": 3,
+          "state_cubic": 3
+        },
+        "tasks_with_revision": 8
+      },
+      "qwen_summary": {
+        "n": 24,
+        "median_test_nmse": 0.0009676932509193052,
+        "mean_test_nmse": 0.002564763731165497,
+        "test_nmse_below_0_1": 24,
+        "accepted": 24,
+        "false_accepted": 0,
+        "invalid_outputs": 0,
+        "generation_calls": 96,
+        "input_tokens": 288626,
+        "output_tokens": 5656,
+        "generation_seconds_amortized": 182.52327196020633,
+        "peak_gpu_allocated_gb": 14.86420726776123,
+        "peak_process_ram_gb": 5.026500701904297,
+        "final_representations": {
+          "memory_multiscale": 4,
+          "state_cubic": 5,
+          "memory_clock": 7,
+          "memory_slow": 4,
+          "saturating_memory": 3,
+          "state": 1
+        },
+        "tasks_with_revision": 13
+      },
+      "paired_luna_over_qwen": {
+        "left": "luna",
+        "right": "qwen",
+        "paired_tasks": 24,
+        "left_wins": 15,
+        "geometric_nmse_ratio": 0.6315495875567267,
+        "descriptive_bootstrap_95_interval": [
+          0.29772227841868454,
+          1.1147893270106572
+        ],
+        "luna_wins_tolerance_1e_12": 14,
+        "ties_tolerance_1e_12": 2
+      }
+    },
+    "retrieval": {
+      "luna_summary": {
+        "n": 24,
+        "median_test_nmse": 0.00045636683793017787,
+        "mean_test_nmse": 0.0007131352808332653,
+        "test_nmse_below_0_1": 24,
+        "accepted": 24,
+        "false_accepted": 0,
+        "invalid_outputs": 0,
+        "generation_calls": 96,
+        "input_tokens": 286400,
+        "output_tokens": 19560,
+        "generation_seconds_amortized": 346.89906083326787,
+        "peak_gpu_allocated_gb": 0.0,
+        "peak_process_ram_gb": 0.08777236938476562,
+        "final_representations": {
+          "memory_slow": 7,
+          "memory_multiscale": 2,
+          "state": 3,
+          "clock": 3,
+          "memory_clock": 4,
+          "saturating_memory": 2,
+          "state_cubic": 3
+        },
+        "tasks_with_revision": 9
+      },
+      "qwen_summary": {
+        "n": 24,
+        "median_test_nmse": 0.0009127927136234961,
+        "mean_test_nmse": 0.002792814016438486,
+        "test_nmse_below_0_1": 24,
+        "accepted": 24,
+        "false_accepted": 0,
+        "invalid_outputs": 0,
+        "generation_calls": 96,
+        "input_tokens": 318001,
+        "output_tokens": 5776,
+        "generation_seconds_amortized": 148.98866735119373,
+        "peak_gpu_allocated_gb": 14.921139240264893,
+        "peak_process_ram_gb": 5.024284362792969,
+        "final_representations": {
+          "memory_multiscale": 7,
+          "memory_slow": 4,
+          "memory_clock": 6,
+          "saturating_memory": 3,
+          "state_cubic": 4
+        },
+        "tasks_with_revision": 14
+      },
+      "paired_luna_over_qwen": {
+        "left": "luna",
+        "right": "qwen",
+        "paired_tasks": 24,
+        "left_wins": 21,
+        "geometric_nmse_ratio": 0.47712637542468306,
+        "descriptive_bootstrap_95_interval": [
+          0.24519312594263476,
+          0.7762754480079128
+        ],
+        "luna_wins_tolerance_1e_12": 21,
+        "ties_tolerance_1e_12": 0
+      }
+    },
+    "structured": {
+      "luna_summary": {
+        "n": 24,
+        "median_test_nmse": 0.0005473387093287323,
+        "mean_test_nmse": 0.0007873824716773935,
+        "test_nmse_below_0_1": 24,
+        "accepted": 24,
+        "false_accepted": 0,
+        "invalid_outputs": 0,
+        "generation_calls": 96,
+        "input_tokens": 316744,
+        "output_tokens": 24186,
+        "generation_seconds_amortized": 407.62872942350805,
+        "peak_gpu_allocated_gb": 0.0,
+        "peak_process_ram_gb": 0.08777236938476562,
+        "final_representations": {
+          "memory_multiscale": 3,
+          "memory_slow": 7,
+          "state": 2,
+          "clock": 3,
+          "memory_clock": 3,
+          "saturating_memory": 2,
+          "state_cubic": 3,
+          "memory_fast": 1
+        },
+        "tasks_with_revision": 9
+      },
+      "qwen_summary": {
+        "n": 24,
+        "median_test_nmse": 0.0015717927063027832,
+        "mean_test_nmse": 0.004447817803619106,
+        "test_nmse_below_0_1": 24,
+        "accepted": 24,
+        "false_accepted": 0,
+        "invalid_outputs": 13,
+        "generation_calls": 96,
+        "input_tokens": 346020,
+        "output_tokens": 10848,
+        "generation_seconds_amortized": 259.83820061571896,
+        "peak_gpu_allocated_gb": 14.991811275482178,
+        "peak_process_ram_gb": 5.025672912597656,
+        "final_representations": {
+          "memory_multiscale": 5,
+          "memory_slow": 7,
+          "memory_clock": 5,
+          "saturating_memory": 4,
+          "state": 1,
+          "history_all": 1,
+          "state_cubic": 1
+        },
+        "tasks_with_revision": 12
+      },
+      "paired_luna_over_qwen": {
+        "left": "luna",
+        "right": "qwen",
+        "paired_tasks": 24,
+        "left_wins": 19,
+        "geometric_nmse_ratio": 0.4398528367006198,
+        "descriptive_bootstrap_95_interval": [
+          0.2038261040049961,
+          0.8509892478542822
+        ],
+        "luna_wins_tolerance_1e_12": 19,
+        "ties_tolerance_1e_12": 0
+      }
+    },
+    "no_active": {
+      "luna_summary": {
+        "n": 24,
+        "median_test_nmse": 0.0004251157627604244,
+        "mean_test_nmse": 0.0010508905712354908,
+        "test_nmse_below_0_1": 24,
+        "accepted": 24,
+        "false_accepted": 0,
+        "invalid_outputs": 0,
+        "generation_calls": 96,
+        "input_tokens": 319385,
+        "output_tokens": 22887,
+        "generation_seconds_amortized": 373.8138509625569,
+        "peak_gpu_allocated_gb": 0.0,
+        "peak_process_ram_gb": 0.08777236938476562,
+        "final_representations": {
+          "memory_multiscale": 2,
+          "memory_slow": 6,
+          "state": 3,
+          "clock": 3,
+          "nonlinear_delay": 1,
+          "memory_clock": 3,
+          "saturating_memory": 1,
+          "state_cubic": 3,
+          "history_all": 2
+        },
+        "tasks_with_revision": 10
+      },
+      "qwen_summary": {
+        "n": 24,
+        "median_test_nmse": 0.0009465271851341478,
+        "mean_test_nmse": 0.0015804718270422313,
+        "test_nmse_below_0_1": 24,
+        "accepted": 24,
+        "false_accepted": 0,
+        "invalid_outputs": 22,
+        "generation_calls": 96,
+        "input_tokens": 352212,
+        "output_tokens": 10600,
+        "generation_seconds_amortized": 254.3657344719395,
+        "peak_gpu_allocated_gb": 14.998802661895752,
+        "peak_process_ram_gb": 5.02374267578125,
+        "final_representations": {
+          "memory_multiscale": 3,
+          "memory_slow": 7,
+          "memory_clock": 2,
+          "nonlinear_delay": 2,
+          "history_all": 4,
+          "saturating_memory": 3,
+          "state_cubic": 3
+        },
+        "tasks_with_revision": 14
+      },
+      "paired_luna_over_qwen": {
+        "left": "luna",
+        "right": "qwen",
+        "paired_tasks": 24,
+        "left_wins": 11,
+        "geometric_nmse_ratio": 0.6262220663310534,
+        "descriptive_bootstrap_95_interval": [
+          0.4058156559757656,
+          0.8986790785402706
+        ],
+        "luna_wins_tolerance_1e_12": 11,
+        "ties_tolerance_1e_12": 12
+      }
+    },
+    "shuffled": {
+      "luna_summary": {
+        "n": 24,
+        "median_test_nmse": 0.0005240572183642176,
+        "mean_test_nmse": 0.000723501363643744,
+        "test_nmse_below_0_1": 24,
+        "accepted": 24,
+        "false_accepted": 0,
+        "invalid_outputs": 0,
+        "generation_calls": 96,
+        "input_tokens": 316757,
+        "output_tokens": 27080,
+        "generation_seconds_amortized": 432.0811256878078,
+        "peak_gpu_allocated_gb": 0.0,
+        "peak_process_ram_gb": 0.08777236938476562,
+        "final_representations": {
+          "memory_multiscale": 3,
+          "state": 3,
+          "clock": 3,
+          "memory_slow": 7,
+          "memory_clock": 3,
+          "saturating_memory": 2,
+          "state_cubic": 3
+        },
+        "tasks_with_revision": 8
+      },
+      "qwen_summary": {
+        "n": 24,
+        "median_test_nmse": 0.0012536422648338887,
+        "mean_test_nmse": 0.004582131009291365,
+        "test_nmse_below_0_1": 24,
+        "accepted": 24,
+        "false_accepted": 0,
+        "invalid_outputs": 14,
+        "generation_calls": 96,
+        "input_tokens": 345918,
+        "output_tokens": 10675,
+        "generation_seconds_amortized": 256.01080696098506,
+        "peak_gpu_allocated_gb": 14.991199016571045,
+        "peak_process_ram_gb": 5.024013519287109,
+        "final_representations": {
+          "memory_multiscale": 4,
+          "memory_slow": 6,
+          "state_cubic": 4,
+          "memory_clock": 5,
+          "saturating_memory": 3,
+          "history_all": 2
+        },
+        "tasks_with_revision": 12
+      },
+      "paired_luna_over_qwen": {
+        "left": "luna",
+        "right": "qwen",
+        "paired_tasks": 24,
+        "left_wins": 21,
+        "geometric_nmse_ratio": 0.36888872675685686,
+        "descriptive_bootstrap_95_interval": [
+          0.19038274127000243,
+          0.6413394441872245
+        ],
+        "luna_wins_tolerance_1e_12": 21,
+        "ties_tolerance_1e_12": 0
+      }
+    }
+  },
+  "luna_within_model_pairs": [
+    {
+      "left": "structured",
+      "right": "plain",
+      "paired_tasks": 24,
+      "left_wins": 8,
+      "geometric_nmse_ratio": 1.0598684352253518,
+      "descriptive_bootstrap_95_interval": [
+        0.9698901899577569,
+        1.1927092131734982
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "retrieval",
+      "paired_tasks": 24,
+      "left_wins": 6,
+      "geometric_nmse_ratio": 1.1204703651140018,
+      "descriptive_bootstrap_95_interval": [
+        0.9476497441727904,
+        1.3582622405695286
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "shuffled",
+      "paired_tasks": 24,
+      "left_wins": 4,
+      "geometric_nmse_ratio": 1.107520823244808,
+      "descriptive_bootstrap_95_interval": [
+        0.9242447456292259,
+        1.3230535474796206
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "no_active",
+      "paired_tasks": 24,
+      "left_wins": 10,
+      "geometric_nmse_ratio": 1.0272228809623754,
+      "descriptive_bootstrap_95_interval": [
+        0.7928506255373837,
+        1.31871292385403
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "history_cv",
+      "paired_tasks": 24,
+      "left_wins": 11,
+      "geometric_nmse_ratio": 1.0686269035269613,
+      "descriptive_bootstrap_95_interval": [
+        0.8584647801550578,
+        1.3693907833835435
+      ]
+    }
+  ],
+  "card_control_agreement": {
+    "n": 24,
+    "same_final_representation": 21,
+    "same_action_sequence": 11,
+    "same_score_tolerance_1e_12": 14,
+    "structured_wins_tolerance_1e_12": 2,
+    "shuffled_wins_tolerance_1e_12": 8
+  },
+  "candidate_choice_analysis": {
+    "luna": {
+      "plain": {
+        "calls": 96,
+        "invalid_decisions": 0,
+        "cv_minimum_choices": 93,
+        "valid_cv_minimum_choices": 93,
+        "revision_records": [
+          {
+            "task_id": "178794a8cc52",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00036637565523252574,
+            "reason": "Saturating_memory has the best trajectory-level CV NMSE, narrowly beating memory_multiscale and memory_slow; residual lag correlation remains, so another controlled history test is warranted.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "178794a8cc52",
+            "round": 3,
+            "from_rep": "saturating_memory",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00012683252712883175,
+            "reason": "Memory_multiscale has the lowest trajectory-level CV NMSE, narrowly outperforming saturating_memory (0.001396 vs. 0.001402). Its simpler feature set is preferable given the negligible difference and remaining residual correlation.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "6cd641ade75d",
+            "round": 1,
+            "from_rep": "memory_fast",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.006830472313865516,
+            "reason": "memory_slow has the lowest trajectory-held-out NMSE (0.00417), substantially below memory_fast (0.01687); residual lag remains high, so further testing is warranted.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "6cd641ade75d",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00026523817571174447,
+            "reason": "Saturating memory has the lowest trajectory-held-out NMSE (0.00167), improving on memory_slow; substantial residual lag leaves adequacy uncertain.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "76756fbed619",
+            "round": 2,
+            "from_rep": "clock",
+            "to_rep": "state",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00014583293707478483,
+            "reason": "State has the lowest candidate cross-validation error, narrowly beating clock; observed post-input responses decay toward zero, without clear evidence for clock-driven oscillation.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "7aff70817fc2",
+            "round": 1,
+            "from_rep": "saturating_memory",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0014639489654254619,
+            "reason": "state_cubic has the lowest trajectory-level CV error by a substantial margin; cubic instantaneous response is better supported than added memory, though residual lag correlation warrants an informative test.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "7dc2896588f5",
+            "round": 1,
+            "from_rep": "memory_slow",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00018598666686843275,
+            "reason": "Saturating memory has the lowest trajectory-level CV error, modestly improving on memory_slow; PRBS offers high disagreement among plausible memory models.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "7dc2896588f5",
+            "round": 2,
+            "from_rep": "saturating_memory",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00014771148882132933,
+            "reason": "Memory models strongly outperform state-only models. Memory_multiscale has slightly better trajectory CV error than saturating_memory; a double pulse probes whether responses depend on separated input episodes.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "860ddd9d91de",
+            "round": 1,
+            "from_rep": "memory_clock",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00021505395293402343,
+            "reason": "Memory_slow has the lowest trajectory-level CV NMSE (0.00390), substantially below memory_clock (0.00727). Persistent residual correlation and weaker PRBS fit mean adequacy under unseen interventions remains uncertain.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "860ddd9d91de",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00020173875062128155,
+            "reason": "Memory_multiscale has the lowest trajectory-level CV NMSE (0.00134), narrowly ahead of memory_clock, while residual lag correlation remains substantial. Slow_wave has the greatest disagreement among available untested actions.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "860ddd9d91de",
+            "round": 3,
+            "from_rep": "memory_multiscale",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 9.011471252634263e-05,
+            "reason": "Saturating_memory has the best trajectory-level CV NMSE (0.00158), slightly improving on multiscale memory despite added complexity. Residual lag correlation and small CV differences leave adequacy under unseen interventions uncertain.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "c667b23ae7f9",
+            "round": 1,
+            "from_rep": "state",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0001491783790828119,
+            "reason": "State_cubic has the best leave-trajectory-out NMSE (0.00211), substantially better than state (0.00394); memory alternatives perform worse. Residual autocorrelation leaves adequacy uncertain.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "f1ddfabee06d",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0001790967681815202,
+            "reason": "It has the lowest trajectory-level CV error among candidates, while residual lag in the current model suggests history effects remain imperfectly captured. A second pulse probes memory saturation and recovery.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "f1ddfabee06d",
+            "round": 3,
+            "from_rep": "saturating_memory",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00012636255759539074,
+            "reason": "It has the lowest trajectory-level cross-validation error (0.00217), and the added alternating and PRBS trajectories produced low forecast errors. Saturating memory validates worse, so the simpler slow-memory representation is better supported.",
+            "source_mapping": null
+          }
+        ]
+      },
+      "retrieval": {
+        "calls": 96,
+        "invalid_decisions": 0,
+        "cv_minimum_choices": 89,
+        "valid_cv_minimum_choices": 89,
+        "revision_records": [
+          {
+            "task_id": "011d4f166882",
+            "round": 3,
+            "from_rep": "memory_multiscale",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0003856099357634314,
+            "reason": "Memory_slow has the lowest trajectory-level CV NMSE and uses fewer coefficients than memory_multiscale. Residual lag correlation remains, so adequacy for unseen interventions is not established.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "178794a8cc52",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00036637565523252574,
+            "reason": "Multiscale memory has lower trajectory-held-out error than slow memory, though residual lag and close competing models leave uncertainty. A second pulse after rest probes history dependence.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "6cd641ade75d",
+            "round": 1,
+            "from_rep": "memory_fast",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.006830472313865516,
+            "reason": "memory_slow has the lowest trajectory-level CV NMSE (0.00417), far below memory_fast (0.01687); substantial residual lag also indicates the current model is inadequate.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "6cd641ade75d",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00026523817571174447,
+            "reason": "Saturating memory has the lowest trajectory-level CV NMSE (0.00167), improving on memory_slow, though substantial residual lag and model disagreement leave uncertainty.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "76756fbed619",
+            "round": 2,
+            "from_rep": "clock",
+            "to_rep": "state",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00014583293707478483,
+            "reason": "The simpler state model has the best leave-trajectory-out error; clock terms have not improved prediction consistently across the tested interventions, and added memory models validate worse.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "7aff70817fc2",
+            "round": 1,
+            "from_rep": "saturating_memory",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0014639489654254619,
+            "reason": "State_cubic has the lowest trajectory-level CV NMSE (0.00204), substantially below the current model. Persistent residual correlation and untested interventions leave adequacy uncertain.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "7dc2896588f5",
+            "round": 1,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00018598666686843275,
+            "reason": "Memory models fit far better than state-only models. Memory_multiscale modestly improves trajectory-level CV over memory_slow and can represent both fast and slow relaxation; PRBS has high predicted disagreement.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "860ddd9d91de",
+            "round": 1,
+            "from_rep": "memory_clock",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00021505395293402343,
+            "reason": "Memory_slow has the lowest trajectory-level CV NMSE (0.00390), substantially below the current memory_clock (0.00727). Long post-pulse tails support slow history dependence; alternating probes remaining model disagreement.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "860ddd9d91de",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00020173875062128155,
+            "reason": "Memory_multiscale has the lowest trajectory-level CV NMSE among candidates; residual autocorrelation remains, and slow_wave has the greatest prediction disagreement.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "860ddd9d91de",
+            "round": 3,
+            "from_rep": "memory_multiscale",
+            "to_rep": "memory_clock",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 9.011471252634263e-05,
+            "reason": "Memory_clock has the lowest trajectory-level CV NMSE (0.001506), though its advantage over saturating_memory is modest and residual lag-1 correlation remains.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "c667b23ae7f9",
+            "round": 1,
+            "from_rep": "state",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0001491783790828119,
+            "reason": "State_cubic has the best leave-trajectory-out score (0.00211), substantially better than the current state model. Residual autocorrelation and remaining memory-model plausibility leave adequacy uncertain.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "f1ddfabee06d",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0001790967681815202,
+            "reason": "Saturating memory has the lowest trajectory-level CV NMSE, improving on slow memory; the residual lag suggests some remaining temporal structure, so adequacy for unseen interventions is uncertain.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "f1ddfabee06d",
+            "round": 3,
+            "from_rep": "saturating_memory",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00012636255759539074,
+            "reason": "Memory models outperform state-only alternatives, and memory_slow has the lowest leave-trajectory-out NMSE with fewer coefficients than saturating_memory. Residual autocorrelation leaves adequacy uncertain.",
+            "source_mapping": null
+          }
+        ]
+      },
+      "structured": {
+        "calls": 96,
+        "invalid_decisions": 0,
+        "cv_minimum_choices": 93,
+        "valid_cv_minimum_choices": 93,
+        "revision_records": [
+          {
+            "task_id": "178794a8cc52",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00036637565523252574,
+            "reason": "Multiscale memory has lower held-out error than memory_slow, while saturating_memory's small additional improvement may reflect extra flexibility. Persistent tails support finite-relaxation history.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Finite-relaxation accumulated input history can predict output beyond current input and visible state.",
+              "condition_to_check": "History features should improve held-out ramp-reversal predictions after controlling current input and visible state."
+            }
+          },
+          {
+            "task_id": "178794a8cc52",
+            "round": 3,
+            "from_rep": "memory_multiscale",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0001050077585569492,
+            "reason": "It has the lowest trajectory-held-out NMSE (0.00130); the more complex multiscale and saturating models do not improve validation, though residual lag correlation cautions that adequacy is not established.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Finite-relaxation accumulated input history predicts output beyond current input and visible state.",
+              "condition_to_check": "Held-out PRBS predictions should improve when prior-input history is included after controlling current input and visible state."
+            }
+          },
+          {
+            "task_id": "6cd641ade75d",
+            "round": 1,
+            "from_rep": "memory_fast",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.006830472313865516,
+            "reason": "memory_slow has the best trajectory-level CV error (0.00417), substantially below memory_fast; persistent post-input decay supports testing slower accumulated history.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Accumulated input influence may persist after input ends and relax over finite timescales.",
+              "condition_to_check": "Slow-history features should improve predictions across input shapes; failure to do so would weaken this relation."
+            }
+          },
+          {
+            "task_id": "6cd641ade75d",
+            "round": 3,
+            "from_rep": "memory_slow",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0002539680229409482,
+            "reason": "It has the lowest trajectory-level CV error (0.00183), improving on memory_slow (0.00235); the persistent post-input response supports history dependence, though residual lag-1 correlation remains.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Finite-timescale accumulated input history can influence post-input response.",
+              "condition_to_check": "The history-dependent carryover should predict trajectories across input shapes after controlling current state and input."
+            }
+          },
+          {
+            "task_id": "76756fbed619",
+            "round": 2,
+            "from_rep": "clock",
+            "to_rep": "state",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00014583293707478483,
+            "reason": "State has the lowest leave-trajectory-out error; the clock model’s slight advantage over state was not robust across experiments, and memory candidates perform worse. Residual lag correlation leaves some uncertainty.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "No tested representation establishes a specific storage, delay, saturation, or independent-clock relation.",
+              "condition_to_check": "Compare responses at matched state and input during both pulses; reproducible differences would challenge the state representation."
+            }
+          },
+          {
+            "task_id": "7aff70817fc2",
+            "round": 1,
+            "from_rep": "saturating_memory",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0014639489654254619,
+            "reason": "State_cubic has the lowest trajectory-level CV NMSE (0.00204), substantially below saturating_memory (0.00614); persistent residual correlation still leaves adequacy uncertain.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "The predictive fit does not establish a cross-domain mechanism.",
+              "condition_to_check": "Compare responses at similar state and input reached through different PRBS histories."
+            }
+          },
+          {
+            "task_id": "7dc2896588f5",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.0001544351469487708,
+            "reason": "Memory-based models substantially outperform state-only models. Multiscale memory has strong trajectory validation; memory_clock’s slight CV advantage does not establish an independent clock, and residual lag correlation remains.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Accumulated input history may carry influence across the gap between pulses.",
+              "condition_to_check": "Check whether first-pulse history predicts the second response beyond current input and visible state."
+            }
+          },
+          {
+            "task_id": "860ddd9d91de",
+            "round": 1,
+            "from_rep": "memory_clock",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00021505395293402343,
+            "reason": "Memory_slow has the lowest trajectory-level CV error (0.00390), beating memory_clock (0.00727). Persistent post-input responses support history dependence, but residual lag remains high, so adequacy is uncertain.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Accumulated past influence may explain lingering responses after input returns to zero.",
+              "condition_to_check": "Check whether history predicts responses after controlling current input and visible state."
+            }
+          },
+          {
+            "task_id": "860ddd9d91de",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00020425904658635726,
+            "reason": "Saturating_memory has the lowest trajectory-level CV error (0.00246), narrowly beating memory_multiscale; memory_slow has higher error and substantial residual autocorrelation.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Persistent responses after input cessation, together with improved history-based validation, support accumulated past influence with finite relaxation.",
+              "condition_to_check": "Test whether accumulated history predicts the lingering response after controlling current input and visible state."
+            }
+          },
+          {
+            "task_id": "860ddd9d91de",
+            "round": 3,
+            "from_rep": "saturating_memory",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00015608696808782995,
+            "reason": "Memory_multiscale has the lowest trajectory-level CV error (0.00124), slightly outperforming memory_clock and saturating_memory. Persistent post-input response supports history dependence; clock and saturation add little validated improvement.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Accumulated past influence with finite relaxation can predict the lingering response after input cessation.",
+              "condition_to_check": "Check whether history improves predictions after controlling current input and visible state."
+            }
+          },
+          {
+            "task_id": "93d24a230259",
+            "round": 3,
+            "from_rep": "state",
+            "to_rep": "memory_fast",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00011551036851066519,
+            "reason": "memory_fast has the lowest trajectory-held-out error. The state model’s residual lag-1 correlation suggests remaining temporal dependence, though prior intervention forecast errors were low.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Fast accumulated history may carry recent input influence forward with finite relaxation.",
+              "condition_to_check": "Reject if recent-history features do not improve held-out intervention predictions beyond noise."
+            }
+          },
+          {
+            "task_id": "c667b23ae7f9",
+            "round": 1,
+            "from_rep": "state",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0001491783790828119,
+            "reason": "State_cubic has the best trajectory-held-out error (0.00211 versus 0.00394 for state). More complex history models validate worse, so curvature is the best-supported revision, though adequacy remains uncertain.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "Improved validation supports an instantaneous nonlinear fit, but does not establish a saturation mechanism.",
+              "condition_to_check": "At matched state and input, test whether response still depends reproducibly on prior input."
+            }
+          },
+          {
+            "task_id": "f1ddfabee06d",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0001790967681815202,
+            "reason": "Saturating_memory has the best trajectory-held-out NMSE (0.00216), improving on memory_slow (0.00283); residual lag and limited intervention coverage leave adequacy uncertain.",
+            "source_mapping": {
+              "source_id": "saturation",
+              "target_relation": "Nonlinear saturation of accumulated history is a candidate explanation for the improved held-out fit over linear memory.",
+              "condition_to_check": "Compare the two pulse responses; similar responses after accounting for residual history would weaken the saturation hypothesis."
+            }
+          },
+          {
+            "task_id": "f1ddfabee06d",
+            "round": 3,
+            "from_rep": "saturating_memory",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00012636255759539074,
+            "reason": "Memory_slow has the lowest leave-trajectory-out NMSE (0.00217), outperforming saturating_memory (0.00333); the saturation model’s prior forecast was not accepted, and residual lag still cautions against claiming adequacy.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Slow accumulated input and output history can carry predictive influence through finite relaxation after the input changes.",
+              "condition_to_check": "Test whether post-input output remains predictable from accumulated history after controlling current input and visible output."
+            }
+          }
+        ]
+      },
+      "no_active": {
+        "calls": 96,
+        "invalid_decisions": 0,
+        "cv_minimum_choices": 91,
+        "valid_cv_minimum_choices": 91,
+        "revision_records": [
+          {
+            "task_id": "2e356a891a56",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "nonlinear_delay",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00011200372364480183,
+            "reason": "Nonlinear_delay has the lowest trajectory-level CV error (0.00292), improving on memory_slow (0.00377); residual lag and PRBS error still leave adequacy uncertain.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Persistent post-input decay supports accumulated past input influence with finite relaxation.",
+              "condition_to_check": "If history adds no predictive value after controlling current input and visible state, this storage relation is unsupported."
+            }
+          },
+          {
+            "task_id": "6cd641ade75d",
+            "round": 1,
+            "from_rep": "memory_fast",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.004150389070195741,
+            "reason": "Its leave-trajectory-out NMSE (0.00253) is substantially lower than alternatives, consistent with history dependence and nonlinear response; unseen-intervention adequacy remains uncertain.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Accumulated history predicts later output beyond current input and state, as represented by the best cross-validated model.",
+              "condition_to_check": "Falsified if double-pulse responses are predicted without history-dependent effects after controlling current input and state."
+            }
+          },
+          {
+            "task_id": "76756fbed619",
+            "round": 2,
+            "from_rep": "clock",
+            "to_rep": "state",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00014583293707478483,
+            "reason": "State has the lowest trajectory-held-out NMSE; clock’s slight advantage is absent, and richer memory models validate worse. Residual lag correlation still cautions against declaring adequacy.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "No independent clock, storage, transport, or saturation relation is established by these comparisons.",
+              "condition_to_check": "Check whether residuals at matched state and input depend systematically on elapsed time or prior input."
+            }
+          },
+          {
+            "task_id": "7aff70817fc2",
+            "round": 1,
+            "from_rep": "saturating_memory",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0012620475491041797,
+            "reason": "State_cubic has the best leave-trajectory-out error (0.00231), substantially below saturating_memory (0.00626); residual lag still leaves unseen-intervention adequacy uncertain.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "No mechanism card is sufficiently supported by these comparisons.",
+              "condition_to_check": "A systematic second-pulse effect beyond the cubic state prediction would weaken this representation."
+            }
+          },
+          {
+            "task_id": "7dc2896588f5",
+            "round": 3,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_clock",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00011673258363827811,
+            "reason": "Memory_clock has the lowest cross-validated error, though its advantage over memory_multiscale is modest and it adds clock terms. Prior forecasts were not accepted, so adequacy for unseen interventions remains uncertain.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "History improves prediction, but evidence does not distinguish stored influence from clock effects.",
+              "condition_to_check": "Compare trajectories aligned in elapsed time across interventions; reproducible input-independent periodic variation would support a clock."
+            }
+          },
+          {
+            "task_id": "860ddd9d91de",
+            "round": 1,
+            "from_rep": "memory_clock",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00021505395293402343,
+            "reason": "Memory_slow has the lowest trajectory-held-out error (0.00390), improving on memory_clock (0.00727) with fewer coefficients; persistent post-input responses support history dependence, not an independent clock.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Accumulated input history predicts persistent response after input switches or returns to zero.",
+              "condition_to_check": "The relation is weakened if history adds no predictive value after controlling current input and visible state."
+            }
+          },
+          {
+            "task_id": "860ddd9d91de",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00022632300923710382,
+            "reason": "Memory_multiscale has the lowest trajectory-held-out NMSE (0.00162), modestly improving on memory_slow; residual lag-1 correlation remains, so adequacy is not established.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Accumulated input history predicts persistent responses after input switches or returns to zero.",
+              "condition_to_check": "The relation weakens if history adds no predictive value after controlling current input and visible state."
+            }
+          },
+          {
+            "task_id": "91977ba2ede6",
+            "round": 2,
+            "from_rep": "memory_clock",
+            "to_rep": "history_all",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00031047258881444843,
+            "reason": "history_all has the lowest trajectory-level CV error (0.00593), modestly better than memory_clock (0.00783); persistent residual correlation means adequacy remains uncertain.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Accumulated input and state history improves prediction beyond instantaneous state and input, consistent with a predictive storage-like effect.",
+              "condition_to_check": "The relation is weakened if history features fail to improve held-out trajectories after controlling current state and input."
+            }
+          },
+          {
+            "task_id": "93d24a230259",
+            "round": 1,
+            "from_rep": "state",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00014372883876020152,
+            "reason": "Slow-memory validation error is lowest (0.001304 versus 0.001381 for state), a modest improvement consistent with residual lag dependence; more complex alternatives perform worse.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Slow accumulated history modestly improves trajectory validation, consistent with a leaky stored influence.",
+              "condition_to_check": "Check whether earlier-pulse history predicts the response after controlling current state and input."
+            }
+          },
+          {
+            "task_id": "93d24a230259",
+            "round": 3,
+            "from_rep": "memory_slow",
+            "to_rep": "state",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00012489861707310325,
+            "reason": "State has the lowest leave-trajectory-out NMSE (0.001174); slow memory is slightly worse (0.001232), and prior forecasts were accurate. Residual lag leaves some uncertainty but does not justify added features.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "Validation does not establish a predictive effect of accumulated history beyond current state and input.",
+              "condition_to_check": "Test whether prior inputs predict residuals after controlling current state and input."
+            }
+          },
+          {
+            "task_id": "95a4d340cda9",
+            "round": 2,
+            "from_rep": "saturating_memory",
+            "to_rep": "history_all",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00015004911998373814,
+            "reason": "History_all has the lowest trajectory-held-out error, though only slightly below saturating_memory; residual lag correlation and modest improvement leave unseen-intervention adequacy uncertain.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Past input history improves prediction beyond current input and visible state.",
+              "condition_to_check": "At matched current inputs, test whether outputs differ with preceding input history; no difference would weaken this relation."
+            }
+          },
+          {
+            "task_id": "c667b23ae7f9",
+            "round": 1,
+            "from_rep": "state",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00018712004621043843,
+            "reason": "State_cubic has the lowest trajectory-level validation error (0.0020), substantially below state (0.0045); memory alternatives perform worse, so instantaneous nonlinearity is the best-supported revision.",
+            "source_mapping": {
+              "source_id": "saturation",
+              "target_relation": "Nonlinear instantaneous response may weaken at larger state magnitudes, consistent with saturation-like curvature.",
+              "condition_to_check": "Compare positive and negative amplitude responses; the relation is unsupported if curvature does not replicate across interventions."
+            }
+          }
+        ]
+      },
+      "shuffled": {
+        "calls": 96,
+        "invalid_decisions": 0,
+        "cv_minimum_choices": 92,
+        "valid_cv_minimum_choices": 92,
+        "revision_records": [
+          {
+            "task_id": "178794a8cc52",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00036637565523252574,
+            "reason": "Memory_multiscale improves trajectory-level CV over memory_slow (0.001516 vs 0.001723); saturating_memory is only marginally better and uses more coefficients. PRBS errors remain elevated.",
+            "source_mapping": {
+              "source_id": "external_clock",
+              "target_relation": "Leaky accumulated input history may carry past influence into output after the input changes.",
+              "condition_to_check": "Under PRBS, past input should predict output after controlling current input and visible state; absence of that effect would falsify this relation."
+            }
+          },
+          {
+            "task_id": "6cd641ade75d",
+            "round": 1,
+            "from_rep": "memory_fast",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.006830472313865516,
+            "reason": "memory_slow has the best trajectory-level CV error (0.00417), substantially below memory_fast (0.01687); persistent residual correlation and post-input decay support history dependence.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Accumulated past input and output can persist and relax, matching the observed post-pulse tails.",
+              "condition_to_check": "Reject this relation if alternating-input responses are better predicted without slow accumulated history."
+            }
+          },
+          {
+            "task_id": "6cd641ade75d",
+            "round": 3,
+            "from_rep": "memory_slow",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0002539680229409482,
+            "reason": "Saturating memory has the lowest trajectory-level CV error (0.00183), improving on memory_slow (0.00235); repeated forecasts support history dependence, while residual lag correlation leaves some uncertainty.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "History-dependent predictive structure is supported, but these data do not establish a specific cross-domain mechanism.",
+              "condition_to_check": "Reject adequacy if unseen interventions show structured residuals or worse forecasts than simpler memory models."
+            }
+          },
+          {
+            "task_id": "76756fbed619",
+            "round": 2,
+            "from_rep": "clock",
+            "to_rep": "state",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00014583293707478483,
+            "reason": "State has the best leave-trajectory-out NMSE; clock’s slight advantage did not persist, and memory models validate worse. Residual lag leaves adequacy uncertain.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "No independent clock or storage relation is established by the validation results.",
+              "condition_to_check": "Repeatable residual structure at matched elapsed times across different input interventions would challenge the state representation."
+            }
+          },
+          {
+            "task_id": "7aff70817fc2",
+            "round": 1,
+            "from_rep": "saturating_memory",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0014639489654254619,
+            "reason": "State_cubic has the lowest trajectory-level CV NMSE (0.00204), substantially improving on saturating_memory (0.00614); the best fit does not establish adequacy for unseen interventions.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "No cross-domain mechanism is justified by the predictive validation results.",
+              "condition_to_check": "Compare pulse responses while accounting for current state and input."
+            }
+          },
+          {
+            "task_id": "7dc2896588f5",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.0001544351469487708,
+            "reason": "Memory_multiscale improves held-out error over memory_slow, while memory_clock is only marginally better and adds elapsed-time periodic features. Slow_wave probes whether that gain reflects history or timing.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Pulse recovery and history-dependent forecasts are consistent with accumulated past influence that relaxes over time.",
+              "condition_to_check": "Compare matched input and visible output after different histories; no persistent predictive difference would weaken the storage relation."
+            }
+          },
+          {
+            "task_id": "7dc2896588f5",
+            "round": 3,
+            "from_rep": "memory_multiscale",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 9.616302473527778e-05,
+            "reason": "Memory_slow has the lowest leave-trajectory-out error among candidates, narrowly outperforming multiscale and memory_clock with fewer coefficients. State-only models perform much worse; observed post-pulse recovery supports history dependence.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "History-dependent prediction is supported, but no specific cross-domain mechanism is established.",
+              "condition_to_check": "Matched visible states after distinct input histories should retain predictive differences that relax during rest."
+            }
+          },
+          {
+            "task_id": "860ddd9d91de",
+            "round": 1,
+            "from_rep": "memory_clock",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00021505395293402343,
+            "reason": "memory_slow has the best candidate trajectory-level CV error (0.00390), outperforming current memory_clock (0.00727); substantial PRBS error and residual autocorrelation leave adequacy uncertain.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "The predictive fit supports slow history features but does not establish a specific cross-domain relation.",
+              "condition_to_check": "Check whether alternating-input residuals persist after accounting for accumulated input and state history."
+            }
+          },
+          {
+            "task_id": "860ddd9d91de",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00020173875062128155,
+            "reason": "It has the lowest trajectory-level CV error (0.001345), narrowly beating memory_clock and improving on memory_slow; residual lag correlation still leaves adequacy uncertain.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "Predictive history features do not establish a specific cross-domain mechanism.",
+              "condition_to_check": "Test whether slow-wave forecasts improve without persistent residuals tied to elapsed time."
+            }
+          },
+          {
+            "task_id": "c667b23ae7f9",
+            "round": 1,
+            "from_rep": "state",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0001491783790828119,
+            "reason": "State_cubic has the lowest trajectory-level validation error (0.00211), substantially better than state (0.00394); residual autocorrelation still leaves adequacy uncertain.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "Validation supports a more flexible state response, but does not establish a specific mechanism relation.",
+              "condition_to_check": "Compare the second pulse with the first at matched state and input; systematic differences would contradict this representation."
+            }
+          },
+          {
+            "task_id": "f1ddfabee06d",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0001790967681815202,
+            "reason": "saturating_memory has the best trajectory-level CV error; improvement over memory_slow is modest, so amplitude-dependent history effects remain uncertain.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "The validation advantage supports a richer predictive representation, not a specific physical mechanism.",
+              "condition_to_check": "Compare pulse peaks across amplitudes and histories, controlling for current input and visible state."
+            }
+          },
+          {
+            "task_id": "f1ddfabee06d",
+            "round": 3,
+            "from_rep": "saturating_memory",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00012636255759539074,
+            "reason": "memory_slow has the lowest trajectory-level CV error (0.00217), outperforming saturating_memory (0.00333). Prior alternating and PRBS trials improved prediction but do not justify added nonlinear complexity.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "History features improve prediction, but the evidence does not establish a specific physical mechanism.",
+              "condition_to_check": "Test whether accumulated history predicts output across interventions after controlling for current input and visible state."
+            }
+          }
+        ]
+      }
+    },
+    "qwen": {
+      "plain": {
+        "calls": 96,
+        "invalid_decisions": 0,
+        "cv_minimum_choices": 75,
+        "valid_cv_minimum_choices": 75,
+        "revision_records": [
+          {
+            "task_id": "178794a8cc52",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00025531134497468476,
+            "reason": "Combines fast and slow history, best cross-validation for double_pulse.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "1d2417e51713",
+            "round": 2,
+            "from_rep": "state",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00015647114307671322,
+            "reason": "Cubic terms improve fit; ramp-reverse tests robustness.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "58b038a9dcbc",
+            "round": 1,
+            "from_rep": "clock",
+            "to_rep": "memory_clock",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00012472413953979527,
+            "reason": "Combines history and periodic forcing, showing high NMSE reduction.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "6cd641ade75d",
+            "round": 2,
+            "from_rep": "memory_fast",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0018403966742272832,
+            "reason": "Saturating memory shows minimal disagreement and handles pulses well.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "7025f2a38ff9",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0002086821165102752,
+            "reason": "Combines fast and slow dynamics, best cross-validation.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "76756fbed619",
+            "round": 1,
+            "from_rep": "clock",
+            "to_rep": "state",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00010276484483815845,
+            "reason": "Linear state terms show low NMSE and plausible prediction variance.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "76756fbed619",
+            "round": 2,
+            "from_rep": "state",
+            "to_rep": "clock",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 9.630058659605992e-05,
+            "reason": "Clock terms suggest periodic behavior; ramp reverse tests response.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "76756fbed619",
+            "round": 3,
+            "from_rep": "clock",
+            "to_rep": "state",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00013420868431406266,
+            "reason": "Linear state terms show low NMSE and plausible prediction variance.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "7aff70817fc2",
+            "round": 1,
+            "from_rep": "saturating_memory",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00020742506034473096,
+            "reason": "State cubic improves fit and has high prediction variance.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "7dc2896588f5",
+            "round": 3,
+            "from_rep": "memory_slow",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0001093674481537305,
+            "reason": "Saturating_memory shows low CV NMSE and high prediction variance for negative_pulse.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "860ddd9d91de",
+            "round": 2,
+            "from_rep": "memory_clock",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0007361201752799518,
+            "reason": "Multiscale memory shows best CV and high variance for positive pulse.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "93d24a230259",
+            "round": 2,
+            "from_rep": "memory_multiscale",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0002808746048296799,
+            "reason": "Cubic terms improve fit; positive pulse tests nonlinear response.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "b8513efb6701",
+            "round": 1,
+            "from_rep": "clock",
+            "to_rep": "memory_clock",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00014651753584083585,
+            "reason": "Combines history and clock terms, showing moderate NMSE reduction.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "c667b23ae7f9",
+            "round": 2,
+            "from_rep": "state",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00015303523927794245,
+            "reason": "Cubic terms improve fit; ramp-reverse tests dynamic response.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "fb6a837878c3",
+            "round": 3,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_clock",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00010813990332471526,
+            "reason": "Memory_clock balances history and periodic forcing, showing good cross-validation.",
+            "source_mapping": null
+          }
+        ]
+      },
+      "retrieval": {
+        "calls": 96,
+        "invalid_decisions": 0,
+        "cv_minimum_choices": 76,
+        "valid_cv_minimum_choices": 76,
+        "revision_records": [
+          {
+            "task_id": "1d2417e51713",
+            "round": 1,
+            "from_rep": "clock",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 9.140116221455418e-05,
+            "reason": "Multiscale memory shows best cross-validation; expect different decay rates.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "58b038a9dcbc",
+            "round": 1,
+            "from_rep": "clock",
+            "to_rep": "memory_clock",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00012472413953979527,
+            "reason": "Combines history and periodic forcing; negative pulse tests storage and phase.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "6cd641ade75d",
+            "round": 2,
+            "from_rep": "memory_fast",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0018403966742272832,
+            "reason": "Saturating memory captures complex dynamics; positive pulse tests response limits.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "7025f2a38ff9",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0002086821165102752,
+            "reason": "Combines fast and slow memory, likely capturing diverse dynamics.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "76756fbed619",
+            "round": 3,
+            "from_rep": "clock",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00013420868431406266,
+            "reason": "Cubic terms improve fit; double pulse tests nonlinearity.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "7aff70817fc2",
+            "round": 1,
+            "from_rep": "saturating_memory",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00020742506034473096,
+            "reason": "State cubic improves fit and has high prediction variance for negative inputs.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "7dc2896588f5",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00012365424013680097,
+            "reason": "Multiscale memory best fits training data; alternating inputs test combined fast and slow dynamics.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "860ddd9d91de",
+            "round": 1,
+            "from_rep": "memory_clock",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0001566830612141894,
+            "reason": "Alternating inputs stress memory retention over long timescales.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "860ddd9d91de",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0001571542821586271,
+            "reason": "Combines fast and slow memory, suitable for ramp and reverse inputs.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "93d24a230259",
+            "round": 2,
+            "from_rep": "memory_multiscale",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0002808746048296799,
+            "reason": "Cubic terms improve fit; positive pulse tests nonlinear response.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "a288d8b77e5b",
+            "round": 2,
+            "from_rep": "state_cubic",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00020458655724537355,
+            "reason": "Saturating effects and memory should distinguish this input shape.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "b8513efb6701",
+            "round": 1,
+            "from_rep": "clock",
+            "to_rep": "memory_clock",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00014651753584083585,
+            "reason": "Negative pulse tests memory and clock interaction.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "c667b23ae7f9",
+            "round": 2,
+            "from_rep": "state",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00015303523927794245,
+            "reason": "Cubic terms improve fit; positive pulse tests nonlinearity.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "e377cde4db95",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.000308051614123149,
+            "reason": "Combines fast and slow memory; positive pulse tests transient and sustained response.",
+            "source_mapping": null
+          },
+          {
+            "task_id": "fb6a837878c3",
+            "round": 3,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00011850351791463598,
+            "reason": "Combines fast and slow memory, best fitting training data.",
+            "source_mapping": null
+          }
+        ]
+      },
+      "structured": {
+        "calls": 96,
+        "invalid_decisions": 13,
+        "cv_minimum_choices": 65,
+        "valid_cv_minimum_choices": 54,
+        "revision_records": [
+          {
+            "task_id": "1d2417e51713",
+            "round": 1,
+            "from_rep": "state",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 8.889399803263587e-05,
+            "reason": "Multiscale memory shows lower NMSE than state and clock.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Storage should show consistent behavior across actions.",
+              "condition_to_check": "Consistent response to negative pulse vs positive pulse."
+            }
+          },
+          {
+            "task_id": "58b038a9dcbc",
+            "round": 1,
+            "from_rep": "clock",
+            "to_rep": "memory_clock",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00012472413953979527,
+            "reason": "Memory and clock features both show low NMSE, need to distinguish them.",
+            "source_mapping": {
+              "source_id": "external_clock",
+              "target_relation": "Persistent residuals align with elapsed time regardless of input shape.",
+              "condition_to_check": "Residuals should show consistent phase shift for positive and negative pulses."
+            }
+          },
+          {
+            "task_id": "6cd641ade75d",
+            "round": 2,
+            "from_rep": "memory_fast",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0018403966742272832,
+            "reason": "Saturating memory combines fast and slow dynamics with nonlinearities, better fitting complex signals.",
+            "source_mapping": {
+              "source_id": "saturation",
+              "target_relation": "Nonlinear response weakens at large state magnitudes, indicating saturation limits.",
+              "condition_to_check": "If saturation limits predict future states accurately during ramp reversals, saturation is likely."
+            }
+          },
+          {
+            "task_id": "76756fbed619",
+            "round": 1,
+            "from_rep": "clock",
+            "to_rep": "state",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00017246101724507603,
+            "reason": "Simpler model with good initial fit; test on more complex input.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "No additional state needed beyond current x and input u.",
+              "condition_to_check": "Response to double pulse matches single pulse."
+            }
+          },
+          {
+            "task_id": "7dc2896588f5",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00012365424013680097,
+            "reason": "Multiscale memory shows best performance and largest disagreement on alternating inputs.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Differences in decay rates indicate distinct storage mechanisms.",
+              "condition_to_check": "Significant difference in response patterns between models"
+            }
+          },
+          {
+            "task_id": "860ddd9d91de",
+            "round": 1,
+            "from_rep": "memory_clock",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00012670700763325166,
+            "reason": "Memory_slow has competitive NMSE and shows high variance for negative_pulse.",
+            "source_mapping": {
+              "source_id": "memory_slow",
+              "target_relation": "Delayed response and phase shift suggest long-term memory rather than short-term effects.",
+              "condition_to_check": "Immediate response without delay rules out long-term memory."
+            }
+          },
+          {
+            "task_id": "8f0a53158586",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_clock",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00013589848379270112,
+            "reason": "Memory_clock combines useful aspects of memory and clock mechanisms.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "The system should exhibit phase shifts and frequency-dependent behavior under alternating inputs.",
+              "condition_to_check": "Check for consistent phase shifts and frequency responses across alternating inputs."
+            }
+          },
+          {
+            "task_id": "8f0a53158586",
+            "round": 3,
+            "from_rep": "memory_clock",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00013788507681610233,
+            "reason": "Memory_multiscale balances fast and slow dynamics, showing broad applicability.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "The system should show a delayed response with contributions from both fast and slow memory components.",
+              "condition_to_check": "Verify the presence of distinct fast and slow decay rates in the response."
+            }
+          },
+          {
+            "task_id": "91977ba2ede6",
+            "round": 1,
+            "from_rep": "memory_clock",
+            "to_rep": "history_all",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00014936758291549788,
+            "reason": "History_all has lower CV NMSE and higher prediction variance for negative_pulse.",
+            "source_mapping": {
+              "source_id": "history_all",
+              "target_relation": "The system responds to a negative pulse with a delayed and damped oscillation, distinct from the positive pulse response.",
+              "condition_to_check": "No significant response after the pulse ends, confirming delayed damping."
+            }
+          },
+          {
+            "task_id": "91977ba2ede6",
+            "round": 2,
+            "from_rep": "history_all",
+            "to_rep": "memory_clock",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00221190750432895,
+            "reason": "Double_pulse tests combined memory and clock effects more rigorously.",
+            "source_mapping": {
+              "source_id": "memory_clock",
+              "target_relation": "Distinct responses to two pulses indicate memory and clock effects interact.",
+              "condition_to_check": "Similar response shapes for positive and negative pulses rule out pure clock."
+            }
+          },
+          {
+            "task_id": "91977ba2ede6",
+            "round": 3,
+            "from_rep": "memory_clock",
+            "to_rep": "history_all",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.0005944197779494858,
+            "reason": "History_all shows lower CV NMSE and higher prediction variance.",
+            "source_mapping": {
+              "source_id": "history_all",
+              "target_relation": "The system responds to alternating inputs with a delayed and damped oscillation, distinct from pulse responses.",
+              "condition_to_check": "No significant response after alternating inputs cease, confirming delayed damping."
+            }
+          },
+          {
+            "task_id": "93d24a230259",
+            "round": 2,
+            "from_rep": "memory_multiscale",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0002808746048296799,
+            "reason": "Cubic terms improve fit for nonlinear responses; ramp_reverse tests persistent memory.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Nonlinear history effects indicate persistent storage mechanisms.",
+              "condition_to_check": "Differences in response shape and magnitude between ramp_reverse and step_rest."
+            }
+          },
+          {
+            "task_id": "93d24a230259",
+            "round": 3,
+            "from_rep": "state_cubic",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00013258935024674617,
+            "reason": "PRBS tests complex, non-repetitive input patterns for multiscale memory.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Persistent differences between PRBS and step_rest responses indicate storage mechanisms.",
+              "condition_to_check": "Differences in response shape and magnitude between PRBS and step_rest."
+            }
+          },
+          {
+            "task_id": "a288d8b77e5b",
+            "round": 2,
+            "from_rep": "state_cubic",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00020458655724537355,
+            "reason": "Saturating terms capture nonlinearities; ramp reverse tests accumulation limits.",
+            "source_mapping": {
+              "source_id": "saturation",
+              "target_relation": "Response magnitude decreases with increasing input duration.",
+              "condition_to_check": "Reduced response during ramp reverse compared to step rest."
+            }
+          },
+          {
+            "task_id": "aa835d55fa37",
+            "round": 2,
+            "from_rep": "memory_clock",
+            "to_rep": "history_all",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00020305626046476254,
+            "reason": "History_all includes all relevant features; step_rest tests robustness.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "Response evolves over time with multiple interacting components.",
+              "condition_to_check": "Consistent response pattern across different step amplitudes."
+            }
+          },
+          {
+            "task_id": "aa835d55fa37",
+            "round": 3,
+            "from_rep": "history_all",
+            "to_rep": "memory_clock",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00034547614608503166,
+            "reason": "Double pulse tests memory and clock interaction consistency.",
+            "source_mapping": {
+              "source_id": "memory_clock",
+              "target_relation": "Response amplitude and phase shift vary with elapsed time and pulse sequence.",
+              "condition_to_check": "Consistent phase shifts and amplitudes for double versus single pulses."
+            }
+          },
+          {
+            "task_id": "c667b23ae7f9",
+            "round": 2,
+            "from_rep": "state",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00019174896682728126,
+            "reason": "Cubic terms improve fit; double pulse tests nonlinearity.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Nonlinear response indicates storage with curvature.",
+              "condition_to_check": "Distinct response to double vs single pulses."
+            }
+          }
+        ]
+      },
+      "no_active": {
+        "calls": 96,
+        "invalid_decisions": 22,
+        "cv_minimum_choices": 57,
+        "valid_cv_minimum_choices": 45,
+        "revision_records": [
+          {
+            "task_id": "1d2417e51713",
+            "round": 1,
+            "from_rep": "state",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00010662003632231253,
+            "reason": "Current models underperform on pulses; slow memory may capture delayed effects.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Storage should show consistent response regardless of input shape.",
+              "condition_to_check": "Consistent response across different input shapes indicates no storage."
+            }
+          },
+          {
+            "task_id": "2e356a891a56",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "nonlinear_delay",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00011200372364480183,
+            "reason": "Nonlinear_delay shows best fit and high prediction variance.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Storage should manifest in complex recovery patterns post-pulse.",
+              "condition_to_check": "Recovery after second pulse should be distinctly different from first."
+            }
+          },
+          {
+            "task_id": "57c634ddf18a",
+            "round": 1,
+            "from_rep": "memory_clock",
+            "to_rep": "history_all",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.0002397908404392053,
+            "reason": "History_all has lower CV NMSE than memory_clock, suggesting better generalization.",
+            "source_mapping": {
+              "source_id": "history_all",
+              "target_relation": "Combined nonlinear and clock effects on system response.",
+              "condition_to_check": "Verify if the response matches the predicted complexity and variance."
+            }
+          },
+          {
+            "task_id": "57c634ddf18a",
+            "round": 2,
+            "from_rep": "history_all",
+            "to_rep": "memory_clock",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0009480862164360654,
+            "reason": "Alternating input tests both memory and clock effects comprehensively.",
+            "source_mapping": {
+              "source_id": "memory_clock",
+              "target_relation": "Phase shifts and amplitude modulations due to memory and clock interactions.",
+              "condition_to_check": "Check for consistent phase shifts and amplitude changes."
+            }
+          },
+          {
+            "task_id": "57c634ddf18a",
+            "round": 3,
+            "from_rep": "memory_clock",
+            "to_rep": "history_all",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.0001631378548523689,
+            "reason": "History_all has lower CV NMSE, suggesting better generalization.",
+            "source_mapping": {
+              "source_id": "history_all",
+              "target_relation": "Combined nonlinear and clock effects on system response.",
+              "condition_to_check": "Verify if the response matches the predicted complexity and variance."
+            }
+          },
+          {
+            "task_id": "58b038a9dcbc",
+            "round": 1,
+            "from_rep": "clock",
+            "to_rep": "history_all",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.0001205602225262028,
+            "reason": "History_all shows lower CV-NMSE than clock, suggesting more accurate representation.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "No specific mechanism identified; comprehensive history improves fit.",
+              "condition_to_check": "Distinct response patterns for double pulse vs. single pulses."
+            }
+          },
+          {
+            "task_id": "6cd641ade75d",
+            "round": 1,
+            "from_rep": "memory_fast",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.004150389070195741,
+            "reason": "Saturating memory shows best fit and high prediction variance.",
+            "source_mapping": {
+              "source_id": "saturation",
+              "target_relation": "Saturation limits growth regardless of input shape.",
+              "condition_to_check": "Compare peak response magnitude for positive and negative pulses."
+            }
+          },
+          {
+            "task_id": "7025f2a38ff9",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "nonlinear_delay",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.0001637550121048248,
+            "reason": "Nonlinear_delay shows best cross-validation and high prediction variance.",
+            "source_mapping": {
+              "source_id": "nonlinear_delay",
+              "target_relation": "Nonlinear interactions should manifest in varying response patterns.",
+              "condition_to_check": "Response patterns should diverge between alternating and other inputs."
+            }
+          },
+          {
+            "task_id": "76756fbed619",
+            "round": 1,
+            "from_rep": "clock",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00015458369167260108,
+            "reason": "Cubic terms improve fit for complex inputs; double pulse tests nonlinearity.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "No additional mechanisms beyond state and nonlinear response are needed.",
+              "condition_to_check": "Symmetric response to double pulse."
+            }
+          },
+          {
+            "task_id": "7dc2896588f5",
+            "round": 3,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00011673258363827811,
+            "reason": "Multiscale memory shows lower CV NMSE and higher prediction variance.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Persistent oscillations indicate storage of past inputs.",
+              "condition_to_check": "Oscillation frequency should match input modulation."
+            }
+          },
+          {
+            "task_id": "860ddd9d91de",
+            "round": 1,
+            "from_rep": "memory_clock",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00021505395293402343,
+            "reason": "Memory_slow shows low NMSE and high prediction variance for positive and negative pulses.",
+            "source_mapping": {
+              "source_id": "memory_slow",
+              "target_relation": "Persistent phase shifts and amplitude modulations indicate long-term memory effects.",
+              "condition_to_check": "No change in response shape without input."
+            }
+          },
+          {
+            "task_id": "860ddd9d91de",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00022632300923710382,
+            "reason": "Memory_multiscale shows low NMSE and high prediction variance for various inputs.",
+            "source_mapping": {
+              "source_id": "memory_multiscale",
+              "target_relation": "Persistent phase shifts and modulations indicate combined fast and slow memory effects.",
+              "condition_to_check": "No change in response shape without input."
+            }
+          },
+          {
+            "task_id": "91977ba2ede6",
+            "round": 1,
+            "from_rep": "memory_clock",
+            "to_rep": "history_all",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.0009105024642839238,
+            "reason": "History_all has lower CV NMSE than memory_clock, suggesting more comprehensive dynamics.",
+            "source_mapping": {
+              "source_id": "history_all",
+              "target_relation": "The system's response to alternating inputs will show intricate patterns, indicating the need for a full history model.",
+              "condition_to_check": "Distinct responses to positive and negative inputs should be evident, ruling out symmetry."
+            }
+          },
+          {
+            "task_id": "91977ba2ede6",
+            "round": 2,
+            "from_rep": "history_all",
+            "to_rep": "memory_clock",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.0002976069444589369,
+            "reason": "Memory_clock shows best cross-validation and high prediction variance for positive_pulse.",
+            "source_mapping": {
+              "source_id": "memory_clock",
+              "target_relation": "The system exhibits a delayed and oscillatory response to a positive pulse, indicating both memory and periodic forcing.",
+              "condition_to_check": "No significant response after the pulse ends, ruling out purely memory-based mechanisms."
+            }
+          },
+          {
+            "task_id": "91977ba2ede6",
+            "round": 3,
+            "from_rep": "memory_clock",
+            "to_rep": "history_all",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.000338438118219973,
+            "reason": "History_all has the lowest CV NMSE, indicating it captures the most comprehensive dynamics.",
+            "source_mapping": {
+              "source_id": "history_all",
+              "target_relation": "The system's response to PRBS will show intricate patterns, indicating the need for a full history model.",
+              "condition_to_check": "Distinct responses to positive and negative inputs should be evident, ruling out symmetry."
+            }
+          },
+          {
+            "task_id": "93d24a230259",
+            "round": 1,
+            "from_rep": "memory_multiscale",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.000362411763863042,
+            "reason": "Slow memory shows best cross-validation; test with two pulses.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Storage should show distinct responses to each pulse.",
+              "condition_to_check": "No significant overlap between pulse-induced responses."
+            }
+          },
+          {
+            "task_id": "aa835d55fa37",
+            "round": 1,
+            "from_rep": "memory_clock",
+            "to_rep": "history_all",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.0006098648835775731,
+            "reason": "History_all has lower CV NMSE than memory_clock, suggesting better generalization.",
+            "source_mapping": {
+              "source_id": "history_all",
+              "target_relation": "Model captures complex temporal dependencies and nonlinearities.",
+              "condition_to_check": "Responses to double pulses at different phases should be distinguishable."
+            }
+          },
+          {
+            "task_id": "aa835d55fa37",
+            "round": 2,
+            "from_rep": "history_all",
+            "to_rep": "memory_clock",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0006581056713554116,
+            "reason": "Alternating inputs test memory and clock interaction robustly.",
+            "source_mapping": {
+              "source_id": "memory_clock",
+              "target_relation": "Phase shifts and amplitude modulation due to memory and clock.",
+              "condition_to_check": "Consistent phase shifts and amplitudes across alternating pulse sequences."
+            }
+          },
+          {
+            "task_id": "aa835d55fa37",
+            "round": 3,
+            "from_rep": "memory_clock",
+            "to_rep": "history_all",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.0002428727860436016,
+            "reason": "History_all has lower CV NMSE, indicating better generalization.",
+            "source_mapping": {
+              "source_id": "history_all",
+              "target_relation": "Captures complex temporal dependencies and nonlinearities.",
+              "condition_to_check": "Distinct response pattern to positive pulse."
+            }
+          },
+          {
+            "task_id": "c667b23ae7f9",
+            "round": 1,
+            "from_rep": "state",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00018712004621043843,
+            "reason": "Cubic terms improve fit; positive pulse tests nonlinearity.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Nonlinear response should be consistent across inputs.",
+              "condition_to_check": "Consistent response to positive and negative pulses."
+            }
+          },
+          {
+            "task_id": "f1ddfabee06d",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "history_all",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00013501266828752363,
+            "reason": "History_all has lowest CV NMSE and high residual correlation.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Storage should cause distinct response patterns in alternating inputs.",
+              "condition_to_check": "Compare alternating input responses for history_all vs memory_slow."
+            }
+          },
+          {
+            "task_id": "f1ddfabee06d",
+            "round": 3,
+            "from_rep": "history_all",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.000279995131029951,
+            "reason": "Memory_slow fits best with low NMSE and high residual correlation.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Storage should cause distinct response patterns in alternating inputs.",
+              "condition_to_check": "Compare alternating input responses for memory_slow vs state."
+            }
+          }
+        ]
+      },
+      "shuffled": {
+        "calls": 96,
+        "invalid_decisions": 14,
+        "cv_minimum_choices": 63,
+        "valid_cv_minimum_choices": 52,
+        "revision_records": [
+          {
+            "task_id": "1d2417e51713",
+            "round": 1,
+            "from_rep": "state",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 8.889399803263587e-05,
+            "reason": "Memory_multiscale shows slightly lower NMSE than state.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Faster decay under negative pulse indicates faster storage mechanisms.",
+              "condition_to_check": "If negative pulse decay is faster than positive pulse."
+            }
+          },
+          {
+            "task_id": "1d2417e51713",
+            "round": 2,
+            "from_rep": "memory_multiscale",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00011240566809554607,
+            "reason": "State cubic adds nonlinearity to improve fit.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "Nonlinear response to double pulse indicates input-output transformation.",
+              "condition_to_check": "If response amplitude to double pulse differs significantly from single pulses."
+            }
+          },
+          {
+            "task_id": "58b038a9dcbc",
+            "round": 1,
+            "from_rep": "clock",
+            "to_rep": "memory_clock",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00012472413953979527,
+            "reason": "Memory and clock features both show promise; negative pulse tests interaction.",
+            "source_mapping": {
+              "source_id": "external_clock",
+              "target_relation": "Response phase shift and delay due to combined history and periodic forcing.",
+              "condition_to_check": "Consistent phase shift and delay across multiple pulse timings."
+            }
+          },
+          {
+            "task_id": "6cd641ade75d",
+            "round": 2,
+            "from_rep": "memory_fast",
+            "to_rep": "saturating_memory",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0018403966742272832,
+            "reason": "Saturating memory shows best fit for complex inputs; ramp reverse tests accumulation limits.",
+            "source_mapping": {
+              "source_id": "saturation",
+              "target_relation": "Accumulated state should limit growth even with increasing input.",
+              "condition_to_check": "Response should level off before reaching expected steady state."
+            }
+          },
+          {
+            "task_id": "76756fbed619",
+            "round": 1,
+            "from_rep": "clock",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00010276484483815845,
+            "reason": "Cubic terms improve fit for complex input shapes; test with negative pulse.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "",
+              "condition_to_check": ""
+            }
+          },
+          {
+            "task_id": "7dc2896588f5",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00012365424013680097,
+            "reason": "Memory_multiscale outperforms others on plausible actions.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Responses to pulses should show clear lagged effects.",
+              "condition_to_check": "No significant change between pulses."
+            }
+          },
+          {
+            "task_id": "860ddd9d91de",
+            "round": 1,
+            "from_rep": "memory_clock",
+            "to_rep": "memory_slow",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00012670700763325166,
+            "reason": "Memory_slow has competitive NMSE and shows high variance for negative_pulse.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Delayed and attenuated response indicates storage with finite timescale.",
+              "condition_to_check": "No significant response difference between positive and negative pulses rules out storage."
+            }
+          },
+          {
+            "task_id": "8f0a53158586",
+            "round": 2,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_clock",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00013589848379270112,
+            "reason": "Memory_clock combines useful aspects of memory and clock representations.",
+            "source_mapping": {
+              "source_id": "memory_clock",
+              "target_relation": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+              "condition_to_check": "Compare phase shifts for alternating inputs at different elapsed times."
+            }
+          },
+          {
+            "task_id": "8f0a53158586",
+            "round": 3,
+            "from_rep": "memory_clock",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00013788507681610233,
+            "reason": "Memory_multiscale balances fast and slow dynamics, showing robust performance.",
+            "source_mapping": {
+              "source_id": "memory_multiscale",
+              "target_relation": "Validate the combined fast and slow memory effects on distinct input shapes.",
+              "condition_to_check": "Compare individual and combined responses to positive and negative double pulses."
+            }
+          },
+          {
+            "task_id": "91977ba2ede6",
+            "round": 1,
+            "from_rep": "memory_clock",
+            "to_rep": "history_all",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00014936758291549788,
+            "reason": "History_all has lower CV NMSE and higher prediction variance for negative pulses.",
+            "source_mapping": {
+              "source_id": "history_all",
+              "target_relation": "The system responds to negative pulses with a delayed and damped oscillation, distinct from the positive pulse response.",
+              "condition_to_check": "Verify the response amplitude and phase shift relative to positive pulse."
+            }
+          },
+          {
+            "task_id": "91977ba2ede6",
+            "round": 2,
+            "from_rep": "history_all",
+            "to_rep": "memory_clock",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00221190750432895,
+            "reason": "Memory_clock shows best cross-validation and high prediction variance for positive and negative pulses.",
+            "source_mapping": {
+              "source_id": "memory_clock",
+              "target_relation": "The system responds to double pulses with a complex, possibly oscillatory pattern, showing phase shifts and differing amplitudes compared to single pulses.",
+              "condition_to_check": "Observe if the second pulse's response is delayed and modulated by the first pulse's effect."
+            }
+          },
+          {
+            "task_id": "91977ba2ede6",
+            "round": 3,
+            "from_rep": "memory_clock",
+            "to_rep": "history_all",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.0005944197779494858,
+            "reason": "History_all shows lower CV NMSE and higher prediction variance.",
+            "source_mapping": {
+              "source_id": "history_all",
+              "target_relation": "The system responds to step rest with a delayed and damped oscillation, distinct from pulse responses.",
+              "condition_to_check": "Verify the response amplitude and phase shift relative to pulses."
+            }
+          },
+          {
+            "task_id": "93d24a230259",
+            "round": 2,
+            "from_rep": "memory_multiscale",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.0002808746048296799,
+            "reason": "Cubic terms improve fit; ramp-reverse tests transient behavior.",
+            "source_mapping": {
+              "source_id": "none",
+              "target_relation": "Nonlinear terms should enhance transient response characteristics.",
+              "condition_to_check": "Nonlinear effects should be evident during ramp and reverse."
+            }
+          },
+          {
+            "task_id": "93d24a230259",
+            "round": 3,
+            "from_rep": "state_cubic",
+            "to_rep": "memory_clock",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00013258935024674617,
+            "reason": "Combines memory and periodic forcing; positive pulse tests initial response.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Memory and periodic forcing should produce oscillatory decay after pulse.",
+              "condition_to_check": "Oscillatory behavior persists across different pulse amplitudes."
+            }
+          },
+          {
+            "task_id": "aa835d55fa37",
+            "round": 3,
+            "from_rep": "memory_clock",
+            "to_rep": "history_all",
+            "new_choice_is_current_cv_minimum": false,
+            "previous_forecast_mse": 0.00027373894772836474,
+            "reason": "History_all shows best fit and low NMSE; ramp_reverse tests complex dynamics.",
+            "source_mapping": {
+              "source_id": "history_all",
+              "target_relation": "The system's response should include detailed memory and clock contributions.",
+              "condition_to_check": "Verify intricate memory and clock effects during ramp and reverse."
+            }
+          },
+          {
+            "task_id": "c667b23ae7f9",
+            "round": 2,
+            "from_rep": "state",
+            "to_rep": "state_cubic",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00019174896682728126,
+            "reason": "State cubic improves fit with some action disagreement.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Nonlinear response should manifest differently for positive and negative inputs.",
+              "condition_to_check": "Distinct response phases for double pulse."
+            }
+          },
+          {
+            "task_id": "fb6a837878c3",
+            "round": 3,
+            "from_rep": "memory_slow",
+            "to_rep": "memory_multiscale",
+            "new_choice_is_current_cv_minimum": true,
+            "previous_forecast_mse": 0.00011850351791463598,
+            "reason": "Multiscale memory shows best performance and high residual correlation.",
+            "source_mapping": {
+              "source_id": "storage",
+              "target_relation": "Persistent response to alternating inputs suggests storage.",
+              "condition_to_check": "Persistent effects indicate storage beyond simple accumulation."
+            }
+          }
+        ]
+      }
+    }
+  },
+  "api_usage": {
+    "calls": 480,
+    "input_tokens": 1496109,
+    "output_tokens": 106037,
+    "reported_reasoning_tokens": 51179,
+    "finish_reason_counts": {
+      "stop": 480
+    },
+    "returned_models": {
+      "gpt-6-luna": 480
+    },
+    "summed_request_seconds": 1868.9260964337736,
+    "server_gpu_memory_unknown": true,
+    "provider_price_unknown": true
+  },
+  "limits": "Descriptive fixed-task model comparison; single run via unverified third-party model alias; differing tokenizers and reasoning budgets. CV ranking agreement is not evidence of new concepts."
+}

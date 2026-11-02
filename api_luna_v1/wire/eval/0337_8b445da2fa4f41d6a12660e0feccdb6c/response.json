@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430347975959131,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0c3d12522957dc00016ae5934877808194808dae59b7c0dcdc",
+    "object": "chat.completion",
+    "created": 1793430347,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"prbs\",\"reason\":\"The state model has the lowest leave-trajectory-out error; added memory and clock features do not improve validation enough to justify their complexity. PRBS inputs can probe departures under varied switching.\",\"prediction\":\"Under PRBS, the next response will depend on current state and input, with no additional elapsed-time or history effect.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No mechanism card is justified by the current fit; the state representation is a predictive choice.\",\"condition_to_check\":\"Reject this choice if PRBS residuals show reproducible dependence on elapsed time or past inputs after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2839,
+      "completion_tokens": 307,
+      "total_tokens": 3146,
+      "completion_tokens_details": {
+        "reasoning_tokens": 164
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.3017052467912436
+}

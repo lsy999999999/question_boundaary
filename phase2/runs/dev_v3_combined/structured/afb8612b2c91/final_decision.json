@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793423466881363297,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "positive_pulse",
+    "reason": "Memory_slow shows best fit but may still underpredict complex dynamics.",
+    "prediction": "Positive pulse will show distinct phases of slow rise and fall, confirming slow accumulation.",
+    "accept": true,
+    "mapping": {
+      "source_id": "memory_slow",
+      "target_relation": "Slowly accumulating past states should shape the response more than fast ones.",
+      "condition_to_check": "Check if the response has slower dynamics compared to fast memory models."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Memory_slow shows best fit but may still underpredict complex dynamics.\",\n  \"prediction\": \"Positive pulse will show distinct phases of slow rise and fall, confirming slow accumulation.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"memory_slow\",\n    \"target_relation\": \"Slowly accumulating past states should shape the response more than fast ones.\",\n    \"condition_to_check\": \"Check if the response has slower dynamics compared to fast memory models.\"\n  }\n}",
+    "input_tokens": 3910,
+    "output_tokens": 120,
+    "batch_elapsed_seconds": 2.9052450098097324,
+    "amortized_seconds": 2.9052450098097324,
+    "peak_gpu_allocated_gb": 14.96709394454956,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024242401123047,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

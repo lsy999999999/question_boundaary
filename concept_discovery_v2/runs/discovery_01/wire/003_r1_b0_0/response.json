@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793460219824804569,
+  "body": {
+    "id": "resp_03ed921e23c92425016ae607f4c46c819384d626a757c266f4",
+    "object": "chat.completion",
+    "created": 1793460219,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"parent_id\":\"r0_b0\",\"target_witnesses\":[\"r1_witness_0\"],\"concept\":\"Decaying input-history trace\",\"explanation\":\"The focus witness compares approximately similar x values with u=0 after different input histories. The longer, weaker pulse in initial_2 is associated with a less negative estimated drift than the shorter, stronger pulse in r0_experiment_0. A latent trace driven by u and decaying after input removal can retain this history information, which x and u alone omit. This is a reuse of the existing candidate, not evidence that the latent mechanism is established; the state and derivative comparisons are approximate.\",\"analogy\":{\"domain\":\"linear systems\",\"relation\":\"a first-order filter retains a decaying, exponentially weighted trace of its forcing\",\"mapping\":\"z0 is the filtered input history, with rate u-p0*z0; its fitted contribution to dx/dt is represented by the z0 term\",\"breaks_when\":\"history dependence is not well represented by a single exponentially decaying trace, for example if responses depend on additional features of pulse order or duration\"},\"provenance\":\"model_knowledge_unverified\",\"spec\":{\"parameters\":[{\"name\":\"p0\",\"lower\":0.05,\"initial\":0.25,\"upper\":1.5}],\"states\":[{\"name\":\"z0\",\"meaning\":\"Exponentially decaying trace of prior input, initialized to zero\",\"rate\":\"u-p0*z0\"}],\"terms\":[\"1\",\"x\",\"u\",\"z0\"]},\"distinguishing_prediction\":\"After distinct input histories, compare trials at matched x and u=0. If their residual z0 values differ, this model predicts different instantaneous drift, with the history contribution relaxing as z0 decays; a model using only current x and u predicts the same drift at an exact match.\",\"falsifier\":\"Repeated, adequately resolved trials with matched x and u=0 show no reproducible history-dependent drift, or show differences incompatible with a decaying filtered-input trace.\",\"limitations\":\"The witness is an approximate state match with smoothed derivative estimates, so it does not establish a latent state or identify its dynamics. A single trace may conflate input history with other unmodeled effects, and the supplied trajectory cross-validation does not by itself validate this focused comparison.\"}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 5946,
+      "completion_tokens": 745,
+      "total_tokens": 6691,
+      "completion_tokens_details": {
+        "reasoning_tokens": 271
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 8.35269507393241
+}

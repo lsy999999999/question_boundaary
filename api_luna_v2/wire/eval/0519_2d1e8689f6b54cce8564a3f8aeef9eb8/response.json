@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793432256788650829,
+  "http_status": 200,
+  "body": {
+    "id": "resp_02e7b630d51ee05d016ae59abf1b408197bbbc2eaf25e3b55d",
+    "object": "chat.completion",
+    "created": 1793432256,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest trajectory-held-out NMSE (0.00137), outperforming multiscale and nonlinear alternatives. Repeated intervention forecasts improved CV error, though residual lag correlation leaves some uncertainty.\",\"prediction\":\"After input switches to zero, output will retain a decaying, history-dependent response rather than immediately returning to baseline.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts persistent effects after input changes, with finite relaxation.\",\"condition_to_check\":\"Test whether past input predicts output beyond current input and visible state across held-out interventions.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3676,
+      "completion_tokens": 136,
+      "total_tokens": 3812
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.4948879424482584
+}

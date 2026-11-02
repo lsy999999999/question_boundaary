@@ -1,0 +1,24 @@
+{
+  "id": "fixture_calc",
+  "type": "compute",
+  "candidate_id": "fixture",
+  "gap_id": "ratio",
+  "request": {
+    "type": "compute",
+    "id": "fixture_calc",
+    "candidate_id": "fixture",
+    "gap_id": "ratio",
+    "purpose": "recompute existing V1 C04 request, zero scientific invention",
+    "model_spec": "ratio and rectangular marginal error propagation, undefined 0/0",
+    "code": "import json\nrows=DATA['phase_measurements.json']\ng={(r['tie_line_id'],r['phase']):r for r in rows}\nout=[]\nfor tie in range(3):\n for label,col,prefix in [('reference','reference_RNA_ng_per_uL','wt'),('variant','variant_RNA_ng_per_uL','mut')]:\n  d,l=g[tie,'dense'],g[tie,'dilute']\n  den=l[col]\n  lo=(d[col]-d[prefix+'_error_lower_ng_per_uL'])/(den+l[prefix+'_error_upper_ng_per_uL']) if den else None\n  hi=(d[col]+d[prefix+'_error_upper_ng_per_uL'])/(den-l[prefix+'_error_lower_ng_per_uL']) if den else None\n  out.append(dict(tie_line_id=tie,species=label,partition_ratio=d[col]/den if den else None,interval=[lo,hi] if den else None))\nprint(json.dumps(out))\n"
+  },
+  "result": {
+    "status": "executed",
+    "returncode": 0,
+    "stdout": "[{\"tie_line_id\": 0, \"species\": \"reference\", \"partition_ratio\": 469.17758369723435, \"interval\": [176.38255026211817, 1400.5301005887593]}, {\"tie_line_id\": 0, \"species\": \"variant\", \"partition_ratio\": null, \"interval\": null}, {\"tie_line_id\": 1, \"species\": \"reference\", \"partition_ratio\": 238.54321907600595, \"interval\": [89.67790190827291, 712.0693106746447]}, {\"tie_line_id\": 1, \"species\": \"variant\", \"partition_ratio\": 9032.075471698112, \"interval\": [3395.5170946233507, 26961.419318501827]}, {\"tie_line_id\": 2, \"species\": \"reference\", \"partition_ratio\": 525.1236825123682, \"interval\": [197.41491823773242, 1567.533380633935]}, {\"tie_line_id\": 2, \"species\": \"variant\", \"partition_ratio\": 176.0096860676295, \"interval\": [66.16905491264268, 525.4020479630732]}]\n",
+    "stderr": "",
+    "code_sha256": "177df42fbbbd3ada3bc3a821bad7ab69090d262c309532df198ce3575c42432f",
+    "data_sha256": "252615778852148adfd326d4fd83c2860fd70e94980cecf75ea2cded207c36ca",
+    "scope": "Unmodified executor code, broker prepends DATA. Conditional simulation unless model says and evidence supports otherwise."
+  }
+}

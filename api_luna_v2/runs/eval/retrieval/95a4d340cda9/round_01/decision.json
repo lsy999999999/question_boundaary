@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793431761532653694,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "prbs",
+    "reason": "Saturating memory has the lowest trajectory-level cross-validation error, but correlated residuals leave uncertainty. PRBS has the greatest prediction disagreement among plausible models and probes varied input histories.",
+    "prediction": "Under PRBS input, output will depend on accumulated input history beyond its current input and state; competing memory representations may differ in transient timing.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"prbs\",\"reason\":\"Saturating memory has the lowest trajectory-level cross-validation error, but correlated residuals leave uncertainty. PRBS has the greatest prediction disagreement among plausible models and probes varied input histories.\",\"prediction\":\"Under PRBS input, output will depend on accumulated input history beyond its current input and state; competing memory representations may differ in transient timing.\",\"accept\":false}",
+    "input_tokens": 2965,
+    "output_tokens": 182,
+    "batch_elapsed_seconds": 2.8926093634217978,
+    "amortized_seconds": 2.8926093634217978,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2965,
+      "completion_tokens": 182,
+      "total_tokens": 3147,
+      "completion_tokens_details": {
+        "reasoning_tokens": 91
+      }
+    },
+    "api_response_id": "resp_02db520d4ee46b36016ae598cf3bcc8190b5c55d3367c2113e",
+    "wire_record": "wire/eval/0287_49d41cbd32d241e8ac1a62884e51fcfd"
+  }
+}

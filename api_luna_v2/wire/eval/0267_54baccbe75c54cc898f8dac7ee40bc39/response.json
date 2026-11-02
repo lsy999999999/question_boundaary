@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431722423763329,
+  "http_status": 200,
+  "body": {
+    "id": "resp_04ca0c82018c1018016ae598a71ba48197bae08713e55e7b53",
+    "object": "chat.completion",
+    "created": 1793431722,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the best trajectory-level CV error, but PRBS error and residual lag-1 correlation indicate remaining structured error; alternatives validate worse.\",\"prediction\":\"During rapid switches, output will retain a smooth delayed influence from preceding inputs rather than track the current input immediately.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past input influence predicts output beyond current input, consistent with finite relaxation.\",\"condition_to_check\":\"If past input history adds no predictive value after controlling current input and visible state, the storage relation is unsupported.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3282,
+      "completion_tokens": 298,
+      "total_tokens": 3580,
+      "completion_tokens_details": {
+        "reasoning_tokens": 167
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.187812210060656
+}

@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793432233254793067,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "slow_wave",
+    "reason": "Memory_multiscale has the lowest trajectory-level CV error (0.00124), slightly outperforming memory_clock and saturating_memory. Persistent post-input response supports history dependence; clock and saturation add little validated improvement.",
+    "prediction": "After input returns to zero, the response should decay according to accumulated history, without a reproducible elapsed-time periodic component.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated past influence with finite relaxation can predict the lingering response after input cessation.",
+      "condition_to_check": "Check whether history improves predictions after controlling current input and visible state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"slow_wave\",\"reason\":\"Memory_multiscale has the lowest trajectory-level CV error (0.00124), slightly outperforming memory_clock and saturating_memory. Persistent post-input response supports history dependence; clock and saturation add little validated improvement.\",\"prediction\":\"After input returns to zero, the response should decay according to accumulated history, without a reproducible elapsed-time periodic component.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence with finite relaxation can predict the lingering response after input cessation.\",\"condition_to_check\":\"Check whether history improves predictions after controlling current input and visible state.\"}}",
+    "input_tokens": 3667,
+    "output_tokens": 251,
+    "batch_elapsed_seconds": 4.933285160921514,
+    "amortized_seconds": 4.933285160921514,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3667,
+      "completion_tokens": 251,
+      "total_tokens": 3918,
+      "completion_tokens_details": {
+        "reasoning_tokens": 113
+      }
+    },
+    "api_response_id": "resp_0b6b35e29575ad92016ae59aa61d988193a886b5f822527c86",
+    "wire_record": "wire/eval/0510_1a907945d3114983beb05826601b9d15"
+  }
+}

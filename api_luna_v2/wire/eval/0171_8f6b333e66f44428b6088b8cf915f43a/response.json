@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431570786586353,
+  "http_status": 200,
+  "body": {
+    "id": "resp_081c8a2b5f33a832016ae59810e12c81968d211e1606d50f12",
+    "object": "chat.completion",
+    "created": 1793431570,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has far lower leave-trajectory-out error than the current state model; adding memory worsens validation. Residual oscillations persist after inputs return to zero across interventions.\",\"prediction\":\"After the input returns to zero, oscillations will recur at similar elapsed times across different input protocols.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A shared elapsed-time periodic driver could explain persistent oscillations across interventions without input-dependent memory.\",\"condition_to_check\":\"Compare zero-input oscillations across protocols; the relation is falsified if their timing instead follows input history.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2813,
+      "completion_tokens": 131,
+      "total_tokens": 2944,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.131288799457252
+}

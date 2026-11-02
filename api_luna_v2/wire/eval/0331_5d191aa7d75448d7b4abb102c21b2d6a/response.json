@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431845095795259,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0689334c9108cd89016ae5992190588197abf912f63f72aed2",
+    "object": "chat.completion",
+    "created": 1793431844,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"memory_slow has the best trajectory-level CV error (0.00417), substantially below memory_fast (0.01687); persistent residual correlation and post-input decay support history dependence.\",\"prediction\":\"After rapid input reversals, memory_slow predicts a response shaped by accumulated history that differs from fast-memory and multiscale forecasts.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past input and output can persist and relax, matching the observed post-pulse tails.\",\"condition_to_check\":\"Reject this relation if alternating-input responses are better predicted without slow accumulated history.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3248,
+      "completion_tokens": 322,
+      "total_tokens": 3570,
+      "completion_tokens_details": {
+        "reasoning_tokens": 183
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.237358738668263
+}

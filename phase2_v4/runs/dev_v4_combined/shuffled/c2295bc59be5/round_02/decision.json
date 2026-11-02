@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423736317009339,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "ramp_reverse",
+    "reason": "Saturating_memory handles persistent responses well; ramp_reverse tests accumulation limits.",
+    "prediction": "Response amplitude will decrease gradually during ramp and reverse sharply on reversal.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Persistent response reduction under sustained input followed by reversal.",
+      "condition_to_check": "Gradual decrease followed by sharp drop in response amplitude."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"ramp_reverse\",\n  \"reason\": \"Saturating_memory handles persistent responses well; ramp_reverse tests accumulation limits.\",\n  \"prediction\": \"Response amplitude will decrease gradually during ramp and reverse sharply on reversal.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"Persistent response reduction under sustained input followed by reversal.\",\n    \"condition_to_check\": \"Gradual decrease followed by sharp drop in response amplitude.\"\n  }\n}",
+    "input_tokens": 3804,
+    "output_tokens": 116,
+    "batch_elapsed_seconds": 2.813347934745252,
+    "amortized_seconds": 2.813347934745252,
+    "peak_gpu_allocated_gb": 14.947030544281006,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.017097473144531,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

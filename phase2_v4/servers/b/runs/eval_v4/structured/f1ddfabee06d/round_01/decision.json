@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423935713095350,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "negative_pulse",
+    "reason": "Memory_slow performs well on negative inputs and has lower CV NMSE.",
+    "prediction": "Negative pulse will show slower decay than state-only model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Persistent state after input removal indicates storage.",
+      "condition_to_check": "Decay time constant should be longer than input duration."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"negative_pulse\",\n  \"reason\": \"Memory_slow performs well on negative inputs and has lower CV NMSE.\",\n  \"prediction\": \"Negative pulse will show slower decay than state-only model.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Persistent state after input removal indicates storage.\",\n    \"condition_to_check\": \"Decay time constant should be longer than input duration.\"\n  }\n}",
+    "input_tokens": 3579,
+    "output_tokens": 107,
+    "batch_elapsed_seconds": 2.570309780538082,
+    "amortized_seconds": 2.570309780538082,
+    "peak_gpu_allocated_gb": 14.917911529541016,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

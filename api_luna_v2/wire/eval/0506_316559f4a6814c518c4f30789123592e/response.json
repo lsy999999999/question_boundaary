@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432221047609827,
+  "http_status": 200,
+  "body": {
+    "id": "resp_077ec799643634d5016ae59a9a25388194ba7afea689c671d5",
+    "object": "chat.completion",
+    "created": 1793432220,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest leave-trajectory-out NMSE (0.00176), and observed post-input decay supports slow accumulated history. Residual lag-1 correlation (0.355) leaves some temporal structure unresolved.\",\"prediction\":\"After input switches to zero, output will retain a smooth, decaying dependence on prior input rather than immediately tracking the current input.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated input history predicts lingering output after input changes, consistent with finite-leakage storage.\",\"condition_to_check\":\"If prior input adds no predictive value after controlling current input and visible state, the storage relation is weakened.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3730,
+      "completion_tokens": 252,
+      "total_tokens": 3982,
+      "completion_tokens_details": {
+        "reasoning_tokens": 102
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.878256505355239
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431259844909817,
+  "http_status": 200,
+  "body": {
+    "id": "resp_07a6db5c8f9dc4c1016ae596d7adc48194927e1857e53ebb9c",
+    "object": "chat.completion",
+    "created": 1793431259,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has the lowest leave-trajectory-out error by a wide margin, but residual lag correlation and the prior forecast failure leave adequacy uncertain. PRBS can test against history-based alternatives.\",\"prediction\":\"Under PRBS, clock predicts a shared elapsed-time-synchronized component, including a negative late-time offset, across irregular input histories.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A shared elapsed-time component may explain time-aligned output features across distinct input interventions.\",\"condition_to_check\":\"Compare PRBS with other trajectories at matched elapsed times; the relation is weakened if residual features instead track input history.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3252,
+      "completion_tokens": 356,
+      "total_tokens": 3608,
+      "completion_tokens_details": {
+        "reasoning_tokens": 213
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 6.294769072905183
+}

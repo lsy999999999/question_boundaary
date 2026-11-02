@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430118220224232,
+  "decision": {
+    "representation": "clock",
+    "experiment": "prbs",
+    "reason": "Clock has substantially lower trajectory-level CV error than every alternative, though residual lag-1 correlation leaves some unexplained structure. PRBS has the greatest forecast disagreement among plausible models.",
+    "prediction": "Under PRBS, late oscillations should remain phase-aligned with elapsed time rather than shift with input history.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Similar late oscillations across distinct inputs are consistent with a shared elapsed-time component.",
+      "condition_to_check": "Compare oscillation phase at matched elapsed times under PRBS and prior inputs; input-dependent phase shifts would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has substantially lower trajectory-level CV error than every alternative, though residual lag-1 correlation leaves some unexplained structure. PRBS has the greatest forecast disagreement among plausible models.\",\"prediction\":\"Under PRBS, late oscillations should remain phase-aligned with elapsed time rather than shift with input history.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Similar late oscillations across distinct inputs are consistent with a shared elapsed-time component.\",\"condition_to_check\":\"Compare oscillation phase at matched elapsed times under PRBS and prior inputs; input-dependent phase shifts would weaken this relation.\"}}",
+    "input_tokens": 3240,
+    "output_tokens": 261,
+    "batch_elapsed_seconds": 3.512084343470633,
+    "amortized_seconds": 3.512084343470633,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3240,
+      "completion_tokens": 261,
+      "total_tokens": 3501,
+      "completion_tokens_details": {
+        "reasoning_tokens": 124
+      }
+    },
+    "api_response_id": "resp_0107d425aa1a5805016ae59263918081909943270e77986c42",
+    "wire_record": "wire/eval/0223_de9598bd35aa44d4a249bd3fb7a827ac"
+  }
+}

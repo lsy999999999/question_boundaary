@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423893445819835,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "negative_pulse",
+    "reason": "Memory_slow has competitive NMSE and shows high variance for negative_pulse.",
+    "prediction": "Negative pulse will cause a delayed and attenuated response compared to positive pulse.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Delayed and attenuated response indicates storage with finite timescale.",
+      "condition_to_check": "No significant response difference between positive and negative pulses rules out storage."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"negative_pulse\",\n  \"reason\": \"Memory_slow has competitive NMSE and shows high variance for negative_pulse.\",\n  \"prediction\": \"Negative pulse will cause a delayed and attenuated response compared to positive pulse.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Delayed and attenuated response indicates storage with finite timescale.\",\n    \"condition_to_check\": \"No significant response difference between positive and negative pulses rules out storage.\"\n  }\n}",
+    "input_tokens": 3581,
+    "output_tokens": 117,
+    "batch_elapsed_seconds": 2.777897473424673,
+    "amortized_seconds": 2.777897473424673,
+    "peak_gpu_allocated_gb": 14.918898582458496,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024013519287109,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

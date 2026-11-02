@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793429900157349721,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "alternating",
+    "reason": "It has the lowest leave-trajectory-out error, modestly improving on state_cubic and state; residual lag correlation still leaves adequacy uncertain.",
+    "prediction": "Under rapid reversals, responses will depend on accumulated recent input and differ from a purely instantaneous state-cubic prediction.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No cross-domain relation is sufficiently supported by these trajectories.",
+      "condition_to_check": "Check whether alternating-input residuals show reproducible history dependence beyond instantaneous curvature."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest leave-trajectory-out error, modestly improving on state_cubic and state; residual lag correlation still leaves adequacy uncertain.\",\"prediction\":\"Under rapid reversals, responses will depend on accumulated recent input and differ from a purely instantaneous state-cubic prediction.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is sufficiently supported by these trajectories.\",\"condition_to_check\":\"Check whether alternating-input residuals show reproducible history dependence beyond instantaneous curvature.\"}}",
+    "input_tokens": 2804,
+    "output_tokens": 322,
+    "batch_elapsed_seconds": 4.011350235901773,
+    "amortized_seconds": 4.011350235901773,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2804,
+      "completion_tokens": 322,
+      "total_tokens": 3126,
+      "completion_tokens_details": {
+        "reasoning_tokens": 202
+      }
+    },
+    "api_response_id": "resp_08e9950d0c00838c016ae59188d31c81908c51575c209f5cf0",
+    "wire_record": "wire/eval/0099_7efd9005ffe545fd84b41c870c1beae1"
+  }
+}

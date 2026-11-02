@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793431326844970958,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0b0f2ee966e3af58016ae5971d54f88194ae0c3601b332e2db",
+    "object": "chat.completion",
+    "created": 1793431326,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest trajectory-level CV error (0.00181), well below alternatives. Persistent post-input tails support slow history dependence, though residual lag correlation means unseen-intervention adequacy is not established.\",\"prediction\":\"After alternating inputs stop, output will retain a history-dependent tail that gradually decays toward baseline.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts output after input changes, with finite relaxation.\",\"condition_to_check\":\"At matched current input and visible state, prior input should predict output, and that effect should decay.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3726,
+      "completion_tokens": 133,
+      "total_tokens": 3859
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.3469162713736296
+}

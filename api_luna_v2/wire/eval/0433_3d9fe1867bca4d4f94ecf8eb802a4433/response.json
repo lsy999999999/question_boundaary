@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432048089779906,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0f4ac6c64950c4a9016ae599ece3ec8197918c0ffbf8479e54",
+    "object": "chat.completion",
+    "created": 1793432047,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest trajectory-level CV error, but substantial residual lag-1 correlation leaves unresolved history structure; PRBS has the greatest disagreement among plausible models.\",\"prediction\":\"After irregular input switches, output will retain a smooth post-switch carryover that decays after input ends.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input influence may persist after input ends and relax over finite timescales.\",\"condition_to_check\":\"PRBS carryover should improve predictions across switch patterns after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3416,
+      "completion_tokens": 236,
+      "total_tokens": 3652,
+      "completion_tokens_details": {
+        "reasoning_tokens": 106
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.8725137170404196
+}

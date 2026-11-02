@@ -1,0 +1,50 @@
+{
+  "parent_id": "r0_b0",
+  "target_witnesses": [
+    "r1_witness_1",
+    "r1_witness_0",
+    "r1_witness_2"
+  ],
+  "concept": "Output-history adaptation",
+  "explanation": "The approximate collisions show different estimated drifts at similar x and u=0, but do not identify what history matters. A competing account is that the system retains a filtered trace of its own past output rather than a filtered trace of past input. Here z0 tracks x and contributes to dx/dt. This can make drift depend on how the system reached its current x, while differing structurally from the parent’s input-driven memory. The observations do not establish this mechanism, and the close but unequal x values and noisy derivative estimates limit the witness evidence.",
+  "analogy": {
+    "domain": "adaptive control",
+    "relation": "an internal state tracks recent output and modifies subsequent response",
+    "mapping": "z0 is an exponentially filtered trace of x, with rate x-p0*z0; its contribution to dx/dt represents output-history-dependent adaptation",
+    "breaks_when": "response depends on input history independently of the output trajectory, or on history features that a single exponential trace cannot represent"
+  },
+  "provenance": "model_knowledge_unverified",
+  "spec": {
+    "parameters": [
+      {
+        "name": "p0",
+        "lower": 0.05,
+        "initial": 0.8,
+        "upper": 3.0
+      }
+    ],
+    "states": [
+      {
+        "name": "z0",
+        "meaning": "Exponentially filtered history of the observed state x, initialized to zero; unlike the parent state, it is not directly driven by u.",
+        "rate": "x-p0*z0"
+      }
+    ],
+    "terms": [
+      "1",
+      "x",
+      "u",
+      "z0"
+    ]
+  },
+  "distinguishing_prediction": "Compare trials with different input schedules that produce closely matched x and u=0 but different filtered x histories. This model predicts drift differences associated with those x histories; the parent input-trace model instead predicts differences according to residual filtered input. In particular, schedules producing similar x histories but different input traces should tend to have similar drift under this model, but not necessarily under the parent.",
+  "falsifier": "Across repeated, sufficiently resolved trials, drift differences at matched x and u consistently track residual input history even when filtered x histories are similar, while differing filtered x histories do not predict drift variation.",
+  "limitations": "This is a competing, unverified one-state account, not evidence that output-history adaptation exists. Filtered x and filtered input may be strongly correlated in the supplied trajectories, and approximate state matches and smoothed noisy derivatives make the witnesses inconclusive. Complete held-out trajectory performance would be needed to compare the accounts.",
+  "generation_records": [
+    {
+      "wire": "wire/004_r1_b1_0",
+      "valid": true
+    }
+  ],
+  "round": 1
+}

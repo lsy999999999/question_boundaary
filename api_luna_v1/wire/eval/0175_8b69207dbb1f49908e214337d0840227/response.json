@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430033570901406,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0a0d449eefee3d1d016ae5920e3ba08194b864eac9c38ce79d",
+    "object": "chat.completion",
+    "created": 1793430033,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"prbs\",\"reason\":\"State_cubic has the lowest leave-trajectory-out error by a clear margin; memory models validate worse, and the prior alternating forecast had low error. PRBS probes remaining history-related uncertainty.\",\"prediction\":\"At matched current state and input, responses should not show systematic dependence on earlier PRBS history; reproducible separation would challenge state_cubic.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Instantaneous curvature improves prediction, but current evidence does not justify a specific saturation or memory relation.\",\"condition_to_check\":\"Compare responses at matched state and input after differing PRBS histories; reproducible separation would falsify the instantaneous state-cubic account.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3277,
+      "completion_tokens": 328,
+      "total_tokens": 3605,
+      "completion_tokens_details": {
+        "reasoning_tokens": 176
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 11.174322466365993
+}

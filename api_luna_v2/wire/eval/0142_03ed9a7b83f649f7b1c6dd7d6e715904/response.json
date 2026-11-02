@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431529630518915,
+  "http_status": 200,
+  "body": {
+    "id": "resp_04e25bce2925d928016ae597e715e88195ae5c53c85afa5983",
+    "object": "chat.completion",
+    "created": 1793431529,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow accumulated-history features have the best trajectory-level validation (CV NMSE 0.0019), far below the current state model; PRBS has the greatest disagreement among plausible alternatives.\",\"prediction\":\"After input switches, output will retain a history-dependent tail that decays over seconds, rather than responding only to current input and state.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2568,
+      "completion_tokens": 206,
+      "total_tokens": 2774,
+      "prompt_tokens_details": {
+        "cached_tokens": 2432
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 116
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.776593679562211
+}

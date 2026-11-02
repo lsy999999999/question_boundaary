@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430628559359812,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0f4c6612f6fe89c4016ae59461ab3c819498e49cfed6843462",
+    "object": "chat.completion",
+    "created": 1793430628,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"prbs\",\"reason\":\"State_cubic has the lowest leave-trajectory-out error (0.001415), and prior PRBS and ramp-reverse forecasts were accurate. Memory alternatives validate worse; current evidence does not justify adding history.\",\"prediction\":\"Current state and input should explain the response; systematic residual dependence on earlier inputs during irregular reversals would falsify this prediction.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Observed curvature is captured predictively, but does not establish a distinct saturation mechanism.\",\"condition_to_check\":\"Check whether earlier inputs predict residuals after controlling current state and input across irregular reversals.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3523,
+      "completion_tokens": 260,
+      "total_tokens": 3783,
+      "completion_tokens_details": {
+        "reasoning_tokens": 118
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.625827559269965
+}

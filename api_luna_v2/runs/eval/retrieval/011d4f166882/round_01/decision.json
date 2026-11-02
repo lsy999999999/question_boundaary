@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793431670584448886,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "alternating",
+    "reason": "Memory_multiscale has the best trajectory-level CV NMSE, substantially outperforming state-only alternatives. Residual lag correlation and elevated PRBS error leave temporal dynamics insufficiently resolved; alternating inputs have high prediction disagreement.",
+    "prediction": "Rapid reversals will produce history-dependent output that differs from an instantaneous state-only response.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"alternating\",\"reason\":\"Memory_multiscale has the best trajectory-level CV NMSE, substantially outperforming state-only alternatives. Residual lag correlation and elevated PRBS error leave temporal dynamics insufficiently resolved; alternating inputs have high prediction disagreement.\",\"prediction\":\"Rapid reversals will produce history-dependent output that differs from an instantaneous state-only response.\",\"accept\":false}",
+    "input_tokens": 2992,
+    "output_tokens": 198,
+    "batch_elapsed_seconds": 2.761142987757921,
+    "amortized_seconds": 2.761142987757921,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2992,
+      "completion_tokens": 198,
+      "total_tokens": 3190,
+      "completion_tokens_details": {
+        "reasoning_tokens": 111
+      }
+    },
+    "api_response_id": "resp_073a20e7ebf43b87016ae5987481508197bf1ae9372d8bceab",
+    "wire_record": "wire/eval/0236_dd2b2efb8f3b492d9061e72d4bfac470"
+  }
+}

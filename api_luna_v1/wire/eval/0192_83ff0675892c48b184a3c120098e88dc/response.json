@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430058419931850,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0907dbf422b888e7016ae5922761148190b21c333f552f27e5",
+    "object": "chat.completion",
+    "created": 1793430058,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the best trajectory-level CV error (0.00390), outperforming memory_clock (0.00727); persistent post-input responses support history dependence, while residual correlation cautions that the model may remain incomplete.\",\"prediction\":\"After alternating input ends, the response will retain history dependence and decay without a persistent elapsed-time periodic component.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Past input predicts post-input response, consistent with finite-leakage storage.\",\"condition_to_check\":\"Compare responses after distinct alternating histories at matched elapsed times; no history dependence would contradict this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3263,
+      "completion_tokens": 281,
+      "total_tokens": 3544,
+      "completion_tokens_details": {
+        "reasoning_tokens": 139
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.8364723762497306
+}

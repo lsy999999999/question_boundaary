@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423424512883013,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "positive_pulse",
+    "reason": "Slow memory shows best cross-validation; positive pulse tests persistence.",
+    "prediction": "Response should decay more slowly than state-only model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Persistent state influence decays over multiple seconds.",
+      "condition_to_check": "Decay rate differs from state-only model."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Slow memory shows best cross-validation; positive pulse tests persistence.\",\n  \"prediction\": \"Response should decay more slowly than state-only model.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Persistent state influence decays over multiple seconds.\",\n    \"condition_to_check\": \"Decay rate differs from state-only model.\"\n  }\n}",
+    "input_tokens": 3050,
+    "output_tokens": 103,
+    "batch_elapsed_seconds": 2.371572299860418,
+    "amortized_seconds": 2.371572299860418,
+    "peak_gpu_allocated_gb": 14.805195331573486,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025932312011719,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

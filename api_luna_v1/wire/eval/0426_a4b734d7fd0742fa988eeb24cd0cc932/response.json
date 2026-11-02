@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430539146425946,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0c9af169acdea4bc016ae594077b24819385cc0aaee41560e9",
+    "object": "chat.completion",
+    "created": 1793430539,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"memory_clock has the lowest trajectory-held-out error (0.0045), far below state (0.2825); residual correlation and limited trajectories still leave uncertainty about unseen inputs.\",\"prediction\":\"With alternating input, memory_clock predicts a trajectory differing from history_all; record whether deviations recur at the same elapsed times across resets.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Elapsed-time features improve prediction, but the observations do not establish an independent periodic driver.\",\"condition_to_check\":\"Repeat alternating input from reset and test whether residual oscillations recur at matching elapsed times.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2789,
+      "completion_tokens": 296,
+      "total_tokens": 3085,
+      "completion_tokens_details": {
+        "reasoning_tokens": 160
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.35590773075819
+}

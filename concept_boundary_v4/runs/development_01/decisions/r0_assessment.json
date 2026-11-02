@@ -1,0 +1,60 @@
+{
+  "time_ns": 1793471443881794986,
+  "value": {
+    "updates": [
+      {
+        "id": "v3_r0",
+        "status": "weakened",
+        "evidence_ids": [
+          "scope:v3_r0:b9c24dae9ced",
+          "failure:v3_r0:b9c24dae9ced:b4_r0_experiment_1",
+          "failure:v3_r0:b9c24dae9ced:promoted_v3_sealed_3"
+        ],
+        "reason": "在新干预两条轨迹中一条高误差、另一条接近阈值，且已见旧轨迹有明显留组预测失败；相比之下，扩展模型在这些新干预上的预测更好。拟合失败与跨轨迹泛化问题使该模型不宜继续作为首选，但证据不足以否定其在较窄范围的描述用途。"
+      },
+      {
+        "id": "v3_r1",
+        "status": "active",
+        "evidence_ids": [
+          "scope:v3_r1:c179384f8458",
+          "failure:v3_r1:c179384f8458:promoted_v3_sealed_3",
+          "failure:v3_r1:c179384f8458:promoted_v3_sealed_4",
+          "prospective:0:v3_r1"
+        ],
+        "reason": "整体留组误差优于v3_r0，且对新干预两条轨迹的预测误差均低于操作阈值；但旧开发轨迹仍有显著留组失败，因此仅保留为当前有效的局部模型，不能视为普遍准确。"
+      },
+      {
+        "id": "v3_r2",
+        "status": "active",
+        "evidence_ids": [
+          "scope:v3_r2:9f0a1c4e1c10",
+          "failure:v3_r2:9f0a1c4e1c10:promoted_v3_sealed_3",
+          "failure:v3_r2:9f0a1c4e1c10:promoted_v3_sealed_4",
+          "prospective:0:v3_r2"
+        ],
+        "reason": "新增项没有消除旧轨迹中的明显留组失败，但在本次两条干预上的预测误差均较低，不能因父级边界猜测不成立而判模型失败；其局部预测能力仍有支持。"
+      },
+      {
+        "id": "b4_r0",
+        "status": "weakened",
+        "evidence_ids": [
+          "scope:b4_r0:e24eef797b18",
+          "failure:b4_r0:e24eef797b18:promoted_v3_sealed_3",
+          "failure:b4_r0:e24eef797b18:promoted_v3_sealed_4",
+          "failure:b4_r0:e24eef797b18:b4_r0_experiment_1",
+          "prospective:0:b4_r0"
+        ],
+        "reason": "第二条新干预实际高误差，且旧开发轨迹亦有留组失败；第一条新干预表现良好，故仍有局部描述价值，但当前证据不支持其作为稳定的广域预测模型。"
+      }
+    ],
+    "boundary_verdict": "untested",
+    "boundary_reason": "父模型v3_r2明确给出no_supported_boundary，因此不应将这一对输入判作阈值边界支持或违反。两条实际轨迹在操作阈值0.05下均为低误差；这评价的是数值预测，不构成边界标签检验。相关模型自身的预测与观测证据见prospective:0:v3_r2及scope:v3_r2:9f0a1c4e1c10。",
+    "next_question": "针对既有留组失败与新干预表现的差异，设计成对输入以控制总面积和峰值而改变输入时序/反转位置，并对v3_r1、v3_r2及b4_r0进行整条轨迹留组预测；重点检查预测误差是否随完整历史模式变化，而非预设单一描述量阈值。"
+  },
+  "generation_records": [
+    {
+      "wire": "wire/003_r0_assessment_0",
+      "valid": true
+    }
+  ]
+}

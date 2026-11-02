@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432126928303963,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0242016bcd277874016ae59a3abbb88190aed90acddc5a6667",
+    "object": "chat.completion",
+    "created": 1793432126,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"alternating\",\"reason\":\"Saturating_memory has low trajectory-level CV error; history_all improves it only slightly while using more features. Residual lag-1 correlation leaves unresolved structure.\",\"prediction\":\"Under rapid input switches, outputs will depend on accumulated history and differ at matched current inputs.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The predictive fit supports nonlinear history features but does not establish a specific physical mechanism.\",\"condition_to_check\":\"Check whether alternating-input predictions improve over memory-only alternatives and whether residual lag decreases.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3476,
+      "completion_tokens": 326,
+      "total_tokens": 3802,
+      "completion_tokens_details": {
+        "reasoning_tokens": 202
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.870294930413365
+}

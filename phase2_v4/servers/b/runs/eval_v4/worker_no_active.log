@@ -1,0 +1,107 @@
+2026-10-31 13:16:19.032071: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-10-31 13:16:19.051789: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE4.1 SSE4.2 AVX AVX2 AVX512F AVX512_VNNI AVX512_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:04,  1.42s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:02<00:01,  1.07it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.32it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.49it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.29it/s]
+/home/lsyedith/theory_discovery_phase2_v4_20261031/.env_gpu/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:628: UserWarning: `do_sample` is set to `False`. However, `temperature` is set to `0.7` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.
+  warnings.warn(
+/home/lsyedith/theory_discovery_phase2_v4_20261031/.env_gpu/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:633: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.8` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+  warnings.warn(
+/home/lsyedith/theory_discovery_phase2_v4_20261031/.env_gpu/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:650: UserWarning: `do_sample` is set to `False`. However, `top_k` is set to `20` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_k`.
+  warnings.warn(
+{"event": "round", "method": "no_active", "task_id": "93d24a230259", "round": 1, "representation": "memory_multiscale", "cv_nmse": 0.0021077945694307444, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "1d2417e51713", "round": 1, "representation": "state", "cv_nmse": 0.0010967261075997244, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "76756fbed619", "round": 1, "representation": "clock", "cv_nmse": 0.0015521731848511743, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "c667b23ae7f9", "round": 1, "representation": "state", "cv_nmse": 0.004475755933093119, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "a288d8b77e5b", "round": 1, "representation": "state_cubic", "cv_nmse": 0.0017706351196770183, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "7aff70817fc2", "round": 1, "representation": "saturating_memory", "cv_nmse": 0.0062586411445677914, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "fb6a837878c3", "round": 1, "representation": "memory_slow", "cv_nmse": 0.0014094996798570273, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "7dc2896588f5", "round": 1, "representation": "memory_slow", "cv_nmse": 0.0008239746549783017, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "860ddd9d91de", "round": 1, "representation": "memory_clock", "cv_nmse": 0.007269963559393304, "parse_errors": ["invalid_mapping_source_id"]}
+{"event": "round", "method": "no_active", "task_id": "011d4f166882", "round": 1, "representation": "memory_multiscale", "cv_nmse": 0.0014458833539572114, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "8f0a53158586", "round": 1, "representation": "memory_slow", "cv_nmse": 0.0013196630159098073, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "7025f2a38ff9", "round": 1, "representation": "memory_slow", "cv_nmse": 0.002083457230330609, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "e377cde4db95", "round": 1, "representation": "memory_slow", "cv_nmse": 0.0027236100600182157, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "2e356a891a56", "round": 1, "representation": "memory_slow", "cv_nmse": 0.0034961592276532335, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "178794a8cc52", "round": 1, "representation": "memory_slow", "cv_nmse": 0.0014519714043526775, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "1f9bd1bae585", "round": 1, "representation": "memory_clock", "cv_nmse": 0.004275554225415201, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "b8513efb6701", "round": 1, "representation": "memory_clock", "cv_nmse": 0.00379985466869802, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "58b038a9dcbc", "round": 1, "representation": "clock", "cv_nmse": 0.00204728704674183, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "6cd641ade75d", "round": 1, "representation": "memory_fast", "cv_nmse": 0.011610367107297261, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "95a4d340cda9", "round": 1, "representation": "saturating_memory", "cv_nmse": 0.0033928631179313724, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "f1ddfabee06d", "round": 1, "representation": "memory_slow", "cv_nmse": 0.0032912482352912492, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "57c634ddf18a", "round": 1, "representation": "memory_clock", "cv_nmse": 0.0026502509522260366, "parse_errors": ["invalid_mapping_source_id"]}
+{"event": "round", "method": "no_active", "task_id": "91977ba2ede6", "round": 1, "representation": "memory_clock", "cv_nmse": 0.013166189144475749, "parse_errors": ["invalid_mapping_source_id"]}
+{"event": "round", "method": "no_active", "task_id": "aa835d55fa37", "round": 1, "representation": "memory_clock", "cv_nmse": 0.0034678631522826906, "parse_errors": ["invalid_mapping_source_id"]}
+{"event": "round", "method": "no_active", "task_id": "93d24a230259", "round": 2, "representation": "memory_slow", "cv_nmse": 0.0011542716290172947, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "1d2417e51713", "round": 2, "representation": "memory_slow", "cv_nmse": 0.0012371623281527849, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "76756fbed619", "round": 2, "representation": "state_cubic", "cv_nmse": 0.0013038609554196945, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "c667b23ae7f9", "round": 2, "representation": "state_cubic", "cv_nmse": 0.001619900523917624, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "a288d8b77e5b", "round": 2, "representation": "state_cubic", "cv_nmse": 0.001414528848587144, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "7aff70817fc2", "round": 2, "representation": "saturating_memory", "cv_nmse": 0.0045505559073274636, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "fb6a837878c3", "round": 2, "representation": "memory_slow", "cv_nmse": 0.0012168595889629112, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "7dc2896588f5", "round": 2, "representation": "memory_slow", "cv_nmse": 0.0007642610449252088, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "860ddd9d91de", "round": 2, "representation": "memory_slow", "cv_nmse": 0.0018887647501540656, "parse_errors": ["invalid_mapping_source_id"]}
+{"event": "round", "method": "no_active", "task_id": "011d4f166882", "round": 2, "representation": "memory_multiscale", "cv_nmse": 0.001873027927701844, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "8f0a53158586", "round": 2, "representation": "memory_slow", "cv_nmse": 0.0011065820224620848, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "7025f2a38ff9", "round": 2, "representation": "memory_slow", "cv_nmse": 0.0022514395875563777, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "e377cde4db95", "round": 2, "representation": "memory_slow", "cv_nmse": 0.002688946005720533, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "2e356a891a56", "round": 2, "representation": "memory_slow", "cv_nmse": 0.003767199473765327, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "178794a8cc52", "round": 2, "representation": "memory_slow", "cv_nmse": 0.0015277783417023804, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "1f9bd1bae585", "round": 2, "representation": "memory_clock", "cv_nmse": 0.0036562800392029833, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "b8513efb6701", "round": 2, "representation": "memory_clock", "cv_nmse": 0.0032963721523263526, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "58b038a9dcbc", "round": 2, "representation": "history_all", "cv_nmse": 0.003660377401801477, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "6cd641ade75d", "round": 2, "representation": "saturating_memory", "cv_nmse": 0.002303986103560748, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "95a4d340cda9", "round": 2, "representation": "saturating_memory", "cv_nmse": 0.0030853759829849283, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "f1ddfabee06d", "round": 2, "representation": "memory_slow", "cv_nmse": 0.0020866711732030804, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "57c634ddf18a", "round": 2, "representation": "history_all", "cv_nmse": 0.0020701869384177987, "parse_errors": ["invalid_mapping_source_id"]}
+{"event": "round", "method": "no_active", "task_id": "91977ba2ede6", "round": 2, "representation": "history_all", "cv_nmse": 0.0059302724752755085, "parse_errors": ["invalid_mapping_source_id"]}
+{"event": "round", "method": "no_active", "task_id": "aa835d55fa37", "round": 2, "representation": "history_all", "cv_nmse": 0.004087840321608508, "parse_errors": ["invalid_mapping_source_id"]}
+{"event": "round", "method": "no_active", "task_id": "93d24a230259", "round": 3, "representation": "memory_slow", "cv_nmse": 0.0012323916700287567, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "1d2417e51713", "round": 3, "representation": "memory_slow", "cv_nmse": 0.0012290767518604963, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "76756fbed619", "round": 3, "representation": "state_cubic", "cv_nmse": 0.001383309845536462, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "c667b23ae7f9", "round": 3, "representation": "state_cubic", "cv_nmse": 0.0017082088956008768, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "a288d8b77e5b", "round": 3, "representation": "state_cubic", "cv_nmse": 0.001485044203355079, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "7aff70817fc2", "round": 3, "representation": "saturating_memory", "cv_nmse": 0.005005087398674912, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "fb6a837878c3", "round": 3, "representation": "memory_slow", "cv_nmse": 0.0011798397296180795, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "7dc2896588f5", "round": 3, "representation": "memory_slow", "cv_nmse": 0.00072255209185964, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "860ddd9d91de", "round": 3, "representation": "memory_multiscale", "cv_nmse": 0.0012595491373049504, "parse_errors": ["invalid_mapping_source_id"]}
+{"event": "round", "method": "no_active", "task_id": "011d4f166882", "round": 3, "representation": "memory_multiscale", "cv_nmse": 0.0016822248959615191, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "8f0a53158586", "round": 3, "representation": "memory_slow", "cv_nmse": 0.0011973201534963905, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "7025f2a38ff9", "round": 3, "representation": "nonlinear_delay", "cv_nmse": 0.0029377429272095623, "parse_errors": ["invalid_mapping_source_id"]}
+{"event": "round", "method": "no_active", "task_id": "e377cde4db95", "round": 3, "representation": "memory_slow", "cv_nmse": 0.0025981004525546755, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "2e356a891a56", "round": 3, "representation": "nonlinear_delay", "cv_nmse": 0.0029150222768712752, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "178794a8cc52", "round": 3, "representation": "memory_slow", "cv_nmse": 0.0013226608555442821, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "1f9bd1bae585", "round": 3, "representation": "memory_clock", "cv_nmse": 0.0026099507557343893, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "b8513efb6701", "round": 3, "representation": "memory_clock", "cv_nmse": 0.0026180166796554404, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "58b038a9dcbc", "round": 3, "representation": "history_all", "cv_nmse": 0.0036598826790132793, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "6cd641ade75d", "round": 3, "representation": "saturating_memory", "cv_nmse": 0.0020915865143752914, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "95a4d340cda9", "round": 3, "representation": "saturating_memory", "cv_nmse": 0.002812316983016178, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "f1ddfabee06d", "round": 3, "representation": "history_all", "cv_nmse": 0.0036774321436871885, "parse_errors": []}
+{"event": "round", "method": "no_active", "task_id": "57c634ddf18a", "round": 3, "representation": "memory_clock", "cv_nmse": 0.0016401679897524353, "parse_errors": ["invalid_mapping_source_id"]}
+{"event": "round", "method": "no_active", "task_id": "91977ba2ede6", "round": 3, "representation": "memory_clock", "cv_nmse": 0.007674717161768698, "parse_errors": ["invalid_mapping_source_id"]}
+{"event": "round", "method": "no_active", "task_id": "aa835d55fa37", "round": 3, "representation": "memory_clock", "cv_nmse": 0.0029779343091053735, "parse_errors": ["invalid_mapping_source_id"]}
+{"event": "completed", "method": "no_active", "task_id": "93d24a230259", "family": "linear", "test_nmse": 0.0003548614221127082, "invalid_outputs": 0}
+{"event": "completed", "method": "no_active", "task_id": "1d2417e51713", "family": "linear", "test_nmse": 0.00028190640113259395, "invalid_outputs": 0}
+{"event": "completed", "method": "no_active", "task_id": "76756fbed619", "family": "linear", "test_nmse": 0.0003775675074731254, "invalid_outputs": 0}
+{"event": "completed", "method": "no_active", "task_id": "c667b23ae7f9", "family": "cubic", "test_nmse": 0.0005576212387414186, "invalid_outputs": 0}
+{"event": "completed", "method": "no_active", "task_id": "a288d8b77e5b", "family": "cubic", "test_nmse": 0.00027001051619151764, "invalid_outputs": 1}
+{"event": "completed", "method": "no_active", "task_id": "7aff70817fc2", "family": "cubic", "test_nmse": 0.001845315493299452, "invalid_outputs": 1}
+{"event": "completed", "method": "no_active", "task_id": "fb6a837878c3", "family": "memory", "test_nmse": 0.00016898746262982656, "invalid_outputs": 0}
+{"event": "completed", "method": "no_active", "task_id": "7dc2896588f5", "family": "memory", "test_nmse": 8.302770969617321e-05, "invalid_outputs": 0}
+{"event": "completed", "method": "no_active", "task_id": "860ddd9d91de", "family": "memory", "test_nmse": 0.00018153173651858253, "invalid_outputs": 4}
+{"event": "completed", "method": "no_active", "task_id": "011d4f166882", "family": "two_memory", "test_nmse": 0.0004096359286558048, "invalid_outputs": 0}
+{"event": "completed", "method": "no_active", "task_id": "8f0a53158586", "family": "two_memory", "test_nmse": 0.00019236438519802654, "invalid_outputs": 1}
+{"event": "completed", "method": "no_active", "task_id": "7025f2a38ff9", "family": "two_memory", "test_nmse": 0.004672672242612277, "invalid_outputs": 2}
+{"event": "completed", "method": "no_active", "task_id": "e377cde4db95", "family": "delay", "test_nmse": 0.002004228049165299, "invalid_outputs": 0}
+{"event": "completed", "method": "no_active", "task_id": "2e356a891a56", "family": "delay", "test_nmse": 0.004339349549620711, "invalid_outputs": 0}
+{"event": "completed", "method": "no_active", "task_id": "178794a8cc52", "family": "delay", "test_nmse": 0.0009424394384238474, "invalid_outputs": 0}
+{"event": "completed", "method": "no_active", "task_id": "1f9bd1bae585", "family": "clock", "test_nmse": 0.000688256603240618, "invalid_outputs": 1}
+{"event": "completed", "method": "no_active", "task_id": "b8513efb6701", "family": "clock", "test_nmse": 0.002717934106362346, "invalid_outputs": 0}
+{"event": "completed", "method": "no_active", "task_id": "58b038a9dcbc", "family": "clock", "test_nmse": 0.002418318819531907, "invalid_outputs": 0}
+{"event": "completed", "method": "no_active", "task_id": "6cd641ade75d", "family": "saturated_memory", "test_nmse": 0.0009506149318444483, "invalid_outputs": 0}
+{"event": "completed", "method": "no_active", "task_id": "95a4d340cda9", "family": "saturated_memory", "test_nmse": 0.0018837349463783045, "invalid_outputs": 0}
+{"event": "completed", "method": "no_active", "task_id": "f1ddfabee06d", "family": "saturated_memory", "test_nmse": 0.0016309925182225453, "invalid_outputs": 0}
+{"event": "completed", "method": "no_active", "task_id": "57c634ddf18a", "family": "memory_clock", "test_nmse": 0.0020860634240676902, "invalid_outputs": 4}
+{"event": "completed", "method": "no_active", "task_id": "91977ba2ede6", "family": "memory_clock", "test_nmse": 0.005848500242934175, "invalid_outputs": 4}
+{"event": "completed", "method": "no_active", "task_id": "aa835d55fa37", "family": "memory_clock", "test_nmse": 0.0030253891749601482, "invalid_outputs": 4}
+{"event": "worker_complete", "methods": ["no_active"], "split": "eval"}

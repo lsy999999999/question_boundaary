@@ -1,0 +1,81 @@
+[
+  {
+    "id": "M28",
+    "group": "E 推导、计算与参数",
+    "name": "结构与参数分离拟合",
+    "tags": [
+      "fit",
+      "missing_compute",
+      "parameter_failure"
+    ],
+    "trigger": "研究者凭文字选参数，或把优化失败当成结构错误。",
+    "required_inputs": "固定结构、参数范围、测量误差和独立分组。",
+    "steps": [
+      "指定损失/似然与测量映射",
+      "多初值或合理搜索拟合",
+      "保留参数、数据ID、目标值和求解器诊断"
+    ],
+    "deliverable": "绑定结构和数据的拟合产物与数值失败分类。",
+    "failure_or_limit": "局部最优或病态损失不否定整个模型族；训练误差不能作预测成绩。",
+    "if_blocked": "M29检查识别，M31检查结构残差。",
+    "source_ids": [
+      "P08",
+      "P12",
+      "P15"
+    ],
+    "basis": "direct_method_adaptation",
+    "evidence_note": "来源支持基础方法；本卡的触发条件、交付约定和方法衔接为本项目整理，未验证其在新案例上的收益。"
+  },
+  {
+    "id": "M31",
+    "group": "F 模型批评与区分实验",
+    "name": "残差结构与后验预测检查",
+    "tags": [
+      "residual",
+      "mismatch",
+      "model_criticism"
+    ],
+    "trigger": "总体误差可接受，但局部条件或分布特征不对。",
+    "required_inputs": "实际拟合与观测、分组及模型预测样本/区间。",
+    "steps": [
+      "按时间、位置、输入和批次检查残差",
+      "对比模型预测的分布与目标统计",
+      "指明哪一类依赖仍未解释"
+    ],
+    "deliverable": "具体可定位的失败模式与候选修订。",
+    "failure_or_limit": "只有概率模型及推断样本才称后验预测检查；残差模式也可能来自观测误差。",
+    "if_blocked": "M36排测量问题，随后M32修订。",
+    "source_ids": [
+      "P12"
+    ],
+    "basis": "direct_method_adaptation",
+    "evidence_note": "来源支持基础方法；本卡的触发条件、交付约定和方法衔接为本项目整理，未验证其在新案例上的收益。"
+  },
+  {
+    "id": "M35",
+    "group": "F 模型批评与区分实验",
+    "name": "边界探测与外推条件",
+    "tags": [
+      "extrapolation",
+      "boundary",
+      "model_revision"
+    ],
+    "trigger": "候选在已见范围相近，需要检验其适用域。",
+    "required_inputs": "模型适用假设、可达安全范围和独立预测条件。",
+    "steps": [
+      "找使某项假设最先失效的条件",
+      "在边界内外逐步提出预测",
+      "区分参数重估、范围收缩和结构失效"
+    ],
+    "deliverable": "预注册的边界预测和适用范围更新。",
+    "failure_or_limit": "外推失败可能由实验条件变化而非目标结构造成；不能事后移动判定边界。",
+    "if_blocked": "补充控制变量或用M32作局部修订。",
+    "source_ids": [
+      "P08",
+      "P13",
+      "P15"
+    ],
+    "basis": "engineering_synthesis",
+    "evidence_note": "来源支持基础方法；本卡的触发条件、交付约定和方法衔接为本项目整理，未验证其在新案例上的收益。"
+  }
+]

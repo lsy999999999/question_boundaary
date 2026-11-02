@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793432135481052802,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "double_pulse",
+    "reason": "saturating_memory has the best trajectory-level CV error; improvement over memory_slow is modest, so amplitude-dependent history effects remain uncertain.",
+    "prediction": "The second positive pulse will produce a different peak response from the first, with nonlinear flattening at larger accumulated responses.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "The validation advantage supports a richer predictive representation, not a specific physical mechanism.",
+      "condition_to_check": "Compare pulse peaks across amplitudes and histories, controlling for current input and visible state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"double_pulse\",\"reason\":\"saturating_memory has the best trajectory-level CV error; improvement over memory_slow is modest, so amplitude-dependent history effects remain uncertain.\",\"prediction\":\"The second positive pulse will produce a different peak response from the first, with nonlinear flattening at larger accumulated responses.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The validation advantage supports a richer predictive representation, not a specific physical mechanism.\",\"condition_to_check\":\"Compare pulse peaks across amplitudes and histories, controlling for current input and visible state.\"}}",
+    "input_tokens": 3451,
+    "output_tokens": 335,
+    "batch_elapsed_seconds": 3.966627740301192,
+    "amortized_seconds": 3.966627740301192,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3451,
+      "completion_tokens": 335,
+      "total_tokens": 3786,
+      "completion_tokens_details": {
+        "reasoning_tokens": 209
+      }
+    },
+    "api_response_id": "resp_02fbc1df0e3a0a49016ae59a4461848196aa7b1739eb14fb66",
+    "wire_record": "wire/eval/0474_1fd348534eee46fd873dd26a6ff5f9cf"
+  }
+}

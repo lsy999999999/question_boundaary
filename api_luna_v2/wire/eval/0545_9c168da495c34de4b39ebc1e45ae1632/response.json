@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432314157772359,
+  "http_status": 200,
+  "body": {
+    "id": "resp_054c5af3670991d7016ae59af74c14819098ba0a0be7aeb8a7",
+    "object": "chat.completion",
+    "created": 1793432314,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"ramp_reverse\",\"reason\":\"Clock has by far the lowest trajectory-held-out error (0.00119) and consistently low errors across interventions; memory_clock and history_all validate worse. Residual autocorrelation remains.\",\"prediction\":\"Oscillatory output will remain aligned to elapsed time across different input histories, including after input returns to zero.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Elapsed-time features predict well, but evidence does not establish an independent external driver.\",\"condition_to_check\":\"Systematic phase shifts across input interventions would weaken the elapsed-time account.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3650,
+      "completion_tokens": 304,
+      "total_tokens": 3954,
+      "completion_tokens_details": {
+        "reasoning_tokens": 175
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 6.445245990529656
+}

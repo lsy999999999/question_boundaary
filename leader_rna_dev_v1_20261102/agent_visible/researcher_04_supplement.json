@@ -1,0 +1,150 @@
+{
+  "method_cards": [
+    {
+      "id": "M05",
+      "group": "B 约束、降维与初步推导",
+      "name": "从守恒与收支写方程",
+      "tags": [
+        "first_principles",
+        "equations",
+        "missing_link"
+      ],
+      "trigger": "解释只有作用名称，没有状态如何变化。",
+      "required_inputs": "系统边界、可积累量、输入输出和可能源汇。",
+      "steps": [
+        "选控制体并写变化率=流入−流出+源−汇",
+        "明确边界通量",
+        "用已知关系或待估函数逐项定义通量"
+      ],
+      "deliverable": "可审查的收支方程与未知项清单。",
+      "failure_or_limit": "开放系统一般不满足总量不变；有收支框架不等于已知通量本构。",
+      "if_blocked": "用M14找通量关系，用M23闭合。",
+      "source_ids": [
+        "P06",
+        "P13"
+      ],
+      "basis": "engineering_synthesis",
+      "evidence_note": "来源支持基础方法；本卡的触发条件、交付约定和方法衔接为本项目整理，未验证其在新案例上的收益。"
+    },
+    {
+      "id": "M15",
+      "group": "D 机制组合与表示修订",
+      "name": "机制图补桥与串联组合",
+      "tags": [
+        "composition",
+        "missing_link"
+      ],
+      "trigger": "分别知道A影响B、C影响D，却解释不了从处理到结果的整条链。",
+      "required_inputs": "知识模块、观测约束和目标因果链。",
+      "steps": [
+        "为每个模块列输入输出和尺度",
+        "只连接变量含义与单位相容的接口",
+        "标出新增的桥接假设并推导组合特有预测"
+      ],
+      "deliverable": "最小机制图、一个关键缺边及可测后果。",
+      "failure_or_limit": "把两个术语并列不构成连接；组合后仍需核对共同前提。",
+      "if_blocked": "用M14补关系，或M33检验桥接假设。",
+      "source_ids": [
+        "P03",
+        "P13",
+        "P14"
+      ],
+      "basis": "engineering_synthesis",
+      "evidence_note": "来源支持基础方法；本卡的触发条件、交付约定和方法衔接为本项目整理，未验证其在新案例上的收益。"
+    },
+    {
+      "id": "M29",
+      "group": "E 推导、计算与参数",
+      "name": "参数与机制的可识别性",
+      "tags": [
+        "identifiability",
+        "too_many_parameters",
+        "missing_data"
+      ],
+      "trigger": "不同参数/机制拟合相近，却得出不同解释。",
+      "required_inputs": "模型、可观测量、噪声模型和参数范围。",
+      "steps": [
+        "检查参数组合是否存在等价变换",
+        "用profile likelihood或适当敏感度诊断",
+        "区分结构不可识别和数据不足导致的不确定"
+      ],
+      "deliverable": "可识别组合、区间和能够消歧的新测量。",
+      "failure_or_limit": "平坦剖面需要可靠优化；参数可识别也不等于机制唯一。",
+      "if_blocked": "约化参数、换观测量或M33设计区分实验。",
+      "source_ids": [
+        "P08"
+      ],
+      "basis": "direct_method_adaptation",
+      "evidence_note": "来源支持基础方法；本卡的触发条件、交付约定和方法衔接为本项目整理，未验证其在新案例上的收益。"
+    }
+  ],
+  "data": [
+    {
+      "phase": "dilute",
+      "tie_line_id": 0,
+      "point_index_in_series": 0,
+      "reference_RNA_ng_per_uL": 27.48,
+      "variant_RNA_ng_per_uL": 0.0,
+      "wt_error_lower_ng_per_uL": 9.0684,
+      "wt_error_upper_ng_per_uL": 9.0684,
+      "mut_error_lower_ng_per_uL": 0.0,
+      "mut_error_upper_ng_per_uL": 0.0
+    },
+    {
+      "phase": "dilute",
+      "tie_line_id": 1,
+      "point_index_in_series": 1,
+      "reference_RNA_ng_per_uL": 53.68,
+      "variant_RNA_ng_per_uL": 0.53,
+      "wt_error_lower_ng_per_uL": 17.7144,
+      "wt_error_upper_ng_per_uL": 17.7144,
+      "mut_error_lower_ng_per_uL": 0.1749,
+      "mut_error_upper_ng_per_uL": 0.1749
+    },
+    {
+      "phase": "dilute",
+      "tie_line_id": 2,
+      "point_index_in_series": 2,
+      "reference_RNA_ng_per_uL": 92.98,
+      "variant_RNA_ng_per_uL": 115.63,
+      "wt_error_lower_ng_per_uL": 30.6834,
+      "wt_error_upper_ng_per_uL": 30.6834,
+      "mut_error_lower_ng_per_uL": 38.1579,
+      "mut_error_upper_ng_per_uL": 38.1579
+    },
+    {
+      "phase": "dense",
+      "tie_line_id": 0,
+      "point_index_in_series": 0,
+      "reference_RNA_ng_per_uL": 12893.0,
+      "variant_RNA_ng_per_uL": 0.0,
+      "wt_error_lower_ng_per_uL": 6446.5,
+      "wt_error_upper_ng_per_uL": 12893.0,
+      "mut_error_lower_ng_per_uL": 0.0,
+      "mut_error_upper_ng_per_uL": 0.0
+    },
+    {
+      "phase": "dense",
+      "tie_line_id": 1,
+      "point_index_in_series": 1,
+      "reference_RNA_ng_per_uL": 12805.0,
+      "variant_RNA_ng_per_uL": 4787.0,
+      "wt_error_lower_ng_per_uL": 6402.5,
+      "wt_error_upper_ng_per_uL": 12805.0,
+      "mut_error_lower_ng_per_uL": 2393.5,
+      "mut_error_upper_ng_per_uL": 4787.0
+    },
+    {
+      "phase": "dense",
+      "tie_line_id": 2,
+      "point_index_in_series": 2,
+      "reference_RNA_ng_per_uL": 48826.0,
+      "variant_RNA_ng_per_uL": 20352.0,
+      "wt_error_lower_ng_per_uL": 24413.0,
+      "wt_error_upper_ng_per_uL": 48826.0,
+      "mut_error_lower_ng_per_uL": 10176.0,
+      "mut_error_upper_ng_per_uL": 20352.0
+    }
+  ],
+  "metadata": "Six measured dilute/dense phase endpoints: three tie-lines, reference and variant RNA concentrations in ng/uL. No fitted free-energy parameters or theoretical curves supplied. No time-resolved total RNA yield, phase volumes, or matched cavity-pixel concentration mapping. These are not a measured time course of B RNA proportions."
+}

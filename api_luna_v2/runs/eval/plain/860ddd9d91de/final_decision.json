@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793432033409735305,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "double_pulse",
+    "reason": "Saturating_memory has the best trajectory-level CV NMSE (0.00158), slightly improving on multiscale memory despite added complexity. Residual lag correlation and small CV differences leave adequacy under unseen interventions uncertain.",
+    "prediction": "Compared with multiscale memory, saturation features will modestly improve held-out predictions when accumulated history is large.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"double_pulse\",\"reason\":\"Saturating_memory has the best trajectory-level CV NMSE (0.00158), slightly improving on multiscale memory despite added complexity. Residual lag correlation and small CV differences leave adequacy under unseen interventions uncertain.\",\"prediction\":\"Compared with multiscale memory, saturation features will modestly improve held-out predictions when accumulated history is large.\",\"accept\":false}",
+    "input_tokens": 3030,
+    "output_tokens": 93,
+    "batch_elapsed_seconds": 3.266562973149121,
+    "amortized_seconds": 3.266562973149121,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3030,
+      "completion_tokens": 93,
+      "total_tokens": 3123
+    },
+    "api_response_id": "resp_0a088c38bf0bfe16016ae599dee9a08197a60b813c5624ae39",
+    "wire_record": "wire/eval/0430_c78f2a06f95a40fbbf8679e7ccf505d2"
+  }
+}

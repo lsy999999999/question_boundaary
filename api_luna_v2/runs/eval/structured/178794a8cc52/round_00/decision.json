@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431556956455211,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "memory_slow has the lowest leave-trajectory-out NMSE (0.00097), substantially below the current state model; pulse trajectories also show persistent post-input tails. PRBS tests varied input histories.",
+    "prediction": "After input switches, output will retain a smooth, decaying influence of prior inputs rather than changing instantaneously.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated input history with finite relaxation can predict output beyond current input and visible state.",
+      "condition_to_check": "In PRBS data, prior inputs should improve held-out predictions after controlling current input and visible state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest leave-trajectory-out NMSE (0.00097), substantially below the current state model; pulse trajectories also show persistent post-input tails. PRBS tests varied input histories.\",\"prediction\":\"After input switches, output will retain a smooth, decaying influence of prior inputs rather than changing instantaneously.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history with finite relaxation can predict output beyond current input and visible state.\",\"condition_to_check\":\"In PRBS data, prior inputs should improve held-out predictions after controlling current input and visible state.\"}}",
+    "input_tokens": 2807,
+    "output_tokens": 252,
+    "batch_elapsed_seconds": 3.699068959802389,
+    "amortized_seconds": 3.699068959802389,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2807,
+      "completion_tokens": 252,
+      "total_tokens": 3059,
+      "completion_tokens_details": {
+        "reasoning_tokens": 111
+      }
+    },
+    "api_response_id": "resp_0f0d7bd775e50ddf016ae59801f1148197901e40c19e1eb534",
+    "wire_record": "wire/eval/0159_5753cf9048f54ca1ad8dd18ced96b398"
+  }
+}

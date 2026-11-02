@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793430433901408665,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0e0adce6e8ec088e016ae5939effbc8194bae63f52117c1a09",
+    "object": "chat.completion",
+    "created": 1793430433,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"prbs\",\"reason\":\"It has the lowest leave-trajectory-out error (0.00153), beating memory_slow (0.00282) and simpler models. Residual lag correlation and past forecast failures mean adequacy for unseen interventions is not established.\",\"prediction\":\"After input returns to zero, responses will retain history dependence and decay, with nonlinear saturation most apparent at larger amplitudes.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts lingering response after input returns to zero.\",\"condition_to_check\":\"Compare subsequent outputs at matched current input and visible state after different input histories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3697,
+      "completion_tokens": 139,
+      "total_tokens": 3836
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.431119816377759
+}

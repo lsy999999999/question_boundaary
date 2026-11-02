@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793431462544304793,
+  "decision": {
+    "representation": "state",
+    "experiment": "alternating",
+    "reason": "State has the best leave-trajectory-out error and near-zero residual lag correlation; added memory and nonlinear features worsen validation. Alternating inputs can probe for unmodeled history dependence.",
+    "prediction": "After matching current state and input, responses will not depend systematically on earlier input history.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No storage, delay, saturation, or independent clock relation is supported over the current state-only model.",
+      "condition_to_check": "Reject this mapping if alternating inputs produce reproducible history-dependent residuals after controlling current state and input."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"State has the best leave-trajectory-out error and near-zero residual lag correlation; added memory and nonlinear features worsen validation. Alternating inputs can probe for unmodeled history dependence.\",\"prediction\":\"After matching current state and input, responses will not depend systematically on earlier input history.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No storage, delay, saturation, or independent clock relation is supported over the current state-only model.\",\"condition_to_check\":\"Reject this mapping if alternating inputs produce reproducible history-dependent residuals after controlling current state and input.\"}}",
+    "input_tokens": 2830,
+    "output_tokens": 130,
+    "batch_elapsed_seconds": 4.9095064383000135,
+    "amortized_seconds": 4.9095064383000135,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2830,
+      "completion_tokens": 130,
+      "total_tokens": 2960
+    },
+    "api_response_id": "resp_09c771f95380a696016ae597a4e788819684c1bc42f5db9bf1",
+    "wire_record": "wire/eval/0089_6082e178aaf8417891d5d30db5d32fb3"
+  }
+}

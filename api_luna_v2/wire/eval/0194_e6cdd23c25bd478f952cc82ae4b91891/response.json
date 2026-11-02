@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431603170593485,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0455315ea5bd48bb016ae5982fd8a881909f875bbb06e86e84",
+    "object": "chat.completion",
+    "created": 1793431603,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"It has the best trajectory-level validation score (0.0045 versus 0.021 for history_all and 0.283 for state), while residuals show strong temporal structure.\",\"prediction\":\"After accounting for input history, trajectories will show a shared elapsed-time-dependent component during alternating switches.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time periodic features improve prediction beyond accumulated input history, consistent with a possible shared time-linked driver.\",\"condition_to_check\":\"Compare residual timing across interventions; the relation is weakened if the component follows input history rather than elapsed time.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2812,
+      "completion_tokens": 316,
+      "total_tokens": 3128,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 178
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.002040034160018
+}

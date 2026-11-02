@@ -1,0 +1,80 @@
+--- v5/ledger.py
++++ v5_1/ledger.py
+@@ -5,6 +5,17 @@
+ 
+ 
+ def fit_id(spec,fit):return digest(dict(spec=spec,fit=fit))
++
++
++def boundary_evidence_ids(outcome):
++    return [] if outcome['boundary_verdict']=='untested' else outcome['boundary_metric_ids']
++
++
++def check_boundary_citations(value,outcome):
++    import json
++    wanted=boundary_evidence_ids(outcome)
++    if sorted(value['boundary_metric_ids'])!=sorted(wanted):
++        raise ValueError('boundary_metric_ids must equal '+json.dumps(wanted)+'; abstained boundary requires [], while prospective citations remain valid in updates[].evidence_ids')
+ 
+ 
+ def local_facts(obs):
+--- v5/prompts.py
++++ v5_1/prompts.py
+@@ -57,6 +57,7 @@
+ Return {"updates":[{"id":"model id","status":"active|weakened|retired","evidence_ids":["owned metric IDs"],"reason":"Chinese <=90 characters"}],
+ "boundary_verdict":"supported_on_pair|violated_on_pair|untested","boundary_metric_ids":["prospective metric IDs for boundary owner or empty if abstained"],
+ "comment":"Chinese <=120 characters"}.
++Copy required_boundary_metric_ids exactly into boundary_metric_ids. If the boundary abstained, this field MUST be [] even when actual_outcome contains prospective metric IDs. Cite prospective error evidence normally in updates[].evidence_ids.
+ Do not use refitted CV values to decide the original boundary labels. If no boundary was proposed, verdict
+ is untested. If any committed label was wrong, verdict is violated_on_pair. Otherwise supported_on_pair
+ means only this pair. Do not infer universal scope or physical interpretation. Model-specific citations
+--- v5/run.py
++++ v5_1/run.py
+@@ -8,6 +8,7 @@
+ from numerics import structural_key,predict,public
+ from parallel_fit import Fitter
+ from ledger import local_facts,retention,metrics,prospective_metrics,check_citations,choose,fit_id
++from ledger import boundary_evidence_ids,check_boundary_citations
+ from scope import label,parse
+ from design import action,pair,validate,compile_question
+ from prompts import COMMON,PROPOSAL,RETENTION,QUESTION,ASSESS
+@@ -34,7 +35,7 @@
+ def run(root,client,seedfile,fitter):
+     seed=json.loads(seedfile.read_text());obs=seed['observations'];models={};nodes={};withdrawn=set();events=[];episodes=[];prospective=[]
+     facts=local_facts(obs)
+-    write(root/'manifest.json',dict(version='concept_evidence_v5',time_ns=time.time_ns(),model=MODEL,workers=8,rounds=2,
++    write(root/'manifest.json',dict(version='concept_evidence_v5_1',time_ns=time.time_ns(),model=MODEL,workers=8,rounds=2,
+         source_hashes={p.name:filehash(p) for p in sorted(Path(__file__).parent.glob('*.py'))},seed_sha256=filehash(seedfile),
+         plan_sha256=filehash(Path(__file__).parent/'PLAN.md'),python=sys.version,numpy=np.__version__,scipy=scipy.__version__,
+         call_cap=20,completion_cap=2048,fit_starts=2,fit_max_nfev=35,scope='Same inspected system, former sealed data promoted to development'))
+@@ -141,10 +142,10 @@
+         fresh,errors=fit({k:m['spec'] for k,m in fitset.items()},{k:m['fit'] for k,m in fitset.items()},f'round_{r}_refit')
+         for k,error in errors.items():models.pop(k,None);nodes[k]['status']='fit_failed';events.append(dict(kind='refit_failure',id=k,error=error))
+         models.update(fresh);write(dest/'updated_models.json',models);ctx=context();ctx['actual_outcome']=outcome
++        ctx['required_boundary_metric_ids']=boundary_evidence_ids(outcome)
+         def va(v):
+             if v['boundary_verdict']!=verdict:raise ValueError('Boundary verdict must use committed prospective labels')
+-            wanted=[] if verdict=='untested' else outcome['boundary_metric_ids']
+-            if sorted(v['boundary_metric_ids'])!=sorted(wanted):raise ValueError('Cite the original prospective boundary metrics, not refitted CV')
++            check_boundary_citations(v,outcome)
+             seen=set()
+             if not v['updates']:raise ValueError('At least one update')
+             for u in v['updates']:
+--- v5/test_protocol.py
++++ v5_1/test_protocol.py
+@@ -11,6 +11,15 @@
+ from ledger import fit_id,local_facts,retention,choose,check_citations
+ 
+ class Protocol(unittest.TestCase):
++    def test_abstained_boundary_contract_and_actionable_feedback(self):
++        from ledger import boundary_evidence_ids,check_boundary_citations
++        outcome=dict(boundary_verdict='untested',boundary_metric_ids=['prospective:m:fit:obs'])
++        self.assertEqual(boundary_evidence_ids(outcome),[])
++        check_boundary_citations(dict(boundary_metric_ids=[]),outcome)
++        with self.assertRaisesRegex(ValueError,r'must equal \[\]'):
++            check_boundary_citations(dict(boundary_metric_ids=outcome['boundary_metric_ids']),outcome)
++        outcome['boundary_verdict']='violated_on_pair'
++        check_boundary_citations(dict(boundary_metric_ids=outcome['boundary_metric_ids']),outcome)
+     def test_parallel_matches_serial_grouped_fit(self):
+         raw=dict(parameters=[],states=[],terms=['x','u']);obs=[]
+         for i,amp in enumerate((1.,1.,-.6)):

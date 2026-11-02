@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429615927541826,
+  "http_status": 200,
+  "body": {
+    "id": "resp_08084470b4a54295016ae5906dcf588190b78e6906f167fc68",
+    "object": "chat.completion",
+    "created": 1793429615,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the lowest leave-trajectory-out NMSE (0.00176), far below the current state model; PRBS has the greatest disagreement among plausible memory models.\",\"prediction\":\"After PRBS input switches, output will retain a history-dependent tail rather than track only the current input and state.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2258,
+      "completion_tokens": 198,
+      "total_tokens": 2456,
+      "completion_tokens_details": {
+        "reasoning_tokens": 113
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.088313446380198
+}

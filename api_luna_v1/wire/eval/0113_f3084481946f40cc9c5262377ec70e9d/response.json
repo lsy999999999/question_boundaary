@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429922029774314,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0f7ef6898c3e92c0016ae5919e46a881979c464928a6432385",
+    "object": "chat.completion",
+    "created": 1793429921,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"alternating\",\"reason\":\"Memory_multiscale has the lowest leave-trajectory-out error (0.00152), substantially improving on state (0.03427); residual lag and pulse tails support history dependence.\",\"prediction\":\"After rapid input reversals, output will retain a history-dependent tail rather than track the current input alone.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence with finite relaxation predicts output dependence on history beyond current input and visible state.\",\"condition_to_check\":\"The relation is weakened if history adds no predictive value after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2808,
+      "completion_tokens": 306,
+      "total_tokens": 3114,
+      "completion_tokens_details": {
+        "reasoning_tokens": 169
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.468908001668751
+}

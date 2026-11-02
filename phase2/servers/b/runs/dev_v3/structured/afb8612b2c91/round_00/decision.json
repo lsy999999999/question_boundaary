@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793423424811773706,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "double_pulse",
+    "reason": "Double pulse tests slow accumulation and nonlinearity better than single pulses.",
+    "prediction": "Response will show distinct phases of slow rise and fall, differing from fast memory models.",
+    "accept": false,
+    "mapping": {
+      "source_id": "memory_slow",
+      "target_relation": "Slowly accumulating past states should shape the response more than fast ones.",
+      "condition_to_check": "Check if the response has slower dynamics compared to fast memory models."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"double_pulse\",\n  \"reason\": \"Double pulse tests slow accumulation and nonlinearity better than single pulses.\",\n  \"prediction\": \"Response will show distinct phases of slow rise and fall, differing from fast memory models.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"memory_slow\",\n    \"target_relation\": \"Slowly accumulating past states should shape the response more than fast ones.\",\n    \"condition_to_check\": \"Check if the response has slower dynamics compared to fast memory models.\"\n  }\n}",
+    "input_tokens": 3027,
+    "output_tokens": 122,
+    "batch_elapsed_seconds": 2.7282797740772367,
+    "amortized_seconds": 2.7282797740772367,
+    "peak_gpu_allocated_gb": 14.803863048553467,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024242401123047,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

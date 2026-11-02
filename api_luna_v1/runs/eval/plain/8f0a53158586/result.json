@@ -1,0 +1,84 @@
+{
+  "task_id": "8f0a53158586",
+  "split": "eval",
+  "family": "two_memory",
+  "seed": 32,
+  "method": "plain",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_slow",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0013662699342169623,
+    "coefficients": [
+      0.00108,
+      -0.718837,
+      0.9656425,
+      0.8081396,
+      -1.193648,
+      -0.0290919,
+      -0.4308889,
+      -0.905586,
+      2.7488308
+    ]
+  },
+  "test": {
+    "test_nmse": 0.00023575136742139078,
+    "test_mse": 2.5089497895860947e-05,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 1.9421878944866565e-05,
+        "nmse": 0.00023667000000052348
+      },
+      {
+        "action": "test_three_step",
+        "mse": 3.302852031435107e-05,
+        "nmse": 8.027701109788686e-05
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 1.1370102286682301e-05,
+        "nmse": 0.0003169892273066771
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 3.6863084160794025e-05,
+        "nmse": 0.0003829752848221471
+      },
+      {
+        "action": "test_prbs",
+        "mse": 1.3293587516250453e-05,
+        "nmse": 0.00013968164746843334
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 3.655981415222128e-05,
+        "nmse": 0.00025791503383267673
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": true,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 10727,
+  "output_tokens": 346,
+  "generation_seconds_amortized": 13.492850014939904,
+  "elapsed_wall_seconds": 409.2377450466156,
+  "selected_actions": [
+    "prbs",
+    "alternating",
+    "double_pulse"
+  ],
+  "selected_representations": [
+    "memory_slow",
+    "memory_slow",
+    "memory_slow",
+    "memory_slow"
+  ],
+  "peak_gpu_allocated_gb": 0.0,
+  "peak_process_ram_gb": 0.08880615234375,
+  "inference_backend": "third_party_api",
+  "evaluation_after_commit_ns": 1793430265072421273
+}

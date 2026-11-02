@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431781505430516,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "alternating",
+    "reason": "Slow-memory has strong trajectory-level validation and captures the observed post-input decay. Saturating memory improves CV only marginally with many more coefficients, so that gain is not yet persuasive.",
+    "prediction": "After rapid input reversals, output will retain a decaying influence of earlier input rather than track the current input alone.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated input history predicts output after input returns to zero, consistent with finite relaxation.",
+      "condition_to_check": "At matched current input and visible state, prior input should predict a decaying output; absence of this effect would falsify the relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Slow-memory has strong trajectory-level validation and captures the observed post-input decay. Saturating memory improves CV only marginally with many more coefficients, so that gain is not yet persuasive.\",\"prediction\":\"After rapid input reversals, output will retain a decaying influence of earlier input rather than track the current input alone.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts output after input returns to zero, consistent with finite relaxation.\",\"condition_to_check\":\"At matched current input and visible state, prior input should predict a decaying output; absence of this effect would falsify the relation.\"}}",
+    "input_tokens": 3293,
+    "output_tokens": 266,
+    "batch_elapsed_seconds": 3.752546600997448,
+    "amortized_seconds": 3.752546600997448,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3293,
+      "completion_tokens": 266,
+      "total_tokens": 3559,
+      "completion_tokens_details": {
+        "reasoning_tokens": 121
+      }
+    },
+    "api_response_id": "resp_0c907a35486a5253016ae598e292548190b470c77f22e7a505",
+    "wire_record": "wire/eval/0300_c2d86de6535740c2b1a8bc5675094226"
+  }
+}

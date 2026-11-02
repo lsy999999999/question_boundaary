@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431541301247770,
+  "http_status": 200,
+  "body": {
+    "id": "resp_009af608db57d825016ae597f24c248193826076b4354a95c0",
+    "object": "chat.completion",
+    "created": 1793431541,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow accumulated history has the lowest trajectory-level CV error (0.00190) versus 0.05981 for state; persistent post-input decay supports a history-dependent predictor.\",\"prediction\":\"Under PRBS, output will retain a smoother, delayed response to prior inputs after the current input changes.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence predicts output beyond current input and visible state, consistent with finite relaxation.\",\"condition_to_check\":\"After controlling current input and visible state, past input history should still predict output; otherwise the storage relation is unsupported.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2829,
+      "completion_tokens": 226,
+      "total_tokens": 3055,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 88
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 7.175302304327488
+}

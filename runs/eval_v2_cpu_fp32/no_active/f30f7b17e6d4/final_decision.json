@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793413691497042861,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "step_rest",
+    "reason": "Step rest shows high NMSE, indicating potential for better fit.",
+    "prediction": "Step rest will reveal more nonlinearity than current model predicts.",
+    "accept": false,
+    "mapping": {
+      "source_id": "nonlinear_response",
+      "target_relation": "Higher NMSE suggests stronger nonlinearity.",
+      "condition_to_check": "NMSE for step_rest exceeds current CV NMSE."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"state_cubic\",\n  \"experiment\": \"step_rest\",\n  \"reason\": \"Step rest shows high NMSE, indicating potential for better fit.\",\n  \"prediction\": \"Step rest will reveal more nonlinearity than current model predicts.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"nonlinear_response\",\n    \"target_relation\": \"Higher NMSE suggests stronger nonlinearity.\",\n    \"condition_to_check\": \"NMSE for step_rest exceeds current CV NMSE.\"\n  }\n}",
+    "input_tokens": 2901,
+    "output_tokens": 112,
+    "batch_elapsed_seconds": 350.79179391637444,
+    "amortized_seconds": 87.69794847909361,
+    "peak_gpu_allocated_gb": 0.0,
+    "backend": "cpu-fp32",
+    "peak_process_ram_gb": 35.00408935546875,
+    "model_path": "/home/lsy/theory_discovery_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

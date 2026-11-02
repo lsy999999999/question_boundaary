@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432257930917717,
+  "http_status": 200,
+  "body": {
+    "id": "resp_06c4678962e0d65f016ae59abf58a881949406ff734b2fe33f",
+    "object": "chat.completion",
+    "created": 1793432257,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"Memory_slow has the lowest leave-trajectory-out error among candidates, narrowly outperforming multiscale and memory_clock with fewer coefficients. State-only models perform much worse; observed post-pulse recovery supports history dependence.\",\"prediction\":\"After the second pulse ends, output will retain a decaying dependence on both pulses, differing from a single-pulse history at matched current input.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"History-dependent prediction is supported, but no specific cross-domain mechanism is established.\",\"condition_to_check\":\"Matched visible states after distinct input histories should retain predictive differences that relax during rest.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3738,
+      "completion_tokens": 273,
+      "total_tokens": 4011,
+      "completion_tokens_details": {
+        "reasoning_tokens": 128
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.299021979793906
+}

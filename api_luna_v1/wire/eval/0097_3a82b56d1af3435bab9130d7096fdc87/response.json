@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429895537402379,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0f2059e2e3b0146c016ae591843f9881938dde9b102e2045cd",
+    "object": "chat.completion",
+    "created": 1793429895,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"alternating\",\"reason\":\"State_cubic has the lowest trajectory-level cross-validation error (0.00213 versus 0.00716 for state); memory alternatives validate worse. Alternating input probes remaining history-versus-curvature disagreement.\",\"prediction\":\"At matched input and state, alternating-input responses should show little systematic history-dependent separation; persistent separation would challenge state_cubic.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The improved predictive fit supports adding instantaneous curvature, but does not establish a saturation mechanism.\",\"condition_to_check\":\"Compare responses at matched input and state across differing histories; reproducible separation would falsify a purely instantaneous state-cubic account.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2800,
+      "completion_tokens": 312,
+      "total_tokens": 3112,
+      "completion_tokens_details": {
+        "reasoning_tokens": 162
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.469913313165307
+}

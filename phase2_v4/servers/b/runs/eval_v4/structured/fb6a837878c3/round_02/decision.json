@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423970858302270,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "step_rest",
+    "reason": "Memory_slow fits well and shows predictive power across actions.",
+    "prediction": "Step rest will show gradual decay towards baseline, consistent with slow memory decay.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "The system's response to a step rest should gradually return to baseline, indicating storage of past states.",
+      "condition_to_check": "If the response quickly returns to baseline, storage is likely absent."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"step_rest\",\n  \"reason\": \"Memory_slow fits well and shows predictive power across actions.\",\n  \"prediction\": \"Step rest will show gradual decay towards baseline, consistent with slow memory decay.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"The system's response to a step rest should gradually return to baseline, indicating storage of past states.\",\n    \"condition_to_check\": \"If the response quickly returns to baseline, storage is likely absent.\"\n  }\n}",
+    "input_tokens": 3778,
+    "output_tokens": 122,
+    "batch_elapsed_seconds": 2.938498276285827,
+    "amortized_seconds": 2.938498276285827,
+    "peak_gpu_allocated_gb": 14.94869089126587,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

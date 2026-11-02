@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793430346260576338,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0e430dabe24718e3016ae5934861888196a9c8f7ccaf376f72",
+    "object": "chat.completion",
+    "created": 1793430346,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"State has the lowest trajectory-held-out NMSE; cubic, clock, and memory alternatives do not improve validation. Forecast errors are low, but residual lag correlation leaves adequacy uncertain.\",\"prediction\":\"At matched current state and input, subsequent predictions should not depend on earlier input history or elapsed time.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Validation supports the compact state representation, but does not establish a distinct storage, transport, saturation, or clock relation.\",\"condition_to_check\":\"Reject state if systematic residuals remain or matched state-input conditions yield different subsequent outputs.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3716,
+      "completion_tokens": 133,
+      "total_tokens": 3849
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.9967342857271433
+}

@@ -1,0 +1,38 @@
+{
+  "time_ns": 1793431509050430972,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "prbs",
+    "reason": "Memory_multiscale has the lowest trajectory-level CV NMSE (0.00152), far below the current state model, while residual autocorrelation indicates unmodeled temporal structure. PRBS probes responses across varied input histories.",
+    "prediction": "After input returns to zero, output will retain a history-dependent tail, with PRBS responses differing from an instantaneous state-only prediction.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"Memory_multiscale has the lowest trajectory-level CV NMSE (0.00152), far below the current state model, while residual autocorrelation indicates unmodeled temporal structure. PRBS probes responses across varied input histories.\",\"prediction\":\"After input returns to zero, output will retain a history-dependent tail, with PRBS responses differing from an instantaneous state-only prediction.\",\"accept\":false}",
+    "input_tokens": 2570,
+    "output_tokens": 230,
+    "batch_elapsed_seconds": 3.146269974298775,
+    "amortized_seconds": 3.146269974298775,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2570,
+      "completion_tokens": 230,
+      "total_tokens": 2800,
+      "prompt_tokens_details": {
+        "cached_tokens": 2432
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 132
+      }
+    },
+    "api_response_id": "resp_06e058d96ef206b0016ae597d2a18081908094e64871a24df6",
+    "wire_record": "wire/eval/0125_1c49bc5f00d940efafa3b3d8085f01df"
+  }
+}

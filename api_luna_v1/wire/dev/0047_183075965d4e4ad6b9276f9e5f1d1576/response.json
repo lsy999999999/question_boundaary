@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429683907613325,
+  "http_status": 200,
+  "body": {
+    "id": "resp_02b8fc14d3303d96016ae590b07bd48193a9eb988b0afb8703",
+    "object": "chat.completion",
+    "created": 1793429683,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"The state model has the lowest leave-trajectory-out error and small residual correlation; added nonlinear, memory, and clock features validate worse. Unseen interventions remain uncertain.\",\"prediction\":\"During rapid switches, output will track the input-driven state without a persistent offset once the input returns to zero.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No independent storage, delay, saturation, or clock relation is supported beyond the current-state fit.\",\"condition_to_check\":\"A reproducible residual after controlling current input and output state would challenge this representation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2825,
+      "completion_tokens": 300,
+      "total_tokens": 3125,
+      "completion_tokens_details": {
+        "reasoning_tokens": 171
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.184412718750536
+}

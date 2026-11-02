@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432032445347011,
+  "http_status": 200,
+  "body": {
+    "id": "resp_06b5458c5242e52d016ae599dcc62481908441724e060c2bef",
+    "object": "chat.completion",
+    "created": 1793432032,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"Slow-memory has the lowest trajectory-level CV error; richer alternatives perform worse, though residual lag-1 correlation leaves some uncertainty.\",\"prediction\":\"After the second pulse ends, output will retain a decaying influence of both pulses, including the first pulse’s history.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts output after current input returns to zero, consistent with finite relaxation.\",\"condition_to_check\":\"At matched current input and visible state, prior input should predict a decaying output; absence would falsify this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3511,
+      "completion_tokens": 319,
+      "total_tokens": 3830,
+      "completion_tokens_details": {
+        "reasoning_tokens": 186
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.665030646137893
+}

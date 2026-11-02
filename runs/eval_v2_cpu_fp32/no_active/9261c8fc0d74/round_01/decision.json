@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793409996764324016,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "positive_pulse",
+    "reason": "Cubic terms show best fit for nonlinear pulse response.",
+    "prediction": "Positive pulse will yield higher peak and faster rise compared to linear.",
+    "accept": true,
+    "mapping": {
+      "source_id": "nonlinear_response",
+      "target_relation": "Nonlinear response accelerates and amplifies with larger inputs.",
+      "condition_to_check": "Compare rise time and peak amplitude between linear and cubic models."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"state_cubic\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Cubic terms show best fit for nonlinear pulse response.\",\n  \"prediction\": \"Positive pulse will yield higher peak and faster rise compared to linear.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"nonlinear_response\",\n    \"target_relation\": \"Nonlinear response accelerates and amplifies with larger inputs.\",\n    \"condition_to_check\": \"Compare rise time and peak amplitude between linear and cubic models.\"\n  }\n}",
+    "input_tokens": 2530,
+    "output_tokens": 114,
+    "batch_elapsed_seconds": 309.21350755216554,
+    "amortized_seconds": 77.30337688804138,
+    "peak_gpu_allocated_gb": 0.0,
+    "backend": "cpu-fp32",
+    "peak_process_ram_gb": 34.07872772216797,
+    "model_path": "/home/lsy/theory_discovery_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

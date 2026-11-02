@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429615417682297,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0cd2988884777cc6016ae5906cd510819685d2bd6b5c7b9de2",
+    "object": "chat.completion",
+    "created": 1793429615,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow accumulated-history features substantially improve leave-trajectory-out error over the state-only model; PRBS has the greatest disagreement among plausible memory representations.\",\"prediction\":\"After matched current inputs and visible states, output will still depend on prior input history, with a slow residual response after switching.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence with finite relaxation is consistent with the improved slow-memory predictive representation.\",\"condition_to_check\":\"Under PRBS, test whether past-input history predicts output after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2807,
+      "completion_tokens": 230,
+      "total_tokens": 3037,
+      "completion_tokens_details": {
+        "reasoning_tokens": 100
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.3448449363932014
+}

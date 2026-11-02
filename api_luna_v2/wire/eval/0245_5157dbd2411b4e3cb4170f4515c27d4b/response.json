@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431685843289120,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0af52f77588eeaa4016ae59883186881968c106bcd89882aa9",
+    "object": "chat.completion",
+    "created": 1793431685,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"prbs\",\"reason\":\"State_cubic has the lowest trajectory-level CV NMSE (0.00204), substantially below saturating_memory (0.00614); persistent residual correlation still leaves adequacy uncertain.\",\"prediction\":\"Under PRBS, repeated visits to similar state and input should produce similar responses, without a systematic history-dependent difference.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The predictive fit does not establish a cross-domain mechanism.\",\"condition_to_check\":\"Compare responses at similar state and input reached through different PRBS histories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3248,
+      "completion_tokens": 250,
+      "total_tokens": 3498,
+      "completion_tokens_details": {
+        "reasoning_tokens": 124
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.4720503920689225
+}

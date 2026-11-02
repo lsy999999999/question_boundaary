@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431989341117739,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0c10b3d99521250d016ae599b2a07081909b3e0283442e26bb",
+    "object": "chat.completion",
+    "created": 1793431989,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"ramp_reverse\",\"reason\":\"Multiscale memory has lower held-out error than memory_slow, while saturating_memory's small additional improvement may reflect extra flexibility. Persistent tails support finite-relaxation history.\",\"prediction\":\"After reversing the ramp, output will retain a smooth influence of earlier inputs; comparable states reached at different histories will differ.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Finite-relaxation accumulated input history can predict output beyond current input and visible state.\",\"condition_to_check\":\"History features should improve held-out ramp-reversal predictions after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3485,
+      "completion_tokens": 266,
+      "total_tokens": 3751,
+      "completion_tokens_details": {
+        "reasoning_tokens": 128
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.857244654558599
+}

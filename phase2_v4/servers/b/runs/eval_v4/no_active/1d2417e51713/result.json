@@ -1,0 +1,84 @@
+{
+  "task_id": "1d2417e51713",
+  "split": "eval",
+  "family": "linear",
+  "seed": 32,
+  "method": "no_active",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_slow",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0012290767518604963,
+    "coefficients": [
+      -0.0009258,
+      -0.585437,
+      0.9933706,
+      0.6676612,
+      -0.5708147,
+      -1.0354166,
+      -1.3648761,
+      0.6020717,
+      1.4005502
+    ]
+  },
+  "test": {
+    "test_nmse": 0.00028190640113259395,
+    "test_mse": 3.939454897619604e-05,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 2.209924043686205e-05,
+        "nmse": 0.0002703678036887742
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.00011041206250758782,
+        "nmse": 0.0003015116923695942
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 9.03547771029934e-06,
+        "nmse": 0.00026037707061852395
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 2.4064819216240053e-05,
+        "nmse": 0.00023618670573967465
+      },
+      {
+        "action": "test_prbs",
+        "mse": 2.7698551728269118e-05,
+        "nmse": 0.00030285961476961856
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 4.3057142257917826e-05,
+        "nmse": 0.000320135519609378
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": false,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 14712,
+  "output_tokens": 434,
+  "generation_seconds_amortized": 10.426764959469438,
+  "elapsed_wall_seconds": 251.4265320301056,
+  "selected_actions": [
+    "prbs",
+    "ramp_reverse",
+    "double_pulse"
+  ],
+  "selected_representations": [
+    "state",
+    "memory_slow",
+    "memory_slow",
+    "memory_slow"
+  ],
+  "peak_gpu_allocated_gb": 14.990713596343994,
+  "peak_process_ram_gb": 5.02374267578125,
+  "inference_backend": "cuda",
+  "evaluation_after_commit_ns": 1793424035546937365
+}

@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793423470404778243,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "step_rest",
+    "reason": "Memory_clock showed best performance with step inputs.",
+    "prediction": "Step input will produce a delayed and modulated response.",
+    "accept": true,
+    "mapping": {
+      "source_id": "clock",
+      "target_relation": "Response amplitude varies with elapsed time.",
+      "condition_to_check": "Check if response amplitude changes with input shape."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_clock\",\n  \"experiment\": \"step_rest\",\n  \"reason\": \"Memory_clock showed best performance with step inputs.\",\n  \"prediction\": \"Step input will produce a delayed and modulated response.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"clock\",\n    \"target_relation\": \"Response amplitude varies with elapsed time.\",\n    \"condition_to_check\": \"Check if response amplitude changes with input shape.\"\n  }\n}",
+    "input_tokens": 3805,
+    "output_tokens": 99,
+    "batch_elapsed_seconds": 2.469877786003053,
+    "amortized_seconds": 2.469877786003053,
+    "peak_gpu_allocated_gb": 14.962264060974121,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025005340576172,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

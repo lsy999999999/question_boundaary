@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430175489043199,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0ab626230ebee85e016ae5929c7458819081bf9babd19f9e80",
+    "object": "chat.completion",
+    "created": 1793430175,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"prbs\",\"reason\":\"state_cubic has the lowest trajectory-held-out NMSE; memory alternatives are worse, but residual lag correlation and remaining model disagreement leave adequacy uncertain. PRBS has the greatest disagreement score.\",\"prediction\":\"Under PRBS, repeated matched state and input should give similar predictions if state_cubic is adequate; systematic history-dependent deviations would contradict it.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The evidence favors instantaneous curvature over the tested memory representations but establishes no mechanism relation.\",\"condition_to_check\":\"Check whether prior input predicts output after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3454,
+      "completion_tokens": 305,
+      "total_tokens": 3759,
+      "completion_tokens_details": {
+        "reasoning_tokens": 168
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.944410069845617
+}

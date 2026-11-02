@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430585221543775,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "prbs",
+    "reason": "Memory_multiscale improves trajectory-level validation over memory_slow with fewer terms than the slightly better saturating_memory model; persistent post-input decay supports history dependence.",
+    "prediction": "Under irregular input reversals, accumulated history will predict output beyond current input and state, with responses relaxing over multiple timescales.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Persistent post-input response is consistent with accumulated past influence that relaxes over time.",
+      "condition_to_check": "In PRBS trials, test whether history predicts output after controlling current input and visible state; failure weakens this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"Memory_multiscale improves trajectory-level validation over memory_slow with fewer terms than the slightly better saturating_memory model; persistent post-input decay supports history dependence.\",\"prediction\":\"Under irregular input reversals, accumulated history will predict output beyond current input and state, with responses relaxing over multiple timescales.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Persistent post-input response is consistent with accumulated past influence that relaxes over time.\",\"condition_to_check\":\"In PRBS trials, test whether history predicts output after controlling current input and visible state; failure weakens this relation.\"}}",
+    "input_tokens": 3265,
+    "output_tokens": 383,
+    "batch_elapsed_seconds": 4.612793943844736,
+    "amortized_seconds": 4.612793943844736,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3265,
+      "completion_tokens": 383,
+      "total_tokens": 3648,
+      "completion_tokens_details": {
+        "reasoning_tokens": 242
+      }
+    },
+    "api_response_id": "resp_0661f96afaf42440016ae59435584c81909a50a23a36ef1c65",
+    "wire_record": "wire/eval/0444_49884b73b2b34c68971d936b8709d38c"
+  }
+}

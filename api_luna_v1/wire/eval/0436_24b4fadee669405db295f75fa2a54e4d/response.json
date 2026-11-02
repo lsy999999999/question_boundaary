@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430563969740195,
+  "http_status": 200,
+  "body": {
+    "id": "resp_054bed6647e6f701016ae59420cde081978740772ffdad50df",
+    "object": "chat.completion",
+    "created": 1793430563,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest trajectory-level CV error by a wide margin, and similar late oscillations recur across interventions. Residual autocorrelation leaves some predictive mismatch.\",\"prediction\":\"After inputs stop, oscillations will continue with similar phase when trajectories are aligned by elapsed time.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A shared elapsed-time driver could explain recurring oscillations after different input interventions.\",\"condition_to_check\":\"Compare zero-input oscillation phase across interventions; substantial phase shifts would weaken the clock hypothesis.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3269,
+      "completion_tokens": 292,
+      "total_tokens": 3561,
+      "completion_tokens_details": {
+        "reasoning_tokens": 169
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.8364046001806855
+}

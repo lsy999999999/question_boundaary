@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423929181019362,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "double_pulse",
+    "reason": "Double pulse tests memory and saturation under varied conditions.",
+    "prediction": "Response will show reduced amplitude after second pulse compared to first.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Response amplitude decreases with increasing magnitude due to saturation.",
+      "condition_to_check": "Compare response amplitudes for double pulses of equal but opposite signs."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"double_pulse\",\n  \"reason\": \"Double pulse tests memory and saturation under varied conditions.\",\n  \"prediction\": \"Response will show reduced amplitude after second pulse compared to first.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"Response amplitude decreases with increasing magnitude due to saturation.\",\n    \"condition_to_check\": \"Compare response amplitudes for double pulses of equal but opposite signs.\"\n  }\n}",
+    "input_tokens": 3641,
+    "output_tokens": 112,
+    "batch_elapsed_seconds": 2.6704639978706837,
+    "amortized_seconds": 2.6704639978706837,
+    "peak_gpu_allocated_gb": 14.9249587059021,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

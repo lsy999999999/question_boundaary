@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793430045840367073,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "alternating",
+    "reason": "Memory_slow has the lowest trajectory-level CV NMSE, but residual lag-1 correlation remains high. Alternating inputs should probe differences among plausible memory timescales after the PRBS trial.",
+    "prediction": "Rapid reversals should produce smoother, delayed output changes than a state-only response; compare the observed lag and decay with forecasts.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest trajectory-level CV NMSE, but residual lag-1 correlation remains high. Alternating inputs should probe differences among plausible memory timescales after the PRBS trial.\",\"prediction\":\"Rapid reversals should produce smoother, delayed output changes than a state-only response; compare the observed lag and decay with forecasts.\",\"accept\":false}",
+    "input_tokens": 2678,
+    "output_tokens": 183,
+    "batch_elapsed_seconds": 3.209720172919333,
+    "amortized_seconds": 3.209720172919333,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2678,
+      "completion_tokens": 183,
+      "total_tokens": 2861,
+      "completion_tokens_details": {
+        "reasoning_tokens": 93
+      }
+    },
+    "api_response_id": "resp_02b282fe209c9288016ae5921ba85c81939f6beeb4ebd549b4",
+    "wire_record": "wire/eval/0183_8fe44f1f0b7946bdbc033bb823723e54"
+  }
+}

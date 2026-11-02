@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431526412040163,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0705d6b16616d95f016ae597e52c1481959d15eb742dcf9906",
+    "object": "chat.completion",
+    "created": 1793431526,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the lowest trajectory-level CV NMSE (0.00097), far below the current state model, and captures persistent history indicated by residual correlation. PRBS probes varied input histories.\",\"prediction\":\"After PRBS input switches, predictions using slow accumulated history will track the output better than a state-only model, especially during recovery.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2258,
+      "completion_tokens": 90,
+      "total_tokens": 2348,
+      "prompt_tokens_details": {
+        "cached_tokens": 2048
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 1.896940777078271
+}

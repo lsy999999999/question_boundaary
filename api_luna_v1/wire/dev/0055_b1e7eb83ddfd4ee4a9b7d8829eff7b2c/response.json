@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429699931557107,
+  "http_status": 200,
+  "body": {
+    "id": "resp_052c325061b79e58016ae590c088ac8197bb9e52c43f59ed74",
+    "object": "chat.completion",
+    "created": 1793429699,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest trajectory-held-out error by a wide margin. Similar late negative drift across distinct inputs supports testing a shared elapsed-time component; alternating best separates clock from memory_clock.\",\"prediction\":\"After input switches, the late baseline will continue to vary with elapsed time similarly across interventions, rather than tracking recent input history.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A shared elapsed-time component may explain the similar late negative drift across different input trajectories.\",\"condition_to_check\":\"Compare aligned residuals across interventions; the relation is weakened if late drift instead follows recent input history.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2815,
+      "completion_tokens": 338,
+      "total_tokens": 3153,
+      "completion_tokens_details": {
+        "reasoning_tokens": 200
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.10374974552542
+}

@@ -1,0 +1,33 @@
+{
+  "case_id": "R01",
+  "frozen_before_first_agent_message": true,
+  "target_doi": "10.1038/s44286-026-00454-4",
+  "first_verified_publication": "2025-05-13",
+  "first_publication_doi": "10.26434/chemrxiv-2025-5ffnn",
+  "background_cutoff_inclusive": "2025-05-12",
+  "model": "gpt-6-luna",
+  "context": "fresh child agent, fork_turns=none; no direct tool use; broker supplies historical literature and measured-data responses",
+  "budgets": {"background_queries": 3, "evidence_rounds": 3, "final_commitments": 1},
+  "allowed_initial_evidence": ["Fig1f_plotted: selected measured timepoints", "experimental construction and measurement definitions without causal interpretation"],
+  "forbidden_evidence": ["target abstract/title/authors/DOI", "target discussion", "fitted free-energy parameters", "Fig4b_theory", "Fig4d_plotted (theoretical onset)", "author schematic explanations", "target-derived summaries"],
+  "available_requested_measurements": {
+    "fractionation": "gel-purified template fractions M, M+L, M+S; replica 1 field averages only",
+    "sequence": "raw reference and variant DNA sequences and read frequencies; no author-predicted folds",
+    "phase_composition": "six measured coexisting-phase compositions; no fitted theory",
+    "motion": "replica 1 measured trajectory summary and geometry; replica 2 remains hidden until final commitment"
+  },
+  "hidden_quantitative_checks": [
+    {"id":"Q1", "metric":"sign of median final squared-displacement difference B-A in replica 2, all tracked objects", "score":"correct direction or abstain; report unequal tracking durations; do not infer propulsion speed from displacement"},
+    {"id":"Q2", "metric":"fraction of angle >90 degrees in replica 2, steps >1 um; angles recomputed from displacement vectors", "score":"correct majority direction, optional absolute prediction error; report shared-coordinate coupling and nested samples"}
+  ],
+  "mechanism_review": [
+    "distinguishes encoded template/product heterogeneity from reaction carryover",
+    "proposes changed RNA interactions or effective connectivity rather than merely naming a mutant",
+    "explains sustained internal dilute compartments via production, transport and phase behavior",
+    "distinguishes evidenced mechanism from a uniquely recovered free-energy model",
+    "offers an additional observable consequence and precommits before release"
+  ],
+  "recognition_gate": "Ask before historical retrieval whether the agent recalls this specific study. Exact source recognition contaminates an unknown-case claim; an unrecognized response does not prove training-set absence.",
+  "experimental_scope": "replay of real published measurements plus computational reanalysis, no new wet-lab experiments",
+  "known_data_limits": ["The fraction per-object sheet does not include all plotted control fields and its replica-2 rows have no M-only condition; no missing control is manufactured.", "Final squared displacements have unequal tracking durations, so do not interpret them as equal-time MSD.", "Angle coordinates share the droplet centre; association alone does not establish a causal motor mechanism."]
+}

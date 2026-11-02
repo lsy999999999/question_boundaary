@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423900253999508,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "negative_pulse",
+    "reason": "Memory_slow performs well across different inputs.",
+    "prediction": "Negative pulse will cause a delayed response with slower decay.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Response timing should persist across different input shapes.",
+      "condition_to_check": "Compare response timing for positive and negative pulses."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"negative_pulse\",\n  \"reason\": \"Memory_slow performs well across different inputs.\",\n  \"prediction\": \"Negative pulse will cause a delayed response with slower decay.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Response timing should persist across different input shapes.\",\n    \"condition_to_check\": \"Compare response timing for positive and negative pulses.\"\n  }\n}",
+    "input_tokens": 3578,
+    "output_tokens": 100,
+    "batch_elapsed_seconds": 2.422416399233043,
+    "amortized_seconds": 2.422416399233043,
+    "peak_gpu_allocated_gb": 14.918898582458496,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024013519287109,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793520610331787591,
+  "body": {
+    "id": "resp_060f4cec00e1e13f016ae6f3dcf6448197ba9fa72e549851c3",
+    "object": "chat.completion",
+    "created": 1793520610,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"parent_id\":\"v3_r1\",\"evidence_ids\":[\"aggregate:v3_r1:f3be5fccda41\",\"cv:v3_r1:cce509ddbfa0:b4_r1_experiment_0\",\"cv:v3_r1:29838c6c4ab1:b4_r2_experiment_0\",\"prospective:v3_r1:520c3ec27e67:e5_r0_experiment_1\",\"local_relation_0\",\"local_relation_1\",\"local_relation_2\"],\"operation\":\"revise\",\"concept\":\"加入第二级输入历史状态以表征反转后的滞后响应\",\"reason\":\"整体组留出误差为0.043，但反转干预和一条前瞻输入误差超过0.05；双状态候选在部分反转样例较好。保留已观测的局部镜像与非比例性质，不宣称普遍成立。\",\"spec\":{\"parameters\":[{\"name\":\"p0\",\"lower\":0.05,\"initial\":0.8,\"upper\":1.5},{\"name\":\"p1\",\"lower\":0.05,\"initial\":0.5,\"upper\":1.5}],\"states\":[{\"name\":\"z0\",\"meaning\":\"输入的平滑历史变量；物理解释未证实。\",\"rate\":\"u-p0*z0\"},{\"name\":\"z1\",\"meaning\":\"由输入与z0差异驱动的另一历史变量；物理解释未证实。\",\"rate\":\"(u-z0)-p1*z1\"}],\"terms\":[\"x\",\"x**3\",\"tanh(x)\",\"x*tanh(x)**2\",\"u\",\"z0\",\"z1\"]},\"expected_change\":\"额外历史通道可改变反转及持续输入后的预测轨迹；须检验是否降低高误差而不损害局部关系。\",\"analogy\":{\"domain\":\"线性滤波器组（未验证）\",\"mapping\":\"z0、z1作为不同时间尺度的输入历史摘要\"},\"provenance\":\"model_knowledge_unverified\",\"boundary\":{\"model_id\":\"v3_r1\",\"status\":\"abstain\",\"expression\":\"\",\"reason\":\"现有证据仅定位若干失败输入，未给出可可靠概括的输入历史分界。\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 33671,
+      "completion_tokens": 675,
+      "total_tokens": 34346,
+      "completion_tokens_details": {
+        "reasoning_tokens": 187
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 7.356809345073998
+}

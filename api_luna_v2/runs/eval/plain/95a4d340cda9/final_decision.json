@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793432148436392088,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "prbs",
+    "reason": "Saturating_memory has the best trajectory-level cross-validation score (0.00254), substantially outperforming alternatives. It also predicts the observed pulse, reversal, and alternating trajectories well; residual correlation remains a caution, not evidence that a more complex candidate generalizes better.",
+    "prediction": "On irregular positive and negative steps, responses will depend on accumulated history and show saturation and history-dependent recovery.",
+    "accept": true,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"prbs\",\"reason\":\"Saturating_memory has the best trajectory-level cross-validation score (0.00254), substantially outperforming alternatives. It also predicts the observed pulse, reversal, and alternating trajectories well; residual correlation remains a caution, not evidence that a more complex candidate generalizes better.\",\"prediction\":\"On irregular positive and negative steps, responses will depend on accumulated history and show saturation and history-dependent recovery.\",\"accept\":true}",
+    "input_tokens": 2997,
+    "output_tokens": 100,
+    "batch_elapsed_seconds": 2.4507115622982383,
+    "amortized_seconds": 2.4507115622982383,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2997,
+      "completion_tokens": 100,
+      "total_tokens": 3097
+    },
+    "api_response_id": "resp_007b9a5363ae5343016ae59a52710881978207677fa69316c0",
+    "wire_record": "wire/eval/0478_5670e3dd8c1a43ebadf24945745e9981"
+  }
+}

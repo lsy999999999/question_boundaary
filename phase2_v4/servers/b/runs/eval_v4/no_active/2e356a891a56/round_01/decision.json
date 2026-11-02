@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423908993581570,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "double_pulse",
+    "reason": "Memory_slow shows best fit but low residual correlation; double pulse tests recovery.",
+    "prediction": "Double pulse will show distinct recovery phases compared to single pulses.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Storage should manifest in distinct recovery phases post-pulse.",
+      "condition_to_check": "Recovery after second pulse should be slower than first."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"double_pulse\",\n  \"reason\": \"Memory_slow shows best fit but low residual correlation; double pulse tests recovery.\",\n  \"prediction\": \"Double pulse will show distinct recovery phases compared to single pulses.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Storage should manifest in distinct recovery phases post-pulse.\",\n    \"condition_to_check\": \"Recovery after second pulse should be slower than first.\"\n  }\n}",
+    "input_tokens": 3623,
+    "output_tokens": 112,
+    "batch_elapsed_seconds": 2.666479936800897,
+    "amortized_seconds": 2.666479936800897,
+    "peak_gpu_allocated_gb": 14.9249587059021,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

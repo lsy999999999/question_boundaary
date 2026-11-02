@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793424050679092986,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "ramp_reverse",
+    "reason": "Saturating_memory shows high prediction variance for alternating inputs.",
+    "prediction": "Ramp_reverse will show saturation limit as response magnitude exceeds initial value.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Persistent response after pulse indicates saturation limit.",
+      "condition_to_check": "Response magnitude exceeds initial value post-pulse."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"ramp_reverse\",\n  \"reason\": \"Saturating_memory shows high prediction variance for alternating inputs.\",\n  \"prediction\": \"Ramp_reverse will show saturation limit as response magnitude exceeds initial value.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"Persistent response after pulse indicates saturation limit.\",\n    \"condition_to_check\": \"Response magnitude exceeds initial value post-pulse.\"\n  }\n}",
+    "input_tokens": 3927,
+    "output_tokens": 110,
+    "batch_elapsed_seconds": 2.719241210259497,
+    "amortized_seconds": 2.719241210259497,
+    "peak_gpu_allocated_gb": 14.991199016571045,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024013519287109,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

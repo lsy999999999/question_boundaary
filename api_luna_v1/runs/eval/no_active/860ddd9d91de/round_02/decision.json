@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430648063660375,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "alternating",
+    "reason": "Memory_multiscale has the lowest trajectory-held-out error (0.00162), slightly better than memory_slow and memory_clock. Residual lag and prior forecast failures leave adequacy uncertain.",
+    "prediction": "Under rapid input reversals, post-input output will retain a history-dependent component whose decay differs from a single slow-timescale response.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated past input and output influence can predict the persistent post-input response beyond current input.",
+      "condition_to_check": "Test whether history improves post-input decay prediction after controlling current input and visible state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"alternating\",\"reason\":\"Memory_multiscale has the lowest trajectory-held-out error (0.00162), slightly better than memory_slow and memory_clock. Residual lag and prior forecast failures leave adequacy uncertain.\",\"prediction\":\"Under rapid input reversals, post-input output will retain a history-dependent component whose decay differs from a single slow-timescale response.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past input and output influence can predict the persistent post-input response beyond current input.\",\"condition_to_check\":\"Test whether history improves post-input decay prediction after controlling current input and visible state.\"}}",
+    "input_tokens": 3488,
+    "output_tokens": 285,
+    "batch_elapsed_seconds": 3.704498919658363,
+    "amortized_seconds": 3.704498919658363,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3488,
+      "completion_tokens": 285,
+      "total_tokens": 3773,
+      "completion_tokens_details": {
+        "reasoning_tokens": 144
+      }
+    },
+    "api_response_id": "resp_0ae5208a720f5a08016ae5947505a88195a429ef8066d64fa8",
+    "wire_record": "wire/eval/0468_43498d3fdb2540218a5331ffc8a5e07d"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423925508981883,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "negative_pulse",
+    "reason": "Memory and clock features both show low NMSE, need to distinguish them.",
+    "prediction": "Negative pulse will show distinct phase shift compared to clock-only model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Persistent residuals align with elapsed time regardless of input shape.",
+      "condition_to_check": "Residuals should show consistent phase shift for positive and negative pulses."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_clock\",\n  \"experiment\": \"negative_pulse\",\n  \"reason\": \"Memory and clock features both show low NMSE, need to distinguish them.\",\n  \"prediction\": \"Negative pulse will show distinct phase shift compared to clock-only model.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"external_clock\",\n    \"target_relation\": \"Persistent residuals align with elapsed time regardless of input shape.\",\n    \"condition_to_check\": \"Residuals should show consistent phase shift for positive and negative pulses.\"\n  }\n}",
+    "input_tokens": 3569,
+    "output_tokens": 117,
+    "batch_elapsed_seconds": 2.778746041469276,
+    "amortized_seconds": 2.778746041469276,
+    "peak_gpu_allocated_gb": 14.917911529541016,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

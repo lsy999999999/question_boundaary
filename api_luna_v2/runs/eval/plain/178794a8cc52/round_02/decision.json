@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793431878005923345,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "double_pulse",
+    "reason": "Saturating_memory has the best trajectory-level CV NMSE, narrowly beating memory_multiscale and memory_slow; residual lag correlation remains, so another controlled history test is warranted.",
+    "prediction": "The second pulse will produce a history-dependent response that saturating_memory predicts more accurately than memory_slow, especially during recovery.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"double_pulse\",\"reason\":\"Saturating_memory has the best trajectory-level CV NMSE, narrowly beating memory_multiscale and memory_slow; residual lag correlation remains, so another controlled history test is warranted.\",\"prediction\":\"The second pulse will produce a history-dependent response that saturating_memory predicts more accurately than memory_slow, especially during recovery.\",\"accept\":false}",
+    "input_tokens": 2828,
+    "output_tokens": 88,
+    "batch_elapsed_seconds": 4.480909651145339,
+    "amortized_seconds": 4.480909651145339,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2828,
+      "completion_tokens": 88,
+      "total_tokens": 2916
+    },
+    "api_response_id": "resp_0eefd817001cbbe9016ae599448dc081948e5ca4e256e0df89",
+    "wire_record": "wire/eval/0352_1b26d76b2154464c961691cb4b550584"
+  }
+}

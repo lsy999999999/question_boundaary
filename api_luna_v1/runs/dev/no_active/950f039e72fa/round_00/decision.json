@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793429699932294160,
+  "decision": {
+    "representation": "clock",
+    "experiment": "alternating",
+    "reason": "Clock has the lowest trajectory-held-out error by a wide margin. Similar late negative drift across distinct inputs supports testing a shared elapsed-time component; alternating best separates clock from memory_clock.",
+    "prediction": "After input switches, the late baseline will continue to vary with elapsed time similarly across interventions, rather than tracking recent input history.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "A shared elapsed-time component may explain the similar late negative drift across different input trajectories.",
+      "condition_to_check": "Compare aligned residuals across interventions; the relation is weakened if late drift instead follows recent input history."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest trajectory-held-out error by a wide margin. Similar late negative drift across distinct inputs supports testing a shared elapsed-time component; alternating best separates clock from memory_clock.\",\"prediction\":\"After input switches, the late baseline will continue to vary with elapsed time similarly across interventions, rather than tracking recent input history.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A shared elapsed-time component may explain the similar late negative drift across different input trajectories.\",\"condition_to_check\":\"Compare aligned residuals across interventions; the relation is weakened if late drift instead follows recent input history.\"}}",
+    "input_tokens": 2815,
+    "output_tokens": 338,
+    "batch_elapsed_seconds": 4.10374974552542,
+    "amortized_seconds": 4.10374974552542,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2815,
+      "completion_tokens": 338,
+      "total_tokens": 3153,
+      "completion_tokens_details": {
+        "reasoning_tokens": 200
+      }
+    },
+    "api_response_id": "resp_052c325061b79e58016ae590c088ac8197bb9e52c43f59ed74",
+    "wire_record": "wire/dev/0055_b1e7eb83ddfd4ee4a9b7d8829eff7b2c"
+  }
+}

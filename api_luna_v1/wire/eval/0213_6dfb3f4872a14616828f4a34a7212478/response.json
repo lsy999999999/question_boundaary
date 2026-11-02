@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430097752470822,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0b4b60dd71ddc966016ae5924f627881969b9a271d740a4caa",
+    "object": "chat.completion",
+    "created": 1793430097,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest trajectory-held-out NMSE, but residual lag-1 correlation and weaker PRBS fit leave uncertainty about history dependence under rapid switching.\",\"prediction\":\"After rapid input reversals, output will retain a history-dependent component rather than tracking the current input alone.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence with finite relaxation predicts lingering response after input changes.\",\"condition_to_check\":\"Alternating-input forecasts should improve over state-only predictions after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3276,
+      "completion_tokens": 233,
+      "total_tokens": 3509,
+      "completion_tokens_details": {
+        "reasoning_tokens": 107
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.1086231395602226
+}

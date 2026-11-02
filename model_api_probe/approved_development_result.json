@@ -1,0 +1,32 @@
+{
+  "status": "responded",
+  "requested_model": "gpt-6-luna",
+  "returned_model": "gpt-6-luna",
+  "finish_reason": "stop",
+  "usage": {
+    "prompt_tokens": 2802,
+    "completion_tokens": 266,
+    "total_tokens": 3068,
+    "completion_tokens_details": {
+      "reasoning_tokens": 141
+    }
+  },
+  "elapsed_seconds": 5.703853791113943,
+  "parse_errors": [],
+  "decision": {
+    "representation": "state",
+    "experiment": "alternating",
+    "reason": "State has the lowest leave-trajectory-out error; added memory, delay, and nonlinear terms validate worse. Alternating input targets remaining disagreement among plausible models.",
+    "prediction": "Rapid input reversals will produce an output broadly tracking the current state model; persistent deviations after controlling current input and state would challenge it.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No separate mechanism relation is established by the available trajectory-level evidence.",
+      "condition_to_check": "Test whether output depends on input history after controlling current input and visible state."
+    }
+  },
+  "content": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"State has the lowest leave-trajectory-out error; added memory, delay, and nonlinear terms validate worse. Alternating input targets remaining disagreement among plausible models.\",\"prediction\":\"Rapid input reversals will produce an output broadly tracking the current state model; persistent deviations after controlling current input and state would challenge it.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No separate mechanism relation is established by the available trajectory-level evidence.\",\"condition_to_check\":\"Test whether output depends on input history after controlling current input and visible state.\"}}",
+  "prompt_source": "/Applications/ideas/research/1031_question_boundary/phase2_v4/runs/dev_v4_combined/structured/442fe7a60ac6/request_00_1793423705840068884.json",
+  "purpose": "connectivity replay excluded from benchmark scores",
+  "authorization": "User explicitly approved sending experimental prompts, mechanism cards and numerical observations in current chat."
+}

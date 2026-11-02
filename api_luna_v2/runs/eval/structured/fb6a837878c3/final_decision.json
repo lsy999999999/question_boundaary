@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793432209699906665,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "slow_wave",
+    "reason": "It has the best trajectory-level CV NMSE (0.00139), well below alternatives; repeated pulse and switching forecasts support history dependence, with no gain from added timescales or nonlinear features.",
+    "prediction": "After input changes, the response will retain a smooth contribution from earlier inputs and relax gradually when input returns to zero.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Past inputs predict responses after switches, consistent with finite-relaxation storage.",
+      "condition_to_check": "No predictive effect of past inputs after controlling current input and state would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"slow_wave\",\"reason\":\"It has the best trajectory-level CV NMSE (0.00139), well below alternatives; repeated pulse and switching forecasts support history dependence, with no gain from added timescales or nonlinear features.\",\"prediction\":\"After input changes, the response will retain a smooth contribution from earlier inputs and relax gradually when input returns to zero.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Past inputs predict responses after switches, consistent with finite-relaxation storage.\",\"condition_to_check\":\"No predictive effect of past inputs after controlling current input and state would weaken this relation.\"}}",
+    "input_tokens": 3680,
+    "output_tokens": 134,
+    "batch_elapsed_seconds": 4.3991791578009725,
+    "amortized_seconds": 4.3991791578009725,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3680,
+      "completion_tokens": 134,
+      "total_tokens": 3814
+    },
+    "api_response_id": "resp_09db31f23baac38a016ae59a8ebc788194a3c350f476920312",
+    "wire_record": "wire/eval/0502_0e54bb360bf848f8acaf99b6f41a2649"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793430390401036646,
+  "http_status": 200,
+  "body": {
+    "id": "resp_090b07854c405c41016ae59374e0748197a3f44f902dbc2021",
+    "object": "chat.completion",
+    "created": 1793430390,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"ramp_reverse\",\"reason\":\"Memory_slow has the lowest leave-trajectory-out error (0.00137), substantially outperforming alternatives; observed post-input decay and improved forecasts support slow history dependence. Residual lag correlation leaves some uncertainty.\",\"prediction\":\"After input returns to zero, output will retain a history-dependent offset that relaxes over seconds; matched current input and output can still yield different subsequent trajectories.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated input and output history predict finite carryover and relaxation across tested interventions.\",\"condition_to_check\":\"At matched current input and output, differing prior inputs should predict different subsequent outputs beyond measurement noise.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3682,
+      "completion_tokens": 148,
+      "total_tokens": 3830
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.433673119172454
+}

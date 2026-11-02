@@ -1,0 +1,42 @@
+{
+  "time_ns": 1793431505939844912,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "prbs",
+    "reason": "Memory-clock has the lowest trajectory-held-out error (0.00163), far below the state model (0.129); persistent post-input responses support history dependence, but do not establish an independent clock.",
+    "prediction": "After irregular input switches, the response will retain input-history dependence; a repeatable oscillation at the same elapsed times across different inputs would instead support a clock component.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated input history predicts persistent response after the input returns to zero.",
+      "condition_to_check": "Compare predictions across PRBS trajectories; the relation weakens if history adds no predictive value after controlling current input and state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"prbs\",\"reason\":\"Memory-clock has the lowest trajectory-held-out error (0.00163), far below the state model (0.129); persistent post-input responses support history dependence, but do not establish an independent clock.\",\"prediction\":\"After irregular input switches, the response will retain input-history dependence; a repeatable oscillation at the same elapsed times across different inputs would instead support a clock component.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts persistent response after the input returns to zero.\",\"condition_to_check\":\"Compare predictions across PRBS trajectories; the relation weakens if history adds no predictive value after controlling current input and state.\"}}",
+    "input_tokens": 2824,
+    "output_tokens": 242,
+    "batch_elapsed_seconds": 3.2420696215704083,
+    "amortized_seconds": 3.2420696215704083,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2824,
+      "completion_tokens": 242,
+      "total_tokens": 3066,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 90
+      }
+    },
+    "api_response_id": "resp_06c76e6f53505194016ae597cf6a908193a434af00cbeb4b86",
+    "wire_record": "wire/eval/0122_022e0555b31a41eab7307799c15c503d"
+  }
+}

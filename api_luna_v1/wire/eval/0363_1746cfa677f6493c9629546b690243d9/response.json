@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793430394168232277,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0baaf2807f536e37016ae5937863ac8190acc35b03b9e32f1c",
+    "object": "chat.completion",
+    "created": 1793430394,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"slow_wave\",\"reason\":\"memory_slow has the lowest trajectory-held-out error (0.001646), substantially outperforming alternatives. Repeated PRBS and alternating trials support history dependence, though residual correlation means adequacy for unseen interventions is not certain.\",\"prediction\":\"After a slow-wave input returns to zero, output will show smooth, finite carryover that decays over several seconds.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input and output history predict finite carryover after input changes.\",\"condition_to_check\":\"At matched current input and visible output, history should predict future output; no such effect would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3657,
+      "completion_tokens": 144,
+      "total_tokens": 3801
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.7372584054246545
+}

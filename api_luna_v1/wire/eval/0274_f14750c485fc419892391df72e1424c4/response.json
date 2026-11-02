@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430208910442708,
+  "http_status": 200,
+  "body": {
+    "id": "resp_044f8437aa18ef09016ae592bd7e808194b820fab67cd9e884",
+    "object": "chat.completion",
+    "created": 1793430208,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"slow_wave\",\"reason\":\"Memory_multiscale has the lowest trajectory-level CV NMSE (0.001345), slightly below memory_clock and saturating_memory. Residual lag correlation and failed prior model selections leave adequacy uncertain.\",\"prediction\":\"After the slow wave ends, the response will decay with history-dependent contributions on multiple timescales, not persist as an elapsed-time oscillation.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Post-input responses depend on past inputs, consistent with accumulated history having finite leakage.\",\"condition_to_check\":\"Compare post-wave decay after distinct histories at matched elapsed times; absent history dependence would contradict this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3488,
+      "completion_tokens": 307,
+      "total_tokens": 3795,
+      "completion_tokens_details": {
+        "reasoning_tokens": 159
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.139839140698314
+}

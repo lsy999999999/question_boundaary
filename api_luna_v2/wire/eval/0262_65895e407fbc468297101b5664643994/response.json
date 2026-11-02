@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431717506572663,
+  "http_status": 200,
+  "body": {
+    "id": "resp_09ba8e03a5425ee8016ae598a2e4fc8193ade5a846e38c2e0c",
+    "object": "chat.completion",
+    "created": 1793431717,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"It has the best leave-trajectory-out NMSE, but substantial residual lag correlation and poorer PRBS fit leave adequacy for unseen switching inputs uncertain.\",\"prediction\":\"Under rapid alternating input, output will retain a smooth history-dependent response rather than immediately tracking each switch.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Past input has a predictive effect after input changes, consistent with finite-relaxation accumulated history.\",\"condition_to_check\":\"At matched current input and visible state, compare outputs following different alternating histories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3290,
+      "completion_tokens": 262,
+      "total_tokens": 3552,
+      "completion_tokens_details": {
+        "reasoning_tokens": 137
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.8361878246068954
+}

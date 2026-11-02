@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431609631815508,
+  "http_status": 200,
+  "body": {
+    "id": "resp_05af6b8fdf9440d8016ae598360bd08195892a0044b59a0b64",
+    "object": "chat.completion",
+    "created": 1793431609,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory models substantially outperform the state-only model in trajectory-level validation, and memory_slow has the lowest candidate error. Alternating inputs best probe remaining memory-scale uncertainty.\",\"prediction\":\"After rapid input reversals, the output will retain history-dependent lag rather than track the current input alone.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Accumulated-history features improve prediction, but this does not establish a specific physical mechanism.\",\"condition_to_check\":\"Test whether history predicts output after controlling for current input and visible state across different interventions.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2806,
+      "completion_tokens": 352,
+      "total_tokens": 3158,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 223
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.273103705607355
+}

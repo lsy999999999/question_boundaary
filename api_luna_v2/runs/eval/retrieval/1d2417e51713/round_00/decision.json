@@ -1,0 +1,38 @@
+{
+  "time_ns": 1793431463091827700,
+  "decision": {
+    "representation": "state",
+    "experiment": "prbs",
+    "reason": "The state model has the lowest leave-trajectory-out error and low residual lag correlation; added memory and clock features do not improve validation. PRBS best probes remaining disagreement.",
+    "prediction": "Under PRBS input, the state model will predict responses without systematic residual dependence on earlier inputs once current state and input are accounted for.",
+    "accept": true,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"prbs\",\"reason\":\"The state model has the lowest leave-trajectory-out error and low residual lag correlation; added memory and clock features do not improve validation. PRBS best probes remaining disagreement.\",\"prediction\":\"Under PRBS input, the state model will predict responses without systematic residual dependence on earlier inputs once current state and input are accounted for.\",\"accept\":true}",
+    "input_tokens": 2569,
+    "output_tokens": 210,
+    "batch_elapsed_seconds": 6.735495895147324,
+    "amortized_seconds": 6.735495895147324,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2569,
+      "completion_tokens": 210,
+      "total_tokens": 2779,
+      "prompt_tokens_details": {
+        "cached_tokens": 2432
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 125
+      }
+    },
+    "api_response_id": "resp_01c9f7cd12b8a7ae016ae597a4c58881949c321c73f9941440",
+    "wire_record": "wire/eval/0087_d68de1aa8cee41739f08c970fcdd3e3f"
+  }
+}

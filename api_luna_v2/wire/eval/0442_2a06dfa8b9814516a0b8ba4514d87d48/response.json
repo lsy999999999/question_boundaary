@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432061989850929,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0a98fc670910cdb4016ae599fb05208190b7da1587a1a72e40",
+    "object": "chat.completion",
+    "created": 1793432061,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest trajectory-held-out error (0.00328), substantially better than history_all (0.00409); remaining lag correlation warrants further testing but does not outweigh validation.\",\"prediction\":\"During rapid input switches, output will reflect accumulated input history and elapsed-time phase, not just the current input.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history improves predictive fit beyond current input; memory_clock also includes elapsed-time features.\",\"condition_to_check\":\"Check whether history predicts output after controlling current input, visible state, and elapsed-time phase.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3464,
+      "completion_tokens": 297,
+      "total_tokens": 3761,
+      "completion_tokens_details": {
+        "reasoning_tokens": 161
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.847463723272085
+}

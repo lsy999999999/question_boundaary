@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432017000754769,
+  "http_status": 200,
+  "body": {
+    "id": "resp_09906dac1903a24f016ae599ccc19c819495b9500315cf307b",
+    "object": "chat.completion",
+    "created": 1793432016,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"double_pulse\",\"reason\":\"Clock has the lowest trajectory-level validation error by a wide margin. Post-input oscillations recur across interventions, though residual lag correlation leaves some structure unexplained.\",\"prediction\":\"After the second pulse ends, oscillation phase will remain aligned with elapsed time rather than reset to the pulse.\",\"accept\":true,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time periodic forcing is consistent with oscillations recurring across differently driven trajectories.\",\"condition_to_check\":\"A phase reset tied to the second pulse, rather than alignment by elapsed time, would weaken the clock explanation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3440,
+      "completion_tokens": 347,
+      "total_tokens": 3787,
+      "completion_tokens_details": {
+        "reasoning_tokens": 216
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.100064352154732
+}

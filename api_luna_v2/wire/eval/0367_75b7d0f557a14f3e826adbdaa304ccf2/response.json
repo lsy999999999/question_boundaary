@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431906805051826,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0a329011e3ac41ba016ae5996077288197b129b591c83f3c38",
+    "object": "chat.completion",
+    "created": 1793431906,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Slow-memory has the best trajectory-held-out error, but residual lag-1 correlation remains high. Alternating input has the greatest disagreement among plausible models and can test their response to rapid reversals.\",\"prediction\":\"After each input reversal, the output will retain a history-dependent carryover rather than immediately following the new input.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3131,
+      "completion_tokens": 173,
+      "total_tokens": 3304,
+      "completion_tokens_details": {
+        "reasoning_tokens": 86
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.540916874073446
+}

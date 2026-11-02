@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793432317163207080,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "slow_wave",
+    "reason": "It has the lowest trajectory-level CV error (0.00183), improving on memory_slow (0.00235); the persistent post-input response supports history dependence, though residual lag-1 correlation remains.",
+    "prediction": "After comparable input histories, larger accumulated histories will produce a weaker incremental response than the unsaturated memory model predicts.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Finite-timescale accumulated input history can influence post-input response.",
+      "condition_to_check": "The history-dependent carryover should predict trajectories across input shapes after controlling current state and input."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"slow_wave\",\"reason\":\"It has the lowest trajectory-level CV error (0.00183), improving on memory_slow (0.00235); the persistent post-input response supports history dependence, though residual lag-1 correlation remains.\",\"prediction\":\"After comparable input histories, larger accumulated histories will produce a weaker incremental response than the unsaturated memory model predicts.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Finite-timescale accumulated input history can influence post-input response.\",\"condition_to_check\":\"The history-dependent carryover should predict trajectories across input shapes after controlling current state and input.\"}}",
+    "input_tokens": 3632,
+    "output_tokens": 326,
+    "batch_elapsed_seconds": 7.265829619951546,
+    "amortized_seconds": 7.265829619951546,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3632,
+      "completion_tokens": 326,
+      "total_tokens": 3958,
+      "completion_tokens_details": {
+        "reasoning_tokens": 190
+      }
+    },
+    "api_response_id": "resp_06ffa0c851e69ebb016ae59af98fa88190b8b7c3b7de137d75",
+    "wire_record": "wire/eval/0546_404a863b5b2a4fb8966c4f524d218495"
+  }
+}

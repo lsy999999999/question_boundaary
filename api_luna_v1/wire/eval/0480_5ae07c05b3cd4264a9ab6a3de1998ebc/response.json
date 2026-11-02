@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430685710465872,
+  "http_status": 200,
+  "body": {
+    "id": "resp_047e8566b1a0a3eb016ae5949adb708190a1fb87a1ef801948",
+    "object": "chat.completion",
+    "created": 1793430685,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"slow_wave\",\"reason\":\"State has the lowest trajectory-level validation error, and prior PRBS and alternating forecasts were accurate. Added memory, clock, and nonlinear terms do not improve validation.\",\"prediction\":\"During slow_wave, responses should be explained by current state and input, without residual patterns tied to elapsed time or earlier inputs.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is supported by the observations.\",\"condition_to_check\":\"Check whether slow_wave residuals depend on elapsed time or past inputs after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3450,
+      "completion_tokens": 280,
+      "total_tokens": 3730,
+      "completion_tokens_details": {
+        "reasoning_tokens": 154
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.5690754875540733
+}

@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793423451965556390,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "ramp_reverse",
+    "reason": "Test if slow accumulation affects response to changing input.",
+    "prediction": "Response should show gradual change with delayed peak.",
+    "accept": false,
+    "mapping": {
+      "source_id": "memory_slow",
+      "target_relation": "Slow accumulation should modulate ramp response more than fast memory.",
+      "condition_to_check": "Check if ramp response peaks later and changes more gradually."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"ramp_reverse\",\n  \"reason\": \"Test if slow accumulation affects response to changing input.\",\n  \"prediction\": \"Response should show gradual change with delayed peak.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"memory_slow\",\n    \"target_relation\": \"Slow accumulation should modulate ramp response more than fast memory.\",\n    \"condition_to_check\": \"Check if ramp response peaks later and changes more gradually.\"\n  }\n}",
+    "input_tokens": 3705,
+    "output_tokens": 107,
+    "batch_elapsed_seconds": 2.5656069377437234,
+    "amortized_seconds": 2.5656069377437234,
+    "peak_gpu_allocated_gb": 14.92782735824585,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024242401123047,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

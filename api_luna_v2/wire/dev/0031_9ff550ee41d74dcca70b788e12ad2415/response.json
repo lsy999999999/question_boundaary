@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431236427644262,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0542f81802715223016ae596c155bc81948491637559d0ee27",
+    "object": "chat.completion",
+    "created": 1793431236,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"ramp_reverse\",\"reason\":\"State_cubic has the lowest trajectory-level validation error (0.001545); history-based alternatives perform worse. Residual lag correlation remains, so adequacy under unseen interventions is not established.\",\"prediction\":\"On ramp reversal, response should be explained by current state and input, without a persistent history effect after controlling for them.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Predictive fits do not establish a cross-domain mechanism.\",\"condition_to_check\":\"Test whether accumulated history predicts response after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3265,
+      "completion_tokens": 267,
+      "total_tokens": 3532,
+      "completion_tokens_details": {
+        "reasoning_tokens": 139
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.8125259671360254
+}

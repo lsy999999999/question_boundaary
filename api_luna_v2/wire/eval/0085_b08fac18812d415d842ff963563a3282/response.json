@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431452091909364,
+  "http_status": 200,
+  "body": {
+    "id": "resp_061d354399cfe605016ae59798f780819687f883d771f09843",
+    "object": "chat.completion",
+    "created": 1793431451,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"State has the lowest leave-trajectory-out error; added memory and clock features do not improve validation. Alternating input has the greatest prediction disagreement among plausible models.\",\"prediction\":\"After rapid reversals, the state model predicts no additional history-dependent response once current input and visible state are accounted for.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Current evidence does not justify an additional mechanism relation.\",\"condition_to_check\":\"A repeatable history-dependent response after controlling current input and visible state would challenge the state model.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2816,
+      "completion_tokens": 281,
+      "total_tokens": 3097,
+      "completion_tokens_details": {
+        "reasoning_tokens": 157
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.075623880140483
+}

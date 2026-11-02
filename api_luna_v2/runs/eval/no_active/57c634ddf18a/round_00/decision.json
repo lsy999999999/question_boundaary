@@ -1,0 +1,42 @@
+{
+  "time_ns": 1793431597129785113,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "prbs",
+    "reason": "Memory_clock has the lowest leave-trajectory-out error by a wide margin; strong residual correlation also contradicts the instantaneous state model. PRBS probes varied input histories.",
+    "prediction": "After accounting for input history, residual oscillations should recur at similar elapsed-time phases across interventions.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Elapsed-time periodic features substantially improve prediction beyond accumulated input and state history.",
+      "condition_to_check": "Test whether residual oscillations remain phase-aligned across different input interventions; loss of alignment would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"prbs\",\"reason\":\"Memory_clock has the lowest leave-trajectory-out error by a wide margin; strong residual correlation also contradicts the instantaneous state model. PRBS probes varied input histories.\",\"prediction\":\"After accounting for input history, residual oscillations should recur at similar elapsed-time phases across interventions.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time periodic features substantially improve prediction beyond accumulated input and state history.\",\"condition_to_check\":\"Test whether residual oscillations remain phase-aligned across different input interventions; loss of alignment would weaken this relation.\"}}",
+    "input_tokens": 2805,
+    "output_tokens": 330,
+    "batch_elapsed_seconds": 4.177266839891672,
+    "amortized_seconds": 4.177266839891672,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2805,
+      "completion_tokens": 330,
+      "total_tokens": 3135,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 201
+      }
+    },
+    "api_response_id": "resp_03bae4e9f8faba92016ae5982988788196b85819b370cfa16a",
+    "wire_record": "wire/eval/0189_b98f8a8448084e12af087e048438325c"
+  }
+}

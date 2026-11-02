@@ -1,0 +1,25 @@
+{
+  "time_ns": 1793382012530862676,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "positive_pulse",
+    "reason": "Current NMSE suggests underfitting; multiscale memory may capture transient effects.",
+    "prediction": "Positive pulse will show faster rise and longer decay compared to state-only model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "a0149489bfd3",
+      "target_relation": "Storage element's response to sudden input change.",
+      "condition_to_check": "Consistency of response shape across different pulse durations."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_multiscale\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Current NMSE suggests underfitting; multiscale memory may capture transient effects.\",\n  \"prediction\": \"Positive pulse will show faster rise and longer decay compared to state-only model.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"a0149489bfd3\",\n    \"target_relation\": \"Storage element's response to sudden input change.\",\n    \"condition_to_check\": \"Consistency of response shape across different pulse durations.\"\n  }\n}",
+    "input_tokens": 2034,
+    "output_tokens": 124,
+    "batch_elapsed_seconds": 6.493516576010734,
+    "amortized_seconds": 1.6233791440026835,
+    "peak_gpu_allocated_gb": 15.788522243499756,
+    "model_path": "/home/lsy/theory_discovery_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

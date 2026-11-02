@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793472989839354779,
+  "value": {
+    "family": "reversal_depth",
+    "purpose": "discriminate",
+    "target_ids": [
+      "b4_r2",
+      "b4_r1",
+      "v3_r1"
+    ],
+    "amplitude_range": [
+      0.8,
+      1.2
+    ],
+    "value_range": [
+      0.2,
+      1.5
+    ],
+    "evidence_ids": [
+      "scope:b4_r2:0a130ef02e46",
+      "scope:b4_r1:7bf379dbc522",
+      "scope:v3_r1:ac5b14cbcf08",
+      "prospective:1:v3_r1",
+      "prospective:1:b4_r1"
+    ],
+    "rationale": "No supported boundary is declared for the selected models, so use discrimination rather than a boundary probe. Existing prediction failures show that similar one-reversal schedules can produce large late-trajectory errors, while other trajectories remain well predicted; the current records do not establish a single descriptive-feature boundary. Varying reversal depth directly changes the opposite-pulse magnitude while holding the initial pulse schedule fixed, probing how the models' different latent-memory structures respond. The amplitude range stays within the allowed input limit, and the selected models have distinct fitted structures and held-out behavior (including the marked contrast between b4_r1's poor high-jump predictions and b4_r2's lower grouped-CV NMSE).",
+    "claim": "Across the tested conditioning amplitudes and both signs, reversal-depth variation will yield at least one pair of value levels whose predicted output trajectories differ by the discrimination threshold for at least two selected models; this is a local model-discrimination claim, not a universal law.",
+    "update_if_violated": "If the compiler finds insufficient separation, or observed paired trajectories fail to distinguish the selected models beyond measurement noise, retain no boundary claim and revise the candidate structures or choose a different one-factor family; do not interpret that result as proof that reversal depth is irrelevant."
+  },
+  "generation_records": [
+    {
+      "wire": "wire/008_r2_question_0_0",
+      "valid": true
+    }
+  ]
+}

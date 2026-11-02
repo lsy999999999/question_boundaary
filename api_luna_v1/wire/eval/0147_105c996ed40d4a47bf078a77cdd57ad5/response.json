@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793429970514082074,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0211c33295ac26a2016ae591d0b9188194a4eed10b86632d0b",
+    "object": "chat.completion",
+    "created": 1793429970,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"double_pulse\",\"reason\":\"Saturating memory has the lowest trajectory-level CV error (0.0018), far below the state model; persistent post-input decay supports history dependence, while nonlinear history may improve on multiscale memory.\",\"prediction\":\"The second positive pulse will produce a smaller incremental peak than the first if accumulated history saturates the response.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts lingering output after input returns to zero, consistent with finite-relaxation storage.\",\"condition_to_check\":\"After matching current input and output, different prior pulse histories should predict distinct subsequent responses; otherwise this storage relation is unsupported.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2804,
+      "completion_tokens": 149,
+      "total_tokens": 2953
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.832427343353629
+}

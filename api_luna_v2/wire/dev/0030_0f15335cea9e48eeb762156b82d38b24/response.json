@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431233310226831,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0f7539adb2bd85af016ae596bed4148196be6937d1b758cf8c",
+    "object": "chat.completion",
+    "created": 1793431233,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest trajectory-held-out NMSE, but residual lag correlation remains and alternating inputs can test its history dynamics against plausible alternatives.\",\"prediction\":\"Memory_slow will predict the alternating trajectory better than memory_fast, particularly after rapid input switches.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2659,
+      "completion_tokens": 226,
+      "total_tokens": 2885,
+      "completion_tokens_details": {
+        "reasoning_tokens": 152
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.170805008150637
+}

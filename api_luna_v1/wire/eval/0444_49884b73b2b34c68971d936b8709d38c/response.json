@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430585220846082,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0661f96afaf42440016ae59435584c81909a50a23a36ef1c65",
+    "object": "chat.completion",
+    "created": 1793430585,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"Memory_multiscale improves trajectory-level validation over memory_slow with fewer terms than the slightly better saturating_memory model; persistent post-input decay supports history dependence.\",\"prediction\":\"Under irregular input reversals, accumulated history will predict output beyond current input and state, with responses relaxing over multiple timescales.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Persistent post-input response is consistent with accumulated past influence that relaxes over time.\",\"condition_to_check\":\"In PRBS trials, test whether history predicts output after controlling current input and visible state; failure weakens this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3265,
+      "completion_tokens": 383,
+      "total_tokens": 3648,
+      "completion_tokens_details": {
+        "reasoning_tokens": 242
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.612793943844736
+}

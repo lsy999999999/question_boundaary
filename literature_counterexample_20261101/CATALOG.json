@@ -1,0 +1,312 @@
+{
+  "as_of": "2026-11-01",
+  "papers": [
+    {
+      "id": "R01",
+      "title": "Automated Statistical Model Discovery with Language Models",
+      "venue": "ICML 2024",
+      "status": "conference",
+      "url": "https://proceedings.mlr.press/v235/li24v.html",
+      "reading_level": "selected_full_text",
+      "evidence_files": [
+        "raw/boxes_pmlr.txt",
+        "raw/boxes_full.txt"
+      ],
+      "relevance_and_limits": "Box’s Loop：生成概率程序、拟合、后验预测检查、批评后修订；主要使用已有数据。"
+    },
+    {
+      "id": "R02",
+      "title": "Hypothesis Generation with Large Language Models",
+      "venue": "NLP4Science 2024 workshop",
+      "status": "workshop",
+      "url": "https://aclanthology.org/2024.nlp4science-1.10/",
+      "reading_level": "selected_full_text",
+      "evidence_files": [
+        "raw/hypogenic_acl.txt",
+        "raw/hypogenic_full.txt"
+      ],
+      "relevance_and_limits": "HypoGeniC：维护错误样本库，依据现有假说解释不了的样本生成新假说；分类任务。"
+    },
+    {
+      "id": "R03",
+      "title": "LLM-SR: Scientific Equation Discovery via Programming with Large Language Models",
+      "venue": "ICLR 2025",
+      "status": "conference",
+      "url": "https://iclr.cc/virtual/2025/poster/28487",
+      "reading_level": "selected_full_text",
+      "evidence_files": [
+        "raw/iclr2025_program.txt",
+        "raw/llmsr_abs.txt",
+        "raw/llmsr_full.txt"
+      ],
+      "relevance_and_limits": "LLM生成方程骨架、数值优化参数、分数驱动迭代与候选多样性；主要为给定数据的方程发现。"
+    },
+    {
+      "id": "R04",
+      "title": "Automated Hypothesis Validation with Agentic Sequential Falsifications",
+      "venue": "ICML 2025",
+      "status": "conference",
+      "url": "https://proceedings.mlr.press/v267/huang25n.html",
+      "reading_level": "selected_full_text",
+      "evidence_files": [
+        "raw/popper_pmlr.txt",
+        "raw/popper_full.txt"
+      ],
+      "relevance_and_limits": "LLM Popper：设计/执行可测含义的反证检验，序贯统计聚合证据；验证自由文字假说，不等于自动生成新机制。"
+    },
+    {
+      "id": "R05",
+      "title": "AI-Newton: A Concept-Driven Physical Law Discovery System without Prior Physical Knowledge",
+      "venue": "Physical Review Research 2026 (Crossref registration)",
+      "status": "journal_metadata_confirmed",
+      "url": "https://doi.org/10.1103/dvvc-4rsr",
+      "reading_level": "selected_preprint_full_text",
+      "evidence_files": [
+        "raw/newton_crossref.json",
+        "raw/newton_abs.txt",
+        "raw/newton_full.txt"
+      ],
+      "relevance_and_limits": "跨实验显式概念与规律库；旧一般规律在新实验失败时，通过符号回归增加项并推广；使用非LLM符号发现。出版网页请求404，期刊信息依据Crossref，正文依据arXiv。"
+    },
+    {
+      "id": "R06",
+      "title": "Model Discovery Agent: LLM-assisted Bayesian experiment design for data-efficient discovery of mechanistic world models",
+      "venue": "2026 preprint; ICLR 2027 submission, not acceptance",
+      "status": "preprint_under_review",
+      "url": "https://arxiv.org/abs/2608.09696",
+      "reading_level": "selected_full_text",
+      "evidence_files": [
+        "raw/latest_model_discovery.txt",
+        "raw/latest_model_discovery_full.txt",
+        "raw/boxing_openreview.json"
+      ],
+      "relevance_and_limits": "MDA：预测失败触发开放模型空间扩展，支持潜在ODE/SDE、贝叶斯推断、实验信息价值；与本项目高度重合。"
+    },
+    {
+      "id": "R07",
+      "title": "Bayesian Model Discovery with Language Models: Closing the Loop between Hypotheses and Experiments",
+      "venue": "2026-10-19 arXiv preprint",
+      "status": "preprint",
+      "url": "https://arxiv.org/abs/2610.25747",
+      "reading_level": "selected_full_text",
+      "evidence_files": [
+        "raw/latest_bayesian.txt",
+        "raw/latest_bayesian_v1.txt"
+      ],
+      "relevance_and_limits": "BMD：LLM提出模型族，数值拟合与证据加权，联合模型/参数信息增益选实验，残差反馈、去重、结构恢复评估。"
+    },
+    {
+      "id": "R08",
+      "title": "EvoBelief: Falsifiable World Models for Self-Improving LLM Agents",
+      "venue": "2026-10-08 arXiv preprint",
+      "status": "preprint",
+      "url": "https://arxiv.org/abs/2610.12789",
+      "reading_level": "selected_full_text",
+      "evidence_files": [
+        "raw/latest_evobelief.txt",
+        "raw/latest_evobelief_v1.txt"
+      ],
+      "relevance_and_limits": "可证伪规则、证据账本、事前测试条件、适用范围、反例后的收缩/降级/撤回；本轮没有核实正式发表。"
+    },
+    {
+      "id": "R09",
+      "title": "Learning programs by learning from failures",
+      "venue": "Machine Learning 2021, 110:801–856",
+      "status": "journal",
+      "url": "https://link.springer.com/article/10.1007/s10994-020-05934-z",
+      "reading_level": "selected_full_text",
+      "evidence_files": [
+        "raw/cegis_ml.txt"
+      ],
+      "relevance_and_limits": "ILP Popper：generate-test-constrain，用失败剪除假说及其某些泛化/特化；不要与R04的LLM Popper混淆。"
+    },
+    {
+      "id": "R10",
+      "title": "BoxingGym: Benchmarking Progress in Automated Experimental Design and Model Discovery",
+      "venue": "SEA workshop @ NeurIPS 2025",
+      "status": "workshop",
+      "url": "https://openreview.net/forum?id=TgobzsU03X",
+      "reading_level": "selected_full_text",
+      "evidence_files": [
+        "raw/boxing_abs.txt",
+        "raw/boxing_full.txt",
+        "raw/boxing_openreview.json"
+      ],
+      "relevance_and_limits": "10类环境，评测实验信息增益、预测和解释传达；非NeurIPS主会论文，OpenReview标记非archival选项。"
+    },
+    {
+      "id": "R11",
+      "title": "DiscoveryWorld: A Virtual Environment for Developing and Evaluating Automated Scientific Discovery Agents",
+      "venue": "NeurIPS 2024 Datasets and Benchmarks (author acceptance note and index)",
+      "status": "conference_author_note",
+      "url": "https://arxiv.org/abs/2406.06769",
+      "reading_level": "abstract_and_venue_metadata",
+      "evidence_files": [
+        "raw/discoveryworld_abs.txt"
+      ],
+      "relevance_and_limits": "可交互虚拟科学发现环境；本轮未精读方法全文。"
+    },
+    {
+      "id": "R12",
+      "title": "DiscoveryBench: Towards Data-Driven Discovery with Large Language Models",
+      "venue": "ICLR 2025",
+      "status": "conference",
+      "url": "https://iclr.cc/virtual/2025/poster/32050",
+      "reading_level": "abstract_and_venue_metadata",
+      "evidence_files": [
+        "raw/discoverybench_abs.txt",
+        "raw/discoverybench_openreview.json",
+        "raw/iclr2025_program.txt"
+      ],
+      "relevance_and_limits": "跨学科给定数据的多步骤发现；不要等同于能主动干预未知物理系统的基准。"
+    },
+    {
+      "id": "R13",
+      "title": "SciMON: Scientific Inspiration Machines Optimized for Novelty",
+      "venue": "ACL 2024 main long papers",
+      "status": "conference",
+      "url": "https://aclanthology.org/2024.acl-long.18/",
+      "reading_level": "abstract_and_venue_metadata",
+      "evidence_files": [
+        "raw/scimon_acl.txt"
+      ],
+      "relevance_and_limits": "检索科学灵感、与既有论文比较、迭代提升想法新颖性；新颖性指标不同于可执行模型不等价或实验确认。"
+    },
+    {
+      "id": "R14",
+      "title": "MOOSE-Chem: Large Language Models for Rediscovering Unseen Chemistry Scientific Hypotheses",
+      "venue": "ICLR 2025",
+      "status": "conference",
+      "url": "https://iclr.cc/virtual/2025/poster/29319",
+      "reading_level": "abstract_and_venue_metadata",
+      "evidence_files": [
+        "raw/moose_abs.txt",
+        "raw/iclr2025_program.txt"
+      ],
+      "relevance_and_limits": "检索灵感、组合假说、排序；在51篇新化学论文对应任务上重发现，摘要不支持通用新理论创造已解决的结论。"
+    },
+    {
+      "id": "R15",
+      "title": "ResearchAgent: Iterative Research Idea Generation over Scientific Literature with Large Language Models",
+      "venue": "NAACL 2025 main long papers",
+      "status": "conference",
+      "url": "https://aclanthology.org/2025.naacl-long.342/",
+      "reading_level": "abstract_and_venue_metadata",
+      "evidence_files": [
+        "raw/researchagent_acl.txt"
+      ],
+      "relevance_and_limits": "文献/概念图辅助构思，多LLM评审迭代；主要是想法质量评测而非执行完新实验。"
+    },
+    {
+      "id": "R16",
+      "title": "Accelerating scientific discovery with Co-Scientist",
+      "venue": "Nature 2026, 655:487–496; online 2026-05-19",
+      "status": "journal",
+      "url": "https://www.nature.com/articles/s41586-026-10644-y",
+      "reading_level": "abstract_and_publication_metadata",
+      "evidence_files": [
+        "raw/co_scientist_crossref.json",
+        "raw/co_scientist_nature_retry.txt"
+      ],
+      "relevance_and_limits": "生成、批评、锦标赛进化假说，三类生物医学场景，部分体外验证；有真实验证不意味着agent数量本身带来因果收益。"
+    },
+    {
+      "id": "R17",
+      "title": "Combining data and theory for derivable scientific discovery with AI-Descartes",
+      "venue": "Nature Communications 2023, 14:1777",
+      "status": "journal",
+      "url": "https://www.nature.com/articles/s41467-023-37236-y",
+      "reading_level": "selected_full_text",
+      "evidence_files": [
+        "raw/ai_descartes_nature.txt"
+      ],
+      "relevance_and_limits": "结合符号回归和逻辑公理，在相近数据误差的候选间用逻辑推导区分；需要给定背景理论与表示语言。"
+    },
+    {
+      "id": "R18",
+      "title": "Mathematical discoveries from program search with large language models",
+      "venue": "Nature 2024, 625:468–475; online 2023-12-14",
+      "status": "journal",
+      "url": "https://www.nature.com/articles/s41586-023-06924-6",
+      "reading_level": "abstract_and_publication_metadata",
+      "evidence_files": [
+        "raw/funsearch_nature.txt"
+      ],
+      "relevance_and_limits": "FunSearch：LLM程序搜索加可靠外部评价；部分数学任务有超越既有结果的发现，非物理实验机制修订的直接解法。"
+    },
+    {
+      "id": "R19",
+      "title": "One Example Shown, Many Concepts Known! Counterexample-Driven Conceptual Reasoning in Mathematical LLMs",
+      "venue": "ICML 2025",
+      "status": "conference",
+      "url": "https://proceedings.mlr.press/v267/li25ax.html",
+      "reading_level": "abstract_and_venue_metadata",
+      "evidence_files": [
+        "raw/countermath_pmlr.txt",
+        "raw/concept_counterexamples.txt"
+      ],
+      "relevance_and_limits": "COUNTERMATH评测/训练数学反例构造；需区分形式反例与带噪声经验反例。"
+    },
+    {
+      "id": "R20",
+      "title": "Strong Inference",
+      "venue": "Science 1964, 146:347–353",
+      "status": "journal",
+      "url": "https://doi.org/10.1126/science.146.3642.347",
+      "reading_level": "metadata_only",
+      "evidence_files": [
+        "raw/platt_crossref.json"
+      ],
+      "relevance_and_limits": "多竞争假说和区分性实验的经典线索；本轮未精读原文，不将其作为通用发现算法的保证。"
+    },
+    {
+      "id": "R21",
+      "title": "Discrimination Among Mechanistic Models",
+      "venue": "Technometrics 1967",
+      "status": "journal",
+      "url": "https://doi.org/10.1080/00401706.1967.10490441",
+      "reading_level": "metadata_only",
+      "evidence_files": [
+        "raw/box_hill_crossref.json"
+      ],
+      "relevance_and_limits": "模型区分实验设计的经典线索；本轮核对题名、作者及出处。"
+    },
+    {
+      "id": "R22",
+      "title": "The Automation of Science",
+      "venue": "Science 2009",
+      "status": "journal",
+      "url": "https://doi.org/10.1126/science.1165620",
+      "reading_level": "abstract_and_publication_metadata",
+      "evidence_files": [
+        "raw/robot_crossref.json"
+      ],
+      "relevance_and_limits": "Robot Scientist Adam：自主提出酵母功能基因组学假说并自动实验，作者另以人工实验确认结论。"
+    },
+    {
+      "id": "R23",
+      "title": "Combinatorial sketching for finite programs",
+      "venue": "ASPLOS 2006 / ACM SIGARCH Computer Architecture News 34(5)",
+      "status": "conference_journal_record",
+      "url": "https://doi.org/10.1145/1168919.1168907",
+      "reading_level": "metadata_and_abstract_only",
+      "evidence_files": [
+        "raw/cegis_crossref.json"
+      ],
+      "relevance_and_limits": "反例引导合成的经典邻近文献；本轮只核对元数据/摘要，形式验证前提不能直接套到带噪声科学数据。"
+    },
+    {
+      "id": "R24",
+      "title": "Science-Gym: a simple testbed for AI-driven scientific discovery",
+      "venue": "Machine Learning 2026, 115:16",
+      "status": "journal",
+      "url": "https://doi.org/10.1007/s10994-025-06914-x",
+      "reading_level": "metadata_and_index_abstract",
+      "evidence_files": [
+        "raw/sciencegym_crossref.json",
+        "raw/boxinggym.json"
+      ],
+      "relevance_and_limits": "七类物理/流行病环境，结合数据采集、实验设计与方程发现；全文获取失败，本轮不下详细方法判断。"
+    }
+  ]
+}

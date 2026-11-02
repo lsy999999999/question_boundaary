@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793432258560894467,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "double_pulse",
+    "reason": "Memory_slow has the lowest leave-trajectory-out error among candidates, narrowly outperforming multiscale and memory_clock with fewer coefficients. State-only models perform much worse; observed post-pulse recovery supports history dependence.",
+    "prediction": "After the second pulse ends, output will retain a decaying dependence on both pulses, differing from a single-pulse history at matched current input.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "History-dependent prediction is supported, but no specific cross-domain mechanism is established.",
+      "condition_to_check": "Matched visible states after distinct input histories should retain predictive differences that relax during rest."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"Memory_slow has the lowest leave-trajectory-out error among candidates, narrowly outperforming multiscale and memory_clock with fewer coefficients. State-only models perform much worse; observed post-pulse recovery supports history dependence.\",\"prediction\":\"After the second pulse ends, output will retain a decaying dependence on both pulses, differing from a single-pulse history at matched current input.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"History-dependent prediction is supported, but no specific cross-domain mechanism is established.\",\"condition_to_check\":\"Matched visible states after distinct input histories should retain predictive differences that relax during rest.\"}}",
+    "input_tokens": 3738,
+    "output_tokens": 273,
+    "batch_elapsed_seconds": 3.299021979793906,
+    "amortized_seconds": 3.299021979793906,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3738,
+      "completion_tokens": 273,
+      "total_tokens": 4011,
+      "completion_tokens_details": {
+        "reasoning_tokens": 128
+      }
+    },
+    "api_response_id": "resp_06c4678962e0d65f016ae59abf58a881949406ff734b2fe33f",
+    "wire_record": "wire/eval/0521_20ce1c00374c4b249bc4da2dbeb81eaf"
+  }
+}

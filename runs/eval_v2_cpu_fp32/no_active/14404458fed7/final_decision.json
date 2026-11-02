@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793413340076895242,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "step_rest",
+    "reason": "Step rest shows clear memory effects; validate current fit.",
+    "prediction": "Response should exhibit sustained memory effects post-step.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Persistent response after step due to accumulated past states.",
+      "condition_to_check": "Sustained response magnitude and decay rate post-step."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_multiscale\",\n  \"experiment\": \"step_rest\",\n  \"reason\": \"Step rest shows clear memory effects; validate current fit.\",\n  \"prediction\": \"Response should exhibit sustained memory effects post-step.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Persistent response after step due to accumulated past states.\",\n    \"condition_to_check\": \"Sustained response magnitude and decay rate post-step.\"\n  }\n}",
+    "input_tokens": 2930,
+    "output_tokens": 106,
+    "batch_elapsed_seconds": 346.329127242323,
+    "amortized_seconds": 86.58228181058075,
+    "peak_gpu_allocated_gb": 0.0,
+    "backend": "cpu-fp32",
+    "peak_process_ram_gb": 35.00399398803711,
+    "model_path": "/home/lsy/theory_discovery_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

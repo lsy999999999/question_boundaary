@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430669147046687,
+  "http_status": 200,
+  "body": {
+    "id": "resp_09e45ca0da625f87016ae5948958888195942620c73fb80603",
+    "object": "chat.completion",
+    "created": 1793430669,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow retains the best trajectory-level validation error (0.00225), but substantial residual lag-1 correlation leaves adequacy uncertain; alternatives validate worse.\",\"prediction\":\"During rapid reversals, output will change smoothly and retain a history-dependent tail after the input switches.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts finite-timescale persistence after current input changes.\",\"condition_to_check\":\"At matched current input and visible state, past input should still predict output; failure would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3506,
+      "completion_tokens": 318,
+      "total_tokens": 3824,
+      "completion_tokens_details": {
+        "reasoning_tokens": 190
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.406262349337339
+}

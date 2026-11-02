@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423854249042821,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "positive_pulse",
+    "reason": "Memory_slow has lowest CV NMSE and shows best generalization on plausible representations.",
+    "prediction": "Positive pulse will show slower recovery compared to state-only model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Persistent state after input removal indicates storage.",
+      "condition_to_check": "Recovery time constant should be longer than input duration."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Memory_slow has lowest CV NMSE and shows best generalization on plausible representations.\",\n  \"prediction\": \"Positive pulse will show slower recovery compared to state-only model.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Persistent state after input removal indicates storage.\",\n    \"condition_to_check\": \"Recovery time constant should be longer than input duration.\"\n  }\n}",
+    "input_tokens": 3155,
+    "output_tokens": 110,
+    "batch_elapsed_seconds": 2.535927918739617,
+    "amortized_seconds": 2.535927918739617,
+    "peak_gpu_allocated_gb": 14.829248905181885,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431249714716404,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0876641bd2fd9e1c016ae596ce23d081939c52c190e4e48533",
+    "object": "chat.completion",
+    "created": 1793431249,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest trajectory-held-out error by a wide margin, and recent forecasts remain accurate. Residual lag correlation leaves some uncertainty about adequacy for unseen interventions.\",\"prediction\":\"At matched elapsed times, outputs under alternating input will retain a similar late negative drift despite differing input histories.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time features predict shared output variation across observed input trajectories, without establishing an independent driver.\",\"condition_to_check\":\"If late drift differs substantially across interventions at matched elapsed times, the shared elapsed-time relation is weakened.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3264,
+      "completion_tokens": 377,
+      "total_tokens": 3641,
+      "completion_tokens_details": {
+        "reasoning_tokens": 245
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.28839719388634
+}

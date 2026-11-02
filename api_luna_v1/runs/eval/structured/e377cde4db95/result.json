@@ -1,0 +1,84 @@
+{
+  "task_id": "e377cde4db95",
+  "split": "eval",
+  "family": "delay",
+  "seed": 31,
+  "method": "structured",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_slow",
+    "ridge": 1e-05,
+    "cv_nmse": 0.003232848094399119,
+    "coefficients": [
+      -0.0024583,
+      -1.6572408,
+      1.016627,
+      2.2772134,
+      -8.7425555,
+      -7.470059,
+      -8.404075,
+      10.8067682,
+      15.8583576
+    ]
+  },
+  "test": {
+    "test_nmse": 0.002275708725403622,
+    "test_mse": 0.00015128695696890656,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 0.00018722830656837765,
+        "nmse": 0.0028369166147762886
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.00015273248371614034,
+        "nmse": 0.0005637932385943018
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 0.00012431033820643053,
+        "nmse": 0.004273472704402888
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 0.00018408600479209852,
+        "nmse": 0.002932344596881574
+      },
+      {
+        "action": "test_prbs",
+        "mse": 0.00012799892933240293,
+        "nmse": 0.0017431191352334059
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 0.00013136567919798931,
+        "nmse": 0.0013046060625332755
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": false,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 13216,
+  "output_tokens": 904,
+  "generation_seconds_amortized": 13.939427234232426,
+  "elapsed_wall_seconds": 542.3480696678162,
+  "selected_actions": [
+    "prbs",
+    "alternating",
+    "double_pulse"
+  ],
+  "selected_representations": [
+    "memory_slow",
+    "memory_slow",
+    "memory_slow",
+    "memory_slow"
+  ],
+  "peak_gpu_allocated_gb": 0.0,
+  "peak_process_ram_gb": 0.08880615234375,
+  "inference_backend": "third_party_api",
+  "evaluation_after_commit_ns": 1793430398693604868
+}

@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793430169142981767,
+  "decision": {
+    "representation": "state",
+    "experiment": "double_pulse",
+    "reason": "State has the lowest held-out NMSE, narrowly beating clock, and clock’s advantage did not persist after PRBS. Residual correlation still warrants caution, so adequacy is uncertain.",
+    "prediction": "After each pulse ends, output should decay according to its current state; matching states and inputs should yield matching predictions regardless of elapsed time.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "The observations do not establish an independent clock or a predictive effect of hidden accumulated history.",
+      "condition_to_check": "Reject the state model if double-pulse responses differ at matched state and input, or show systematic residual structure."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"double_pulse\",\"reason\":\"State has the lowest held-out NMSE, narrowly beating clock, and clock’s advantage did not persist after PRBS. Residual correlation still warrants caution, so adequacy is uncertain.\",\"prediction\":\"After each pulse ends, output should decay according to its current state; matching states and inputs should yield matching predictions regardless of elapsed time.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The observations do not establish an independent clock or a predictive effect of hidden accumulated history.\",\"condition_to_check\":\"Reject the state model if double-pulse responses differ at matched state and input, or show systematic residual structure.\"}}",
+    "input_tokens": 3485,
+    "output_tokens": 141,
+    "batch_elapsed_seconds": 2.5024659233167768,
+    "amortized_seconds": 2.5024659233167768,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3485,
+      "completion_tokens": 141,
+      "total_tokens": 3626
+    },
+    "api_response_id": "resp_089eb3d66e6fac10016ae5929763208194bfc8b64bc7d782bd",
+    "wire_record": "wire/eval/0253_2fce97783c854f72976bfca511dd63fb"
+  }
+}

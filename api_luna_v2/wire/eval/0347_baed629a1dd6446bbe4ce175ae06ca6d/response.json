@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431871728245652,
+  "http_status": 200,
+  "body": {
+    "id": "resp_060a5720fda87699016ae5993d16a48193a5a68595fc07649d",
+    "object": "chat.completion",
+    "created": 1793431871,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"Memory_slow has the lowest trajectory-level CV NMSE, but residual lag correlation remains high. A second pulse after partial recovery can test history dependence.\",\"prediction\":\"The second pulse will produce a response altered by the first pulse’s lingering effect, which memory_slow should predict better than a memory-free model.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2806,
+      "completion_tokens": 213,
+      "total_tokens": 3019,
+      "completion_tokens_details": {
+        "reasoning_tokens": 127
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.2610314833000302
+}

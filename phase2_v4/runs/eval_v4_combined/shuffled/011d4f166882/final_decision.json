@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793424065745195224,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "alternating",
+    "reason": "Alternating inputs stress both fast and slow memory components.",
+    "prediction": "Response will alternate between fast and slow phases more clearly.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Distinct fast and slow memory phases should be observable in alternating response.",
+      "condition_to_check": "Phases should differ in rise and decay times compared to single pulse."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_multiscale\",\n  \"experiment\": \"alternating\",\n  \"reason\": \"Alternating inputs stress both fast and slow memory components.\",\n  \"prediction\": \"Response will alternate between fast and slow phases more clearly.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Distinct fast and slow memory phases should be observable in alternating response.\",\n    \"condition_to_check\": \"Phases should differ in rise and decay times compared to single pulse.\"\n  }\n}",
+    "input_tokens": 3976,
+    "output_tokens": 114,
+    "batch_elapsed_seconds": 2.812715115956962,
+    "amortized_seconds": 2.812715115956962,
+    "peak_gpu_allocated_gb": 14.991199016571045,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024013519287109,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

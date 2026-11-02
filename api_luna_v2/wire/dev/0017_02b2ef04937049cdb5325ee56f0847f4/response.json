@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431209181812827,
+  "http_status": 200,
+  "body": {
+    "id": "resp_089e4f036b8950ba016ae596a654d88190bd7103991af738d0",
+    "object": "chat.completion",
+    "created": 1793431209,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow accumulated-history features give the best leave-trajectory-out error (0.00176), far below the state-only model; PRBS best separates the plausible memory representations.\",\"prediction\":\"After PRBS switches to zero input, output will decay gradually and depend on the preceding input sequence.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts persistent output after the current input returns to zero.\",\"condition_to_check\":\"At matched current input and visible output, differing prior inputs should predict differing subsequent trajectories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2807,
+      "completion_tokens": 216,
+      "total_tokens": 3023,
+      "completion_tokens_details": {
+        "reasoning_tokens": 89
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.072365319356322
+}

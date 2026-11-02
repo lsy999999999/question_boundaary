@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430468504208741,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Memory_slow has the best trajectory-held-out error (0.00138), far below the state model (0.109); PRBS has the greatest disagreement among plausible alternatives.",
+    "prediction": "Under PRBS input, the slow-memory model predicts a residual response after input switches that differs from history_all and memory_clock forecasts.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No bibliography card is clearly justified by the model comparison alone.",
+      "condition_to_check": "Test whether PRBS responses follow the slow-memory forecast on held-out trajectories."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the best trajectory-held-out error (0.00138), far below the state model (0.109); PRBS has the greatest disagreement among plausible alternatives.\",\"prediction\":\"Under PRBS input, the slow-memory model predicts a residual response after input switches that differs from history_all and memory_clock forecasts.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No bibliography card is clearly justified by the model comparison alone.\",\"condition_to_check\":\"Test whether PRBS responses follow the slow-memory forecast on held-out trajectories.\"}}",
+    "input_tokens": 2802,
+    "output_tokens": 341,
+    "batch_elapsed_seconds": 3.917033338919282,
+    "amortized_seconds": 3.917033338919282,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2802,
+      "completion_tokens": 341,
+      "total_tokens": 3143,
+      "completion_tokens_details": {
+        "reasoning_tokens": 211
+      }
+    },
+    "api_response_id": "resp_09f9ea421d6eadbc016ae593c143988195b1aa25cb8390b161",
+    "wire_record": "wire/eval/0401_7dda95db14a444479c6026952838c61e"
+  }
+}

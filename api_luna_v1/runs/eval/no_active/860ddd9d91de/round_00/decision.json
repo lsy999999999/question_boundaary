@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430396815819029,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "prbs",
+    "reason": "Memory_clock has the lowest trajectory-held-out error (0.00163), far below the state model (0.129); persistent post-input responses also support history dependence.",
+    "prediction": "After irregular input switches, the output will retain a history-dependent response after the input returns to zero.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated past influence predicts output beyond current input and visible state.",
+      "condition_to_check": "After controlling current input and state, test whether past input improves prediction during post-input decay."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"prbs\",\"reason\":\"Memory_clock has the lowest trajectory-held-out error (0.00163), far below the state model (0.129); persistent post-input responses also support history dependence.\",\"prediction\":\"After irregular input switches, the output will retain a history-dependent response after the input returns to zero.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence predicts output beyond current input and visible state.\",\"condition_to_check\":\"After controlling current input and state, test whether past input improves prediction during post-input decay.\"}}",
+    "input_tokens": 2824,
+    "output_tokens": 295,
+    "batch_elapsed_seconds": 4.287260673940182,
+    "amortized_seconds": 4.287260673940182,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2824,
+      "completion_tokens": 295,
+      "total_tokens": 3119,
+      "completion_tokens_details": {
+        "reasoning_tokens": 170
+      }
+    },
+    "api_response_id": "resp_0d44bad79dcf02ae016ae59379b4408190814dd05ec0c3c5e5",
+    "wire_record": "wire/eval/0364_e7309d3ffb034af6b17e438552390e43"
+  }
+}

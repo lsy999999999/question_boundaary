@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793430387337799207,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Memory models sharply improve leave-trajectory-out error over the state-only model, while memory_slow has the lowest candidate error. Residual lag supports history dependence, not a specific physical mechanism.",
+    "prediction": "After input switches, output will retain a smooth, decaying dependence on earlier inputs rather than respond only to the current input.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated input history can predict output after current input and visible state are controlled.",
+      "condition_to_check": "On PRBS segments with matched current input and output, earlier input history should predict subsequent output; failure weakens this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory models sharply improve leave-trajectory-out error over the state-only model, while memory_slow has the lowest candidate error. Residual lag supports history dependence, not a specific physical mechanism.\",\"prediction\":\"After input switches, output will retain a smooth, decaying dependence on earlier inputs rather than respond only to the current input.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history can predict output after current input and visible state are controlled.\",\"condition_to_check\":\"On PRBS segments with matched current input and output, earlier input history should predict subsequent output; failure weakens this relation.\"}}",
+    "input_tokens": 2830,
+    "output_tokens": 143,
+    "batch_elapsed_seconds": 2.9669245379045606,
+    "amortized_seconds": 2.9669245379045606,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2830,
+      "completion_tokens": 143,
+      "total_tokens": 2973
+    },
+    "api_response_id": "resp_080391dc5c7d9878016ae5937164a8819482f679be29c87034",
+    "wire_record": "wire/eval/0358_942901e4859e431c9cce0c6d69c09314"
+  }
+}

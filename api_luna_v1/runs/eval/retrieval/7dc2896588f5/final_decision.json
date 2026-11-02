@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793430308695738824,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "ramp_reverse",
+    "reason": "It has strong trajectory-level validation (NMSE 0.000847), improves on single-timescale memory, and is more parsimonious than memory_clock, whose slight CV advantage does not justify extra clock features.",
+    "prediction": "After the input reverses, output will retain a decaying influence from the earlier ramp, producing a history-dependent response at the same input.",
+    "accept": true,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"ramp_reverse\",\"reason\":\"It has strong trajectory-level validation (NMSE 0.000847), improves on single-timescale memory, and is more parsimonious than memory_clock, whose slight CV advantage does not justify extra clock features.\",\"prediction\":\"After the input reverses, output will retain a decaying influence from the earlier ramp, producing a history-dependent response at the same input.\",\"accept\":true}",
+    "input_tokens": 3281,
+    "output_tokens": 189,
+    "batch_elapsed_seconds": 3.1464847764000297,
+    "amortized_seconds": 3.1464847764000297,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3281,
+      "completion_tokens": 189,
+      "total_tokens": 3470,
+      "completion_tokens_details": {
+        "reasoning_tokens": 90
+      }
+    },
+    "api_response_id": "resp_020f282904db7ae4016ae59322296881968e6e71edef884503",
+    "wire_record": "wire/eval/0322_a4d6c38085524798abaae4c05610cf01"
+  }
+}

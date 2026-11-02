@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430242826794380,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0ec2fe4db9ddcbba016ae592dfee408196adfdbece26b0b692",
+    "object": "chat.completion",
+    "created": 1793430242,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"Slow-memory has the lowest held-out error among candidates, and prior pulse and PRBS observations show lingering output after input changes. Strong residual correlation leaves adequacy uncertain.\",\"prediction\":\"The second pulse will produce a response influenced by the residual output from the first pulse, including during the interval between pulses.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts lingering output after input returns to zero.\",\"condition_to_check\":\"Compare the between-pulse decay and second-pulse response with predictions from the first pulse's residual history.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3466,
+      "completion_tokens": 275,
+      "total_tokens": 3741,
+      "completion_tokens_details": {
+        "reasoning_tokens": 142
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.653418050147593
+}

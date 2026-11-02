@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431808488427094,
+  "http_status": 200,
+  "body": {
+    "id": "resp_01b9d445b84ba679016ae598fcfb1c819387606d5f2eeca95b",
+    "object": "chat.completion",
+    "created": 1793431808,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"It has far lower leave-trajectory-out error than other candidates, though residual lag correlation suggests remaining structure; alternating input distinguishes it from history_all.\",\"prediction\":\"Under alternating input, outputs will show elapsed-time variation beyond effects predicted by accumulated input history alone.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history improves prediction beyond current input and elapsed-time features.\",\"condition_to_check\":\"Test whether history predicts output after controlling current input, visible state, and elapsed-time phase.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3258,
+      "completion_tokens": 370,
+      "total_tokens": 3628,
+      "completion_tokens_details": {
+        "reasoning_tokens": 250
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.410316267982125
+}

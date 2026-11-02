@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429928992902538,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0f14ca3a975d00e8016ae591a573b881909acf9a5347598813",
+    "object": "chat.completion",
+    "created": 1793429928,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"It has the lowest leave-trajectory-out error (0.00138), far below the current state model, and the decaying post-input response supports accumulated history.\",\"prediction\":\"Under PRBS, output will depend on prior input after controlling current input and state, with carryover relaxing over seconds.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated input and output history can carry past influence forward with finite relaxation.\",\"condition_to_check\":\"At matched current input and output, test whether differing prior inputs predict different subsequent outputs.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2802,
+      "completion_tokens": 263,
+      "total_tokens": 3065,
+      "completion_tokens_details": {
+        "reasoning_tokens": 133
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.234944088384509
+}

@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793432302484096108,
+  "http_status": 200,
+  "body": {
+    "id": "resp_098904c5c58ce272016ae59aecd99c81959c2748871d25077a",
+    "object": "chat.completion",
+    "created": 1793432302,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"slow_wave\",\"reason\":\"It has the lowest trajectory-level CV NMSE (0.001311); more complex alternatives are slightly worse, while state-only models and delay models perform poorly. Residual lag correlation remains, so adequacy is not established.\",\"prediction\":\"After input returns to zero, output will retain a history-dependent tail that decays over multiple timescales.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Leaky accumulated input history predicts output beyond current input and visible state.\",\"condition_to_check\":\"The relation is falsified if past input adds no predictive value after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3686,
+      "completion_tokens": 141,
+      "total_tokens": 3827
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.412475016899407
+}

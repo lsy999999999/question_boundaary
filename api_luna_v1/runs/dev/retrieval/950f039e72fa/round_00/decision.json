@@ -1,0 +1,35 @@
+{
+  "time_ns": 1793429618868555298,
+  "decision": {
+    "representation": "clock",
+    "experiment": "alternating",
+    "reason": "Clock has the lowest leave-trajectory-out error by a wide margin; adding memory worsens validation, and residual drift is similar across distinct inputs.",
+    "prediction": "After alternating input ends, the output will follow the elapsed-time pattern rather than retain a distinct input-history-dependent offset.",
+    "accept": true,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest leave-trajectory-out error by a wide margin; adding memory worsens validation, and residual drift is similar across distinct inputs.\",\"prediction\":\"After alternating input ends, the output will follow the elapsed-time pattern rather than retain a distinct input-history-dependent offset.\",\"accept\":true}",
+    "input_tokens": 2554,
+    "output_tokens": 253,
+    "batch_elapsed_seconds": 4.157675104215741,
+    "amortized_seconds": 4.157675104215741,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2554,
+      "completion_tokens": 253,
+      "total_tokens": 2807,
+      "completion_tokens_details": {
+        "reasoning_tokens": 177
+      }
+    },
+    "api_response_id": "resp_095beabcb3619f04016ae5906ff2c08194bdb38043f0070359",
+    "wire_record": "wire/dev/0010_2cbb9f41862b4370b7a6894831175c73"
+  }
+}

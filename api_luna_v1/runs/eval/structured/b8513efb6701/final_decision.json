@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793430423793991759,
+  "decision": {
+    "representation": "clock",
+    "experiment": "slow_wave",
+    "reason": "Clock has the lowest trajectory-held-out error by a wide margin and forecasts across distinct interventions well. Remaining residual correlation does not outweigh the large validation gap.",
+    "prediction": "Oscillation phase will remain aligned by elapsed time across repeats, even after differing input histories.",
+    "accept": true,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Elapsed-time periodic forcing predicts oscillations shared across differing input interventions.",
+      "condition_to_check": "Input-dependent phase or loss of phase alignment across repeats would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"slow_wave\",\"reason\":\"Clock has the lowest trajectory-held-out error by a wide margin and forecasts across distinct interventions well. Remaining residual correlation does not outweigh the large validation gap.\",\"prediction\":\"Oscillation phase will remain aligned by elapsed time across repeats, even after differing input histories.\",\"accept\":true,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time periodic forcing predicts oscillations shared across differing input interventions.\",\"condition_to_check\":\"Input-dependent phase or loss of phase alignment across repeats would weaken this relation.\"}}",
+    "input_tokens": 3658,
+    "output_tokens": 114,
+    "batch_elapsed_seconds": 3.1132608000189066,
+    "amortized_seconds": 3.1132608000189066,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3658,
+      "completion_tokens": 114,
+      "total_tokens": 3772
+    },
+    "api_response_id": "resp_0533029ffd7765ed016ae59395e0208193bddc73f57c9ec923",
+    "wire_record": "wire/eval/0376_362d9f97e60b49f6a6278d5deb43459d"
+  }
+}

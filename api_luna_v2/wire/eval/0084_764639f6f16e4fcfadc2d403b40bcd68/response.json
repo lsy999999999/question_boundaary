@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431452174580447,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0e4bc07e21c16748016ae597991368819391632b2d7e1df1cf",
+    "object": "chat.completion",
+    "created": 1793431452,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"State has the lowest leave-trajectory-out error (0.00125); added memory, clock, and nonlinear features do not improve validation. Alternating input probes remaining model disagreement.\",\"prediction\":\"After accounting for current state and input, alternating-input observations should show no systematic dependence on earlier inputs.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No additional mechanism relation is supported by the validation results.\",\"condition_to_check\":\"Check whether residuals depend systematically on prior inputs after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2839,
+      "completion_tokens": 272,
+      "total_tokens": 3111,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 150
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.190702861174941
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429611462374032,
+  "http_status": 200,
+  "body": {
+    "id": "resp_008b8b5c847738e9016ae5906891bc8190b16019694e07847b",
+    "object": "chat.completion",
+    "created": 1793429611,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"alternating\",\"reason\":\"State_cubic has the lowest trajectory-level validation error (0.0161 versus 0.0260 for state); strong residual correlation means adequacy remains uncertain.\",\"prediction\":\"Alternating input will produce less extreme responses than a linear state model predicts at large magnitudes.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The improved fit supports adding instantaneous curvature, but does not establish a saturation mechanism.\",\"condition_to_check\":\"Compare responses across amplitudes and signs; reject curvature if it fails to improve held-out trajectories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2793,
+      "completion_tokens": 283,
+      "total_tokens": 3076,
+      "completion_tokens_details": {
+        "reasoning_tokens": 155
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.724434188567102
+}

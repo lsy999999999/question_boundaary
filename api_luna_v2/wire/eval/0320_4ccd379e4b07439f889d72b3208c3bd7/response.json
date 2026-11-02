@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431820758647254,
+  "http_status": 200,
+  "body": {
+    "id": "resp_00a1374b3a144eb9016ae59909b8a08193a8fba1ecc8d7fc0d",
+    "object": "chat.completion",
+    "created": 1793431820,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"State has slightly lower cross-validation error, but the difference is small; slow memory remains competitive and residual lag suggests history may still matter.\",\"prediction\":\"At matched current state and input, the response may differ depending on whether the earlier pulse occurred.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated history modestly improves validation, consistent with a leaky stored influence.\",\"condition_to_check\":\"Test whether earlier-pulse history predicts response after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3485,
+      "completion_tokens": 302,
+      "total_tokens": 3787,
+      "completion_tokens_details": {
+        "reasoning_tokens": 183
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.8591015646234155
+}

@@ -1,0 +1,102 @@
+{
+  "question": {
+    "family": "recovery_gap",
+    "purpose": "discriminate",
+    "target_ids": [
+      "v3_r1",
+      "v3_r2",
+      "b4_r1"
+    ],
+    "amplitude_range": [
+      0.2,
+      1.5
+    ],
+    "value_range": [
+      0,
+      3
+    ],
+    "evidence_ids": [
+      "scope:v3_r1:c179384f8458",
+      "scope:v3_r2:9f0a1c4e1c10",
+      "scope:b4_r1:0d66e0c5b1c6",
+      "failure:v3_r1:c179384f8458:promoted_v3_sealed_3",
+      "failure:v3_r2:9f0a1c4e1c10:promoted_v3_sealed_4"
+    ],
+    "rationale": "No supported single-feature boundary is declared, so this is a discrimination experiment. The active one-trace models v3_r1, v3_r2, and b4_r1 show similar substantial held-out failures on promoted sealed trajectories, especially late residual behavior, despite better predictions on other rows; the evidence does not establish a simple reversal-count boundary. Varying only the zero recovery gap between equal-amplitude opposite pulses probes whether their predictions diverge as the first pulse's influence has more time to evolve before the second pulse. The compiler should select conditioning amplitudes and value levels only where submitted-model predictions meet its separation criterion.",
+    "claim": "For at least one admissible conditioning amplitude and sign, predictions of at least two targeted active models will differ by the required threshold across recovery-gap values in [0,3], making the gap a useful discriminator; this does not assert a physical mechanism or universal law.",
+    "update_if_violated": "If the compiler finds no qualifying separation, or new measured trajectories show the targeted models remain indistinguishable across the chosen gaps, do not infer that recovery gap is irrelevant generally. Revise the model set or select another one-factor family, using the new held-out prediction evidence and retaining the no-supported-boundary status absent specific boundary evidence."
+  },
+  "result": {
+    "passed": true,
+    "actions": [
+      {
+        "points": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.5,
+            -1.5
+          ],
+          [
+            3.5,
+            1.5
+          ],
+          [
+            5.5,
+            0.0
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.5,
+            -1.5
+          ],
+          [
+            3.5,
+            0.0
+          ],
+          [
+            4.5,
+            1.5
+          ],
+          [
+            6.5,
+            0.0
+          ]
+        ]
+      }
+    ],
+    "descriptor": {
+      "family": "recovery_gap",
+      "amplitude": 1.5,
+      "sign": -1,
+      "values": [
+        0.0,
+        1.0
+      ]
+    },
+    "guard": {
+      "passed": true,
+      "contrast_rms": 0.07056987282423094,
+      "minimum_discrimination_rms": 0.021213203435596427,
+      "boundary_labels": [
+        null,
+        null
+      ],
+      "straddles_boundary": false
+    },
+    "considered": 36,
+    "rejected_count": 8,
+    "reasons": {
+      "Predicted separation below 3 noise RMS": 8
+    }
+  }
+}

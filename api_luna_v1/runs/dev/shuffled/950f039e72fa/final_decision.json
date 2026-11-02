@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793429766995030816,
+  "decision": {
+    "representation": "clock",
+    "experiment": "prbs",
+    "reason": "Clock has the lowest leave-trajectory-out NMSE (0.00143), and forecasts remained accurate on alternating, PRBS, and double-pulse trials. No alternative validates better; residual correlation leaves some uncertainty.",
+    "prediction": "Across unseen input sequences, clock should retain low trajectory error; systematic deviations tied to prior input history would falsify this choice.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Elapsed-time features predict well, but the evidence does not establish an independent external driver.",
+      "condition_to_check": "Systematic prediction errors that track prior input history across matched elapsed times would challenge the clock representation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has the lowest leave-trajectory-out NMSE (0.00143), and forecasts remained accurate on alternating, PRBS, and double-pulse trials. No alternative validates better; residual correlation leaves some uncertainty.\",\"prediction\":\"Across unseen input sequences, clock should retain low trajectory error; systematic deviations tied to prior input history would falsify this choice.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Elapsed-time features predict well, but the evidence does not establish an independent external driver.\",\"condition_to_check\":\"Systematic prediction errors that track prior input history across matched elapsed times would challenge the clock representation.\"}}",
+    "input_tokens": 3658,
+    "output_tokens": 141,
+    "batch_elapsed_seconds": 2.5079577043652534,
+    "amortized_seconds": 2.5079577043652534,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3658,
+      "completion_tokens": 141,
+      "total_tokens": 3799
+    },
+    "api_response_id": "resp_053ac7bcacb1a7f9016ae59105324081948160737eee8e72e6",
+    "wire_record": "wire/dev/0080_ad89d04dfb164e8ea3634a9eb6c821ff"
+  }
+}

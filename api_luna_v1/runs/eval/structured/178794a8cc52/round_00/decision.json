@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793429945823071869,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Memory_slow has the lowest trajectory-held-out NMSE (0.00097), far below the current state model (0.019); PRBS provides varied input histories to test whether that advantage generalizes.",
+    "prediction": "After input switches, trajectories with different prior input histories will differ even at matched current input and state; PRBS should expose this history dependence.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated past influence with finite relaxation is a useful predictive relation consistent with the strong memory-model validation improvement.",
+      "condition_to_check": "Test whether PRBS forecasts improve over state-only predictions after controlling current input and visible state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the lowest trajectory-held-out NMSE (0.00097), far below the current state model (0.019); PRBS provides varied input histories to test whether that advantage generalizes.\",\"prediction\":\"After input switches, trajectories with different prior input histories will differ even at matched current input and state; PRBS should expose this history dependence.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence with finite relaxation is a useful predictive relation consistent with the strong memory-model validation improvement.\",\"condition_to_check\":\"Test whether PRBS forecasts improve over state-only predictions after controlling current input and visible state.\"}}",
+    "input_tokens": 2807,
+    "output_tokens": 148,
+    "batch_elapsed_seconds": 2.788200660608709,
+    "amortized_seconds": 2.788200660608709,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2807,
+      "completion_tokens": 148,
+      "total_tokens": 2955
+    },
+    "api_response_id": "resp_077c8445cb80d329016ae591b81da08194bf5426e2fddb61b9",
+    "wire_record": "wire/eval/0131_f86945660f624b42b5f1ea3a4b5d1247"
+  }
+}

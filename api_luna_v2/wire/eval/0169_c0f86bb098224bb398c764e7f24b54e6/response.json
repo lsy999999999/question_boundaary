@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431569268810971,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0c906aaa6f560f88016ae5980e754081948915ece1f3626bd4",
+    "object": "chat.completion",
+    "created": 1793431569,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the lowest trajectory-level CV NMSE (0.00097), far below the state model, while residual lag correlation suggests omitted history dependence.\",\"prediction\":\"After irregular input switches, output will retain a history-dependent response for several seconds after the input returns to zero.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Accumulated input history may act as a leaky stored state that predicts output beyond current input and visible state.\",\"condition_to_check\":\"Under PRBS, test whether past input predicts output after controlling current input and state; no residual effect would falsify this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2807,
+      "completion_tokens": 291,
+      "total_tokens": 3098,
+      "completion_tokens_details": {
+        "reasoning_tokens": 147
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.4624258782714605
+}

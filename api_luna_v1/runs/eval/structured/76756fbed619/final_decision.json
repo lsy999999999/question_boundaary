@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793430346443787028,
+  "decision": {
+    "representation": "state",
+    "experiment": "alternating",
+    "reason": "State has the lowest trajectory-held-out NMSE; cubic, clock, and memory alternatives do not improve validation. Forecast errors are low, but residual lag correlation leaves adequacy uncertain.",
+    "prediction": "At matched current state and input, subsequent predictions should not depend on earlier input history or elapsed time.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Validation supports the compact state representation, but does not establish a distinct storage, transport, saturation, or clock relation.",
+      "condition_to_check": "Reject state if systematic residuals remain or matched state-input conditions yield different subsequent outputs."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"State has the lowest trajectory-held-out NMSE; cubic, clock, and memory alternatives do not improve validation. Forecast errors are low, but residual lag correlation leaves adequacy uncertain.\",\"prediction\":\"At matched current state and input, subsequent predictions should not depend on earlier input history or elapsed time.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Validation supports the compact state representation, but does not establish a distinct storage, transport, saturation, or clock relation.\",\"condition_to_check\":\"Reject state if systematic residuals remain or matched state-input conditions yield different subsequent outputs.\"}}",
+    "input_tokens": 3716,
+    "output_tokens": 133,
+    "batch_elapsed_seconds": 2.9967342857271433,
+    "amortized_seconds": 2.9967342857271433,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3716,
+      "completion_tokens": 133,
+      "total_tokens": 3849
+    },
+    "api_response_id": "resp_0e430dabe24718e3016ae5934861888196a9c8f7ccaf376f72",
+    "wire_record": "wire/eval/0335_4fb57e03dbd149b58b095320c7036e9c"
+  }
+}

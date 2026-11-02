@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793432338500046434,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "prbs",
+    "reason": "It has the lowest leave-trajectory-out NMSE by a wide margin; history_all is the next-best alternative but substantially worse. Residual correlation remains, so adequacy for unseen interventions is not established.",
+    "prediction": "After zero-input onset, predictions will retain a shared elapsed-time oscillatory component across different input histories.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "The strong fit supports a predictive clock-plus-history representation, but does not establish an independent external driver.",
+      "condition_to_check": "Compare zero-input responses after distinct histories at matched elapsed times; history-dependent differences would challenge a clock contribution."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"prbs\",\"reason\":\"It has the lowest leave-trajectory-out NMSE by a wide margin; history_all is the next-best alternative but substantially worse. Residual correlation remains, so adequacy for unseen interventions is not established.\",\"prediction\":\"After zero-input onset, predictions will retain a shared elapsed-time oscillatory component across different input histories.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The strong fit supports a predictive clock-plus-history representation, but does not establish an independent external driver.\",\"condition_to_check\":\"Compare zero-input responses after distinct histories at matched elapsed times; history-dependent differences would challenge a clock contribution.\"}}",
+    "input_tokens": 3661,
+    "output_tokens": 140,
+    "batch_elapsed_seconds": 2.9385282024741173,
+    "amortized_seconds": 2.9385282024741173,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3661,
+      "completion_tokens": 140,
+      "total_tokens": 3801
+    },
+    "api_response_id": "resp_033372207f654168016ae59b10d33c8193abd6631b52dc83ff",
+    "wire_record": "wire/eval/0557_0f61161bed8345c597c56d1023a3ebe2"
+  }
+}

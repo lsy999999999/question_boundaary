@@ -1,0 +1,175 @@
+{
+  "recognition": "No specific target study recognized. The returned source IDs/titles are present in the supplied input; assessment is based on their supplied abstracts, not independent full-text review.",
+  "summary": "S_multiphase_wetting_domains returned four usable abstracts and one excluded record. S3 supports only the broad relation that RNA sequence/structure/modifications correlate with RNA crowding/condensate behavior; S1 is a protein-context relation about composition/miscibility and molecular/environmental modulation. S2 is general crowding; S4 concerns coacervate protocell growth/division. None states a relation connecting RNA mixture partitioning to internal dilute-domain nucleation or persistence, so G_mix_to_internal_domain remains open and the bridge remains a hypothesis. C05 ran successfully but is illustrative, not fitted: for fixed x it gives q*=qmax*r/(r+kc), r=kf*max(x-xc,0), and the carryover model has identical q dynamics under matched effective r. Thus observed q(t) cannot distinguish the causal driver; a matched factorial composition/carryover perturbation is needed. Evidence refs: S_multiphase_wetting_domains_S1-S4, C05, C01-C04, E02, initial_measurements.json.",
+  "candidates": [
+    {
+      "id": "RNA_mix_partition_cavity_v3",
+      "target": "Explain emergence and persistence of B cavity q(t), deriving a discriminating prediction versus carryover-driven global phase change.",
+      "known_relations": [
+        "A/B q(t) diverge after similar initial values; at 24 h A=0.00446 and B=0.08918 (initial_measurements.json).",
+        "C02 time fits are descriptive and model-sensitive; the 36/48 h commitment lacks preparation-level uncertainty.",
+        "C01 reference DNA read fraction is 0.9466 and listed variant reads total 0.05 (sum 0.9966); repeat-rich alignments are nonunique, and DNA frequency is not RNA abundance or active valence.",
+        "E02 purified length-fraction endpoints differ (M nearly zero q, M+L/M+S higher q), but use one preparation, unequal fields, and no precise RNA mixing fractions.",
+        "C04 phase concentrations are tie-line endpoints with broad rectangle-propagated ranges, not confidence intervals; no phase volumes or mapping to q.",
+        "C03 does not provide persistent per-droplet cavity-state/area trajectories.",
+        "S_multiphase_wetting_domains_S3 abstract review associates RNA sequence, structure, and modifications with RNA-mediated crowding/condensate behavior, without an internal-domain relation or quantitative law.",
+        "S_multiphase_wetting_domains_S1 abstract review describes protein condensate composition/miscibility responding to molecular or environmental changes; this is protein context and does not establish an RNA cavity mechanism.",
+        "S_multiphase_wetting_domains_S2 abstract discusses general molecular crowding without a partition-to-cavity relation; S4 discusses coacervate protocell compartmentalization/growth/division, not cavities inside transcribing RNA droplets.",
+        "C05 executed successfully with illustrative, unfitted parameter ranges. qss ranges across the grid were 0 at x=0; 0 to 0.499002 at x=0.1; 0 to 0.499750 at x=0.25; 0 to 0.499889 at x=0.5; and 0.033333 to 0.499947 at x=1. All were reported within the global [0,0.5] bound; the analytical expression bounds qss within each chosen qmax.",
+        "C05 carryover examples matched effective rates (0.02 h^-1 and 5 h^-1) and yielded identical q dynamics; this is model equivalence, not evidence favoring either driver."
+      ],
+      "hypotheses": [
+        "NEW, provisional bridge hypothesis: changing reference/variant RNA composition with composition-dependent partitioning can move the local mixture across a demixing threshold, nucleating an internal dilute domain; interfacial cost and slow exchange may permit persistence. This bridge is not demonstrated by the returned abstracts or measurements."
+      ],
+      "gaps": [
+        {
+          "id": "G_mix_to_internal_domain",
+          "status": "open",
+          "description": "No matched time series links RNA proportions/phase composition to cavity nucleation and persistence; returned abstracts do not supply this relation or the interfacial/exchange conditions."
+        }
+      ],
+      "variables_units": {
+        "t": "time, h",
+        "q": "mean per-object cavity area / filled droplet area, dimensionless [0,1]",
+        "x": "variant RNA fraction among total RNA, dimensionless [0,1], unmeasured",
+        "xc": "hypothesized threshold in x, dimensionless [0,1], unknown",
+        "kf": "effective formation coefficient, h^-1, unknown",
+        "kc": "effective collapse coefficient, h^-1, unknown",
+        "qmax": "upper bound/state scale for q, dimensionless [0,1], unknown",
+        "c": "hypothetical carryover driver, units depend on actual chemical assay",
+        "cc": "hypothetical carryover threshold, same units as c",
+        "r": "effective formation rate, h^-1"
+      },
+      "equations": [
+        "Unclosed phenomenological model: dq/dt=kf*max(x-xc,0)*(qmax-q)-kc*q. It does not derive x(t), thermodynamics, or internal topology.",
+        "For fixed x and kc>0, r=kf*max(x-xc,0), q*=qmax*r/(r+kc), and q(t)=q*+(q0-q*)exp(-(r+kc)t). If x<=xc, r=0 and q(t)=q0*exp(-kc*t), with decay half-life ln(2)/kc.",
+        "Carryover alternative: dq/dt=kg*max(c-cc,0)*(qmax-q)-kc*q. If kg*max(c-cc,0)=kf*max(x-xc,0), trajectories are identical; q(t) alone cannot identify the driver.",
+        "For a measured phase species i, Ki=Ci,dense/Ci,dilute only when the dilute concentration is positive; no supported mapping from Ki to q."
+      ],
+      "parameters_ranges": {
+        "qmax": "[0,1], physical bound only; not fitted",
+        "xc": "[0,1], unknown; no empirical bound",
+        "kf": "positive h^-1; unmeasured; C05 used illustrative 0.1-10 h^-1",
+        "kc": "positive h^-1; unmeasured; C05 used illustrative 0.001-0.1 h^-1",
+        "x": "[0,1]; C05 grid {0,0.1,0.25,0.5,1} is illustrative, not observed"
+      },
+      "initial_boundary_conditions": "q(0) observed around 0.014 in A and B; x(0), phase geometry and interfaces are unknown. No spatial condition is specified, so this is not a spatially closed model.",
+      "observation_mapping": "q maps only to the supplied mean per-object segmented empty-area fraction. It is not concentration, volume fraction, or ratio of total dark area to total filled area. x, c, and time-varying phase concentrations are unmeasured.",
+      "alternatives": [
+        "Carryover or other reaction conditions drive a global phase-state change; the same mathematical form explains q(t).",
+        "Population turnover, field sampling, or segmentation changes mean q while individual cavity state is stable; tracking does not establish within-droplet cavity trajectories."
+      ],
+      "predictions": [
+        "At matched carryover and total RNA, titrating measured RNA mixture fraction should shift q onset/steady state if composition is causal; fixed x above xc predicts q* increasing with x and below xc predicts decay toward zero.",
+        "Factorially vary composition and measured carryover. A pure composition mechanism predicts residual composition dependence under matched carryover; a pure carryover mechanism predicts response to carryover at fixed composition. Matching effective rates explains why observational q(t) alone cannot discriminate.",
+        "If q rises while x is constant, the specific changing-composition driver is weakened; after x falls below xc, this model predicts exponential relaxation with half-life ln(2)/kc."
+      ],
+      "checks": [
+        "C05 executed, returncode 0, stderr empty; it was an illustrative conditional calculation, not a fit or physical estimate.",
+        "Analytical fixed-driver solution has units dq/dt=h^-1; r,kf,kc are h^-1 and x,xc,q,qmax are dimensionless.",
+        "For nonnegative rates, q*=qmax*r/(r+kc) is in [0,qmax]; x<=xc gives q*=0 for kc>0; kc->0 at r>0 gives q*->qmax; kf=0 gives exponential decay.",
+        "C05 grid qss minima/maxima by x: 0: [0,0]; 0.1: [0,0.499001996]; 0.25: [0,0.499750125]; 0.5: [0,0.499888914]; 1: [0.033333333,0.499947374]. Grid uses qmax {0.1,0.5}, xc {0.05,0.5}, kf {0.1,10} h^-1, kc {0.001,0.1} h^-1.",
+        "C05 carryover checks gave identical effective rates in both examples; values of c and cc are arbitrary illustrative units, not measured chemical concentrations.",
+        "C05 code checked qss against the global max qmax=0.5, not each grid row individual qmax; the closed-form formula itself guarantees qss<=the selected qmax. No temporal integration or comparison to measured q was performed.",
+        "C04 tie-line 0 variant partition ratio is undefined because both dilute and dense concentrations are zero."
+      ],
+      "evidence_conflicts": [
+        "E02 is compatible with a mixture effect but is not a controlled dose-response and does not measure RNA composition over time.",
+        "C04 endpoint partitions and abstract literature do not explain internal geometry, nucleation, or persistence.",
+        "A/B are confounded by possible carryover; q is an image metric and tracking does not identify persistent within-droplet cavity state."
+      ],
+      "untested": [
+        "Whether variant DNA is transcribed into stable RNA, its abundance over time, or its functional valence.",
+        "Cavity phase identity, 3D geometry, interface energy, wetting, and exchange rate.",
+        "Whether changing composition controls q with carryover and total RNA matched.",
+        "Whether any literature relation transfers to this engineered four-arm construct."
+      ],
+      "dissent": [
+        "C05 is valid as a conditional ODE calculation, but its parameter ranges are intentionally broad and the global-bound check is weaker than checking each row against its own qmax; the analytical bound resolves that mathematical point. It supplies no empirical mechanism evidence."
+      ],
+      "next_task": "Executor/leader: seek direct background evidence on nested/internal domains in RNA or biomolecular condensates and conditions for wetting/nucleation; returned S1-S4 abstracts do not close G_mix_to_internal_domain. Then decide whether further retrieval is useful; composition/carryover factorial perturbation remains the discriminating test.",
+      "version": 1,
+      "author": "executor",
+      "reply": "R2"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T_mix_internal_domain_literature",
+      "candidate_id": "RNA_mix_partition_cavity_v3",
+      "gap_id": "G_mix_to_internal_domain",
+      "kind": "mechanism",
+      "status": "open",
+      "deliverable": "Evaluate literature for a relation connecting mixture-dependent partitioning with internal dilute-domain formation or persistence; map conditions and transfer limits.",
+      "acceptance": "Cite supplied source IDs; distinguish abstract-only support; state variables/units and conditions; say whether sources change the model; retain alternatives.",
+      "evidence_refs": [
+        "S_multiphase_wetting_domains_S1",
+        "S_multiphase_wetting_domains_S2",
+        "S_multiphase_wetting_domains_S3",
+        "S_multiphase_wetting_domains_S4",
+        "C05",
+        "C01",
+        "C03",
+        "C04",
+        "E02",
+        "initial_measurements.json"
+      ],
+      "reason": "The returned abstracts do not support the missing relation; an open literature gap remains."
+    }
+  ],
+  "requests": [
+    {
+      "type": "search",
+      "id": "S_internal_domains_rna_condensates",
+      "candidate_id": "RNA_mix_partition_cavity_v3",
+      "gap_id": "G_mix_to_internal_domain",
+      "missing_relation": "Direct evidence or a stated physical relation for internal/nested dilute domains inside RNA or biomolecular condensates, and the conditions (composition, wetting/interfacial tensions, nucleation or exchange) that govern their formation and persistence.",
+      "variables": [
+        "phase composition, units as reported",
+        "interfacial tension/wetting, units as reported",
+        "internal-domain size, units as reported",
+        "nucleation or exchange time, units as reported",
+        "RNA species/mixture composition, fraction or concentration as reported"
+      ],
+      "conditions": "First publication on or before 2025-05-12; exclude target identity and post-cutoff accounts; separate direct RNA evidence from other biomolecular systems and mark abstract-only support.",
+      "query": "RNA condensate nested internal domains internal compartments multiphase phase separation wetting",
+      "change_if_found": "Change the candidate only if retrieved evidence directly links stated conditions to internal-domain formation/persistence. Transfer from other systems only as a marked hypothesis; otherwise keep the gap open."
+    }
+  ],
+  "literature_use": [
+    {
+      "source_id": "S_multiphase_wetting_domains_S3",
+      "action": "modify_as_hypothesis",
+      "relation": "The supplied review abstract links RNA sequence, structure, and chemical modifications with RNA-mediated crowding/condensate behavior.",
+      "variables_units": "RNA sequence/structure/modifications and condensate behavior; no quantitative units or law supplied.",
+      "conditions": "RNA granules/biological condensates under physiological conditions; abstract-only. It does not address this engineered RNA, internal domains, or cavity kinetics.",
+      "impact_on_model_or_action": "Supports broad plausibility that RNA composition matters, but does not support the mixture-to-cavity bridge; retain as an explicitly new hypothesis."
+    },
+    {
+      "source_id": "S_multiphase_wetting_domains_S1",
+      "action": "modify_as_hypothesis",
+      "relation": "The supplied protein review abstract describes condensate composition and multiphase miscibility as modulated by internal molecular changes and external physical stimuli.",
+      "variables_units": "Protein composition/miscibility; no units or quantitative relation in abstract.",
+      "conditions": "Protein-derived condensates/materials; abstract-only and cross-system transfer to RNA requires matching interactions and interfacial conditions.",
+      "impact_on_model_or_action": "General motivation only; no evidence for internal dilute-domain nucleation in RNA."
+    },
+    {
+      "source_id": "S_multiphase_wetting_domains_S2",
+      "action": "reject",
+      "relation": "The supplied abstract describes general macromolecular crowding and supplies no partition-to-cavity relation.",
+      "variables_units": "Macromolecular crowding; no quantitative variables/units stated.",
+      "conditions": "General crowding review; abstract-only.",
+      "impact_on_model_or_action": "No model change."
+    },
+    {
+      "source_id": "S_multiphase_wetting_domains_S4",
+      "action": "alternative",
+      "relation": "The supplied review discusses coacervate compartmentalization, growth, replication, and division as protocell processes.",
+      "variables_units": "Compartmentalization/growth/division; no quantitative units in abstract.",
+      "conditions": "Coacervate protocell context; abstract-only, no internal cavities in transcribing RNA droplets described.",
+      "impact_on_model_or_action": "Retain compartmentalization as broad alternative context, not support for the proposed internal cavity mechanism."
+    }
+  ],
+  "adjudication": null,
+  "final": null
+}

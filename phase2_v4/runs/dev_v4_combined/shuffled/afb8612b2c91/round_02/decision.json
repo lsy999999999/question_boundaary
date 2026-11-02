@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423740064298701,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "ramp_reverse",
+    "reason": "Memory_slow shows best generalization; ramp_reverse tests accumulation consistency.",
+    "prediction": "Response should gradually increase then decrease, reflecting slow memory accumulation.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Response to ramp should show gradual build-up followed by decay, indicating persistent memory.",
+      "condition_to_check": "Build-up and decay phases should be consistent across ramp_reverse trials."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"ramp_reverse\",\n  \"reason\": \"Memory_slow shows best generalization; ramp_reverse tests accumulation consistency.\",\n  \"prediction\": \"Response should gradually increase then decrease, reflecting slow memory accumulation.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Response to ramp should show gradual build-up followed by decay, indicating persistent memory.\",\n    \"condition_to_check\": \"Build-up and decay phases should be consistent across ramp_reverse trials.\"\n  }\n}",
+    "input_tokens": 3810,
+    "output_tokens": 118,
+    "batch_elapsed_seconds": 2.862599457614124,
+    "amortized_seconds": 2.862599457614124,
+    "peak_gpu_allocated_gb": 14.947502613067627,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.017097473144531,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

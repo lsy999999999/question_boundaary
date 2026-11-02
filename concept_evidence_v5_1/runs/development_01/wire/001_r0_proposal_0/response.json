@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793520365747058197,
+  "body": {
+    "id": "resp_0252642f9f5d2247016ae6f2e925788196abd3b8532ac657b1",
+    "object": "chat.completion",
+    "created": 1793520365,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"parent_id\":\"v3_r2\",\"evidence_ids\":[\"aggregate:v3_r2:89beda8821af\",\"cv:v3_r2:6c443ef32854:b4_r1_experiment_0\",\"cv:v3_r2:2244622d5e0b:b4_r1_experiment_1\",\"cv:v3_r2:05587018a59b:b4_r2_experiment_0\",\"cv:v3_r2:a300e96e99a2:promoted_v4_sealed_1\",\"cv:v3_r2:510541eef845:promoted_v4_sealed_2\",\"local_relation_0\",\"local_relation_1\",\"local_relation_2\"],\"operation\":\"revise\",\"concept\":\"镜像对称的状态记忆基线，保留非比例幅值响应\",\"reason\":\"v3_r2整体组外NMSE为0.041，但多条反转/清零输入高于0.05，且后段静默窗口出现明显偏差。新增一个较快输入迹线，使短时反转及停输入后的记忆可独立调节；奇函数项仍保留记录的局部镜像性质。\",\"spec\":{\"parameters\":[{\"name\":\"p0\",\"lower\":0.05,\"initial\":0.75,\"upper\":1.5},{\"name\":\"p1\",\"lower\":0.05,\"initial\":0.5,\"upper\":1.5}],\"states\":[{\"name\":\"z0\",\"meaning\":\"输入的平滑迹线；解释未验证。\",\"rate\":\"u-p0*z0\"},{\"name\":\"z1\",\"meaning\":\"输入迹线与z0之差的平滑响应；解释未验证。\",\"rate\":\"(u-z0)-p1*z1\"}],\"terms\":[\"x\",\"x**3\",\"tanh(x)\",\"x*tanh(x)**2\",\"u\",\"z0\",\"z1\"]},\"expected_change\":\"让反转与清零后的暂态误差可由第二时间尺度吸收，同时维持幅值非比例和局部镜像兼容性。\",\"analogy\":{\"domain\":\"线性滤波\",\"mapping\":\"两个衰减状态代表不同时间尺度的输入记忆；仅作未验证类比。\"},\"provenance\":\"model_knowledge_unverified\",\"boundary\":{\"model_id\":\"v3_r2\",\"status\":\"abstain\",\"expression\":\"\",\"reason\":\"已见高误差样例多样且窗口残差不对应单一输入条件，现有证据不足以界定全轨迹NMSE超0.05的输入范围。\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 31605,
+      "completion_tokens": 556,
+      "total_tokens": 32161,
+      "prompt_tokens_details": {
+        "cached_tokens": 31488
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.976505937054753
+}

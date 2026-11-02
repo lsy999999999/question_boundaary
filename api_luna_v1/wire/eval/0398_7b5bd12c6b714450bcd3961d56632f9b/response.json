@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430462689902076,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0f3865e433a7b80f016ae593bc3e28819684eed377012bebb5",
+    "object": "chat.completion",
+    "created": 1793430462,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Slow-memory validation error is lowest and far below the state-only model, whose residuals remain strongly correlated. Alternating input best separates plausible history representations.\",\"prediction\":\"After switches, output will retain a slowly decaying influence of earlier inputs rather than tracking only the current input and state.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history can persist and relax after the input returns to zero, consistent with a storage-like predictive representation.\",\"condition_to_check\":\"At matched current input and visible state, earlier input history should predict output; no such effect would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2829,
+      "completion_tokens": 225,
+      "total_tokens": 3054,
+      "completion_tokens_details": {
+        "reasoning_tokens": 84
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.236478865146637
+}

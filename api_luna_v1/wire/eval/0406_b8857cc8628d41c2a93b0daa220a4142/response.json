@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430482155880043,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0e91b55c5f0e0031016ae593ce84588197807b7e183f7fa01d",
+    "object": "chat.completion",
+    "created": 1793430482,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"Slow-memory features modestly improve leave-trajectory-out NMSE over state, and state residuals retain lag-1 correlation; this supports testing accumulated history, though the gain is limited.\",\"prediction\":\"The second pulse response will differ from the first because of accumulated influence from the earlier pulse.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated history improves validation modestly, consistent with a predictive finite-relaxation memory term.\",\"condition_to_check\":\"Reject this relation if the second pulse shows no reproducible history-dependent difference after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3300,
+      "completion_tokens": 283,
+      "total_tokens": 3583,
+      "completion_tokens_details": {
+        "reasoning_tokens": 146
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.709530537948012
+}

@@ -1,0 +1,53 @@
+{
+  "value": {
+    "parent_id": "r0_b0",
+    "evidence_ids": [
+      "failure_r0_experiment_1",
+      "failure_initial_1",
+      "failure_initial_2",
+      "relation_r0_experiment_0_r2_experiment_1"
+    ],
+    "concept": "Input-history trace with state-dependent nonlinear restoring response",
+    "reason": "The input-history model improves group-held-out NMSE over the initial linear model, but its held-out trajectory still has a large late-time error: at zero input it predicts about -0.29 where the observation is about -0.55. The initial model also misses late-time behavior in both polarities. The polarity relation is consistent with a sign-reversed response to noise-scale accuracy, which supports testing an odd nonlinear state term rather than assuming an offset or a physical interpretation for the latent trace. Revise the existing input-history model by adding a cubic x term; this is a testable compact hypothesis, not an established universal law.",
+    "operation": "revise",
+    "spec": {
+      "parameters": [
+        {
+          "name": "p0",
+          "lower": 0.05,
+          "initial": 0.75,
+          "upper": 1.5
+        }
+      ],
+      "states": [
+        {
+          "name": "z0",
+          "meaning": "Decaying trace of prior input, initialized to zero; phenomenological state coordinate.",
+          "rate": "u-p0*z0"
+        }
+      ],
+      "terms": [
+        "1",
+        "x",
+        "u",
+        "z0",
+        "x**3"
+      ]
+    },
+    "observable_consequence": "If the cubic restoring term captures the held-out discrepancy, refitting and group-held-out evaluation should reduce trajectory errors, especially late in zero-input segments, relative to r0_b0, while preserving the observed approximate polarity relation.",
+    "analogy": {
+      "domain": "phenomenological nonlinear dynamical systems",
+      "relation": "Odd nonlinear restoring response added to a model with a decaying input-history coordinate",
+      "mapping": "The observable state x supplies the cubic term x**3; z0 retains the parent model's input-history trace.",
+      "failure_condition": "Reject or revise this hypothesis if grouped held-out trajectories do not improve, if the fitted cubic coefficient is unstable or negligible, or if it worsens polarity-consistent predictions."
+    },
+    "provenance": "model_knowledge_unverified",
+    "limitations": "Only supplied observations support this proposal. The reported failures are held-out trajectory errors, not proof that a cubic term is the cause; no fit or cross-validation result for this revised specification is available. The local polarity relation does not establish a universal symmetry."
+  },
+  "generation_records": [
+    {
+      "wire": "wire/001_r0_proposal_0",
+      "valid": true
+    }
+  ]
+}

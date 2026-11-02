@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431673420799712,
+  "http_status": 200,
+  "body": {
+    "id": "resp_09a20da2da7c7dde016ae59876a6388194bf3726e9d5c7d654",
+    "object": "chat.completion",
+    "created": 1793431673,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"Memory_slow has the lowest trajectory-level CV error; memory alternatives remain plausible, and residual lag leaves some uncertainty about adequacy under unseen interventions.\",\"prediction\":\"The second pulse will produce a different trajectory from an isolated pulse because the first pulse's history persists.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Past input appears to carry predictive influence through a slowly relaxing history state.\",\"condition_to_check\":\"At matched current input and output, different prior histories should predict different subsequent trajectories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3298,
+      "completion_tokens": 249,
+      "total_tokens": 3547,
+      "completion_tokens_details": {
+        "reasoning_tokens": 128
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.551760679110885
+}

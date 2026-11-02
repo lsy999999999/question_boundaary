@@ -1,0 +1,52 @@
+{
+  "value": {
+    "parent_id": "v3_r1",
+    "evidence_ids": [
+      "failure_v3_r1_experiment_1",
+      "outcome_1"
+    ],
+    "concept": "Odd state-dependent response with an additional saturating odd correction",
+    "reason": "The current model underpredicts the magnitude of the negative trajectory in the held-out failure, by roughly 0.065–0.09 across the reported samples (failure_v3_r1_experiment_1). A term x*tanh(x)**2 is odd in x, so it can adjust the response magnitude at larger |x| while preserving the model's reset polarity symmetry. The polarity comparison for v3_r1 is consistent with that symmetry at the noise scale on the tested schedules (outcome_1); this is evidence for the tested inputs, not a universal law.",
+    "operation": "revise",
+    "spec": {
+      "parameters": [
+        {
+          "name": "p0",
+          "lower": 0.05,
+          "initial": 0.75,
+          "upper": 1.5
+        }
+      ],
+      "states": [
+        {
+          "name": "z0",
+          "meaning": "A decaying input trace, initialized at zero; physical interpretation is unverified.",
+          "rate": "u-p0*z0"
+        }
+      ],
+      "terms": [
+        "x",
+        "x**3",
+        "tanh(x)",
+        "x*tanh(x)**2",
+        "u",
+        "z0"
+      ]
+    },
+    "observable_consequence": "If the additional odd correction addresses the held-out discrepancy, refitting should reduce trajectory error for schedules reaching larger |x|, while predictions for reset polarity-reversed inputs should remain sign-reversed. Check both consequences on held-out complete input schedules.",
+    "analogy": {
+      "domain": "odd nonlinear response curves",
+      "relation": "An odd saturating correction changes response magnitude with state amplitude without introducing a polarity preference.",
+      "mapping": "The measured state x is the curve argument, and x*tanh(x)**2 is the proposed odd correction to the fitted rate.",
+      "failure_condition": "The proposal is unsupported if held-out trajectory prediction does not improve, or if polarity-paired outputs depart from sign reversal beyond measurement noise."
+    },
+    "provenance": "model_knowledge_unverified",
+    "limitations": "The proposed term is a testable model revision, not an identified mechanism. Evidence comes from a limited set of schedules; the added term may be redundant with existing terms or fail to generalize."
+  },
+  "generation_records": [
+    {
+      "wire": "wire/007_r2_proposal_0",
+      "valid": true
+    }
+  ]
+}

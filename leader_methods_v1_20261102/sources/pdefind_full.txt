@@ -1,0 +1,427 @@
+
+
+Data-driven discovery of partial differential equations
+
+Skip to main content
+
+ Report GitHub Issue
+ ×
+
+ Title:
+
+Content selection saved. Describe the issue below:
+
+ Description:
+
+ Submit without GitHub
+ Submit in GitHub
+
+ Why HTML?
+
+ Report Issue
+
+ Back to Abstract
+
+ Download PDF
+
+ Contents
+
+ Reading mode
+
+ Colour theme
+
+Abstract
+
+References
+
+ License: arXiv.org perpetual non-exclusive license
+
+arXiv:1609.06401v1 [nlin.PS] 21 Sep 2016
+
+Data-driven discovery of partial differential equations
+Preprint: APS/123-QED
+
+Samuel H. Rudy1, Steven L. Brunton2, Joshua L. Proctor3,
+and J. Nathan Kutz1
+
+Note: Electronic address: shrudy@uw.edu
+
+Affiliation: 1 Department of Applied Mathematics, University of Washington, Seattle, WA. 98195
+
+Affiliation: 2 Department of Mechanical Engineering, University of Washington, Seattle, WA. 98195
+
+Affiliation: 3 Institute for Disease Modeling, , 3150 139th Ave SE, Bellevue, WA 98005
+
+August 24, 2026
+
+Abstract
+
+We propose a sparse regression method capable of discovering the governing partial differential equation(s)
+of a given system by time series measurements in the spatial domain.
+The regression framework relies on sparsity promoting techniques to select the nonlinear and partial derivative terms terms of the governing equations that most accurately represent the data, bypassing a combinatorially large search through all possible candidate models.
+The method balances model complexity and regression accuracy by selecting a parsimonious model via Pareto analysis. Time series measurements can be made in an
+Eulerian framework where the sensors are fixed spatially, or in a Lagrangian framework where the sensors move with the dynamics.
+The method is computationally efficient, robust, and demonstrated to work on a variety of canonical problems of mathematical
+physics including Navier-Stokes, the quantum harmonic oscillator, and the diffusion equation. Moreover, the method is capable of disambiguating between potentially non-unique dynamical terms by using multiple time series taken with different initial data.
+Thus for a traveling wave, the method can distinguish between a linear wave equation or the Korteweg-deVries equation, for instance.
+The method provides a promising new technique for discovering governing equations
+and physical laws in parametrized spatio-temporal systems where first-principles derivations are intractable.
+
+pacs05.45.-a, 05.45.Yv
+
+Data-driven discovery methods, which have been enabled in the last decade by the plummeting cost of sensors, data storage and computational resources, are having a transformative impact on the sciences, enabling a variety of innovations for characterizing high dimensional data generated from experiments.
+Less well understood is how to uncover underlying physical laws and/or governing equations from time series data that exhibit spatio-temporal activity.
+Traditional theoretical methods for deriving the underlying partial differential equations (PDEs) are rooted in conservation laws, physical principles and/or phenomenological behaviors. These first principle derivations lead to many of the canonical models of mathematical physics. However, there remain many complex systems that have eluded quantitative analytic descriptions or even characterization of a suitable choice of variables (e.g. neuroscience, power grid, epidemiology, finance, ecology, etc). We propose an alternative method to derive governing equations based solely on time series data collected at a fixed number of spatial locations.
+Using innovations in sparse regression, we discover the terms of the governing PDE that most accurately represent the
+data from a large library of potential candidate functions.
+Importantly, measurements can be made in an Eulerian framework where the sensors are fixed spatially, or in a Lagrangian framework
+where the sensors move with the dynamics.
+We demonstrate the success of the method by deriving, from time series data alone, many canonical models of
+mathematical physics.
+
+Methods for data-driven discovery of dynamical systems [1] include equation-free modeling [2], empirical dynamic modeling [3, 4], modeling emergent behavior [5], and automated inference of dynamics [6, 7, 8]. In this series of developments, seminal contributions leveraging symbolic regression and an evolutionary algorithm [9, 10] were capable of directly determining nonlinear dynamical system from data.
+More recently, sparsity promoting techniques [11] have
+been used to robustly determine, in a highly efficient computational manner,
+the governing dynamical system [12, 13].
+Both the evolutionary [10] and sparse [12] symbolic regression methods avoid overfitting by selecting parsimonious models that balance model accuracy
+with complexity via Pareto analysis.
+
+Figure 1: Steps in the PDE functional identification of nonlinear dynamics (PDE-FIND) algorithm, applied to infer the Navier-Stokes equation from data. 1a. Data is collected as snapshots of a solution to a PDE. 1b. Numerical derivatives are taken and data is compiled into a large matrix 𝚯\mathbf{\Theta}, incorporating candidate terms for the PDE. 1c. Sparse regressions is used to identify active terms in the PDE. 2a. For large datasets, sparse sampling may be used to reduce the size of the problem. 2b. Subsampling the dataset is equivalent to taking a subset of rows from the linear system in (2). 2c. An identical sparse regression problem is formed but with fewer rows. d. Active terms in ξ\xi are synthesized into a PDE.
+
+The method we present is able to select linear and/or nonlinear terms, including spatial derivatives, resulting in the identification of PDEs from data.
+Previous methods are able to identify ODEs from data, but not partial derivative terms [12].
+Only those terms that are most informative about the dynamics are selected as part of the discovered PDE. The generalization presented here is critically important since the majority of canonical models in mathematical physics contain spatio-temporal dynamics. The addition of spatial structure is nontrivial and requires modification of the methodology and data collection (Eulerian or Lagrangian measurements) in order to circumvent potential ambiguities. The resulting algorithm, PDE functional identification of nonlinear dynamics (PDE-FIND), is applied to numerous canonical models of mathematical physics.
+
+In what follows, we consider a PDE of the form
+
+ut=N⁡(u,ux,ux​x,⋯,x,μ)u_{t}=N(u,u_{x},u_{xx},\cdots,x,\mu)
+
+(1)
+
+where the subscripts denote partial differentiation in either time or space, and N⁡(⋅)N(\cdot) is
+an unknown right-hand side that is generally a nonlinear function of u⁡(x,t)u(x,t), its
+derivatives, and parameters in μ\mu. Our objective is to construct N⁡(⋅)N(\cdot) given time series measurements of the
+system at a fixed number of spatial locations in xx. A key assumption is that the function
+N⁡(⋅)N(\cdot) consists of only a few terms, making it sparse in the space of possible functions.
+As an example, Burgers’ equation (N=−u​ux+μ​ux​xN=-uu_{x}+\mu u_{xx}) and the harmonic oscillator
+(N=−i​μ​x2​u−i​ℏ​ux​x/2N=-i\mu x^{2}u-i\hbar u_{xx}/2) each have two terms.
+Thus sparse regression allows
+one to determine which right hand side terms are non-zero without an intractable (n​pnp-hard) combinatorial brute-force search.
+
+The sparse regression and discovery method (See Fig. 1) begins by first collecting all the spatial, time series data into a single column vector 𝐔∈ℂm​n{\bf U}\in\mathbb{C}^{mn} representing data collected over mm time points and nn spatial locations. We also consider any additional input such as a known potential for the Schrödinger equation, or the magnitude of complex data, in a column vector 𝐐∈ℂm​n{\bf Q}\in\mathbb{C}^{mn}. Next, a library 𝚯⁡(𝐔,𝐐)∈ℂm​n×D{\bf\Theta}({\bf U},{\bf Q})\in\mathbb{C}^{mn\times D} of DD candidate linear and nonlinear terms and partial derivatives for the PDE is constructed. Each column of 𝚯⁡(𝐔,𝐐){\bf\Theta}({\bf U},{\bf Q}) lies in ℂm​n\mathbb{C}^{mn} and contains the values of a candidate term in the PDE across all gridpoints on which data is collected, as illustrated in Fig. 1. For example, a column of 𝚯⁡(𝐔,𝐐){\bf\Theta}({\bf U},{\bf Q}) may be q2​ux​xq^{2}u_{xx}.
+The PDE in this library is:
+
+𝐔t=𝚯⁡(𝐔,𝐐)​ξ.{\bf U}_{t}={\bf\Theta}({\bf U},{\bf Q})\xi.
+
+(2)
+
+Each entry in ξ\xi is a coefficient corresponding to a term in the PDE, and for canonical PDEs, the vector ξ\xi is sparse, meaning that only a few terms are active.
+
+Proper evaluation of the numerical derivatives is the most challenging and critical task for the success of the method. Given the well-known accuracy problems with finite-difference approximations, we instead use polynomial interpolation for differentiating noisy data. The method depends on the degree of polynomial and number of points used. In some cases, filtering the noise via the singular value decomposition is necessary (See Supplementary Materials for details).
+
+In general, we require the sparsest vector ξ\xi that satisfies (2) with a small residual. Instead of an intractable combinatorial search through all possible sparse vector structures, a common technique is to relax the problem to a convex ℓ1\ell_{1} regularized least squares [11]; however, this tends to perform poorly with highly correlated data. Instead, we approximate the problem using candidate solutions to a ridge regression problem with hard thresholding, which we call sequential threshold ridge regression (STRidge in Algorithm 1). For a given tolerance and λ\lambda, this gives a sparse approximation to ξ\xi.
+
+Algorithm 1 STRidge(𝚯,𝐔t,λ,t​o​l,iters\mathbf{\Theta},\mathbf{U}_{t},\lambda,tol,\text{iters})
+
+ξ^=a​r​g​m​i​nξ​‖𝚯​ξ−𝐔t‖22+λ​‖ξ‖22\hat{\xi}=arg\,min_{\xi}\|\mathbf{\Theta}\xi-\mathbf{U}_{t}\|_{2}^{2}+\lambda\|\xi\|_{2}^{2}   # ridge regression
+
+bigcoeffs = {j:|ξ^j|≥t​o​l}\{j:|\hat{\xi}_{j}|\geq tol\}     # select large coefficients
+
+ξ^\hat{\xi}[ ∼\sim bigcoeffs] = 0        # apply hard threshold
+
+ξ^\hat{\xi}[bigcoeffs] = STRidge(𝚯[:,bigcoeffs],𝐔t,tol,iters−1\mathbf{\Theta}[:,\text{bigcoeffs}],\mathbf{U}_{t},tol,\text{iters}-1)
+
+        # recursive call with fewer coefficients
+
+return ξ^\hat{\xi}
+
+We iteratively refine the tolerance of Algorithm 1 to find the best predictor based on the selection criteria,
+
+ξ^=argminξ​‖𝚯⁡(𝐔,𝐐)​ξ−𝐔t‖22+ϵ​κ​(𝚯⁡(𝐔,𝐐))​‖ξ‖0\hat{\xi}=\text{argmin}_{\xi}\|\mathbf{\Theta}(\mathbf{U},\mathbf{Q})\xi-\mathbf{U}_{t}\|_{2}^{2}+\epsilon\kappa(\mathbf{\Theta}(\mathbf{U},\mathbf{Q}))\|\mathbf{\xi}\|_{0}
+
+(3)
+
+where κ⁡(𝚯)\kappa(\mathbf{\Theta}) is the condition number of the matrix 𝚯\mathbf{\Theta}, indicating stronger regularization for ill-posed problems. Penalizing ‖ξ‖0\|\xi\|_{0} discourages over fitting by selecting from the optimal position in a Pareto front.
+
+Figure 2: Inferring the diffusion equation from a single Brownian motion. (a) Time series is broken into many short random walks that are used to construct histograms of the displacement. (b) The Brownian motion trajectory, following the diffusion equation. (c) Parameter error (‖ξ∗−ξ^‖1\|\xi^{*}-\hat{\xi}\|_{1}) vs. length of known time series. Blue symbols correspond to correct identification of the structure of the diffusion model, ut=c​ux​xu_{t}=cu_{xx}.
+
+PDE-FIND differs from previous sparse identification algorithms [12], where high-dimensional data from a PDE is handled by first applying dimensionality reduction, such as proper orthogonal decomposition (POD), to obtain a few dominant coherent structures in the data. Traditionally, an ODE is then identified on the coefficients of these energetic modes, resulting in a model that resembles a Galerkin projection onto POD modes [14]. In contrast, the PDE-FIND algorithm directly identifies the fewest terms required to balance the governing PDE.
+
+As a first demonstration of the method, we consider
+one of the fundamental results of the early 20th century concerning the relationship between random
+walks (Brownian motion) and diffusion. The theoretical connection between these two was first made
+by Einstein in 1905 [15] and was part of the Annus Mirablis papers which lay the foundations of modern
+physics. We use the method proposed here to sample the movement of a random walker, which is
+effectively a Lagrangian measurement coordinate, in order to verify that it can reproduce the well-known diffusion equation. By biasing the random walk, we can also produce the generalization
+of advection-diffusion in one-dimension. Figure 2 shows the success of the method in identifying the correct diffusion model from a random walk trajectory. Given a sufficiently long time series with high enough resolution, the method produces the heat equation for the evolution of the probability distribution function.
+Thus a PDE is derived from a single time series representing discrete measurements of a continuous stochastic process. Specifically, a single time series is broken into pieces to construct a histogram approximating the distribution function of a trajectory’s future position at various timesteps. The resulting function is fit to a PDE using PDE-FIND, thus allowing us to sample Brownian motion in order to derive the diffusion equation.
+
+Figure 3: Inferring nonlinearity via observing solutions at multiple amplitudes. (a) An example 2-soliton solution to the KdV equation. (b) Applying our method to a single soliton solution determines that it solves the standard advection equation. (c) Looking at two completely separate solutions reveals nonlinearity. 
+
+PDE
+Form
+Error (no noise, noise)
+
+Discretization
+
+​​​​ KdV
+ut+6​u​ux+ux​x​x=0u_{t}+6uu_{x}+u_{xxx}=0
+1%±0.2%,7%±5%1\%\!\pm\!0.2\%,7\%\!\pm\!5\%
+
+x∈[−30,30],n=512x\!\!\in\!\![-30,30],n\!\!=\!\!512,
+t∈[0,20],m=201t\!\!\in\!\![0,20],m\!\!=\!\!201
+
+​​​​ Burgers
+ut+u​ux−ϵ​ux​x=0u_{t}+uu_{x}-\epsilon u_{xx}=0
+0.15%±0.06%,0.8%±0.6%0.15\%\!\pm\!0.06\%,0.8\%\!\pm\!0.6\%
+
+x∈[−8,8],n=256x\!\!\in\!\![-8,8],n\!\!=\!\!256,
+t∈[0,10],m=101t\!\!\in\!\![0,10],m\!\!=\!\!101
+
+ ​​​​Schrödinger
+i​ut+12​ux​x−x22​u=0iu_{t}+\frac{1}{2}u_{xx}-\frac{x^{2}}{2}u=0
+0.25%±0.01%,10%±7%0.25\%\!\pm\!0.01\%,10\%\!\pm\!7\%
+
+x∈[−7.5,7.5],n=512x\!\!\in\!\![-7.5,7.5],n\!\!=\!\!512,
+t∈[0,10],m=401t\!\!\in\!\![0,10],m\!\!=\!\!401
+
+​​​​NLS
+i​ut+12​ux​x+|u|2​u=0iu_{t}+\frac{1}{2}u_{xx}+|u|^{2}u=0
+0.05%±0.01%,3%±1%0.05\%\!\pm\!0.01\%,3\%\!\pm\!1\%
+
+x∈[−5,5],n=512x\!\!\in\!\![-5,5],n\!\!=\!\!512,
+t∈[0,π],m=501t\!\!\in\!\![0,\pi],m\!\!=\!\!501
+
+​​​​KS
+ut+u​ux+ux​x+ux​x​x​x=0u_{t}+uu_{x}+u_{xx}+u_{xxxx}=0
+1.3%±1.3%,70%±27%1.3\%\!\pm\!1.3\%,70\%\!\pm\!27\%
+
+x∈[0,100],n=1024x\!\!\in\!\![0,100],n\!\!=\!\!1024,
+t∈[0,100],m=251t\!\!\in\!\![0,100],m\!\!=\!\!251
+
+ u
+
+ ​​​​Reaction
+ut=0.1​∇2u+λ⁡(A)​u−ω⁡(A)​vu_{t}=0.1\nabla^{2}u+\lambda(A)u-\omega(A)v
+
+         Diffusion
+vt=0.1​∇2v+ω⁡(A)​u+λ⁡(A)​vv_{t}=0.1\nabla^{2}v+\omega(A)u+\lambda(A)v
+0.02%±0.01%0.02\%\pm 0.01\%, 3.8%±2.4%3.8\%\pm 2.4\%
+
+x,y∈[−10,10],n=256x,y\!\!\in\!\![-10,10],n\!\!=\!\!256,
+t∈[0,10],m=201t\!\!\in\!\![0,10],m\!\!=\!\!201
+
+ v
+
+A2=u2+v2,ω=−β​A2,λ=−A2A^{2}\!=\!u^{2}\!+\!v^{2}\!,\omega\!\!=\!-\beta A^{2}\!,\lambda\!\!=\!\!1\!-\!A^{2}
+
+subsample 1.14%1.14\%
+
+ ​​​​ Navier Stokes
+ωt+(𝐮⋅∇)ω=1R​e∇2ω\omega_{t}+({\bf u}\cdot\nabla)\omega=\frac{1}{Re}\nabla^{2}\omega
+1%±0.2%1\%\pm 0.2\% , 7%±6%7\%\pm 6\%
+
+x∈[0,9],nx=449x\!\!\in\!\![0,9],n_{x}\!\!=\!\!449,
+y∈[0,4],ny=199y\!\!\in\!\![0,4],n_{y}\!\!=\!\!199,
+
+t∈[0,30],m=151t\!\!\in\!\![0,30],m\!\!=\!\!151, subsample 2.22%2.22\%
+
+Table 1: Summary of regression results for a wide range of canonical modes of mathematical physics. In each example, the correct model structure is identified using PDE-FIND. The spatial and temporal sampling used for the regression is given along with the error produced in the parameters of the model for both no noise and 1% noise. In the reaction-diffusion (RD) system, 0.5% noise is used. For Navier Stokes and Reaction Diffusion, the percent of data used in subsampling is also given.
+
+A second canonical example is the KdV equation modeling the unidirectional propagation of small-amplitude, long water waves or shallow-water waves. Discovered first by Boussinesq in 1877 and later developed by Korteweg and deVries in 1895,
+it was one of the earliest models known to have soliton solutions. One potential viewpoint of the equation
+is as a dispersive regularization of Burgers’ equation. The KdV evolution is given by
+
+ut+6​u​ux+ux​x​x=0,u_{t}+6uu_{x}+u_{xxx}=0\,,
+
+(4)
+
+with soliton solutions taking the form u⁡(x,t)=(c/2)​sech2⁡[(c/2)​(x−c​t−x0)]u(x,t)\!=\!({c}/{2})\mathop{\mbox{\rm sech}}\nolimits^{2}\!\left[({\sqrt{c}}/{2})(x\!-\!ct\!-\!x_{0})\right].
+These solutions propagate with a speed proportional to their amplitude cc. Interestingly, if one observes a single
+propagating soliton, it would be indistinguishable from a solution to the one-way wave equation ut+c​ux=0u_{t}+cu_{x}=0. As such, it presents a challenge to the sparse regression framework as the sparsity promotion would select
+the one-way wave equation over the KdV equation since it has the sparsest representation. This ambiguity in the
+governing PDE is rectified by constructing time series data for more than a single initial amplitude.
+Figure 3 demonstrates the evolution of two KdV solitons of differing amplitudes, which allows for uniquely determining the governing PDE (4).
+
+Table 1 applies the methodology proposed to a wide range of canonical models from mathematical physics. The PDEs selected represent a wide range of physical systems, displaying both Hamiltonian (conservative) dynamics and dissipative nonlinear dynamics along with periodic to chaotic behavior. Aside from the quantum oscillator (3rd row), all the dynamics observed are strongly nonlinear. Remarkably, the method is able to discover each physical system even if significantly subsampled spatially. The space and time sampling required, along with the accuracy in recovering the PDE parameters with and without noise, are detailed in the Table. This highlights the broad applicability of the method and the success of the technique in discovering governing PDEs.
+
+PDE-FIND is a viable, data-driven tool for modern applications where first-principles derivations may be intractable (e.g. neuroscience, epidemiology, dynamical networks), but where new data recordings and sensor technologies are revolutionizing our understanding of physical and/or biophysical processes on spatial domains. To our knowledge, this is the first data-driven regression technique that explicitly accounts for spatial derivatives in discovering physical laws, thus allowing for a regression to an operator on an infinite-dimensional space. The ability to discover physical laws instead of approximate, low-dimensional subspaces enables significantly improved future state predictions as well as the discovery of parametric dependencies. For instance, we can discover the Navier Stokes equation at R​e=100Re=100 and use this knowledge to accurately simulate a fully turbulent system at R​e=10000Re=10000 where no data was collected. This represents a significant paradigm shift when compared with most data-driven, machine learning architectures where accurate predictions can only be made near parameter regimes where the data was sampled.
+
+Code and supplementary material:
+
+https://github.com/snagcliffs/PDE-FIND
+
+References
+
+[1]
+
+J. Crutchfield and
+B. McNamara,
+Comp. sys. 1,
+417 (1987).
+
+[2]
+
+I. Kevrekidis,
+C. Gear,
+J. Hyman,
+P. Kevrekidis,
+O. Runborg, and
+C. Theodoropoulos,
+Comm. Math. Sci. 1,
+715 (2003).
+
+[3]
+
+G. Sugihara,
+R. May,
+H. Ye,
+C.-h. Hsieh,
+E. Deyle,
+M. Fogarty, and
+S. Munch,
+Science
+338, 496 (2012).
+
+[4]
+
+H. Ye,
+R. J. Beamish,
+S. M. Glaser,
+S. C. Grant,
+C.-h. Hsieh,
+L. J. Richards,
+J. T. Schnute,
+and G. Sugihara,
+PNAS 112,
+E1569 (2015).
+
+[5]
+
+A. J. Roberts,
+Model emergent dynamics in complex systems
+(SIAM, 2014).
+
+[6]
+
+M. Schmidt,
+R. Vallabhajosyula,
+J. Jenkins,
+J. Hood,
+A. Soni,
+J. Wikswo, and
+H. Lipson,
+Phys. bio. 8,
+055011 (2011).
+
+[7]
+
+B. Daniels and
+I. Nemenman,
+Nat. comm. 6
+(2015a).
+
+[8]
+
+B. Daniels and
+I. Nemenman,
+PloS one 10,
+e0119821 (2015b).
+
+[9]
+
+J. Bongard and
+H. Lipson,
+PNAS 104, 9943
+(2007).
+
+[10]
+
+M. Schmidt and
+H. Lipson,
+Science 324,
+81 (2009).
+
+[11]
+
+R. Tibshirani,
+J. Roy. Stat. Soc. B p. 267
+(1996).
+
+[12]
+
+S. L. Brunton,
+J. L. Proctor,
+and J. N. Kutz,
+PNAS 113, 3932
+(2016).
+
+[13]
+
+N. M. Mangan,
+S. L. Brunton,
+J. L. Proctor,
+and J. N. Kutz,
+ArXiv e-prints arXiv:1605.08368 (2016).
+
+[14]
+
+P. Holmes,
+J. Lumley,
+G. Berkooz, and
+C. Rowley,
+Turbulence, coherent structures, dynamical systems and
+symmetry (Cambridge, Cambridge,
+England, 2012), 2nd ed.
+
+[15]
+
+A. Einstein,
+Ann. der Physik 17,
+549 (1905).
+
+ Experimental support, please
+ view the build logs
+ for errors. Generated by
+
+ L
+ A
+ T
+ E
+
+ xml
+
+ .
+
+Instructions for reporting errors
+
+We are continuing to improve HTML versions of papers, and your feedback helps enhance accessibility and mobile
+ support. To report errors in the HTML that will help us improve conversion and rendering, choose any of the
+ methods listed below:
+
+Click the "Report Issue" (
+
+ ) button, located in the page header.
+
+Tip: You can select the relevant text first, to include it in your report.
+
+Our team has already identified the following issues. We appreciate your time reviewing and reporting rendering errors we
+ may not have found yet. Your efforts will help us improve the HTML versions for all readers, because disability
+ should not be a barrier to accessing research. Thank you for your continued support in championing open access for
+ all.
+
+Have a free development cycle? Help support accessibility at arXiv! Our collaborators at LaTeXML maintain a list of packages that need conversion, and welcome developer contributions.
+
+ We gratefully acknowledge support from our major funders,
+ member institutions, ,
+ and all contributors.
+
+ About ·
+ Help ·
+ Contact ·
+ Subscribe ·
+ Copyright ·
+ Privacy ·
+ Accessibility ·
+ Operational Status (opens in new tab)
+

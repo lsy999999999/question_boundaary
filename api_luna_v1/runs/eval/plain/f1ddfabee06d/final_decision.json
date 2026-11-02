@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793430311942298131,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "ramp_reverse",
+    "reason": "It has the lowest current leave-trajectory-out NMSE, while added saturation did not improve validation; residual lag remains, so memory is needed. No candidate establishes adequacy for unseen interventions.",
+    "prediction": "During ramp reversal, output will lag the input and depend on accumulated history, with memory_slow forecasting trajectories better than state-only dynamics.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"ramp_reverse\",\"reason\":\"It has the lowest current leave-trajectory-out NMSE, while added saturation did not improve validation; residual lag remains, so memory is needed. No candidate establishes adequacy for unseen interventions.\",\"prediction\":\"During ramp reversal, output will lag the input and depend on accumulated history, with memory_slow forecasting trajectories better than state-only dynamics.\",\"accept\":false}",
+    "input_tokens": 3005,
+    "output_tokens": 90,
+    "batch_elapsed_seconds": 2.6827339055016637,
+    "amortized_seconds": 2.6827339055016637,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3005,
+      "completion_tokens": 90,
+      "total_tokens": 3095
+    },
+    "api_response_id": "resp_05900118dff52914016ae593261460819094fb724929a875bc",
+    "wire_record": "wire/eval/0324_1b92875b1ad24e149ef99162b2218e3b"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793431688404799912,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "alternating",
+    "reason": "Memory_slow has the lowest trajectory-level CV NMSE, but substantial residual lag correlation remains. Alternating input provides a discriminating test of history response under rapid switches.",
+    "prediction": "During rapid reversals, slow-memory predictions will better track recovery than a state-only model, though residual errors may persist.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest trajectory-level CV NMSE, but substantial residual lag correlation remains. Alternating input provides a discriminating test of history response under rapid switches.\",\"prediction\":\"During rapid reversals, slow-memory predictions will better track recovery than a state-only model, though residual errors may persist.\",\"accept\":false}",
+    "input_tokens": 2667,
+    "output_tokens": 82,
+    "batch_elapsed_seconds": 5.404471565969288,
+    "amortized_seconds": 5.404471565969288,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2667,
+      "completion_tokens": 82,
+      "total_tokens": 2749
+    },
+    "api_response_id": "resp_0c86b06197db33f9016ae598874a908196bd193d67b39867ab",
+    "wire_record": "wire/eval/0247_1bdcae881cd04ad19375f0b4b4530a01"
+  }
+}

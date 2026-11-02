@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431923089457910,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "double_pulse",
+    "reason": "Memory-based models substantially outperform state-only models. Multiscale memory has strong trajectory validation; memory_clock’s slight CV advantage does not establish an independent clock, and residual lag correlation remains.",
+    "prediction": "The second pulse will produce a response shaped by residual history from the first pulse, differing from an isolated pulse response.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated input history may carry influence across the gap between pulses.",
+      "condition_to_check": "Check whether first-pulse history predicts the second response beyond current input and visible state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"double_pulse\",\"reason\":\"Memory-based models substantially outperform state-only models. Multiscale memory has strong trajectory validation; memory_clock’s slight CV advantage does not establish an independent clock, and residual lag correlation remains.\",\"prediction\":\"The second pulse will produce a response shaped by residual history from the first pulse, differing from an isolated pulse response.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history may carry influence across the gap between pulses.\",\"condition_to_check\":\"Check whether first-pulse history predicts the second response beyond current input and visible state.\"}}",
+    "input_tokens": 3476,
+    "output_tokens": 317,
+    "batch_elapsed_seconds": 4.533572191372514,
+    "amortized_seconds": 4.533572191372514,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3476,
+      "completion_tokens": 317,
+      "total_tokens": 3793,
+      "completion_tokens_details": {
+        "reasoning_tokens": 184
+      }
+    },
+    "api_response_id": "resp_0c986c661594ff71016ae5996f757481979de6b88b60365ff7",
+    "wire_record": "wire/eval/0374_374b76e8489c43069d9f0691e1ad48a4"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431973524864788,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0ae34cd18d34fa5e016ae599a238c881949c3a08d3e9943e84",
+    "object": "chat.completion",
+    "created": 1793431973,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"Slow memory has the lowest trajectory-held-out error (0.00333), but substantial residual lag and poorer PRBS/alternating fits leave adequacy uncertain. Double pulses probe retained history.\",\"prediction\":\"The second pulse will produce a different response from the first because the first pulse's influence persists through the intervening rest.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Finite-timescale accumulated input history predicts output beyond the current input.\",\"condition_to_check\":\"If the second-pulse response is unchanged after accounting for current input and state, the proposed stored-history relation is weakened.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3471,
+      "completion_tokens": 290,
+      "total_tokens": 3761,
+      "completion_tokens_details": {
+        "reasoning_tokens": 149
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.036505171097815
+}

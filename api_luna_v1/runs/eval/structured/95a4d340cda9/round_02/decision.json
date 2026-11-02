@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430293438425747,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "prbs",
+    "reason": "Saturating memory has the best trajectory-level CV error, though residual autocorrelation and a prior CV deterioration leave uncertainty; PRBS provides varied histories to challenge it.",
+    "prediction": "After matching current input and output, distinct PRBS histories will produce different subsequent responses if memory is predictive.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Persistent decay after input cessation is consistent with accumulated history carrying forward with finite relaxation.",
+      "condition_to_check": "At matched current input and output, different histories should predict distinct subsequent responses; no difference would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"prbs\",\"reason\":\"Saturating memory has the best trajectory-level CV error, though residual autocorrelation and a prior CV deterioration leave uncertainty; PRBS provides varied histories to challenge it.\",\"prediction\":\"After matching current input and output, distinct PRBS histories will produce different subsequent responses if memory is predictive.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Persistent decay after input cessation is consistent with accumulated history carrying forward with finite relaxation.\",\"condition_to_check\":\"At matched current input and output, different histories should predict distinct subsequent responses; no difference would weaken this relation.\"}}",
+    "input_tokens": 3461,
+    "output_tokens": 279,
+    "batch_elapsed_seconds": 3.9001387506723404,
+    "amortized_seconds": 3.9001387506723404,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3461,
+      "completion_tokens": 279,
+      "total_tokens": 3740,
+      "completion_tokens_details": {
+        "reasoning_tokens": 145
+      }
+    },
+    "api_response_id": "resp_062135b88ab62790016ae5931286e0819598f8e898b5955428",
+    "wire_record": "wire/eval/0314_09079cf31bf14dae990d06dff8c18ecb"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423841337699775,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "positive_pulse",
+    "reason": "Memory_clock shows best cross-validation NMSE and low prediction variance for positive_pulse.",
+    "prediction": "Positive pulse will cause a delayed response followed by a persistent oscillation.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "The system exhibits a persistent oscillation after a positive pulse, indicating an external clock mechanism.",
+      "condition_to_check": "Check if the oscillation persists even after removing the input and aligning pulses in time."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_clock\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Memory_clock shows best cross-validation NMSE and low prediction variance for positive_pulse.\",\n  \"prediction\": \"Positive pulse will cause a delayed response followed by a persistent oscillation.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"external_clock\",\n    \"target_relation\": \"The system exhibits a persistent oscillation after a positive pulse, indicating an external clock mechanism.\",\n    \"condition_to_check\": \"Check if the oscillation persists even after removing the input and aligning pulses in time.\"\n  }\n}",
+    "input_tokens": 3133,
+    "output_tokens": 130,
+    "batch_elapsed_seconds": 2.936843788251281,
+    "amortized_seconds": 2.936843788251281,
+    "peak_gpu_allocated_gb": 14.829248905181885,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024013519287109,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

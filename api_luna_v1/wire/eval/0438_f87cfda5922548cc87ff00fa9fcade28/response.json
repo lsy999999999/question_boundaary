@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430573966819802,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0e7a11c386562a05016ae5942a9f608190a9713dcdf6ccf907",
+    "object": "chat.completion",
+    "created": 1793430573,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has much lower leave-trajectory-out NMSE than history_all, and late oscillations recur at similar elapsed times across distinct inputs. Retain it provisionally despite correlated residuals.\",\"prediction\":\"After alternating input ends, oscillations will recur at similar elapsed times and phase as in other interventions.\",\"accept\":true,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Similar late oscillations across distinct interventions are consistent with elapsed-time periodic forcing.\",\"condition_to_check\":\"A reproducible phase shift tied to input history would weaken the independent-clock explanation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3271,
+      "completion_tokens": 280,
+      "total_tokens": 3551,
+      "completion_tokens_details": {
+        "reasoning_tokens": 152
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 9.367230299860239
+}

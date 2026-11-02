@@ -1,0 +1,59 @@
+{
+  "id": "outcome_0",
+  "round": 0,
+  "question": {
+    "kind": "polarity",
+    "purpose": "probe_relation",
+    "target_ids": [
+      "v3_r0"
+    ],
+    "evidence_ids": [
+      "relation_r0_experiment_0_r2_experiment_1",
+      "failure_initial_1",
+      "failure_initial_2",
+      "failure_r0_experiment_1"
+    ],
+    "rationale": "The current best model v3_r0 has only odd-in-state and odd-in-input terms, with a trace driven linearly by u, so it predicts polarity symmetry from reset. The supplied polarity comparison is consistent with this relation at the noise scale, but only for the tested inputs. The held-out failures show the earlier active models can miss trajectory behavior, so test the current model's structural prediction rather than relying on obsolete x/u-only comparisons.",
+    "claim": "For reset trials, the v3_r0 input-output prediction is odd under polarity reversal: applying -u(t) should produce the negative of the trajectory under u(t), including beyond the previously observed input schedules.",
+    "update_if_violated": "If the paired trajectories differ beyond measurement-noise expectations, revise or reject the odd-symmetry assumption in v3_r0; consider adding terms that break polarity symmetry and evaluate them on held-out complete trajectories.",
+    "amplitude_range": [
+      0.2,
+      1.2
+    ],
+    "duration_range": [
+      1.0,
+      4.0
+    ],
+    "scale": 1.5,
+    "tolerance_x": 0.04
+  },
+  "prediction_nmse": {
+    "initial": [
+      1.0823361070274728,
+      1.760533976519378
+    ],
+    "r0_b0": [
+      0.8089958460083532,
+      1.4580982009526304
+    ],
+    "r1_b1": [
+      0.8167319832510158,
+      1.447081783588924
+    ],
+    "v3_r0": [
+      0.09353656109507258,
+      0.09185857314398345
+    ]
+  },
+  "actual_conditions_met": true,
+  "relation_rms": 0.007766659026699184,
+  "expected_noise_rms": 0.007071067811865476,
+  "relation_result": "consistent_at_noise_scale",
+  "predicted_relation_rms": {
+    "initial": 0.1613087522194228,
+    "r0_b0": 0.15378531344216217,
+    "r1_b1": 0.1512708936030338,
+    "v3_r0": 0.0
+  },
+  "interpretation": "Descriptive evidence for these executed inputs, not a universal law or significance certificate."
+}

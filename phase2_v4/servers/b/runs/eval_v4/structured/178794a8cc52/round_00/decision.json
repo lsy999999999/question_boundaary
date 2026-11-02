@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423834858788297,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "positive_pulse",
+    "reason": "Memory_slow has lowest NMSE and shows best generalization.",
+    "prediction": "Positive pulse will cause a delayed increase in state, peaking around 2-4 seconds.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "State increases after input pulse due to accumulated past influence.",
+      "condition_to_check": "No significant change in state during pulse if no storage."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Memory_slow has lowest NMSE and shows best generalization.\",\n  \"prediction\": \"Positive pulse will cause a delayed increase in state, peaking around 2-4 seconds.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"State increases after input pulse due to accumulated past influence.\",\n    \"condition_to_check\": \"No significant change in state during pulse if no storage.\"\n  }\n}",
+    "input_tokens": 3153,
+    "output_tokens": 116,
+    "batch_elapsed_seconds": 2.657194023951888,
+    "amortized_seconds": 2.657194023951888,
+    "peak_gpu_allocated_gb": 14.829248905181885,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

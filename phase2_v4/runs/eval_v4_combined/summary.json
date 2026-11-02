@@ -1,0 +1,230 @@
+{
+  "split": "eval",
+  "complete": true,
+  "expected_tasks_per_method": 24,
+  "methods": {
+    "state_fixed": {
+      "n": 24,
+      "median_test_nmse": 0.020493744836899027,
+      "mean_test_nmse": 0.0678114594821028,
+      "test_nmse_below_0_1": 18,
+      "accepted": 15,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "generation_seconds_amortized": 0,
+      "peak_gpu_allocated_gb": 0.0,
+      "peak_process_ram_gb": 0.0,
+      "final_representations": {
+        "state": 24
+      },
+      "tasks_with_revision": 0
+    },
+    "history_cv": {
+      "n": 24,
+      "median_test_nmse": 0.0003843168270633089,
+      "mean_test_nmse": 0.0008373548638101251,
+      "test_nmse_below_0_1": 24,
+      "accepted": 24,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "generation_seconds_amortized": 0,
+      "peak_gpu_allocated_gb": 0.0,
+      "peak_process_ram_gb": 0.0,
+      "final_representations": {
+        "memory_slow": 7,
+        "memory_multiscale": 2,
+        "state": 3,
+        "clock": 3,
+        "memory_clock": 4,
+        "saturating_memory": 2,
+        "state_cubic": 3
+      },
+      "tasks_with_revision": 10
+    },
+    "plain": {
+      "n": 24,
+      "median_test_nmse": 0.0009676932509193052,
+      "mean_test_nmse": 0.002564763731165497,
+      "test_nmse_below_0_1": 24,
+      "accepted": 24,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 96,
+      "input_tokens": 288626,
+      "output_tokens": 5656,
+      "generation_seconds_amortized": 182.52327196020633,
+      "peak_gpu_allocated_gb": 14.86420726776123,
+      "peak_process_ram_gb": 5.026500701904297,
+      "final_representations": {
+        "memory_multiscale": 4,
+        "state_cubic": 5,
+        "memory_clock": 7,
+        "memory_slow": 4,
+        "saturating_memory": 3,
+        "state": 1
+      },
+      "tasks_with_revision": 13
+    },
+    "retrieval": {
+      "n": 24,
+      "median_test_nmse": 0.0009127927136234961,
+      "mean_test_nmse": 0.002792814016438486,
+      "test_nmse_below_0_1": 24,
+      "accepted": 24,
+      "false_accepted": 0,
+      "invalid_outputs": 0,
+      "generation_calls": 96,
+      "input_tokens": 318001,
+      "output_tokens": 5776,
+      "generation_seconds_amortized": 148.98866735119373,
+      "peak_gpu_allocated_gb": 14.921139240264893,
+      "peak_process_ram_gb": 5.024284362792969,
+      "final_representations": {
+        "memory_multiscale": 7,
+        "memory_slow": 4,
+        "memory_clock": 6,
+        "saturating_memory": 3,
+        "state_cubic": 4
+      },
+      "tasks_with_revision": 14
+    },
+    "structured": {
+      "n": 24,
+      "median_test_nmse": 0.0015717927063027832,
+      "mean_test_nmse": 0.004447817803619106,
+      "test_nmse_below_0_1": 24,
+      "accepted": 24,
+      "false_accepted": 0,
+      "invalid_outputs": 13,
+      "generation_calls": 96,
+      "input_tokens": 346020,
+      "output_tokens": 10848,
+      "generation_seconds_amortized": 259.83820061571896,
+      "peak_gpu_allocated_gb": 14.991811275482178,
+      "peak_process_ram_gb": 5.025672912597656,
+      "final_representations": {
+        "memory_multiscale": 5,
+        "memory_slow": 7,
+        "memory_clock": 5,
+        "saturating_memory": 4,
+        "state": 1,
+        "history_all": 1,
+        "state_cubic": 1
+      },
+      "tasks_with_revision": 12
+    },
+    "no_active": {
+      "n": 24,
+      "median_test_nmse": 0.0009465271851341478,
+      "mean_test_nmse": 0.0015804718270422313,
+      "test_nmse_below_0_1": 24,
+      "accepted": 24,
+      "false_accepted": 0,
+      "invalid_outputs": 22,
+      "generation_calls": 96,
+      "input_tokens": 352212,
+      "output_tokens": 10600,
+      "generation_seconds_amortized": 254.3657344719395,
+      "peak_gpu_allocated_gb": 14.998802661895752,
+      "peak_process_ram_gb": 5.02374267578125,
+      "final_representations": {
+        "memory_multiscale": 3,
+        "memory_slow": 7,
+        "memory_clock": 2,
+        "nonlinear_delay": 2,
+        "history_all": 4,
+        "saturating_memory": 3,
+        "state_cubic": 3
+      },
+      "tasks_with_revision": 14
+    },
+    "shuffled": {
+      "n": 24,
+      "median_test_nmse": 0.0012536422648338887,
+      "mean_test_nmse": 0.004582131009291365,
+      "test_nmse_below_0_1": 24,
+      "accepted": 24,
+      "false_accepted": 0,
+      "invalid_outputs": 14,
+      "generation_calls": 96,
+      "input_tokens": 345918,
+      "output_tokens": 10675,
+      "generation_seconds_amortized": 256.01080696098506,
+      "peak_gpu_allocated_gb": 14.991199016571045,
+      "peak_process_ram_gb": 5.024013519287109,
+      "final_representations": {
+        "memory_multiscale": 4,
+        "memory_slow": 6,
+        "state_cubic": 4,
+        "memory_clock": 5,
+        "saturating_memory": 3,
+        "history_all": 2
+      },
+      "tasks_with_revision": 12
+    }
+  },
+  "total_results": 168,
+  "paired_comparisons": [
+    {
+      "left": "structured",
+      "right": "plain",
+      "paired_tasks": 24,
+      "left_wins": 6,
+      "geometric_nmse_ratio": 1.521780507662283,
+      "descriptive_bootstrap_95_interval": [
+        0.9289840702568002,
+        2.594597080968933
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "retrieval",
+      "paired_tasks": 24,
+      "left_wins": 5,
+      "geometric_nmse_ratio": 1.2154200666017023,
+      "descriptive_bootstrap_95_interval": [
+        0.8345504124041061,
+        1.7209460587824508
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "shuffled",
+      "paired_tasks": 24,
+      "left_wins": 4,
+      "geometric_nmse_ratio": 0.9288378117737566,
+      "descriptive_bootstrap_95_interval": [
+        0.49745317676690815,
+        1.5054841016381395
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "no_active",
+      "paired_tasks": 24,
+      "left_wins": 8,
+      "geometric_nmse_ratio": 1.4624655826344701,
+      "descriptive_bootstrap_95_interval": [
+        0.8806104879248406,
+        2.4745080686349477
+      ]
+    },
+    {
+      "left": "structured",
+      "right": "history_cv",
+      "paired_tasks": 24,
+      "left_wins": 5,
+      "geometric_nmse_ratio": 2.429510086921871,
+      "descriptive_bootstrap_95_interval": [
+        1.3382151317762736,
+        4.761687419056248
+      ]
+    }
+  ]
+}

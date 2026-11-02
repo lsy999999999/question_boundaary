@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793429960811742011,
+  "decision": {
+    "representation": "clock",
+    "experiment": "alternating",
+    "reason": "Clock has the lowest trajectory-level CV error (0.0020), far below state (0.3396); similar late oscillations across distinct inputs support testing elapsed-time effects.",
+    "prediction": "Oscillations should remain phase-aligned to elapsed time despite rapid input switches.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Periodic features of elapsed time predict a shared oscillatory component across interventions.",
+      "condition_to_check": "Compare oscillation phase at matched elapsed times across inputs; phase shifts with input history would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest trajectory-level CV error (0.0020), far below state (0.3396); similar late oscillations across distinct inputs support testing elapsed-time effects.\",\"prediction\":\"Oscillations should remain phase-aligned to elapsed time despite rapid input switches.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Periodic features of elapsed time predict a shared oscillatory component across interventions.\",\"condition_to_check\":\"Compare oscillation phase at matched elapsed times across inputs; phase shifts with input history would weaken this relation.\"}}",
+    "input_tokens": 2790,
+    "output_tokens": 298,
+    "batch_elapsed_seconds": 3.6468147886916995,
+    "amortized_seconds": 3.6468147886916995,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2790,
+      "completion_tokens": 298,
+      "total_tokens": 3088,
+      "completion_tokens_details": {
+        "reasoning_tokens": 171
+      }
+    },
+    "api_response_id": "resp_05900735095ac3ea016ae591c5ddd881959a9143027ceb5d93",
+    "wire_record": "wire/eval/0141_179c536b26ee43fd8d330d45a92f4e55"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "outcome_2",
+  "round": 2,
+  "question": {
+    "kind": "scaling",
+    "purpose": "discriminate",
+    "target_ids": [
+      "v3_r1",
+      "v3_r2"
+    ],
+    "evidence_ids": [
+      "outcome_1",
+      "failure_v3_r1_experiment_1"
+    ],
+    "rationale": "The two active models encode different state-dependent response terms: v3_r1 includes x, x**3, and tanh(x), whereas v3_r2 adds x*tanh(x)**2. Their held-out group NMSE values differ (0.00878 versus 0.01503), so a scaled-input comparison can test whether their predicted departures from proportional response separate on a new schedule. The prior polarity result for v3_r1 is consistent with symmetry only on its tested inputs and does not resolve this difference.",
+    "claim": "For at least one searched input schedule, scaling the input by the chosen factor produces a response whose trajectory differs between v3_r1 and v3_r2 by more than the requested tolerance.",
+    "update_if_violated": "If no adequate separation is found, do not treat that as evidence that the models are equivalent; revise the scaling question or probe a different input regime. If observed trajectories favor one model, update its support using complete-trajectory held-out prediction rather than the latent-variable labels.",
+    "amplitude_range": [
+      0.2,
+      0.9
+    ],
+    "duration_range": [
+      1.0,
+      4.0
+    ],
+    "scale": 1.5,
+    "tolerance_x": 0.04
+  },
+  "prediction_nmse": {
+    "initial": [
+      0.23361376598565392,
+      0.7477433281065231
+    ],
+    "r0_b0": [
+      0.043867683339757414,
+      0.5112458126381327
+    ],
+    "r1_b1": [
+      0.0494181313561944,
+      0.5154596871362059
+    ],
+    "v3_r0": [
+      0.005752209161317958,
+      0.06172712666928405
+    ],
+    "v3_r1": [
+      0.0034685444422279882,
+      0.01082590623132886
+    ],
+    "v3_r2": [
+      0.0034041774598946267,
+      0.007177351424004374
+    ]
+  },
+  "actual_conditions_met": true,
+  "relation_rms": 0.25962673872875874,
+  "expected_noise_rms": 0.009013878188659973,
+  "relation_result": "deviation_above_noise_scale",
+  "predicted_relation_rms": {
+    "initial": 0.03271318638090383,
+    "r0_b0": 0.03101095102005328,
+    "r1_b1": 0.030472030799861063,
+    "v3_r0": 0.3728005563639759,
+    "v3_r1": 0.2265037368982855,
+    "v3_r2": 0.26212490925183785
+  },
+  "interpretation": "Descriptive evidence for these executed inputs, not a universal law or significance certificate."
+}

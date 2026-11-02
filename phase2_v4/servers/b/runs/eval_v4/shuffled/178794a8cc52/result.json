@@ -1,0 +1,84 @@
+{
+  "task_id": "178794a8cc52",
+  "split": "eval",
+  "family": "delay",
+  "seed": 33,
+  "method": "shuffled",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_slow",
+    "ridge": 1e-05,
+    "cv_nmse": 0.0013344292475567963,
+    "coefficients": [
+      0.0006546,
+      -1.7130976,
+      1.0542928,
+      1.0653569,
+      -3.3788578,
+      -0.1216956,
+      -2.3944768,
+      3.7744228,
+      7.6014542
+    ]
+  },
+  "test": {
+    "test_nmse": 0.0007707148147224119,
+    "test_mse": 7.321528171077553e-05,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 7.097985793680482e-05,
+        "nmse": 0.0007817530599566871
+      },
+      {
+        "action": "test_three_step",
+        "mse": 7.027318442774462e-05,
+        "nmse": 0.00014217812806127376
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 6.634899683402403e-05,
+        "nmse": 0.0016128344411076327
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 0.00011575373210995364,
+        "nmse": 0.0012619361751439507
+      },
+      {
+        "action": "test_prbs",
+        "mse": 4.456876755891272e-05,
+        "nmse": 0.0004208091225685191
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 7.136715139721328e-05,
+        "nmse": 0.0004047779614964081
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": true,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 14602,
+  "output_tokens": 451,
+  "generation_seconds_amortized": 10.819289023987949,
+  "elapsed_wall_seconds": 299.33338689804077,
+  "selected_actions": [
+    "double_pulse",
+    "alternating",
+    "ramp_reverse"
+  ],
+  "selected_representations": [
+    "memory_slow",
+    "memory_slow",
+    "memory_slow",
+    "memory_slow"
+  ],
+  "peak_gpu_allocated_gb": 14.991199016571045,
+  "peak_process_ram_gb": 5.024013519287109,
+  "inference_backend": "cuda",
+  "evaluation_after_commit_ns": 1793424084606993837
+}

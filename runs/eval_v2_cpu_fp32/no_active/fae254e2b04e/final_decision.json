@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793413691787510808,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "step_rest",
+    "reason": "Step rest shows best overall NMSE and residual correlation.",
+    "prediction": "System should exhibit a persistent response after step input.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Persistent response indicates storage of past inputs.",
+      "condition_to_check": "Response magnitude should increase with step duration."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_multiscale\",\n  \"experiment\": \"step_rest\",\n  \"reason\": \"Step rest shows best overall NMSE and residual correlation.\",\n  \"prediction\": \"System should exhibit a persistent response after step input.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Persistent response indicates storage of past inputs.\",\n    \"condition_to_check\": \"Response magnitude should increase with step duration.\"\n  }\n}",
+    "input_tokens": 2896,
+    "output_tokens": 102,
+    "batch_elapsed_seconds": 350.79179391637444,
+    "amortized_seconds": 87.69794847909361,
+    "peak_gpu_allocated_gb": 0.0,
+    "backend": "cpu-fp32",
+    "peak_process_ram_gb": 35.00408935546875,
+    "model_path": "/home/lsy/theory_discovery_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

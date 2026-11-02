@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793432033595058585,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "double_pulse",
+    "reason": "memory_slow still has the lowest trajectory-level CV NMSE; prior PRBS and alternating forecasts were accurate, but residual correlation leaves adequacy uncertain. A second pulse tests history dependence.",
+    "prediction": "The second pulse will produce a different response from the first because the first pulse's influence has not fully decayed.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "A leaky stored influence of past input can persist after input changes.",
+      "condition_to_check": "Compare pulse responses at matched input and visible state; no history-dependent difference weakens this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"memory_slow still has the lowest trajectory-level CV NMSE; prior PRBS and alternating forecasts were accurate, but residual correlation leaves adequacy uncertain. A second pulse tests history dependence.\",\"prediction\":\"The second pulse will produce a different response from the first because the first pulse's influence has not fully decayed.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A leaky stored influence of past input can persist after input changes.\",\"condition_to_check\":\"Compare pulse responses at matched input and visible state; no history-dependent difference weakens this relation.\"}}",
+    "input_tokens": 3477,
+    "output_tokens": 383,
+    "batch_elapsed_seconds": 4.344169283285737,
+    "amortized_seconds": 4.344169283285737,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3477,
+      "completion_tokens": 383,
+      "total_tokens": 3860,
+      "completion_tokens_details": {
+        "reasoning_tokens": 247
+      }
+    },
+    "api_response_id": "resp_06c8a54fed8bb090016ae599de174c8195a5c7da7bd7097d0a",
+    "wire_record": "wire/eval/0429_f4d73e6607944af7a8436fafc22f3e80"
+  }
+}

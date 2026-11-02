@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793432319044870499,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "alternating",
+    "reason": "It has the lowest trajectory-held-out error (0.00298), outperforming history_all (0.00381) and all simpler candidates. Earlier held-out forecasts were accurate, though residual lag correlation leaves some uncertainty.",
+    "prediction": "Under rapid alternating input, memory_clock predicts output will vary with both accumulated input history and elapsed-time phase.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated input history improves prediction beyond current input and elapsed-time features.",
+      "condition_to_check": "Falsified if history adds no predictive value after controlling current input, visible state, and elapsed-time phase."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest trajectory-held-out error (0.00298), outperforming history_all (0.00381) and all simpler candidates. Earlier held-out forecasts were accurate, though residual lag correlation leaves some uncertainty.\",\"prediction\":\"Under rapid alternating input, memory_clock predicts output will vary with both accumulated input history and elapsed-time phase.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history improves prediction beyond current input and elapsed-time features.\",\"condition_to_check\":\"Falsified if history adds no predictive value after controlling current input, visible state, and elapsed-time phase.\"}}",
+    "input_tokens": 3687,
+    "output_tokens": 139,
+    "batch_elapsed_seconds": 2.4424540791660547,
+    "amortized_seconds": 2.4424540791660547,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3687,
+      "completion_tokens": 139,
+      "total_tokens": 3826
+    },
+    "api_response_id": "resp_0198ac018c649a07016ae59afd04548197925f15069dbb9895",
+    "wire_record": "wire/eval/0549_7b629616705e42b8b99f319cd3222d77"
+  }
+}

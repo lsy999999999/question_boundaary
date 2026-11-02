@@ -1,0 +1,60 @@
+{
+  "time_ns": 1793471453113358308,
+  "value": {
+    "parent_id": "v3_r1",
+    "evidence_ids": [
+      "scope:v3_r1:c179384f8458",
+      "failure:v3_r1:c179384f8458:promoted_v3_sealed_3",
+      "failure:v3_r1:c179384f8458:promoted_v3_sealed_4",
+      "failure:v3_r1:c179384f8458:promoted_v3_sealed_2"
+    ],
+    "concept": "Add a state-dependent input contribution to the existing nonlinear input-output relation.",
+    "reason": "v3_r1 has low grouped-CV NMSE overall, but its held-out trajectories include substantial late-time prediction errors: on promoted_v3_sealed_3 and promoted_v3_sealed_4 it predicts negative output where observations rise under sustained positive input. The failure on promoted_v3_sealed_2 also cautions against attributing the issue only to one reversal pattern. A u*z0 contribution is a compact test of whether the existing input trace changes the effective input contribution; it does not assign a physical interpretation to z0. Evidence: scope:v3_r1:c179384f8458; failure:v3_r1:c179384f8458:promoted_v3_sealed_3; failure:v3_r1:c179384f8458:promoted_v3_sealed_4; failure:v3_r1:c179384f8458:promoted_v3_sealed_2.",
+    "operation": "revise",
+    "spec": {
+      "parameters": [
+        {
+          "name": "p0",
+          "lower": 0.05,
+          "initial": 0.75,
+          "upper": 1.5
+        }
+      ],
+      "states": [
+        {
+          "name": "z0",
+          "meaning": "A decaying input trace; physical interpretation is unverified.",
+          "rate": "u-p0*z0"
+        }
+      ],
+      "terms": [
+        "x",
+        "x**3",
+        "tanh(x)",
+        "u",
+        "z0",
+        "u*z0"
+      ]
+    },
+    "observable_consequence": "If the added term captures a reproducible state-dependent input contribution, grouped held-out trajectory errors should decrease especially on schedules resembling the late positive-input portions of promoted_v3_sealed_3 and promoted_v3_sealed_4, without sacrificing the low errors on other schedules. If it does not, the additional term should fail to improve held-out prediction.",
+    "analogy": {
+      "domain": "input-output dynamical models",
+      "relation": "An input contribution may depend on a model's evolving internal state rather than being a fixed additive effect.",
+      "mapping": "The proposed u*z0 term lets the existing fitted trace z0 modulate the contribution of current input u.",
+      "failure_condition": "The analogy is unsupported if fitting and grouped held-out evaluation do not improve prediction, or if gains are confined to the trajectories used for fitting."
+    },
+    "provenance": "model_knowledge_unverified",
+    "limitations": "The evidence is adaptive development data, not untouched confirmation. The trace coordinate is model-dependent, the fit may be numerically or structurally non-identifiable, and the observed failures do not establish a universal input-history law.",
+    "boundary": {
+      "model_id": "v3_r1",
+      "status": "no_supported_boundary",
+      "reason": "v3_r1 的高误差行包括 sealed_3 和 sealed_4（反转数均为2），但反转数为0的行以及反转数为1、3、4的行也有低误差；例如 sealed_5 反转数为4仍低误差，新边界干预两行也都低于0.05。峰值、面积和持续时长同样未显示可将本模型高低误差行可靠分开的单一阈值。因此不提出单特征边界。证据：scope:v3_r1:c179384f8458。"
+    }
+  },
+  "generation_records": [
+    {
+      "wire": "wire/004_r1_proposal_0",
+      "valid": true
+    }
+  ]
+}

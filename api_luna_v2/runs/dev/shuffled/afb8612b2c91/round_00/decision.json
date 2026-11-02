@@ -1,0 +1,42 @@
+{
+  "time_ns": 1793431208267872855,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "memory_slow has the lowest trajectory-level CV error (0.00176); the state-only model has strong residual autocorrelation and substantially worse error.",
+    "prediction": "After input switches, output will retain a smooth decaying influence of prior inputs, better predicted by slow accumulated history than by instantaneous state alone.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Smooth post-input decay supports accumulated history over an instantaneous response or pure delay.",
+      "condition_to_check": "Check whether slow-history predictions persist across irregular input shapes and outperform delay-based predictions."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest trajectory-level CV error (0.00176); the state-only model has strong residual autocorrelation and substantially worse error.\",\"prediction\":\"After input switches, output will retain a smooth decaying influence of prior inputs, better predicted by slow accumulated history than by instantaneous state alone.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Smooth post-input decay supports accumulated history over an instantaneous response or pure delay.\",\"condition_to_check\":\"Check whether slow-history predictions persist across irregular input shapes and outperform delay-based predictions.\"}}",
+    "input_tokens": 2807,
+    "output_tokens": 371,
+    "batch_elapsed_seconds": 6.017442420125008,
+    "amortized_seconds": 6.017442420125008,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2807,
+      "completion_tokens": 371,
+      "total_tokens": 3178,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 241
+      }
+    },
+    "api_response_id": "resp_00a0e7d76066c97e016ae596a3cc5c8194b659cc7eca87785e",
+    "wire_record": "wire/dev/0013_c867ef0f063245f98dff29b2df4db743"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "parent_id": "r0_b0",
+  "target_witnesses": [
+    "r2_witness_1",
+    "r2_witness_0"
+  ],
+  "concept": "Unsigned input-exposure memory",
+  "explanation": "The approximate collisions show different estimated drift at similar x and zero current input after different input histories, but do not establish what aspect of history matters. This competing account tracks accumulated input magnitude rather than signed input: z0 is driven by u squared and decays when the input is removed. Unlike the parent’s signed filtered-input trace, equal-magnitude positive and negative pulses produce the same contribution to this latent state. The witnesses are approximate and their smoothed derivatives are noisy, so this is a testable alternative, not a conclusion.",
+  "analogy": {
+    "domain": "exposure and recovery processes",
+    "relation": "a system accumulates a nonnegative exposure burden under forcing and relaxes when exposure stops",
+    "mapping": "u squared is the instantaneous exposure rate, z0 is its exponentially decaying accumulated trace, and the fitted z0 coefficient contributes to dx/dt",
+    "breaks_when": "the response depends on input sign or on distinctions between pulse sequences that cannot be captured by one decaying trace of squared input"
+  },
+  "provenance": "model_knowledge_unverified",
+  "spec": {
+    "parameters": [
+      {
+        "name": "p0",
+        "lower": 0.05,
+        "initial": 0.4,
+        "upper": 3.0
+      }
+    ],
+    "states": [
+      {
+        "name": "z0",
+        "meaning": "Nonnegative, exponentially decaying trace of recent squared input magnitude; initialized to zero",
+        "rate": "u**2-p0*z0"
+      }
+    ],
+    "terms": [
+      "1",
+      "x",
+      "u",
+      "z0"
+    ]
+  },
+  "distinguishing_prediction": "Compare positive and negative pulse schedules with the same magnitude and timing, then measure drift at matched x and u=0. This account predicts the same z0 contribution for the two schedules; the parent’s signed input-trace account predicts opposite-signed latent contributions. Varying pulse duration or the zero-input delay also tests whether any difference decays as this single exposure trace relaxes.",
+  "falsifier": "In repeated, adequately resolved trials, equal-magnitude positive and negative histories produce reproducibly different drift at matched x and u=0 in a way that follows signed input history, or observed history-dependent drift does not track the accumulated squared-input trace and its predicted decay.",
+  "limitations": "The supplied witnesses do not compare matched positive and negative histories at matched x, and their state matches and derivative estimates are uncertain. Squared-input memory is only one competing explanation; it may be confounded with output history or other unobserved dynamics. Its value depends on complete held-out trajectory performance, not the witness comparisons alone.",
+  "generation_records": [
+    {
+      "wire": "wire/007_r2_b1_0",
+      "valid": true
+    }
+  ],
+  "round": 2
+}

@@ -1,0 +1,3010 @@
+
+
+Bayesian Model Discovery with Language Models:Closing the Loop between Hypotheses and Experiments
+
+Skip to main content
+
+ Report GitHub Issue
+ ×
+
+ Title:
+
+Content selection saved. Describe the issue below:
+
+ Description:
+
+ Submit without GitHub
+ Submit in GitHub
+
+ Why HTML?
+
+ Report Issue
+
+ Back to Abstract
+
+ Download PDF
+
+ Contents
+
+ Reading mode
+
+ Colour theme
+
+Abstract
+
+1 Introduction
+
+2 Related Work
+
+LLM-assisted model discovery.
+
+Bayesian experimental design.
+
+Concurrent work: Model Discovery Agent.
+
+3 Approach
+
+3.1 Problem setup and overview
+
+3.2 Parameter inference and model evidence
+
+3.3 Model comparison and prediction
+
+3.4 Information-based experimental design
+
+Joint model–parameter EIG.
+
+Design optimization.
+
+3.5 LLM-guided model pool expansion
+
+4 Experiments
+
+Benchmarks and baselines.
+
+Information supplied to the agents.
+
+Evaluation protocol.
+
+4.1 Predictive performance and sample efficiency
+
+4.2 Recovery of functional forms
+
+A discovery trajectory.
+
+4.3 The role of numerical model evaluation
+
+Experimental setup.
+
+Models.
+
+Results.
+
+4.4 The value of joint EIG
+
+4.5 What feedback helps hypothesis discovery?
+
+5 Conclusion
+
+References
+
+A Experimental Protocol and Metrics
+
+Tasks, runs, and observation counts.
+
+Information supplied to the agents.
+
+Baseline interfaces and schedules.
+
+Prediction targets.
+
+Evaluation timing.
+
+Curve aggregation.
+
+Missing and early-terminated runs.
+
+B Numerical Implementation
+
+Model representation and validation.
+
+Proposal and pool settings.
+
+Role priors and observation models.
+
+SMC and prediction.
+
+Joint-EIG estimation and search.
+
+EPIG implementation.
+
+C Strict Recovery and Ground-Truth Containment
+
+Criteria and selected models.
+
+Equivalence and containment checks.
+
+Benchmark targets and exclusions.
+
+Agent schedules and interpretation.
+
+D Numerical Evaluation on Shared Candidates
+
+Purpose and data.
+
+Candidate construction.
+
+LLM prediction and selection.
+
+Shared fits and predictions.
+
+Prediction targets.
+
+Error aggregation and normalization.
+
+Top-1 GT identification.
+
+Interpretation.
+
+E Belief and Diagnostic Feedback
+
+Purpose and conditions.
+
+Feedback masking.
+
+Initialization and execution.
+
+Evaluation and interpretation.
+
+F Joint EIG and Its Information Components
+
+Objectives and estimator.
+
+Prediction-oriented EPIG.
+
+Current joint-EIG comparison.
+
+Separate exploratory EPIG comparison.
+
+G Proposer Prompt Components
+
+Task constraints and terminology.
+
+Initialization and feedback variants.
+
+Archive-review extension.
+
+H Earlier ChemBench Diagnostics
+
+Scope.
+
+Prediction target and aggregation.
+
+A discovered family and its fitted predictor.
+
+Supplying the form versus fitting its constants.
+
+Prediction versus calibration.
+
+ License: arXiv.org perpetual non-exclusive license
+
+arXiv:2610.25747v1 [cs.LG] 19 Oct 2026
+
+Bayesian Model Discovery with Language Models:
+
+Closing the Loop between Hypotheses and Experiments
+
+JooKyung Yuh
+
+Affiliation: Korea University
+
+Byungmin Park
+
+Affiliation: Korea University
+
+Eunseo Choi
+
+Affiliation: Korea University
+
+Jinheon Baek
+
+Affiliation: KAIST
+
+Junmo Cho
+
+Affiliation: KAIST
+
+Kyu Hyun Choi
+
+Affiliation: KETI*Equal contribution as second authors.†Corresponding authors.JooKyung Yuh: johnlu0410@korea.ac.krHae Beom Lee: haebeomlee@korea.ac.kr
+
+Sung Ju Hwang
+
+Affiliation: KAIST
+
+Kyong Hwan Jin
+
+Affiliation: Korea University
+
+Hae Beom Lee
+
+Affiliation: Korea University
+
+Abstract
+
+Scientific model discovery requires proposing candidate models of an unknown system and designing experiments that discriminate among them. However, LLM-based approaches typically rely on in-context learning to predict outcomes and select experiments, lacking explicit model evaluation to systematically guide hypothesis search, while Bayesian approaches enable principled model comparison but are confined to a predefined candidate set which results in limited search spaces.
+To this end, we introduce Bayesian Model Discovery (BMD), which closes the loop between LLM-driven hypothesis generation and Bayesian experimental design.
+Specifically, an LLM proposes model families, while a numerical engine fits their parameters, weighs them by model evidence, and averages their predictions.
+Then, BMD chooses the next experimental conditions by maximizing the joint expected information gain over families and their parameters, while feeding the updated beliefs and residual diagnostics back to the LLM to guide its next proposals.
+Across four scientific discovery benchmarks, BMD achieves lower final prediction error than in-context learning and LLM-based scientific agents while recovering exact functional forms more often, with ablations supporting numerical feedback and the joint objective.
+
+1 Introduction
+
+Many scientific advances take the form of mathematical models that describe how a system responds to experimental conditions (Langley et al., 1987; Schmidt and Lipson, 2009; Wang et al., 2023).
+Discovering such models alternates between proposing candidate models and designing experiments that discriminate among them (Box and Hill, 1967; Blei, 2014).
+For example, a scientist studying how a drug slows down an enzyme may consider two candidate models: the drug either competes with the molecule the enzyme acts on or attaches elsewhere on the enzyme.
+Both models may fit the initial measurements equally well, but the scientist can tell them apart with an experiment that adds a large amount of this molecule, as the two predict different reaction rates.
+Recently, Large Language Models (LLMs) have shown promise in automating this process (Boiko et al., 2023; Romera-Paredes et al., 2024; Yang et al., 2024; Lu et al., 2024; Shojaee et al., 2025; Baek et al., 2025), owing to their broad scientific knowledge and reasoning abilities.
+
+One common approach is in-context learning (ICL) (Brown et al., 2020), where the LLM directly predicts responses and selects experiments from observations (Gandhi et al., 2025).
+While this approach exploits the prior knowledge of LLMs, it does not commit to explicit models fitted to data, leaving the LLM to make every prediction and choose experiments without quantifying which explanations remain plausible (Gupta et al., 2025).
+
+In contrast, explicit probabilistic models address both issues by expressing each candidate explanation as an equation, called a model family, whose functional form (e.g., competitive inhibition) contains unknown parameters (e.g., the maximum reaction rate).
+Specifically, once these parameters are estimated, the equation can predict responses at untested conditions, allowing a suitable family to generalize from few observations.
+In addition, these models guide experiment selection, as Bayesian inference quantifies how plausible each family and its parameters remain (Kass and Raftery, 1995; Hoeting et al., 1999), which Bayesian experimental design (Lindley, 1956; Chaloner and Verdinelli, 1995; Rainforth et al., 2024) uses to select the most informative experiment to run next.
+
+Observations
+Acquired inputs
+and responses 𝒟t\mathcal{D}_{t}
+
+Fit hypotheses
+Parameter posteriors
+and model evidence
+
+Propose forms
+At each round,
+use fits and residuals
+
+Update the pool
+Validate, fit, and
+retain alternatives
+
+Choose a test
+Information gain
+selects 𝐱t+1\mathbf{x}_{t+1}
+Run the experiment and add its response
+
+Figure 1: Overview of Bayesian Model Discovery.
+Given the observations 𝒟t\mathcal{D}_{t}, the numerical engine fits each candidate family and returns the resulting beliefs and residual diagnostics to the LLM, which proposes new families.
+These proposals are validated, fitted, and compared with the existing families, after which the updated pool selects the next experimental conditions 𝐱t+1\mathbf{x}_{t+1} by maximizing the joint expected information gain.
+
+However, explicit modeling alone is not sufficient, as Gandhi et al. (2025) find no consistent benefit from augmenting an LLM with a statistical model.
+Moreover, Bayesian inference over a fixed set of candidates cannot recover a family missing from it, while LLMs can propose new families (Li et al., 2024; Shojaee et al., 2025) that remain unverified until they are fitted against the data.
+The central challenge, therefore, lies in connecting family search, parameter inference, and experiment selection such that each step informs the others.
+
+To address this, we present Bayesian Model Discovery (BMD), a framework that closes the loop between LLM-driven hypothesis generation and Bayesian experimental design (Figure 1).
+Our key insight is that LLMs and Bayesian inference have complementary strengths: LLMs can draw on domain knowledge to propose plausible functional forms, whereas Bayesian inference can quantify how well each form explains the data.
+Specifically, BMD employs an LLM to propose model families, while a numerical engine fits their parameters, weighs each family by its model evidence, and averages their predictions.
+Then, since a new observation can distinguish competing families, refine their parameters, or both, BMD chooses the next experimental conditions by maximizing the joint expected information gain over families and their parameters (Borth, 1975; McGree, 2017), while feeding the updated beliefs and residual diagnostics back to the LLM to inform its next proposals.
+
+We validate BMD on four scientific discovery benchmarks, namely ChemBench (Kabra et al., 2026), BoxingGym (Gandhi et al., 2025), ForceBench (Wiemann et al., 2026), and NewtonBench (Zheng et al., 2026).
+BMD achieves the lowest final prediction error on every benchmark against direct ICL and recent LLM-based scientific agents, while also recovering exact functional forms more often.
+Our analyses further show that numerical feedback to the LLM improves prediction and that the joint objective outperforms targeting either families or parameters alone.
+These findings suggest that LLMs are most effective as hypothesis generators within a closed loop of explicit model fitting and experimental design, rather than as standalone predictors of experimental results.
+
+2 Related Work
+
+LLM-assisted model discovery.
+
+Symbolic regression searches for interpretable equations from
+observations (Schmidt and Lipson, 2009; Brunton et al., 2016; Cranmer, 2023).
+LLM-SR combines language-model proposals with numerical parameter
+optimization (Shojaee et al., 2025), while BoxLM iterates
+probabilistic-program generation, fitting, and criticism (Li et al., 2024).
+Other methods weight LLM-proposed models by their marginal
+likelihood (Domke, 2025; Wahl et al., 2026).
+Box’s Apprentice and LLM-AutoSciLab extend
+model-based reasoning to interactive experimentation
+ (Gandhi et al., 2025; Kabra et al., 2026).
+Other closed-loop approaches select experiments by information gain over
+LLM-proposed hypotheses, such as natural-language rules
+ (Piriyakulkij et al., 2024) or cognitive models (Prystawski et al., 2026).
+BMD searches over functional-form families using numerical parameter
+posteriors and evidence-weighted predictions.
+
+Bayesian experimental design.
+
+Bayesian experimental design selects observations to reduce
+uncertainty (Lindley, 1956; Chaloner and Verdinelli, 1995; Rainforth et al., 2024). Established criteria include
+joint model discrimination and parameter estimation
+ (Hill et al., 1968; Borth, 1975; McGree, 2017), and
+expected predictive information gain (EPIG) (Bickford Smith et al., 2023).
+BMD uses joint EIG within an evolving pool of LLM-proposed families to
+value both model discrimination and parameter refinement. We also
+evaluate EPIG, which instead targets predictions at inputs of interest.
+Recent work also applies EIG to LLM question asking, but estimates it
+from the predictive distribution of the LLM itself rather than from fitted models
+ (Choudhury et al., 2026).
+
+Concurrent work: Model Discovery Agent.
+
+Model Discovery Agent (MDA; Murphy, 2026) similarly combines
+LLM proposals, Bayesian inference, adaptive experimentation, and
+numerical feedback. The cited MDA implementation uses a variance-based
+surrogate for EIG, including a parameter-aware variant. BMD instead
+estimates joint model–parameter EIG from fitted predictive likelihoods.
+A second difference is the context supplied to the proposer. MDA
+conditions proposals on domain context, whereas we anonymize variable
+names and withhold task descriptions and semantic metadata on ChemBench,
+BoxingGym, and NewtonBench. Numerical ranges and the modeling interface
+remain available; ForceBench retains physical task metadata
+(Section 4). This evaluates discovery from
+observations and feedback with fewer supplied domain cues.
+
+3 Approach
+
+Our Bayesian Model Discovery (BMD) combines the flexibility of LLMs in proposing diverse functional forms with the strengths of Bayesian inference in evaluating hypotheses and quantifying uncertainty. By integrating these complementary capabilities, BMD iteratively discovers and refines scientific models through hypothesis generation, numerical evaluation, and experimental design (Figure 1;
+Algorithm 1).
+
+3.1 Problem setup and overview
+
+An experimental design 𝐱∈𝒳\mathbf{x}\in\mathcal{X} specifies controllable
+conditions, where
+𝒳\mathcal{X} is the set of allowed designs. The response yy
+is the outcome measured under design 𝐱\mathbf{x} and can be multi-dimensional.
+
+A model family mm specifies a functional form, such as a linear or saturating function. 𝜽m\boldsymbol{\theta}_{m} denotes a parameter vector associated with mm. We assume that likelihood family is fixed for each task (e.g., Gaussian). mm, 𝜽m\boldsymbol{\theta}_{m}, and likelihood together define the conditional response distribution pm​(y∣𝐱,𝜽m)p_{m}(y\mid\mathbf{x},\boldsymbol{\theta}_{m}), expressed as a probability density or mass function. For each task, the true family m⋆m^{\star} and its parameter vector 𝜽⋆\boldsymbol{\theta}^{\star} remain fixed and we can define
+
+p⋆​(y∣𝐱):=pm⋆​(y∣𝐱,𝜽⋆).p^{\star}(y\mid\mathbf{x}):=p_{m^{\star}}(y\mid\mathbf{x},\boldsymbol{\theta}^{\star}).
+
+The agent observes samples from this distribution but is not given
+m⋆m^{\star} or 𝜽⋆\boldsymbol{\theta}^{\star}.
+
+The initial dataset 𝒟0\mathcal{D}_{0} contains n0n_{0} observed
+design–response pairs. With a budget of BB additional experiments,
+at round t=1,…,Bt=1,\ldots,B, the agent chooses 𝐱t∈𝒳\mathbf{x}_{t}\in\mathcal{X} using
+𝒟t−1\mathcal{D}_{t-1} and observes yt∼p⋆(⋅∣𝐱t)y_{t}\sim p^{\star}(\cdot\mid\mathbf{x}_{t}).
+The available data are then
+𝒟t=𝒟0∪{(𝐱s,ys)}s=1t\mathcal{D}_{t}=\mathcal{D}_{0}\cup\{(\mathbf{x}_{s},y_{s})\}_{s=1}^{t}.
+The goals are accurate prediction at untested designs as well as recovery of
+the underlying true functional form m⋆m^{\star} and its parameter 𝜽⋆\boldsymbol{\theta}^{\star}.
+
+3.2 Parameter inference and model evidence
+
+Unlike previous ICL-based approaches, our BMD separates the roles of the LLM and numerical inference. The LLM proposes candidate model families, while the numerical engine estimates the parameter posterior and model evidence for each candidate.
+
+We first discuss posterior inference of model parameters within each candidate model family. We specify a prior πm​(𝜽m)\pi_{m}(\boldsymbol{\theta}_{m}) using
+fixed coefficient-role rules.
+Examples include 𝒩⁡(0,1)\mathcal{N}(0,1) for signed coefficients and
+LogNormal⁡(0,1)\operatorname{LogNormal}(0,1) for positive coefficients.
+The numerical engine assumes conditional independence of responses
+given their designs and parameters, giving the likelihood
+
+Lm,t​(𝜽m)=∏(𝐱,y)∈𝒟tpm​(y∣𝐱,𝜽m).L_{m,t}(\boldsymbol{\theta}_{m})=\prod_{(\mathbf{x},y)\in\mathcal{D}_{t}}p_{m}(y\mid\mathbf{x},\boldsymbol{\theta}_{m}).
+
+(1)
+
+Then, Bayes’ rule yields the parameter posterior and its normalizing
+constant Zm,t=p⁡(𝒟t∣m)Z_{m,t}=p(\mathcal{D}_{t}\mid m), called the model evidence:
+
+p⁡(𝜽m∣𝒟t,m)\displaystyle p(\boldsymbol{\theta}_{m}\mid\mathcal{D}_{t},m)
+=πm​(𝜽m)​Lm,t​(𝜽m)Zm,t,\displaystyle=\frac{\pi_{m}(\boldsymbol{\theta}_{m})L_{m,t}(\boldsymbol{\theta}_{m})}{Z_{m,t}},
+
+(2)
+
+Zm,t\displaystyle Z_{m,t}
+=∫πm​(𝜽m)​Lm,t​(𝜽m)​d​𝜽m.\displaystyle=\int\pi_{m}(\boldsymbol{\theta}_{m})L_{m,t}(\boldsymbol{\theta}_{m})\,\mathrm{d}\boldsymbol{\theta}_{m}.
+
+The posterior p⁡(𝜽m∣𝒟t,m)p(\boldsymbol{\theta}_{m}\mid\mathcal{D}_{t},m) describes the uncertainty of 𝜽m\boldsymbol{\theta}_{m} within the family mm, given the data 𝒟t\mathcal{D}_{t}. The evidence Zm,tZ_{m,t}
+measures its support by averaging the likelihood over the prior. Evidence thus
+depends on the specified prior as well as the functional form.
+We use sequential Monte Carlo (SMC) (Del Moral et al., 2006) to obtain posterior samples and
+an evidence estimate Z^m,t\widehat{Z}_{m,t}. Those posterior samples and evidence estimate are the core ingredients of BMD, which we explain in the next subsections. Appendix B gives the numerical settings.
+
+Algorithm 1 Bayesian Model Discovery (BMD)
+
+ 1:
+
+Initial data 𝒟0\mathcal{D}_{0}, design space 𝒳\mathcal{X},
+budget BB, pool capacity KK.
+
+ 2:
+
+Initialize candidate set 𝒞\mathcal{C} with LLM proposals from 𝒟0\mathcal{D}_{0}.
+
+ 3:
+
+ for t=0,…,Bt=0,\ldots,B do
+
+ 4:
+
+Fit hypotheses: infer parameter posteriors and model evidence for 𝒞\mathcal{C} using 𝒟t\mathcal{D}_{t}.
+
+ 5:
+
+Propose forms: for t≥1t\geq 1, expand 𝒞\mathcal{C} with fit- and diagnostic-guided LLM proposals.
+
+ 6:
+
+Update the pool: fit new proposals and retain up to KK highest-evidence families as ℳt\mathcal{M}_{t}.
+
+ 7:
+
+Form the predictive mixture qtq_{t} over ℳt\mathcal{M}_{t}.
+
+ 8:
+
+   if t<Bt<B then
+
+ 9:
+
+Choose a test: optimize ata_{t} over 𝒳\mathcal{X} to select 𝐱t+1\mathbf{x}_{t+1}.
+
+ 10:
+
+Observe yt+1y_{t+1} and add (𝐱t+1,yt+1)(\mathbf{x}_{t+1},y_{t+1}) to 𝒟t\mathcal{D}_{t} to obtain 𝒟t+1\mathcal{D}_{t+1}.
+
+ 11:
+
+Set 𝒞←ℳt\mathcal{C}\leftarrow\mathcal{M}_{t}.
+
+ 12:
+
+   end if
+
+ 13:
+
+ end for
+
+ 14:
+
+return qBq_{B}, ℳB\mathcal{M}_{B}, and its highest-evidence family.
+
+3.3 Model comparison and prediction
+
+We next discuss posterior inference over candidate model families to assess which functional forms are more plausible given the observations. For the retained pool ℳt\mathcal{M}_{t}, equal family-level prior weights give the posterior model probabilities
+
+wm,t=Z^m,t∑j∈ℳtZ^j,t,m∈ℳt,w_{m,t}=\frac{\widehat{Z}_{m,t}}{\sum_{j\in\mathcal{M}_{t}}\widehat{Z}_{j,t}},\qquad m\in\mathcal{M}_{t},
+
+(3)
+
+These probabilities are defined within the current fixed-sized model pool, rather than over all possible functional forms. Restricting inference to a finite pool makes model comparison tractable, although the true family need not belong to the pool. Section 3.5 explains how the pool
+evolves through LLM-generated proposals.
+
+To predict while accounting for parameter uncertainty, each family
+averages its likelihood over its posterior, giving the
+posterior predictive distribution qm,tq_{m,t}:
+
+qm,t​(y∣𝐱)\displaystyle q_{m,t}(y\mid\mathbf{x})
+=∫pm​(y∣𝐱,𝜽m)\displaystyle=\int p_{m}(y\mid\mathbf{x},\boldsymbol{\theta}_{m})
+
+(4)
+
+×p⁡(𝜽m∣𝒟t,m)​d​𝜽m.\displaystyle\times p(\boldsymbol{\theta}_{m}\mid\mathcal{D}_{t},m)\,\mathrm{d}\boldsymbol{\theta}_{m}.
+
+Bayesian model averaging (BMA) also accounts for uncertainty about the
+family (Hoeting et al., 1999):
+
+qt​(y∣𝐱)=∑m∈ℳtwm,t​qm,t​(y∣𝐱).q_{t}(y\mid\mathbf{x})=\sum_{m\in\mathcal{M}_{t}}w_{m,t}\,q_{m,t}(y\mid\mathbf{x}).
+
+(5)
+
+For mean-response targets, BMD predicts with the mean of qtq_{t}.
+For structural evaluation, it returns the highest-evidence family.
+
+3.4 Information-based experimental design
+
+BMD selects experiments using joint expected information gain (EIG),
+which targets uncertainty in both the model family and its parameters.
+
+Joint model–parameter EIG.
+
+For a candidate design 𝐱\mathbf{x}, let MM be a random family drawn from
+ℳt\mathcal{M}_{t} with probabilities wm,tw_{m,t}. Conditional on M=mM=m, draw
+its parameter vector 𝚯M\boldsymbol{\Theta}_{M} from
+p⁡(𝜽m∣𝒟t,m)p(\boldsymbol{\theta}_{m}\mid\mathcal{D}_{t},m), and then draw a hypothetical response
+Y𝐱Y_{\mathbf{x}} from pM(⋅∣𝐱,𝚯M)p_{M}(\cdot\mid\mathbf{x},\boldsymbol{\Theta}_{M}).
+Its marginal distribution is qt(⋅∣𝐱)q_{t}(\cdot\mid\mathbf{x}).
+Using II for mutual information, joint EIG is
+
+at​(𝐱)\displaystyle a_{t}(\mathbf{x})
+=I⁡(Y𝐱;M,𝚯M∣𝒟t)\displaystyle=I(Y_{\mathbf{x}};M,\boldsymbol{\Theta}_{M}\mid\mathcal{D}_{t})
+
+(6)
+
+=𝔼⁡[log⁡pM​(Y𝐱∣𝐱,𝚯M)qt​(Y𝐱∣𝐱)],\displaystyle=\mathbb{E}\!\left[\log\frac{p_{M}(Y_{\mathbf{x}}\mid\mathbf{x},\boldsymbol{\Theta}_{M})}{q_{t}(Y_{\mathbf{x}}\mid\mathbf{x})}\right],
+
+where the expectation is over these draws. The numerator evaluates
+an outcome under one family and parameter setting; the denominator
+averages over the alternatives. The expected log ratio, at​(𝐱)a_{t}(\mathbf{x}),
+thus measures how informative an observation at 𝐱\mathbf{x} would be about
+the model family and its parameters.
+
+The mutual-information chain rule separates the two information sources:
+
+at​(𝐱)\displaystyle a_{t}(\mathbf{x})
+=I⁡(Y𝐱;M∣𝒟t)⏟information about the family\displaystyle=\underbrace{I(Y_{\mathbf{x}};M\mid\mathcal{D}_{t})}_{\text{information about the family}}
+
+(7)
+
++I(Y𝐱;𝚯M∣M,𝒟t)⏟information about its parameters.\displaystyle+\underbrace{I(Y_{\mathbf{x}};\boldsymbol{\Theta}_{M}\mid M,\mathcal{D}_{t})}_{\text{information about its parameters}}.
+
+The first term favors designs that distinguish families, such as the
+linear and saturating forms above. The second favors designs that
+reduce parameter uncertainty within each family, weighted by its
+posterior model probability wm,tw_{m,t}.
+We estimate joint EIG at​(𝐱)a_{t}(\mathbf{x}) by Monte Carlo averaging
+the log likelihood ratios, using SMC posterior samples to
+approximate the evidence-weighted predictive distribution
+in the denominator. See Appendix F for estimating ata_{t}.
+
+Design optimization.
+
+For each round, we seek
+
+𝐱t+1∈arg​max𝐱∈𝒳⁡at​(𝐱).\mathbf{x}_{t+1}\in\operatorname*{arg\,max}_{\mathbf{x}\in\mathcal{X}}a_{t}(\mathbf{x}).
+
+(8)
+
+We optimize the estimated acquisition ata_{t} over the feasible design space,
+keeping the fitted pool fixed throughout each search. For instance, we perform gradient ascent from five random initializations and pick the best one. See Appendix B for more details about solving Eq. (8). See Algorithm 1 for the overall procedure of BMD.
+
+Benchmark
+
+Scientific setting
+
+Design →\rightarrow observation
+
+Evaluation target
+
+ChemBench
+
+Enzyme kinetics
+
+Reaction conditions →\rightarrow rate
+
+Noise-free observation mean (nMSLE)
+
+BoxingGym
+
+Ecological/statistical processes
+
+Task inputs →\rightarrow noisy responses
+
+Noise-free response mean (nMSE)
+
+ForceBench
+
+Force and motion laws
+
+Conditions →\rightarrow trajectories
+
+Shifted-design trajectories (nMSE)
+
+NewtonBench
+
+Counterfactual physical laws
+
+Settings →\rightarrow physical responses
+
+Noise-free governing law (nMSLE)
+
+Table 1: Overview of the four scientific discovery benchmarks.
+
+3.5 LLM-guided model pool expansion
+
+The preceding sections describe parameter and model inference,
+BMA prediction, and information-based experiment selection.
+However, all these operations are defined within the current
+model pool. If the true functional form is missing, updating
+posteriors and collecting further observations do not by themselves
+introduce it. Discovery therefore requires a mechanism for
+proposing new functional forms.
+
+Bayesian inference can be extended to search over symbolic expressions,
+but such methods typically rely on a predefined grammar and can be
+computationally expensive. BMD instead draws on an LLM’s learned
+mathematical knowledge to propose new forms without exhaustively
+enumerating expressions. Numerical feedback is supplied in context
+to guide these proposals toward what the current candidates fail
+to explain.
+
+At each round t≥1t\geq 1, after acquiring a new observation,
+the engine refits the families in ℳt−1\mathcal{M}_{t-1} on the
+updated dataset 𝒟t\mathcal{D}_{t}.
+The LLM then receives the accumulated observations,
+candidate functional forms, and two types of numerical feedback:
+belief information, including model evidence,
+posterior model probabilities, parameter posterior summaries,
+and one-step predictive log scores; and
+diagnostics, including model-wise standardized residuals.
+Belief information indicates which models the data support,
+while diagnostics reveal where their predictions fall short.
+For example, systematic curvature in a linear model’s residuals
+may motivate a nonlinear alternative.
+The LLM uses this feedback to propose new functional forms.
+
+The engine validates and deduplicates the proposals and fits them on
+the same 𝒟t\mathcal{D}_{t}. It retains up to KK highest-evidence
+families from the existing and newly proposed candidates to form
+ℳt\mathcal{M}_{t}, where KK is the pool capacity. Model probabilities and
+BMA predictions are then recomputed, and the updated mixture guides
+the next experiment. The resulting observation informs the next
+round of numerical inference and LLM proposals, closing the loop
+between hypothesis generation and experimentation.
+Appendix B gives implementation details,
+including periodic reconsideration of retired models;
+Appendix G provides the prompts.
+
+4 Experiments
+
+We first evaluate BMD’s predictive accuracy and functional-form recovery,
+then examine the source of performance improvements.
+
+Benchmarks and baselines.
+
+We use four simulated scientific discovery benchmarks:
+ChemBench (Kabra et al., 2026),
+BoxingGym (Gandhi et al., 2025),
+ForceBench (Wiemann et al., 2026),
+and NewtonBench (Zheng et al., 2026).
+Table 1 summarizes these benchmarks.
+For baselines, we first consider in-context learning
+(ICL), which selects experiments and predicts
+directly from observations without fitting explicit models.
+Our primary baseline, LLM-AutoSciLab (Kabra et al., 2026),
+maintains LLM-proposed hypotheses but fits them by regression
+and selects experiments by prediction disagreement rather
+than evidence and EIG.
+We also compare with Box’s Apprentice (Gandhi et al., 2025)
+and DP-Agent (Wiemann et al., 2026),
+the reference agents of BoxingGym and ForceBench, respectively.
+All methods use Claude Opus 5.5 for their LLM calls.
+
+Figure 2: Predictive performance.
+Lower is better. Lines show geometric-mean prediction error,
+aggregated over seeds within each task and then across tasks.
+Shaded bands indicate seed dispersion in log space. The x-axis shows the total number of observations.
+AutoSciLab curves start later because additional observations
+are required before its first executable model is available.
+Appendix A details the evaluation
+protocol, aggregation, and exclusions.
+
+Figure 3: Strict recovery and ground-truth containment.
+Each curve shows the fraction of runs in which the selected top-1 model satisfies the corresponding criterion. Strict recovery (solid lines) requires structural equivalence to the ground-truth functional form. Containment (dotted lines) counts more general model families that can represent the ground truth as a special case. For example, a quadratic family contains a linear family when its quadratic coefficient is set to zero. Thus, containment does not necessarily imply recovery of the exact functional form. Appendix C details the evaluation criteria, including numerical checks.
+
+Information supplied to the agents.
+
+BMD and all baselines receive the same numerical ranges of the
+design variables, with variable names anonymized.
+Task descriptions and semantic metadata are withheld.
+This eliminates explicit domain-specific semantic cues,
+allowing us to better assess model discovery driven primarily
+by observations and numerical feedback.
+The exception is ForceBench, which is specifically designed
+to use physical task metadata. We retain this information
+for all methods to preserve the intended benchmark setting.
+Appendix A details the information and
+observation interfaces for each agent and benchmark.
+
+Evaluation protocol.
+
+The main BMD runs use joint EIG. We report error against the total
+observation count, using normalized mean squared logarithmic error
+(nMSLE) or normalized mean squared error (nMSE) for the targets in
+Table 1. Appendix A
+specifies baseline schedules, missing-run exclusions, metrics, and
+aggregation.
+
+4.1 Predictive performance and sample efficiency
+
+We evaluate predictive performance and sample efficiency by tracking
+prediction error as observations accumulate
+(Figure 2).
+Across all four benchmarks, BMD generally achieves lower error
+at comparable observation budgets while also attaining the
+lowest final error.
+Overall, these results demonstrate BMD’s superior predictive
+performance and sample efficiency.
+
+Components
+Relative error (A=1A=1, ↓\downarrow)
+GT identification (%, ↑\uparrow)
+
+Model
+Explicit
+SMC fit
+Evidence
+Chem
+Boxing
+Force
+Newton
+Overall
+Chem
+Boxing
+Force
+Newton
+Overall
+
+A
+X
+X
+X
+1.000
+1.000
+1.000
+1.000
+1.000
+–
+–
+–
+–
+–
+
+B
+O
+X
+X
+0.917
+0.868
+0.230
+0.777
+0.613
+98.9
+18.5
+50.0
+90.0
+79.3
+
+C
+O
+O
+X
+0.351
+1.388
+0.174
+0.219
+0.369
+98.9
+18.5
+50.0
+90.0
+79.3
+
+D
+O
+O
+O
+0.349
+0.667
+0.036
+0.247
+0.214
+96.7
+63.0
+83.3
+78.6
+84.8
+
+Table 2: The role of numerical model evaluation.
+The methods progressively introduce (B) explicit model-based prediction
+using an LLM-selected family and parameters, (C) Bayesian parameter
+fitting via SMC for the family selected by B, and (D) evidence-based
+selection instead of LLM selection.
+Prediction errors are normalized by direct ICL (A) within each
+benchmark; Overall is the geometric mean across benchmarks.
+
+4.2 Recovery of functional forms
+
+Accurate prediction alone does not establish that an agent has
+identified the underlying law. We therefore evaluate
+strict recovery (solid lines), which requires certified
+structural equivalence to the true family, and
+ground-truth containment (dotted lines), which also accepts
+a broader family capable of representing the true law.
+
+At each observation budget, we evaluate BMD’s highest-evidence
+family and LLM-AutoSciLab’s current hypothesis under both criteria.
+Figure 3 reports the fraction of
+runs that satisfy each criterion, denoted as Top-1 recovery rate.
+Appendix C provides the evaluation details.
+
+BMD demonstrates a clear advantage in exact-form discovery.
+On BoxingGym, ForceBench, and NewtonBench, BMD successfully recovers
+true functional forms, whereas AutoSciLab achieves no strict
+recovery. On ChemBench, BMD identifies the correct structure much
+earlier and maintains higher strict recovery at the final budget.
+BMD also achieves higher containment on BoxingGym and NewtonBench.
+The NewtonBench results are particularly revealing: AutoSciLab
+frequently selects families that contain the ground truth but never
+passes the strict criterion, whereas BMD achieves high recovery
+under both criteria. These results demonstrate that BMD’s advantage extends beyond predictive accuracy to structural recovery.
+
+A discovery trajectory.
+
+Figure 4 shows how the candidate pool evolves through experiments. The pool initially does not contain the ground-truth family, but at n=9n=9 it introduces the ground-truth family
+1−e−k​X11-e^{-kX_{1}}.
+This candidate becomes the highest-evidence model, remains in
+the pool when another candidate temporarily leads, and later
+returns to the top. This example illustrates how BMD introduces
+missing functional forms and revises their support as observations
+accumulate.
+
+Figure 4: Exploring the model pool. Rows follow first-admission order;
+shading gives normalized evidence weights. Red marks ground-truth-equivalent
+models, blue other active models, and white absence from the pool.
+Black dots mark the highest-weight model. Annotations show candidate functional forms; X1X_{1} is the anonymized input, and letters denote coefficients.
+
+Figure 5: Joint EIG and its information components.
+
+Figure 6: Belief and diagnostic feedback.
+
+4.3 The role of numerical model evaluation
+
+BMD uses the LLM to propose model families but delegates
+parameter fitting and model comparison to a numerical engine.
+Complementing the end-to-end results in Figure 2, we test
+whether this division of labor improves upon the LLM’s own
+parameter estimates and model choices.
+
+Experimental setup.
+
+For each world–seed pair, we collect 20 random-design
+observations. Using only the first 10, Claude Opus 5.5
+proposes 11 alternative families, which we combine with
+the ground-truth (GT) family into a fixed pool of K=12K=12
+candidates. All methods share this pool and the full
+observation set.
+
+Models.
+
+We consider the following methods.
+
+• 
+
+A (Direct ICL):
+The LLM predicts responses directly from the observations
+and the pool.
+
+• 
+
+B (LLM model selection + LLM parameters):
+The LLM selects a family from the pool and specifies
+its parameter values based on the observations; the resulting
+model is used for prediction.
+
+• 
+
+C (LLM model selection + Bayesian parameter fitting):
+Retains B’s selected family but infers its parameter
+posterior using SMC and predicts with the posterior
+predictive mean.
+
+• 
+
+D (Evidence-based model selection + Bayesian parameter fitting):
+Selects the highest-evidence family among SMC-fitted
+candidates and predicts with its posterior predictive mean.
+
+B–C compares parameter inference within the same family,
+while C–D compares model selection under the same SMC
+parameter-fitting procedure.
+We report error on shared held-out points and GT identification
+by structural equivalence of the selected family.
+
+Results.
+
+Table 2 shows progressively lower
+cross-benchmark geometric-mean error from A to B to C to D,
+revealing three complementary benefits.
+
+First, A–B shows that predicting through an explicit model
+improves upon direct ICL, even when the LLM itself selects
+the family and specifies its parameters.
+Second, B–C shows that Bayesian parameter fitting further improves
+prediction without changing the selected family,
+highlighting the importance of numerical parameter inference.
+Third, C–D shows that replacing LLM model selection with
+evidence-based model selection improves aggregate prediction and
+pooled top-1 GT identification (79.3% to 84.8%).
+
+Overall, D reduces prediction error by a factor of 4.7
+relative to A. These results show that predicting through
+explicit models improves aggregate accuracy over direct ICL.
+Once such models are introduced, however, selecting the
+right family and fitting its parameters become critical.
+Numerical parameter fitting and evidence-based selection
+further improve performance over the LLM’s own estimates
+and choices. This motivates BMD’s division of labor:
+the LLM proposes functional forms, while the numerical
+engine fits and compares them.
+
+4.4 The value of joint EIG
+
+An informative experiment may distinguish competing model
+families, refine their parameters, or both. Figure 6 compares our Joint EIG acquisition function against Model-only EIG, Parameter-only EIG, and Random design (random selection of the next design point 𝐱t+1\mathbf{x}_{t+1}).
+Model-only EIG and Parameter-only EIG correspond to the terms in
+Equation (7).
+
+Joint EIG achieves the lowest final prediction error on both benchmarks.
+On ChemBench, it maintains a clear advantage over the alternatives
+through much of the later observation budgets.
+On ForceBench, Joint EIG reduces prediction error substantially faster
+at intermediate budgets, although the other methods eventually
+approach its performance.
+These results highlight the benefit of jointly targeting model
+discrimination and parameter refinement, suggesting that
+accounting for both sources of uncertainty can lead to
+more effective experimental designs.
+
+4.5 What feedback helps hypothesis discovery?
+
+Finally, beyond fitting and comparing candidate models, BMD feeds
+numerical inference results back to the LLM to guide
+subsequent hypothesis generation.
+We examine whether this feedback improves discovery through
+a 2×22\times 2 ablation: Full (belief + diagnostics),
+Belief-only, Diagnostics-only, and No feedback.
+Belief feedback includes model evidence, posterior weights,
+and parameter summaries, while diagnostics provide
+model-wise predictive residuals.
+All variants share the same initialization and retain
+Bayesian inference and joint-EIG experimental design.
+
+Figure 6 shows that Full achieves the lowest final prediction
+error on both ChemBench and ForceBench, while No feedback
+performs worst. Either feedback type generally improves
+prediction, although their relative contributions vary
+across benchmarks.
+These results suggest that numerical inference is valuable
+not only for evaluating existing hypotheses but also for
+guiding the LLM toward better subsequent proposals,
+supporting BMD’s closed-loop design.
+
+5 Conclusion
+
+BMD connects LLM hypothesis generation, Bayesian model
+evaluation, and information-theoretic experimental design. Across four simulated benchmarks,
+it improves prediction, sample efficiency, and exact-form
+recovery. Controlled comparisons favor explicit modeling over
+direct ICL, with further gains from Bayesian fitting and
+evidence-based selection. Acquisition comparisons favor joint
+model–parameter EIG, while feedback ablations show that
+returning numerical beliefs and diagnostics to the LLM
+improves downstream prediction, reinforcing BMD’s closed-loop design.
+
+Limitations
+
+Our experiments focus on simulated scientific tasks;
+validation in real-world experimental settings remains
+future work. Such evaluation would help assess robustness
+beyond the observation models and experimental conditions
+considered here. BMD’s uncertainty estimates are conditional
+on its current finite candidate pool rather than the space
+of all possible laws. Although the pool evolves through
+LLM proposals, discovery still depends on generating suitable
+model families, and our structural-recovery evaluation
+covers only targets expressible in the modeling interface.
+
+Ethical Considerations
+
+Our experiments are conducted in simulated scientific
+environments without human participants.
+While BMD aims to assist scientific discovery, automatically
+generated hypotheses may be inaccurate or misleading,
+potentially leading to incorrect scientific conclusions.
+Real-world applications should therefore involve independent
+validation of discovered models and appropriate human oversight
+before conducting consequential experiments.
+
+References
+
+Baek et al. (2025)
+J. Baek, S. K. Jauhar, S. Cucerzan, and S. J. Hwang
+
+ResearchAgent: iterative research idea generation over scientific literature with large language models.
+
+In Proceedings of the 2025 Conference of the Nations of the Americas
+Chapter of the Association for Computational Linguistics: Human Language
+Technologies, NAACL 2025 - Volume 1: Long Papers, Albuquerque, New
+Mexico, USA, April 29 - May 4, 2025,
+
+pp. 6709–6738.
+
+External Links: Link,
+Document
+
+Cited by: §1.
+
+Bickford Smith et al. (2023)
+F. Bickford Smith, A. Kirsch, S. Farquhar, Y. Gal, A. Foster, and T. Rainforth
+
+Prediction-oriented bayesian active learning.
+
+In Proceedings of the 26th International Conference on Artificial Intelligence and Statistics,
+
+Proceedings of Machine Learning Research, Vol. 206, pp. 7331–7348.
+
+External Links: Link
+
+Cited by: Appendix F,
+§2.
+
+Blei (2014)
+D. M. Blei
+
+Build, compute, critique, repeat: data analysis with latent variable models.
+
+Annual Review of Statistics and Its Application 1, pp. 203–232.
+
+External Links: Document
+
+Cited by: §1.
+
+Boiko et al. (2023)
+D. A. Boiko, R. MacKnight, B. Kline, and G. Gomes
+
+Autonomous chemical research with large language models.
+
+Nature 624 (7992), pp. 570–578.
+
+External Links: Document
+
+Cited by: §1.
+
+Borth (1975)
+D. M. Borth
+
+A total entropy criterion for the dual problem of model discrimination and parameter estimation.
+
+Journal of the Royal Statistical Society: Series B (Methodological) 37 (1), pp. 77–87.
+
+External Links: Document
+
+Cited by: §1,
+§2.
+
+Box and Hill (1967)
+G. E. P. Box and W. J. Hill
+
+Discrimination among mechanistic models.
+
+Technometrics 9 (1), pp. 57–71.
+
+External Links: Document
+
+Cited by: §1.
+
+Brown et al. (2020)
+T. Brown, B. Mann, N. Ryder, M. Subbiah, J. D. Kaplan, P. Dhariwal, A. Neelakantan, P. Shyam, G. Sastry, A. Askell, S. Agarwal, A. Herbert-Voss, G. Krueger, T. Henighan, R. Child, A. Ramesh, D. Ziegler, J. Wu, C. Winter, C. Hesse, M. Chen, E. Sigler, M. Litwin, S. Gray, B. Chess, J. Clark, C. Berner, S. McCandlish, A. Radford, I. Sutskever, and D. Amodei
+
+Language models are few-shot learners.
+
+In Advances in Neural Information Processing Systems,
+
+Vol. 33, pp. 1877–1901.
+
+External Links: Link
+
+Cited by: §1.
+
+Brunton et al. (2016)
+S. L. Brunton, J. L. Proctor, and J. N. Kutz
+
+Discovering governing equations from data by sparse identification of nonlinear dynamical systems.
+
+Proceedings of the National Academy of Sciences 113 (15), pp. 3932–3937.
+
+External Links: Document
+
+Cited by: §2.
+
+Chaloner and Verdinelli (1995)
+K. Chaloner and I. Verdinelli
+
+Bayesian experimental design: a review.
+
+Statistical Science 10 (3), pp. 273–304.
+
+External Links: Document
+
+Cited by: §1,
+§2.
+
+Choudhury et al. (2026)
+D. Choudhury, S. Williamson, A. Goliński, N. Miao, F. Bickford Smith, M. Kirchhof, Y. Zhang, and T. Rainforth
+
+BED-LLM: intelligent information gathering with LLMs and Bayesian experimental design.
+
+In The Fourteenth International Conference on Learning Representations,
+
+pp. 84375–84405.
+
+External Links: Link
+
+Cited by: §2.
+
+Cranmer (2023)
+M. Cranmer
+
+Interpretable machine learning for science with PySR and SymbolicRegression.jl.
+
+arXiv preprint arXiv:2305.01582.
+
+External Links: Link
+
+Cited by: §2.
+
+Del Moral et al. (2006)
+P. Del Moral, A. Doucet, and A. Jasra
+
+Sequential monte carlo samplers.
+
+Journal of the Royal Statistical Society: Series B (Statistical Methodology) 68 (3), pp. 411–436.
+
+External Links: Document
+
+Cited by: Appendix B,
+§3.2.
+
+Domke (2025)
+J. Domke
+
+Large language Bayes.
+
+In Advances in Neural Information Processing Systems,
+
+Vol. 38, pp. 7149–7211.
+
+External Links: Document,
+Link
+
+Cited by: §2.
+
+Gandhi et al. (2025)
+K. Gandhi, M. Y. Li, L. Goodyear, A. Bhatia, L. Li, A. Bhaskar, M. Zaman, and N. D. Goodman
+
+BoxingGym: benchmarking progress in automated experimental design and model discovery.
+
+arXiv preprint arXiv:2501.01540.
+
+External Links: Link
+
+Cited by: §1,
+§1,
+§1,
+§2,
+§4.
+
+Gupta et al. (2025)
+R. Gupta, J. Hartford, and B. Liu
+
+LLMs for Bayesian optimization in scientific domains: are we there yet?.
+
+In Findings of the Association for Computational Linguistics: EMNLP 2025, C. Christodoulopoulos, T. Chakraborty, C. Rose, and V. Peng (Eds.),
+
+Suzhou, China, pp. 15482–15510.
+
+External Links: Link,
+Document,
+ISBN 979-8-89176-335-7
+
+Cited by: §1.
+
+Hill et al. (1968)
+W. J. Hill, W. G. Hunter, and D. W. Wichern
+
+A joint design criterion for the dual problem of model discrimination and parameter estimation.
+
+Technometrics 10 (1), pp. 145–160.
+
+External Links: Document
+
+Cited by: §2.
+
+Hoeting et al. (1999)
+J. A. Hoeting, D. Madigan, A. E. Raftery, and C. T. Volinsky
+
+Bayesian model averaging: a tutorial.
+
+Statistical Science 14 (4), pp. 382–417.
+
+External Links: Document
+
+Cited by: §1,
+§3.3.
+
+Kabra et al. (2026)
+S. Kabra, N. Abhyankar, S. Desai, P. Iyer, and C. K. Reddy
+
+LLM-AutoSciLab: closed-loop scientific discovery via active experimentation with LLMs.
+
+arXiv preprint arXiv:2605.24043.
+
+External Links: Link
+
+Cited by: §1,
+§2,
+§4.
+
+Kass and Raftery (1995)
+R. E. Kass and A. E. Raftery
+
+Bayes factors.
+
+Journal of the American Statistical Association 90 (430), pp. 773–795.
+
+External Links: Document
+
+Cited by: §1.
+
+Langley et al. (1987)
+P. W. Langley, H. A. Simon, G. Bradshaw, and J. M. Zytkow
+
+Scientific discovery: computational explorations of the creative process.
+
+ MIT Press.
+
+External Links: ISBN 9780262620529,
+Link
+
+Cited by: §1.
+
+Li et al. (2024)
+M. Y. Li, E. Fox, and N. Goodman
+
+Automated statistical model discovery with language models.
+
+In Proceedings of the 41st International Conference on Machine Learning,
+
+Proceedings of Machine Learning Research, Vol. 235, pp. 27791–27807.
+
+External Links: Link
+
+Cited by: §1,
+§2.
+
+Lindley (1956)
+D. V. Lindley
+
+On a measure of the information provided by an experiment.
+
+The Annals of Mathematical Statistics 27 (4), pp. 986–1005.
+
+External Links: Document
+
+Cited by: §1,
+§2.
+
+Lu et al. (2024)
+C. Lu, C. Lu, R. T. Lange, J. Foerster, J. Clune, and D. Ha
+
+The AI scientist: towards fully automated open-ended scientific discovery.
+
+arXiv preprint arXiv:2408.06292.
+
+External Links: Link
+
+Cited by: §1.
+
+McGree (2017)
+J. M. McGree
+
+Developments of the total entropy utility function for the dual purpose of model discrimination and parameter estimation in Bayesian design.
+
+Computational Statistics & Data Analysis 113, pp. 207–225.
+
+External Links: Document
+
+Cited by: §1,
+§2.
+
+Murphy (2026)
+K. Murphy
+
+Model discovery agent: LLM-assisted bayesian experiment design for data-efficient discovery of mechanistic world models.
+
+arXiv preprint arXiv:2608.09696.
+
+Note: Version 5; versioned protocol comparison
+
+External Links: Link
+
+Cited by: §2.
+
+Piriyakulkij et al. (2024)
+W. T. Piriyakulkij, C. Langenfeld, T. A. Le, and K. Ellis
+
+Doing experiments and revising rules with natural language and probabilistic reasoning.
+
+In Advances in Neural Information Processing Systems,
+
+Vol. 37, pp. 53102–53137.
+
+External Links: Document,
+Link
+
+Cited by: §2.
+
+Prystawski et al. (2026)
+B. Prystawski, K. Mukherjee, D. Wurgaft, L. Nasvytis, M. Y. Li, N. D. Goodman, and M. C. Frank
+
+Auto-psych: automating the science of mind using agent-driven theory discovery and experimentation.
+
+arXiv preprint arXiv:2606.26460.
+
+External Links: Link
+
+Cited by: §2.
+
+Rainforth et al. (2024)
+T. Rainforth, A. Foster, D. R. Ivanova, and F. Bickford Smith
+
+Modern Bayesian experimental design.
+
+Statistical Science 39 (1), pp. 100–114.
+
+External Links: Document
+
+Cited by: §1,
+§2.
+
+Romera-Paredes et al. (2024)
+B. Romera-Paredes, M. Barekatain, A. Novikov, M. Balog, M. P. Kumar, E. Dupont, F. J. R. Ruiz, J. S. Ellenberg, P. Wang, O. Fawzi, P. Kohli, and A. Fawzi
+
+Mathematical discoveries from program search with large language models.
+
+Nature 625 (7995), pp. 468–475.
+
+External Links: Document
+
+Cited by: §1.
+
+Schmidt and Lipson (2009)
+M. Schmidt and H. Lipson
+
+Distilling free-form natural laws from experimental data.
+
+Science 324 (5923), pp. 81–85.
+
+External Links: Document
+
+Cited by: §1,
+§2.
+
+Shojaee et al. (2025)
+P. Shojaee, K. Meidani, S. Gupta, A. B. Farimani, and C. K. Reddy
+
+LLM-SR: scientific equation discovery via programming with large language models.
+
+In The Thirteenth International Conference on Learning Representations,
+
+External Links: Link
+
+Cited by: §1,
+§1,
+§2.
+
+Wahl et al. (2026)
+S. Wahl, R. Schenk, A. Farnoud, J. H. Macke, and D. Gedon
+
+A probabilistic framework for LLM-based model discovery.
+
+arXiv preprint arXiv:2602.18266.
+
+External Links: Link
+
+Cited by: §2.
+
+Wang et al. (2023)
+H. Wang, T. Fu, Y. Du, W. Gao, K. Huang, Z. Liu, P. Chandak, S. Liu, P. Van Katwyk, A. Deac, A. Anandkumar, K. Bergen, C. P. Gomes, S. Ho, P. Kohli, J. Lasenby, J. Leskovec, T. Liu, A. Manrai, D. Marks, B. Ramsundar, L. Song, J. Sun, J. Tang, P. Veličković, M. Welling, L. Zhang, C. W. Coley, Y. Bengio, and M. Zitnik
+
+Scientific discovery in the age of artificial intelligence.
+
+Nature 620 (7972), pp. 47–60.
+
+External Links: Document
+
+Cited by: §1.
+
+Wiemann et al. (2026)
+M. L. Wiemann, L. M. Smith, P. Melchior, S. Mishra-Sharma, A. G. Wilson, P. Izmailov, and C. Cuesta-Lázaro
+
+DiscoverPhysics: benchmarking LLMs for out-of-the-box scientific thinking.
+
+arXiv preprint arXiv:2605.26087.
+
+Note: Version 2, August 31, 2026
+
+External Links: Link
+
+Cited by: §1,
+§4.
+
+Yang et al. (2024)
+Z. Yang, X. Du, J. Li, J. Zheng, S. Poria, and E. Cambria
+
+Large language models for automated open-domain scientific hypotheses discovery.
+
+In Findings of the Association for Computational Linguistics: ACL 2024, L. Ku, A. Martins, and V. Srikumar (Eds.),
+
+Bangkok, Thailand, pp. 13545–13565.
+
+External Links: Link,
+Document
+
+Cited by: §1.
+
+Zheng et al. (2026)
+T. Zheng, K. K. Tam, N. H. K. Nguyen, B. Xu, Z. Wang, J. Cheng, H. T. Tsang, W. Wang, J. Bai, T. Fang, Y. Song, G. Y. Wong, and S. See
+
+NewtonBench: benchmarking generalizable scientific law discovery in LLM agents.
+
+In The Fourteenth International Conference on Learning Representations,
+
+External Links: Link
+
+Cited by: §1,
+§4.
+
+Appendix A Experimental Protocol and Metrics
+
+Tasks, runs, and observation counts.
+
+A task specifies a generating mechanism; a world also fixes its
+parameters and observation process. A run is one execution with a
+particular seed. Table 3 lists the task sets for the
+sequential prediction and recovery experiments in
+Sections 4.1 and 4.2. The shared-candidate study in
+Section 4.3 uses a separate 217-run cohort, specified in
+Appendix D; its run counts should not be
+substituted for those of the sequential experiments.
+ChemBench, ForceBench, and NewtonBench keep each task’s law and
+constants fixed across seeds. BoxingGym instead draws parameters for
+each task–seed world. Seeds control numerical randomness and, where randomized, initial
+observations. The three standard seeds are 31, 37, and 41; BoxingGym uses
+31, 41, and 47 for peregrines and 43, 53, and 61 for survival.
+The peregrines substitution avoids degenerate initial data.
+
+With n0n_{0} initial observations and tt additional responses, the plotted
+count is n=n0+tn=n_{0}+t. One ForceBench trajectory counts as one observation,
+not one observation per time point. Repeated designs generate fresh
+noise on BoxingGym and ForceBench, but return the same response on
+ChemBench and NewtonBench, whose noise is a deterministic function of
+the input. These simulator rules differ from the conditional-independence
+assumption used for numerical fitting.
+
+Table 3: Main experimental tasks and budgets. Structural recovery uses
+only targets representable in the interface; predictive evaluation
+retains all tasks. Each task has three seeds.
+
+ChemBench
+
+BoxingGym
+
+ForceBench
+
+NewtonBench
+
+Tasks
+
+Michaelis–Menten, product inhibition, ping-pong; each easy/medium/hard
+
+Death, dugongs, hyperbolic, peregrines, survival
+
+Gravity, Yukawa, Coulomb (easy), oscillator, extra dimensions
+
+Magnetic force, Fourier, Snell, radioactive decay, Malus, sound speed, Hooke, Bose–Einstein, heat transfer (medium)
+
+BMD runs
+
+27
+
+15
+
+15
+
+27
+
+Recovery runs
+
+27
+
+12
+
+9
+
+24
+
+n0n_{0} / additional / final nn
+
+3 / 30 / 33
+
+2 / 30 / 32
+
+2 / 16 / 18
+
+4 / 30 / 34
+
+Design space
+
+7 continuous reaction conditions
+
+Task-specific; hyperbolic has 3 integer inputs, survival a discrete patient menu
+
+2 continuous parameters in [0.1,10]2[0.1,10]^{2}
+
+Task-specific continuous inputs
+
+Prediction scored
+
+After proposals
+
+Before proposals
+
+Before proposals
+
+After proposals
+
+Information supplied to the agents.
+
+BMD and all baselines receive the same numerical ranges of the design
+variables, with variable names anonymized on all four benchmarks.
+Task descriptions and semantic metadata are withheld on ChemBench,
+BoxingGym, and NewtonBench; BMD’s modeling interface remains available.
+ForceBench is the exception to metadata withholding: all methods retain
+the same physical task metadata to preserve the intended benchmark
+setting, while variable identifiers remain anonymized. There, the
+interface identifies separation, elapsed time, and inertial mass, and
+specifies how a force expression produces trajectories. For position
+vector 𝐫\mathbf{r}, the declared acceleration
+is −fm/X3-f_{m}/X_{3} along 𝐫/‖𝐫‖\mathbf{r}/\|\mathbf{r}\|, where fmf_{m} is the proposed
+expression and X3X_{3} is the inertial-mass input. The initial position and
+velocity and the velocity-Verlet grid (Δ​t=0.005\Delta t=0.005) are supplied.
+Each trajectory contains two coordinates at ten measurement times.
+No world name, force law, or law catalogue is supplied to the proposer.
+In BMD’s discovery runs, all initial candidates are LLM proposals;
+assigning a canonical catalogue name to a matching expression does not
+insert that expression. The fixed-pool diagnostic in
+Section 4.3 is the explicit exception: it inserts the GT family
+to separate model evaluation from candidate-generation success.
+
+Baseline interfaces and schedules.
+
+All methods use Claude Opus 5.5 for their LLM calls.
+LLM-AutoSciLab uses an every-round variant for predictive curves:
+one experiment and one equation-learning step per round, with the same
+LLM and reasoning effort as BMD. It follows the same anonymization and
+metadata policy described above: in particular, it does not receive
+native variable names or chemical task metadata on ChemBench.
+Its NewtonBench recovery curve uses the released schedule, with the
+first law at n=16n=16.
+
+The ForceBench comparisons use the rerun with a common information and
+observation interface for BMD, direct ICL, LLM-AutoSciLab, and DP-Agent.
+All receive the same physical task metadata and design constraints,
+observe trajectories through the same interface, and are evaluated
+using the same targets and scorer. Each trajectory counts as one
+observation for every method. The agents may choose different designs
+and hence observe different responses, but they do not receive different
+types of experimental measurements.
+
+Box’s Apprentice on BoxingGym and DP-Agent on ForceBench
+also use every-round variants. Direct ICL chooses experimental
+designs from its observation history and receives separate prediction
+requests at each observation count; these requests do not change that
+history. Different experiment-selection policies are part of the
+comparison, whereas Section 4.3 holds the realized observations
+and candidate families fixed across methods.
+
+Prediction targets.
+
+Let QQ be the empirical distribution of evaluation inputs, h⁡(𝐱)h(\mathbf{x})
+the evaluation target, and μ^n​(𝐱)\widehat{\mu}_{n}(\mathbf{x}) the prediction after
+nn observations. For nonnegative targets,
+
+nMSLEQ=𝔼Q​[(log⁡(1+μ^n)−log⁡(1+h))2]VarQ⁡[log⁡(1+h)].\mathrm{nMSLE}_{Q}=\frac{\mathbb{E}_{Q}[(\log(1+\widehat{\mu}_{n})-\log(1+h))^{2}]}{\operatorname{Var}_{Q}[\log(1+h)]}.
+
+(9)
+
+The nMSE divides the mean squared error by the benchmark’s fixed
+variance normalizer, averaging over the prescribed coordinates and
+time points for trajectories. Normalizers are specific to the target
+and evaluation set.
+
+ChemBench evaluates the noise-free observation mean
+g⋆​(𝐱)=f⋆​(𝐱)​s​(T,pH)g^{\star}(\mathbf{x})=f^{\star}(\mathbf{x})s(T,\mathrm{pH}), including environmental
+effects ss, rather than the primary kinetic law f⋆f^{\star} alone.
+BoxingGym uses noise-free response-mean nMSE, including survival.
+NewtonBench evaluates its noise-free governing law by nMSLE.
+ChemBench and NewtonBench use 256 fixed evaluation inputs per task,
+shared across methods and seeds. BoxingGym draws 256 inputs per world
+and excludes observed designs. ForceBench evaluates trajectory nMSE on
+six fixed parameter settings,
+p1∈{3,4,5}p_{1}\in\{3,4,5\} and p2∈{3,5}p_{2}\in\{3,5\}, inside the acquisition box.
+These settings are our evaluation set, not the benchmark’s three
+standard scoring designs; the normalizer is the benchmark’s per-world
+variance constant, with a fixed scoring seed.
+
+The targets matter: low observation-mean error need not imply low
+primary-law error. For u=log⁡(1+f⋆)u=\log(1+f^{\star}),
+v=log⁡(1+g⋆)v=\log(1+g^{\star}), and v^=log⁡(1+μ^n)\widehat{v}=\log(1+\widehat{\mu}_{n}),
+
+𝔼Q​(v^−u)2\displaystyle\mathbb{E}_{Q}(\widehat{v}-u)^{2}
+=𝔼Q​(v^−v)2+𝔼Q​(v−u)2\displaystyle=\mathbb{E}_{Q}(\widehat{v}-v)^{2}+\mathbb{E}_{Q}(v-u)^{2}
+
+(10)
+
++2​𝔼Q​[(v^−v)​(v−u)].\displaystyle+2\mathbb{E}_{Q}[(\widehat{v}-v)(v-u)].
+
+The cross term can have either sign; Appendix H
+gives a concrete example.
+
+Evaluation timing.
+
+Prediction uses the state in Table 3; structural
+recovery always uses the retained pool after proposals. Both are
+evaluated independently at each observation count, not as best-so-far
+scores. Ground-truth forms are excluded from the discovery loop, and
+held-out evaluation responses are excluded from all fitting and design.
+The GT-containing diagnostic is specified separately in
+Appendix D. Hypothetical acquisition responses
+come from the fitted model, not additional simulator calls.
+
+Curve aggregation.
+
+For method aa, let ea,j,s​(n)e_{a,j,s}(n) be the error of task jj and seed ss,
+and SjS_{j} its included seeds. With JJ tasks, define
+
+ℓa,j​(n)\displaystyle\ell_{a,j}(n)
+=1|Sj|​∑s∈Sjlog⁡ea,j,s​(n),\displaystyle=\frac{1}{|S_{j}|}\sum_{s\in S_{j}}\log e_{a,j,s}(n),
+
+(11)
+
+ℓ¯a​(n)\displaystyle\bar{\ell}_{a}(n)
+=1J​∑j=1Jℓa,j​(n),\displaystyle=\frac{1}{J}\sum_{j=1}^{J}\ell_{a,j}(n),
+
+va​(n)\displaystyle v_{a}(n)
+=1J2​∑j=1JVars∈Sj⁡[log⁡ea,j,s​(n)].\displaystyle=\frac{1}{J^{2}}\sum_{j=1}^{J}\operatorname{Var}_{s\in S_{j}}[\log e_{a,j,s}(n)].
+
+Lines show exp⁡(ℓ¯a)\exp(\bar{\ell}_{a}); bands show
+exp⁡(ℓ¯a±va)\exp(\bar{\ell}_{a}\pm\sqrt{v_{a}}). Variance is the sample variance
+within each task (zero for a single included seed). These bands summarize
+seed dispersion, not confidence intervals for paired improvements.
+Each plotted point requires a prediction from every included run.
+AutoSciLab’s curves can therefore begin after the initial observation
+budget because it needs additional observations before proposing its
+first executable model. The fixed-pool comparison instead uses the
+normalization and aggregation in Appendix D.
+
+At the first ForceBench observation budget, predictions use the fitted
+initial LLM proposals before any adaptive experiment is selected.
+Performance at that point reflects the initial observations and fitted
+pool, not an effect of an EIG-selected experiment.
+
+Missing and early-terminated runs.
+
+BMD and ICL use all runs in Table 3. AutoSciLab’s
+predictive curves use 26/27 ChemBench and 8/15 BoxingGym runs; Box’s
+Apprentice uses 10/15 BoxingGym runs. All plotted methods use the full
+ForceBench and NewtonBench sets. The exclusions are:
+
+• 
+
+AutoSciLab: ChemBench ping-pong medium, seed 37; BoxingGym death
+(all three seeds), survival 61 (first law too late), hyperbolic 31
+(overflow), and peregrines 31/41 (no finite values).
+
+• 
+
+Box’s Apprentice: death 41, dugongs 31, and all three hyperbolic
+runs; hyperbolic 31 terminated at its cost cap.
+
+Thus some curves summarize different task–seed sets. Five NewtonBench
+AutoSciLab runs stopped with a confidence-based termination after
+12–20 observations (Snell 31, Malus 31, sound speed 37, Hooke 31/37);
+their last law is carried to n=34n=34 for predictive evaluation.
+Crashed BMD runs were rerun under the same seed with the cause recorded.
+Missing predictions were not assigned zero error. Proposal rejection,
+fit failure, and unavailable agent predictions are recorded separately.
+
+The available-run counts above concern the sequential experiments only.
+The 90/27/30/70 runs in Table 2 belong to the separate
+fixed-pool diagnostic; they are not a revised denominator for
+Figures 2 and 3.
+
+Appendix B Numerical Implementation
+
+Model representation and validation.
+
+Each candidate specifies a functional expression and its coefficient
+roles and domains. As in Section 3.1, the observation-distribution
+family is fixed for each task; it is not a hypothesis-search dimension.
+The task interface supplies this likelihood and the link or forward model. Prediction uses the response-space conditional mean,
+not the raw expression when the link is nonlinear.
+ChemBench, BoxingGym, and NewtonBench allow
++,−,×,/,∗∗+,-,\times,/,** and exp, log, sqrt,
+tanh, square, and power, with at most six
+expression coefficients and fifteen operators. ForceBench additionally
+allows cos and sin, but its engine enforces three
+free constants and ten operators. Noise parameters are not counted as
+expression coefficients.
+
+Validation checks syntax, coefficient roles, consistency with the fixed
+task likelihood, and finite predictions under 64 prior draws (on BoxingGym, at 16 probe
+inputs). Canonicalization normalizes expression syntax, roles, and
+family, including equivalent power notations. ForceBench also checks
+numerical duplicates on a probe grid. These online duplicate tests are
+not the full structural judge of Appendix C.
+Rejected proposals and failed fits retain their failure reasons rather
+than receiving an artificial evidence value.
+
+Proposal and pool settings.
+
+The proposer uses Claude Opus 5.5 with medium reasoning effort,
+16,000 output tokens, and a 120-second timeout. SDK retries are disabled;
+a validation failure permits one repair turn. Initialization requests
+12 candidates and permits two refill waves. Later rounds request three
+candidates without refill. The pool retains up to 12 valid fitted model
+families by evidence, with equal family-level prior weights. Every fifth round, the proposer may nominate up to two
+retired candidates; each is refitted from its original prior on all
+current data before competing for retention. All failed proposals and
+retirements remain in the archive.
+
+Table 4: Benchmark-specific settings for the main BMD runs.
+Common proposal and SMC settings are given in the text.
+Appendices E and F
+specify analysis-specific differences.
+
+ChemBench
+
+BoxingGym
+
+ForceBench
+
+NewtonBench
+
+Initial data
+
+3 fixed designs
+
+2 random designs
+
+2 trajectories
+
+4 random designs
+
+Coefficient prior
+
+Default
+
+Default; hyperbolic: wide
+
+Signed 𝒩⁡(0,1)\mathcal{N}(0,1); positive LogNormal(0,1)(0,1)
+
+Wide
+
+Observation family
+
+Fixed LogNormal
+
+Fixed per task
+
+Fixed trajectory likelihood
+
+Fixed LogNormal
+
+Archive review
+
+Every 5 rounds to 30
+
+Every 5 rounds to 30
+
+Rounds 5, 10, 15
+
+Every 5 rounds to 30
+
+EIG draws
+
+128 posterior draws
+
+128; count tasks use outcome tables
+
+128 outer and 128 inner draws
+
+128 posterior draws
+
+Search starts
+
+5 uniform
+
+5 best candidate designs; survival enumerated
+
+5 uniform
+
+5 uniform
+
+Optimizer
+
+Projected finite differences; 20–500 steps
+
+Compass search; at most 40 steps
+
+Adam, learning rate 0.15; 40 steps
+
+As ChemBench
+
+Paid-call cap
+
+160
+
+100
+
+100
+
+160
+
+Role priors and observation models.
+
+ChemBench and BoxingGym’s death, dugongs, peregrines, and survival tasks
+use independent default role priors:
+
+θintercept\displaystyle\theta_{\rm intercept}
+∼𝒩⁡(0,22),\displaystyle\sim\mathcal{N}(0,2^{2}),
+
+(12)
+
+θsigned\displaystyle\theta_{\rm signed}
+∼𝒩⁡(0,1),\displaystyle\sim\mathcal{N}(0,1),
+
+θpositive\displaystyle\theta_{\rm positive}
+∼LogNormal⁡(0,1),\displaystyle\sim\operatorname{LogNormal}(0,1),
+
+θshape\displaystyle\theta_{\rm shape}
+∼Gamma⁡(2,1).\displaystyle\sim\operatorname{Gamma}(2,1).
+
+Gamma uses shape and rate. NewtonBench and BoxingGym’s hyperbolic task
+use a wide prior: intercept 𝒩⁡(0,42)\mathcal{N}(0,4^{2}), signed
+𝒩⁡(0,22)\mathcal{N}(0,2^{2}), positive LogNormal(0,2)(0,2), and shape
+Gamma(2,12)(2,\tfrac{1}{2}). ForceBench uses the two priors in
+Table 4.
+
+For a LogNormal response, let ηm\eta_{m} be the log-link expression and
+s0s_{0} the response unit computed from 𝒟0\mathcal{D}_{0}. Then
+
+μm​(𝐱,𝜽m)=s0​exp⁡{ηm​(𝐱,𝜽m)},Y|𝐱,𝜽m,m∼LogNormal⁡(log⁡μm−σm2/2,σm),σm∼HalfNormal⁡(1).\begin{gathered}\mu_{m}(\mathbf{x};\boldsymbol{\theta}_{m})=s_{0}\exp\{\eta_{m}(\mathbf{x};\boldsymbol{\theta}_{m})\},\\
+Y\mid\mathbf{x},\boldsymbol{\theta}_{m},m\\[-2.0pt]
+\sim\operatorname{LogNormal}(\log\mu_{m}-\sigma_{m}^{2}/2,\sigma_{m}),\\
+\sigma_{m}\sim\operatorname{HalfNormal}(1).\end{gathered}
+
+(13)
+
+Here μm\mu_{m} is the response mean, not the median. The response unit is
+the initial sample mean on ChemBench and BoxingGym’s positive-response
+path, and the initial geometric mean on NewtonBench. It remains fixed,
+so evidence is conditional on this initial calibration.
+
+ChemBench and NewtonBench use the fixed LogNormal observation family.
+BoxingGym uses the likelihood assigned to each task; ForceBench uses
+the task’s fixed likelihood on trajectory coordinates. Candidates do
+not change this distributional family, although parameters of the
+specified likelihood can be inferred. The fitted likelihood can differ
+from the simulator noise;
+ChemBench, for example, generates relative Gaussian noise.
+Equivalent expressions need not induce equivalent priors when the same
+numerical role prior is used under a different parameterization.
+
+SMC and prediction.
+
+SMC bridges densities proportional to
+πm​(𝜽m)​Lm,t​(𝜽m)β\pi_{m}(\boldsymbol{\theta}_{m})L_{m,t}(\boldsymbol{\theta}_{m})^{\beta}, increasing β\beta from
+zero to one (Del Moral et al., 2006). Each refit starts from the original
+prior and uses all current data. All benchmarks use 500 particles per
+chain and two chains, with an effective-sample-size target of 0.5​N0.5N
+and resampling at each tempering stage.
+ChemBench, BoxingGym, and NewtonBench use PyMC 5.13.1, two worker cores,
+and independent-Metropolis moves with adaptive move counts
+(correlation threshold 0.01). Fit timeouts are 600 seconds on ChemBench
+and NewtonBench; BoxingGym has no such timeout.
+
+ForceBench uses JAX, runs the chains sequentially, and takes three
+random-walk Metropolis moves per tempering stage. The fitting configuration
+specifies a 5,000-stage/1,800-second limit.
+
+For CC chains, the documented combination rule averages evidence
+estimates, not their logarithms:
+
+log⁡Z^m,t=logsumexpc=1C⁡log⁡Z^m,t(c)−log⁡C.\log\widehat{Z}_{m,t}=\operatorname{logsumexp}_{c=1}^{C}\log\widehat{Z}_{m,t}^{(c)}-\log C.
+
+(14)
+
+Posterior particles are concatenated with equal weights. With NmN_{m}
+stored particles, the family predictive is
+
+qm,t​(y∣𝐱)≃1Nm​∑k=1Nmpm​(y∣𝐱,𝜽m(k)).q_{m,t}(y\mid\mathbf{x})\simeq\frac{1}{N_{m}}\sum_{k=1}^{N_{m}}p_{m}(y\mid\mathbf{x},\boldsymbol{\theta}_{m}^{(k)}).
+
+Point predictions average conditional response means over these
+particles and then over families using evidence weights.
+
+Joint-EIG estimation and search.
+
+The estimator samples a family, posterior parameters, and a hypothetical
+outcome, then compares its conditional likelihood with the weighted
+predictive mixture. Density calculations use log-sum-exp arithmetic.
+Invalid components are tracked; an all-invalid query is a failure, not
+zero information. Negative finite-sample estimates are not clipped.
+The component estimators appear in Appendix F.
+
+ChemBench and NewtonBench start five searches uniformly in the scaled
+unit box and select the best endpoint under the search draws. The
+256-point pools declared for other comparison methods are not used by
+these runs. ChemBench uses log coordinates for designated positive
+inputs and affine coordinates otherwise. For iteration kk, its
+random-sign finite-difference schedules are
+
+ak=0.2(10+k)0.602,ck=0.05k0.101,a_{k}=\frac{0.2}{(10+k)^{0.602}},\qquad c_{k}=\frac{0.05}{k^{0.101}},
+
+with clipped probes and updates, 20–500 steps, and a ten-step movement
+window. BoxingGym scores a 100-point candidate pool (75 for hyperbolic)
+and starts compass search from the best five points; it re-evaluates
+the pool maximum and search endpoints together. Survival instead scores
+every unobserved patient.
+
+ForceBench uses five uniform starts and Adam ascent. One set of random draws is shared across
+all starts and steps within a round; endpoints are re-estimated with
+independent draws before selection. Every search respects the design
+constraints and keeps the fitted model pool fixed.
+
+EPIG implementation.
+
+The separate exploratory EPIG comparison in
+Appendix F uses the same predictive-mixture
+construction and feasible domain. Its settings below describe that
+auxiliary comparison, not a replacement for joint EIG in the main runs. BoxingGym samples 32 target inputs once per run from its
+evaluation-input distribution, disjoint from evaluation points
+(128 targets on hyperbolic; uniform resampling of the 100-patient pool
+on survival). Search uses the same compass procedure, or enumeration
+on survival. Continuous outcomes use 64 predictive-quantile intervals
+including tails. Bounded counts are enumerated; unbounded counts are
+enumerated to 100,000 with an aggregated tail at tolerance 10−1210^{-12}
+and a 256 MiB working-memory limit. The resulting mutual information
+is computed on finite probability tables.
+ForceBench uses 32 uniform target designs, Adam search, and
+128×128128\times 128 nested Monte Carlo draws without a quantile grid.
+No evaluation responses are used in either acquisition.
+
+Appendix C Strict Recovery and Ground-Truth Containment
+
+Criteria and selected models.
+
+The two curves in Figure 3 evaluate
+the same top-1 model at each observation budget:
+BMD’s highest-evidence retained family or AutoSciLab’s current hypothesis.
+They neither search the archive for a better answer nor count earlier
+successes cumulatively. BMD breaks evidence ties by the smallest
+canonical model identifier. A missing AutoSciLab law counts as no
+recovery; direct ICL has no structural output, so its recovery is not
+applicable rather than zero.
+
+For run ii, let ℱi⋆\mathcal{F}_{i}^{\star} be the target family over its
+admissible coefficient domain and ℱi​(m)\mathcal{F}_{i}(m) the candidate family
+on the benchmark’s comparison scale. The intended relations are
+
+strict:\displaystyle\text{strict: }
+ℱi​(m)=ℱi⋆,\displaystyle\mathcal{F}_{i}(m)=\mathcal{F}_{i}^{\star},
+
+(15)
+
+containment:\displaystyle\text{containment: }
+ℱi⋆⊆ℱi​(m).\displaystyle\mathcal{F}_{i}^{\star}\subseteq\mathcal{F}_{i}(m).
+
+The plotted indicators record the outcomes of the checks below.
+Containment includes strict success, so the curve gap counts accepted
+containment cases without certified strict equivalence. Some of these
+comparisons remain symbolically unresolved; the gap is not a count of
+proven non-equivalent families.
+Neither criterion requires recovery of the actual fitted coefficients or
+of the observation-noise distribution.
+
+String identity is unnecessary. For positive domains,
+a​x/(b+x)=x/(θ1+θ2​x)ax/(b+x)=x/(\theta_{1}+\theta_{2}x) with
+θ1=b/a\theta_{1}=b/a and θ2=1/a\theta_{2}=1/a is an invertible reparameterization.
+By contrast, c2​x2+c1​x+c0c_{2}x^{2}+c_{1}x+c_{0} contains a​x+bax+b by setting c2=0c_{2}=0,
+but has a free quadratic term. The declared coefficient domains matter;
+small estimated coefficients are not deleted after fitting.
+
+Equivalence and containment checks.
+
+A deterministic judge (version 1.3) first applies the task’s link, input
+transformations, and target conventions. It uses neither an LLM nor the
+agents’ held-out prediction scores.
+Strict equivalence requires matching canonical expression trees,
+a coefficient mapping solved in both directions, a 30-digit numerical
+spot check, and admissible coefficients reproducing the true and
+diagnostic parameter settings. Canonicalization splits exponentials of
+sums and logarithms of products, merges powers, normalizes fractions,
+extracts leading coefficients, and applies trigonometric addition
+formulas. Diagnostic settings comprise the true setting plus two
+additional settings on ChemBench, NewtonBench, and ForceBench, or three
+on BoxingGym.
+
+The judge marks non-equivalence for incompatible input dependence,
+coefficient-Jacobian rank, or coefficient domains, or for failure to
+reproduce a target member within 10−310^{-3} under an eight-start refit.
+Containment is recorded separately. Its checks include up to
+60 simplifying substitutions (coefficients set to 00, 11, or a
+limiting ∞\infty, or tied together), a solved mapping into a
+higher-dimensional family, and wider coefficient domains. When no
+symbolic witness is found, a numerical check fits diagnostic members
+and requires error within 10−610^{-6} on separate check inputs.
+This last check is evidence of numerical representability on those
+inputs, not a symbolic proof of inclusion everywhere.
+
+Symbolically unproved, numerically ambiguous, timed-out, or
+non-identifiable cases remain unresolved. They fail strict
+recovery but can pass the separate containment check. Thus counting
+strict certificates is conservative; failure to obtain a certificate does not itself
+prove non-equivalence. These truth-assisted checks are evaluation-only and
+never alter the discovered candidates or their fitted predictions.
+
+Benchmark targets and exclusions.
+
+The counts below refer to the sequential recovery experiment in
+Figure 3. The separate fixed-pool study
+uses the same notion of structural equivalence, with its own evaluation
+cohort and denominators (Appendix D).
+
+ChemBench judges the primary kinetic law up to a positive overall
+factor on the slice pH=7\mathrm{pH}=7 and T=310​KT=310\,\mathrm{K} (the latter
+is not fixed for Arrhenius tasks). Candidate nuisance terms are recorded
+but not judged. All 27 runs are included.
+
+BoxingGym judges the expression behind the link: 1−e−θ​x1-e^{-\theta x}
+for death, a−b​cxa-bc^{x} for dugongs, the cubic log-mean for peregrines, and
+λ0​t​eβ​m\lambda_{0}te^{\beta m} on the logit scale for survival at both
+treatment values. Hyperbolic requires the normal cumulative distribution
+function, absent from the grammar, leaving 12 representable runs.
+
+ForceBench judges acceleration F/p2F/p_{2} as a function of separation,
+time, and the two parameters. Simulator force softening and periodic
+background terms are excluded from the target; candidates adding them
+can count as containment. Yukawa’s Bessel function and the
+extra-dimensions image sum are outside the interface, leaving 9 runs.
+
+NewtonBench judges the law after its log link, up to a positive
+factor, with literal exponents fixed and named constants free. Malus
+requires sine and cosine, absent from this grammar, leaving 24 runs.
+Snell and Bose–Einstein use small-argument surrogate comparisons on
+the tested input boxes: these can pass containment while remaining
+unresolved for strict recovery. They are not exact-law certificates.
+All excluded structural targets remain in predictive evaluation.
+
+Agent schedules and interpretation.
+
+AutoSciLab uses every-round updates on ChemBench, BoxingGym, and
+ForceBench, but its released NewtonBench schedule produces no law before
+n=16n=16. This differs from the every-round NewtonBench predictive curve.
+Recovery uses the after-proposal model recorded at each budget. Averaging
+per-seed-slot fractions equals pooling because each slot has the same
+number of eligible runs. A correct earlier model can later be displaced,
+so recovery can decrease. These curves alone do not distinguish failure
+to propose a target family from failure to select it. Section 4.3
+addresses the latter question by including the GT family in every
+candidate pool, without changing the shared-pool selection problem. The earlier primary-family classifier used in
+Appendix H is broader than this strict criterion
+and its results are reported separately.
+
+Appendix D Numerical Evaluation on Shared Candidates
+
+Purpose and data.
+
+Section 4.3 separates explicit prediction, parameter inference,
+and model selection from differences in hypothesis generation and
+experimental design. For each world–seed pair, we collect 20
+random-design observations, denoted by 𝒟\mathcal{D}. This budget applies
+to all four benchmarks in this diagnostic, including ForceBench; it is
+separate from the sequential budgets in Table 3.
+The reported cohort contains 90 ChemBench, 27 BoxingGym, 30 ForceBench,
+and 70 NewtonBench runs, for a total of 217. A–D share the same data
+and evaluation inputs within each run. No additional observations or
+adaptive experiments are acquired during this comparison.
+
+Candidate construction.
+
+Given only the first 10 observations, Claude Opus 5.5 proposes 11
+alternative model families. We combine them with the ground-truth (GT)
+family to form a fixed candidate list ℒ\mathcal{L} of size K=12K=12.
+The GT insertion makes the correct functional form available for
+selection; it does not select that family on behalf of any method.
+All methods then receive the same list and use all 20 observations.
+The pool can differ between world–seed pairs but is fixed across A–D
+within a pair. Likelihood families are fixed per task, as in
+Section 3.1.
+
+LLM prediction and selection.
+
+A predicts responses directly from the observations and candidate list.
+B jointly selects a family mL∈ℒm_{L}\in\mathcal{L} and estimates its
+parameters 𝜽~mL\widetilde{\boldsymbol{\theta}}_{m_{L}}; the resulting model is executed
+at the evaluation inputs. A and B do not use SMC parameter estimates,
+model evidence, or residual feedback. A receives prediction queries,
+whereas B produces an executable model. Thus A–B compares direct
+numerical prediction with prediction through an explicit model, not
+an isolated change to the LLM’s internal representation.
+
+Shared fits and predictions.
+
+The numerical engine fits every candidate on the full 𝒟\mathcal{D}
+using SMC and the task priors, independently of B’s parameter estimates.
+For a candidate mm, define its conditional response mean
+μm(𝐱;𝜽m)=𝔼[Y∣𝐱,𝜽m,m]\mu_{m}(\mathbf{x};\boldsymbol{\theta}_{m})=\mathbb{E}[Y\mid\mathbf{x},\boldsymbol{\theta}_{m},m] and its
+posterior predictive mean
+
+μ¯m​(𝐱)=𝔼𝜽m|𝒟,m​[μm​(𝐱,𝜽m)].\overline{\mu}_{m}(\mathbf{x})=\mathbb{E}_{\boldsymbol{\theta}_{m}\mid\mathcal{D},m}[\mu_{m}(\mathbf{x};\boldsymbol{\theta}_{m})].
+
+(16)
+
+Let Z^​(m)\widehat{Z}(m) denote its estimated marginal likelihood and let
+mE∈arg⁡maxm∈ℒ​log​Z^​(m)m_{E}\in\arg\max_{m\in\mathcal{L}}\log\widehat{Z}(m) be the
+evidence-selected family. The three explicit predictors are
+
+μ^B​(𝐱)\displaystyle\widehat{\mu}_{\rm B}(\mathbf{x})
+=μmL​(𝐱,𝜽~mL),\displaystyle=\mu_{m_{L}}(\mathbf{x};\widetilde{\boldsymbol{\theta}}_{m_{L}}),
+
+(17)
+
+μ^C​(𝐱)\displaystyle\widehat{\mu}_{\rm C}(\mathbf{x})
+=μ¯mL​(𝐱),\displaystyle=\overline{\mu}_{m_{L}}(\mathbf{x}),
+
+μ^D​(𝐱)\displaystyle\widehat{\mu}_{\rm D}(\mathbf{x})
+=μ¯mE​(𝐱).\displaystyle=\overline{\mu}_{m_{E}}(\mathbf{x}).
+
+C retains B’s selected family. C and D reuse the same fitted candidates
+and posterior predictions, so matching family selections give identical
+predictions. Posterior prediction averages conditional response means,
+not parameters before nonlinear execution. B–C therefore compares
+within-family inference, while C–D changes only family selection.
+D uses one family; it is neither Bayesian model averaging nor a run of
+the complete BMD discovery loop.
+
+Prediction targets.
+
+All four methods use the same held-out inputs, targets, and scorer
+within each run. ChemBench and NewtonBench use 256 evaluation inputs
+with nMSLE; BoxingGym uses 256 inputs with nMSE. ForceBench uses nMSE
+over two-dimensional trajectories at 10 measurement times under six
+evaluation designs. The response targets and metric normalizers follow
+Appendix A. In particular, the BoxingGym summary
+uses nMSE throughout, rather than mixing nMSE and Brier scores.
+
+Error aggregation and normalization.
+
+For benchmark bb, let WbW_{b} be its number of evaluated worlds,
+Sb,jS_{b,j} the included seeds of world jj, and ea,b,j,se_{a,b,j,s} the
+prediction error of method aa. The benchmark aggregate is
+
+ℓa,b,j\displaystyle\ell_{a,b,j}
+=1|Sb,j|​∑s∈Sb,jlog⁡max⁡(ea,b,j,s,10−6),\displaystyle=\frac{1}{|S_{b,j}|}\sum_{s\in S_{b,j}}\log\max(e_{a,b,j,s},10^{-6}),
+
+(18)
+
+Ea,b\displaystyle E_{a,b}
+=exp⁡{1Wb​∑j=1Wbℓa,b,j}.\displaystyle=\exp\!\left\{\frac{1}{W_{b}}\sum_{j=1}^{W_{b}}\ell_{a,b,j}\right\}.
+
+Errors are first geometrically averaged over seeds within each world,
+then over worlds. Table 2 reports relative errors
+Ra,b=Ea,b/EA,bR_{a,b}=E_{a,b}/E_{{\rm A},b}, making direct ICL equal to one in
+every benchmark. The overall relative error is
+
+Raoverall=exp⁡{14​∑b=14log⁡Ra,b}.R_{a}^{\rm overall}=\exp\!\left\{\frac{1}{4}\sum_{b=1}^{4}\log R_{a,b}\right\}.
+
+(19)
+
+This gives equal weight to each benchmark, not to every run across all
+benchmarks. Table 5 gives the reported absolute
+errors before normalization, and Table 6 gives
+the identification counts. Values are shown at the precision supplied
+in the result summaries.
+
+Table 5: Absolute prediction errors for the shared-candidate study in
+Table 2, before normalization by A. Entries are
+geometric means over seeds within worlds and then over worlds;
+the overall row is the reported geometric mean across benchmarks.
+Lower is better.
+
+Benchmark (metric)
+
+A
+B
+C
+D
+
+ChemBench (nMSLE)
+
+×10−48.47\!\times\!10^{-4}
+×10−47.77\!\times\!10^{-4}
+×10−42.97\!\times\!10^{-4}
+×10−42.96\!\times\!10^{-4}
+
+BoxingGym (nMSE)
+
+×10−24.17\!\times\!10^{-2}
+×10−23.62\!\times\!10^{-2}
+×10−25.79\!\times\!10^{-2}
+×10−22.78\!\times\!10^{-2}
+
+ForceBench (nMSE)
+
+×10−31.00\!\times\!10^{-3}
+×10−42.30\!\times\!10^{-4}
+×10−41.74\!\times\!10^{-4}
+×10−53.58\!\times\!10^{-5}
+
+NewtonBench (nMSLE)
+
+×10−69.34\!\times\!10^{-6}
+×10−67.26\!\times\!10^{-6}
+×10−62.05\!\times\!10^{-6}
+×10−62.31\!\times\!10^{-6}
+
+Overall (geomean)
+
+×10−47.58\!\times\!10^{-4}
+×10−44.65\!\times\!10^{-4}
+×10−42.80\!\times\!10^{-4}
+×10−41.62\!\times\!10^{-4}
+
+Table 6: Top-1 GT identification in the fixed-pool study
+(correct / evaluated runs). B and C select the same family.
+A has no structural output.
+
+Benchmark
+B/C
+D
+
+ChemBench
+89/90
+87/90
+
+BoxingGym
+5/27
+17/27
+
+ForceBench
+15/30
+25/30
+
+NewtonBench
+63/70
+55/70
+
+Overall
+172/217
+184/217
+
+Top-1 GT identification.
+
+A hit requires structural equivalence of the selected family to the GT,
+using the criterion in Appendix C; merely
+containing the GT as a special case is not sufficient. B and C have
+identical identification outcomes because they select the same family.
+D is evaluated using its highest-evidence family. Identification is
+not applicable to A, which does not return a selected model.
+The overall rate pools all 217 runs: B/C identify the GT in 172/217
+runs (79.3%), and D in 184/217 (84.8%). Unlike the error aggregate,
+this overall rate is weighted by each benchmark’s number of runs.
+
+Interpretation.
+
+The cross-benchmark error decreases from A to B to C to D. The paired
+comparisons support explicit model execution over direct ICL, Bayesian
+fitting within the selected family, and evidence-based comparison of
+fitted families, respectively. Together, they support the division of
+labor described in Section 4.3. The GT-containing pool makes
+this a test of model evaluation when a correct candidate is available,
+rather than a test of generating that candidate or choosing experiments.
+
+Appendix E Belief and Diagnostic Feedback
+
+Purpose and conditions.
+
+Section 4.5 tests whether numerical feedback helps the LLM
+propose subsequent hypotheses, beyond the numerical engine’s role in
+fitting and comparing existing models. Let b,d∈{0,1}b,d\in\{0,1\} indicate
+whether belief and diagnostic feedback are exposed to the proposer.
+The 2×22\times 2 ablation compares Full (1,1)(1,1), Belief-only (1,0)(1,0),
+Diagnostics-only (0,1)(0,1), and No feedback (0,0)(0,0).
+All variants retain parameter inference, evidence weighting, Bayesian
+model averaging, candidate generation, and joint-EIG design. Only the
+feedback available to the proposer changes; “No feedback” does not
+remove the numerical engine.
+
+Table 7: Information shown to the proposer in the feedback ablation.
+Numerical inference remains active in all four variants.
+
+Bundle
+
+Contents
+
+Visible in
+
+Common
+
+Observations, task interface, candidate expressions, coefficient
+roles, grammar, structural duplicate history, syntax/repair status,
+and eligible retired identifiers
+
+All variants
+
+Belief
+
+Log evidence, model weights, best-model marker, parameter
+posterior summaries, pre-observation predictive log scores, and archived
+evidence values
+
+b=1b=1
+
+Diagnostics
+
+Standardized predictive residuals for every active model
+at the acquired observations, identified by model
+
+d=1d=1
+
+Feedback masking.
+
+Table 7 specifies the feedback bundles.
+Candidates and archive entries are listed in canonical-identifier order.
+Removing belief also removes evidence rankings, best-model annotations,
+and evidence-based retirement explanations from structured fields,
+prose, and conversation history. Retired-model evidence values remain
+only when belief is visible. The composition and archive-review
+instructions use neutral wording (Appendix G).
+Diagnostics provide model-wise residuals rather than selecting only a
+preferred model. Removing a bundle does not remove the observed data,
+candidate identities, or active-pool membership.
+
+One-step predictive scores are computed from predictions made before
+the corresponding response is observed. Residuals use each model’s
+predictive scale. Even with explicit belief fields removed, residuals
+can reveal relative fit quality, and pool membership reflects numerical
+selection. The ablation therefore tests these feedback bundles, not the
+elimination of all indirect evidence about candidate quality.
+
+Initialization and execution.
+
+Figure 6 compares nine ChemBench tasks and five
+ForceBench worlds, each with three seeds (27 and 15 runs per variant).
+Within each task–seed group, all four variants start from the same
+initial observations 𝒟0\mathcal{D}_{0}, initial candidate pool, and fitted
+state, including parameter posteriors and evidence estimates. A saved
+round-0 state is replayed to keep this initialization identical.
+From the first feedback-guided proposal onward, each variant follows
+its own trajectory: it proposes families, chooses experiments, obtains
+observations, and updates its fitted pool. Likelihoods, priors, grammar,
+pool capacity, proposal counts, and archive-review eligibility are
+otherwise kept fixed.
+
+This is a sequential feedback ablation, not the fixed-data comparison
+of Section 4.3. Subsequent datasets and model pools need not
+match, even though initialization and the numerical inference and
+design procedures are shared.
+
+Evaluation and interpretation.
+
+The horizontal axis is the total number of observations. ChemBench
+uses observation-mean nMSLE, and ForceBench uses trajectory nMSE on
+the shared evaluation designs. The target definitions and geometric
+aggregation follow Appendix A. The ChemBench
+panel displays observations 13–33; ForceBench displays 2–18.
+
+In Figure 6, Full has the lowest final error on
+both benchmarks, while No feedback has the highest. Either feedback
+bundle generally improves prediction over No feedback. These results
+support returning numerical beliefs and residual diagnostics to the
+LLM, rather than using numerical inference only to score its existing
+hypotheses. Because proposals and observations subsequently evolve,
+the measured effect is on downstream prediction in the discovery loop,
+not an isolated score of individual proposal quality. The plotted bands
+summarize seed dispersion, not confidence intervals for paired gains.
+
+Appendix F Joint EIG and Its Information Components
+
+Objectives and estimator.
+
+With a fixed dataset and fitted pool, the compared objectives are
+
+aJ,t​(𝐱)\displaystyle a_{{\rm J},t}(\mathbf{x})
+=I⁡(Y𝐱;M,𝚯M∣𝒟t),\displaystyle=I(Y_{\mathbf{x}};M,\boldsymbol{\Theta}_{M}\mid\mathcal{D}_{t}),
+
+(20)
+
+aM,t​(𝐱)\displaystyle a_{{\rm M},t}(\mathbf{x})
+=I⁡(Y𝐱;M∣𝒟t),\displaystyle=I(Y_{\mathbf{x}};M\mid\mathcal{D}_{t}),
+
+aP,t​(𝐱)\displaystyle a_{{\rm P},t}(\mathbf{x})
+=∑mwm,tI(Y𝐱;𝚯m∣𝒟t,M=m).\displaystyle=\sum_{m}w_{m,t}I(Y_{\mathbf{x}};\boldsymbol{\Theta}_{m}\mid\mathcal{D}_{t},M=m).
+
+Parameter-only averages over all families; Model-only uses
+parameter-integrated predictions, not point estimates. Random samples
+from the declared design distribution.
+For SS shared draws (ms,𝜽s,ys)(m_{s},\boldsymbol{\theta}_{s},y_{s}), define
+rs=pms​(ys∣𝐱,𝜽s)r_{s}=p_{m_{s}}(y_{s}\mid\mathbf{x},\boldsymbol{\theta}_{s}),
+us=qms,t​(ys∣𝐱)u_{s}=q_{m_{s},t}(y_{s}\mid\mathbf{x}), and vs=qt​(ys∣𝐱)v_{s}=q_{t}(y_{s}\mid\mathbf{x}).
+The estimates are
+
+a^J,t\displaystyle\widehat{a}_{{\rm J},t}
+=S−1​∑slog⁡(rs/vs),\displaystyle=S^{-1}\sum_{s}\log(r_{s}/v_{s}),
+
+(21)
+
+a^M,t\displaystyle\widehat{a}_{{\rm M},t}
+=S−1​∑slog⁡(us/vs),\displaystyle=S^{-1}\sum_{s}\log(u_{s}/v_{s}),
+
+a^P,t\displaystyle\widehat{a}_{{\rm P},t}
+=S−1​∑slog⁡(rs/us).\displaystyle=S^{-1}\sum_{s}\log(r_{s}/u_{s}).
+
+Identical draws and density evaluations preserve
+a^J=a^M+a^P\widehat{a}_{\rm J}=\widehat{a}_{\rm M}+\widehat{a}_{\rm P} up to
+arithmetic error. Separately clipping estimates or removing different
+invalid components breaks this identity; the identity itself does not
+establish convergence.
+
+Prediction-oriented EPIG.
+
+Expected predictive information gain (EPIG) targets responses at inputs
+of interest
+ (Bickford Smith et al., 2023). Let 𝐱′∼ν\mathbf{x}^{\prime}\sim\nu be a feasible target
+input sampled as specified in Appendix B. The prospective
+response at 𝐱\mathbf{x} and target response at 𝐱′\mathbf{x}^{\prime} share the same sampled
+family and parameters but are conditionally independent given them:
+
+qt(2)(y,y′∣𝐱,𝐱′)\displaystyle q_{t}^{(2)}(y,y^{\prime}\mid\mathbf{x},\mathbf{x}^{\prime})
+
+(22)
+
+=𝔼M,𝚯M​[pM​(y∣𝐱,𝚯M)​pM​(y′∣𝐱′,𝚯M)].\displaystyle=\mathbb{E}_{M,\boldsymbol{\Theta}_{M}}\!\left[p_{M}(y\mid\mathbf{x},\boldsymbol{\Theta}_{M})p_{M}(y^{\prime}\mid\mathbf{x}^{\prime},\boldsymbol{\Theta}_{M})\right].
+
+Then
+
+aEPIG,t​(𝐱)\displaystyle a_{\mathrm{EPIG},t}(\mathbf{x})
+=𝔼𝐱′∼ν​I​(Y𝐱;Y𝐱′′∣𝒟t)\displaystyle=\mathbb{E}_{\mathbf{x}^{\prime}\sim\nu}I(Y_{\mathbf{x}};Y^{\prime}_{\mathbf{x}^{\prime}}\mid\mathcal{D}_{t})
+
+(23)
+
+=𝔼​log⁡qt(2)(y,y′∣𝐱,𝐱′)qt​(y∣𝐱)​qt​(y′∣𝐱′).\displaystyle=\mathbb{E}\log\frac{q_{t}^{(2)}(y,y^{\prime}\mid\mathbf{x},\mathbf{x}^{\prime})}{q_{t}(y\mid\mathbf{x})q_{t}(y^{\prime}\mid\mathbf{x}^{\prime})}.
+
+The second expectation samples 𝐱′∼ν\mathbf{x}^{\prime}\sim\nu and then
+(y,y′)∼qt(2)(y,y^{\prime})\sim q_{t}^{(2)}. Independent latent draws would remove the
+predictive dependence of interest. These responses are hypothetical;
+EPIG does not query held-out labels.
+
+Current joint-EIG comparison.
+
+Figure 6 compares Joint EIG, Model-only EIG,
+Parameter-only EIG, and Random on ChemBench and ForceBench, as described
+in Section 4.4. The comparison uses nine ChemBench tasks and
+five ForceBench worlds with three seeds each. Candidate generation,
+Bayesian fitting, evidence weighting, and posterior prediction are
+retained in every variant; the experimental-design objective changes.
+The parameter-only objective averages within-family information using
+the same model weights, rather than conditioning on a single selected
+family.
+
+Each acquisition policy chooses designs in the feasible space and
+updates its own observations and candidate pool. Holding the fitted
+state fixed while optimizing one next experiment should not be confused
+with fixing that state for the entire sequential run. The ChemBench
+panel displays observations 13–33, and ForceBench displays 2–18;
+targets and geometric aggregation follow
+Appendix A.
+The figure supports the benefit of jointly targeting model and parameter
+uncertainty: Joint EIG maintains lower error through much of the later
+ChemBench budgets and reduces ForceBench error faster at intermediate
+budgets, with closer performance at the end.
+
+Separate exploratory EPIG comparison.
+
+The supplied auxiliary acquisition results also compare EPIG with the
+EIG objectives. Table 8 reports these earlier
+runs separately: 27 ChemBench, 15 BoxingGym, and 15 ForceBench runs
+per evaluated objective. EPIG was evaluated on BoxingGym and ForceBench,
+not ChemBench. This auxiliary study uses the earlier feedback
+configuration, with residuals for the best model, evidence-ordered
+candidates, and the original composition and archive instructions.
+Its ForceBench runs predate the later SMC fit limit. These are not the
+runs plotted in Figure 6 or
+Figure 6.
+
+Within this auxiliary study, likelihood settings, priors, proposal
+rules, fitting resources, and design-search settings are held fixed
+apart from the acquisition objective. Each variant generates its own
+initial pool, so the realized pools, subsequent data, and proposals
+need not coincide. The values below are retained as the supplied
+separate EPIG evaluation, not as final values for the current
+joint-EIG figure or as measurements from the unified baseline rerun.
+
+Table 8: Earlier auxiliary acquisition comparison, separate from
+Figure 6. Entries are final geometric-mean errors;
+ChemBench uses n=33n=33, BoxingGym n=32n=32, and ForceBench n=18n=18.
+The feedback and initialization configuration is described in the text.
+
+Objective
+ChemBench
+BoxingGym
+ForceBench
+
+Joint EIG
+×10−51.47\!\times\!10^{-5}
+0.0101
+×10−88.8\!\times\!10^{-8}
+
+Model-only
+×10−51.93\!\times\!10^{-5}
+0.0111
+×10−68.2\!\times\!10^{-6}
+
+Parameter-only
+×10−51.63\!\times\!10^{-5}
+0.0168
+×10−63.6\!\times\!10^{-6}
+
+Random
+×10−52.98\!\times\!10^{-5}
+0.0570
+×10−53.6\!\times\!10^{-5}
+
+EPIG
+—
+0.0132
+×10−79.5\!\times\!10^{-7}
+
+In this auxiliary comparison, EPIG has lower final error than Random
+on BoxingGym and ForceBench, while Joint EIG has lower error than EPIG.
+These results supplement the comparison of information objectives;
+they should not be used to reconstruct the curves or effect sizes of
+the current main experiments. No NewtonBench acquisition result is
+reported.
+
+Appendix G Proposer Prompt Components
+
+The proposer combines the supplied full-feedback base instruction
+(FA–C-R) with the three-candidate and archive-review extensions below.
+Each request also supplies the task interface, observations, feedback,
+and task-specific constraints. The base asks for one candidate; the
+composition extension overrides this output format with
+{limit} set to three. FA–C-R provides residuals for all
+active models. The auxiliary comparison in
+Appendix F uses the older FA–C base and earlier
+extensions, which differ from the current full-feedback configuration.
+
+Task constraints and terminology.
+
+In the supplied prompt schema, the field named family denotes
+the observation-distribution family, whereas “model family” in the
+paper denotes the functional form. The experiments described in
+Section 3.1 hold the observation-distribution family
+fixed per task. Accordingly, the schema’s conditional support for
+family_expansion does not make likelihood-family search part
+of the reported method: this flag is disabled, and family
+must match the task’s fixed distribution.
+
+Task constraints also specify coefficient roles, expression operators,
+and the link or forward model. ForceBench includes cos and
+sin; the engine applies its task-specific limits of three
+free constants and ten operators. The generic base text below includes
+the six-coefficient/fifteen-operator limits used for the other interfaces.
+The task-specific constraint block and validation enforce the applicable
+limits. Parameter priors are assigned by coefficient role rather than
+written numerically by the LLM.
+
+Initialization and feedback variants.
+
+Discovery initialization requests candidate forms from the initial
+observations, with the candidate/refill settings in
+Appendix B. The GT-containing pool of
+Section 4.3 is a separate controlled construction, not a prompt
+used to initialize the end-to-end discovery runs. In the feedback
+ablation, all four variants replay the same initial fitted state before
+receiving their respective feedback bundles.
+Belief-only removes model-wise residuals; Diagnostics-only removes
+belief fields and their ranking cues; No feedback removes both bundles.
+The masking covers structured fields, accompanying prose, and history
+as specified in Appendix E. The observed data,
+candidate identities, and modeling interface remain available.
+
+Full-feedback base prompt.
+
+⬇
+
+# prompt_version: v2.9.FA-C-R
+
+Propose one new candidate model for the process described only by the data and the structured fields in the user message. A Bayesian engine fits and scores every candidate.
+
+The user message is a JSON belief packet: interface (outcome type and support, input names and ranges, the fixed link), observations (all public data so far), pool (each active model with expression, family, evidence weight, log evidence, one-step predictive log-score history, and posterior mean and sd of each coefficient), residuals_by_model (for every active model, the standardized residual of each public observation under that model’s posterior predictive, keyed by model id and sorted by input), archive (every earlier proposal in this run with its outcome), and constraints. Nothing in the packet comes from held-out data. A large fitted dispersion makes standardized residuals look small even when the mean form is wrong.
+
+Propose the one (expression, family) pair that you judge most likely to have generated all of the observations and that is not in the pool or the archive; if your first choice is already there, propose your next. Judge a form by how much of the data it would leave unexplained, not by how few edits separate it from the current best model. Inputs may combine through products, ratios or nested functions as well as through sums of separate terms.
+
+Link
+
+- Under a log link, expression is log(mean / response_unit): a factor f of the mean enters expression as + log(f) and a divisor g as - log(g). Inside log a raw input with a wide positive range is safe; outside log, such an input times a coefficient, or raised to a coefficient power, can overflow exp and is rejected.
+
+Checks
+
+- predicted_diagnostic: where your model should fit the observations better than the current best model, as {"input": <one input name>, "low": <number>, "high": <number>}. The two fitted models are compared on the observations whose value of that input lies between low and high.
+
+- closest_archived_model: the expression in the pool or the archive that is most similar to yours, copied exactly.
+
+Rules
+
+- expression is the argument of the fixed link. Use only coefficient names declared in parameters, the input names given in interface, real literals, the operators + - * / **, and exp, log, sqrt, tanh, square, power(x, k). At most 6 coefficients and 15 operators.
+
+- Count operators as the engine does: each +, -, *, /, ** and each unary minus counts 1, and each call of exp, log, sqrt, tanh, square or power counts 1; names and numbers count 0. For example c*tanh(w) counts 2, and each further term c*f(x + k) added to a sum costs 4. If your count is above 15, simplify the expression before replying.
+
+- parameters maps every coefficient used in expression to exactly one of: intercept, signed, positive, shape (at most one intercept). Priors are fixed by these labels; never write numeric priors. Family dispersion parameters belong to the family; never list them.
+
+- family must be one of constraints.allowed_families. If constraints.structure_expansion is false, expression must be verbatim one of constraints.initial_structures and only family may change. If constraints.family_expansion is false, family must equal constraints.initial_family.
+
+- Your whole reply is one raw JSON object - its first character is { and its last is } - with the keys {"expression": ..., "family": ..., "parameters": {...}, "predicted_diagnostic": {...}, "closest_archived_model": ...}: no code fence and no text before or after it. If it fails validation you receive the error once and may reply once more.
+
+Three-candidate extension.
+
+⬇
+
+Return a JSON array of exactly {limit} candidate objects, each with exactly the keys specified above and nothing else. Propose three distinct, non-equivalent hypotheses. At least two of the three candidates should differ meaningfully in their primary functional composition, rather than merely in parameterization or by adding or removing a correction term. At most one candidate may be a nested or incremental refinement of a model already in the pool, and only if the public observations specifically call for that refinement.
+
+Archive-review extension.
+
+Every fifth round, the extension below also allows up to two retired
+model IDs. Each nominated model is refitted from its prior on current
+data, rather than restored with an old evidence value.
+
+⬇
+
+This is an archive review round. Besides your {limit} new candidates, you may ask for up to two archived models to be re-fit: choose only among archive entries whose outcome is retired and whose form you now judge likely given all current public observations. Each model you name is re-fit from its prior on all current public data and takes part in the pool like any other model. Reply with one raw JSON object {"candidates": [...], "revive": [...]}: candidates is the array described above, and revive lists the chosen archive model_id strings exactly as given, or is empty when nothing in the archive deserves another fit.
+
+Appendix H Earlier ChemBench Diagnostics
+
+Scope.
+
+These earlier ChemBench diagnostics examine prediction targets,
+parameter fitting, and calibration in a separate development cohort.
+They are not the runs underlying Figures 2–6
+or Table 2, and their longer budgets, aggregation,
+and supplied-form controls should not be substituted for the current
+experimental protocols.
+They cover Michaelis–Menten (c0), product inhibition (c2), and ping-pong
+bi-substrate (c5), each at three difficulties, with seeds 31, 37, and 41
+and three ICL repetitions. Runs use three initial and 60 additional observations (n=63n=63).
+Task tables use 256 evaluation inputs; detailed ping-pong reconstructions
+and supplied-form controls use the official 1,000-input set.
+
+Prediction target and aggregation.
+
+Table 9 gives arithmetic seed means for
+each task. Development aggregates take their geometric mean, unlike
+the main figures, which average log errors over seeds first.
+
+Table 9: Earlier ChemBench diagnostic nMSLE at n=63n=63 on 256 evaluation inputs. These are not per-task values for the current main figure.
+
+Task
+Primary EIG
+Primary random
+Primary ICL
+Obs. EIG
+Obs. random
+Obs. ICL
+
+c0 easy
+×10−42.13\!\times\!10^{-4}
+×10−42.14\!\times\!10^{-4}
+×10−42.08\!\times\!10^{-4}
+×10−61.69\!\times\!10^{-6}
+×10−51.11\!\times\!10^{-5}
+×10−41.96\!\times\!10^{-4}
+
+c0 medium
+×10−42.18\!\times\!10^{-4}
+×10−42.79\!\times\!10^{-4}
+×10−52.29\!\times\!10^{-5}
+×10−62.88\!\times\!10^{-6}
+×10−51.36\!\times\!10^{-5}
+×10−42.45\!\times\!10^{-4}
+
+c0 hard
+×10−42.17\!\times\!10^{-4}
+×10−42.46\!\times\!10^{-4}
+×10−52.99\!\times\!10^{-5}
+×10−65.99\!\times\!10^{-6}
+×10−68.62\!\times\!10^{-6}
+×10−42.81\!\times\!10^{-4}
+
+c2 easy
+×10−41.95\!\times\!10^{-4}
+×10−42.01\!\times\!10^{-4}
+×10−43.65\!\times\!10^{-4}
+×10−65.78\!\times\!10^{-6}
+×10−66.26\!\times\!10^{-6}
+×10−56.62\!\times\!10^{-5}
+
+c2 medium
+×10−42.01\!\times\!10^{-4}
+×10−42.25\!\times\!10^{-4}
+×10−41.72\!\times\!10^{-4}
+×10−78.72\!\times\!10^{-7}
+×10−51.22\!\times\!10^{-5}
+×10−42.02\!\times\!10^{-4}
+
+c2 hard
+×10−41.94\!\times\!10^{-4}
+×10−21.85\!\times\!10^{-2}
+×10−42.29\!\times\!10^{-4}
+×10−66.71\!\times\!10^{-6}
+×10−21.82\!\times\!10^{-2}
+×10−41.57\!\times\!10^{-4}
+
+c5 easy
+×10−42.41\!\times\!10^{-4}
+×10−42.18\!\times\!10^{-4}
+×10−33.69\!\times\!10^{-3}
+×10−69.35\!\times\!10^{-6}
+×10−51.26\!\times\!10^{-5}
+×10−33.56\!\times\!10^{-3}
+
+c5 medium
+×10−42.16\!\times\!10^{-4}
+×10−42.30\!\times\!10^{-4}
+×10−43.60\!\times\!10^{-4}
+×10−69.88\!\times\!10^{-6}
+×10−51.18\!\times\!10^{-5}
+×10−43.18\!\times\!10^{-4}
+
+c5 hard
+×10−42.41\!\times\!10^{-4}
+×10−42.43\!\times\!10^{-4}
+×10−36.68\!\times\!10^{-3}
+×10−68.67\!\times\!10^{-6}
+×10−52.72\!\times\!10^{-5}
+×10−36.78\!\times\!10^{-3}
+
+Entries are arithmetic means of three algorithm seeds or ICL replicates. c0 is Michaelis–Menten, c2 product inhibition, and c5 ping-pong bi-substrate. Algorithm seeds do not change the ChemBench truth world in this cohort.
+
+Observation-target aggregates are EIG 4.52×10−64.52\times 10^{-6}, Random
+2.69×10−52.69\times 10^{-5}, and ICL 3.92×10−43.92\times 10^{-4}, with EIG lowest on
+all nine tasks. Primary-target aggregates are 2.15×10−42.15\times 10^{-4},
+3.76×10−43.76\times 10^{-4}, and 2.97×10−42.97\times 10^{-4}, with the lowest error
+on 4, 1, and 4 tasks, respectively.
+EIG improves observation error over Random in 19/27 seed comparisons,
+not every seed. Removing the product-inhibition hard task in a recorded
+sensitivity check changes the EIG/Random ratio from 0.571 to 0.941 for
+the primary target and from 0.168 to 0.362 for the observation target.
+The task remains included.
+
+A discovered family and its fitted predictor.
+
+Table 10 records first admission of a
+ping-pong primary family. This older classifier accepts additional
+nuisance terms and is a containment diagnostic, not the current strict
+judge. For EIG seed 31, the round-9 expression (n=12n=12) is
+
+η⁡(𝐱)\displaystyle\eta(\mathbf{x})
+=a+log⁡X5+log⁡X1+log⁡X3\displaystyle=a+\log X_{5}+\log X_{1}+\log X_{3}
+
+(24)
+
+−log⁡{K​X3+X1​(X3+Ka)},\displaystyle-\log\{KX_{3}+X_{1}(X_{3}+K_{a})\},
+
+where X1,X3X_{1},X_{3} are substrate inputs and X5X_{5} is enzyme concentration;
+its link is Equation (13). Posterior means
+K=1.032K=1.032 and Ka=2.060K_{a}=2.060 are close to true values 1 and 2, with
+particle standard deviations 0.061 and 0.140. Family weight exceeds
+0.9999996 at first admission in all six histories.
+
+Table 10: Earlier ping-pong-easy fitted histories on the official 1,000-input set.
+Entry and stable dominance concern the broader primary-family classifier.
+All errors are nMSLE. Final values use n=63n=63; admission rounds count
+observations acquired after n0=3n_{0}=3.
+
+Entry
+Stable
+Primary error at admission
+Final error
+
+Policy
+Seed
+round
+round
+Before
+After
+Primary
+Observation
+
+EIG
+31
+9
+9
+×10−18.18\!\times\!10^{-1}
+×10−41.64\!\times\!10^{-4}
+×10−42.72\!\times\!10^{-4}
+×10−62.90\!\times\!10^{-6}
+
+EIG
+37
+7
+7
+×10−18.48\!\times\!10^{-1}
+×10−44.84\!\times\!10^{-4}
+×10−42.86\!\times\!10^{-4}
+×10−51.29\!\times\!10^{-5}
+
+EIG
+41
+18
+18
+×10−33.12\!\times\!10^{-3}
+×10−54.65\!\times\!10^{-5}
+×10−42.78\!\times\!10^{-4}
+×10−51.04\!\times\!10^{-5}
+
+Random
+31
+9
+9
+×10−11.31\!\times\!10^{-1}
+×10−59.29\!\times\!10^{-5}
+×10−42.76\!\times\!10^{-4}
+×10−51.05\!\times\!10^{-5}
+
+Random
+37
+5
+17
+×10−15.65\!\times\!10^{-1}
+×10−55.27\!\times\!10^{-5}
+×10−42.29\!\times\!10^{-4}
+×10−51.39\!\times\!10^{-5}
+
+Random
+41
+7
+7
+×10−12.66\!\times\!10^{-1}
+×10−42.07\!\times\!10^{-4}
+×10−42.55\!\times\!10^{-4}
+×10−51.19\!\times\!10^{-5}
+
+A reconstruction of 26 saved fits reproduces primary scores within
+1.11×10−161.11\times 10^{-16}. Admission coincides with new data and refitting,
+so error changes do not isolate its causal effect. The illustration
+uses the lowest seed, not a random success. Stable dominance requires
+total classified-family weight to remain at least 0.5 thereafter, not
+continued retention of one expression: the first EIG seed-31 model
+retires at round 28. Across six histories, 46–66 models enter the pool
+and the top-weight model changes 29–44 times. All 54 runs in the larger
+development set end with 12 active models and none of their original
+models. These counts describe pool turnover, not additional recoveries.
+
+On the 1,000-input ping-pong-easy set, the exact observation mean itself
+has primary nMSLE 2.78377×10−42.78377\times 10^{-4}. The final EIG primary errors
+are near this value despite much lower observation error. This explains
+a target-dependent plateau, not a lower bound: omitting nuisance effects
+can bring a prediction closer to the primary law.
+
+Supplying the form versus fitting its constants.
+
+Table 11 uses 27 frozen 63-observation histories
+per difficulty (nine prompt/design conditions and three seeds).
+These earlier histories used a gpt-4o proposer rather than Opus;
+no proposer is called during the supplied-form fits. The supplied
+log-mean is
+
+b0+log⁡(Enz)+log⁡CA+log⁡CB\displaystyle b_{0}+\log(\mathrm{Enz})+\log C_{A}+\log C_{B}
+
+−log⁡(b1​CB+b2​CA+CA​CB),\displaystyle{}-\log(b_{1}C_{B}+b_{2}C_{A}+C_{A}C_{B}),
+
+where CA,CBC_{A},C_{B} are substrates and Enz\mathrm{Enz} is enzyme input.
+The free condition estimates b1,b2b_{1},b_{2}; the fixed condition supplies
+them but still fits b0b_{0} and noise.
+
+Table 11: Previously completed supplied-primary-form controls on frozen c5 histories, evaluated on 1,000 inputs. All entries are primary nMSLE.
+
+Difficulty
+Control
+Histories
+Minimum
+Median
+Maximum
+
+Easy
+Constants estimated
+27
+×10−77.20\!\times\!10^{-7}
+×10−51.20\!\times\!10^{-5}
+×10−56.02\!\times\!10^{-5}
+
+Easy
+Constants supplied
+27
+×10−91.22\!\times\!10^{-9}
+×10−68.21\!\times\!10^{-6}
+×10−54.08\!\times\!10^{-5}
+
+Hard
+Constants estimated
+27
+×10−39.19\!\times\!10^{-3}
+×10−23.11\!\times\!10^{-2}
+×10−26.82\!\times\!10^{-2}
+
+Hard
+Constants supplied
+27
+×10−73.85\!\times\!10^{-7}
+×10−69.54\!\times\!10^{-6}
+×10−54.44\!\times\!10^{-5}
+
+The same 27 saved histories per difficulty are used in each free/fixed pair.
+The scale/intercept and observation noise remain fitted in the
+supplied-constants condition. These older controls are not current-cohort
+measurements; they are reported separately from the main experiments.
+
+In the hard case, median error is 3.11×10−23.11\times 10^{-2} with free
+constants versus 9.54×10−69.54\times 10^{-6} with supplied constants. For the
+constant whose truth is 50, posterior medians range 10.70–27.61 and all
+27 reported 5th–95th percentile intervals exclude 50. This concerns the combined prior, parameterization,
+data, and inference procedure, not SMC alone.
+
+Prediction versus calibration.
+
+On ping-pong-easy (seed 31), EIG and Random have held-out negative log
+likelihoods (NLLs) of −5.173-5.173 and −5.167-5.167, 90% interval coverages of
+0.771 and 0.901, and mean widths of 0.03917 and 0.05506, respectively.
+Across three seeds, EIG-minus-Random NLL differences are −0.00546-0.00546,
+−0.00765-0.00765, and −0.00235-0.00235 nats per observation. These point-error and
+log-score gains do not establish calibrated uncertainty across worlds.
+
+ Experimental support, please
+ view the build logs
+ for errors. Generated by
+
+ L
+ A
+ T
+ E
+
+ xml
+
+ .
+
+Instructions for reporting errors
+
+We are continuing to improve HTML versions of papers, and your feedback helps enhance accessibility and mobile
+ support. To report errors in the HTML that will help us improve conversion and rendering, choose any of the
+ methods listed below:
+
+Click the "Report Issue" (
+
+ ) button, located in the page header.
+
+Tip: You can select the relevant text first, to include it in your report.
+
+Our team has already identified the following issues. We appreciate your time reviewing and reporting rendering errors we
+ may not have found yet. Your efforts will help us improve the HTML versions for all readers, because disability
+ should not be a barrier to accessing research. Thank you for your continued support in championing open access for
+ all.
+
+Have a free development cycle? Help support accessibility at arXiv! Our collaborators at LaTeXML maintain a list of packages that need conversion, and welcome developer contributions.
+
+ We gratefully acknowledge support from our major funders,
+ member institutions, ,
+ and all contributors.
+
+ About ·
+ Help ·
+ Contact ·
+ Subscribe ·
+ Copyright ·
+ Privacy ·
+ Accessibility ·
+ Operational Status (opens in new tab)
+

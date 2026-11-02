@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423906760464136,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "negative_pulse",
+    "reason": "Memory_slow performs well on positive_pulse and has low CV NMSE.",
+    "prediction": "Negative pulse will cause a delayed decrease in state, similar to positive pulse.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Response should persist after pulse ends.",
+      "condition_to_check": "No residual decay after pulse."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"negative_pulse\",\n  \"reason\": \"Memory_slow performs well on positive_pulse and has low CV NMSE.\",\n  \"prediction\": \"Negative pulse will cause a delayed decrease in state, similar to positive pulse.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Response should persist after pulse ends.\",\n    \"condition_to_check\": \"No residual decay after pulse.\"\n  }\n}",
+    "input_tokens": 3575,
+    "output_tokens": 105,
+    "batch_elapsed_seconds": 2.526921821758151,
+    "amortized_seconds": 2.526921821758151,
+    "peak_gpu_allocated_gb": 14.918898582458496,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024013519287109,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

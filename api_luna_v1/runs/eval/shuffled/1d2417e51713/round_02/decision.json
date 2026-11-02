@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430685711670064,
+  "decision": {
+    "representation": "state",
+    "experiment": "slow_wave",
+    "reason": "State has the lowest trajectory-level validation error, and prior PRBS and alternating forecasts were accurate. Added memory, clock, and nonlinear terms do not improve validation.",
+    "prediction": "During slow_wave, responses should be explained by current state and input, without residual patterns tied to elapsed time or earlier inputs.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No cross-domain relation is supported by the observations.",
+      "condition_to_check": "Check whether slow_wave residuals depend on elapsed time or past inputs after controlling current state and input."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"slow_wave\",\"reason\":\"State has the lowest trajectory-level validation error, and prior PRBS and alternating forecasts were accurate. Added memory, clock, and nonlinear terms do not improve validation.\",\"prediction\":\"During slow_wave, responses should be explained by current state and input, without residual patterns tied to elapsed time or earlier inputs.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is supported by the observations.\",\"condition_to_check\":\"Check whether slow_wave residuals depend on elapsed time or past inputs after controlling current state and input.\"}}",
+    "input_tokens": 3450,
+    "output_tokens": 280,
+    "batch_elapsed_seconds": 3.5690754875540733,
+    "amortized_seconds": 3.5690754875540733,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3450,
+      "completion_tokens": 280,
+      "total_tokens": 3730,
+      "completion_tokens_details": {
+        "reasoning_tokens": 154
+      }
+    },
+    "api_response_id": "resp_047e8566b1a0a3eb016ae5949adb708190a1fb87a1ef801948",
+    "wire_record": "wire/eval/0480_5ae07c05b3cd4264a9ab6a3de1998ebc"
+  }
+}

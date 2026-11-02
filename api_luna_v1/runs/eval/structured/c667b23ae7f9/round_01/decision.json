@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430021666210580,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "double_pulse",
+    "reason": "state_cubic has substantially lower trajectory-held-out NMSE than state, while memory candidates perform worse. Residual correlation remains, so adequacy is uncertain.",
+    "prediction": "After sufficient rest, the second identical pulse will produce a trajectory similar to the first at matched input and state.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Instantaneous curvature improves prediction, but these results do not establish a saturation mechanism.",
+      "condition_to_check": "Test whether curvature predicts responses across amplitudes after controlling input and state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state_cubic\",\"experiment\":\"double_pulse\",\"reason\":\"state_cubic has substantially lower trajectory-held-out NMSE than state, while memory candidates perform worse. Residual correlation remains, so adequacy is uncertain.\",\"prediction\":\"After sufficient rest, the second identical pulse will produce a trajectory similar to the first at matched input and state.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Instantaneous curvature improves prediction, but these results do not establish a saturation mechanism.\",\"condition_to_check\":\"Test whether curvature predicts responses across amplitudes after controlling input and state.\"}}",
+    "input_tokens": 3251,
+    "output_tokens": 296,
+    "batch_elapsed_seconds": 3.731947752647102,
+    "amortized_seconds": 3.731947752647102,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3251,
+      "completion_tokens": 296,
+      "total_tokens": 3547,
+      "completion_tokens_details": {
+        "reasoning_tokens": 171
+      }
+    },
+    "api_response_id": "resp_02a5fb196ea419fe016ae59202d3c881939f3e2d85ef76b5a8",
+    "wire_record": "wire/eval/0172_9f84edcf21e842489f3a3cbf4bb65d6c"
+  }
+}

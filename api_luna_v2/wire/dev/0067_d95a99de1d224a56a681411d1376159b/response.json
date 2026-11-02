@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431309438282104,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0bb3e4365d22269b016ae5970b20dc8194a6d6bca4e7194a98",
+    "object": "chat.completion",
+    "created": 1793431309,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_fast\",\"experiment\":\"ramp_reverse\",\"reason\":\"Memory_fast has the lowest leave-trajectory-out NMSE (0.00184), narrowly outperforming memory_slow; memory-based models substantially outperform state-only models. Residual lag correlation leaves some uncertainty.\",\"prediction\":\"After input changes, trajectories will retain a history-dependent response that relaxes over a few seconds, rather than changing instantaneously.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3288,
+      "completion_tokens": 200,
+      "total_tokens": 3488,
+      "completion_tokens_details": {
+        "reasoning_tokens": 108
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.172607833519578
+}

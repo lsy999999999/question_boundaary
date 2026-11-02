@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793431617864183719,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "double_pulse",
+    "reason": "Slow-memory validation error is lowest (0.001304 versus 0.001381 for state), a modest improvement consistent with residual lag dependence; more complex alternatives perform worse.",
+    "prediction": "At matched current state and input, double-pulse responses may retain a small systematic dependence on the earlier pulse.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Slow accumulated history modestly improves trajectory validation, consistent with a leaky stored influence.",
+      "condition_to_check": "Check whether earlier-pulse history predicts the response after controlling current state and input."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"Slow-memory validation error is lowest (0.001304 versus 0.001381 for state), a modest improvement consistent with residual lag dependence; more complex alternatives perform worse.\",\"prediction\":\"At matched current state and input, double-pulse responses may retain a small systematic dependence on the earlier pulse.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Slow accumulated history modestly improves trajectory validation, consistent with a leaky stored influence.\",\"condition_to_check\":\"Check whether earlier-pulse history predicts the response after controlling current state and input.\"}}",
+    "input_tokens": 3279,
+    "output_tokens": 130,
+    "batch_elapsed_seconds": 3.4907376812770963,
+    "amortized_seconds": 3.4907376812770963,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3279,
+      "completion_tokens": 130,
+      "total_tokens": 3409
+    },
+    "api_response_id": "resp_02fef866e1cb1510016ae59840109c8193aaa0adbb4a762a1f",
+    "wire_record": "wire/eval/0205_d843a049e58b42d28b7f4c1e4120f519"
+  }
+}

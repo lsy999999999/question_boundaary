@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793432105213368238,
+  "decision": {
+    "representation": "clock",
+    "experiment": "double_pulse",
+    "reason": "Clock has the lowest held-out error by a wide margin, and prior alternating and PRBS forecasts were accurate. Residual lag correlation still warrants testing another input history.",
+    "prediction": "With double pulses, output oscillations should remain aligned to elapsed time rather than shift with the pulse timing.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "A strong clock-feature fit does not establish an independent elapsed-time driver.",
+      "condition_to_check": "The prediction fails if repeated trials show oscillations shifting with pulse timing rather than remaining aligned to elapsed time."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"double_pulse\",\"reason\":\"Clock has the lowest held-out error by a wide margin, and prior alternating and PRBS forecasts were accurate. Residual lag correlation still warrants testing another input history.\",\"prediction\":\"With double pulses, output oscillations should remain aligned to elapsed time rather than shift with the pulse timing.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"A strong clock-feature fit does not establish an independent elapsed-time driver.\",\"condition_to_check\":\"The prediction fails if repeated trials show oscillations shifting with pulse timing rather than remaining aligned to elapsed time.\"}}",
+    "input_tokens": 3443,
+    "output_tokens": 363,
+    "batch_elapsed_seconds": 5.2284810692071915,
+    "amortized_seconds": 5.2284810692071915,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3443,
+      "completion_tokens": 363,
+      "total_tokens": 3806,
+      "completion_tokens_details": {
+        "reasoning_tokens": 234
+      }
+    },
+    "api_response_id": "resp_0b44c5f12b8ab432016ae59a24faf881979645084bbec33387",
+    "wire_record": "wire/eval/0459_3645b2636c144529af5040ad16b75374"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430087309054807,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0f0d0f013362eb89016ae59244b028819589a2672686eba69a",
+    "object": "chat.completion",
+    "created": 1793430087,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Slow memory has the lowest trajectory-held-out NMSE, but strongly correlated residuals and the PRBS forecast error leave adequacy uncertain. Alternating inputs maximize disagreement among plausible models.\",\"prediction\":\"After rapid input reversals, output will retain a history-dependent component rather than tracking the current input alone.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history may predict lingering output after reversals, beyond current input and state.\",\"condition_to_check\":\"Compare outputs under alternating histories with matched current input and visible state; no history dependence would falsify this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3264,
+      "completion_tokens": 269,
+      "total_tokens": 3533,
+      "completion_tokens_details": {
+        "reasoning_tokens": 131
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.3720165295526385
+}

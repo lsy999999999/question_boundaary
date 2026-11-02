@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430300415790302,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0d23f66b0e3a8616016ae59318561c8196831f6376f9f41bc7",
+    "object": "chat.completion",
+    "created": 1793430300,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"double_pulse\",\"reason\":\"Saturating memory has the lowest trajectory-held-out error; pulse decay supports history dependence, and the step’s flattening makes saturation worth testing, though it could reflect ordinary relaxation.\",\"prediction\":\"The second positive pulse will produce a smaller peak than the first if saturation persists across the intervening rest.\",\"accept\":false,\"mapping\":{\"source_id\":\"saturation\",\"target_relation\":\"Response may weaken at larger state magnitudes; the flattening step trajectory motivates testing this alongside memory.\",\"condition_to_check\":\"Compare peak responses across pulses and amplitudes; no attenuation beyond that predicted by relaxation would weaken the saturation relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3457,
+      "completion_tokens": 341,
+      "total_tokens": 3798,
+      "completion_tokens_details": {
+        "reasoning_tokens": 198
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.856059562414885
+}

@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793432164587315948,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "alternating",
+    "reason": "Memory_clock has the lowest cross-validated error, though its advantage over memory_multiscale is modest and it adds clock terms. Prior forecasts were not accepted, so adequacy for unseen interventions remains uncertain.",
+    "prediction": "At the same input and similar memory history, output may vary systematically with elapsed time if the clock terms capture a reproducible effect.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "History improves prediction, but evidence does not distinguish stored influence from clock effects.",
+      "condition_to_check": "Compare trajectories aligned in elapsed time across interventions; reproducible input-independent periodic variation would support a clock."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"Memory_clock has the lowest cross-validated error, though its advantage over memory_multiscale is modest and it adds clock terms. Prior forecasts were not accepted, so adequacy for unseen interventions remains uncertain.\",\"prediction\":\"At the same input and similar memory history, output may vary systematically with elapsed time if the clock terms capture a reproducible effect.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"History improves prediction, but evidence does not distinguish stored influence from clock effects.\",\"condition_to_check\":\"Compare trajectories aligned in elapsed time across interventions; reproducible input-independent periodic variation would support a clock.\"}}",
+    "input_tokens": 3709,
+    "output_tokens": 140,
+    "batch_elapsed_seconds": 2.7980453046038747,
+    "amortized_seconds": 2.7980453046038747,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3709,
+      "completion_tokens": 140,
+      "total_tokens": 3849
+    },
+    "api_response_id": "resp_0882a9c10e012caa016ae59a626eac819588e254737bad794f",
+    "wire_record": "wire/eval/0484_7231a12be49545898587eb6a7addf0f8"
+  }
+}

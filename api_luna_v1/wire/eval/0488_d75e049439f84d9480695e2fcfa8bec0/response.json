@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430703507422609,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0ccfab7b974a84a7016ae594acd4448195b898c91121c9cabe",
+    "object": "chat.completion",
+    "created": 1793430703,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"double_pulse\",\"reason\":\"State_cubic has the best leave-trajectory-out NMSE, but residual lag correlation remains elevated and alternatives disagree most on the double pulse. Adequacy is not established.\",\"prediction\":\"The second pulse will show a systematic deviation from the state_cubic forecast if accumulated history matters beyond current state and input.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is sufficiently supported by the trajectory comparisons.\",\"condition_to_check\":\"Check whether the second-pulse residual depends on prior input after controlling current state and input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3462,
+      "completion_tokens": 276,
+      "total_tokens": 3738,
+      "completion_tokens_details": {
+        "reasoning_tokens": 145
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.3763118563219905
+}

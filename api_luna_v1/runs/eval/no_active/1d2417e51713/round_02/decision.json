@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430612254955943,
+  "decision": {
+    "representation": "state",
+    "experiment": "slow_wave",
+    "reason": "State has the best trajectory-level validation error; richer memory, clock, and nonlinear models perform worse. Residual autocorrelation leaves a small unresolved concern, but no card is justified.",
+    "prediction": "After accounting for current state and input, slow-wave residuals will show no persistent elapsed-time pattern or additional dependence on input history.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No cross-domain mechanism is established by the current observations.",
+      "condition_to_check": "Test whether slow-wave residuals depend on elapsed time or prior inputs after accounting for current state and input."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"slow_wave\",\"reason\":\"State has the best trajectory-level validation error; richer memory, clock, and nonlinear models perform worse. Residual autocorrelation leaves a small unresolved concern, but no card is justified.\",\"prediction\":\"After accounting for current state and input, slow-wave residuals will show no persistent elapsed-time pattern or additional dependence on input history.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain mechanism is established by the current observations.\",\"condition_to_check\":\"Test whether slow-wave residuals depend on elapsed time or prior inputs after accounting for current state and input.\"}}",
+    "input_tokens": 3487,
+    "output_tokens": 246,
+    "batch_elapsed_seconds": 3.396011088974774,
+    "amortized_seconds": 3.396011088974774,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3487,
+      "completion_tokens": 246,
+      "total_tokens": 3733,
+      "completion_tokens_details": {
+        "reasoning_tokens": 113
+      }
+    },
+    "api_response_id": "resp_0681545544807bc7016ae59451c5bc8196826a6003e635f1dc",
+    "wire_record": "wire/eval/0455_18d8332b969a44a8a0cb7d5253fe1efd"
+  }
+}

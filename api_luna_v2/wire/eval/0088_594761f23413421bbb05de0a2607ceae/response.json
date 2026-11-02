@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431463222445447,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0b9fbdf0f79c26ed016ae597a4c314819799f37cf23b22a505",
+    "object": "chat.completion",
+    "created": 1793431463,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"prbs\",\"reason\":\"The state model has the lowest trajectory-level validation error and nearly uncorrelated residuals; added memory and clock features do not improve validation.\",\"prediction\":\"Under PRBS input, the state model will predict responses without systematic residuals tied to earlier inputs or elapsed time.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No cross-domain relation is justified by the available evidence.\",\"condition_to_check\":\"Check whether PRBS residuals depend systematically on input history or elapsed time.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2807,
+      "completion_tokens": 239,
+      "total_tokens": 3046,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 123
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.608750034123659
+}

@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423849419702078,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "positive_pulse",
+    "reason": "Saturating_memory has lowest CV NMSE and high residual correlation.",
+    "prediction": "Positive pulse will show reduced response amplitude after initial peak.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Response amplitude decreases with increasing magnitude due to saturation.",
+      "condition_to_check": "Compare response amplitudes for positive and negative pulses."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Saturating_memory has lowest CV NMSE and high residual correlation.\",\n  \"prediction\": \"Positive pulse will show reduced response amplitude after initial peak.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"Response amplitude decreases with increasing magnitude due to saturation.\",\n    \"condition_to_check\": \"Compare response amplitudes for positive and negative pulses.\"\n  }\n}",
+    "input_tokens": 3175,
+    "output_tokens": 112,
+    "batch_elapsed_seconds": 2.56308248732239,
+    "amortized_seconds": 2.56308248732239,
+    "peak_gpu_allocated_gb": 14.834887027740479,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

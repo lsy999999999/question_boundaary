@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431768212068795,
+  "http_status": 200,
+  "body": {
+    "id": "resp_00fc4b6546aa8b84016ae598d529ec81978969961cf6a6b9f1",
+    "object": "chat.completion",
+    "created": 1793431768,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"memory_slow has the lowest trajectory-held-out NMSE (0.00145), but residual lag-1 correlation remains high and PRBS error is elevated. Alternating inputs probe history effects against faster-memory alternatives.\",\"prediction\":\"After rapid input reversals, output will retain a smooth influence from earlier inputs rather than switching immediately.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history with finite relaxation predicts output beyond current input and visible state.\",\"condition_to_check\":\"In alternating trials, earlier inputs should improve held-out predictions after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3267,
+      "completion_tokens": 242,
+      "total_tokens": 3509,
+      "completion_tokens_details": {
+        "reasoning_tokens": 103
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.9356137085705996
+}

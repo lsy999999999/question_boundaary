@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793432342129761497,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "slow_wave",
+    "reason": "Memory_clock has the best trajectory-held-out error (0.0027), far below history_all (0.0331); prior PRBS and double-pulse forecasts also had low error. Residual autocorrelation leaves adequacy uncertain.",
+    "prediction": "At matched elapsed times, slow-wave output will follow the memory_clock forecast; systematic history-dependent residuals would challenge it.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated history improves held-out prediction, consistent with a storage-like predictive component.",
+      "condition_to_check": "At matched elapsed time, input, and visible output, differing prior histories should predict different outputs."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"slow_wave\",\"reason\":\"Memory_clock has the best trajectory-held-out error (0.0027), far below history_all (0.0331); prior PRBS and double-pulse forecasts also had low error. Residual autocorrelation leaves adequacy uncertain.\",\"prediction\":\"At matched elapsed times, slow-wave output will follow the memory_clock forecast; systematic history-dependent residuals would challenge it.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated history improves held-out prediction, consistent with a storage-like predictive component.\",\"condition_to_check\":\"At matched elapsed time, input, and visible output, differing prior histories should predict different outputs.\"}}",
+    "input_tokens": 3693,
+    "output_tokens": 144,
+    "batch_elapsed_seconds": 2.65141736343503,
+    "amortized_seconds": 2.65141736343503,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3693,
+      "completion_tokens": 144,
+      "total_tokens": 3837
+    },
+    "api_response_id": "resp_0fa153784f8ec607016ae59b147f8881948070f1ce310f9f8a",
+    "wire_record": "wire/eval/0558_35f71a5713be4c0385ab2eb32ac865bb"
+  }
+}

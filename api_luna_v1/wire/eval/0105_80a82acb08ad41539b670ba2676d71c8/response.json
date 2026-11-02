@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429909583822441,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0a9bc0e92dc5c4c2016ae591927b7c81948ef611d394b94820",
+    "object": "chat.completion",
+    "created": 1793429909,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"State-only residuals are strongly autocorrelated, while memory_slow has the lowest leave-trajectory-out error, substantially below state and other candidates.\",\"prediction\":\"After input switches, output will retain a history-dependent influence that decays gradually rather than responding instantaneously.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past input and output predict a lingering response after current input returns to zero.\",\"condition_to_check\":\"Compare outputs after switches with current input and visible state controlled; no lingering predictive effect would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2809,
+      "completion_tokens": 252,
+      "total_tokens": 3061,
+      "completion_tokens_details": {
+        "reasoning_tokens": 122
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.058710151351988
+}

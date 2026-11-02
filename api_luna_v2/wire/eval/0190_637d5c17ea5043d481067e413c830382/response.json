@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431598564708205,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0bb9a5a289d19e87016ae5982b58dc8190b2ece2dbf84bf499",
+    "object": "chat.completion",
+    "created": 1793431598,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_fast\",\"experiment\":\"alternating\",\"reason\":\"memory_fast has the lowest trajectory-level CV error (0.0064) and substantially outperforms state; persistent residual correlation supports history dependence, though delay remains plausible.\",\"prediction\":\"Under alternating input, memory_fast and delay predict different responses; the measured trajectory should distinguish their history-dependent patterns.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The data support a predictive history term, but do not establish a specific cross-domain mechanism.\",\"condition_to_check\":\"Compare alternating-input forecasts from memory_fast and delay against the observed trajectory.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2781,
+      "completion_tokens": 307,
+      "total_tokens": 3088,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 179
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.9199647679924965
+}

@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793423728603044258,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "negative_pulse",
+    "reason": "Memory_multiscale outperforms others with lower CV NMSE.",
+    "prediction": "Negative pulse will cause a phase shift and decay in response.",
+    "accept": false,
+    "mapping": {
+      "source_id": "memory_multiscale",
+      "target_relation": "System exhibits both fast and slow memory effects.",
+      "condition_to_check": "Consistent phase shift and decay regardless of input polarity."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_multiscale\",\n  \"experiment\": \"negative_pulse\",\n  \"reason\": \"Memory_multiscale outperforms others with lower CV NMSE.\",\n  \"prediction\": \"Negative pulse will cause a phase shift and decay in response.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"memory_multiscale\",\n    \"target_relation\": \"System exhibits both fast and slow memory effects.\",\n    \"condition_to_check\": \"Consistent phase shift and decay regardless of input polarity.\"\n  }\n}",
+    "input_tokens": 3563,
+    "output_tokens": 114,
+    "batch_elapsed_seconds": 2.710961777716875,
+    "amortized_seconds": 2.710961777716875,
+    "peak_gpu_allocated_gb": 14.915270805358887,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.0277862548828125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

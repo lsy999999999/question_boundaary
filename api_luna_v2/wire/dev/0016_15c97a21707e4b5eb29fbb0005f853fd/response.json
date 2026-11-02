@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431208643444903,
+  "http_status": 200,
+  "body": {
+    "id": "resp_07891285404cf672016ae596a5b9c08195bcd0fb29f26ed928",
+    "object": "chat.completion",
+    "created": 1793431208,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest leave-trajectory-out error by a wide margin, while elapsed-time drift is visible across different input trials. Alternating maximizes disagreement with memory_clock.\",\"prediction\":\"During rapid input switches, clock predicts elapsed-time-dependent output even when input history changes; memory_clock may show additional history-dependent deviations.\",\"accept\":true}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2243,
+      "completion_tokens": 271,
+      "total_tokens": 2514,
+      "prompt_tokens_details": {
+        "cached_tokens": 2048
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 187
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.5857170606032014
+}

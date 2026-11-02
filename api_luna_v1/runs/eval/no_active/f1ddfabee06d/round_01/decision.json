@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430589384702019,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "alternating",
+    "reason": "Slow-memory validation is strong and much better than state-only; saturating_memory improves CV only marginally with many more coefficients. Residual lag correlation still suggests the model is not fully adequate.",
+    "prediction": "Following rapid input reversals, output will retain a slowly decaying influence of prior inputs after the current input changes.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Past input influence persists after input returns to zero and relaxes over time, consistent with a storage-like predictive relation.",
+      "condition_to_check": "At matched current input and visible state, earlier input history should predict output; absence of this effect would weaken the relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Slow-memory validation is strong and much better than state-only; saturating_memory improves CV only marginally with many more coefficients. Residual lag correlation still suggests the model is not fully adequate.\",\"prediction\":\"Following rapid input reversals, output will retain a slowly decaying influence of prior inputs after the current input changes.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Past input influence persists after input returns to zero and relaxes over time, consistent with a storage-like predictive relation.\",\"condition_to_check\":\"At matched current input and visible state, earlier input history should predict output; absence of this effect would weaken the relation.\"}}",
+    "input_tokens": 3295,
+    "output_tokens": 331,
+    "batch_elapsed_seconds": 4.4876864505931735,
+    "amortized_seconds": 4.4876864505931735,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3295,
+      "completion_tokens": 331,
+      "total_tokens": 3626,
+      "completion_tokens_details": {
+        "reasoning_tokens": 182
+      }
+    },
+    "api_response_id": "resp_069a141ef1fa4b6d016ae59439de748197a7b7cc245564e0d6",
+    "wire_record": "wire/eval/0445_6eebdba02fe4415ebff91a99db0e3f72"
+  }
+}

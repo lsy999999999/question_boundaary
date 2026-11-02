@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430675485241624,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0577fe4278978dd1016ae5948ffccc8196b420acde2a0d078a",
+    "object": "chat.completion",
+    "created": 1793430675,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"prbs\",\"reason\":\"Memory_clock has far lower trajectory-held-out error than alternatives, but substantial residual autocorrelation leaves room for missing dynamics. PRBS tests it under irregular input.\",\"prediction\":\"After accounting for input history, oscillatory variation will remain aligned with elapsed time during the irregular-input trajectory.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The fit supports clock features but does not establish an independent external driver.\",\"condition_to_check\":\"Compare residual oscillations at matched elapsed times across distinct input interventions; lack of alignment would weaken the clock interpretation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3239,
+      "completion_tokens": 291,
+      "total_tokens": 3530,
+      "completion_tokens_details": {
+        "reasoning_tokens": 163
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.1770096849650145
+}

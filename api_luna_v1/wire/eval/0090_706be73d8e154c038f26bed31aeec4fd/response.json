@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429881999773816,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0cd7685bdc29bca5016ae59176d480819590234fc14870c8ee",
+    "object": "chat.completion",
+    "created": 1793429881,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"The state model has the best leave-trajectory-out score, but residual lag-1 correlation is substantial. Alternating input has the greatest prediction disagreement and can test for history dependence.\",\"prediction\":\"After controlling for current input and state, the alternating trajectory may show a systematic residual pattern if accumulated history matters.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2560,
+      "completion_tokens": 282,
+      "total_tokens": 2842,
+      "completion_tokens_details": {
+        "reasoning_tokens": 200
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.209313434548676
+}

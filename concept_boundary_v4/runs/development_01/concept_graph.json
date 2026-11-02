@@ -1,0 +1,660 @@
+{
+  "nodes": {
+    "v3_r0": {
+      "spec": {
+        "parameters": [
+          {
+            "name": "p0",
+            "lower": 0.05,
+            "initial": 0.75,
+            "upper": 1.5
+          }
+        ],
+        "states": [
+          {
+            "name": "z0",
+            "meaning": "A decaying trace of prior input, initialized at zero; its physical interpretation is unverified.",
+            "rate": "u-p0*z0"
+          }
+        ],
+        "terms": [
+          "x",
+          "x**3",
+          "u",
+          "z0"
+        ]
+      },
+      "concept": "Previous recorded candidate v3_r0",
+      "status": "weakened"
+    },
+    "v3_r1": {
+      "spec": {
+        "parameters": [
+          {
+            "name": "p0",
+            "lower": 0.05,
+            "initial": 0.75,
+            "upper": 1.5
+          }
+        ],
+        "states": [
+          {
+            "name": "z0",
+            "meaning": "A decaying input trace, initialized at zero; physical interpretation is unverified.",
+            "rate": "u-p0*z0"
+          }
+        ],
+        "terms": [
+          "x",
+          "x**3",
+          "tanh(x)",
+          "u",
+          "z0"
+        ]
+      },
+      "concept": "Previous recorded candidate v3_r1",
+      "status": "weakened"
+    },
+    "v3_r2": {
+      "spec": {
+        "parameters": [
+          {
+            "name": "p0",
+            "lower": 0.05,
+            "initial": 0.75,
+            "upper": 1.5
+          }
+        ],
+        "states": [
+          {
+            "name": "z0",
+            "meaning": "A decaying input trace, initialized at zero; physical interpretation is unverified.",
+            "rate": "u-p0*z0"
+          }
+        ],
+        "terms": [
+          "x",
+          "x**3",
+          "tanh(x)",
+          "x*tanh(x)**2",
+          "u",
+          "z0"
+        ]
+      },
+      "concept": "Previous recorded candidate v3_r2",
+      "status": "weakened"
+    },
+    "b4_r0": {
+      "parent_id": "v3_r2",
+      "evidence_ids": [
+        "scope:v3_r2:e399d52c79e0",
+        "failure:v3_r2:e399d52c79e0:promoted_v3_sealed_3",
+        "failure:v3_r2:e399d52c79e0:promoted_v3_sealed_4",
+        "failure:v3_r2:e399d52c79e0:promoted_v3_sealed_2"
+      ],
+      "concept": "The current model fits many trajectories, but its input-history trace does not adequately capture some reversal schedules; test a second decaying trace driven by input changes.",
+      "reason": "The existing model has low group-CV NMSE (0.0211), yet its promoted sealed trajectories 3 and 4 exceed the .05 threshold and show substantial late-time prediction errors; trajectory 2 also exceeds the threshold. In contrast, trajectories 0, 1, and 5 are below threshold, including trajectory 5 with four reversals. This motivates testing whether a second input-history state helps, without treating reversal count alone as causal or sufficient.",
+      "operation": "revise",
+      "spec": {
+        "parameters": [
+          {
+            "name": "p0",
+            "lower": 0.05,
+            "initial": 0.8,
+            "upper": 1.5
+          },
+          {
+            "name": "p1",
+            "lower": 0.05,
+            "initial": 0.5,
+            "upper": 1.5
+          }
+        ],
+        "states": [
+          {
+            "name": "z0",
+            "meaning": "A decaying trace of input level; interpretation is unverified.",
+            "rate": "u-p0*z0"
+          },
+          {
+            "name": "z1",
+            "meaning": "A second decaying trace of changes in input level; interpretation is unverified.",
+            "rate": "(u-z0)-p1*z1"
+          }
+        ],
+        "terms": [
+          "x",
+          "x**3",
+          "tanh(x)",
+          "x*tanh(x)**2",
+          "u",
+          "z0",
+          "z1"
+        ]
+      },
+      "observable_consequence": "If the added trace captures a missing input-history effect, refitting should reduce whole-trajectory error especially on schedules resembling promoted_v3_sealed_2, _3, and _4, while preserving low error on _0, _1, and _5. Failure to improve held-out trajectories, or degradation on the currently well-fit schedules, would argue against this revision.",
+      "analogy": {
+        "domain": "linear filtering",
+        "relation": "A cascade of decaying traces can represent input history at more than one timescale.",
+        "mapping": "The input drives z0, and the difference between the input and z0 drives z1; both enter the fitted x-rate.",
+        "failure_condition": "This analogy is only a model-form proposal; it fails as an explanation if the added state does not improve grouped held-out trajectory predictions."
+      },
+      "provenance": "model_knowledge_unverified",
+      "limitations": "The promoted trajectories are development data, not fresh confirmation. Several high-error rows coexist with low-error rows at similar reversal counts, so the added state is a testable hypothesis rather than an established mechanism.",
+      "boundary": {
+        "model_id": "v3_r2",
+        "status": "no_supported_boundary",
+        "reason": "不能从现有行支持可靠的单特征阈值：高误差出现在反转数为2的 sealed_3、sealed_4，但反转数为0的 sealed_1及反转数为3或4的 sealed_0、sealed_5均为低误差；仅用峰值、面积或其他单一描述量也无法清楚分开这些高低误差行。证据 scope:v3_r2:e399d52c79e0 显示模型既有低误差也有高误差轨迹，failure:v3_r2:e399d52c79e0:promoted_v3_sealed_2 进一步表明失败并不局限于反转数为2。因此不提出无充分依据的边界。"
+      },
+      "status": "weakened"
+    },
+    "b4_r1": {
+      "parent_id": "v3_r1",
+      "evidence_ids": [
+        "scope:v3_r1:c179384f8458",
+        "failure:v3_r1:c179384f8458:promoted_v3_sealed_3",
+        "failure:v3_r1:c179384f8458:promoted_v3_sealed_4",
+        "failure:v3_r1:c179384f8458:promoted_v3_sealed_2"
+      ],
+      "concept": "Add a state-dependent input contribution to the existing nonlinear input-output relation.",
+      "reason": "v3_r1 has low grouped-CV NMSE overall, but its held-out trajectories include substantial late-time prediction errors: on promoted_v3_sealed_3 and promoted_v3_sealed_4 it predicts negative output where observations rise under sustained positive input. The failure on promoted_v3_sealed_2 also cautions against attributing the issue only to one reversal pattern. A u*z0 contribution is a compact test of whether the existing input trace changes the effective input contribution; it does not assign a physical interpretation to z0. Evidence: scope:v3_r1:c179384f8458; failure:v3_r1:c179384f8458:promoted_v3_sealed_3; failure:v3_r1:c179384f8458:promoted_v3_sealed_4; failure:v3_r1:c179384f8458:promoted_v3_sealed_2.",
+      "operation": "revise",
+      "spec": {
+        "parameters": [
+          {
+            "name": "p0",
+            "lower": 0.05,
+            "initial": 0.75,
+            "upper": 1.5
+          }
+        ],
+        "states": [
+          {
+            "name": "z0",
+            "meaning": "A decaying input trace; physical interpretation is unverified.",
+            "rate": "u-p0*z0"
+          }
+        ],
+        "terms": [
+          "x",
+          "x**3",
+          "tanh(x)",
+          "u",
+          "z0",
+          "u*z0"
+        ]
+      },
+      "observable_consequence": "If the added term captures a reproducible state-dependent input contribution, grouped held-out trajectory errors should decrease especially on schedules resembling the late positive-input portions of promoted_v3_sealed_3 and promoted_v3_sealed_4, without sacrificing the low errors on other schedules. If it does not, the additional term should fail to improve held-out prediction.",
+      "analogy": {
+        "domain": "input-output dynamical models",
+        "relation": "An input contribution may depend on a model's evolving internal state rather than being a fixed additive effect.",
+        "mapping": "The proposed u*z0 term lets the existing fitted trace z0 modulate the contribution of current input u.",
+        "failure_condition": "The analogy is unsupported if fitting and grouped held-out evaluation do not improve prediction, or if gains are confined to the trajectories used for fitting."
+      },
+      "provenance": "model_knowledge_unverified",
+      "limitations": "The evidence is adaptive development data, not untouched confirmation. The trace coordinate is model-dependent, the fit may be numerically or structurally non-identifiable, and the observed failures do not establish a universal input-history law.",
+      "boundary": {
+        "model_id": "v3_r1",
+        "status": "no_supported_boundary",
+        "reason": "v3_r1 的高误差行包括 sealed_3 和 sealed_4（反转数均为2），但反转数为0的行以及反转数为1、3、4的行也有低误差；例如 sealed_5 反转数为4仍低误差，新边界干预两行也都低于0.05。峰值、面积和持续时长同样未显示可将本模型高低误差行可靠分开的单一阈值。因此不提出单特征边界。证据：scope:v3_r1:c179384f8458。"
+      },
+      "status": "weakened"
+    },
+    "b4_r2": {
+      "parent_id": "b4_r1",
+      "evidence_ids": [
+        "scope:b4_r1:7bf379dbc522",
+        "failure:b4_r1:7bf379dbc522:b4_r1_experiment_0",
+        "failure:b4_r1:7bf379dbc522:b4_r1_experiment_1"
+      ],
+      "concept": "保留 b4_r1 的主要关系，并检验加入输入记忆状态平方项是否能改善极端反转轨迹上的预测。",
+      "reason": "b4_r1 的组留出 CV NMSE 为 0.03649，低于 0.05，但其自身证据中两条新边界干预的 NMSE 分别为 0.158 和 0.069，且末端预测明显偏离观测。观测末端 x 约为 -0.44 和 -0.26，而模型预测约为 -0.03 和 0.08。现有方程已含 u*z0，但该项拟合系数很小（-0.0143）；因此可检验 z0 的非线性作用，而不把潜状态解释为已确定的物理量。",
+      "operation": "revise",
+      "spec": {
+        "parameters": [
+          {
+            "name": "p0",
+            "lower": 0.05,
+            "initial": 0.75,
+            "upper": 1.5
+          }
+        ],
+        "states": [
+          {
+            "name": "z0",
+            "meaning": "输入的衰减记忆坐标；物理解释未证实。",
+            "rate": "u-p0*z0"
+          }
+        ],
+        "terms": [
+          "x",
+          "x**3",
+          "tanh(x)",
+          "u",
+          "z0",
+          "u*z0",
+          "z0**2"
+        ]
+      },
+      "observable_consequence": "若额外的 z0**2 项捕捉到当前方程遗漏的记忆状态非线性，组留出拟合应能降低新边界干预末段的轨迹误差，同时不显著恶化普通输入上的预测；否则应撤回该扩展并保留 b4_r1。",
+      "analogy": {
+        "domain": "带记忆的动态输入输出模型",
+        "relation": "状态记忆对输出的作用可能随记忆幅度非线性变化。",
+        "mapping": "z0 是拟合用的输入历史坐标，z0**2 是对其作用形状的可检验扩展。",
+        "failure_condition": "若在独立输入组上 z0**2 不改善轨迹预测，或只改善极少数已见轨迹，则该类比不支持保留此项。"
+      },
+      "provenance": "model_knowledge_unverified",
+      "limitations": "b4_r1 的失败行与成功行并未证明 z0**2 是正确修正；观测只支持该项作为可证伪的拟合假设。当前数据已用于开发，不能视为未触碰的确认集。",
+      "boundary": {
+        "model_id": "b4_r1",
+        "feature": "max_reversal_jump",
+        "operator": "gt",
+        "threshold": 2.5,
+        "error_threshold": 0.05,
+        "reason": "b4_r1 自身证据中，max_reversal_jump 为 0 的多条行及新干预 jump=1.7、2.1 的行均低于 0.05；jump=3.0 的两条新干预行均高于 0.05（NMSE 0.158、0.069）。故暂以 2.5 作前瞻性分界，测试高反转跳变时该模型是否更易失败；样本有限，不能视为普遍规律。证据：scope:b4_r1:7bf379dbc522。"
+      },
+      "status": "weakened"
+    }
+  },
+  "events": [
+    {
+      "kind": "model_status",
+      "round": 0,
+      "previous": "active",
+      "id": "v3_r0",
+      "status": "weakened",
+      "evidence_ids": [
+        "scope:v3_r0:b9c24dae9ced",
+        "failure:v3_r0:b9c24dae9ced:b4_r0_experiment_1",
+        "failure:v3_r0:b9c24dae9ced:promoted_v3_sealed_3"
+      ],
+      "reason": "在新干预两条轨迹中一条高误差、另一条接近阈值，且已见旧轨迹有明显留组预测失败；相比之下，扩展模型在这些新干预上的预测更好。拟合失败与跨轨迹泛化问题使该模型不宜继续作为首选，但证据不足以否定其在较窄范围的描述用途。"
+    },
+    {
+      "kind": "model_status",
+      "round": 0,
+      "previous": "active",
+      "id": "v3_r1",
+      "status": "active",
+      "evidence_ids": [
+        "scope:v3_r1:c179384f8458",
+        "failure:v3_r1:c179384f8458:promoted_v3_sealed_3",
+        "failure:v3_r1:c179384f8458:promoted_v3_sealed_4",
+        "prospective:0:v3_r1"
+      ],
+      "reason": "整体留组误差优于v3_r0，且对新干预两条轨迹的预测误差均低于操作阈值；但旧开发轨迹仍有显著留组失败，因此仅保留为当前有效的局部模型，不能视为普遍准确。"
+    },
+    {
+      "kind": "model_status",
+      "round": 0,
+      "previous": "active",
+      "id": "v3_r2",
+      "status": "active",
+      "evidence_ids": [
+        "scope:v3_r2:9f0a1c4e1c10",
+        "failure:v3_r2:9f0a1c4e1c10:promoted_v3_sealed_3",
+        "failure:v3_r2:9f0a1c4e1c10:promoted_v3_sealed_4",
+        "prospective:0:v3_r2"
+      ],
+      "reason": "新增项没有消除旧轨迹中的明显留组失败，但在本次两条干预上的预测误差均较低，不能因父级边界猜测不成立而判模型失败；其局部预测能力仍有支持。"
+    },
+    {
+      "kind": "model_status",
+      "round": 0,
+      "previous": "active",
+      "id": "b4_r0",
+      "status": "weakened",
+      "evidence_ids": [
+        "scope:b4_r0:e24eef797b18",
+        "failure:b4_r0:e24eef797b18:promoted_v3_sealed_3",
+        "failure:b4_r0:e24eef797b18:promoted_v3_sealed_4",
+        "failure:b4_r0:e24eef797b18:b4_r0_experiment_1",
+        "prospective:0:b4_r0"
+      ],
+      "reason": "第二条新干预实际高误差，且旧开发轨迹亦有留组失败；第一条新干预表现良好，故仍有局部描述价值，但当前证据不支持其作为稳定的广域预测模型。"
+    },
+    {
+      "kind": "model_status",
+      "round": 1,
+      "previous": "weakened",
+      "id": "v3_r0",
+      "status": "weakened",
+      "evidence_ids": [
+        "scope:v3_r0:94139d1dfa57",
+        "failure:v3_r0:94139d1dfa57:b4_r1_experiment_0",
+        "prospective:1:v3_r0"
+      ],
+      "reason": "该模型在自身分组评估中已有高误差轨迹；对新边界干预的留出预测也明显失准（例如 b4_r1_experiment_0 的 RMSE 为 0.614），且新一轮两条轨迹的预测 NMSE 均远低于实际表现所提示的误差水平。支持继续弱化其数值预测能力，但不足以单独判定模型概念错误。"
+    },
+    {
+      "kind": "model_status",
+      "round": 1,
+      "previous": "active",
+      "id": "v3_r1",
+      "status": "weakened",
+      "evidence_ids": [
+        "scope:v3_r1:ac5b14cbcf08",
+        "failure:v3_r1:ac5b14cbcf08:b4_r1_experiment_0",
+        "prospective:1:v3_r1"
+      ],
+      "reason": "先前多数轨迹拟合尚可，但对新边界干预留出预测失败（b4_r1_experiment_0 的 RMSE 为 0.446）；本轮预测 NMSE 为 0.248、0.159，而两条实际轨迹均为高误差。其原边界记录为 no_supported_boundary，因此这不构成边界标签被推翻；数值模型在该输入范围仍明显不足。"
+    },
+    {
+      "kind": "model_status",
+      "round": 1,
+      "previous": "active",
+      "id": "v3_r2",
+      "status": "weakened",
+      "evidence_ids": [
+        "scope:v3_r2:0df71c3131bb",
+        "failure:v3_r2:0df71c3131bb:b4_r1_experiment_0",
+        "prospective:1:v3_r2"
+      ],
+      "reason": "自身评估已包含高误差轨迹，新边界干预留出预测也失败（b4_r1_experiment_0 的 RMSE 为 0.464）；本轮预测 NMSE 为 0.275、0.164，两条实际轨迹均为高误差。数值外推表现不足，但不据此断言其状态表达概念错误。"
+    },
+    {
+      "kind": "model_status",
+      "round": 1,
+      "previous": "weakened",
+      "id": "b4_r0",
+      "status": "weakened",
+      "evidence_ids": [
+        "scope:b4_r0:1d13821e27bd",
+        "failure:b4_r0:1d13821e27bd:b4_r1_experiment_0",
+        "prospective:1:b4_r0"
+      ],
+      "reason": "模型在部分新边界干预上误差较低，但对另一类新边界干预留出预测失败（b4_r1_experiment_0 的 RMSE 为 0.504）；本轮预测 NMSE 为 0.282、0.182，实际两条轨迹均为高误差。故整体预测能力仍受限，不能把个别低误差干预视为普遍适用。"
+    },
+    {
+      "kind": "model_status",
+      "round": 1,
+      "previous": "active",
+      "id": "b4_r1",
+      "status": "weakened",
+      "evidence_ids": [
+        "scope:b4_r1:7bf379dbc522",
+        "failure:b4_r1:7bf379dbc522:b4_r1_experiment_0",
+        "prospective:1:b4_r1"
+      ],
+      "reason": "虽为当前候选且既有分组交叉验证分数较好，但其自身留出评估在新边界干预上出现明显失败（b4_r1_experiment_0 的 RMSE 为 0.409）；本轮预测 NMSE 为 0.364、0.226，而两条实际轨迹均为高误差。应弱化其在该输入范围的数值可靠性，不能仅凭现有结果判定模型结构概念必然错误。"
+    },
+    {
+      "kind": "model_status",
+      "round": 2,
+      "previous": "weakened",
+      "id": "v3_r0",
+      "status": "weakened",
+      "evidence_ids": [
+        "scope:v3_r0:80235a740479",
+        "failure:v3_r0:80235a740479:b4_r1_experiment_0"
+      ],
+      "reason": "自身分组评估在新干预中出现明显预测误差：b4_r1 两条轨迹 NMSE 分别为 0.090 和 0.862，且失败证据显示末段预测与观测显著偏离；仍有不少低误差行，故是适用范围不足而非整体失效。"
+    },
+    {
+      "kind": "model_status",
+      "round": 2,
+      "previous": "weakened",
+      "id": "v3_r1",
+      "status": "weakened",
+      "evidence_ids": [
+        "scope:v3_r1:4d558f338926",
+        "failure:v3_r1:4d558f338926:b4_r1_experiment_0"
+      ],
+      "reason": "新干预中 b4_r1 两条轨迹及 b4_r2 一条轨迹为高误差，且自身失败证据显示轨迹末段预测偏离观测；同时其他行拟合较好，故保留但削弱其广泛适用性。"
+    },
+    {
+      "kind": "model_status",
+      "round": 2,
+      "previous": "weakened",
+      "id": "v3_r2",
+      "status": "weakened",
+      "evidence_ids": [
+        "scope:v3_r2:4618f4a33bba",
+        "failure:v3_r2:4618f4a33bba:b4_r1_experiment_0"
+      ],
+      "reason": "自身评估中 b4_r1 两条轨迹和 b4_r2 的一条轨迹误差较高，失败证据显示末段输出偏差明显；其他轨迹较好，不能据此判定整个模型概念错误。"
+    },
+    {
+      "kind": "model_status",
+      "round": 2,
+      "previous": "weakened",
+      "id": "b4_r0",
+      "status": "weakened",
+      "evidence_ids": [
+        "scope:b4_r0:6ab29c303c34",
+        "failure:b4_r0:6ab29c303c34:b4_r1_experiment_0"
+      ],
+      "reason": "尽管在部分新干预上误差较低，自身评估对 b4_r1 两条轨迹及 b4_r2 一条轨迹预测失败，失败证据显示末段输出偏差明显；因此不支持其作为普适模型。"
+    },
+    {
+      "kind": "model_status",
+      "round": 2,
+      "previous": "weakened",
+      "id": "b4_r1",
+      "status": "weakened",
+      "evidence_ids": [
+        "scope:b4_r1:37fec22e1271",
+        "prospective:2:b4_r1"
+      ],
+      "reason": "其自身边界预测在这对新干预上两项标签均错：跳变 2.3 的轨迹实际高误差，跳变 2.7 的轨迹实际低误差。数值表现也不稳定，故削弱该模型及其跳变阈值猜测；这不证明模型在所有输入下均失效。"
+    },
+    {
+      "kind": "model_status",
+      "round": 2,
+      "previous": "active",
+      "id": "b4_r2",
+      "status": "weakened",
+      "evidence_ids": [
+        "scope:b4_r2:a3d49eddb073",
+        "failure:b4_r2:53a9abfde379:b4_r2_experiment_0"
+      ],
+      "reason": "自身评估在 b4_r2_experiment_0 上误差高，而同组另一轨迹误差低；失败证据显示末段偏差明显，说明尚有未捕捉的输入依赖，不能仅凭原先的 active 状态维持强支持。"
+    }
+  ],
+  "episodes": [
+    {
+      "round": 0,
+      "actual_conditions_met": true,
+      "prediction_nmse": {
+        "v3_r0": [
+          0.05631008740334578,
+          0.24801843528750045
+        ],
+        "v3_r1": [
+          0.005662917050120511,
+          0.040936539387639644
+        ],
+        "v3_r2": [
+          0.007658549110216072,
+          0.04074742985599456
+        ],
+        "b4_r0": [
+          0.010904275932718085,
+          0.0794011866011285
+        ]
+      },
+      "boundary_owner": "v3_r2",
+      "boundary": {
+        "model_id": "v3_r2",
+        "status": "no_supported_boundary",
+        "reason": "不能从现有行支持可靠的单特征阈值：高误差出现在反转数为2的 sealed_3、sealed_4，但反转数为0的 sealed_1及反转数为3或4的 sealed_0、sealed_5均为低误差；仅用峰值、面积或其他单一描述量也无法清楚分开这些高低误差行。证据 scope:v3_r2:e399d52c79e0 显示模型既有低误差也有高误差轨迹，failure:v3_r2:e399d52c79e0:promoted_v3_sealed_2 进一步表明失败并不局限于反转数为2。因此不提出无充分依据的边界。"
+      },
+      "predicted_high_error": [
+        null,
+        null
+      ],
+      "observed_high_error": [
+        false,
+        false
+      ],
+      "boundary_label_correct": [
+        null,
+        null
+      ],
+      "features": [
+        {
+          "peak_abs": 1.5,
+          "reversal_count": 1,
+          "max_reversal_jump": 1.7,
+          "absolute_area": 5.100000000000001,
+          "signed_area": 3.8999999999999995,
+          "longest_sign_duration": 3.0,
+          "total_variation": 3.4
+        },
+        {
+          "peak_abs": 1.5,
+          "reversal_count": 1,
+          "max_reversal_jump": 2.1,
+          "absolute_area": 6.299999999999999,
+          "signed_area": 2.700000000000001,
+          "longest_sign_duration": 3.0,
+          "total_variation": 4.2
+        }
+      ],
+      "scope": "Prospective errors on this one-factor pair only; .05 is a fixed operational threshold, not a physical law"
+    },
+    {
+      "round": 1,
+      "actual_conditions_met": true,
+      "prediction_nmse": {
+        "v3_r0": [
+          0.4456186583873771,
+          0.26605317021634595
+        ],
+        "v3_r1": [
+          0.2484296883554552,
+          0.15873832516768172
+        ],
+        "v3_r2": [
+          0.2747502298004692,
+          0.16422661362606802
+        ],
+        "b4_r0": [
+          0.28208669851843704,
+          0.1821494146003988
+        ],
+        "b4_r1": [
+          0.3638008082246567,
+          0.22606659320256772
+        ]
+      },
+      "boundary_owner": "v3_r1",
+      "boundary": {
+        "model_id": "v3_r1",
+        "status": "no_supported_boundary",
+        "reason": "v3_r1 的高误差行包括 sealed_3 和 sealed_4（反转数均为2），但反转数为0的行以及反转数为1、3、4的行也有低误差；例如 sealed_5 反转数为4仍低误差，新边界干预两行也都低于0.05。峰值、面积和持续时长同样未显示可将本模型高低误差行可靠分开的单一阈值。因此不提出单特征边界。证据：scope:v3_r1:c179384f8458。"
+      },
+      "predicted_high_error": [
+        null,
+        null
+      ],
+      "observed_high_error": [
+        true,
+        true
+      ],
+      "boundary_label_correct": [
+        null,
+        null
+      ],
+      "features": [
+        {
+          "peak_abs": 1.5,
+          "reversal_count": 1,
+          "max_reversal_jump": 3.0,
+          "absolute_area": 7.5,
+          "signed_area": -1.5,
+          "longest_sign_duration": 3.0,
+          "total_variation": 6.0
+        },
+        {
+          "peak_abs": 1.5,
+          "reversal_count": 1,
+          "max_reversal_jump": 3.0,
+          "absolute_area": 7.5,
+          "signed_area": -1.5,
+          "longest_sign_duration": 3.0,
+          "total_variation": 6.0
+        }
+      ],
+      "scope": "Prospective errors on this one-factor pair only; .05 is a fixed operational threshold, not a physical law"
+    },
+    {
+      "round": 2,
+      "actual_conditions_met": true,
+      "prediction_nmse": {
+        "v3_r0": [
+          0.13346440057560702,
+          0.0267203683776403
+        ],
+        "v3_r1": [
+          0.15195597260331312,
+          0.02182216561701598
+        ],
+        "v3_r2": [
+          0.1401258229548619,
+          0.01834191926790182
+        ],
+        "b4_r0": [
+          0.14151609181999406,
+          0.01871284553364177
+        ],
+        "b4_r1": [
+          0.20123968180069857,
+          0.036593157152430354
+        ],
+        "b4_r2": [
+          0.21251006014768645,
+          0.03685856638247783
+        ]
+      },
+      "boundary_owner": "b4_r1",
+      "boundary": {
+        "model_id": "b4_r1",
+        "feature": "max_reversal_jump",
+        "operator": "gt",
+        "threshold": 2.5,
+        "error_threshold": 0.05,
+        "reason": "b4_r1 自身证据中，max_reversal_jump 为 0 的多条行及新干预 jump=1.7、2.1 的行均低于 0.05；jump=3.0 的两条新干预行均高于 0.05（NMSE 0.158、0.069）。故暂以 2.5 作前瞻性分界，测试高反转跳变时该模型是否更易失败；样本有限，不能视为普遍规律。证据：scope:b4_r1:7bf379dbc522。"
+      },
+      "predicted_high_error": [
+        false,
+        true
+      ],
+      "observed_high_error": [
+        true,
+        false
+      ],
+      "boundary_label_correct": [
+        false,
+        false
+      ],
+      "features": [
+        {
+          "peak_abs": 1.2,
+          "reversal_count": 1,
+          "max_reversal_jump": 2.3,
+          "absolute_area": 6.899999999999999,
+          "signed_area": 0.29999999999999954,
+          "longest_sign_duration": 3.0,
+          "total_variation": 4.6
+        },
+        {
+          "peak_abs": 1.5,
+          "reversal_count": 1,
+          "max_reversal_jump": 2.7,
+          "absolute_area": 8.1,
+          "signed_area": -0.9000000000000002,
+          "longest_sign_duration": 3.0,
+          "total_variation": 5.4
+        }
+      ],
+      "scope": "Prospective errors on this one-factor pair only; .05 is a fixed operational threshold, not a physical law"
+    }
+  ],
+  "final": {
+    "selected_id": "v3_r1",
+    "reason": "在所列模型中选择 v3_r1 作为当前最好的候选，而非认为其已获确认。它的 group-held-out CV NMSE 为 0.0444，优于 v3_r2 的 0.0413 并不成立——校正比较后 v3_r2 数值更低；但 v3_r1 在新边界干预中误差明显较小：b4_r0 两条新轨迹 NMSE 为 0.0226、0.0061，而 v3_r1 对同两条为 0.0226、0.0061；相较之下 v3_r1 对高跳变干预仍失败，见 scope:v3_r1:4d558f338926 与 prospective:1:v3_r1。综合而言，证据并未支持可靠的优胜者；不过若必须选择，应优先当前 CV 略低的 v3_r2。",
+    "scope_learned": "没有证据支持广泛的输入范围内可靠预测：v3_r2 的自身范围评估已报告多条高误差轨迹，且对峰值 1.35 的单向输入高误差（scope:v3_r2:4618f4a33bba）；其高误差也不能由反转数等单个描述量清晰界定。对新的强反转干预，多个模型出现明显失配，例如 b4_r1 和 b4_r2 的 b4_r1_experiment_0、b4_r2_experiment_0（各自证据见 scope:b4_r1:37fec22e1271、scope:b4_r2:a3d49eddb073）。这些只是已测试输入及模型上的局部结果，不构成普遍结构规律。",
+    "unresolved": "候选模型均未通过所有已测试范围；v3_r2 虽有最低的报告 CV NMSE（0.04126），但在自身测试中仍有高误差，故不能称为已验证模型（scope:v3_r2:4618f4a33bba）。b4_r1 的 jump>2.5 边界在后续干预中两次都错分（prospective:2:b4_r1），进一步说明不能据此建立可靠单特征边界。状态坐标的物理含义未验证；现有数据也不能区分模型结构缺陷与覆盖不足。"
+  }
+}

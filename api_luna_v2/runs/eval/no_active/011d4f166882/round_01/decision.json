@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431696837274306,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "alternating",
+    "reason": "It has the lowest trajectory-level CV error; pulse and step responses show lingering decay after input stops. Elevated PRBS error and residual correlation leave some uncertainty about adequacy.",
+    "prediction": "After alternating switches, the response will retain input-history dependence and decay after each switch rather than track current input alone.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated past input predicts lingering response after input returns to zero, as seen in pulse and step-rest trajectories.",
+      "condition_to_check": "At matched current input and output, different prior histories should produce different subsequent responses."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest trajectory-level CV error; pulse and step responses show lingering decay after input stops. Elevated PRBS error and residual correlation leave some uncertainty about adequacy.\",\"prediction\":\"After alternating switches, the response will retain input-history dependence and decay after each switch rather than track current input alone.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past input predicts lingering response after input returns to zero, as seen in pulse and step-rest trajectories.\",\"condition_to_check\":\"At matched current input and output, different prior histories should produce different subsequent responses.\"}}",
+    "input_tokens": 3303,
+    "output_tokens": 268,
+    "batch_elapsed_seconds": 3.5626843757927418,
+    "amortized_seconds": 3.5626843757927418,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3303,
+      "completion_tokens": 268,
+      "total_tokens": 3571,
+      "completion_tokens_details": {
+        "reasoning_tokens": 131
+      }
+    },
+    "api_response_id": "resp_0e6375bda23ceb3e016ae5988deea081959a39dafcbeaf3f6a",
+    "wire_record": "wire/eval/0248_b55ced78303543d88d6d24be1b5d8aa2"
+  }
+}

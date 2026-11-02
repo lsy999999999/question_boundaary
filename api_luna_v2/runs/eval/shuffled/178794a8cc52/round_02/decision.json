@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793432063055193950,
+  "decision": {
+    "representation": "memory_multiscale",
+    "experiment": "prbs",
+    "reason": "Memory_multiscale improves trajectory-level CV over memory_slow (0.001516 vs 0.001723); saturating_memory is only marginally better and uses more coefficients. PRBS errors remain elevated.",
+    "prediction": "During irregular switching, fast and slow input histories will produce distinct post-switch responses; after input stops, output will retain a history-dependent tail.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "Leaky accumulated input history may carry past influence into output after the input changes.",
+      "condition_to_check": "Under PRBS, past input should predict output after controlling current input and visible state; absence of that effect would falsify this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_multiscale\",\"experiment\":\"prbs\",\"reason\":\"Memory_multiscale improves trajectory-level CV over memory_slow (0.001516 vs 0.001723); saturating_memory is only marginally better and uses more coefficients. PRBS errors remain elevated.\",\"prediction\":\"During irregular switching, fast and slow input histories will produce distinct post-switch responses; after input stops, output will retain a history-dependent tail.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Leaky accumulated input history may carry past influence into output after the input changes.\",\"condition_to_check\":\"Under PRBS, past input should predict output after controlling current input and visible state; absence of that effect would falsify this relation.\"}}",
+    "input_tokens": 3483,
+    "output_tokens": 350,
+    "batch_elapsed_seconds": 5.105429640039802,
+    "amortized_seconds": 5.105429640039802,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3483,
+      "completion_tokens": 350,
+      "total_tokens": 3833,
+      "completion_tokens_details": {
+        "reasoning_tokens": 193
+      }
+    },
+    "api_response_id": "resp_0c2fef0f05310314016ae599fb261c8197adefa78b46f269e3",
+    "wire_record": "wire/eval/0440_38d337f9d53a4277aa833d243e5f181d"
+  }
+}

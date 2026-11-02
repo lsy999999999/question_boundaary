@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430710994857430,
+  "http_status": 200,
+  "body": {
+    "id": "resp_01bd6f1a33e78e90016ae594b3146c81939ab7484e39a2459b",
+    "object": "chat.completion",
+    "created": 1793430710,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"alternating\",\"reason\":\"Saturating memory has the lowest trajectory-held-out NMSE; the successful ramp-reverse forecast supports it, but residual autocorrelation and PRBS error leave intervention uncertainty.\",\"prediction\":\"Under rapid switches, response will depend on accumulated history and remain smoother than a response determined only by current input and state.\",\"accept\":false,\"mapping\":{\"source_id\":\"saturation\",\"target_relation\":\"Saturating transforms of accumulated history improve validation over linear memory features.\",\"condition_to_check\":\"Compare alternating responses across amplitudes and histories; no reproducible history-dependent flattening would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3457,
+      "completion_tokens": 338,
+      "total_tokens": 3795,
+      "completion_tokens_details": {
+        "reasoning_tokens": 202
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.9031901098787785
+}

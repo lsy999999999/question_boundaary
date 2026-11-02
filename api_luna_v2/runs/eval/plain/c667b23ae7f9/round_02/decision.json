@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793431786201407517,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "ramp_reverse",
+    "reason": "State_cubic has the best trajectory-level cross-validation NMSE, and the double-pulse forecast error is low. Residual correlation and remaining plausible memory models leave adequacy uncertain; ramp_reverse probes state versus accumulated-history effects.",
+    "prediction": "On reversing the ramp, the response will be largely determined by current state and input, with little additional hysteresis from slow history.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state_cubic\",\"experiment\":\"ramp_reverse\",\"reason\":\"State_cubic has the best trajectory-level cross-validation NMSE, and the double-pulse forecast error is low. Residual correlation and remaining plausible memory models leave adequacy uncertain; ramp_reverse probes state versus accumulated-history effects.\",\"prediction\":\"On reversing the ramp, the response will be largely determined by current state and input, with little additional hysteresis from slow history.\",\"accept\":false}",
+    "input_tokens": 2820,
+    "output_tokens": 96,
+    "batch_elapsed_seconds": 2.5073088835924864,
+    "amortized_seconds": 2.5073088835924864,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2820,
+      "completion_tokens": 96,
+      "total_tokens": 2916
+    },
+    "api_response_id": "resp_0a49428c5ce075cb016ae598e85c588197be2a3e568d02c8db",
+    "wire_record": "wire/eval/0302_70c094350db34758b29f8db59e2158b4"
+  }
+}

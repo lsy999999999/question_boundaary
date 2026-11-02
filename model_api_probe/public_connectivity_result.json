@@ -1,0 +1,36 @@
+{
+  "endpoint": "https://sub.krisrosea.top/v1/chat/completions",
+  "payload": {
+    "model": "gpt-6-luna",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Return exactly this JSON object: {\"ok\":true}"
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 32
+  },
+  "result": {
+    "status": "responded",
+    "requested_model": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"ok\":true}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 17,
+      "completion_tokens": 9,
+      "total_tokens": 26
+    },
+    "elapsed_seconds": 13.528279417194426
+  },
+  "private_project_content_sent": false
+}

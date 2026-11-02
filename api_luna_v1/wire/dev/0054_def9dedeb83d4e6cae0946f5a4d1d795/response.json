@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793429700900959219,
+  "http_status": 200,
+  "body": {
+    "id": "resp_030037533259dbf1016ae590c16fa08194a431a45bd9993228",
+    "object": "chat.completion",
+    "created": 1793429700,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"The state-only model has strongly correlated residuals and 0.132 CV NMSE; memory_slow reduces CV NMSE to 0.00176, the best candidate. PRBS has the greatest disagreement among plausible memory models.\",\"prediction\":\"Under PRBS, responses will retain dependence on recent input history after current input and observed state are matched.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence predicts a response beyond current input and visible state; this is a representation-level relation, not proof of physical storage.\",\"condition_to_check\":\"Test whether history predicts PRBS responses after controlling current input and visible state; no added predictive effect would falsify this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2807,
+      "completion_tokens": 281,
+      "total_tokens": 3088,
+      "completion_tokens_details": {
+        "reasoning_tokens": 120
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 5.242873813025653
+}

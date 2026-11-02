@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423448520165094,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "ramp_reverse",
+    "reason": "Test if state saturation limits response to prolonged input.",
+    "prediction": "Response amplitude decreases over time as state saturates.",
+    "accept": true,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Saturation reduces response magnitude during prolonged input.",
+      "condition_to_check": "Decreasing response amplitude indicates saturation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"ramp_reverse\",\n  \"reason\": \"Test if state saturation limits response to prolonged input.\",\n  \"prediction\": \"Response amplitude decreases over time as state saturates.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"Saturation reduces response magnitude during prolonged input.\",\n    \"condition_to_check\": \"Decreasing response amplitude indicates saturation.\"\n  }\n}",
+    "input_tokens": 3689,
+    "output_tokens": 103,
+    "batch_elapsed_seconds": 2.4807425187900662,
+    "amortized_seconds": 2.4807425187900662,
+    "peak_gpu_allocated_gb": 14.926995754241943,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.024242401123047,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430578813994257,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "double_pulse",
+    "reason": "It has the lowest trajectory-held-out NMSE (0.00253), substantially better than memory_fast, though the PRBS fit and correlated residuals leave uncertainty about unseen interventions.",
+    "prediction": "The second positive pulse will produce a different peak from the first because the response depends nonlinearly on accumulated history.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Saturating transforms of accumulated history improve validation over linear memory features.",
+      "condition_to_check": "Compare pulse responses across amplitudes and histories; absence of reproducible amplitude-dependent flattening would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"double_pulse\",\"reason\":\"It has the lowest trajectory-held-out NMSE (0.00253), substantially better than memory_fast, though the PRBS fit and correlated residuals leave uncertainty about unseen interventions.\",\"prediction\":\"The second positive pulse will produce a different peak from the first because the response depends nonlinearly on accumulated history.\",\"accept\":false,\"mapping\":{\"source_id\":\"saturation\",\"target_relation\":\"Saturating transforms of accumulated history improve validation over linear memory features.\",\"condition_to_check\":\"Compare pulse responses across amplitudes and histories; absence of reproducible amplitude-dependent flattening would weaken this relation.\"}}",
+    "input_tokens": 3240,
+    "output_tokens": 243,
+    "batch_elapsed_seconds": 3.516615460626781,
+    "amortized_seconds": 3.516615460626781,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3240,
+      "completion_tokens": 243,
+      "total_tokens": 3483,
+      "completion_tokens_details": {
+        "reasoning_tokens": 104
+      }
+    },
+    "api_response_id": "resp_03680524388e4a58016ae5942ff61081938e2ed68611f3e2d3",
+    "wire_record": "wire/eval/0442_056473230fde44a8b792f1a7e0cffcb0"
+  }
+}

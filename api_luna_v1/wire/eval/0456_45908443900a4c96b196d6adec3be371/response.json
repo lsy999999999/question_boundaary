@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430617191851244,
+  "http_status": 200,
+  "body": {
+    "id": "resp_07074c06e304eff3016ae59455b04081908c064dee6fc36a49",
+    "object": "chat.completion",
+    "created": 1793430617,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"memory_slow remains best in trajectory-level CV, but residual lag-1 correlation and weaker PRBS fit leave room to test its history response against other plausible models.\",\"prediction\":\"After rapid input reversals, output will retain a slow, history-dependent component rather than track the current input alone.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Post-pulse responses persist after input returns to zero, consistent with accumulated influence and finite relaxation.\",\"condition_to_check\":\"At matched current input and visible output, test whether prior alternating inputs predict subsequent output.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3260,
+      "completion_tokens": 356,
+      "total_tokens": 3616,
+      "completion_tokens_details": {
+        "reasoning_tokens": 222
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.247187779285014
+}

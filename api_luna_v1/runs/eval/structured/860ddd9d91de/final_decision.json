@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793430379391176238,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "prbs",
+    "reason": "Memory_clock has the lowest current trajectory-level CV NMSE (0.00151), marginally ahead of saturating_memory and memory_multiscale. Prior selections failed, so adequacy for unseen interventions remains uncertain.",
+    "prediction": "After distinct input histories, responses at matched elapsed times may differ, with any residual periodic component recurring at the same elapsed times.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Past inputs predict responses beyond current input, consistent with accumulated history with finite leakage.",
+      "condition_to_check": "Compare responses after distinct histories at matched elapsed times; no history-dependent difference would contradict this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"prbs\",\"reason\":\"Memory_clock has the lowest current trajectory-level CV NMSE (0.00151), marginally ahead of saturating_memory and memory_multiscale. Prior selections failed, so adequacy for unseen interventions remains uncertain.\",\"prediction\":\"After distinct input histories, responses at matched elapsed times may differ, with any residual periodic component recurring at the same elapsed times.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Past inputs predict responses beyond current input, consistent with accumulated history with finite leakage.\",\"condition_to_check\":\"Compare responses after distinct histories at matched elapsed times; no history-dependent difference would contradict this relation.\"}}",
+    "input_tokens": 3734,
+    "output_tokens": 141,
+    "batch_elapsed_seconds": 2.2711357390508056,
+    "amortized_seconds": 2.2711357390508056,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3734,
+      "completion_tokens": 141,
+      "total_tokens": 3875
+    },
+    "api_response_id": "resp_04494e7610274bae016ae59369c5c08197aa89c1a94e46be8c",
+    "wire_record": "wire/eval/0353_fff63e376c234f5381098b5f29da10a7"
+  }
+}

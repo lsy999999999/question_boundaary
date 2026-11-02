@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430528161798116,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0886ee19f33ffb4c016ae593fd3e708197bce6b7425950e351",
+    "object": "chat.completion",
+    "created": 1793430528,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory models greatly improve trajectory-level validation over state-only; memory_slow has the lowest CV error. Alternating inputs best distinguish plausible memory timescales.\",\"prediction\":\"After input switches, memory_slow predicts smoother carryover than a fast-memory model; persistent disagreement would falsify this choice.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Leaky accumulated history can carry input effects forward after current input changes.\",\"condition_to_check\":\"Test whether past input predicts output after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2806,
+      "completion_tokens": 293,
+      "total_tokens": 3099,
+      "completion_tokens_details": {
+        "reasoning_tokens": 167
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.8728680862113833
+}

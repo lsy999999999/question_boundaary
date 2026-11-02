@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793430397662711790,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0ecdd003b64060dc016ae5937becdc8197bcaacc9dac87e91f",
+    "object": "chat.completion",
+    "created": 1793430397,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the lowest trajectory-held-out NMSE (0.00323); alternatives perform worse, and observed pulse and reversal trajectories retain history-dependent output. Residual correlation means adequacy remains uncertain.\",\"prediction\":\"After input returns to zero, output will decay while still depending on the preceding input history.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts lingering output after current input returns to zero.\",\"condition_to_check\":\"The relation would be falsified if matched current inputs and visible states eliminate predictive effects of prior input.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3682,
+      "completion_tokens": 132,
+      "total_tokens": 3814
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.432775675319135
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431490135049661,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0b519af5459333a9016ae597bd95e081959a6c8be010527bb0",
+    "object": "chat.completion",
+    "created": 1793431490,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"alternating\",\"reason\":\"State_cubic has the lowest trajectory-level CV error (0.00213 versus 0.00716 for state); memory candidates validate worse. Residual lag correlation remains substantial, so adequacy is uncertain.\",\"prediction\":\"Alternating input should produce smaller incremental responses at larger state magnitudes than a linear state model predicts.\",\"accept\":false,\"mapping\":{\"source_id\":\"transport\",\"target_relation\":\"Observed responses flatten at larger state magnitudes, consistent with weakened response from limited capacity.\",\"condition_to_check\":\"Compare responses across amplitudes; failure of state_cubic to predict alternating-input trajectories would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2800,
+      "completion_tokens": 401,
+      "total_tokens": 3201,
+      "completion_tokens_details": {
+        "reasoning_tokens": 260
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 10.249656536616385
+}

@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793424046514993057,
+  "decision": {
+    "representation": "state_cubic",
+    "experiment": "positive_pulse",
+    "reason": "State cubic best fits data across various inputs.",
+    "prediction": "Future data will continue to show improved fit with cubic terms.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Nonlinear response persists after controlling linear terms.",
+      "condition_to_check": "No change in peak or rise time after removing cubic terms."
+    }
+  },
+  "parse_errors": [
+    "invalid_experiment"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"state_cubic\",\n  \"experiment\": \"none\",\n  \"reason\": \"State cubic best fits data across various inputs.\",\n  \"prediction\": \"Future data will continue to show improved fit with cubic terms.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Nonlinear response persists after controlling linear terms.\",\n    \"condition_to_check\": \"No change in peak or rise time after removing cubic terms.\"\n  }\n}",
+    "input_tokens": 4033,
+    "output_tokens": 105,
+    "batch_elapsed_seconds": 2.6122285732999444,
+    "amortized_seconds": 2.6122285732999444,
+    "peak_gpu_allocated_gb": 14.991199016571045,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

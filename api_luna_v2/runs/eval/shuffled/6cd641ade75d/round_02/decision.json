@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793432117896938943,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "memory_slow has the lowest trajectory-level CV error, but substantial residual lag correlation leaves uncertainty; PRBS has the greatest prediction disagreement among plausible alternatives.",
+    "prediction": "Irregular reversals should reveal whether slow accumulated history predicts responses better than fast, multiscale, or clock-augmented alternatives.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "History dependence is supported predictively, but no specific cross-domain mechanism is established.",
+      "condition_to_check": "Reject slow-history adequacy if PRBS forecasts show persistent structured errors or alternatives predict better."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest trajectory-level CV error, but substantial residual lag correlation leaves uncertainty; PRBS has the greatest prediction disagreement among plausible alternatives.\",\"prediction\":\"Irregular reversals should reveal whether slow accumulated history predicts responses better than fast, multiscale, or clock-augmented alternatives.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"History dependence is supported predictively, but no specific cross-domain mechanism is established.\",\"condition_to_check\":\"Reject slow-history adequacy if PRBS forecasts show persistent structured errors or alternatives predict better.\"}}",
+    "input_tokens": 3428,
+    "output_tokens": 257,
+    "batch_elapsed_seconds": 3.529602530412376,
+    "amortized_seconds": 3.529602530412376,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3428,
+      "completion_tokens": 257,
+      "total_tokens": 3685,
+      "completion_tokens_details": {
+        "reasoning_tokens": 125
+      }
+    },
+    "api_response_id": "resp_08882218a645f892016ae59a33495c8190b65d562d635384e5",
+    "wire_record": "wire/eval/0465_b442875ccec24f4aa0379882a998418f"
+  }
+}

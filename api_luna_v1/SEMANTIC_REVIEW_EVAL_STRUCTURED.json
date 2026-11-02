@@ -1,0 +1,443 @@
+{
+  "scope": "All 24 final structured formal decisions. Single unblinded assistant review of relation alignment; intermediate rounds and no_active not rated.",
+  "rubric": {
+    "relation_aligned": "Relation consistent with actual supplied card text; not target-mechanism accuracy.",
+    "partial_or_mixed": "Partial agreement with omitted defining condition or added mechanism.",
+    "insufficient_or_conflicting": "Absent or contradictory supplied-source relation.",
+    "none": "No card cited.",
+    "invalid_source": "No such supplied ID."
+  },
+  "counts": {
+    "relation_aligned": 14,
+    "none": 9,
+    "partial_or_mixed": 1
+  },
+  "records": [
+    {
+      "method": "structured",
+      "task_id": "011d4f166882",
+      "record": "runs/eval/structured/011d4f166882/request_03_1793430384445224208.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Finite-relaxation accumulated history predicts output dependence on past input beyond current input.",
+        "condition_to_check": "Weaken this relation if past input adds no predictive value after controlling current input and visible state."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Declared relation agrees with the supplied card text; prediction and proposed condition do not by themselves verify a physical mechanism.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "178794a8cc52",
+      "record": "runs/eval/structured/178794a8cc52/request_03_1793430411439524285.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Finite-relaxation accumulated influence is a useful predictive relation, consistent with memory models outperforming state-only models.",
+        "condition_to_check": "The history-based advantage should persist across held-out interventions after controlling current input and visible state."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Declared relation agrees with the supplied card text; prediction and proposed condition do not by themselves verify a physical mechanism.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "1d2417e51713",
+      "record": "runs/eval/structured/1d2417e51713/request_03_1793430334498825826.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "No additional cross-domain relation is supported beyond the validated state representation.",
+        "condition_to_check": "Reject if unseen interventions show reproducible history-dependent residuals after controlling current state and input."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; no source-text alignment score assigned.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "1f9bd1bae585",
+      "record": "runs/eval/structured/1f9bd1bae585/request_03_1793430416500413238.json",
+      "declared_mapping": {
+        "source_id": "external_clock",
+        "target_relation": "Elapsed-time periodic features predict across distinct input interventions, consistent with a shared clock-like component.",
+        "condition_to_check": "Failure of residual oscillations to align across interventions at the same elapsed times would weaken this relation."
+      },
+      "supplied_card": {
+        "id": "external_clock",
+        "domain": "seasonal and periodically driven systems",
+        "structure": "A shared unobserved driver tied to elapsed time can generate persistent residuals without endogenous memory.",
+        "conditions": "Compare different input interventions aligned in elapsed time.",
+        "failure": "A decaying impulse response or input-driven oscillation is not sufficient evidence for an independent clock."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Declared relation agrees with the supplied card text; prediction and proposed condition do not by themselves verify a physical mechanism.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "2e356a891a56",
+      "record": "runs/eval/structured/2e356a891a56/request_03_1793430405702592363.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Slow accumulated input history predicts lingering output after input changes.",
+        "condition_to_check": "No lingering dependence on prior input after controlling current input and visible state would weaken this relation."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Declared relation agrees with the supplied card text; prediction and proposed condition do not by themselves verify a physical mechanism.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "57c634ddf18a",
+      "record": "runs/eval/structured/57c634ddf18a/request_03_1793430449525944026.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "Memory and elapsed-time features improve prediction, but the observations do not isolate a physical mechanism.",
+        "condition_to_check": "Systematic errors on unseen histories or no shared elapsed-time variation across interventions would weaken this representation."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; no source-text alignment score assigned.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "58b038a9dcbc",
+      "record": "runs/eval/structured/58b038a9dcbc/request_03_1793430426977018764.json",
+      "declared_mapping": {
+        "source_id": "external_clock",
+        "target_relation": "Elapsed-time periodic features predict a shared oscillatory component across distinct input interventions.",
+        "condition_to_check": "Phase shifts with ramp direction or input history, or failure of matched-time phase alignment across interventions, would weaken this relation."
+      },
+      "supplied_card": {
+        "id": "external_clock",
+        "domain": "seasonal and periodically driven systems",
+        "structure": "A shared unobserved driver tied to elapsed time can generate persistent residuals without endogenous memory.",
+        "conditions": "Compare different input interventions aligned in elapsed time.",
+        "failure": "A decaying impulse response or input-driven oscillation is not sufficient evidence for an independent clock."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Declared relation agrees with the supplied card text; prediction and proposed condition do not by themselves verify a physical mechanism.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "6cd641ade75d",
+      "record": "runs/eval/structured/6cd641ade75d/request_03_1793430433901785455.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Accumulated input history predicts lingering response after input returns to zero.",
+        "condition_to_check": "Compare subsequent outputs at matched current input and visible state after different input histories."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Declared relation agrees with the supplied card text; prediction and proposed condition do not by themselves verify a physical mechanism.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "7025f2a38ff9",
+      "record": "runs/eval/structured/7025f2a38ff9/request_03_1793430394168614366.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Accumulated input and output history predict finite carryover after input changes.",
+        "condition_to_check": "At matched current input and visible output, history should predict future output; no such effect would weaken this relation."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Declared relation agrees with the supplied card text; prediction and proposed condition do not by themselves verify a physical mechanism.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "76756fbed619",
+      "record": "runs/eval/structured/76756fbed619/request_03_1793430346261117409.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "Validation supports the compact state representation, but does not establish a distinct storage, transport, saturation, or clock relation.",
+        "condition_to_check": "Reject state if systematic residuals remain or matched state-input conditions yield different subsequent outputs."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; no source-text alignment score assigned.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "7aff70817fc2",
+      "record": "runs/eval/structured/7aff70817fc2/request_03_1793430363609307705.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "No storage relation is established beyond what the validated instantaneous nonlinear model explains.",
+        "condition_to_check": "A storage relation would require reproducible past-input effects after controlling current state and input."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; no source-text alignment score assigned.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "7dc2896588f5",
+      "record": "runs/eval/structured/7dc2896588f5/request_03_1793430372297426271.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Accumulated input and output history predict a lingering response after current input returns to zero.",
+        "condition_to_check": "No history-dependent predictive effect after controlling current input and visible state would weaken this relation."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Declared relation agrees with the supplied card text; prediction and proposed condition do not by themselves verify a physical mechanism.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "860ddd9d91de",
+      "record": "runs/eval/structured/860ddd9d91de/request_03_1793430379336525787.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Past inputs predict responses beyond current input, consistent with accumulated history with finite leakage.",
+        "condition_to_check": "Compare responses after distinct histories at matched elapsed times; no history-dependent difference would contradict this relation."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "partial_or_mixed",
+      "review_note": "The accumulated-history/leakage relation matches storage, but the proposed comparison controls elapsed time without explicitly holding current input and visible state fixed, a defining card condition.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "8f0a53158586",
+      "record": "runs/eval/structured/8f0a53158586/request_03_1793430390401373707.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Slow accumulated input and output history predict finite carryover and relaxation across tested interventions.",
+        "condition_to_check": "At matched current input and output, differing prior inputs should predict different subsequent outputs beyond measurement noise."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Declared relation agrees with the supplied card text; prediction and proposed condition do not by themselves verify a physical mechanism.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "91977ba2ede6",
+      "record": "runs/eval/structured/91977ba2ede6/request_03_1793430453506182653.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "Elapsed-time and accumulated-history features jointly improve held-out prediction; this does not establish a physical mechanism.",
+        "condition_to_check": "Poor forecasts on new input patterns or rebound timing that follows input history rather than elapsed time would weaken this relation."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; no source-text alignment score assigned.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "93d24a230259",
+      "record": "runs/eval/structured/93d24a230259/request_03_1793430325646026976.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "No added storage, delay, saturation, or external-clock relation is supported by the validation results.",
+        "condition_to_check": "Falsify if unseen interventions show reproducible prediction errors conditional on current state and input."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; no source-text alignment score assigned.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "95a4d340cda9",
+      "record": "runs/eval/structured/95a4d340cda9/request_03_1793430441678699385.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Output persists and decays after input cessation, consistent with accumulated history carrying forward with finite relaxation.",
+        "condition_to_check": "At matched current input and output, different prior histories should predict distinct subsequent responses."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Declared relation agrees with the supplied card text; prediction and proposed condition do not by themselves verify a physical mechanism.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "a288d8b77e5b",
+      "record": "runs/eval/structured/a288d8b77e5b/request_03_1793430358493666033.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "Instantaneous curvature improves predictive fit, but the evidence does not establish a specific physical mechanism.",
+        "condition_to_check": "Reproducible response separation at matched state and input after differing histories would challenge the state-cubic account."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; no source-text alignment score assigned.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "aa835d55fa37",
+      "record": "runs/eval/structured/aa835d55fa37/request_03_1793430459361042478.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "The predictive fit combines history and elapsed-time features but does not establish a distinct physical mechanism.",
+        "condition_to_check": "Compare residual phase across different input interventions; phase that follows input history rather than elapsed time weakens an independent-clock account."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; no source-text alignment score assigned.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "b8513efb6701",
+      "record": "runs/eval/structured/b8513efb6701/request_03_1793430423740920075.json",
+      "declared_mapping": {
+        "source_id": "external_clock",
+        "target_relation": "Elapsed-time periodic forcing predicts oscillations shared across differing input interventions.",
+        "condition_to_check": "Input-dependent phase or loss of phase alignment across repeats would weaken this relation."
+      },
+      "supplied_card": {
+        "id": "external_clock",
+        "domain": "seasonal and periodically driven systems",
+        "structure": "A shared unobserved driver tied to elapsed time can generate persistent residuals without endogenous memory.",
+        "conditions": "Compare different input interventions aligned in elapsed time.",
+        "failure": "A decaying impulse response or input-driven oscillation is not sufficient evidence for an independent clock."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Declared relation agrees with the supplied card text; prediction and proposed condition do not by themselves verify a physical mechanism.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "c667b23ae7f9",
+      "record": "runs/eval/structured/c667b23ae7f9/request_03_1793430350663355590.json",
+      "declared_mapping": {
+        "source_id": "none",
+        "target_relation": "Instantaneous curvature predicts better than tested memory models, but no mechanism relation is established.",
+        "condition_to_check": "Test whether past input predicts output after controlling current input and visible state."
+      },
+      "supplied_card": null,
+      "relation_alignment_review": "none",
+      "review_note": "No card cited; no source-text alignment score assigned.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "e377cde4db95",
+      "record": "runs/eval/structured/e377cde4db95/request_03_1793430397663837545.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Accumulated input history predicts lingering output after current input returns to zero.",
+        "condition_to_check": "The relation would be falsified if matched current inputs and visible states eliminate predictive effects of prior input."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Declared relation agrees with the supplied card text; prediction and proposed condition do not by themselves verify a physical mechanism.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "f1ddfabee06d",
+      "record": "runs/eval/structured/f1ddfabee06d/request_03_1793430446189323033.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Accumulated input history may persist in output and relax over finite timescales.",
+        "condition_to_check": "History should predict future output after controlling for current input and visible output; failure weakens this relation."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Declared relation agrees with the supplied card text; prediction and proposed condition do not by themselves verify a physical mechanism.",
+      "target_mechanism_validated_by_review": false
+    },
+    {
+      "method": "structured",
+      "task_id": "fb6a837878c3",
+      "record": "runs/eval/structured/fb6a837878c3/request_03_1793430368680548812.json",
+      "declared_mapping": {
+        "source_id": "storage",
+        "target_relation": "Post-pulse decay is consistent with accumulated past influence persisting after input returns to zero.",
+        "condition_to_check": "The storage relation would be weakened if slow history features fail to predict outputs beyond current input and visible state."
+      },
+      "supplied_card": {
+        "id": "storage",
+        "domain": "electrical / thermal systems",
+        "structure": "A storage element carries accumulated past influence into the future; leakage gives a finite relaxation timescale.",
+        "conditions": "The stored state must have a measurable predictive consequence after controlling current input and visible state.",
+        "failure": "Instantaneous curvature or measurement noise can mimic a poor fit without any storage mechanism."
+      },
+      "relation_alignment_review": "relation_aligned",
+      "review_note": "Declared relation agrees with the supplied card text; prediction and proposed condition do not by themselves verify a physical mechanism.",
+      "target_mechanism_validated_by_review": false
+    }
+  ]
+}

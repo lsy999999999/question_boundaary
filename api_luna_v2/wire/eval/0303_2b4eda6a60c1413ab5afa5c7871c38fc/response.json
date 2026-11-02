@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431787591346730,
+  "http_status": 200,
+  "body": {
+    "id": "resp_000c409a2721c772016ae598e89a10819591f8be70b0c1991b",
+    "object": "chat.completion",
+    "created": 1793431787,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has much lower trajectory-level CV error than alternatives, but residual lag correlation remains; PRBS probes whether structured input history improves predictions.\",\"prediction\":\"After PRBS input ends, oscillations should align in elapsed-time phase with those following other interventions.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Similar late oscillations across interventions are consistent with a shared elapsed-time periodic driver.\",\"condition_to_check\":\"Compare post-input phases across interventions; systematic phase shifts tied to PRBS history would weaken the clock hypothesis.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3246,
+      "completion_tokens": 291,
+      "total_tokens": 3537,
+      "completion_tokens_details": {
+        "reasoning_tokens": 167
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.6421067733317614
+}

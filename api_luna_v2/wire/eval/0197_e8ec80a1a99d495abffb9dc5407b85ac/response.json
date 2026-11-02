@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431607192490016,
+  "http_status": 200,
+  "body": {
+    "id": "resp_013b62e3edbf4ce5016ae59833c27881978f96cf2ad018d818",
+    "object": "chat.completion",
+    "created": 1793431607,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"Memory_clock has the lowest trajectory-level CV error (0.0017), far below state (0.466); alternating input best probes disagreement between the plausible history models.\",\"prediction\":\"A periodic component should remain aligned to elapsed time despite rapid input reversals; its phase should not reset at each switch.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"Elapsed-time periodic features improve prediction alongside accumulated history, consistent with a shared time-linked influence.\",\"condition_to_check\":\"Compare alternating and other interventions at matched elapsed times; lack of phase alignment would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2782,
+      "completion_tokens": 332,
+      "total_tokens": 3114,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 196
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.176269319839776
+}

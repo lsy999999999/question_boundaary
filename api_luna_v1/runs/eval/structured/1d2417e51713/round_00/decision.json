@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793429875128236236,
+  "decision": {
+    "representation": "state",
+    "experiment": "prbs",
+    "reason": "The state model has the lowest trajectory-level CV error and low residual lag-1 correlation; added memory, clock, and nonlinear terms do not improve validation.",
+    "prediction": "Under PRBS, trajectories with the same current state and input should have similar next-step responses regardless of earlier input history.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "No additional cross-domain relation is supported beyond the validated state representation.",
+      "condition_to_check": "Reject this model if PRBS reveals reproducible history-dependent residuals after controlling current state and input."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"state\",\"experiment\":\"prbs\",\"reason\":\"The state model has the lowest trajectory-level CV error and low residual lag-1 correlation; added memory, clock, and nonlinear terms do not improve validation.\",\"prediction\":\"Under PRBS, trajectories with the same current state and input should have similar next-step responses regardless of earlier input history.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No additional cross-domain relation is supported beyond the validated state representation.\",\"condition_to_check\":\"Reject this model if PRBS reveals reproducible history-dependent residuals after controlling current state and input.\"}}",
+    "input_tokens": 2807,
+    "output_tokens": 326,
+    "batch_elapsed_seconds": 4.707718591205776,
+    "amortized_seconds": 4.707718591205776,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2807,
+      "completion_tokens": 326,
+      "total_tokens": 3133,
+      "completion_tokens_details": {
+        "reasoning_tokens": 199
+      }
+    },
+    "api_response_id": "resp_060baa5902efdcd5016ae5916f8ea481959ab13308d3310c4a",
+    "wire_record": "wire/eval/0086_dbc5c05885a840d3842b60b60beed0b8"
+  }
+}

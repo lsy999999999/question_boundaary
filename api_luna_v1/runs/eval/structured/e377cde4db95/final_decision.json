@@ -1,0 +1,36 @@
+{
+  "time_ns": 1793430398205262423,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Memory_slow has the lowest trajectory-held-out NMSE (0.00323); alternatives perform worse, and observed pulse and reversal trajectories retain history-dependent output. Residual correlation means adequacy remains uncertain.",
+    "prediction": "After input returns to zero, output will decay while still depending on the preceding input history.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Accumulated input history predicts lingering output after current input returns to zero.",
+      "condition_to_check": "The relation would be falsified if matched current inputs and visible states eliminate predictive effects of prior input."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the lowest trajectory-held-out NMSE (0.00323); alternatives perform worse, and observed pulse and reversal trajectories retain history-dependent output. Residual correlation means adequacy remains uncertain.\",\"prediction\":\"After input returns to zero, output will decay while still depending on the preceding input history.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts lingering output after current input returns to zero.\",\"condition_to_check\":\"The relation would be falsified if matched current inputs and visible states eliminate predictive effects of prior input.\"}}",
+    "input_tokens": 3682,
+    "output_tokens": 132,
+    "batch_elapsed_seconds": 2.432775675319135,
+    "amortized_seconds": 2.432775675319135,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3682,
+      "completion_tokens": 132,
+      "total_tokens": 3814
+    },
+    "api_response_id": "resp_0ecdd003b64060dc016ae5937becdc8197bcaacc9dac87e91f",
+    "wire_record": "wire/eval/0366_ede605cffb734b9185b77440b8b17d86"
+  }
+}

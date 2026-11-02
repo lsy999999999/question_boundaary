@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430150565517779,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "prbs",
+    "reason": "Memory_clock has far lower leave-trajectory-out error than alternatives, but residual autocorrelation remains and the prior alternating trial does not establish a shared elapsed-time phase.",
+    "prediction": "After accounting for input history, residual oscillations will recur at the same elapsed-time phase across different input interventions.",
+    "accept": false,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "The fit supports elapsed-time features but does not establish an independent external clock.",
+      "condition_to_check": "Compare residual phase across distinct input interventions; inconsistent phase would argue against a shared clock."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"prbs\",\"reason\":\"Memory_clock has far lower leave-trajectory-out error than alternatives, but residual autocorrelation remains and the prior alternating trial does not establish a shared elapsed-time phase.\",\"prediction\":\"After accounting for input history, residual oscillations will recur at the same elapsed-time phase across different input interventions.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"The fit supports elapsed-time features but does not establish an independent external clock.\",\"condition_to_check\":\"Compare residual phase across distinct input interventions; inconsistent phase would argue against a shared clock.\"}}",
+    "input_tokens": 3251,
+    "output_tokens": 325,
+    "batch_elapsed_seconds": 4.7324838656932116,
+    "amortized_seconds": 4.7324838656932116,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3251,
+      "completion_tokens": 325,
+      "total_tokens": 3576,
+      "completion_tokens_details": {
+        "reasoning_tokens": 199
+      }
+    },
+    "api_response_id": "resp_03f69bcead87d059016ae59282e8ac8194a821d2355b52ff4e",
+    "wire_record": "wire/eval/0242_02bcaace5f2b4959ad31397ec7b51898"
+  }
+}

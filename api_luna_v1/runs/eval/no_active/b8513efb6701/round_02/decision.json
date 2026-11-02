@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430697730503066,
+  "decision": {
+    "representation": "clock",
+    "experiment": "alternating",
+    "reason": "Clock has much lower trajectory-level CV error than alternatives, though residual autocorrelation indicates remaining mismatch. A shared elapsed-time driver is plausible but not established.",
+    "prediction": "After inputs stop, oscillations should recur at similar elapsed-time phases across interventions.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "A shared elapsed-time driver could explain recurring oscillations across input interventions.",
+      "condition_to_check": "Compare zero-input oscillation phases across interventions; substantial phase shifts would weaken the clock hypothesis."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has much lower trajectory-level CV error than alternatives, though residual autocorrelation indicates remaining mismatch. A shared elapsed-time driver is plausible but not established.\",\"prediction\":\"After inputs stop, oscillations should recur at similar elapsed-time phases across interventions.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A shared elapsed-time driver could explain recurring oscillations across input interventions.\",\"condition_to_check\":\"Compare zero-input oscillation phases across interventions; substantial phase shifts would weaken the clock hypothesis.\"}}",
+    "input_tokens": 3478,
+    "output_tokens": 292,
+    "batch_elapsed_seconds": 4.368016079068184,
+    "amortized_seconds": 4.368016079068184,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3478,
+      "completion_tokens": 292,
+      "total_tokens": 3770,
+      "completion_tokens_details": {
+        "reasoning_tokens": 174
+      }
+    },
+    "api_response_id": "resp_0ac272a8cfec8892016ae594a608488195b39ac8a02215b8fe",
+    "wire_record": "wire/eval/0485_d33a832cf8f845c3810af0eb0d901ac2"
+  }
+}

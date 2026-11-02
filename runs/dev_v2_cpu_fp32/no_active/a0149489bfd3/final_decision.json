@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793387547038000537,
+  "decision": {
+    "representation": "nonlinear_delay",
+    "experiment": "step_rest",
+    "reason": "Step rest shows consistent nonlinear delayed response.",
+    "prediction": "Step should cause a delayed increase followed by nonlinear growth.",
+    "accept": true,
+    "mapping": {
+      "source_id": "nonlinear",
+      "target_relation": "Delayed nonlinear response to input.",
+      "condition_to_check": "Nonlinear growth in response to delayed step input."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"nonlinear_delay\",\n  \"experiment\": \"step_rest\",\n  \"reason\": \"Step rest shows consistent nonlinear delayed response.\",\n  \"prediction\": \"Step should cause a delayed increase followed by nonlinear growth.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"nonlinear\",\n    \"target_relation\": \"Delayed nonlinear response to input.\",\n    \"condition_to_check\": \"Nonlinear growth in response to delayed step input.\"\n  }\n}",
+    "input_tokens": 2867,
+    "output_tokens": 100,
+    "batch_elapsed_seconds": 349.750234675128,
+    "amortized_seconds": 87.437558668782,
+    "peak_gpu_allocated_gb": 0.0,
+    "backend": "cpu-fp32",
+    "peak_process_ram_gb": 33.63345718383789,
+    "model_path": "/home/lsy/theory_discovery_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

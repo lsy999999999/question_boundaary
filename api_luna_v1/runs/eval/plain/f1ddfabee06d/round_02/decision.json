@@ -1,0 +1,32 @@
+{
+  "time_ns": 1793430187591522391,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "double_pulse",
+    "reason": "It has the best trajectory-level CV NMSE (0.00216), improving on memory_slow (0.00283); saturation can capture response nonlinearity while retaining history dependence. Double pulses probe whether response to a repeated input depends on residual memory.",
+    "prediction": "The second positive pulse will produce a different transient from the first because residual memory alters the response.",
+    "accept": false,
+    "mapping": null
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"saturating_memory\",\"experiment\":\"double_pulse\",\"reason\":\"It has the best trajectory-level CV NMSE (0.00216), improving on memory_slow (0.00283); saturation can capture response nonlinearity while retaining history dependence. Double pulses probe whether response to a repeated input depends on residual memory.\",\"prediction\":\"The second positive pulse will produce a different transient from the first because residual memory alters the response.\",\"accept\":false}",
+    "input_tokens": 2816,
+    "output_tokens": 97,
+    "batch_elapsed_seconds": 4.415477368049324,
+    "amortized_seconds": 4.415477368049324,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2816,
+      "completion_tokens": 97,
+      "total_tokens": 2913
+    },
+    "api_response_id": "resp_0445ce6bc573a4d0016ae592aa43ec8190ab91f938d8b8bccc",
+    "wire_record": "wire/eval/0262_fc371f8965634ad9aeb61eab8141644c"
+  }
+}

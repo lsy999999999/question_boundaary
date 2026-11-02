@@ -1,0 +1,150 @@
+{
+  "recognition": "uncertain; no specific study identified",
+  "summary": "The broker executed C2L1-alpha successfully (return code 0; C2L1-alpha). With concentrations in ng/uL, K_ref and K_variant are dimensionless dense/dilute ratios and alpha=K_variant/K_ref. Tie-line 0 variant K is undefined because both variant concentrations are zero. Tie-line 1 alpha=37.863, with rectangular marginal-error bounds [4.769, 300.647]; tie-line 2 alpha=0.335, bounds [0.0422, 2.661]. The two alpha ranges do not overlap; tie-line 1 is entirely above 1, whereas tie-line 2 includes 1. Conditional on comparable assays and the supplied error rectangles, the endpoints therefore differ in relative partitioning. This does not establish a monotonic or non-monotonic composition response: tie-line index is not a measured mixture loading, intervals are not confidence intervals, and assay comparability is unknown. Nor do bulk phase ratios map to image f, which is an object-level segmented area statistic. H1 remains a speculative composition-selectivity-to-cavity bridge; carryover/reaction-state effects and population/measurement effects remain alternatives. The requested assay-matched composition series and cavity-resolved measurement remain necessary.",
+  "candidates": [
+    {
+      "id": "RNA-C2-selectivity-cavity-v1",
+      "version": 3,
+      "parent_version": 2,
+      "target": "Mechanism linking RNA composition and phase partitioning to internal RNA-poor cavity appearance and persistence; f(t) is the arithmetic mean of object-level empty-area ratios.",
+      "known_relations": [
+        "B f rises from 0.01381 at 0 h to 0.08918 at 24 h; A is about 0.0044 at 8-24 h. Fields and objects are not independent preparation replicates (initial_measurements.json).",
+        "B contains non-reference DNA reads, but DNA fractions do not establish RNA abundance or time course (C01).",
+        "Single-preparation length fractions show endpoint f values M near zero, M+L 0.04446, M+S 0.09412; carryover and treatment are unmatched (E02).",
+        "C04/C2L1-alpha: tie-line 0 variant K undefined; tie-line 1 alpha=37.863 [4.769,300.647]; tie-line 2 alpha=0.335 [0.0422,2.661]. Bounds are rectangular propagation of marginal ranges, not confidence intervals.",
+        "The tie-line 1 and 2 alpha ranges do not overlap; tie-line 1 is above unity and tie-line 2 includes unity. This is conditional on comparable measurements and does not establish composition ordering or a loading response.",
+        "Available tracking is displacement only, without persistent cavity histories (C03)."
+      ],
+      "hypotheses": [
+        {
+          "id": "H1",
+          "status": "new, explicitly speculative bridge hypothesis",
+          "statement": "At fixed reaction chemistry, increasing measured variant/reference RNA loading changes relative phase selectivity, potentially shifting from variant enrichment in the dense phase toward weaker or reversed partitioning. If the resulting variant-enriched dilute domains form or persist inside a reference-rich dense network, they can appear as internal cavities. C2L1-alpha shows different endpoint selectivity ranges, but does not establish the loading dependence or the phase-domain-to-cavity bridge."
+        },
+        {
+          "id": "H0",
+          "status": "meaningful alternative",
+          "statement": "The phase endpoints are not comparable to the imaging reaction or do not represent its mixture range; cavities arise from amplification carryover or another reaction-state change independently of composition-driven internal domains. A constant selectivity across matched loading conditions remains possible until a controlled series is measured."
+        }
+      ],
+      "gaps": [
+        {
+          "id": "G1",
+          "status": "active",
+          "description": "Determine whether relative partition selectivity changes with measured mixture composition under matched conditions, and whether that predicts internal cavities. Current endpoint differences do not identify a composition response or causal link."
+        },
+        {
+          "id": "G2",
+          "status": "open",
+          "description": "No mapping from bulk phase concentrations/volumes to image f, and no causal separation from carryover or population/measurement alternatives."
+        }
+      ],
+      "variables_units": {
+        "Cr_dilute": "reference RNA concentration in dilute phase, ng/uL",
+        "Cr_dense": "reference RNA concentration in dense phase, ng/uL",
+        "Cv_dilute": "variant RNA concentration in dilute phase, ng/uL",
+        "Cv_dense": "variant RNA concentration in dense phase, ng/uL",
+        "K_ref": "Cr_dense/Cr_dilute, dimensionless",
+        "K_variant": "Cv_dense/Cv_dilute, dimensionless when defined",
+        "alpha": "K_variant/K_ref, dimensionless relative partition selectivity",
+        "x_v_over_r": "measured variant/reference RNA loading ratio, dimensionless; not supplied as a measured series",
+        "f": "image-derived arithmetic mean of object-level empty-area ratios, dimensionless"
+      },
+      "equations": [
+        "K_ref=Cr_dense/Cr_dilute; K_variant=Cv_dense/Cv_dilute; alpha=K_variant/K_ref.",
+        "At dense-phase volume fraction phi, variant dense-phase mass fraction=phi*Cv_dense/[phi*Cv_dense+(1-phi)*Cv_dilute]. This is not f and cannot be evaluated without phase volumes.",
+        "Conditional H1 prediction: in an assay-matched fixed-chemistry loading series, alpha changes with measured x_v_over_r and cavity incidence/area responds to loading if the proposed domain bridge is correct. The functional form and threshold are unknown."
+      ],
+      "parameters_ranges": [
+        "C2L1-alpha point estimates and conservative rectangular marginal bounds are as reported in known_relations; they are not statistical confidence intervals or joint coverage.",
+        "Tie-line 0 variant K is undefined because dilute and dense variant concentrations are both zero.",
+        "No numeric loading response, cavity threshold, or phase volume is assigned."
+      ],
+      "initial_boundary_conditions": "Phase endpoint conditions are unspecified. Imaging begins with similar small f; phase volumes, local cavity concentrations, and RNA loading initial conditions are unavailable.",
+      "observation_mapping": "The supplied f is the arithmetic mean of per-object image-segmented empty-area ratios, not a concentration, volume fraction, RNA mass fraction, or free energy. Phase endpoint concentrations yield bulk partition ratios only under their measurement conditions.",
+      "alternatives": [
+        "H0: constant selectivity in assay-matched conditions, non-transferable phase endpoints, or an amplification carryover/reaction-state cause independent of composition.",
+        "Population shifts or segmentation may change summary f without same-droplet cavity formation; C03 does not provide the longitudinal cavity states needed to resolve this."
+      ],
+      "predictions": [
+        "H1 predicts that, at fixed reaction chemistry and controlled measured RNA loading, alpha varies with x_v_over_r and cavity incidence/area covaries with loading under fixed imaging rules; a relation between phase composition and cavity-local composition should be observed if the proposed bridge is correct.",
+        "H0 predicts that carryover/reaction-state matching explains cavity differences without requiring alpha to change with RNA loading; changing composition alone need not reproduce the phenotype.",
+        "C2L1-alpha distinguishes the supplied tie-line endpoint ranges conditionally but cannot test either prospective prediction because loading, matched chemistry, phase volumes, and local cavity composition are missing."
+      ],
+      "checks": [
+        "K and alpha are dimensionless; source concentrations are ng/uL.",
+        "Do not define tie-line 0 variant K by dividing by zero.",
+        "Error bounds are marginal rectangular bounds, not confidence intervals; do not infer joint coverage.",
+        "Do not infer mixture composition from tie-line index.",
+        "Do not equate alpha, concentration, dense-phase mass fraction, or f.",
+        "Use preparation as the independent replication level, not fields or objects."
+      ],
+      "evidence_conflicts": [
+        "Tie-line 1 and 2 alpha ranges are disjoint under the supplied rectangular bounds, but measurement comparability and composition order are unknown; tie-line 2 still overlaps alpha=1.",
+        "E02 length-fraction f differences are single-preparation, unbalanced, and lack carryover matching; they do not identify a composition mechanism."
+      ],
+      "untested": [
+        "Whether DNA variants produce corresponding RNA species and their abundance over time.",
+        "Whether the C04 endpoints represent B RNA or the imaging reaction and a controlled loading series.",
+        "Whether variant-enriched dilute domains form internal cavities and persist within individual droplets.",
+        "Whether carryover, reaction state, population shifts, or measurement choices explain the phenotype."
+      ],
+      "dissent": "The computation establishes a conditional difference between supplied endpoint selectivities, not a composition trend or cavity mechanism. H1 remains a useful testable hypothesis, but H0 and observation-level alternatives are unresolved.",
+      "next_task": "Search pre-2025-05-12 background literature for whether composition-dependent partitioning in multicomponent RNA condensates can generate internal dilute domains/cavities, extract only the relation and conditions actually supported, then compare those conditions with this case. Keep the assay-matched composition-series and cavity mapping as the decisive empirical discriminator."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T-C2-L1-selectivity",
+      "candidate_id": "RNA-C2-selectivity-cavity-v1",
+      "gap_id": "G1",
+      "kind": "mechanism",
+      "status": "complete",
+      "deliverable": "Executed partition calculations interpreted; assay-matched composition-selectivity-to-cavity test specified.",
+      "acceptance": "Actual ratios and bounds reported; tie-line 0 undefined; bounds not confidence intervals; no composition order inferred; cavity bridge kept unverified.",
+      "evidence_refs": ["C2L1-alpha", "C04", "phase_measurements.json", "E02", "C03", "initial_measurements.json"],
+      "reason": "The assigned arithmetic and interpretation are complete, while the larger G1 mechanism gap remains active."
+    },
+    {
+      "id": "T-C2-L2-domain-literature",
+      "candidate_id": "RNA-C2-selectivity-cavity-v1",
+      "gap_id": "G1",
+      "kind": "mechanism",
+      "status": "active",
+      "deliverable": "Executor: inspect returned pre-cutoff abstracts/metadata for the missing relation between composition-dependent partitioning in multicomponent RNA condensates and internal dilute domains/cavity morphology. State source conditions, variables/units if supplied, whether evidence supports a mechanism or only an analogy, and how the case differs. Update H1 only if a specific transferable relation is present; retain uncertainty if abstracts do not support the bridge.",
+      "acceptance": "No target identity search; no references-only success; do not exceed abstract support or infer cavity formation from bulk partition coefficients; preserve H0 and state a concrete assay-matched prediction.",
+      "evidence_refs": ["C2L1-alpha", "C04", "E02", "initial_measurements.json"],
+      "reason": "Endpoint selectivity differs conditionally, but the phase-domain-to-cavity relation and its applicability to the imaging case are missing."
+    }
+  ],
+  "requests": [
+    {
+      "type": "search",
+      "id": "C2L2-domain-literature",
+      "candidate_id": "RNA-C2-selectivity-cavity-v1",
+      "gap_id": "G1",
+      "missing_relation": "Whether composition-dependent partitioning or preferential enrichment in multicomponent RNA condensates can produce internal dilute domains/cavity morphology, and under what concentration, sequence, and phase conditions.",
+      "variables": ["RNA species identity/composition", "dense and dilute phase concentrations (mass or molar concentration, if reported)", "mixture composition", "domain morphology/internal cavities", "phase volumes or topology, if reported"],
+      "conditions": "Background first published on or before 2025-05-12; exclude target identity and later accounts. Prefer direct multicomponent RNA condensate evidence; distinguish full-text support from abstract-only support and flag non-RNA analogies.",
+      "query": "(RNA condensate OR RNA phase separation) AND (multicomponent OR mixture OR compositional partitioning) AND (internal domains OR cavities OR vacuoles OR wetting OR morphology)",
+      "change_if_found": "If a pre-cutoff source directly shows that composition-dependent preferential partitioning creates internal dilute domains in RNA-rich condensates, refine H1 to its reported species/concentration/phase conditions and derive a case-specific conditional prediction; if sources only show bulk coexistence or non-RNA analogies, keep the bridge speculative and use them only as alternatives or follow-up."
+    }
+  ],
+  "literature_use": [],
+  "adjudication": {
+    "task_id": "T-C2-L1-selectivity",
+    "decision": "complete",
+    "artifact_ids": ["C2L1-alpha"],
+    "checks": [
+      "Broker result status executed, return code 0; output parses as JSON.",
+      "Tie-line 0 variant K remains undefined; positive tie-line concentrations produce dimensionless K and alpha.",
+      "Tie-line 1 alpha interval [4.769,300.647] and tie-line 2 [0.0422,2.661] are disjoint; only tie-line 1 is wholly above one, while tie-line 2 overlaps one.",
+      "Rectangular error propagation is not a confidence interval and does not provide joint coverage.",
+      "Tie-line index is not treated as composition; no bulk concentration or alpha is mapped to image f.",
+      "The calculation does not close G1: assay-matched composition response and cavity bridge remain untested."
+    ],
+    "remaining_gap": "Determine whether alpha changes with measured RNA loading under fixed reaction chemistry and whether that change predicts internal cavity composition/morphology; distinguish carryover and observation alternatives.",
+    "reason": "The requested calculation and conditional test are complete. The endpoint data show differing selectivity ranges under stated assumptions but do not identify loading dependence, mechanism, or causality."
+  },
+  "final": null
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430676016823941,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0de554876593c354016ae59490c4388196ba7da2d86375353f",
+    "object": "chat.completion",
+    "created": 1793430675,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow still has the lowest trajectory-level CV error; delay alternatives validate worse. Residual autocorrelation and higher PRBS error leave uncertainty under rapid switching.\",\"prediction\":\"During alternating input, output will show smooth carryover from earlier input after each reversal, rather than responding only after a fixed delay.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Lingering output after input changes is consistent with a leaky stored influence of past input.\",\"condition_to_check\":\"This relation is weakened if past input adds no predictive value after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3513,
+      "completion_tokens": 279,
+      "total_tokens": 3792,
+      "completion_tokens_details": {
+        "reasoning_tokens": 143
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.538078726269305
+}

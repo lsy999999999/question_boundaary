@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430368680193664,
+  "http_status": 200,
+  "body": {
+    "id": "resp_05726049dd7b1d78016ae5935e92448190a7db5d3bf9e19543",
+    "object": "chat.completion",
+    "created": 1793430368,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"slow_wave\",\"reason\":\"It has the lowest trajectory-held-out NMSE (0.00132), outperforming other candidates; alternating, PRBS, and double-pulse forecasts also improved after testing.\",\"prediction\":\"After input returns to zero, output will continue to decay, with its trajectory depending on earlier input history.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Post-pulse decay is consistent with accumulated past influence persisting after input returns to zero.\",\"condition_to_check\":\"The storage relation would be weakened if slow history features fail to predict outputs beyond current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3707,
+      "completion_tokens": 192,
+      "total_tokens": 3899,
+      "completion_tokens_details": {
+        "reasoning_tokens": 56
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.9525438752025366
+}

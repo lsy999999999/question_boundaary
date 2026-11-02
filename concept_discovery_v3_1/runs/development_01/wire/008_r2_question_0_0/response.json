@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793468291839953625,
+  "body": {
+    "id": "resp_0ce8fea9404ee33b016ae6277e01888193a381ac580b151e6f",
+    "object": "chat.completion",
+    "created": 1793468291,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\n  \"kind\": \"scaling\",\n  \"purpose\": \"discriminate\",\n  \"target_ids\": [\"v3_r1\", \"v3_r2\"],\n  \"evidence_ids\": [\"outcome_1\", \"failure_v3_r1_experiment_1\"],\n  \"rationale\": \"The two active models encode different state-dependent response terms: v3_r1 includes x, x**3, and tanh(x), whereas v3_r2 adds x*tanh(x)**2. Their held-out group NMSE values differ (0.00878 versus 0.01503), so a scaled-input comparison can test whether their predicted departures from proportional response separate on a new schedule. The prior polarity result for v3_r1 is consistent with symmetry only on its tested inputs and does not resolve this difference.\",\n  \"claim\": \"For at least one searched input schedule, scaling the input by the chosen factor produces a response whose trajectory differs between v3_r1 and v3_r2 by more than the requested tolerance.\",\n  \"update_if_violated\": \"If no adequate separation is found, do not treat that as evidence that the models are equivalent; revise the scaling question or probe a different input regime. If observed trajectories favor one model, update its support using complete-trajectory held-out prediction rather than the latent-variable labels.\",\n  \"amplitude_range\": [0.2, 0.9],\n  \"duration_range\": [1.0, 4.0],\n  \"scale\": 1.5,\n  \"tolerance_x\": 0.04\n}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 6118,
+      "completion_tokens": 606,
+      "total_tokens": 6724,
+      "completion_tokens_details": {
+        "reasoning_tokens": 270
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 7.736602951772511
+}

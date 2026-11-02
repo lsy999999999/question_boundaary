@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423735727484748,
+  "decision": {
+    "representation": "saturating_memory",
+    "experiment": "positive_pulse",
+    "reason": "Saturating terms and memory improve fit; test nonlinear response limits.",
+    "prediction": "Positive pulse will saturate before linear model predicts.",
+    "accept": false,
+    "mapping": {
+      "source_id": "saturation",
+      "target_relation": "Nonlinear response saturates before linear prediction.",
+      "condition_to_check": "Saturation limit reached before linear extrapolation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"saturating_memory\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Saturating terms and memory improve fit; test nonlinear response limits.\",\n  \"prediction\": \"Positive pulse will saturate before linear model predicts.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"saturation\",\n    \"target_relation\": \"Nonlinear response saturates before linear prediction.\",\n    \"condition_to_check\": \"Saturation limit reached before linear extrapolation.\"\n  }\n}",
+    "input_tokens": 3813,
+    "output_tokens": 108,
+    "batch_elapsed_seconds": 2.6269228802993894,
+    "amortized_seconds": 2.6269228802993894,
+    "peak_gpu_allocated_gb": 14.952060222625732,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.029041290283203,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

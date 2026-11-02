@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423852425337828,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "positive_pulse",
+    "reason": "Memory_slow has lowest NMSE and high residual correlation.",
+    "prediction": "Positive pulse will show slower recovery compared to state model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Storage should cause slower response recovery.",
+      "condition_to_check": "Compare recovery times after pulse for memory_slow vs state."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Memory_slow has lowest NMSE and high residual correlation.\",\n  \"prediction\": \"Positive pulse will show slower recovery compared to state model.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Storage should cause slower response recovery.\",\n    \"condition_to_check\": \"Compare recovery times after pulse for memory_slow vs state.\"\n  }\n}",
+    "input_tokens": 3178,
+    "output_tokens": 103,
+    "batch_elapsed_seconds": 2.380219374783337,
+    "amortized_seconds": 2.380219374783337,
+    "peak_gpu_allocated_gb": 14.834887027740479,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.02374267578125,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

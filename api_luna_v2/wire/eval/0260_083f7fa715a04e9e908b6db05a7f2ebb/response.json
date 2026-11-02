@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431711231857120,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0c9671458b02a947016ae5989c0cac8196819219ca0264e7e9",
+    "object": "chat.completion",
+    "created": 1793431711,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Memory_slow has the lowest trajectory-level CV error (0.00390), beating memory_clock (0.00727). Persistent post-input responses support history dependence, but residual lag remains high, so adequacy is uncertain.\",\"prediction\":\"Under PRBS, responses should track accumulated input history; systematic elapsed-time effects after accounting for history would challenge this model.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated past influence may explain lingering responses after input returns to zero.\",\"condition_to_check\":\"Check whether history predicts responses after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3254,
+      "completion_tokens": 285,
+      "total_tokens": 3539,
+      "completion_tokens_details": {
+        "reasoning_tokens": 148
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.8579222708940506
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432299789141022,
+  "http_status": 200,
+  "body": {
+    "id": "resp_08ad388b37543799016ae59ae97ab48193800f789b5eda2fc7",
+    "object": "chat.completion",
+    "created": 1793432299,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"history_all\",\"experiment\":\"slow_wave\",\"reason\":\"History_all has the lowest trajectory-held-out error, narrowly ahead of saturating_memory; however, substantial residual lag correlation leaves predictive adequacy for unseen interventions uncertain.\",\"prediction\":\"Under slow-wave input, outputs at matched current input may differ with prior input history.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Past input history improves prediction beyond current input and visible state.\",\"condition_to_check\":\"At matched current inputs, no history-dependent output difference would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3692,
+      "completion_tokens": 213,
+      "total_tokens": 3905,
+      "completion_tokens_details": {
+        "reasoning_tokens": 97
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.0295085115358233
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432166127426464,
+  "http_status": 200,
+  "body": {
+    "id": "resp_04ad65ce1e72198d016ae59a638c588196b1aaabbe8624a489",
+    "object": "chat.completion",
+    "created": 1793432166,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_clock\",\"experiment\":\"prbs\",\"reason\":\"Memory_clock has the lowest trajectory-held-out error, but residual lag correlation remains high and history_all is a plausible alternative. PRBS has high predicted disagreement and tests varied input histories.\",\"prediction\":\"At matched elapsed times, rebounds will remain similar across irregular input histories; systematic history-dependent timing would challenge the clock component.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Elapsed-time forcing and accumulated input history remain difficult to distinguish from current observations.\",\"condition_to_check\":\"Compare rebound timing across PRBS and prior interventions; timing that follows input history rather than elapsed time weakens the clock account.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3465,
+      "completion_tokens": 261,
+      "total_tokens": 3726,
+      "completion_tokens_details": {
+        "reasoning_tokens": 121
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.739480432122946
+}

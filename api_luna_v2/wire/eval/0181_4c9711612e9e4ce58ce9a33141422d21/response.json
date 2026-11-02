@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431581782742689,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0ccdf64778984fce016ae5981a9a288193bfa7b7f04cb3c17b",
+    "object": "chat.completion",
+    "created": 1793431581,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_fast\",\"experiment\":\"alternating\",\"reason\":\"memory_fast has the lowest trajectory-level CV error and substantially improves on the state model; persistent post-input decay and residual autocorrelation support history dependence.\",\"prediction\":\"After rapid input reversals, output will show smoother carryover from prior inputs than a pure-delay model predicts.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Finite-timescale accumulated history can carry input influence into the post-input response.\",\"condition_to_check\":\"The carryover should improve predictions across input shapes after controlling current input and visible state.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2781,
+      "completion_tokens": 257,
+      "total_tokens": 3038,
+      "prompt_tokens_details": {
+        "cached_tokens": 2560
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 134
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.9068097826093435
+}

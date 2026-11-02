@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431638394740214,
+  "http_status": 200,
+  "body": {
+    "id": "resp_081bed7394ed27de016ae59853bef881908e18e780fe75ea0a",
+    "object": "chat.completion",
+    "created": 1793431638,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"alternating\",\"reason\":\"Memory_slow has the lowest trajectory-level CV NMSE (0.00390), substantially below memory_clock (0.00727). Persistent residual correlation and weaker PRBS fit mean adequacy under unseen interventions remains uncertain.\",\"prediction\":\"Alternating inputs will produce delayed, smoothed responses; memory_slow should predict them better than memory_fast.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2668,
+      "completion_tokens": 218,
+      "total_tokens": 2886,
+      "completion_tokens_details": {
+        "reasoning_tokens": 126
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.820391073822975
+}

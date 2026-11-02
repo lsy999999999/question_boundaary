@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430124618279538,
+  "http_status": 200,
+  "body": {
+    "id": "resp_08495b7a531778fb016ae59269ccb081968382766be66a582a",
+    "object": "chat.completion",
+    "created": 1793430124,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_slow\",\"experiment\":\"double_pulse\",\"reason\":\"memory_slow has the lowest trajectory-level CV error (0.00417), far below memory_fast (0.01687); persistent post-input decay supports history dependence, though unseen-intervention adequacy remains unverified.\",\"prediction\":\"After the second pulse, the response will depend on residual history from the first pulse and decay more slowly than memory_fast predicts.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated input history predicts lingering response after input returns to zero.\",\"condition_to_check\":\"Compare post-pulse responses at matched current input and visible state but different prior pulse histories.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3255,
+      "completion_tokens": 260,
+      "total_tokens": 3515,
+      "completion_tokens_details": {
+        "reasoning_tokens": 118
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.578037867322564
+}

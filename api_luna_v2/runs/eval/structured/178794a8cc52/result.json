@@ -1,0 +1,84 @@
+{
+  "task_id": "178794a8cc52",
+  "split": "eval",
+  "family": "delay",
+  "seed": 33,
+  "method": "structured",
+  "n_experiments": 6,
+  "rounds": 3,
+  "model": {
+    "representation": "memory_slow",
+    "ridge": 1e-05,
+    "cv_nmse": 0.001304257975097243,
+    "coefficients": [
+      0.0009123,
+      -1.9018583,
+      1.0783536,
+      1.0499411,
+      -4.0784371,
+      -0.4029633,
+      -3.4293563,
+      5.1117673,
+      10.1003373
+    ]
+  },
+  "test": {
+    "test_nmse": 0.0010666020730354551,
+    "test_mse": 0.00010207882394237099,
+    "per_intervention": [
+      {
+        "action": "test_chirp",
+        "mse": 9.661783890383267e-05,
+        "nmse": 0.0010641228850686187
+      },
+      {
+        "action": "test_three_step",
+        "mse": 0.00010347307244530463,
+        "nmse": 0.00020934881299065872
+      },
+      {
+        "action": "test_short_pulses",
+        "mse": 9.277001916295083e-05,
+        "nmse": 0.002255085821154346
+      },
+      {
+        "action": "test_biased_wave",
+        "mse": 0.00015806664711655178,
+        "nmse": 0.0017232275490747444
+      },
+      {
+        "action": "test_prbs",
+        "mse": 6.142649448760291e-05,
+        "nmse": 0.0005799763077051699
+      },
+      {
+        "action": "test_relaxation",
+        "mse": 0.000100118871537983,
+        "nmse": 0.0005678510622191928
+      }
+    ]
+  },
+  "accepted_by_common_cv_rule": true,
+  "self_accept": false,
+  "invalid_outputs": 0,
+  "generation_calls": 4,
+  "input_tokens": 13268,
+  "output_tokens": 901,
+  "generation_seconds_amortized": 17.874184613116086,
+  "elapsed_wall_seconds": 862.2551050186157,
+  "selected_actions": [
+    "prbs",
+    "alternating",
+    "ramp_reverse"
+  ],
+  "selected_representations": [
+    "memory_slow",
+    "memory_slow",
+    "memory_multiscale",
+    "memory_slow"
+  ],
+  "peak_gpu_allocated_gb": 0.0,
+  "peak_process_ram_gb": 0.08777236938476562,
+  "inference_backend": "third_party_api",
+  "evaluation_after_commit_ns": 1793432295393470346
+}

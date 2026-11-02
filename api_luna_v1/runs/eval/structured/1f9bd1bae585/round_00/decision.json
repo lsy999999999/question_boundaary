@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793429950327466782,
+  "decision": {
+    "representation": "clock",
+    "experiment": "alternating",
+    "reason": "Clock has the lowest trajectory-level CV error by far, while memory and state models fit poorly. Alternating input best probes disagreement among the remaining plausible models.",
+    "prediction": "After accounting for input, residual oscillations will recur at similar elapsed times across interventions, including alternating input.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "A shared elapsed-time periodic component may explain residual patterns across different input interventions.",
+      "condition_to_check": "Test whether oscillations recur at aligned elapsed times across interventions after accounting for input; failure weakens this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"alternating\",\"reason\":\"Clock has the lowest trajectory-level CV error by far, while memory and state models fit poorly. Alternating input best probes disagreement among the remaining plausible models.\",\"prediction\":\"After accounting for input, residual oscillations will recur at similar elapsed times across interventions, including alternating input.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A shared elapsed-time periodic component may explain residual patterns across different input interventions.\",\"condition_to_check\":\"Test whether oscillations recur at aligned elapsed times across interventions after accounting for input; failure weakens this relation.\"}}",
+    "input_tokens": 2789,
+    "output_tokens": 290,
+    "batch_elapsed_seconds": 3.921468141488731,
+    "amortized_seconds": 3.921468141488731,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2789,
+      "completion_tokens": 290,
+      "total_tokens": 3079,
+      "completion_tokens_details": {
+        "reasoning_tokens": 161
+      }
+    },
+    "api_response_id": "resp_070357e83ba759a8016ae591bb3aa08193b6ec9d6ba16777bf",
+    "wire_record": "wire/eval/0134_c953a6a6ab55420f8aeb8ea239ac1326"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "time_ns": 1793423440924949979,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "positive_pulse",
+    "reason": "Memory_slow has lower CV NMSE than memory_clock.",
+    "prediction": "Positive pulse will show less phase shift compared to clock terms.",
+    "accept": true,
+    "mapping": {
+      "source_id": "memory_slow",
+      "target_relation": "Phase shift is primarily due to memory effects, not elapsed time.",
+      "condition_to_check": "Phase shift remains consistent across different pulse durations."
+    }
+  },
+  "parse_errors": [
+    "invalid_mapping_source_id"
+  ],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Memory_slow has lower CV NMSE than memory_clock.\",\n  \"prediction\": \"Positive pulse will show less phase shift compared to clock terms.\",\n  \"accept\": true,\n  \"mapping\": {\n    \"source_id\": \"memory_slow\",\n    \"target_relation\": \"Phase shift is primarily due to memory effects, not elapsed time.\",\n    \"condition_to_check\": \"Phase shift remains consistent across different pulse durations.\"\n  }\n}",
+    "input_tokens": 3507,
+    "output_tokens": 109,
+    "batch_elapsed_seconds": 2.603002411313355,
+    "amortized_seconds": 2.603002411313355,
+    "peak_gpu_allocated_gb": 14.893477439880371,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025932312011719,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

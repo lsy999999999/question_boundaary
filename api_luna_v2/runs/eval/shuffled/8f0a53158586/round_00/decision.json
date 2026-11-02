@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431532681520118,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "Slow accumulated-history features have the lowest trajectory-held-out error (0.00138), far below the state-only model; persistent post-input tails support history dependence.",
+    "prediction": "After PRBS input switches to zero, output will retain input-dependent influence and relax gradually rather than respond only to current input.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "A finite-leakage stored influence can carry past input effects into later output.",
+      "condition_to_check": "At matched current input and visible output, test whether differing prior inputs predict different subsequent trajectories."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"Slow accumulated-history features have the lowest trajectory-held-out error (0.00138), far below the state-only model; persistent post-input tails support history dependence.\",\"prediction\":\"After PRBS input switches to zero, output will retain input-dependent influence and relax gradually rather than respond only to current input.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A finite-leakage stored influence can carry past input effects into later output.\",\"condition_to_check\":\"At matched current input and visible output, test whether differing prior inputs predict different subsequent trajectories.\"}}",
+    "input_tokens": 2802,
+    "output_tokens": 361,
+    "batch_elapsed_seconds": 4.240595320239663,
+    "amortized_seconds": 4.240595320239663,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2802,
+      "completion_tokens": 361,
+      "total_tokens": 3163,
+      "completion_tokens_details": {
+        "reasoning_tokens": 228
+      }
+    },
+    "api_response_id": "resp_007ed5cfa279abef016ae597e9118c81939d9b9605e5aedf12",
+    "wire_record": "wire/eval/0143_32f05bd2261341c6b86f4dfd38a936f0"
+  }
+}

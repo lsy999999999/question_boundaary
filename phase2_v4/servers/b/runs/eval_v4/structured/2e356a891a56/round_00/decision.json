@@ -1,0 +1,27 @@
+{
+  "time_ns": 1793423831577373656,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "positive_pulse",
+    "reason": "Memory_slow has lowest CV NMSE and shows largest disagreement on positive_pulse.",
+    "prediction": "Response will decay more slowly after pulse compared to state model.",
+    "accept": false,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Persistent response indicates storage mechanism.",
+      "condition_to_check": "Decay rate difference between models"
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\n  \"representation\": \"memory_slow\",\n  \"experiment\": \"positive_pulse\",\n  \"reason\": \"Memory_slow has lowest CV NMSE and shows largest disagreement on positive_pulse.\",\n  \"prediction\": \"Response will decay more slowly after pulse compared to state model.\",\n  \"accept\": false,\n  \"mapping\": {\n    \"source_id\": \"storage\",\n    \"target_relation\": \"Persistent response indicates storage mechanism.\",\n    \"condition_to_check\": \"Decay rate difference between models\"\n  }\n}",
+    "input_tokens": 3159,
+    "output_tokens": 103,
+    "batch_elapsed_seconds": 2.392257043160498,
+    "amortized_seconds": 2.392257043160498,
+    "peak_gpu_allocated_gb": 14.829248905181885,
+    "backend": "cuda",
+    "peak_process_ram_gb": 5.025672912597656,
+    "model_path": "/home/lsyedith/theory_discovery_phase2_v4_20261031/models/Qwen2.5-7B-Instruct"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431761530211726,
+  "http_status": 200,
+  "body": {
+    "id": "resp_02db520d4ee46b36016ae598cf3bcc8190b5c55d3367c2113e",
+    "object": "chat.completion",
+    "created": 1793431761,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"prbs\",\"reason\":\"Saturating memory has the lowest trajectory-level cross-validation error, but correlated residuals leave uncertainty. PRBS has the greatest prediction disagreement among plausible models and probes varied input histories.\",\"prediction\":\"Under PRBS input, output will depend on accumulated input history beyond its current input and state; competing memory representations may differ in transient timing.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2965,
+      "completion_tokens": 182,
+      "total_tokens": 3147,
+      "completion_tokens_details": {
+        "reasoning_tokens": 91
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 2.8926093634217978
+}

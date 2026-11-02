@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430383756088993,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0fbe7c23f4f617ec016ae5936bf1608195a9f61375d6d1faa3",
+    "object": "chat.completion",
+    "created": 1793430383,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest leave-trajectory-out error, improving on state and state_cubic; residual autocorrelation still cautions against treating it as validated for unseen interventions.\",\"prediction\":\"After rapid input reversals, the response will differ from an instantaneous state_cubic prediction because accumulated history contributes.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Accumulated history in the representation can carry input influence forward as a decaying predictive contribution.\",\"condition_to_check\":\"At matched current input and visible state, test whether differing prior inputs predict differing responses.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2827,
+      "completion_tokens": 317,
+      "total_tokens": 3144,
+      "completion_tokens_details": {
+        "reasoning_tokens": 185
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.77340040076524
+}

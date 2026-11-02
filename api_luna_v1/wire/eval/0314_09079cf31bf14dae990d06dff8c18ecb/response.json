@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430293435940529,
+  "http_status": 200,
+  "body": {
+    "id": "resp_062135b88ab62790016ae5931286e0819598f8e898b5955428",
+    "object": "chat.completion",
+    "created": 1793430293,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"prbs\",\"reason\":\"Saturating memory has the best trajectory-level CV error, though residual autocorrelation and a prior CV deterioration leave uncertainty; PRBS provides varied histories to challenge it.\",\"prediction\":\"After matching current input and output, distinct PRBS histories will produce different subsequent responses if memory is predictive.\",\"accept\":false,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Persistent decay after input cessation is consistent with accumulated history carrying forward with finite relaxation.\",\"condition_to_check\":\"At matched current input and output, different histories should predict distinct subsequent responses; no difference would weaken this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3461,
+      "completion_tokens": 279,
+      "total_tokens": 3740,
+      "completion_tokens_details": {
+        "reasoning_tokens": 145
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.9001387506723404
+}

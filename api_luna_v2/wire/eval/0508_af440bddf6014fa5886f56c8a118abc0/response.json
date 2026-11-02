@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793432222846385978,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0c98c9c9b5140a2c016ae59a9b56b08196959e5d8be50a6a39",
+    "object": "chat.completion",
+    "created": 1793432222,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"prbs\",\"reason\":\"It has very low trajectory-level error and nearly matches history_all with fewer features; the marginal CV improvement from history_all is negligible. Residual correlation leaves some uncertainty.\",\"prediction\":\"After controlling current input and state, lingering accumulated history will predict transient amplitude and recovery during irregular input sequences.\",\"accept\":false}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3298,
+      "completion_tokens": 311,
+      "total_tokens": 3609,
+      "completion_tokens_details": {
+        "reasoning_tokens": 230
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.4897048976272345
+}

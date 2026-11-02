@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431489346047174,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0f87ef13cdd2f3f0016ae597bdafa081959b324fca71422ac0",
+    "object": "chat.completion",
+    "created": 1793431489,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"alternating\",\"reason\":\"It has the lowest leave-trajectory-out error (0.00351), improving on state_cubic and state; residual lag remains, so unseen-intervention adequacy is uncertain.\",\"prediction\":\"Alternating switches will produce excursions that differ from isolated pulses because accumulated history affects the response.\",\"accept\":false,\"mapping\":{\"source_id\":\"saturation\",\"target_relation\":\"The saturation-augmented representation predicts weakened response as state or accumulated history grows.\",\"condition_to_check\":\"Compare positive and negative responses across amplitudes; failure to weaken would count against saturation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2827,
+      "completion_tokens": 314,
+      "total_tokens": 3141,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 184
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 8.772603475488722
+}

@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793431876819013648,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0254253a908cca36016ae599423444819681bff497aeaa40da",
+    "object": "chat.completion",
+    "created": 1793431876,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"alternating\",\"reason\":\"State_cubic has the lowest trajectory-held-out error (0.00172); history models perform worse. Residual lag correlation remains, so adequacy for unseen interventions is uncertain.\",\"prediction\":\"Alternating-switch responses will be captured by the cubic state model without a systematic history-dependent deviation.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No mechanism card is supported; history-augmented candidates validate worse than state_cubic.\",\"condition_to_check\":\"A repeatable alternating response beyond the cubic prediction would count against this representation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3477,
+      "completion_tokens": 205,
+      "total_tokens": 3682,
+      "completion_tokens_details": {
+        "reasoning_tokens": 76
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.6911191837862134
+}

@@ -1,0 +1,82 @@
+{
+  "question": {
+    "family": "polarity",
+    "purpose": "probe_relation",
+    "target_ids": [
+      "v3_r1",
+      "v3_r2",
+      "b4_r0"
+    ],
+    "amplitude_range": [
+      0.9,
+      1.35
+    ],
+    "value_range": [
+      1,
+      5
+    ],
+    "evidence_ids": [
+      "local_relation_0",
+      "local_relation_1",
+      "local_relation_2"
+    ],
+    "rationale": "检验已观察到的局部镜像关系能否延伸至不同脉冲时长与幅度；仅作关系探测，不将其视为普遍对称律。"
+  },
+  "result": {
+    "passed": true,
+    "actions": [
+      {
+        "points": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.5,
+            1.35
+          ],
+          [
+            5.5,
+            0.0
+          ]
+        ]
+      },
+      {
+        "points": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.5,
+            -1.35
+          ],
+          [
+            5.5,
+            0.0
+          ]
+        ]
+      }
+    ],
+    "descriptor": {
+      "family": "polarity",
+      "amplitude": 1.35,
+      "sign": 1,
+      "values": [
+        5.0
+      ]
+    },
+    "guard": {
+      "passed": true,
+      "contrast_rms": 0.11215867175656408,
+      "boundary_labels": [
+        null,
+        null
+      ],
+      "straddles": false
+    },
+    "considered": 12,
+    "rejected_count": 0,
+    "reasons": {}
+  }
+}

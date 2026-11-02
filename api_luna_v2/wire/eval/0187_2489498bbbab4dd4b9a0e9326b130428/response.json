@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431592765433757,
+  "http_status": 200,
+  "body": {
+    "id": "resp_074f264c7f077974016ae59825800481908878c62f87c230cb",
+    "object": "chat.completion",
+    "created": 1793431592,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"saturating_memory\",\"experiment\":\"ramp_reverse\",\"reason\":\"Saturating memory has the lowest trajectory-level CV error by a wide margin, while the current state-only model has strongly correlated residuals. The ramp reversal probes history and amplitude dependence.\",\"prediction\":\"On reversal, the response will depend on prior ramp history, and its incremental change will weaken at larger state magnitudes.\",\"accept\":false,\"mapping\":{\"source_id\":\"saturation\",\"target_relation\":\"The best-validated representation includes saturating transforms of accumulated history, consistent with response weakening at larger magnitudes.\",\"condition_to_check\":\"Compare incremental responses across positive and negative amplitudes; persistent history effects or no weakening would challenge this relation.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2804,
+      "completion_tokens": 325,
+      "total_tokens": 3129,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 177
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.102644732221961
+}

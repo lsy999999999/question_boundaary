@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431866310328162,
+  "decision": {
+    "representation": "memory_clock",
+    "experiment": "alternating",
+    "reason": "Memory_clock has the best leave-trajectory-out NMSE (0.00265), substantially outperforming history_all (0.01659); alternating inputs probe their remaining disagreement.",
+    "prediction": "Forecast errors should remain small; any repeatable elapsed-time pattern in residuals across alternating input switches would challenge adequacy.",
+    "accept": true,
+    "mapping": {
+      "source_id": "none",
+      "target_relation": "Predictive validation supports history and clock features, not a specific physical mechanism.",
+      "condition_to_check": "Check whether residual patterns repeat at the same elapsed times across alternating-input trajectories."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_clock\",\"experiment\":\"alternating\",\"reason\":\"Memory_clock has the best leave-trajectory-out NMSE (0.00265), substantially outperforming history_all (0.01659); alternating inputs probe their remaining disagreement.\",\"prediction\":\"Forecast errors should remain small; any repeatable elapsed-time pattern in residuals across alternating input switches would challenge adequacy.\",\"accept\":true,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Predictive validation supports history and clock features, not a specific physical mechanism.\",\"condition_to_check\":\"Check whether residual patterns repeat at the same elapsed times across alternating-input trajectories.\"}}",
+    "input_tokens": 3243,
+    "output_tokens": 332,
+    "batch_elapsed_seconds": 5.152960584498942,
+    "amortized_seconds": 5.152960584498942,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3243,
+      "completion_tokens": 332,
+      "total_tokens": 3575,
+      "completion_tokens_details": {
+        "reasoning_tokens": 203
+      }
+    },
+    "api_response_id": "resp_036c93c9c4b7dae5016ae599364498819783e89c2659352aab",
+    "wire_record": "wire/eval/0345_3d83872e39f34950b1a163df31c53c77"
+  }
+}

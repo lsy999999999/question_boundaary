@@ -1,0 +1,63 @@
+{
+  "time_ns": 1793472759119311090,
+  "value": {
+    "parent_id": "b4_r1",
+    "evidence_ids": [
+      "scope:b4_r1:7bf379dbc522",
+      "failure:b4_r1:7bf379dbc522:b4_r1_experiment_0",
+      "failure:b4_r1:7bf379dbc522:b4_r1_experiment_1"
+    ],
+    "concept": "保留 b4_r1 的主要关系，并检验加入输入记忆状态平方项是否能改善极端反转轨迹上的预测。",
+    "reason": "b4_r1 的组留出 CV NMSE 为 0.03649，低于 0.05，但其自身证据中两条新边界干预的 NMSE 分别为 0.158 和 0.069，且末端预测明显偏离观测。观测末端 x 约为 -0.44 和 -0.26，而模型预测约为 -0.03 和 0.08。现有方程已含 u*z0，但该项拟合系数很小（-0.0143）；因此可检验 z0 的非线性作用，而不把潜状态解释为已确定的物理量。",
+    "operation": "revise",
+    "spec": {
+      "parameters": [
+        {
+          "name": "p0",
+          "lower": 0.05,
+          "initial": 0.75,
+          "upper": 1.5
+        }
+      ],
+      "states": [
+        {
+          "name": "z0",
+          "meaning": "输入的衰减记忆坐标；物理解释未证实。",
+          "rate": "u-p0*z0"
+        }
+      ],
+      "terms": [
+        "x",
+        "x**3",
+        "tanh(x)",
+        "u",
+        "z0",
+        "u*z0",
+        "z0**2"
+      ]
+    },
+    "observable_consequence": "若额外的 z0**2 项捕捉到当前方程遗漏的记忆状态非线性，组留出拟合应能降低新边界干预末段的轨迹误差，同时不显著恶化普通输入上的预测；否则应撤回该扩展并保留 b4_r1。",
+    "analogy": {
+      "domain": "带记忆的动态输入输出模型",
+      "relation": "状态记忆对输出的作用可能随记忆幅度非线性变化。",
+      "mapping": "z0 是拟合用的输入历史坐标，z0**2 是对其作用形状的可检验扩展。",
+      "failure_condition": "若在独立输入组上 z0**2 不改善轨迹预测，或只改善极少数已见轨迹，则该类比不支持保留此项。"
+    },
+    "provenance": "model_knowledge_unverified",
+    "limitations": "b4_r1 的失败行与成功行并未证明 z0**2 是正确修正；观测只支持该项作为可证伪的拟合假设。当前数据已用于开发，不能视为未触碰的确认集。",
+    "boundary": {
+      "model_id": "b4_r1",
+      "feature": "max_reversal_jump",
+      "operator": "gt",
+      "threshold": 2.5,
+      "error_threshold": 0.05,
+      "reason": "b4_r1 自身证据中，max_reversal_jump 为 0 的多条行及新干预 jump=1.7、2.1 的行均低于 0.05；jump=3.0 的两条新干预行均高于 0.05（NMSE 0.158、0.069）。故暂以 2.5 作前瞻性分界，测试高反转跳变时该模型是否更易失败；样本有限，不能视为普遍规律。证据：scope:b4_r1:7bf379dbc522。"
+    }
+  },
+  "generation_records": [
+    {
+      "wire": "wire/007_r2_proposal_0",
+      "valid": true
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431917696224202,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "memory_slow has the lowest trajectory-level CV NMSE (0.00131); pulse and switching observations support history dependence, with no evidence favoring added fast or clock features.",
+    "prediction": "Under PRBS switches, responses will retain a smooth contribution from earlier inputs after controlling for current input and state.",
+    "accept": true,
+    "mapping": {
+      "source_id": "storage",
+      "target_relation": "Past inputs predict responses after switches, consistent with finite-relaxation storage.",
+      "condition_to_check": "No additional predictive effect of past inputs after controlling current input and state would weaken this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"memory_slow has the lowest trajectory-level CV NMSE (0.00131); pulse and switching observations support history dependence, with no evidence favoring added fast or clock features.\",\"prediction\":\"Under PRBS switches, responses will retain a smooth contribution from earlier inputs after controlling for current input and state.\",\"accept\":true,\"mapping\":{\"source_id\":\"storage\",\"target_relation\":\"Past inputs predict responses after switches, consistent with finite-relaxation storage.\",\"condition_to_check\":\"No additional predictive effect of past inputs after controlling current input and state would weaken this relation.\"}}",
+    "input_tokens": 3497,
+    "output_tokens": 252,
+    "batch_elapsed_seconds": 3.4425434032455087,
+    "amortized_seconds": 3.4425434032455087,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3497,
+      "completion_tokens": 252,
+      "total_tokens": 3749,
+      "completion_tokens_details": {
+        "reasoning_tokens": 120
+      }
+    },
+    "api_response_id": "resp_0f0c2941172d6826016ae5996b159081939f6a18c61b1e2ab3",
+    "wire_record": "wire/eval/0369_6ebe054d02c24eef8197b2dc005b4d86"
+  }
+}

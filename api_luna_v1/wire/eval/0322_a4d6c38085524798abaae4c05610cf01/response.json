@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430308530314324,
+  "http_status": 200,
+  "body": {
+    "id": "resp_020f282904db7ae4016ae59322296881968e6e71edef884503",
+    "object": "chat.completion",
+    "created": 1793430308,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"memory_multiscale\",\"experiment\":\"ramp_reverse\",\"reason\":\"It has strong trajectory-level validation (NMSE 0.000847), improves on single-timescale memory, and is more parsimonious than memory_clock, whose slight CV advantage does not justify extra clock features.\",\"prediction\":\"After the input reverses, output will retain a decaying influence from the earlier ramp, producing a history-dependent response at the same input.\",\"accept\":true}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3281,
+      "completion_tokens": 189,
+      "total_tokens": 3470,
+      "completion_tokens_details": {
+        "reasoning_tokens": 90
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 3.1464847764000297
+}

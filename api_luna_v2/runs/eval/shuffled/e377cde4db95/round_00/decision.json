@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793431552572278877,
+  "decision": {
+    "representation": "memory_slow",
+    "experiment": "prbs",
+    "reason": "The state model has strongly correlated residuals, while memory_slow has the lowest trajectory-level CV NMSE. PRBS should distinguish slow accumulated history from other plausible memory timescales.",
+    "prediction": "After input switches, responses will retain a slowly decaying dependence on prior inputs, even when current input and visible state match.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "A leaky stored influence of past input can persist after the input returns to zero.",
+      "condition_to_check": "At matched current input and visible state, test whether different prior inputs predict different later outputs."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"memory_slow\",\"experiment\":\"prbs\",\"reason\":\"The state model has strongly correlated residuals, while memory_slow has the lowest trajectory-level CV NMSE. PRBS should distinguish slow accumulated history from other plausible memory timescales.\",\"prediction\":\"After input switches, responses will retain a slowly decaying dependence on prior inputs, even when current input and visible state match.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A leaky stored influence of past input can persist after the input returns to zero.\",\"condition_to_check\":\"At matched current input and visible state, test whether different prior inputs predict different later outputs.\"}}",
+    "input_tokens": 2804,
+    "output_tokens": 340,
+    "batch_elapsed_seconds": 4.675494860857725,
+    "amortized_seconds": 4.675494860857725,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08777236938476562,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 2804,
+      "completion_tokens": 340,
+      "total_tokens": 3144,
+      "completion_tokens_details": {
+        "reasoning_tokens": 201
+      }
+    },
+    "api_response_id": "resp_0348e62c3c50a149016ae597fc88408190bfdef420fbf28d33",
+    "wire_record": "wire/eval/0157_657cbbb10e1941b68ebc5b09222896d7"
+  }
+}

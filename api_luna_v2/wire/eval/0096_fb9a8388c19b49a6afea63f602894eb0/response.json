@@ -1,0 +1,33 @@
+{
+  "time_ns": 1793431472614627648,
+  "http_status": 200,
+  "body": {
+    "id": "resp_0bedbe1859848eb9016ae597ad75f48196a11987f8958780e4",
+    "object": "chat.completion",
+    "created": 1793431472,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state\",\"experiment\":\"alternating\",\"reason\":\"State has the best trajectory-level validation error; added memory and clock features worsen it. Residual autocorrelation and intervention disagreement leave adequacy uncertain.\",\"prediction\":\"Under alternating input, output should track the current state response without persistent oscillations after switching stops.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"Observed pulse relaxation is captured by the state model; independent predictive history is not established.\",\"condition_to_check\":\"At matched current state and input, test whether past input predicts output beyond noise.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2821,
+      "completion_tokens": 297,
+      "total_tokens": 3118,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 177
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.081929659470916
+}

@@ -1,0 +1,120 @@
+{
+  "recognition": "uncertain; no specific study identified",
+  "summary": "C2L1-alpha executed. K_ref=Cr_dense/Cr_dilute, K_variant=Cv_dense/Cv_dilute, alpha=K_variant/K_ref. Tie-line 0 variant K is undefined because both variant concentrations are zero. Tie-line 1 alpha=37.863, rectangular marginal-bound interval [4.769,300.647]; tie-line 2 alpha=0.335, interval [0.0422,2.661], which includes alpha=1. The intervals do not overlap, so endpoints differ under supplied bounds if assays are comparable. Tie-line index is not a controlled composition order; bounds are not confidence intervals; bulk endpoints do not map to image f. Keep G1 active.",
+  "candidates": [
+    {
+      "id": "RNA-C2-selectivity-cavity-v1",
+      "version": 2,
+      "author": "executor",
+      "reply": "R1",
+      "target": "Mechanism linking RNA composition and phase partitioning to internal RNA-poor cavity appearance and persistence; f(t) is the arithmetic mean of object-level empty-area ratios.",
+      "known_relations": [
+        "B f rises from 0.01381 at 0 h to 0.08918 at 24 h; A is about 0.0044 at 8-24 h (initial_measurements.json). Fields and objects are not independent preparation replicates.",
+        "B contains non-reference DNA reads, but DNA fractions do not establish RNA abundance or time course (C01).",
+        "Single-preparation length fractions show endpoint f values M near zero, M+L 0.04446, M+S 0.09412 (E02); carryover and treatment are unmatched.",
+        "C04: tie-line 1 alpha=37.863 [4.769,300.647], tie-line 2 alpha=0.335 [0.0422,2.661]. Rectangular marginal bounds are not confidence intervals. Tie-line 0 variant K undefined.",
+        "Available tracking is displacement only, without persistent cavity histories (C03)."
+      ],
+      "hypotheses": [
+        {
+          "id": "H1",
+          "status": "new, explicitly speculative bridge hypothesis",
+          "statement": "At fixed reaction chemistry, increasing measured variant/reference RNA loading changes relative phase selectivity non-monotonically, potentially shifting from variant enrichment in the dense phase toward weaker or reversed partitioning. If this creates or stabilizes variant-enriched dilute domains within a reference-rich dense network, those domains can appear as internal cavities. This bridge is unverified."
+        },
+        {
+          "id": "H0",
+          "status": "meaningful alternative",
+          "statement": "Selectivity is constant or measured endpoints do not represent the imaging reaction; cavities arise from amplification carryover or another reaction-state change independently of composition-driven domains."
+        }
+      ],
+      "gaps": [
+        {
+          "id": "G1",
+          "status": "active",
+          "description": "Determine whether relative partition selectivity changes with measured mixture composition under matched conditions, and whether that predicts internal cavities."
+        },
+        {
+          "id": "G2",
+          "status": "open",
+          "description": "No mapping from bulk phase concentrations or volumes to image f, and no causal separation from carryover."
+        }
+      ],
+      "variables_units": {
+        "Cr_dilute": "reference RNA concentration in dilute phase, ng/uL",
+        "Cr_dense": "reference RNA concentration in dense phase, ng/uL",
+        "Cv_dilute": "variant RNA concentration in dilute phase, ng/uL",
+        "Cv_dense": "variant RNA concentration in dense phase, ng/uL",
+        "K_ref": "Cr_dense/Cr_dilute, dimensionless",
+        "K_variant": "Cv_dense/Cv_dilute, dimensionless when defined",
+        "alpha": "K_variant/K_ref, dimensionless",
+        "x_v_over_r": "measured variant/reference RNA loading ratio, dimensionless",
+        "f": "image-derived object-level empty-area ratio mean, dimensionless"
+      },
+      "equations": [
+        "K_ref=Cr_dense/Cr_dilute; K_variant=Cv_dense/Cv_dilute; alpha=K_variant/K_ref.",
+        "At dense-phase volume fraction phi, variant dense-phase mass fraction=phi*Cv_dense/[phi*Cv_dense+(1-phi)*Cv_dilute]. This is not f and requires phase volumes.",
+        "H1 predicts alpha declines with measured x_v_over_r and may cross one; a cavity response is a separate unverified link."
+      ],
+      "parameters_ranges": [
+        "Supplied errors propagated as rectangular marginal bounds, not confidence intervals or joint coverage.",
+        "Tie-line 0 variant K undefined because dilute concentration is zero.",
+        "No numeric cavity threshold or phase volume assigned."
+      ],
+      "initial_boundary_conditions": "Phase endpoint conditions unspecified; imaging starts with similar small f; phase volumes and local cavity concentrations unavailable.",
+      "observation_mapping": "f is image-derived arithmetic mean of object-level empty-area ratios, not concentration, volume fraction, mass fraction, or free energy. Phase endpoints support only bulk partition ratios under their assay conditions.",
+      "alternatives": [
+        "Constant selectivity or non-transferable endpoints; cavities from carryover or other reaction-state change.",
+        "Population shifts or segmentation may alter f without same-droplet cavity formation."
+      ],
+      "predictions": [
+        "H1: in a fixed-chemistry, assay-matched mixture series, alpha declines with measured x_v_over_r and may cross one; cavity incidence/area should covary after measuring phase volumes and applying fixed imaging rules.",
+        "H0: matching carryover/reaction chemistry explains cavity changes without requiring alpha to vary with RNA loading.",
+        "Current endpoints differ in alpha bounds but do not establish composition order or the cavity bridge."
+      ],
+      "checks": [
+        "K and alpha dimensionless; concentrations ng/uL.",
+        "Never divide by zero or label tie-line 0 K as zero or infinity.",
+        "Bounds are not confidence intervals.",
+        "Do not infer composition ordering from tie-line index.",
+        "Do not equate alpha or concentration with f.",
+        "Preparation, not field/object, is replication level."
+      ],
+      "evidence_conflicts": [
+        "Tie-line 1 and 2 alpha intervals do not overlap, while tie-line 2 overlaps alpha=1; assay comparability and composition order are unknown.",
+        "E02 length-fraction f differences are single-preparation, unbalanced, and lack carryover matching."
+      ],
+      "untested": [
+        "Whether DNA variants produce corresponding RNA and their abundance over time.",
+        "Whether C04 tie-lines represent B RNA or the imaging reaction.",
+        "Whether dilute domains map to internal cavities and persist within droplets.",
+        "Whether carryover/reaction state explains the phenotype."
+      ],
+      "dissent": "Endpoint partition differences conditionally supported; composition trend and causal cavity mechanism remain unresolved.",
+      "next_task": "Keep G1 active. Obtain an assay-matched RNA mixture series with measured loading and phase concentrations; measure phase volumes and per-droplet cavity state/area under fixed chemistry, with a carryover-matched alternative."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T-C2-L1-selectivity",
+      "candidate_id": "RNA-C2-selectivity-cavity-v1",
+      "gap_id": "G1",
+      "kind": "mechanism",
+      "status": "active",
+      "deliverable": "Interpret the executed partition calculation and specify the assay-matched composition-selectivity-to-cavity test.",
+      "acceptance": "Report actual alpha and bounds; tie-line 0 undefined; do not call bounds confidence intervals or infer composition order; keep cavity bridge unverified.",
+      "evidence_refs": [
+        "C2L1-alpha",
+        "C04",
+        "phase_measurements.json",
+        "E02",
+        "C03",
+        "initial_measurements.json"
+      ],
+      "reason": "Endpoints indicate different relative partitioning under supplied bounds but do not identify composition dependence or explain image cavities."
+    }
+  ],
+  "requests": [],
+  "literature_use": [],
+  "adjudication": null,
+  "final": null
+}

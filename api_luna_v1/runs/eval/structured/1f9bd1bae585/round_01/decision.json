@@ -1,0 +1,39 @@
+{
+  "time_ns": 1793430104612428692,
+  "decision": {
+    "representation": "clock",
+    "experiment": "prbs",
+    "reason": "Clock has far lower trajectory-level CV error than alternatives. PRBS provides varied input timing to test whether the shared elapsed-time component predicts beyond the tested interventions.",
+    "prediction": "After accounting for input, residual oscillations will recur at similar elapsed times across different input patterns.",
+    "accept": false,
+    "mapping": {
+      "source_id": "external_clock",
+      "target_relation": "A shared elapsed-time component may explain reproducible residual patterns across input interventions.",
+      "condition_to_check": "Compare residual oscillations at aligned elapsed times under PRBS and prior interventions; failure to recur weakens this relation."
+    }
+  },
+  "parse_errors": [],
+  "generation": {
+    "text": "{\"representation\":\"clock\",\"experiment\":\"prbs\",\"reason\":\"Clock has far lower trajectory-level CV error than alternatives. PRBS provides varied input timing to test whether the shared elapsed-time component predicts beyond the tested interventions.\",\"prediction\":\"After accounting for input, residual oscillations will recur at similar elapsed times across different input patterns.\",\"accept\":false,\"mapping\":{\"source_id\":\"external_clock\",\"target_relation\":\"A shared elapsed-time component may explain reproducible residual patterns across input interventions.\",\"condition_to_check\":\"Compare residual oscillations at aligned elapsed times under PRBS and prior interventions; failure to recur weakens this relation.\"}}",
+    "input_tokens": 3246,
+    "output_tokens": 361,
+    "batch_elapsed_seconds": 5.085459747351706,
+    "amortized_seconds": 5.085459747351706,
+    "peak_gpu_allocated_gb": 0.0,
+    "peak_process_ram_gb": 0.08880615234375,
+    "backend": "third_party_api",
+    "model_path": "gpt-6-luna",
+    "returned_model": "gpt-6-luna",
+    "finish_reason": "stop",
+    "api_usage": {
+      "prompt_tokens": 3246,
+      "completion_tokens": 361,
+      "total_tokens": 3607,
+      "completion_tokens_details": {
+        "reasoning_tokens": 233
+      }
+    },
+    "api_response_id": "resp_05a60f94d135e034016ae5925442c48194ac1defb15639d5ef",
+    "wire_record": "wire/eval/0216_2b2ec52dbd5c4c449b3ec8cbc460c93e"
+  }
+}

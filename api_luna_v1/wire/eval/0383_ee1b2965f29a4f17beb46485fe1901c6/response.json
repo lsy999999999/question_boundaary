@@ -1,0 +1,30 @@
+{
+  "time_ns": 1793430435136747578,
+  "http_status": 200,
+  "body": {
+    "id": "resp_02fb39160a35aa38016ae5939f51ec81948618f4984632cde7",
+    "object": "chat.completion",
+    "created": 1793430435,
+    "model": "gpt-6-luna",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "{\"representation\":\"state_cubic\",\"experiment\":\"alternating\",\"reason\":\"The cubic model has the lowest trajectory-level CV error (0.00213 versus 0.00716 for state), supporting added curvature; residual lag remains substantial, so adequacy is uncertain.\",\"prediction\":\"Under alternating input, the cubic model predicts responses determined by current state and input, without a persistent history-dependent effect after controlling both.\",\"accept\":false,\"mapping\":{\"source_id\":\"none\",\"target_relation\":\"No mechanism card relation is established by these observations.\",\"condition_to_check\":\"Compare alternating responses at matched current state and input; persistent differences would challenge the instantaneous cubic model.\"}}"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2800,
+      "completion_tokens": 331,
+      "total_tokens": 3131,
+      "completion_tokens_details": {
+        "reasoning_tokens": 196
+      }
+    },
+    "service_tier": "default"
+  },
+  "elapsed_seconds": 4.492554894648492
+}
